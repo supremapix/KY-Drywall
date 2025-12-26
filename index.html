@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KY Drywall & Steel Frame | Líder em Construção a Seco em Curitiba</title>
+    
+    <!-- Resource Hints -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://images.unsplash.com">
+    <link rel="dns-prefetch" href="https://esm.sh">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="KY Drywall & Steel Frame: A maior distribuidora de materiais de construção a seco de Curitiba. Especialistas em Steel Frame, Drywall, Telhado Shingle e Isolamento Acústico.">
+    <meta name="keywords" content="drywall curitiba, steel frame curitiba, gesso acartonado, telhado shingle pr, barbieri steel frame, material construção seco">
+    <meta name="author" content="KY Drywall">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="KY Drywall & Steel Frame | Construção Inteligente">
+    <meta property="og:description" content="Otimize sua obra com a KY. Entrega rápida em Curitiba e RMC com assessoria técnica especializada.">
+    <meta property="og:image" content="https://kydrywall.com.br/produtos/wp-content/uploads/2022/09/logotipo-kydrywall-1-1.png">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+        text-rendering: optimizeLegibility;
+      }
+      .dropdown:hover .dropdown-menu { display: block; }
+      
+      /* Critical Animations */
+      @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+      .animate-marquee { display: flex; width: max-content; animation: marquee 40s linear infinite; }
+      .animate-marquee:hover { animation-play-state: paused; }
+
+      /* Custom Scrollbars */
+      ::-webkit-scrollbar { width: 6px; }
+      ::-webkit-scrollbar-track { background: #f9f9f9; }
+      ::-webkit-scrollbar-thumb { background: #D31219; border-radius: 10px; }
+      
+      /* Performance Optimizations */
+      img { content-visibility: auto; }
+      .blur-load { filter: blur(20px); transition: filter 0.3s; }
+      .blur-load.loaded { filter: blur(0); }
+    </style>
+
+    <script type="importmap">
+    {
+      "imports": {
+        "lucide-react": "https://esm.sh/lucide-react@^0.475.0",
+        "react/": "https://esm.sh/react@^19.2.3/",
+        "react": "https://esm.sh/react@^19.2.3",
+        "react-router-dom": "https://esm.sh/react-router-dom@^7.11.0",
+        "react-dom/": "https://esm.sh/react-dom@^19.2.3/"
+      }
+    }
+    </script>
+  </head>
+  <body class="bg-white text-gray-900 overflow-x-hidden">
+    <div id="root"></div>
+    <script>
+      // Service Worker Registration for Offline/Cache
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js').catch(err => console.log('SW fail:', err));
+        });
+      }
+    </script>
+  </body>
+</html>
