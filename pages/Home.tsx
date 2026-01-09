@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, MessageCircle, Star, TrendingUp, MapPin, Globe, ChevronRight, Clock, Building2, Map, ShieldCheck, Sparkles, Zap } from 'lucide-react';
-import { SERVICES, BLOG_POSTS, NEIGHBORHOODS, CITIES_RMC, CIC_LOCATIONS, getRandomCTA, SITE_ASSETS, PRODUCTS, normalizeLocationName, BASE_URL } from '../constants';
+import { SERVICES, BLOG_POSTS, NEIGHBORHOODS, CITIES_RMC, getRandomCTA, SITE_ASSETS, PRODUCTS, normalizeLocationName, BASE_URL } from '../constants';
 import EnhancedSEO from '../components/EnhancedSEO';
 
 const HERO_SLIDES = [
@@ -252,35 +252,20 @@ const Home: React.FC = () => {
                   </Link>
                 </div>
               </div>
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <div className="bg-white/5 p-8 rounded-[2.5rem] border border-white/10">
                   <h3 className="text-[#D31219] text-[10px] font-black uppercase tracking-[0.3em] mb-8 border-b border-white/10 pb-4">Bairros Curitiba</h3>
-                  <div className="grid grid-cols-1 gap-3 max-h-[300px] overflow-y-auto custom-scrollbar pr-4">
-                    {NEIGHBORHOODS.slice(0, 15).map(n => (
+                  <div className="grid grid-cols-1 gap-3 max-h-[400px] overflow-y-auto custom-scrollbar pr-4">
+                    {NEIGHBORHOODS.map(n => (
                       <Link key={n} to={`/drywall-em-${normalizeLocationName(n)}`} className="text-[10px] font-bold text-gray-400 hover:text-white transition-colors uppercase flex items-center gap-2">
                         <ChevronRight size={12} className="text-[#D31219]" /> {n}
                       </Link>
                     ))}
                   </div>
                 </div>
-                <div className="bg-gradient-to-br from-[#D31219] to-[#a00e13] p-8 rounded-[2.5rem] border-2 border-white/20 shadow-2xl">
-                  <h3 className="text-white text-[10px] font-black uppercase tracking-[0.3em] mb-8 border-b border-white/20 pb-4 flex items-center gap-2">
-                    <Building2 size={14}/> CIC - Cidade Industrial
-                  </h3>
-                  <div className="grid grid-cols-1 gap-3 mb-6">
-                    <Link to="/drywall-em-cic" className="text-[11px] font-black text-white hover:text-black transition-colors uppercase flex items-center gap-2 bg-white/10 p-3 rounded-xl hover:bg-white/20">
-                      <ChevronRight size={12} /> Ver Todas as Localidades
-                    </Link>
-                    {CIC_LOCATIONS.vilas.slice(0, 8).map(v => (
-                      <Link key={v} to={`/drywall-em-${normalizeLocationName(v)}`} className="text-[9px] font-bold text-white/80 hover:text-white transition-colors flex items-center gap-2">
-                        <ChevronRight size={10} className="text-white/60" /> {v}
-                      </Link>
-                    ))}
-                  </div>
-                </div>
                 <div className="bg-white/5 p-8 rounded-[2.5rem] border border-white/10">
                   <h3 className="text-[#D31219] text-[10px] font-black uppercase tracking-[0.3em] mb-8 border-b border-white/10 pb-4">Cidades RMC</h3>
-                  <div className="grid grid-cols-1 gap-3 max-h-[300px] overflow-y-auto custom-scrollbar pr-4">
+                  <div className="grid grid-cols-1 gap-3 max-h-[400px] overflow-y-auto custom-scrollbar pr-4">
                     {CITIES_RMC.map(c => (
                       <Link key={c} to={`/drywall-em-${normalizeLocationName(c)}`} className="text-[10px] font-bold text-gray-400 hover:text-white transition-colors uppercase flex items-center gap-2">
                         <ChevronRight size={12} className="text-[#D31219]" /> {c}

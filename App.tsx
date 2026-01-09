@@ -11,7 +11,6 @@ import ServicesPage from './pages/ServicesPage';
 import Contact from './pages/Contact';
 import Blog from './pages/Blog';
 import LocationPage from './pages/LocationPage';
-import CICPage from './pages/CICPage';
 import Sitemap from './pages/Sitemap';
 import NotFound from './pages/NotFound';
 import WhatsAppWidget from './components/WhatsAppWidget';
@@ -57,8 +56,6 @@ const App: React.FC = () => {
             <Route path="/produto/:productId" element={<ProductDetails />} />
             <Route path="/contato" element={<Contact />} />
             <Route path="/blog" element={<Blog />} />
-            <Route path="/drywall-em-cic" element={<CICPage />} />
-            <Route path="/drywall-em-cidade-industrial" element={<CICPage />} />
             <Route path="/drywall-em-:location" element={<LocationPage type="drywall" />} />
             <Route path="/steel-frame-em-:location" element={<LocationPage type="steel" />} />
             <Route path="/localizacao/:location" element={<LocationPage type="drywall" />} />

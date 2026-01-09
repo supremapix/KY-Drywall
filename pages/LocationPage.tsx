@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { MapPin, CheckCircle2, ShieldCheck, Zap, HardHat, Recycle, Timer, ChevronRight, MessageCircle, ArrowLeft, Phone, Package, Clock, Truck, Star, Home } from 'lucide-react';
-import { BASE_URL, SERVICES, NEIGHBORHOODS, CITIES_RMC, CIC_LOCATIONS, getRandomCTA, PRODUCTS, COMPANY_INFO, normalizeLocationName } from '../constants';
+import { BASE_URL, SERVICES, NEIGHBORHOODS, CITIES_RMC, getRandomCTA, PRODUCTS, COMPANY_INFO, normalizeLocationName } from '../constants';
 import EnhancedSEO from '../components/EnhancedSEO';
 import ProductCard from '../components/ProductCard';
 
@@ -378,35 +378,6 @@ const LocationPage: React.FC<LocationPageProps> = ({ type }) => {
                     >
                       <span className={`text-xs font-bold ${normalizeLocationName(n) === location ? 'text-[#D31219]' : 'text-gray-600 group-hover:text-[#D31219]'}`}>{n}</span>
                       <ChevronRight size={16} className={`${normalizeLocationName(n) === location ? 'text-[#D31219]' : 'text-gray-300 group-hover:text-[#D31219]'}`} />
-                    </Link>
-                  ))}
-                </div>
-              </div>
-
-              <div className="bg-gradient-to-br from-[#D31219] to-[#a00e13] p-10 rounded-[3rem] shadow-2xl text-white border-2 border-white/20">
-                <h4 className="text-xl font-black uppercase tracking-tight mb-8 border-b-2 border-white/20 pb-6 flex items-center gap-2">
-                  <MapPin className="text-white" size={24}/> CIC - Cidade Industrial
-                </h4>
-                <div className="space-y-2 mb-4">
-                  <Link
-                    to="/drywall-em-cic"
-                    onClick={() => window.scrollTo(0, 0)}
-                    className="group flex items-center justify-between p-4 rounded-2xl bg-white/10 hover:bg-white/20 transition-all border border-white/20"
-                  >
-                    <span className="text-xs font-black text-white">Ver Todas as Localidades do CIC</span>
-                    <ChevronRight size={16} className="text-white" />
-                  </Link>
-                </div>
-                <div className="grid grid-cols-1 gap-2">
-                  {CIC_LOCATIONS.vilas.slice(0, 6).map(vila => (
-                    <Link
-                      key={vila}
-                      to={`/drywall-em-${normalizeLocationName(vila)}`}
-                      onClick={() => window.scrollTo(0, 0)}
-                      className={`group flex items-center justify-between p-3 rounded-2xl hover:bg-white/10 transition-all ${normalizeLocationName(vila) === location ? 'bg-white/20' : ''}`}
-                    >
-                      <span className={`text-xs font-bold ${normalizeLocationName(vila) === location ? 'text-white' : 'text-white/80 group-hover:text-white'}`}>{vila}</span>
-                      <ChevronRight size={14} className={`${normalizeLocationName(vila) === location ? 'text-white' : 'text-white/60 group-hover:text-white'}`} />
                     </Link>
                   ))}
                 </div>
