@@ -54,7 +54,7 @@ export const NAV_ITEMS: NavItem[] = [
 export const PRODUCTS: Product[] = [
   {
     id: 'm1',
-    category: 'Massas',
+    category: 'Drywall',
     name: 'Massa para Drywall Holdflex',
     description: 'Massa para tratamento de juntas de drywall de alta qualidade. Secagem rápida e acabamento extra liso, ideal para juntas e fixações.',
     image: 'https://kydrywall.com.br/produtos/wp-content/uploads/2022/09/massa-drywall.png',
@@ -64,7 +64,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'm2',
-    category: 'Massas',
+    category: 'Drywall',
     name: 'Massa para Placa Cimentícia Holdflex',
     description: 'Massa específica para placas cimentícias. Alta aderência e resistência à umidade para áreas externas.',
     image: 'https://kydrywall.com.br/produtos/wp-content/uploads/2022/10/f6b82793-4e7c-4fde-ba06-a981980ae6d7.jpg',
@@ -74,7 +74,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'm3',
-    category: 'Massas',
+    category: 'Drywall',
     name: 'Massa em pó 20Kg Gypsum',
     description: 'Massa em pó para tratamento de juntas. Fácil aplicação e excelente acabamento.',
     image: 'https://kydrywall.com.br/produtos/wp-content/uploads/2022/11/massa-po.jpg',
@@ -134,8 +134,8 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'f1',
-    category: 'Fitas',
-    name: 'Fita para Cimentícia Cimentape 102mm x 46m',
+    category: 'Drywall',
+    name: 'Fita para Cimentícia 102mm x 46m',
     description: 'Fita especial para placas cimentícias. Alta aderência e resistência à umidade.',
     image: 'https://kydrywall.com.br/produtos/wp-content/uploads/2022/10/ftc102_cimentape_galeria.png',
     rating: 4.9,
@@ -184,7 +184,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'pa1',
-    category: 'Parafusos',
+    category: 'Drywall',
     name: 'Parafuso 3,5x35 (GN35) Drywall',
     description: 'Parafuso fosfatizado para fixação de chapas de gesso em perfis metálicos. Ponta agulha para fácil penetração.',
     image: 'https://kydrywall.com.br/produtos/wp-content/uploads/2022/10/parafusos-gn35.jpg',
@@ -194,7 +194,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'pa2',
-    category: 'Parafusos',
+    category: 'Drywall',
     name: 'Parafuso Steel Frame Cabeça Chata Placa OSB',
     description: 'Parafuso especial com acabamento Dacromet para fixação de placas OSB em estruturas steel frame.',
     image: 'https://kydrywall.com.br/produtos/wp-content/uploads/2022/10/paraf-placa-osb-dacromet-11.jpg',
@@ -234,7 +234,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'pl1',
-    category: 'Placas',
+    category: 'Drywall',
     name: 'Chapa RF Rosa',
     description: 'Chapa resistente ao fogo (RF) na cor rosa. Ideal para áreas que necessitam proteção contra incêndio.',
     image: 'https://kydrywall.com.br/produtos/wp-content/uploads/2022/10/Chapa-RF-768x768.jpg',
@@ -244,7 +244,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'pl2',
-    category: 'Placas',
+    category: 'Drywall',
     name: 'Chapa RU Verde',
     description: 'Chapa resistente à umidade (RU) na cor verde. Perfeita para áreas molhadas e com alta umidade.',
     image: 'https://kydrywall.com.br/produtos/wp-content/uploads/2022/10/Chapa-Ru-768x768.jpg',
@@ -314,7 +314,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'pe2',
-    category: 'Perfis',
+    category: 'Drywall',
     name: 'Perfil Montante 70 Barbieri',
     description: 'Perfil vertical de 70mm com galvanização Z180. Alta resistência estrutural para paredes e divisórias.',
     image: 'https://kydrywall.com.br/produtos/wp-content/uploads/2022/10/montante-70.jpg',
@@ -404,7 +404,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'la3',
-    category: 'Lã (Isolamento)',
+    category: 'Drywall',
     name: 'Lã de Vidro Isover',
     description: 'Lã de vidro Isover de alta performance. Excelente isolamento termo-acústico.',
     image: 'https://kydrywall.com.br/produtos/wp-content/uploads/2023/03/1xg.webp',
