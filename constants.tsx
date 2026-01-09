@@ -57,7 +57,7 @@ export const PRODUCTS: Product[] = [
     category: 'Massas',
     name: 'Massa para Drywall Holdflex',
     description: 'Massa para tratamento de juntas de drywall de alta qualidade. Secagem rápida e acabamento extra liso, ideal para juntas e fixações.',
-    image: 'https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: '/massa_para_drywall_holdflex.png',
     rating: 5,
     specs: ['Embalagem: 28kg', 'Uso: Juntas Drywall', 'Marca: Holdflex'],
     applications: ['Paredes Internas', 'Forros', 'Acabamento de Parafusos']
@@ -67,7 +67,7 @@ export const PRODUCTS: Product[] = [
     category: 'Massas',
     name: 'Massa para Placa Cimentícia Holdflex',
     description: 'Massa específica para placas cimentícias. Alta aderência e resistência à umidade para áreas externas.',
-    image: 'https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: '/massa_para_placa_cimenticia_holdflex.jpg',
     rating: 4.9,
     specs: ['Marca: Holdflex', 'Uso: Placas Cimentícias', 'Resistente à Água'],
     applications: ['Áreas Externas', 'Fachadas', 'Áreas Úmidas']
@@ -77,7 +77,7 @@ export const PRODUCTS: Product[] = [
     category: 'Massas',
     name: 'Massa em pó 20Kg Gypsum',
     description: 'Massa em pó para tratamento de juntas. Fácil aplicação e excelente acabamento.',
-    image: 'https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: '/massa_em_po_20kg,_gypsum.jpg',
     rating: 4.8,
     specs: ['Embalagem: 20kg', 'Marca: Gypsum', 'Em Pó'],
     applications: ['Juntas', 'Acabamento', 'Revestimentos']
@@ -87,7 +87,7 @@ export const PRODUCTS: Product[] = [
     category: 'Massas',
     name: 'Massa corrida PVA branco 15Kg Induscril',
     description: 'Massa corrida PVA para acabamento fino em paredes e tetos. Cor branca, fácil lixamento.',
-    image: 'https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: '/massa_corrida_pva_branco_15kg,_induscril.jpg',
     rating: 4.7,
     specs: ['Embalagem: 15kg', 'Marca: Induscril', 'Cor: Branco'],
     applications: ['Acabamento Fino', 'Paredes', 'Tetos']
@@ -117,7 +117,7 @@ export const PRODUCTS: Product[] = [
     category: 'Massas',
     name: 'Gesso Cola Saco',
     description: 'Gesso cola para fixação de placas e molduras. Secagem rápida e alta aderência.',
-    image: 'https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: '/gesso_cola_saco.jpg',
     rating: 4.8,
     specs: ['Embalagem: 20kg', 'Tipo: Cola', 'Secagem Rápida'],
     applications: ['Fixação de Placas', 'Molduras', 'Sancas']
@@ -127,7 +127,7 @@ export const PRODUCTS: Product[] = [
     category: 'Massas',
     name: 'Gesso em pó Marília',
     description: 'Gesso em pó massa fina para acabamentos e moldagens. Alta qualidade.',
-    image: 'https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: '/gesso_em_po_marilia.jpg',
     rating: 4.7,
     specs: ['Embalagem: 40kg', 'Marca: Marília', 'Massa Fina'],
     applications: ['Acabamento', 'Moldagens', 'Detalhes']
@@ -137,7 +137,7 @@ export const PRODUCTS: Product[] = [
     category: 'Drywall',
     name: 'Fita para Cimentícia 102mm x 46m',
     description: 'Fita especial para placas cimentícias. Alta aderência e resistência à umidade.',
-    image: 'https://images.pexels.com/photos/5691551/pexels-photo-5691551.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: '/fita_para_cimenticia_102mm_x_46m.png',
     rating: 4.9,
     specs: ['Largura: 102mm', 'Comprimento: 46m', 'Uso: Placas Cimentícias'],
     applications: ['Placas Cimentícias', 'Áreas Externas', 'Ambientes Úmidos']
@@ -147,7 +147,7 @@ export const PRODUCTS: Product[] = [
     category: 'Fitas',
     name: 'Fita Telada Azul Ancora',
     description: 'Fita telada em fibra de vidro. Maior resistência para juntas e áreas de maior tensão.',
-    image: 'https://images.pexels.com/photos/5691551/pexels-photo-5691551.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: '/fita_telada_azul_-_ancora.jpg',
     rating: 4.9,
     specs: ['Material: Fibra de Vidro', 'Marca: Ancora', 'Cor: Azul'],
     applications: ['Placas Cimentícias', 'Áreas de Tensão', 'Juntas Estruturais']
@@ -157,7 +157,7 @@ export const PRODUCTS: Product[] = [
     category: 'Fitas',
     name: 'Fita Papel Gypsum',
     description: 'Fita de papel microperfurada de alta resistência. Ideal para tratamento de juntas e cantos internos.',
-    image: 'https://images.pexels.com/photos/5691551/pexels-photo-5691551.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: '/fita_papel.jpg',
     rating: 5,
     specs: ['Material: Papel', 'Marca: Gypsum', 'Microperfurada'],
     applications: ['Tratamento de Juntas', 'Reforço de Cantos', 'Acabamento']
@@ -167,7 +167,7 @@ export const PRODUCTS: Product[] = [
     category: 'Fitas',
     name: 'Fita Metálica para Canto Ancora',
     description: 'Fita metálica para proteção e reforço de cantos externos. Acabamento perfeito e durável.',
-    image: 'https://images.pexels.com/photos/5691551/pexels-photo-5691551.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: '/fita_metalica_para_canto,_ancora.webp',
     rating: 5,
     specs: ['Material: Metal', 'Marca: Ancora', 'Uso: Cantos'],
     applications: ['Proteção de Cantos', 'Acabamento Externo', 'Reforço Estrutural']
@@ -177,7 +177,7 @@ export const PRODUCTS: Product[] = [
     category: 'Fitas',
     name: 'Fita Banda Acústica 70mm x 10m Placo',
     description: 'Fita especial para isolamento acústico. Reduz a propagação de ruídos entre ambientes.',
-    image: 'https://images.pexels.com/photos/5691551/pexels-photo-5691551.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: '/fita_banda_acustica.webp',
     rating: 4.8,
     specs: ['Largura: 70mm', 'Comprimento: 10m', 'Marca: Placo'],
     applications: ['Isolamento Acústico', 'Base de Perfis', 'Redução de Ruído']
@@ -187,7 +187,7 @@ export const PRODUCTS: Product[] = [
     category: 'Parafusos',
     name: 'Parafuso 3,5x35 (GN35) Drywall',
     description: 'Parafuso fosfatizado para fixação de chapas de gesso em perfis metálicos. Ponta agulha para fácil penetração.',
-    image: 'https://images.pexels.com/photos/209235/pexels-photo-209235.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: '/parafuso_3,5x35_(gn35)_drywall.jpg',
     rating: 4.9,
     specs: ['Bitola: 3,5mm', 'Comprimento: 35mm', 'Tipo: GN35'],
     applications: ['Fixação de Placas ST', 'Fixação de Placas RU', 'Montagem de Forros']
@@ -197,7 +197,7 @@ export const PRODUCTS: Product[] = [
     category: 'Parafusos',
     name: 'Parafuso Steel Frame Cabeça Chata Placa OSB',
     description: 'Parafuso especial com acabamento Dacromet para fixação de placas OSB em estruturas steel frame.',
-    image: 'https://images.pexels.com/photos/209235/pexels-photo-209235.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: '/parafuso_stell_frame_cabeca_chata_placa_osb.jpg',
     rating: 5,
     specs: ['Tipo: Cabeça Chata', 'Acabamento: Dacromet', 'Uso: Placa OSB'],
     applications: ['Steel Frame', 'Fixação OSB', 'Estruturas de Telhado']
@@ -237,7 +237,7 @@ export const PRODUCTS: Product[] = [
     category: 'Placas',
     name: 'Chapa RF Rosa',
     description: 'Chapa resistente ao fogo (RF) na cor rosa. Ideal para áreas que necessitam proteção contra incêndio.',
-    image: 'https://images.pexels.com/photos/5691593/pexels-photo-5691593.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: '/chapa_rf_rosa.jpg',
     rating: 4.9,
     specs: ['Dimensão: 1,20 x 1,80m', 'Tipo: RF (Resistente ao Fogo)', 'Cor: Rosa'],
     applications: ['Rotas de Fuga', 'Cozinhas', 'Áreas com Risco de Incêndio']
@@ -247,7 +247,7 @@ export const PRODUCTS: Product[] = [
     category: 'Placas',
     name: 'Chapa RU Verde',
     description: 'Chapa resistente à umidade (RU) na cor verde. Perfeita para áreas molhadas e com alta umidade.',
-    image: 'https://images.pexels.com/photos/5691593/pexels-photo-5691593.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: '/chapa_ru_verde.jpg',
     rating: 4.8,
     specs: ['Dimensão: 1,20 x 1,80m', 'Tipo: RU (Resistente à Umidade)', 'Cor: Verde'],
     applications: ['Banheiros', 'Cozinhas', 'Áreas Externas Cobertas']
@@ -257,7 +257,7 @@ export const PRODUCTS: Product[] = [
     category: 'Placas',
     name: 'Chapa Drywall ST Branca',
     description: 'Chapa standard para uso geral em forros e paredes divisórias. Ideal para ambientes secos, oferece excelente acabamento.',
-    image: 'https://images.pexels.com/photos/5691593/pexels-photo-5691593.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: '/chapa_drywall_st_branca.jpg',
     rating: 4.8,
     specs: ['Dimensão: 1,20 x 1,80m', 'Espessura: 12.5mm', 'Tipo: ST Branca'],
     applications: ['Divisórias', 'Forros', 'Revestimentos']
@@ -267,7 +267,7 @@ export const PRODUCTS: Product[] = [
     category: 'Placas',
     name: 'Chapa Drywall ST Branca Fortissima',
     description: 'Chapa de alta resistência da marca Fortissima. Maior durabilidade e resistência mecânica para projetos exigentes.',
-    image: 'https://images.pexels.com/photos/5691593/pexels-photo-5691593.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: '/chapa_drywall_st_branca_fortissima.webp',
     rating: 5,
     specs: ['Dimensão: 1,20 x 1,80m', 'Espessura: 12.5mm', 'Marca: Fortissima'],
     applications: ['Áreas de Alto Tráfego', 'Paredes Estruturais', 'Divisórias Reforçadas']
@@ -277,7 +277,7 @@ export const PRODUCTS: Product[] = [
     category: 'Placas',
     name: 'Chapa Glasroc',
     description: 'Placa cimentícia de alta performance. Resistência superior à água e ao impacto, ideal para áreas externas.',
-    image: 'https://images.pexels.com/photos/5691593/pexels-photo-5691593.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: '/chapa_glasroc.jpg',
     rating: 5,
     specs: ['Tipo: Cimentícia', 'Marca: Glasroc', 'Alta Resistência'],
     applications: ['Fachadas', 'Áreas Externas', 'Ambientes Úmidos']
@@ -307,7 +307,7 @@ export const PRODUCTS: Product[] = [
     category: 'Perfis',
     name: 'Perfil Drywall Guia 48 Barbieri',
     description: 'Perfil guia horizontal de 48mm. Base essencial para estruturas de drywall, instalado no piso e teto.',
-    image: 'https://images.pexels.com/photos/5691601/pexels-photo-5691601.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: '/perfil_drywall_guia_48_barbieri.webp',
     rating: 4.9,
     specs: ['Largura: 48mm', 'Comprimento: 3000mm', 'Marca: Barbieri'],
     applications: ['Base de Paredes', 'Estrutura de Forros', 'Fixação de Montantes']
@@ -327,7 +327,7 @@ export const PRODUCTS: Product[] = [
     category: 'Perfis',
     name: 'Perfil Guia de 70 Barbieri',
     description: 'Perfil guia de 70mm para estruturas mais robustas. Barbieri com galvanização premium.',
-    image: 'https://images.pexels.com/photos/5691601/pexels-photo-5691601.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: '/perfil_guia_de_70_barbieri.jpg',
     rating: 4.9,
     specs: ['Largura: 70mm', 'Comprimento: 3000mm', 'Marca: Barbieri'],
     applications: ['Estruturas Reforçadas', 'Paredes Duplas', 'Base de Montantes']
@@ -337,7 +337,7 @@ export const PRODUCTS: Product[] = [
     category: 'Perfis',
     name: 'Perfil Guia de 90',
     description: 'Perfil guia de 90mm para estruturas de grande porte e paredes espessas.',
-    image: 'https://images.pexels.com/photos/5691601/pexels-photo-5691601.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: '/perfil_guia_de_90.jpg',
     rating: 4.8,
     specs: ['Largura: 90mm', 'Comprimento: 3000mm', 'Uso: Estruturas Grandes'],
     applications: ['Paredes Espessas', 'Isolamento Acústico', 'Estruturas Robustas']
@@ -387,7 +387,7 @@ export const PRODUCTS: Product[] = [
     category: 'Lã (Isolamento)',
     name: 'Lã de Pet',
     description: 'Isolamento termo-acústico ecológico feito de material reciclado. Sustentável e eficiente.',
-    image: 'https://images.pexels.com/photos/6419130/pexels-photo-6419130.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: '/la_de_pet.webp',
     rating: 4.9,
     specs: ['Material: Pet Reciclado', 'Espessura: 50mm', 'Ecológico'],
     applications: ['Isolamento Térmico', 'Isolamento Acústico', 'Construção Sustentável']
@@ -417,7 +417,7 @@ export const PRODUCTS: Product[] = [
     category: 'Ferragens',
     name: 'Adaptador Angular Para Parafusadeira',
     description: 'Adaptador angular para facilitar a aplicação de parafusos em locais de difícil acesso.',
-    image: 'https://images.pexels.com/photos/1249611/pexels-photo-1249611.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: '/adaptador_angular_para_parafusadeira.webp',
     rating: 4.7,
     specs: ['Tipo: Angular', 'Uso: Parafusadeira', 'Ângulo: 60°'],
     applications: ['Locais de Difícil Acesso', 'Cantos', 'Instalações']
@@ -427,7 +427,7 @@ export const PRODUCTS: Product[] = [
     category: 'Ferragens',
     name: 'Adaptador de Tomada',
     description: 'Adaptador de tomada 2P chato para 2P redondo. Prático e seguro.',
-    image: 'https://images.pexels.com/photos/1249611/pexels-photo-1249611.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: '/adaptador_de_tomada.webp',
     rating: 4.5,
     specs: ['Tipo: 2P', 'Corrente: 10A', 'Tensão: 250V'],
     applications: ['Instalações Elétricas', 'Canteiros de Obra', 'Uso Geral']
@@ -437,7 +437,7 @@ export const PRODUCTS: Product[] = [
     category: 'Placas',
     name: 'Compensado Fenólico',
     description: 'Compensado fenólico de alta qualidade. Resistente à água, ideal para formas de concreto e estruturas.',
-    image: 'https://images.pexels.com/photos/1249611/pexels-photo-1249611.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: '/compensado_fenolico.png',
     rating: 4.8,
     specs: ['Tipo: Fenólico', 'Resistente à Água', 'Múltiplos Usos'],
     applications: ['Formas de Concreto', 'Estruturas Temporárias', 'Construção Civil']
@@ -457,7 +457,7 @@ export const PRODUCTS: Product[] = [
     category: 'Diversos',
     name: 'Arame Galvanizado BWG20',
     description: 'Arame galvanizado BWG20 para amarrações e fixações em estruturas de drywall.',
-    image: 'https://images.pexels.com/photos/1249611/pexels-photo-1249611.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: '/arame_galvanizado_bwg20.webp',
     rating: 4.8,
     specs: ['Bitola: BWG20', 'Diâmetro: 0,89mm', 'Galvanizado'],
     applications: ['Amarrações', 'Fixações', 'Estruturas']
@@ -467,7 +467,7 @@ export const PRODUCTS: Product[] = [
     category: 'Diversos',
     name: 'Arame Galvanizado BWG10',
     description: 'Arame galvanizado BWG10 para fixações mais robustas. Embalagem de 5kg.',
-    image: 'https://images.pexels.com/photos/1249611/pexels-photo-1249611.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: '/arame_galvanizado_bwg10.webp',
     rating: 4.9,
     specs: ['Bitola: BWG10', 'Embalagem: 5kg', 'Marca: Ancora'],
     applications: ['Fixações Robustas', 'Estruturas Pesadas', 'Amarrações']
@@ -477,7 +477,7 @@ export const PRODUCTS: Product[] = [
     category: 'Parafusos',
     name: 'Bucha Nylon',
     description: 'Bucha nylon para fixação em paredes maciças. Pacote com 200 peças.',
-    image: 'https://images.pexels.com/photos/1249611/pexels-photo-1249611.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: '/bucha_nylon.webp',
     rating: 4.6,
     specs: ['Material: Nylon', 'Quantidade: 200 peças', 'Uso: Parede Maciça'],
     applications: ['Fixação em Paredes', 'Instalações', 'Montagens']
@@ -487,7 +487,7 @@ export const PRODUCTS: Product[] = [
     category: 'Perfis',
     name: 'Cantoneira',
     description: 'Cantoneira metálica para proteção e reforço de cantos em drywall.',
-    image: 'https://images.pexels.com/photos/1249611/pexels-photo-1249611.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: '/cantoneira.jpg',
     rating: 4.8,
     specs: ['Material: Metal', 'Uso: Cantos', 'Proteção'],
     applications: ['Proteção de Cantos', 'Reforço', 'Acabamento']
@@ -497,7 +497,7 @@ export const PRODUCTS: Product[] = [
     category: 'Perfis',
     name: 'Cantoneira Perfurada',
     description: 'Cantoneira perfurada para melhor aderência da massa. Acabamento profissional.',
-    image: 'https://images.pexels.com/photos/1249611/pexels-photo-1249611.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: '/cantoneira_perfurada.webp',
     rating: 4.7,
     specs: ['Tipo: Perfurada', 'Material: Metal', 'Melhor Aderência'],
     applications: ['Acabamento Profissional', 'Cantos', 'Reforço']
@@ -507,7 +507,7 @@ export const PRODUCTS: Product[] = [
     category: 'Perfis',
     name: 'Cantoneira PVC com Tela',
     description: 'Cantoneira em PVC com tela para melhor fixação e acabamento em cantos.',
-    image: 'https://images.pexels.com/photos/1249611/pexels-photo-1249611.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: '/cantoneira_pvc_com_tela.webp',
     rating: 4.6,
     specs: ['Material: PVC', 'Com Tela', 'Fácil Aplicação'],
     applications: ['Cantos Internos', 'Acabamento', 'Proteção']
@@ -547,7 +547,7 @@ export const PRODUCTS: Product[] = [
     category: 'Perfis',
     name: 'Emenda para F530',
     description: 'Emenda específica para perfil F530. Conexão segura e resistente.',
-    image: 'https://images.pexels.com/photos/1249611/pexels-photo-1249611.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: '/emenda_para_f530.jpg',
     rating: 4.7,
     specs: ['Uso: Perfil F530', 'Material: Metal', 'Alta Resistência'],
     applications: ['Emenda de Perfis', 'Estruturas de Forro', 'Conexões']
