@@ -184,7 +184,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'pa1',
-    category: 'Drywall',
+    category: 'Parafusos',
     name: 'Parafuso 3,5x35 (GN35) Drywall',
     description: 'Parafuso fosfatizado para fixação de chapas de gesso em perfis metálicos. Ponta agulha para fácil penetração.',
     image: 'https://kydrywall.com.br/produtos/wp-content/uploads/2022/10/parafusos-gn35.jpg',
@@ -194,7 +194,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'pa2',
-    category: 'Drywall',
+    category: 'Parafusos',
     name: 'Parafuso Steel Frame Cabeça Chata Placa OSB',
     description: 'Parafuso especial com acabamento Dacromet para fixação de placas OSB em estruturas steel frame.',
     image: 'https://kydrywall.com.br/produtos/wp-content/uploads/2022/10/paraf-placa-osb-dacromet-11.jpg',
@@ -474,7 +474,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'fe3',
-    category: 'Ferragens',
+    category: 'Parafusos',
     name: 'Bucha Nylon',
     description: 'Bucha nylon para fixação em paredes maciças. Pacote com 200 peças.',
     image: 'https://kydrywall.com.br/produtos/wp-content/uploads/2023/03/bucha-06aba-200pc-nylon-parede-macica-403261-worker-1582749392-768x768.webp',
