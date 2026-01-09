@@ -17,7 +17,7 @@ const Blog: React.FC = () => {
       name: 'KY Drywall & Steel Frame',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://kydrywall.com.br/produtos/wp-content/uploads/2022/09/logotipo-kydrywall-1-1.png'
+        url: 'https://images.pexels.com/photos/1292294/pexels-photo-1292294.jpeg?auto=compress&cs=tinysrgb&w=800'
       }
     },
     blogPost: BLOG_POSTS.map(post => ({

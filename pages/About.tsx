@@ -12,7 +12,7 @@ const About: React.FC = () => {
     name: 'KY Drywall & Steel Frame',
     description: 'Maior distribuidora de materiais para construção a seco de Curitiba. Especialistas em Steel Frame, Drywall, Telhado Shingle e Isolamento Acústico',
     url: BASE_URL,
-    logo: 'https://kydrywall.com.br/produtos/wp-content/uploads/2022/09/logotipo-kydrywall-1-1.png',
+    logo: 'https://images.pexels.com/photos/1292294/pexels-photo-1292294.jpeg?auto=compress&cs=tinysrgb&w=800',
     telephone: '+554135284232',
     email: 'carlos@kydrywall.com.br',
     address: {

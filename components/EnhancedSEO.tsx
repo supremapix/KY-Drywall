@@ -131,7 +131,7 @@ const EnhancedSEO: React.FC<SEOProps> = ({
     updateOrCreateMeta('meta[name="geo.position"]', 'content', '-25.4284;-49.2733');
     updateOrCreateMeta('meta[name="ICBM"]', 'content', '-25.4284, -49.2733');
 
-    updateOrCreateLink('dns-prefetch', 'https://kydrywall.com.br');
+    updateOrCreateLink('dns-prefetch', 'https://images.pexels.com');
     updateOrCreateLink('preconnect', 'https://fonts.googleapis.com');
     updateOrCreateLink('preconnect', 'https://fonts.gstatic.com', { crossorigin: 'anonymous' });
 
