@@ -58,8 +58,8 @@ const App: React.FC = () => {
             <Route path="/blog" element={<Blog />} />
             <Route path="/drywall-em-:location" element={<LocationPage type="drywall" />} />
             <Route path="/steel-frame-em-:location" element={<LocationPage type="steel" />} />
+            <Route path="/localizacao/:location" element={<LocationPage type="drywall" />} />
             <Route path="/sitemap" element={<Sitemap />} />
-            {/* Catch-all route for 404 */}
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
