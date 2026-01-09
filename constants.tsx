@@ -404,7 +404,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'la3',
-    category: 'Drywall',
+    category: 'Lã (Isolamento)',
     name: 'Lã de Vidro Isover',
     description: 'Lã de vidro Isover de alta performance. Excelente isolamento termo-acústico.',
     image: 'https://kydrywall.com.br/produtos/wp-content/uploads/2023/03/1xg.webp',
@@ -414,7 +414,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'd1',
-    category: 'Diversos',
+    category: 'Ferragens',
     name: 'Adaptador Angular Para Parafusadeira',
     description: 'Adaptador angular para facilitar a aplicação de parafusos em locais de difícil acesso.',
     image: 'https://kydrywall.com.br/produtos/wp-content/uploads/2023/03/adaptador_angular_p_parafusadeira_xmt_60_western_251329_2_10c2ce967340fa139b8a37cec0a13e00_20221108174711-768x768.webp',
@@ -424,7 +424,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'd2',
-    category: 'Diversos',
+    category: 'Ferragens',
     name: 'Adaptador de Tomada',
     description: 'Adaptador de tomada 2P chato para 2P redondo. Prático e seguro.',
     image: 'https://kydrywall.com.br/produtos/wp-content/uploads/2023/03/adaptador_tomada_2p_chato_p_2p_10a_250v_daneva_1549_35145_1_0e489dbc8a5dae01de2aeb306f2372cf-768x768.webp',
@@ -454,7 +454,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'fe1',
-    category: 'Ferragens',
+    category: 'Diversos',
     name: 'Arame Galvanizado BWG20',
     description: 'Arame galvanizado BWG20 para amarrações e fixações em estruturas de drywall.',
     image: 'https://kydrywall.com.br/produtos/wp-content/uploads/2023/03/arame_galvanizado_fio_20_0_89mm_arcelormittal_11445_1_bfda8f02b4a1e7cf5a821bc2ac9656a8-768x768.webp',
@@ -464,7 +464,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'fe2',
-    category: 'Ferragens',
+    category: 'Diversos',
     name: 'Arame Galvanizado BWG10',
     description: 'Arame galvanizado BWG10 para fixações mais robustas. Embalagem de 5kg.',
     image: 'https://kydrywall.com.br/produtos/wp-content/uploads/2023/03/arame_galvanizado_bwg10_5kg_ancora_16021_1_fecf308cee84df94a4adb3c7bb51136a-768x768.webp',
