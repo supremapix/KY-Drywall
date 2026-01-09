@@ -54,7 +54,7 @@ export const NAV_ITEMS: NavItem[] = [
 export const PRODUCTS: Product[] = [
   {
     id: 'm1',
-    category: 'Drywall',
+    category: 'Massas',
     name: 'Massa para Drywall Holdflex',
     description: 'Massa para tratamento de juntas de drywall de alta qualidade. Secagem rápida e acabamento extra liso, ideal para juntas e fixações.',
     image: 'https://kydrywall.com.br/produtos/wp-content/uploads/2022/09/massa-drywall.png',
@@ -64,7 +64,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'm2',
-    category: 'Drywall',
+    category: 'Massas',
     name: 'Massa para Placa Cimentícia Holdflex',
     description: 'Massa específica para placas cimentícias. Alta aderência e resistência à umidade para áreas externas.',
     image: 'https://kydrywall.com.br/produtos/wp-content/uploads/2022/10/f6b82793-4e7c-4fde-ba06-a981980ae6d7.jpg',
@@ -74,7 +74,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'm3',
-    category: 'Drywall',
+    category: 'Massas',
     name: 'Massa em pó 20Kg Gypsum',
     description: 'Massa em pó para tratamento de juntas. Fácil aplicação e excelente acabamento.',
     image: 'https://kydrywall.com.br/produtos/wp-content/uploads/2022/11/massa-po.jpg',
