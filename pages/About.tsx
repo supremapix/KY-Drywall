@@ -39,17 +39,20 @@ const About: React.FC = () => {
                   <p className="text-sm"><Clock className="inline mr-2" size={16}/>{COMPANY_INFO.hours.saturday}</p>
                 </div>
               </div>
-              <div className="pt-6">
-                <a href={`https://wa.me/${COMPANY_INFO.whatsapp}`} className="bg-[#D31219] text-white font-black px-12 py-6 rounded-2xl inline-flex items-center gap-4 text-xs uppercase tracking-widest shadow-xl hover:bg-[#003366] transition-all">
-                  <MessageCircle size={24} /> {cta}
+              <div className="pt-6 flex flex-col sm:flex-row gap-4">
+                <a href={`https://wa.me/${COMPANY_INFO.whatsapp}?text=Olá! Quero fazer um orçamento. Preciso de assessoria técnica.`} className="bg-[#D31219] text-white font-black px-12 py-6 rounded-2xl inline-flex items-center justify-center gap-4 text-xs uppercase tracking-widest shadow-xl hover:bg-[#003366] hover:scale-105 transition-all">
+                  <MessageCircle size={24} /> Orçamento Gratuito
+                </a>
+                <a href={`tel:${COMPANY_INFO.phone.replace(/\D/g, '')}`} className="bg-white text-[#003366] border-2 border-[#003366] font-black px-12 py-6 rounded-2xl inline-flex items-center justify-center gap-4 text-xs uppercase tracking-widest hover:bg-[#003366] hover:text-white transition-all">
+                  Ligar Agora
                 </a>
               </div>
             </div>
             <div className="relative order-1 lg:order-2">
-              <div className="rounded-[4rem] overflow-hidden shadow-2xl border-[12px] border-gray-50 aspect-[3/4]">
-                <img src="https://images.pexels.com/photos/8092357/pexels-photo-8092357.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Instalação Drywall" className="w-full h-full object-cover" />
+              <div className="rounded-[4rem] overflow-hidden shadow-2xl border-[12px] border-gray-50">
+                <img src="/gemini_generated_image_jk8nftjk8nftjk8n.png" alt="Loja KY Drywall na BR-277 Curitiba" className="w-full h-full object-cover" />
               </div>
-              <div className="absolute -top-10 -right-6 bg-white p-8 rounded-[2.5rem] shadow-2xl border border-gray-100 text-center">
+              <div className="absolute -bottom-10 -left-6 bg-white p-8 rounded-[2.5rem] shadow-2xl border border-gray-100 text-center">
                  <Award size={40} className="text-[#D31219] mx-auto mb-4" />
                  <p className="text-3xl font-black text-[#003366]">70%</p>
                  <p className="text-[8px] font-black uppercase text-gray-400 tracking-wider">Mais Rápido</p>

@@ -55,10 +55,13 @@ const ServicesPage: React.FC = () => {
                 ))}
               </div>
 
-              <div className="pt-8">
-                <a href="https://wa.me/5541996457421" className="bg-[#D31219] text-white font-black px-12 py-6 rounded-2xl inline-flex items-center gap-4 text-xs uppercase tracking-widest shadow-xl">
-                  <MessageCircle size={24} /> {ctaPhrase}
+              <div className="pt-8 flex flex-col sm:flex-row gap-4">
+                <a href={`https://wa.me/5541996457421?text=Olá! Quero um orçamento para ${currentService?.title}. Preciso de assessoria técnica especializada.`} className="bg-[#D31219] text-white font-black px-12 py-6 rounded-2xl inline-flex items-center justify-center gap-4 text-xs uppercase tracking-widest shadow-xl hover:bg-black hover:scale-105 transition-all">
+                  <MessageCircle size={24} /> Orçamento Gratuito
                 </a>
+                <Link to="/produtos" className="bg-white text-[#003366] border-2 border-[#003366] font-black px-12 py-6 rounded-2xl inline-flex items-center justify-center gap-4 text-xs uppercase tracking-widest hover:bg-[#003366] hover:text-white transition-all">
+                  Ver Materiais
+                </Link>
               </div>
             </div>
 

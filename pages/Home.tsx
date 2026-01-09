@@ -6,14 +6,24 @@ import { SERVICES, BLOG_POSTS, NEIGHBORHOODS, CITIES_RMC, getRandomCTA, SITE_ASS
 
 const HERO_SLIDES = [
   {
-    image: 'https://images.pexels.com/photos/159306/construction-site-build-construction-work-159306.jpeg?auto=compress&cs=tinysrgb&w=1920',
-    title: 'Sua Obra <span class="text-[#D31219]">70% Mais Rápida</span>',
-    subtitle: 'Steel Frame & Drywall em Curitiba'
+    image: '/gemini_generated_image_jk8nftjk8nftjk8n.png',
+    title: 'A <span class="text-[#D31219]">Maior Loja</span> de Curitiba',
+    subtitle: 'Venha nos visitar na BR-277 - Cajuru'
   },
   {
-    image: 'https://images.pexels.com/photos/534220/pexels-photo-534220.jpeg?auto=compress&cs=tinysrgb&w=1920',
-    title: 'Distribuidor <span class="text-[#D31219]">Barbieri</span>',
-    subtitle: 'Aço Galvanizado Z180 Premium'
+    image: 'https://images.pexels.com/photos/159306/construction-site-build-construction-work-159306.jpeg?auto=compress&cs=tinysrgb&w=1920',
+    title: 'Sua Obra <span class="text-[#D31219]">70% Mais Rápida</span>',
+    subtitle: 'Sistemas de Construção a Seco'
+  },
+  {
+    image: 'https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=1920',
+    title: 'Distribuidor <span class="text-[#D31219]">Barbieri</span> Oficial',
+    subtitle: 'Perfis Steel Frame Z180 - Alta Resistência'
+  },
+  {
+    image: 'https://images.pexels.com/photos/8092357/pexels-photo-8092357.jpeg?auto=compress&cs=tinysrgb&w=1920',
+    title: '<span class="text-[#D31219]">Entrega Imediata</span> em Curitiba',
+    subtitle: 'Placas, Perfis e Acessórios em Estoque'
   }
 ];
 
@@ -53,13 +63,16 @@ const Home: React.FC = () => {
             <span className="inline-block bg-[#D31219] text-white text-[10px] font-black px-6 py-2 rounded-full uppercase tracking-[0.3em] mb-6 animate-pulse">
               {HERO_SLIDES[currentHero].subtitle}
             </span>
-            <h1 className="text-5xl md:text-8xl font-black leading-none mb-8 uppercase tracking-tighter" dangerouslySetInnerHTML={{ __html: HERO_SLIDES[currentHero].title }} />
+            <h1 className="text-5xl md:text-8xl font-black leading-none mb-6 uppercase tracking-tighter" dangerouslySetInnerHTML={{ __html: HERO_SLIDES[currentHero].title }} />
+            <p className="text-xl md:text-2xl text-gray-300 font-medium mb-10 max-w-2xl leading-relaxed">
+              Maior estoque de Curitiba com entrega rápida. Assessoria técnica especializada e os melhores preços do mercado.
+            </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <a href="https://wa.me/5541996457421" className="bg-[#D31219] text-white font-black px-12 py-6 rounded-2xl flex items-center justify-center gap-3 transition-all shadow-[0_20px_50px_rgba(211,18,25,0.3)] hover:shadow-[0_20px_60px_rgba(211,18,25,0.5)] uppercase tracking-widest text-xs group active:scale-95">
-                <MessageCircle size={20} className="group-hover:rotate-12 transition-transform" /> {heroCTA}
+              <a href="https://wa.me/5541996457421?text=Olá! Vim do site e quero fazer um orçamento" className="bg-[#D31219] text-white font-black px-12 py-6 rounded-2xl flex items-center justify-center gap-3 transition-all shadow-[0_20px_50px_rgba(211,18,25,0.3)] hover:shadow-[0_20px_60px_rgba(211,18,25,0.5)] hover:scale-105 uppercase tracking-widest text-xs group active:scale-95">
+                <MessageCircle size={20} className="group-hover:rotate-12 transition-transform" /> Orçamento Gratuito
               </a>
               <Link to="/produtos" className="bg-white/10 text-white font-black px-12 py-6 rounded-2xl flex items-center justify-center border-2 border-white/30 backdrop-blur-md uppercase tracking-widest text-xs hover:bg-white/20 transition-all">
-                Ver Catálogo Técnico
+                Ver Catálogo Completo
               </Link>
             </div>
           </div>
@@ -156,11 +169,16 @@ const Home: React.FC = () => {
                   Atendimento <br/><span className="text-[#D31219]">Presencial</span> Especializado
                 </h2>
                 <p className="text-gray-400 text-lg mb-12 font-medium leading-relaxed">
-                  Entrega rápida em Curitiba e Região Metropolitana. Atendemos do Batel ao Cajuru com assessoria técnica especializada e frota própria.
+                  Entregamos em todos os bairros de Curitiba e Região Metropolitana com frota própria. Do Batel ao CIC, assessoria técnica completa em sua obra.
                 </p>
-                <Link to="/blog" className="bg-[#D31219] text-white font-black px-12 py-6 rounded-2xl inline-flex items-center gap-4 text-xs uppercase tracking-widest shadow-2xl hover:scale-105 transition-transform group">
-                  Explorar Localidades <MapPin size={22} className="group-hover:animate-bounce" />
-                </Link>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <a href="https://wa.me/5541996457421?text=Olá! Quero saber sobre entrega na minha região" className="bg-[#D31219] text-white font-black px-12 py-6 rounded-2xl inline-flex items-center justify-center gap-4 text-xs uppercase tracking-widest shadow-2xl hover:scale-105 transition-transform group">
+                    <MessageCircle size={22} /> Consultar Entrega
+                  </a>
+                  <Link to="/blog" className="bg-white/10 text-white font-black px-12 py-6 rounded-2xl inline-flex items-center justify-center gap-4 text-xs uppercase tracking-widest hover:bg-white/20 transition-all border-2 border-white/10">
+                    Ver Localidades <MapPin size={22} />
+                  </Link>
+                </div>
               </div>
               <div className="grid grid-cols-2 gap-8">
                 <div className="bg-white/5 p-8 rounded-[2.5rem] border border-white/10">
@@ -249,13 +267,13 @@ const EliteServiceCard: React.FC<{ service: any, isFeatured?: boolean }> = ({ se
       <p className="text-gray-500 text-sm leading-relaxed mb-10 font-medium italic flex-grow" dangerouslySetInnerHTML={{ __html: service.description }} />
       
       <div className="space-y-4">
-        <a 
-          href={`https://wa.me/5541996457421?text=Olá, quero um orçamento para ${service.title}`} 
+        <a
+          href={`https://wa.me/5541996457421?text=Olá! Quero um orçamento para ${service.title}. Preciso de assessoria técnica.`}
           target="_blank"
           rel="noreferrer"
-          className={`w-full flex items-center justify-between px-8 py-5 rounded-2xl font-black uppercase tracking-widest text-[10px] transition-all group/btn shadow-xl ${isFeatured ? 'bg-[#D31219] text-white hover:bg-black' : 'bg-gray-900 text-white hover:bg-[#D31219]'}`}
+          className={`w-full flex items-center justify-between px-8 py-5 rounded-2xl font-black uppercase tracking-widest text-[10px] transition-all group/btn shadow-xl hover:scale-105 ${isFeatured ? 'bg-[#D31219] text-white hover:bg-black' : 'bg-gray-900 text-white hover:bg-[#D31219]'}`}
         >
-          <span>Solicitar Orçamento</span>
+          <span>Orçamento Grátis Agora</span>
           <MessageCircle size={18} className="group-hover/btn:rotate-12 transition-transform" />
         </a>
         <Link to={`/servicos/${service.id}`} className="block text-center text-[9px] font-black uppercase tracking-[0.2em] text-gray-400 hover:text-[#D31219] transition-colors">
