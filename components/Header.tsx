@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X, ChevronDown, ShoppingCart, Phone, Mail } from 'lucide-react';
-import { NAV_ITEMS, SITE_ASSETS } from '../constants';
+import { NAV_ITEMS, SITE_ASSETS, COMPANY_INFO } from '../constants';
 import { QuoteItem } from '../types';
 import QuoteDrawer from './QuoteDrawer';
 
@@ -32,16 +32,16 @@ const Header: React.FC = () => {
       <div className="bg-[#D31219] text-white py-2 px-4 sticky top-0 z-[60] border-b border-white/10">
         <div className="container mx-auto flex justify-between items-center text-[9px] md:text-[11px] font-black uppercase tracking-widest">
           <div className="flex items-center gap-4 md:gap-8">
-            <a href="tel:4135284232" className="flex items-center gap-2 hover:text-black transition-colors">
+            <a href={`tel:${COMPANY_INFO.phone.replace(/\D/g, '')}`} className="flex items-center gap-2 hover:text-black transition-colors">
               <Phone size={12} />
-              <span>(41) 3528-4232</span>
+              <span>{COMPANY_INFO.phone}</span>
             </a>
-            <a href="mailto:contato@kydrywall.com.br" className="hidden sm:flex items-center gap-2 hover:text-black transition-colors">
+            <a href={`mailto:${COMPANY_INFO.email}`} className="hidden sm:flex items-center gap-2 hover:text-black transition-colors">
               <Mail size={12} />
-              <span>contato@kydrywall.com.br</span>
+              <span>{COMPANY_INFO.email}</span>
             </a>
           </div>
-          <div className="hidden lg:block opacity-90">Atendimento Curitiba e RMC</div>
+          <div className="hidden lg:block opacity-90">Entrega Rápida em Curitiba e RMC</div>
         </div>
       </div>
       

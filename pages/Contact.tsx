@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { Mail, Phone, MapPin, Clock, MessageCircle, Navigation, ChevronRight, User, Smartphone, Send, ClipboardList } from 'lucide-react';
 import { QuoteItem } from '../types';
-import { getRandomCTA } from '../constants';
+import { getRandomCTA, COMPANY_INFO } from '../constants';
 
 const Contact: React.FC = () => {
   const [searchParams] = useSearchParams();
@@ -76,8 +76,8 @@ const Contact: React.FC = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-24">
             {/* Especialista 1 */}
-            <button 
-              onClick={() => handleWhatsAppAgent('Carlos', '5541996457421')}
+            <button
+              onClick={() => handleWhatsAppAgent('Carlos', COMPANY_INFO.whatsapp)}
               className="bg-[#1A1A1A] text-white p-12 rounded-[4rem] flex flex-col items-center text-center group hover:bg-[#D31219] transition-all duration-500 shadow-2xl relative overflow-hidden"
             >
               <div className="bg-white/10 p-6 rounded-full mb-8 group-hover:scale-110 transition-transform">
@@ -85,14 +85,15 @@ const Contact: React.FC = () => {
               </div>
               <span className="text-[10px] font-black uppercase tracking-[0.3em] text-[#D31219] group-hover:text-white mb-2">Suporte Técnico</span>
               <h3 className="text-4xl font-black uppercase mb-4">Carlos</h3>
-              <p className="text-gray-400 group-hover:text-white/80 mb-8 font-medium">Especialista em especificações de Steel Frame e Telhado Shingle.</p>
+              <p className="text-gray-400 group-hover:text-white/80 mb-4 font-medium">Especialista em especificações de Steel Frame e Telhado Shingle.</p>
+              <p className="text-gray-500 group-hover:text-white/60 mb-8 text-sm font-bold">{COMPANY_INFO.phone.replace('(41) ', '(41) 9 ')}</p>
               <div className="bg-[#D31219] group-hover:bg-white group-hover:text-[#D31219] text-white px-10 py-5 rounded-2xl font-black uppercase tracking-widest text-[10px] flex items-center gap-3">
                 <MessageCircle size={20} /> {cta1 || 'Iniciar WhatsApp'}
               </div>
             </button>
 
             {/* Especialista 2 */}
-            <button 
+            <button
               onClick={() => handleWhatsAppAgent('Lucilene', '5541999067259')}
               className="bg-gray-50 text-gray-900 p-12 rounded-[4rem] flex flex-col items-center text-center group hover:bg-green-600 hover:text-white transition-all duration-500 shadow-2xl border border-gray-100"
             >
@@ -101,7 +102,8 @@ const Contact: React.FC = () => {
               </div>
               <span className="text-[10px] font-black uppercase tracking-[0.3em] text-green-600 group-hover:text-white mb-2">Comercial & Vendas</span>
               <h3 className="text-4xl font-black uppercase mb-4">Lucilene</h3>
-              <p className="text-gray-500 group-hover:text-white/80 mb-8 font-medium">Atendimento focado em prazos, logística e melhores condições de pagamento.</p>
+              <p className="text-gray-500 group-hover:text-white/80 mb-4 font-medium">Atendimento focado em prazos, logística e melhores condições de pagamento.</p>
+              <p className="text-gray-600 group-hover:text-white/60 mb-8 text-sm font-bold">{COMPANY_INFO.phoneLucilene}</p>
               <div className="bg-green-600 group-hover:bg-white group-hover:text-green-600 text-white px-10 py-5 rounded-2xl font-black uppercase tracking-widest text-[10px] flex items-center gap-3">
                 <MessageCircle size={20} /> {cta2 || 'Chamar no WhatsApp'}
               </div>
@@ -205,18 +207,19 @@ const Contact: React.FC = () => {
           </section>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <a href="tel:4135284232" className="flex items-center gap-6 p-8 bg-white rounded-3xl border border-gray-100 hover:shadow-xl transition-all">
+            <a href={`tel:${COMPANY_INFO.phone.replace(/\D/g, '')}`} className="flex items-center gap-6 p-8 bg-white rounded-3xl border border-gray-100 hover:shadow-xl transition-all">
               <div className="bg-gray-100 p-4 rounded-2xl text-[#D31219]"><Phone size={32}/></div>
               <div>
                 <p className="text-[10px] font-black uppercase text-gray-400 mb-1">Telefone Fixo</p>
-                <p className="text-xl font-black">(41) 3528-4232</p>
+                <p className="text-xl font-black">{COMPANY_INFO.phone}</p>
               </div>
             </a>
             <div className="flex items-center gap-6 p-8 bg-white rounded-3xl border border-gray-100">
               <div className="bg-gray-100 p-4 rounded-2xl text-[#D31219]"><Clock size={32}/></div>
               <div>
                 <p className="text-[10px] font-black uppercase text-gray-400 mb-1">Horário</p>
-                <p className="text-sm font-black uppercase">Seg-Sex: 07:30 - 17:30</p>
+                <p className="text-sm font-black uppercase">{COMPANY_INFO.hours.weekdays}</p>
+                <p className="text-xs font-bold text-gray-500 mt-1">{COMPANY_INFO.hours.saturday}</p>
               </div>
             </div>
             <a href="https://maps.app.goo.gl/RcpAnuqvVRpjQBQD6" target="_blank" rel="noreferrer" className="flex items-center gap-6 p-8 bg-white rounded-3xl border border-gray-100 hover:shadow-xl transition-all">

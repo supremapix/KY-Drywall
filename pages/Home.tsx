@@ -6,14 +6,14 @@ import { SERVICES, BLOG_POSTS, NEIGHBORHOODS, CITIES_RMC, getRandomCTA, SITE_ASS
 
 const HERO_SLIDES = [
   {
-    image: 'https://images.unsplash.com/photo-1503387762-592dea58ef23?auto=format&fit=crop&q=80&w=1920',
-    title: 'Sua Obra <span class="text-[#D31219]">Inteligente</span> em 2025',
-    subtitle: 'Líder Técnica em Curitiba'
+    image: 'https://images.pexels.com/photos/159306/construction-site-build-construction-work-159306.jpeg?auto=compress&cs=tinysrgb&w=1920',
+    title: 'Sua Obra <span class="text-[#D31219]">70% Mais Rápida</span>',
+    subtitle: 'Steel Frame & Drywall em Curitiba'
   },
   {
-    image: 'https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80&w=1920',
-    title: 'Aço Galvanizado <span class="text-[#D31219]">Z180</span> Premium',
-    subtitle: 'Estruturas de Steel Frame'
+    image: 'https://images.pexels.com/photos/534220/pexels-photo-534220.jpeg?auto=compress&cs=tinysrgb&w=1920',
+    title: 'Distribuidor <span class="text-[#D31219]">Barbieri</span>',
+    subtitle: 'Aço Galvanizado Z180 Premium'
   }
 ];
 
@@ -155,8 +155,8 @@ const Home: React.FC = () => {
                 <h2 className="text-4xl md:text-7xl font-black uppercase tracking-tighter mb-8 leading-none">
                   Atendimento <br/><span className="text-[#D31219]">Presencial</span> Especializado
                 </h2>
-                <p className="text-gray-400 text-lg mb-12 font-medium leading-relaxed italic">
-                  Entregamos material de **Drywall** e **Steel Frame** com frota própria em toda a capital paranaense e RMC, do **Batel** ao **Santa Felicidade**.
+                <p className="text-gray-400 text-lg mb-12 font-medium leading-relaxed">
+                  Entrega rápida em Curitiba e Região Metropolitana. Atendemos do Batel ao Cajuru com assessoria técnica especializada e frota própria.
                 </p>
                 <Link to="/blog" className="bg-[#D31219] text-white font-black px-12 py-6 rounded-2xl inline-flex items-center gap-4 text-xs uppercase tracking-widest shadow-2xl hover:scale-105 transition-transform group">
                   Explorar Localidades <MapPin size={22} className="group-hover:animate-bounce" />
