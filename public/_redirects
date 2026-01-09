@@ -1,0 +1,7 @@
+# Netlify redirects
+# Redirecionar todas as rotas para index.html para suporte a SPA
+/*    /index.html   200
+
+# Prevenir acesso a arquivos sensíveis
+/.env    /404   404
+/api/*   /404   404
