@@ -584,17 +584,53 @@ export const PRODUCTS: Product[] = [
   }
 ];
 
+export const CIC_LOCATIONS = {
+  main: 'Cidade Industrial de Curitiba',
+  divisions: ['CIC Norte', 'CIC Central', 'CIC Sul'],
+  vilas: [
+    'Vila Nossa Senhora da Luz',
+    'Vila Verde',
+    'Vila Barigui',
+    'Vila Reno',
+    'Vila Audi',
+    'Vila Caiuá',
+    'Conjunto Caiuá',
+    'Conjunto Parigot de Souza',
+    'Vila Sabará',
+    'Vila Tecnológica',
+    'Vila São José',
+    'Vila São Pedro',
+    'Vila Osternack',
+    'Vila Gabineto',
+    'Vila Pompéia',
+    'Vila União'
+  ],
+  areas: [
+    'Área Industrial CIC',
+    'Polo Industrial CIC',
+    'Distrito Industrial CIC',
+    'Parque Industrial CIC'
+  ]
+};
+
 export const NEIGHBORHOODS = [
   "Abranches", "Água Verde", "Ahú", "Alto Boqueirão", "Alto da Glória", "Alto da XV", "Atuba", "Augusta",
   "Bacacheri", "Bairro Alto", "Barreirinha", "Batel", "Bigorrilho", "Boa Vista", "Bom Retiro", "Boqueirão",
   "Butiatuvinha", "Cabral", "Cachoeira", "Cajuru", "Campina do Siqueira", "Campo Comprido", "Campo de Santana",
-  "Capão da Imbuia", "Capão Raso", "Cascatinha", "Centro", "Centro Cívico", "Champagnat", "Cidade Industrial",
+  "Capão da Imbuia", "Capão Raso", "Cascatinha", "Centro", "Centro Cívico", "Champagnat", "CIC", "Cidade Industrial",
   "Cristo Rei", "Fanny", "Fazendinha", "Ganchinho", "Guabirotuba", "Guaíra", "Hauer", "Hugo Lange",
   "Jardim Botânico", "Jardim das Américas", "Jardim Social", "Juvevê", "Lamenha Pequena", "Lindoia",
   "Mercês", "Mossunguê", "Novo Mundo", "Orleans", "Parolin", "Pascoa", "Pilarzinho", "Pinheirinho",
   "Portão", "Prado Velho", "Rebouças", "Riviera", "Santa Cândida", "Santa Felicidade", "Santa Quitéria",
-  "Santo Inácio", "São Braz", "São Francisco", "São João", "São Lourenço", "Seminário", "Sítio Cercado",
+  "Santo Inácio", "São Braz", "São Francisco", "São João", "São Lourenco", "Seminário", "Sítio Cercado",
   "Taboão", "Tarumã", "Tatuquara", "Tingui", "Uberaba", "Umbará", "Vila Izabel", "Vista Alegre", "Xaxim"
+];
+
+export const ALL_CIC_LOCATIONS = [
+  CIC_LOCATIONS.main,
+  ...CIC_LOCATIONS.divisions,
+  ...CIC_LOCATIONS.vilas,
+  ...CIC_LOCATIONS.areas
 ];
 
 export const CITIES_RMC = [
