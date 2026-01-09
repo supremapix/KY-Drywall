@@ -314,7 +314,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'pe2',
-    category: 'Drywall',
+    category: 'Perfis',
     name: 'Perfil Montante 70 Barbieri',
     description: 'Perfil vertical de 70mm com galvanização Z180. Alta resistência estrutural para paredes e divisórias.',
     image: 'https://kydrywall.com.br/produtos/wp-content/uploads/2022/10/montante-70.jpg',
@@ -484,7 +484,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'fe4',
-    category: 'Ferragens',
+    category: 'Perfis',
     name: 'Cantoneira',
     description: 'Cantoneira metálica para proteção e reforço de cantos em drywall.',
     image: 'https://kydrywall.com.br/produtos/wp-content/uploads/2023/03/images.jpg',
@@ -494,7 +494,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'fe5',
-    category: 'Ferragens',
+    category: 'Perfis',
     name: 'Cantoneira Perfurada',
     description: 'Cantoneira perfurada para melhor aderência da massa. Acabamento profissional.',
     image: 'https://kydrywall.com.br/produtos/wp-content/uploads/2023/03/000497c200.webp',
@@ -504,7 +504,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'fe6',
-    category: 'Ferragens',
+    category: 'Perfis',
     name: 'Cantoneira PVC com Tela',
     description: 'Cantoneira em PVC com tela para melhor fixação e acabamento em cantos.',
     image: 'https://kydrywall.com.br/produtos/wp-content/uploads/2023/03/d909a420f4.webp',
@@ -514,7 +514,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'fe7',
-    category: 'Ferragens',
+    category: 'Perfis',
     name: 'Cantoneira Branca Isover',
     description: 'Cantoneira branca Isover de alta qualidade. Acabamento premium para cantos.',
     image: 'https://kydrywall.com.br/produtos/wp-content/uploads/2023/03/0002561_cantoneira-branca_700.jpeg',
@@ -524,7 +524,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'fe8',
-    category: 'Ferragens',
+    category: 'Perfis',
     name: 'Tabica Lisa Galvanizada',
     description: 'Tabica lisa galvanizada para acabamento de forros e transições.',
     image: 'https://kydrywall.com.br/produtos/wp-content/uploads/2023/03/233288-768x768.webp',
@@ -534,7 +534,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'fe9',
-    category: 'Ferragens',
+    category: 'Perfis',
     name: 'Tabica Branca',
     description: 'Tabica branca para acabamento decorativo. Fácil instalação e pintura.',
     image: 'https://kydrywall.com.br/produtos/wp-content/uploads/2024/04/download.jpg',
@@ -544,7 +544,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'fe10',
-    category: 'Ferragens',
+    category: 'Perfis',
     name: 'Emenda para F530',
     description: 'Emenda específica para perfil F530. Conexão segura e resistente.',
     image: 'https://kydrywall.com.br/produtos/wp-content/uploads/2023/03/e88881e2466f17af06168592fe00a039-1605104800-768x512.jpg',
