@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, MessageCircle, Star, TrendingUp, MapPin, Globe, ChevronRight, Clock, Building2, Map, ShieldCheck, Sparkles, Zap } from 'lucide-react';
-import { SERVICES, BLOG_POSTS, NEIGHBORHOODS, CITIES_RMC, getRandomCTA, SITE_ASSETS, PRODUCTS } from '../constants';
+import { SERVICES, BLOG_POSTS, NEIGHBORHOODS, CITIES_RMC, getRandomCTA, SITE_ASSETS, PRODUCTS, normalizeLocationName } from '../constants';
 
 const HERO_SLIDES = [
   {
@@ -185,7 +185,7 @@ const Home: React.FC = () => {
                   <h3 className="text-[#D31219] text-[10px] font-black uppercase tracking-[0.3em] mb-8 border-b border-white/10 pb-4">Bairros Curitiba</h3>
                   <div className="grid grid-cols-1 gap-3 max-h-[300px] overflow-y-auto custom-scrollbar pr-4">
                     {NEIGHBORHOODS.slice(0, 15).map(n => (
-                      <Link key={n} to={`/drywall-em-${n.toLowerCase().replace(/\s+/g, '-')}`} className="text-[10px] font-bold text-gray-400 hover:text-white transition-colors uppercase flex items-center gap-2">
+                      <Link key={n} to={`/drywall-em-${normalizeLocationName(n)}`} className="text-[10px] font-bold text-gray-400 hover:text-white transition-colors uppercase flex items-center gap-2">
                         <ChevronRight size={12} className="text-[#D31219]" /> {n}
                       </Link>
                     ))}
@@ -195,7 +195,7 @@ const Home: React.FC = () => {
                   <h3 className="text-[#D31219] text-[10px] font-black uppercase tracking-[0.3em] mb-8 border-b border-white/10 pb-4">Cidades RMC</h3>
                   <div className="grid grid-cols-1 gap-3 max-h-[300px] overflow-y-auto custom-scrollbar pr-4">
                     {CITIES_RMC.map(c => (
-                      <Link key={c} to={`/drywall-em-${c.toLowerCase().replace(/\s+/g, '-')}`} className="text-[10px] font-bold text-gray-400 hover:text-white transition-colors uppercase flex items-center gap-2">
+                      <Link key={c} to={`/drywall-em-${normalizeLocationName(c)}`} className="text-[10px] font-bold text-gray-400 hover:text-white transition-colors uppercase flex items-center gap-2">
                         <ChevronRight size={12} className="text-[#D31219]" /> {c}
                       </Link>
                     ))}

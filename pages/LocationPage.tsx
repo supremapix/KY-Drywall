@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { MapPin, CheckCircle2, ShieldCheck, Zap, HardHat, Recycle, Timer, ChevronRight, MessageCircle, ArrowLeft, Phone, Package, Clock, Truck, Star } from 'lucide-react';
-import { BASE_URL, SERVICES, NEIGHBORHOODS, CITIES_RMC, getRandomCTA, PRODUCTS, COMPANY_INFO } from '../constants';
+import { BASE_URL, SERVICES, NEIGHBORHOODS, CITIES_RMC, getRandomCTA, PRODUCTS, COMPANY_INFO, normalizeLocationName } from '../constants';
 import SEO from '../components/SEO';
 import ProductCard from '../components/ProductCard';
 
@@ -15,7 +15,9 @@ const LocationPage: React.FC<LocationPageProps> = ({ type }) => {
   const [cta1, setCta1] = useState('');
   const [cta2, setCta2] = useState('');
 
-  const formattedName = location ? location.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ') : '';
+  const allLocations = [...NEIGHBORHOODS, ...CITIES_RMC];
+  const formattedName = allLocations.find(loc => normalizeLocationName(loc) === location) ||
+    (location ? location.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ') : '');
   const serviceName = type === 'drywall' ? 'Drywall' : 'Steel Frame';
 
   useEffect(() => {
@@ -244,7 +246,7 @@ const LocationPage: React.FC<LocationPageProps> = ({ type }) => {
                   {NEIGHBORHOODS.map(n => (
                     <Link
                       key={n}
-                      to={`/drywall-em-${n.toLowerCase().replace(/\s+/g, '-')}`}
+                      to={`/drywall-em-${normalizeLocationName(n)}`}
                       className="group flex items-center justify-between p-3 rounded-xl hover:bg-gray-50 transition-all"
                     >
                       <span className="text-xs font-bold text-gray-600 group-hover:text-[#D31219]">{n}</span>
@@ -263,7 +265,7 @@ const LocationPage: React.FC<LocationPageProps> = ({ type }) => {
                   {CITIES_RMC.map(c => (
                     <Link
                       key={c}
-                      to={`/drywall-em-${c.toLowerCase().replace(/\s+/g, '-')}`}
+                      to={`/drywall-em-${normalizeLocationName(c)}`}
                       className="group flex items-center justify-between p-3 rounded-xl hover:bg-gray-50 transition-all"
                     >
                       <span className="text-xs font-bold text-gray-600 group-hover:text-[#D31219]">{c}</span>
