@@ -1,5 +1,4 @@
-import React from 'react';
-import { Helmet } from 'react-helmet-async';
+import { useEffect } from 'react';
 import { BASE_URL } from '../constants';
 
 interface SEOProps {
@@ -67,44 +66,89 @@ const EnhancedSEO: React.FC<SEOProps> = ({
 
   const combinedSchema = schema || defaultSchema;
 
-  return (
-    <Helmet>
-      <html lang="pt-BR" />
-      <title>{fullTitle}</title>
-      <meta name="description" content={description} />
-      <meta name="keywords" content={keywords} />
+  useEffect(() => {
+    document.documentElement.lang = 'pt-BR';
+    document.title = fullTitle;
 
-      {noindex && <meta name="robots" content="noindex, nofollow" />}
+    const updateOrCreateMeta = (selector: string, attribute: string, value: string) => {
+      let element = document.querySelector(selector);
+      if (!element) {
+        element = document.createElement('meta');
+        const [attr, attrValue] = selector.match(/\[(.+?)="(.+?)"\]/)?.slice(1) || [];
+        if (attr && attrValue) {
+          element.setAttribute(attr, attrValue);
+        }
+        document.head.appendChild(element);
+      }
+      element.setAttribute(attribute, value);
+    };
 
-      <link rel="canonical" href={url} />
+    const updateOrCreateLink = (rel: string, href: string, extraAttrs?: Record<string, string>) => {
+      const selector = `link[rel="${rel}"]`;
+      let element = document.querySelector(selector);
+      if (!element) {
+        element = document.createElement('link');
+        element.setAttribute('rel', rel);
+        document.head.appendChild(element);
+      }
+      element.setAttribute('href', href);
+      if (extraAttrs) {
+        Object.entries(extraAttrs).forEach(([key, value]) => {
+          element!.setAttribute(key, value);
+        });
+      }
+    };
 
-      <meta property="og:type" content={ogType} />
-      <meta property="og:title" content={fullTitle} />
-      <meta property="og:description" content={description} />
-      <meta property="og:url" content={url} />
-      <meta property="og:image" content={ogImage} />
-      <meta property="og:site_name" content="KY Drywall & Steel Frame" />
-      <meta property="og:locale" content="pt_BR" />
+    updateOrCreateMeta('meta[name="description"]', 'content', description);
+    updateOrCreateMeta('meta[name="keywords"]', 'content', keywords);
 
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content={fullTitle} />
-      <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={ogImage} />
+    if (noindex) {
+      updateOrCreateMeta('meta[name="robots"]', 'content', 'noindex, nofollow');
+    } else {
+      const robotsMeta = document.querySelector('meta[name="robots"]');
+      if (robotsMeta) {
+        robotsMeta.remove();
+      }
+    }
 
-      <meta name="geo.region" content="BR-PR" />
-      <meta name="geo.placename" content="Curitiba" />
-      <meta name="geo.position" content="-25.4284;-49.2733" />
-      <meta name="ICBM" content="-25.4284, -49.2733" />
+    updateOrCreateLink('canonical', url);
 
-      <link rel="dns-prefetch" href="https://kydrywall.com.br" />
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+    updateOrCreateMeta('meta[property="og:type"]', 'content', ogType);
+    updateOrCreateMeta('meta[property="og:title"]', 'content', fullTitle);
+    updateOrCreateMeta('meta[property="og:description"]', 'content', description);
+    updateOrCreateMeta('meta[property="og:url"]', 'content', url);
+    updateOrCreateMeta('meta[property="og:image"]', 'content', ogImage);
+    updateOrCreateMeta('meta[property="og:site_name"]', 'content', 'KY Drywall & Steel Frame');
+    updateOrCreateMeta('meta[property="og:locale"]', 'content', 'pt_BR');
 
-      <script type="application/ld+json">
-        {JSON.stringify(combinedSchema)}
-      </script>
-    </Helmet>
-  );
+    updateOrCreateMeta('meta[name="twitter:card"]', 'content', 'summary_large_image');
+    updateOrCreateMeta('meta[name="twitter:title"]', 'content', fullTitle);
+    updateOrCreateMeta('meta[name="twitter:description"]', 'content', description);
+    updateOrCreateMeta('meta[name="twitter:image"]', 'content', ogImage);
+
+    updateOrCreateMeta('meta[name="geo.region"]', 'content', 'BR-PR');
+    updateOrCreateMeta('meta[name="geo.placename"]', 'content', 'Curitiba');
+    updateOrCreateMeta('meta[name="geo.position"]', 'content', '-25.4284;-49.2733');
+    updateOrCreateMeta('meta[name="ICBM"]', 'content', '-25.4284, -49.2733');
+
+    updateOrCreateLink('dns-prefetch', 'https://kydrywall.com.br');
+    updateOrCreateLink('preconnect', 'https://fonts.googleapis.com');
+    updateOrCreateLink('preconnect', 'https://fonts.gstatic.com', { crossorigin: 'anonymous' });
+
+    let schemaScript = document.querySelector('script[type="application/ld+json"]');
+    if (!schemaScript) {
+      schemaScript = document.createElement('script');
+      schemaScript.setAttribute('type', 'application/ld+json');
+      document.head.appendChild(schemaScript);
+    }
+    schemaScript.textContent = JSON.stringify(combinedSchema);
+
+    return () => {
+      document.title = 'KY Drywall & Steel Frame';
+    };
+  }, [fullTitle, description, keywords, url, ogType, ogImage, noindex, combinedSchema]);
+
+  return null;
 };
 
 export default EnhancedSEO;
