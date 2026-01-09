@@ -656,7 +656,7 @@ export const SERVICES: Service[] = [
     id: 'drywall',
     title: 'Forro e Parede com Drywall',
     description: 'Acabamento perfeito, isolamento acústico e térmico superior. Ideal para divisórias, forros e revestimentos residenciais e comerciais.',
-    image: 'https://images.pexels.com/photos/8092357/pexels-photo-8092357.jpeg?auto=compress&cs=tinysrgb&w=800'
+    image: '/forro-e-parede-em-drywall.jpeg'
   },
   {
     id: 'shingle',
@@ -685,7 +685,7 @@ export const BLOG_POSTS: BlogPost[] = [
     id: 'b2',
     title: 'Drywall: Isolamento acústico e térmico para seu conforto',
     excerpt: 'Conheça as vantagens do drywall para projetos residenciais e comerciais. Acabamento perfeito e isolamento superior.',
-    img: 'https://images.pexels.com/photos/8092357/pexels-photo-8092357.jpeg?auto=compress&cs=tinysrgb&w=600',
+    img: '/forro-e-parede-em-drywall.jpeg',
     tag: 'Drywall',
     date: 'Dez 2024'
   },
