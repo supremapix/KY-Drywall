@@ -662,7 +662,7 @@ export const SERVICES: Service[] = [
     id: 'shingle',
     title: 'Cobertura com Telhado Shingle',
     description: 'Telhas asfálticas com beleza estética e estanqueidade absoluta. Resistência garantida contra intempéries.',
-    image: 'https://images.pexels.com/photos/1648776/pexels-photo-1648776.jpeg?auto=compress&cs=tinysrgb&w=800'
+    image: '/telhado-shingle.jpg'
   },
   {
     id: 'pvc-modular',
@@ -693,7 +693,7 @@ export const BLOG_POSTS: BlogPost[] = [
     id: 'b3',
     title: 'Telhado Shingle: Beleza e proteção para sua casa',
     excerpt: 'Saiba por que o telhado shingle é a escolha ideal para quem busca estética, durabilidade e estanqueidade absoluta.',
-    img: 'https://images.pexels.com/photos/1648776/pexels-photo-1648776.jpeg?auto=compress&cs=tinysrgb&w=600',
+    img: '/telhado-shingle.jpg',
     tag: 'Telhado',
     date: 'Nov 2024'
   }
