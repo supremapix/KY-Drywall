@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { MapPin, CheckCircle2, ShieldCheck, Zap, HardHat, Recycle, Timer, ChevronRight, MessageCircle, ArrowLeft, Phone, Package, Clock, Truck, Star } from 'lucide-react';
 import { BASE_URL, SERVICES, NEIGHBORHOODS, CITIES_RMC, getRandomCTA, PRODUCTS, COMPANY_INFO, normalizeLocationName } from '../constants';
-import SEO from '../components/SEO';
+import EnhancedSEO from '../components/EnhancedSEO';
 import ProductCard from '../components/ProductCard';
 
 interface LocationPageProps {
@@ -32,25 +32,66 @@ const LocationPage: React.FC<LocationPageProps> = ({ type }) => {
 
   const schema = {
     "@context": "https://schema.org",
-    "@type": "Service",
-    "name": `${serviceName} em ${formattedName}`,
-    "serviceType": "Construção a Seco",
-    "provider": {
-      "@type": "LocalBusiness",
-      "name": "KY Drywall & Steel Frame",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": formattedName,
-        "addressRegion": "PR"
+    "@graph": [
+      {
+        "@type": "Service",
+        "@id": `${BASE_URL}/${type}-em-${location}/#service`,
+        "name": `${serviceName} em ${formattedName}`,
+        "serviceType": "Construção a Seco",
+        "description": `Serviços completos de ${serviceName} em ${formattedName}. Instalação, materiais e assessoria técnica especializada.`,
+        "provider": {
+          "@type": "LocalBusiness",
+          "@id": `${BASE_URL}/#organization`,
+          "name": "KY Drywall & Steel Frame",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": formattedName,
+            "addressRegion": "PR",
+            "addressCountry": "BR"
+          },
+          "telephone": "+554135284232",
+          "areaServed": {
+            "@type": "City",
+            "name": formattedName
+          }
+        },
+        "availableChannel": {
+          "@type": "ServiceChannel",
+          "serviceUrl": `${BASE_URL}/${type}-em-${location}`,
+          "servicePhone": "+554135284232"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Início",
+            "item": BASE_URL
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": `${serviceName} em ${formattedName}`,
+            "item": `${BASE_URL}/${type}-em-${location}`
+          }
+        ]
       }
-    }
+    ]
   };
+
+  const pageTitle = `${serviceName} em ${formattedName} | Entrega Rápida | Orçamento Grátis | KY Drywall`;
+  const pageDescription = `${serviceName} em ${formattedName} com a KY Drywall & Steel Frame. Entrega imediata de placas, perfis, massas e acessórios. Atendimento especializado, orçamento via WhatsApp e os melhores preços. Maior estoque de Curitiba. Ligue: (41) 3528-4232`;
+  const pageKeywords = `${serviceName.toLowerCase()} ${formattedName.toLowerCase()}, ${serviceName.toLowerCase()} curitiba, materiais ${serviceName.toLowerCase()}, instalação ${serviceName.toLowerCase()}, orçamento ${serviceName.toLowerCase()}, ${type} ${formattedName.toLowerCase()}, construção a seco ${formattedName.toLowerCase()}`;
 
   return (
     <div className="bg-white min-h-screen">
-      <SEO
-        title={`${serviceName} em ${formattedName} | Entrega Rápida | KY Drywall`}
-        description={`${serviceName} em ${formattedName} com a KY Drywall. Entrega imediata de placas, perfis e acessórios. Atendimento especializado e orçamento via WhatsApp. Maior estoque de Curitiba.`}
+      <EnhancedSEO
+        title={pageTitle}
+        description={pageDescription}
+        keywords={pageKeywords}
+        canonical={`${BASE_URL}/${type}-em-${location}`}
         schema={schema}
       />
 

@@ -2,7 +2,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, MessageCircle, Star, TrendingUp, MapPin, Globe, ChevronRight, Clock, Building2, Map, ShieldCheck, Sparkles, Zap } from 'lucide-react';
-import { SERVICES, BLOG_POSTS, NEIGHBORHOODS, CITIES_RMC, getRandomCTA, SITE_ASSETS, PRODUCTS, normalizeLocationName } from '../constants';
+import { SERVICES, BLOG_POSTS, NEIGHBORHOODS, CITIES_RMC, getRandomCTA, SITE_ASSETS, PRODUCTS, normalizeLocationName, BASE_URL } from '../constants';
+import EnhancedSEO from '../components/EnhancedSEO';
 
 const HERO_SLIDES = [
   {
@@ -46,8 +47,79 @@ const Home: React.FC = () => {
     return () => clearInterval(timer);
   }, []);
 
+  const homeSchema = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'Organization',
+        '@id': `${BASE_URL}/#organization`,
+        name: 'KY Drywall & Steel Frame',
+        url: BASE_URL,
+        logo: {
+          '@type': 'ImageObject',
+          url: `${BASE_URL}/gemini_generated_image_jk8nftjk8nftjk8n.png`
+        },
+        contactPoint: {
+          '@type': 'ContactPoint',
+          telephone: '+554135284232',
+          contactType: 'customer service',
+          areaServed: 'BR',
+          availableLanguage: 'Portuguese'
+        },
+        sameAs: [
+          'https://wa.me/5541996457421'
+        ]
+      },
+      {
+        '@type': 'WebSite',
+        '@id': `${BASE_URL}/#website`,
+        url: BASE_URL,
+        name: 'KY Drywall & Steel Frame',
+        publisher: {
+          '@id': `${BASE_URL}/#organization`
+        }
+      },
+      {
+        '@type': 'Store',
+        '@id': `${BASE_URL}/#store`,
+        name: 'KY Drywall & Steel Frame - Loja Física',
+        image: `${BASE_URL}/gemini_generated_image_jk8nftjk8nftjk8n.png`,
+        priceRange: '$$',
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: 'BR-277, Cajuru',
+          addressLocality: 'Curitiba',
+          addressRegion: 'PR',
+          postalCode: '82900-000',
+          addressCountry: 'BR'
+        },
+        geo: {
+          '@type': 'GeoCoordinates',
+          latitude: '-25.4284',
+          longitude: '-49.2733'
+        },
+        telephone: '+554135284232',
+        openingHoursSpecification: [
+          {
+            '@type': 'OpeningHoursSpecification',
+            dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+            opens: '08:00',
+            closes: '18:00'
+          }
+        ]
+      }
+    ]
+  };
+
   return (
     <div className="overflow-hidden bg-white">
+      <EnhancedSEO
+        title="KY Drywall & Steel Frame - Maior Loja de Curitiba | BR-277 Cajuru"
+        description="A maior loja de Drywall e Steel Frame de Curitiba. Distribuidor oficial Barbieri. Placas, perfis, massas, parafusos e acessórios. Entrega imediata. Venha nos visitar na BR-277, Cajuru."
+        keywords="drywall curitiba, steel frame curitiba, placas drywall, perfis steel frame, construção a seco, gesso acartonado, barbieri, loja drywall curitiba, materiais construção"
+        canonical={BASE_URL}
+        schema={homeSchema}
+      />
       {/* Hero Section */}
       <section className="relative h-[80vh] flex items-center bg-black overflow-hidden">
         <div className="absolute inset-0 z-0">

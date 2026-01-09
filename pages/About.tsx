@@ -2,9 +2,65 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { MessageCircle, Award, ShieldCheck, Building2, HardHat, Warehouse, Clock, Truck } from 'lucide-react';
-import { getRandomCTA, COMPANY_INFO } from '../constants';
+import { getRandomCTA, COMPANY_INFO, BASE_URL } from '../constants';
+import EnhancedSEO from '../components/EnhancedSEO';
 
 const About: React.FC = () => {
+  const organizationSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'KY Drywall & Steel Frame',
+    description: 'Maior distribuidora de materiais para construção a seco de Curitiba. Especialistas em Steel Frame, Drywall, Telhado Shingle e Isolamento Acústico',
+    url: BASE_URL,
+    logo: 'https://kydrywall.com.br/produtos/wp-content/uploads/2022/09/logotipo-kydrywall-1-1.png',
+    telephone: '+554135284232',
+    email: 'carlos@kydrywall.com.br',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Rod. BR 277 - 3641',
+      addressLocality: 'Curitiba',
+      addressRegion: 'PR',
+      postalCode: '82590-300',
+      addressCountry: 'BR'
+    },
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: '-25.4284',
+      longitude: '-49.2733'
+    },
+    openingHoursSpecification: [
+      {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+        opens: '07:30',
+        closes: '17:30'
+      },
+      {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: 'Saturday',
+        opens: '07:30',
+        closes: '12:00'
+      }
+    ],
+    priceRange: '$$',
+    areaServed: [
+      {
+        '@type': 'City',
+        name: 'Curitiba'
+      },
+      {
+        '@type': 'State',
+        name: 'Paraná'
+      }
+    ],
+    sameAs: [
+      'https://www.facebook.com/kydrywall',
+      'https://www.instagram.com/kydrywall'
+    ],
+    foundingDate: '2010',
+    slogan: 'Sua Obra 70% Mais Rápida'
+  };
+
   const [cta, setCta] = useState('');
 
   useEffect(() => {
@@ -13,6 +69,14 @@ const About: React.FC = () => {
 
   return (
     <div className="bg-white">
+      <EnhancedSEO
+        title="A Empresa - KY Drywall & Steel Frame"
+        description="Conheça a KY Drywall, maior distribuidora de materiais para construção a seco de Curitiba. Especialistas em Steel Frame, Drywall, Telhado Shingle e Isolamento Acústico. Assessoria técnica especializada."
+        keywords="sobre ky drywall, empresa drywall curitiba, distribuidora steel frame, história ky drywall, maior distribuidora curitiba, materiais construção seco, barbieri curitiba"
+        canonical={`${BASE_URL}/empresa`}
+        ogType="website"
+        schema={organizationSchema}
+      />
       <section className="bg-[#003366] py-32 text-white relative overflow-hidden text-center">
         <div className="absolute inset-0 opacity-10">
           <img src="https://images.pexels.com/photos/159306/construction-site-build-construction-work-159306.jpeg?auto=compress&cs=tinysrgb&w=1920" alt="" className="w-full h-full object-cover" />

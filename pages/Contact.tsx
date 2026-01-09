@@ -3,9 +3,51 @@ import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { Mail, Phone, MapPin, Clock, MessageCircle, Navigation, ChevronRight, User, Smartphone, Send, ClipboardList } from 'lucide-react';
 import { QuoteItem } from '../types';
-import { getRandomCTA, COMPANY_INFO } from '../constants';
+import { getRandomCTA, COMPANY_INFO, BASE_URL } from '../constants';
+import EnhancedSEO from '../components/EnhancedSEO';
 
 const Contact: React.FC = () => {
+  const contactPageSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ContactPage',
+    name: 'Contato - KY Drywall & Steel Frame',
+    description: 'Entre em contato com a KY Drywall. Orçamento gratuito e assessoria técnica especializada em Curitiba',
+    url: `${BASE_URL}/contato`,
+    mainEntity: {
+      '@type': 'LocalBusiness',
+      name: 'KY Drywall & Steel Frame',
+      telephone: '+554135284232',
+      email: 'carlos@kydrywall.com.br',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: 'Rod. BR 277 - 3641',
+        addressLocality: 'Curitiba',
+        addressRegion: 'PR',
+        postalCode: '82590-300',
+        addressCountry: 'BR'
+      },
+      contactPoint: [
+        {
+          '@type': 'ContactPoint',
+          telephone: '+5541996457421',
+          contactType: 'customer service',
+          areaServed: 'BR',
+          availableLanguage: 'Portuguese',
+          contactOption: 'TollFree',
+          name: 'Carlos - Suporte Técnico'
+        },
+        {
+          '@type': 'ContactPoint',
+          telephone: '+5541999067259',
+          contactType: 'sales',
+          areaServed: 'BR',
+          availableLanguage: 'Portuguese',
+          name: 'Lucilene - Comercial & Vendas'
+        }
+      ]
+    }
+  };
+
   const [searchParams] = useSearchParams();
   const [quoteItems, setQuoteItems] = useState<QuoteItem[]>([]);
   const [cta1, setCta1] = useState('');
@@ -62,6 +104,14 @@ const Contact: React.FC = () => {
 
   return (
     <div className="bg-white min-h-screen py-24">
+      <EnhancedSEO
+        title="Contato - Orçamento Rápido"
+        description="Entre em contato com a KY Drywall para orçamento gratuito. Atendimento especializado em Drywall, Steel Frame e Telhado Shingle. Fale com nossos especialistas Carlos e Lucilene. Atendimento imediato em Curitiba e região."
+        keywords="contato ky drywall, orçamento drywall curitiba, telefone ky drywall, whatsapp drywall, orçamento steel frame, falar com especialista, carlos ky drywall, lucilene ky drywall"
+        canonical={`${BASE_URL}/contato`}
+        ogType="website"
+        schema={contactPageSchema}
+      />
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <header className="text-center mb-20">

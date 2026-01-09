@@ -2,9 +2,10 @@
 import React, { useState, useMemo, useEffect, useRef } from 'react';
 import { useSearchParams, Link } from 'react-router-dom';
 import { Search, Filter, SlidersHorizontal, ChevronRight, X, MessageCircle, Info } from 'lucide-react';
-import { PRODUCTS, CATEGORIES, getRandomCTA } from '../constants';
+import { PRODUCTS, CATEGORIES, getRandomCTA, BASE_URL } from '../constants';
 import ProductCard from '../components/ProductCard';
 import SearchSuggestions from '../components/SearchSuggestions';
+import EnhancedSEO from '../components/EnhancedSEO';
 
 const ProductList: React.FC = () => {
   const [searchParams] = useSearchParams();
@@ -15,6 +16,39 @@ const ProductList: React.FC = () => {
   const [showSuggestions, setShowSuggestions] = useState(false);
   const searchRef = useRef<HTMLDivElement>(null);
   const [cta, setCta] = useState('');
+
+  const itemListSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'Catálogo de Produtos KY Drywall',
+    description: 'Catálogo completo de materiais para Drywall, Steel Frame, placas, perfis, massas, fitas e acessórios',
+    url: `${BASE_URL}/produtos`,
+    numberOfItems: PRODUCTS.length,
+    itemListElement: PRODUCTS.slice(0, 10).map((product, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      item: {
+        '@type': 'Product',
+        name: product.name,
+        description: product.description,
+        image: product.image,
+        brand: {
+          '@type': 'Brand',
+          name: product.specs.find(s => s.includes('Marca:'))?.replace('Marca: ', '') || 'KY Drywall'
+        },
+        category: product.category,
+        offers: {
+          '@type': 'Offer',
+          availability: 'https://schema.org/InStock',
+          priceCurrency: 'BRL',
+          seller: {
+            '@type': 'Organization',
+            name: 'KY Drywall & Steel Frame'
+          }
+        }
+      }
+    }))
+  };
 
   useEffect(() => {
     const cat = searchParams.get('cat');
@@ -53,6 +87,14 @@ const ProductList: React.FC = () => {
 
   return (
     <div className="bg-gray-50 min-h-screen py-8 md:py-12">
+      <EnhancedSEO
+        title="Produtos - Catálogo Completo"
+        description="Catálogo completo de materiais para Drywall e Steel Frame. Placas, perfis, massas, fitas, parafusos, lã de isolamento e acessórios. Marcas Barbieri, Holdflex, Isover. Pronta entrega em Curitiba."
+        keywords="produtos drywall curitiba, catálogo steel frame, placas drywall, perfis metálicos, massa holdflex, perfis barbieri, lã de pet, parafusos drywall, materiais construção seco"
+        canonical={`${BASE_URL}/produtos`}
+        ogType="website"
+        schema={itemListSchema}
+      />
       <div className="container mx-auto px-4">
         
         {/* Banner de Categoria (Impactante) */}

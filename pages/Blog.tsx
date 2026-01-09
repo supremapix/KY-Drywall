@@ -1,12 +1,57 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { NEIGHBORHOODS, CITIES_RMC, BLOG_POSTS, normalizeLocationName } from '../constants';
+import { NEIGHBORHOODS, CITIES_RMC, BLOG_POSTS, normalizeLocationName, BASE_URL } from '../constants';
 import { MapPin, ArrowRight, Building2, Landmark, Clock, TrendingUp, ShieldAlert, ThermometerSnowflake } from 'lucide-react';
+import EnhancedSEO from '../components/EnhancedSEO';
 
 const Blog: React.FC = () => {
+  const blogSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Blog',
+    name: 'Blog KY Drywall',
+    description: 'Notícias, tendências e guias técnicos sobre construção a seco, Drywall, Steel Frame e Telhado Shingle para Curitiba e Região Metropolitana',
+    url: `${BASE_URL}/blog`,
+    publisher: {
+      '@type': 'Organization',
+      name: 'KY Drywall & Steel Frame',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://kydrywall.com.br/produtos/wp-content/uploads/2022/09/logotipo-kydrywall-1-1.png'
+      }
+    },
+    blogPost: BLOG_POSTS.map(post => ({
+      '@type': 'BlogPosting',
+      headline: post.title,
+      description: post.excerpt,
+      image: post.img,
+      datePublished: '2025-01-01',
+      author: {
+        '@type': 'Organization',
+        name: 'KY Drywall & Steel Frame'
+      },
+      publisher: {
+        '@type': 'Organization',
+        name: 'KY Drywall & Steel Frame'
+      },
+      keywords: post.tag
+    })),
+    about: {
+      '@type': 'Thing',
+      name: 'Construção a Seco'
+    }
+  };
+
   return (
     <div className="bg-white min-h-screen">
+      <EnhancedSEO
+        title="Blog & Localidades - Guia Regional"
+        description="Blog com notícias, tendências e guias técnicos sobre construção a seco 2025/2026. Guia regional completo de Drywall e Steel Frame para todos os bairros de Curitiba e cidades da RMC. Informações técnicas personalizadas por localidade."
+        keywords="blog drywall, notícias steel frame, guia regional curitiba, drywall por bairro, steel frame rmc, tendências construção 2025, bairros curitiba, cidades rmc, isolamento térmico, clima curitiba"
+        canonical={`${BASE_URL}/blog`}
+        ogType="website"
+        schema={blogSchema}
+      />
       <section className="bg-[#1A1A1A] py-24 text-white relative">
         <div className="absolute inset-0 opacity-20 bg-gradient-to-b from-[#D31219]/20 to-transparent"></div>
         <div className="container mx-auto px-4 text-center relative z-10">

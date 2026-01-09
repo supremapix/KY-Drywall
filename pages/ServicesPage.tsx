@@ -1,14 +1,57 @@
 
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { SERVICES, getRandomCTA } from '../constants';
+import { SERVICES, getRandomCTA, BASE_URL } from '../constants';
 import { CheckCircle2, MessageCircle, ChevronRight, Sparkles, ShieldAlert, ArrowRight } from 'lucide-react';
+import EnhancedSEO from '../components/EnhancedSEO';
 
 const ServicesPage: React.FC = () => {
   const { serviceId } = useParams<{ serviceId: string }>();
   const [ctaPhrase, setCtaPhrase] = useState('');
-  
+
   const currentService = serviceId ? SERVICES.find(s => s.id === serviceId) : SERVICES[0];
+
+  const serviceSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: currentService?.title || 'Serviços KY Drywall',
+    description: currentService?.description || 'Serviços especializados em construção a seco',
+    provider: {
+      '@type': 'LocalBusiness',
+      name: 'KY Drywall & Steel Frame',
+      telephone: '+554135284232',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: 'Rod. BR 277 - 3641',
+        addressLocality: 'Curitiba',
+        addressRegion: 'PR',
+        postalCode: '82590-300',
+        addressCountry: 'BR'
+      }
+    },
+    areaServed: {
+      '@type': 'City',
+      name: 'Curitiba'
+    },
+    serviceType: currentService?.title,
+    offers: {
+      '@type': 'Offer',
+      availability: 'https://schema.org/InStock',
+      priceCurrency: 'BRL'
+    },
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Catálogo de Serviços',
+      itemListElement: SERVICES.map((service, index) => ({
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: service.title,
+          description: service.description
+        }
+      }))
+    }
+  };
 
   useEffect(() => {
     setCtaPhrase(getRandomCTA());
@@ -17,6 +60,15 @@ const ServicesPage: React.FC = () => {
 
   return (
     <div className="bg-white">
+      <EnhancedSEO
+        title={`${currentService?.title} - Serviços`}
+        description={`${currentService?.description} Assessoria técnica especializada da KY Drywall. Materiais certificados ABNT. Atendimento em Curitiba e Região Metropolitana.`}
+        keywords={`${serviceId}, serviços ${serviceId} curitiba, ${currentService?.title}, construção a seco, steel frame curitiba, drywall curitiba, telhado shingle, materiais certificados`}
+        canonical={`${BASE_URL}/servicos/${serviceId || 'steel-frame'}`}
+        ogType="website"
+        ogImage={currentService?.image}
+        schema={serviceSchema}
+      />
       {/* Hero Section */}
       <section className="relative h-[60vh] flex items-center bg-black overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-60">
