@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { NEIGHBORHOODS, CITIES_RMC, SERVICES, PRODUCTS, BASE_URL } from '../constants';
+import { NEIGHBORHOODS, CITIES_RMC, SERVICES, PRODUCTS, BASE_URL, normalizeLocationName } from '../constants';
 import { Globe, Map, Package, Wrench, Info, Mail } from 'lucide-react';
 
 const Sitemap: React.FC = () => {
@@ -68,19 +68,38 @@ const Sitemap: React.FC = () => {
             </div>
           </section>
 
-          {/* Massive Regional Index */}
+          {/* Massive Regional Index - Bairros */}
           <section className="lg:col-span-3 bg-white p-12 rounded-[3rem] shadow-2xl border border-gray-100">
             <h2 className="text-2xl font-black border-b-4 border-[#D31219] pb-4 mb-10 flex items-center gap-4 uppercase tracking-tighter">
-              <Map size={32} className="text-[#D31219]" /> Atendimento Regional Curitiba & RMC
+              <Map size={32} className="text-[#D31219]" /> Bairros de Curitiba
             </h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-x-8 gap-y-6 h-[600px] overflow-y-auto pr-6 scrollbar-thin scrollbar-thumb-[#D31219]">
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-x-8 gap-y-6 max-h-[600px] overflow-y-auto pr-6 scrollbar-thin scrollbar-thumb-[#D31219]">
               {NEIGHBORHOODS.map(n => {
-                const slug = n.toLowerCase().replace(/\s+/g, '-');
+                const slug = normalizeLocationName(n);
                 return (
                   <div key={n} className="space-y-1">
                     <p className="text-[10px] font-black text-gray-900 border-l-2 border-[#D31219] pl-2 uppercase">{n}</p>
                     <Link to={`/drywall-em-${slug}`} className="block text-[8px] font-bold text-gray-400 hover:text-[#D31219] uppercase">Drywall {n}</Link>
                     <Link to={`/steel-frame-em-${slug}`} className="block text-[8px] font-bold text-gray-400 hover:text-[#D31219] uppercase">Steel Frame {n}</Link>
+                  </div>
+                );
+              })}
+            </div>
+          </section>
+
+          {/* Regional Index - Cidades RMC */}
+          <section className="lg:col-span-3 bg-[#1A1A1A] p-12 rounded-[3rem] shadow-2xl text-white">
+            <h2 className="text-2xl font-black border-b-4 border-[#D31219] pb-4 mb-10 flex items-center gap-4 uppercase tracking-tighter">
+              <Map size={32} className="text-[#D31219]" /> Região Metropolitana de Curitiba
+            </h2>
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-x-8 gap-y-6">
+              {CITIES_RMC.map(c => {
+                const slug = normalizeLocationName(c);
+                return (
+                  <div key={c} className="space-y-1">
+                    <p className="text-[10px] font-black text-white border-l-2 border-[#D31219] pl-2 uppercase">{c}</p>
+                    <Link to={`/drywall-em-${slug}`} className="block text-[8px] font-bold text-gray-400 hover:text-[#D31219] uppercase">Drywall {c}</Link>
+                    <Link to={`/steel-frame-em-${slug}`} className="block text-[8px] font-bold text-gray-400 hover:text-[#D31219] uppercase">Steel Frame {c}</Link>
                   </div>
                 );
               })}
