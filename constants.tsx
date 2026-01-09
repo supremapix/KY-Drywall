@@ -18,7 +18,7 @@ export const COMPANY_INFO = {
 };
 
 export const SITE_ASSETS = {
-  logo: 'https://images.pexels.com/photos/1292294/pexels-photo-1292294.jpeg?auto=compress&cs=tinysrgb&w=800',
+  logo: '/logotipo-ky-drywall.png',
   placeholder: 'https://images.pexels.com/photos/1292294/pexels-photo-1292294.jpeg?auto=compress&cs=tinysrgb&w=800',
   categories: {
     fitas: 'https://images.pexels.com/photos/5691551/pexels-photo-5691551.jpeg?auto=compress&cs=tinysrgb&w=600',
@@ -97,7 +97,7 @@ export const PRODUCTS: Product[] = [
     category: 'Massas',
     name: 'Massa Base plus 33',
     description: 'Massa base de alta performance para revestimentos e acabamentos profissionais.',
-    image: 'https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: '/massa_base_plus_33.webp',
     rating: 4.9,
     specs: ['Tipo: Base Plus', 'Alta Performance', 'Uso Profissional'],
     applications: ['Base para Pintura', 'Revestimentos', 'Acabamento']
@@ -107,7 +107,7 @@ export const PRODUCTS: Product[] = [
     category: 'Massas',
     name: 'Massa Base Coat Profort',
     description: 'Massa base coat para sistemas de revestimento em fachadas. Alta durabilidade.',
-    image: 'https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: '/massa_base_coat.webp',
     rating: 5,
     specs: ['Marca: Profort', 'Uso: Fachadas', 'Alta Durabilidade'],
     applications: ['Fachadas', 'Revestimento Externo', 'Base Coat']
@@ -207,7 +207,7 @@ export const PRODUCTS: Product[] = [
     category: 'Parafusos',
     name: 'Parafuso L.B 13x42mm',
     description: 'Parafuso para fixação de perfis metálicos. Ideal para união de estruturas steel frame.',
-    image: 'https://images.pexels.com/photos/209235/pexels-photo-209235.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: '/parafuso_l.b.jpg',
     rating: 5,
     specs: ['Bitola: 13mm', 'Comprimento: 42mm', 'Tipo: L.B'],
     applications: ['Fixação de Perfis', 'Estruturas Metálicas', 'Steel Frame']
@@ -217,7 +217,7 @@ export const PRODUCTS: Product[] = [
     category: 'Parafusos',
     name: 'Parafuso GN 3,5x25 Ponta Agulha Patta',
     description: 'Parafuso de fixação rápida com ponta agulha. Ideal para chapas de menor espessura.',
-    image: 'https://images.pexels.com/photos/209235/pexels-photo-209235.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: '/parafuso_gn3,5x25_ponta_agulha.jpg',
     rating: 4.8,
     specs: ['Bitola: 3,5mm', 'Comprimento: 25mm', 'Marca: Patta'],
     applications: ['Placas Finas', 'Acabamentos', 'Fixação Rápida']
@@ -287,7 +287,7 @@ export const PRODUCTS: Product[] = [
     category: 'Placas',
     name: 'Placa Cimentícia Eternit 6/8/10mm',
     description: 'Placa cimentícia Eternit para uso interno e externo. Disponível em diversas espessuras.',
-    image: 'https://images.pexels.com/photos/5691593/pexels-photo-5691593.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: '/placa_cimenticia_eternit_6-8-10mm.jpg',
     rating: 4.9,
     specs: ['Marca: Eternit', 'Espessuras: 6, 8 ou 10mm', 'Uso Interno/Externo'],
     applications: ['Fachadas', 'Áreas Molhadas', 'Revestimentos Externos']
@@ -297,7 +297,7 @@ export const PRODUCTS: Product[] = [
     category: 'Placas',
     name: 'Painel LP OSB Home Plus',
     description: 'Painel estrutural OSB de alta qualidade. Ideal para construções em steel frame e coberturas.',
-    image: 'https://images.pexels.com/photos/5691593/pexels-photo-5691593.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: '/painel_lp_osb_home_plus.jpg',
     rating: 5,
     specs: ['Marca: LP', 'Tipo: OSB', 'Uso Estrutural'],
     applications: ['Steel Frame', 'Coberturas', 'Estruturas']
@@ -347,7 +347,7 @@ export const PRODUCTS: Product[] = [
     category: 'Perfis',
     name: 'Montante de 48 Barbieri',
     description: 'Perfil montante de 48mm. Ideal para divisórias leves e forros.',
-    image: 'https://images.pexels.com/photos/5691601/pexels-photo-5691601.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: '/montante_de_48_barbieri.jpg',
     rating: 4.7,
     specs: ['Largura: 48mm', 'Comprimento: 3000mm', 'Marca: Barbieri'],
     applications: ['Divisórias Leves', 'Forros', 'Revestimentos']
@@ -357,7 +357,7 @@ export const PRODUCTS: Product[] = [
     category: 'Perfis',
     name: 'Montante de 90',
     description: 'Montante de 90mm para paredes com maior isolamento. Alta capacidade estrutural.',
-    image: 'https://images.pexels.com/photos/5691601/pexels-photo-5691601.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: '/montante_de_90.png',
     rating: 4.9,
     specs: ['Largura: 90mm', 'Comprimento: 3000mm', 'Alta Capacidade'],
     applications: ['Isolamento Reforçado', 'Paredes Duplas', 'Áreas Acústicas']
@@ -367,7 +367,7 @@ export const PRODUCTS: Product[] = [
     category: 'Perfis',
     name: 'Montante Steel Frame 90',
     description: 'Perfil estrutural para steel frame de 90mm. Ideal para construções completas em steel frame.',
-    image: 'https://images.pexels.com/photos/5691601/pexels-photo-5691601.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: '/montante_de_steel_frame_90.webp',
     rating: 5,
     specs: ['Largura: 90mm', 'Comprimento: 3000mm', 'Uso: Steel Frame'],
     applications: ['Construção Steel Frame', 'Estruturas de Casas', 'Paredes Portantes']
@@ -377,7 +377,7 @@ export const PRODUCTS: Product[] = [
     category: 'Perfis',
     name: 'Montante Steel Frame 140',
     description: 'Perfil estrutural para steel frame de 140mm. Máxima capacidade estrutural para grandes vãos.',
-    image: 'https://images.pexels.com/photos/5691601/pexels-photo-5691601.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: '/montante_de_steel_frame_140.jpg',
     rating: 5,
     specs: ['Largura: 140mm', 'Comprimento: 3000mm', 'Máxima Capacidade'],
     applications: ['Grandes Vãos', 'Estruturas Principais', 'Paredes Portantes']
@@ -397,7 +397,7 @@ export const PRODUCTS: Product[] = [
     category: 'Lã (Isolamento)',
     name: 'Lã de Rocha',
     description: 'Manta de lã de rocha com tela. Excelente isolamento térmico e acústico, resistente ao fogo.',
-    image: 'https://images.pexels.com/photos/6419130/pexels-photo-6419130.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: '/la_de_rocha.webp',
     rating: 5,
     specs: ['Material: Lã de Rocha', 'Densidade: 64kg/m³', 'Espessura: 50mm'],
     applications: ['Isolamento Térmico', 'Isolamento Acústico', 'Proteção contra Fogo']
@@ -407,7 +407,7 @@ export const PRODUCTS: Product[] = [
     category: 'Lã (Isolamento)',
     name: 'Lã de Vidro Isover',
     description: 'Lã de vidro Isover de alta performance. Excelente isolamento termo-acústico.',
-    image: 'https://images.pexels.com/photos/6419130/pexels-photo-6419130.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: '/la_de_vidro_isover.webp',
     rating: 4.9,
     specs: ['Marca: Isover', 'Material: Lã de Vidro', 'Alta Performance'],
     applications: ['Isolamento Térmico', 'Isolamento Acústico', 'Forros e Paredes']
@@ -447,7 +447,7 @@ export const PRODUCTS: Product[] = [
     category: 'Diversos',
     name: 'Adesivo de Silicone Tytan Standard',
     description: 'Adesivo de silicone para vedação e fixação. Resistente à água e intempéries.',
-    image: 'https://images.pexels.com/photos/1249611/pexels-photo-1249611.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: '/adesivo_de_silicone_tytan_standard.webp',
     rating: 4.7,
     specs: ['Marca: Tytan', 'Embalagem: 260g', 'Cor: Branco'],
     applications: ['Vedação', 'Fixação', 'Acabamento']
@@ -517,7 +517,7 @@ export const PRODUCTS: Product[] = [
     category: 'Perfis',
     name: 'Cantoneira Branca Isover',
     description: 'Cantoneira branca Isover de alta qualidade. Acabamento premium para cantos.',
-    image: 'https://images.pexels.com/photos/1249611/pexels-photo-1249611.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: '/cantoneira_branca.jpeg',
     rating: 4.9,
     specs: ['Marca: Isover', 'Cor: Branco', 'Alta Qualidade'],
     applications: ['Acabamento Premium', 'Cantos Externos', 'Reforço']
@@ -527,7 +527,7 @@ export const PRODUCTS: Product[] = [
     category: 'Perfis',
     name: 'Tabica Lisa Galvanizada',
     description: 'Tabica lisa galvanizada para acabamento de forros e transições.',
-    image: 'https://images.pexels.com/photos/1249611/pexels-photo-1249611.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: '/tabica_lisa_galvanizada.webp',
     rating: 4.7,
     specs: ['Material: Galvanizado', 'Tipo: Lisa', 'Uso: Forros'],
     applications: ['Acabamento de Forros', 'Transições', 'Detalhes']
@@ -537,7 +537,7 @@ export const PRODUCTS: Product[] = [
     category: 'Perfis',
     name: 'Tabica Branca',
     description: 'Tabica branca para acabamento decorativo. Fácil instalação e pintura.',
-    image: 'https://images.pexels.com/photos/1249611/pexels-photo-1249611.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: '/tabica_branca.jpg',
     rating: 4.6,
     specs: ['Cor: Branco', 'Uso: Decorativo', 'Fácil Instalação'],
     applications: ['Acabamento Decorativo', 'Forros', 'Detalhes']
@@ -557,7 +557,7 @@ export const PRODUCTS: Product[] = [
     category: 'Ferragens',
     name: 'Plaina para Drywall Plaster',
     description: 'Plaina manual para ajuste de bordas em placas de drywall. Acabamento perfeito.',
-    image: 'https://images.pexels.com/photos/1249611/pexels-photo-1249611.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: '/plaina_para_drywall_plaster.webp',
     rating: 4.8,
     specs: ['Marca: Plaster', 'Uso: Bordas', 'Manual'],
     applications: ['Ajuste de Bordas', 'Acabamento', 'Preparação']
@@ -567,7 +567,7 @@ export const PRODUCTS: Product[] = [
     category: 'Ferragens',
     name: 'Lâmina para Plaina Plaster',
     description: 'Lâmina de reposição para plaina Plaster. Alta durabilidade e corte preciso.',
-    image: 'https://images.pexels.com/photos/1249611/pexels-photo-1249611.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: '/lamina_para_plaina_plaster.webp',
     rating: 4.7,
     specs: ['Marca: Plaster', 'Tipo: Reposição', 'Alta Durabilidade'],
     applications: ['Reposição', 'Manutenção', 'Acabamento']
@@ -577,7 +577,7 @@ export const PRODUCTS: Product[] = [
     category: 'Ferragens',
     name: 'Bits Ponta Phillips 25mm Ciser',
     description: 'Jogo de bits Phillips PH2 25mm. Ideal para parafusadeiras em instalações de drywall.',
-    image: 'https://images.pexels.com/photos/1249611/pexels-photo-1249611.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: '/bits_ponta_phillips_25mm.webp',
     rating: 4.8,
     specs: ['Tipo: Phillips PH2', 'Comprimento: 25mm', 'Marca: Ciser'],
     applications: ['Parafusadeiras', 'Instalação de Drywall', 'Fixações']
