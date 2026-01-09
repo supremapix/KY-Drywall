@@ -234,7 +234,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'pl1',
-    category: 'Drywall',
+    category: 'Placas',
     name: 'Chapa RF Rosa',
     description: 'Chapa resistente ao fogo (RF) na cor rosa. Ideal para áreas que necessitam proteção contra incêndio.',
     image: 'https://kydrywall.com.br/produtos/wp-content/uploads/2022/10/Chapa-RF-768x768.jpg',
@@ -244,7 +244,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'pl2',
-    category: 'Drywall',
+    category: 'Placas',
     name: 'Chapa RU Verde',
     description: 'Chapa resistente à umidade (RU) na cor verde. Perfeita para áreas molhadas e com alta umidade.',
     image: 'https://kydrywall.com.br/produtos/wp-content/uploads/2022/10/Chapa-Ru-768x768.jpg',
@@ -434,9 +434,9 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'd3',
-    category: 'Diversos',
+    category: 'Placas',
     name: 'Compensado Fenólico',
-    description: 'Compensado fenólico de alta qualidade. Resistente à água, ideal para formas de concreto.',
+    description: 'Compensado fenólico de alta qualidade. Resistente à água, ideal para formas de concreto e estruturas.',
     image: 'https://kydrywall.com.br/produtos/wp-content/uploads/2023/03/altcompensado-madeirite-fenolico.png',
     rating: 4.8,
     specs: ['Tipo: Fenólico', 'Resistente à Água', 'Múltiplos Usos'],
