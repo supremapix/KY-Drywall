@@ -79,8 +79,8 @@ const Sitemap: React.FC = () => {
                 return (
                   <div key={n} className="space-y-1">
                     <p className="text-[10px] font-black text-gray-900 border-l-2 border-[#D31219] pl-2 uppercase">{n}</p>
-                    <Link to={`/drywall-em-${slug}`} className="block text-[8px] font-bold text-gray-400 hover:text-[#D31219] uppercase">Drywall {n}</Link>
-                    <Link to={`/steel-frame-em-${slug}`} className="block text-[8px] font-bold text-gray-400 hover:text-[#D31219] uppercase">Steel Frame {n}</Link>
+                    <Link to={`/drywall-em/${slug}`} className="block text-[8px] font-bold text-gray-400 hover:text-[#D31219] uppercase">Drywall {n}</Link>
+                    <Link to={`/steel-frame-em/${slug}`} className="block text-[8px] font-bold text-gray-400 hover:text-[#D31219] uppercase">Steel Frame {n}</Link>
                   </div>
                 );
               })}
@@ -98,8 +98,8 @@ const Sitemap: React.FC = () => {
                 return (
                   <div key={c} className="space-y-1">
                     <p className="text-[10px] font-black text-white border-l-2 border-[#D31219] pl-2 uppercase">{c}</p>
-                    <Link to={`/drywall-em-${slug}`} className="block text-[8px] font-bold text-gray-400 hover:text-[#D31219] uppercase">Drywall {c}</Link>
-                    <Link to={`/steel-frame-em-${slug}`} className="block text-[8px] font-bold text-gray-400 hover:text-[#D31219] uppercase">Steel Frame {c}</Link>
+                    <Link to={`/drywall-em/${slug}`} className="block text-[8px] font-bold text-gray-400 hover:text-[#D31219] uppercase">Drywall {c}</Link>
+                    <Link to={`/steel-frame-em/${slug}`} className="block text-[8px] font-bold text-gray-400 hover:text-[#D31219] uppercase">Steel Frame {c}</Link>
                   </div>
                 );
               })}
