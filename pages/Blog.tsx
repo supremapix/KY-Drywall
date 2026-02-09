@@ -111,8 +111,8 @@ const Blog: React.FC = () => {
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-4 max-h-[500px] overflow-y-auto pr-4 scrollbar-thin scrollbar-thumb-[#D31219]">
                 {NEIGHBORHOODS.map(n => (
                   <div key={n} className="flex flex-col gap-1 border-b border-gray-50 pb-2">
-                    <Link to={`/drywall-em-${normalizeLocationName(n)}`} className="text-[10px] font-bold text-gray-700 hover:text-[#D31219] uppercase tracking-tighter">Drywall {n}</Link>
-                    <Link to={`/steel-frame-em-${normalizeLocationName(n)}`} className="text-[8px] font-black text-gray-400 hover:text-black uppercase">Steel Frame {n}</Link>
+                    <Link to={`/drywall-em/${normalizeLocationName(n)}`} className="text-[10px] font-bold text-gray-700 hover:text-[#D31219] uppercase tracking-tighter">Drywall {n}</Link>
+                    <Link to={`/steel-frame-em/${normalizeLocationName(n)}`} className="text-[8px] font-black text-gray-400 hover:text-black uppercase">Steel Frame {n}</Link>
                   </div>
                 ))}
               </div>
@@ -126,8 +126,8 @@ const Blog: React.FC = () => {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4 max-h-[500px] overflow-y-auto pr-4 scrollbar-thin scrollbar-thumb-white/20">
                 {CITIES_RMC.map(c => (
                   <div key={c} className="flex flex-col gap-1 border-b border-white/5 pb-2">
-                    <Link to={`/drywall-em-${normalizeLocationName(c)}`} className="text-[10px] font-bold text-gray-300 hover:text-[#D31219] uppercase tracking-widest">Drywall em {c}</Link>
-                    <Link to={`/steel-frame-em-${normalizeLocationName(c)}`} className="text-[8px] font-black text-white/20 hover:text-white uppercase">Steel Frame em {c}</Link>
+                    <Link to={`/drywall-em/${normalizeLocationName(c)}`} className="text-[10px] font-bold text-gray-300 hover:text-[#D31219] uppercase tracking-widest">Drywall em {c}</Link>
+                    <Link to={`/steel-frame-em/${normalizeLocationName(c)}`} className="text-[8px] font-black text-white/20 hover:text-white uppercase">Steel Frame em {c}</Link>
                   </div>
                 ))}
               </div>

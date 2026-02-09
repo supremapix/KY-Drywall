@@ -49,7 +49,7 @@ const LocationPage: React.FC<LocationPageProps> = ({ type }) => {
     "@graph": [
       {
         "@type": "Service",
-        "@id": `${BASE_URL}/${type}-em-${location}/#service`,
+        "@id": `${BASE_URL}/${type === 'drywall' ? 'drywall' : 'steel-frame'}-em/${location}/#service`,
         "name": `${serviceName} em ${formattedName}`,
         "serviceType": "Construção a Seco",
         "description": `Serviços completos de ${serviceName} em ${formattedName}. Instalação, materiais e assessoria técnica especializada.`,
@@ -71,7 +71,7 @@ const LocationPage: React.FC<LocationPageProps> = ({ type }) => {
         },
         "availableChannel": {
           "@type": "ServiceChannel",
-          "serviceUrl": `${BASE_URL}/${type}-em-${location}`,
+          "serviceUrl": `${BASE_URL}/${type === 'drywall' ? 'drywall' : 'steel-frame'}-em/${location}`,
           "servicePhone": "+554135284232"
         }
       },
@@ -88,7 +88,7 @@ const LocationPage: React.FC<LocationPageProps> = ({ type }) => {
             "@type": "ListItem",
             "position": 2,
             "name": `${serviceName} em ${formattedName}`,
-            "item": `${BASE_URL}/${type}-em-${location}`
+            "item": `${BASE_URL}/${type === 'drywall' ? 'drywall' : 'steel-frame'}-em/${location}`
           }
         ]
       }
@@ -109,7 +109,7 @@ const LocationPage: React.FC<LocationPageProps> = ({ type }) => {
         title={pageTitle}
         description={pageDescription}
         keywords={pageKeywords}
-        canonical={`${BASE_URL}/${type}-em-${location}`}
+        canonical={`${BASE_URL}/${type === 'drywall' ? 'drywall' : 'steel-frame'}-em/${location}`}
         schema={schema}
       />
 
@@ -372,7 +372,7 @@ const LocationPage: React.FC<LocationPageProps> = ({ type }) => {
                   {NEIGHBORHOODS.map(n => (
                     <Link
                       key={n}
-                      to={`/drywall-em-${normalizeLocationName(n)}`}
+                      to={`/drywall-em/${normalizeLocationName(n)}`}
                       onClick={() => window.scrollTo(0, 0)}
                       className={`group flex items-center justify-between p-4 rounded-2xl hover:bg-gray-50 transition-all ${normalizeLocationName(n) === location ? 'bg-[#D31219]/5 border border-[#D31219]/20' : ''}`}
                     >
@@ -391,7 +391,7 @@ const LocationPage: React.FC<LocationPageProps> = ({ type }) => {
                   {CITIES_RMC.map(c => (
                     <Link
                       key={c}
-                      to={`/drywall-em-${normalizeLocationName(c)}`}
+                      to={`/drywall-em/${normalizeLocationName(c)}`}
                       onClick={() => window.scrollTo(0, 0)}
                       className={`group flex items-center justify-between p-4 rounded-2xl hover:bg-gray-50 transition-all ${normalizeLocationName(c) === location ? 'bg-[#D31219]/5 border border-[#D31219]/20' : ''}`}
                     >
