@@ -105,6 +105,52 @@ const Header: React.FC = () => {
           </div>
         </div>
       </header>
+      {/* Mobile Menu */}
+      {isMenuOpen && (
+        <div className="lg:hidden fixed inset-0 top-[80px] md:top-[84px] z-[55] bg-white overflow-y-auto">
+          <nav className="container mx-auto px-4 py-6 flex flex-col gap-2">
+            {NAV_ITEMS.map((item) => (
+              <div key={item.label}>
+                <Link
+                  to={item.path}
+                  onClick={() => setIsMenuOpen(false)}
+                  className="block font-bold text-gray-900 hover:text-[#D31219] transition-colors text-base py-3 border-b border-gray-100"
+                >
+                  {item.label}
+                </Link>
+                {item.children && (
+                  <div className="pl-4 flex flex-col gap-1 py-2">
+                    {item.children.map((child) => (
+                      <Link
+                        key={child.label}
+                        to={child.path}
+                        onClick={() => setIsMenuOpen(false)}
+                        className="block text-sm text-gray-600 hover:text-[#D31219] font-medium py-2"
+                      >
+                        {child.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
+            <Link
+              to="/produtos"
+              onClick={() => setIsMenuOpen(false)}
+              className="block bg-[#D31219] text-white font-bold text-center px-8 py-4 rounded-lg hover:bg-black transition-all text-sm shadow-md mt-4"
+            >
+              Nossos Produtos
+            </Link>
+            <a
+              href={`https://wa.me/${COMPANY_INFO.whatsapp}?text=Olá! Vim do site e quero fazer um orçamento`}
+              className="block bg-[#003366] text-white font-bold text-center px-8 py-4 rounded-lg hover:bg-black transition-all text-sm shadow-md mt-2"
+            >
+              WhatsApp - Orçamento
+            </a>
+          </nav>
+        </div>
+      )}
+
       <QuoteDrawer isOpen={isQuoteOpen} onClose={() => setIsQuoteOpen(false)} />
     </>
   );

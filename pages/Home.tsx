@@ -257,7 +257,7 @@ const Home: React.FC = () => {
                   <h3 className="text-[#D31219] text-[10px] font-black uppercase tracking-[0.3em] mb-8 border-b border-white/10 pb-4">Bairros Curitiba</h3>
                   <div className="grid grid-cols-1 gap-3 max-h-[400px] overflow-y-auto custom-scrollbar pr-4">
                     {NEIGHBORHOODS.map(n => (
-                      <Link key={n} to={`/drywall-em-${normalizeLocationName(n)}`} className="text-[10px] font-bold text-gray-400 hover:text-white transition-colors uppercase flex items-center gap-2">
+                      <Link key={n} to={`/drywall-em/${normalizeLocationName(n)}`} className="text-[10px] font-bold text-gray-400 hover:text-white transition-colors uppercase flex items-center gap-2">
                         <ChevronRight size={12} className="text-[#D31219]" /> {n}
                       </Link>
                     ))}
@@ -267,7 +267,7 @@ const Home: React.FC = () => {
                   <h3 className="text-[#D31219] text-[10px] font-black uppercase tracking-[0.3em] mb-8 border-b border-white/10 pb-4">Cidades RMC</h3>
                   <div className="grid grid-cols-1 gap-3 max-h-[400px] overflow-y-auto custom-scrollbar pr-4">
                     {CITIES_RMC.map(c => (
-                      <Link key={c} to={`/drywall-em-${normalizeLocationName(c)}`} className="text-[10px] font-bold text-gray-400 hover:text-white transition-colors uppercase flex items-center gap-2">
+                      <Link key={c} to={`/drywall-em/${normalizeLocationName(c)}`} className="text-[10px] font-bold text-gray-400 hover:text-white transition-colors uppercase flex items-center gap-2">
                         <ChevronRight size={12} className="text-[#D31219]" /> {c}
                       </Link>
                     ))}
@@ -303,7 +303,7 @@ const Home: React.FC = () => {
                   </div>
                   <h3 className="text-2xl font-black mb-4 uppercase tracking-tight leading-tight group-hover:text-[#D31219] transition-colors">{post.title}</h3>
                   <p className="text-gray-500 text-sm mb-8 line-clamp-2 leading-relaxed font-medium italic">"{post.excerpt}"</p>
-                  <Link to="/blog" className="flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-gray-900 group-hover:gap-4 transition-all">Ler Matéria <ArrowRight size={14} className="text-[#D31219]" /></Link>
+                  <Link to={`/blog/${post.id}`} className="flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-gray-900 group-hover:gap-4 transition-all">Ler Matéria <ArrowRight size={14} className="text-[#D31219]" /></Link>
                 </div>
               </div>
             ))}

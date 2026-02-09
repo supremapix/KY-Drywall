@@ -56,9 +56,10 @@ const App: React.FC = () => {
             <Route path="/produto/:productId" element={<ProductDetails />} />
             <Route path="/contato" element={<Contact />} />
             <Route path="/blog" element={<Blog />} />
-            <Route path="/drywall-em-:location" element={<LocationPage type="drywall" />} />
-            <Route path="/steel-frame-em-:location" element={<LocationPage type="steel" />} />
+            <Route path="/drywall-em/:location" element={<LocationPage type="drywall" />} />
+            <Route path="/steel-frame-em/:location" element={<LocationPage type="steel" />} />
             <Route path="/localizacao/:location" element={<LocationPage type="drywall" />} />
+            <Route path="/blog/:postId" element={<Blog />} />
             <Route path="/sitemap" element={<Sitemap />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
