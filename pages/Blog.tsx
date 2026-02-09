@@ -84,9 +84,9 @@ const Blog: React.FC = () => {
                   </div>
                   <h3 className="text-xl font-black mb-4 leading-tight group-hover:text-[#D31219] transition-colors uppercase tracking-tight">{post.title}</h3>
                   <p className="text-gray-500 text-sm mb-6 leading-relaxed font-medium">{post.excerpt}</p>
-                  <button className="flex items-center gap-2 text-[#D31219] font-black uppercase tracking-widest text-[10px] hover:gap-4 transition-all">
+                  <Link to={`/blog/${post.id}`} className="flex items-center gap-2 text-[#D31219] font-black uppercase tracking-widest text-[10px] hover:gap-4 transition-all">
                     Ler Conteúdo Completo <ArrowRight size={14} />
-                  </button>
+                  </Link>
                 </div>
               </div>
             ))}

@@ -12,6 +12,7 @@ import Contact from './pages/Contact';
 import Blog from './pages/Blog';
 import LocationPage from './pages/LocationPage';
 import Sitemap from './pages/Sitemap';
+import BlogPostPage from './pages/BlogPostPage';
 import NotFound from './pages/NotFound';
 import WhatsAppWidget from './components/WhatsAppWidget';
 import FloatingActions from './components/FloatingActions';
@@ -56,6 +57,7 @@ const App: React.FC = () => {
             <Route path="/produto/:productId" element={<ProductDetails />} />
             <Route path="/contato" element={<Contact />} />
             <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:postId" element={<BlogPostPage />} />
             <Route path="/drywall-em/:location" element={<LocationPage type="drywall" />} />
             <Route path="/steel-frame-em/:location" element={<LocationPage type="steel" />} />
             <Route path="/localizacao/:location" element={<LocationPage type="drywall" />} />
