@@ -1,4 +1,5 @@
 
+<!-- Updated: Added heartbeat animation for footer credit -->
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
@@ -49,6 +50,15 @@
       .custom-scrollbar::-webkit-scrollbar-thumb { background: #D31219; border-radius: 10px; }
       .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #a00e13; }
       
+      /* Heartbeat Animation */
+      @keyframes heartbeat {
+        0%, 100% { transform: scale(1); }
+        15% { transform: scale(1.25); }
+        30% { transform: scale(1); }
+        45% { transform: scale(1.2); }
+        60% { transform: scale(1); }
+      }
+
       /* Performance Optimizations */
       img { content-visibility: auto; }
       .blur-load { filter: blur(20px); transition: filter 0.3s; }

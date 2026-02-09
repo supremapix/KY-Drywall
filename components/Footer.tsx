@@ -1,4 +1,4 @@
-
+// Footer - Updated: Suprema Sites Express credit with heartbeat animation
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 // Fixed: Added ChevronRight to the lucide-react imports
@@ -42,7 +42,7 @@ const Footer: React.FC = () => {
                     {[...Array(5)].map((_, i) => (<Star key={i} size={14} className="fill-[#D31219] text-[#D31219]" />))}
                   </div>
                   <p className="text-2xl font-black">4.9 / 5.0</p>
-                  <p className="text-[10px] font-black text-gray-600 uppercase tracking-widest">Avaliação Google</p>
+                  <p className="text-[10px] font-black text-gray-600 uppercase tracking-widest">Avaliacao Google</p>
                 </div>
                 <div className="bg-white/10 p-5 rounded-3xl animate-pulse"><CheckCircle2 size={40} className="text-[#D31219]" /></div>
               </div>
@@ -80,7 +80,7 @@ const Footer: React.FC = () => {
                 onError={(e) => (e.target as HTMLImageElement).src = 'https://via.placeholder.com/200x80?text=KY+DRYWALL'}
               />
             </Link>
-            <p className="text-gray-500 text-sm leading-relaxed font-bold uppercase tracking-tight">Referência técnica em sistemas construtivos a seco no Paraná há mais de duas décadas.</p>
+            <p className="text-gray-500 text-sm leading-relaxed font-bold uppercase tracking-tight">{"Refer\u00EAncia t\u00E9cnica em sistemas construtivos a seco no Paran\u00E1 h\u00E1 mais de duas d\u00E9cadas."}</p>
             <div className="flex items-center gap-3 text-[10px] font-black uppercase text-white/40"><ShieldCheck size={20} className="text-[#D31219]" /> Certificado ABNT NBR 15575</div>
           </div>
 
@@ -99,18 +99,18 @@ const Footer: React.FC = () => {
                 <div className="p-3 bg-white/5 rounded-2xl text-[#D31219]"><Clock size={20} /></div>
                 <div className="text-[11px] font-black uppercase text-gray-500 tracking-widest pt-1">
                   <p className="text-white">Seg-Sex: 07:30 - 17:30</p>
-                  <p>Sáb: 07:30 - 12:00</p>
+                  <p>{"S\u00E1b: 07:30 - 12:00"}</p>
                 </div>
               </div>
             </div>
           </div>
 
           <div>
-            <h3 className="text-2xl font-black mb-10 uppercase tracking-tighter border-b border-[#D31219]/50 pb-3">Navegação</h3>
+            <h3 className="text-2xl font-black mb-10 uppercase tracking-tighter border-b border-[#D31219]/50 pb-3">{"Navega\u00E7\u00E3o"}</h3>
             <ul className="grid grid-cols-1 gap-4 text-xs font-black uppercase text-gray-600 tracking-widest">
               <li><Link to="/empresa" className="hover:text-white hover:pl-2 transition-all flex items-center gap-2"><ChevronRight size={14} className="text-[#D31219]"/> A Empresa</Link></li>
               <li><Link to="/produtos" className="hover:text-white hover:pl-2 transition-all flex items-center gap-2"><ChevronRight size={14} className="text-[#D31219]"/> Produtos</Link></li>
-              <li><Link to="/servicos" className="hover:text-white hover:pl-2 transition-all flex items-center gap-2"><ChevronRight size={14} className="text-[#D31219]"/> Serviços</Link></li>
+              <li><Link to="/servicos" className="hover:text-white hover:pl-2 transition-all flex items-center gap-2"><ChevronRight size={14} className="text-[#D31219]"/> {"Servi\u00E7os"}</Link></li>
               <li><Link to="/blog" className="hover:text-white hover:pl-2 transition-all flex items-center gap-2"><ChevronRight size={14} className="text-[#D31219]"/> Blog Regional</Link></li>
             </ul>
           </div>
@@ -124,7 +124,7 @@ const Footer: React.FC = () => {
             <div className="space-y-8 relative z-10">
               <div className="space-y-2">
                 <p className="text-xs font-black text-[#D31219] uppercase tracking-[0.3em]">Showroom Curitiba</p>
-                <p className="text-lg font-black text-white leading-tight uppercase tracking-tight">Rod. BR 277 <br/>Nº 3641 - Cajuru</p>
+                <p className="text-lg font-black text-white leading-tight uppercase tracking-tight">Rod. BR 277 <br/>{"N\u00BA 3641 - Cajuru"}</p>
               </div>
               <a 
                 href="https://maps.app.goo.gl/RcpAnuqvVRpjQBQD6" 
@@ -136,15 +136,15 @@ const Footer: React.FC = () => {
                 <Navigation size={20} className="group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
               </a>
               <div className="flex items-center gap-2 text-[9px] font-black uppercase text-gray-600 tracking-tighter">
-                <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-ping"></span> Aberto para Visitação Técnica
+                <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-ping"></span> {"Aberto para Visita\u00E7\u00E3o T\u00E9cnica"}
               </div>
             </div>
           </div>
         </div>
 
-        {/* Bottom Bar */}
+        {/* Bottom Bar - Copyright and Credits */}
         <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-10 text-center">
-          <p className="text-[10px] font-black uppercase text-gray-600 tracking-widest">© {new Date().getFullYear()} KY Drywall & Steel Frame. Todos os direitos reservados.</p>
+          <p className="text-[10px] font-black uppercase text-gray-600 tracking-widest">{"© "}{new Date().getFullYear()}{" KY Drywall & Steel Frame. Todos os direitos reservados."}</p>
           <div className="flex gap-6">
             <a href="https://facebook.com/kydrywall" className="p-4 bg-white/5 rounded-full hover:bg-[#D31219] transition-colors shadow-xl group">
               <Facebook size={20} className="group-hover:scale-110 transition-transform"/>
@@ -153,7 +153,16 @@ const Footer: React.FC = () => {
               <Instagram size={20} className="group-hover:scale-110 transition-transform"/>
             </a>
           </div>
-          <p className="text-[10px] font-black uppercase text-gray-600 tracking-widest">Tecnologia por <a href="https://supremamidia.com.br" className="text-white hover:text-[#D31219] transition-colors underline decoration-[#D31219] underline-offset-4">Suprema Mídia</a></p>
+          <p className="text-[10px] font-black uppercase text-gray-600 tracking-widest flex items-center gap-1.5 justify-center md:justify-end">
+            Desenvolvido
+            <span className="inline-block animate-[heartbeat_1.2s_ease-in-out_infinite] text-[#D31219]">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
+                <path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z" />
+              </svg>
+            </span>
+            por
+            <a href="https://supremasite.com.br" target="_blank" rel="noreferrer" className="text-white hover:text-[#D31219] transition-colors underline decoration-[#D31219] underline-offset-4">Suprema Sites Express</a>
+          </p>
         </div>
       </div>
     </footer>
