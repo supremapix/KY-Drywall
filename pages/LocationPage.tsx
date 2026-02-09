@@ -6,106 +6,6 @@ import { BASE_URL, SERVICES, NEIGHBORHOODS, CITIES_RMC, getRandomCTA, PRODUCTS, 
 import EnhancedSEO from '../components/EnhancedSEO';
 import ProductCard from '../components/ProductCard';
 
-// Geocoordenadas dos bairros de Curitiba e cidades da RMC
-const GEO_COORDINATES: Record<string, { lat: string; lng: string }> = {
-  "abranches": { lat: "-25.3730", lng: "-49.2850" },
-  "agua-verde": { lat: "-25.4500", lng: "-49.2830" },
-  "ahu": { lat: "-25.4100", lng: "-49.2780" },
-  "alto-boqueirão": { lat: "-25.5100", lng: "-49.2350" },
-  "alto-boqueirao": { lat: "-25.5100", lng: "-49.2350" },
-  "alto-da-gloria": { lat: "-25.4200", lng: "-49.2560" },
-  "alto-da-xv": { lat: "-25.4280", lng: "-49.2530" },
-  "atuba": { lat: "-25.3700", lng: "-49.2400" },
-  "augusta": { lat: "-25.3850", lng: "-49.3150" },
-  "bacacheri": { lat: "-25.3900", lng: "-49.2500" },
-  "bairro-alto": { lat: "-25.3650", lng: "-49.2300" },
-  "barreirinha": { lat: "-25.3500", lng: "-49.2700" },
-  "batel": { lat: "-25.4400", lng: "-49.2900" },
-  "bigorrilho": { lat: "-25.4350", lng: "-49.2980" },
-  "boa-vista": { lat: "-25.3800", lng: "-49.2600" },
-  "bom-retiro": { lat: "-25.4150", lng: "-49.2650" },
-  "boqueirao": { lat: "-25.4900", lng: "-49.2400" },
-  "butiatuvinha": { lat: "-25.3600", lng: "-49.3300" },
-  "cabral": { lat: "-25.4000", lng: "-49.2650" },
-  "cachoeira": { lat: "-25.3400", lng: "-49.2900" },
-  "cajuru": { lat: "-25.4500", lng: "-49.2300" },
-  "campina-do-siqueira": { lat: "-25.4450", lng: "-49.3050" },
-  "campo-comprido": { lat: "-25.4550", lng: "-49.3200" },
-  "campo-de-santana": { lat: "-25.5400", lng: "-49.3100" },
-  "capao-da-imbuia": { lat: "-25.4400", lng: "-49.2200" },
-  "capao-raso": { lat: "-25.5000", lng: "-49.2950" },
-  "cascatinha": { lat: "-25.3850", lng: "-49.3200" },
-  "centro": { lat: "-25.4290", lng: "-49.2710" },
-  "centro-civico": { lat: "-25.4150", lng: "-49.2700" },
-  "champagnat": { lat: "-25.4480", lng: "-49.2920" },
-  "cic": { lat: "-25.5000", lng: "-49.3400" },
-  "cidade-industrial": { lat: "-25.5000", lng: "-49.3400" },
-  "cristo-rei": { lat: "-25.4350", lng: "-49.2500" },
-  "fanny": { lat: "-25.4700", lng: "-49.2700" },
-  "fazendinha": { lat: "-25.4800", lng: "-49.3150" },
-  "ganchinho": { lat: "-25.5500", lng: "-49.2600" },
-  "guabirotuba": { lat: "-25.4600", lng: "-49.2350" },
-  "guaira": { lat: "-25.4600", lng: "-49.2700" },
-  "hauer": { lat: "-25.4800", lng: "-49.2600" },
-  "hugo-lange": { lat: "-25.4200", lng: "-49.2500" },
-  "jardim-botanico": { lat: "-25.4430", lng: "-49.2400" },
-  "jardim-das-americas": { lat: "-25.4500", lng: "-49.2250" },
-  "jardim-social": { lat: "-25.4300", lng: "-49.2350" },
-  "juveve": { lat: "-25.4100", lng: "-49.2650" },
-  "lamenha-pequena": { lat: "-25.3600", lng: "-49.3100" },
-  "lindoia": { lat: "-25.4650", lng: "-49.2750" },
-  "merces": { lat: "-25.4300", lng: "-49.3000" },
-  "mossungue": { lat: "-25.4400", lng: "-49.3200" },
-  "novo-mundo": { lat: "-25.4900", lng: "-49.2800" },
-  "orleans": { lat: "-25.4350", lng: "-49.3100" },
-  "parolin": { lat: "-25.4600", lng: "-49.2650" },
-  "pilarzinho": { lat: "-25.3800", lng: "-49.2850" },
-  "pinheirinho": { lat: "-25.5100", lng: "-49.3050" },
-  "portao": { lat: "-25.4700", lng: "-49.2900" },
-  "prado-velho": { lat: "-25.4450", lng: "-49.2550" },
-  "reboucas": { lat: "-25.4450", lng: "-49.2650" },
-  "riviera": { lat: "-25.4500", lng: "-49.3150" },
-  "santa-candida": { lat: "-25.3500", lng: "-49.2500" },
-  "santa-felicidade": { lat: "-25.3900", lng: "-49.3300" },
-  "santa-quiteria": { lat: "-25.4600", lng: "-49.3100" },
-  "santo-inacio": { lat: "-25.4550", lng: "-49.3250" },
-  "sao-braz": { lat: "-25.4700", lng: "-49.3200" },
-  "sao-francisco": { lat: "-25.4250", lng: "-49.2800" },
-  "sao-joao": { lat: "-25.4850", lng: "-49.2950" },
-  "sao-lourenco": { lat: "-25.3850", lng: "-49.2700" },
-  "seminario": { lat: "-25.4450", lng: "-49.3000" },
-  "sitio-cercado": { lat: "-25.5300", lng: "-49.2900" },
-  "taboao": { lat: "-25.3700", lng: "-49.2700" },
-  "taruma": { lat: "-25.4300", lng: "-49.2200" },
-  "tatuquara": { lat: "-25.5400", lng: "-49.3200" },
-  "tingui": { lat: "-25.3700", lng: "-49.2800" },
-  "uberaba": { lat: "-25.4700", lng: "-49.2300" },
-  "umbara": { lat: "-25.5600", lng: "-49.2800" },
-  "vila-izabel": { lat: "-25.4500", lng: "-49.2950" },
-  "vista-alegre": { lat: "-25.4650", lng: "-49.2500" },
-  "xaxim": { lat: "-25.5000", lng: "-49.2650" },
-  // Cidades RMC
-  "curitiba": { lat: "-25.4284", lng: "-49.2733" },
-  "pinhais": { lat: "-25.4430", lng: "-49.1930" },
-  "sao-jose-dos-pinhais": { lat: "-25.5350", lng: "-49.2060" },
-  "colombo": { lat: "-25.2920", lng: "-49.2240" },
-  "araucaria": { lat: "-25.5930", lng: "-49.4100" },
-  "campo-largo": { lat: "-25.4590", lng: "-49.5290" },
-  "almirante-tamandare": { lat: "-25.3230", lng: "-49.3060" },
-  "fazenda-rio-grande": { lat: "-25.6620", lng: "-49.3070" },
-  "piraquara": { lat: "-25.4420", lng: "-49.0630" },
-  "quatro-barras": { lat: "-25.3670", lng: "-49.0760" },
-  "campina-grande-do-sul": { lat: "-25.3040", lng: "-49.0550" },
-  "campo-magro": { lat: "-25.3680", lng: "-49.3650" },
-  "itaperucu": { lat: "-25.2190", lng: "-49.3450" },
-  "rio-branco-do-sul": { lat: "-25.1890", lng: "-49.3130" },
-};
-
-const getGeoForLocation = (slug: string) => {
-  const normalized = slug.toLowerCase();
-  return GEO_COORDINATES[normalized] || { lat: "-25.4284", lng: "-49.2733" }; // default Curitiba
-};
-
 interface LocationPageProps {
   type: 'drywall' | 'steel';
 }
@@ -128,9 +28,6 @@ const LocationPage: React.FC<LocationPageProps> = ({ type }) => {
   }, [location]);
 
   const serviceName = type === 'drywall' ? 'Drywall' : 'Steel Frame';
-  const isCity = CITIES_RMC.some(c => normalizeLocationName(c) === location);
-  const geo = location ? getGeoForLocation(location) : { lat: "-25.4284", lng: "-49.2733" };
-  const canonicalUrl = `${BASE_URL}/${type}-em/${location}`;
 
   useEffect(() => {
     if (!location) {
@@ -151,129 +48,35 @@ const LocationPage: React.FC<LocationPageProps> = ({ type }) => {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "LocalBusiness",
-        "@id": `${BASE_URL}/#organization`,
-        "name": "KY Drywall & Steel Frame",
-        "image": `${BASE_URL}/logotipo-ky-drywall.png`,
-        "url": BASE_URL,
-        "telephone": "+554135284232",
-        "email": COMPANY_INFO.email,
-        "priceRange": "$$",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Rod. BR 277, 3641",
-          "addressLocality": "Curitiba",
-          "addressRegion": "PR",
-          "postalCode": "82920-000",
-          "addressCountry": "BR"
-        },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": "-25.4284",
-          "longitude": "-49.2733"
-        },
-        "openingHoursSpecification": [
-          {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-            "opens": "07:30",
-            "closes": "17:30"
-          },
-          {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": "Saturday",
-            "opens": "07:30",
-            "closes": "12:00"
-          }
-        ],
-        "sameAs": [
-          "https://facebook.com/kydrywall",
-          "https://instagram.com/kydrywall"
-        ],
-        "areaServed": [
-          {
-            "@type": isCity ? "City" : "Place",
-            "name": formattedName,
-            "geo": {
-              "@type": "GeoCoordinates",
-              "latitude": geo.lat,
-              "longitude": geo.lng
-            },
-            "containedInPlace": {
-              "@type": "AdministrativeArea",
-              "name": "Região Metropolitana de Curitiba, Paraná, Brasil"
-            }
-          }
-        ]
-      },
-      {
         "@type": "Service",
-        "@id": `${canonicalUrl}/#service`,
+        "@id": `${BASE_URL}/${type === 'drywall' ? 'drywall' : 'steel-frame'}-em/${location}/#service`,
         "name": `${serviceName} em ${formattedName}`,
-        "serviceType": type === 'drywall' ? "Instalação e Materiais para Drywall" : "Construção e Materiais para Steel Frame",
-        "description": `Serviços completos de ${serviceName} em ${formattedName}, Curitiba - PR. Venda de materiais, entrega rápida, assessoria técnica especializada e orçamento gratuito.`,
+        "serviceType": "Construção a Seco",
+        "description": `Serviços completos de ${serviceName} em ${formattedName}. Instalação, materiais e assessoria técnica especializada.`,
         "provider": {
           "@type": "LocalBusiness",
-          "@id": `${BASE_URL}/#organization`
-        },
-        "areaServed": {
-          "@type": "GeoCircle",
-          "geoMidpoint": {
-            "@type": "GeoCoordinates",
-            "latitude": geo.lat,
-            "longitude": geo.lng
+          "@id": `${BASE_URL}/#organization`,
+          "name": "KY Drywall & Steel Frame",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": formattedName,
+            "addressRegion": "PR",
+            "addressCountry": "BR"
           },
-          "geoRadius": "15000"
-        },
-        "hasOfferCatalog": {
-          "@type": "OfferCatalog",
-          "name": `Materiais para ${serviceName}`,
-          "itemListElement": featuredProducts.slice(0, 4).map(p => ({
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Product",
-              "name": p.name,
-              "description": p.description,
-              "image": p.image.startsWith('http') ? p.image : `${BASE_URL}${p.image}`,
-              "brand": {
-                "@type": "Brand",
-                "name": "KY Drywall"
-              }
-            }
-          }))
+          "telephone": "+554135284232",
+          "areaServed": {
+            "@type": "City",
+            "name": formattedName
+          }
         },
         "availableChannel": {
           "@type": "ServiceChannel",
-          "serviceUrl": canonicalUrl,
-          "servicePhone": "+554135284232",
-          "serviceLocation": {
-            "@type": "Place",
-            "name": `Atendimento ${serviceName} em ${formattedName}`,
-            "geo": {
-              "@type": "GeoCoordinates",
-              "latitude": geo.lat,
-              "longitude": geo.lng
-            }
-          }
-        }
-      },
-      {
-        "@type": "WebPage",
-        "@id": `${canonicalUrl}/#webpage`,
-        "url": canonicalUrl,
-        "name": `${serviceName} em ${formattedName} | KY Drywall & Steel Frame`,
-        "description": `${serviceName} em ${formattedName} com a KY Drywall & Steel Frame. Materiais, entrega rápida e assessoria técnica.`,
-        "isPartOf": { "@id": `${BASE_URL}/#website` },
-        "about": { "@id": `${canonicalUrl}/#service` },
-        "breadcrumb": { "@id": `${canonicalUrl}/#breadcrumb` },
-        "speakable": {
-          "@type": "SpeakableSpecification",
-          "cssSelector": ["h1", "h2", ".hero-description"]
+          "serviceUrl": `${BASE_URL}/${type === 'drywall' ? 'drywall' : 'steel-frame'}-em/${location}`,
+          "servicePhone": "+554135284232"
         }
       },
       {
         "@type": "BreadcrumbList",
-        "@id": `${canonicalUrl}/#breadcrumb`,
         "itemListElement": [
           {
             "@type": "ListItem",
@@ -284,52 +87,8 @@ const LocationPage: React.FC<LocationPageProps> = ({ type }) => {
           {
             "@type": "ListItem",
             "position": 2,
-            "name": type === 'drywall' ? "Drywall" : "Steel Frame",
-            "item": `${BASE_URL}/servicos/${type === 'drywall' ? 'drywall' : 'steel-frame'}`
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
             "name": `${serviceName} em ${formattedName}`,
-            "item": canonicalUrl
-          }
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "@id": `${canonicalUrl}/#faq`,
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": `A KY Drywall entrega materiais de ${serviceName.toLowerCase()} em ${formattedName}?`,
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": `Sim! A KY Drywall realiza entregas de todos os materiais para ${serviceName.toLowerCase()} em ${formattedName} com frota própria. Entrega no mesmo dia, sujeito a disponibilidade de estoque.`
-            }
-          },
-          {
-            "@type": "Question",
-            "name": `Qual o prazo de entrega de ${serviceName.toLowerCase()} para ${formattedName}?`,
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": `O prazo de entrega para ${formattedName} é de até 24 horas úteis após a confirmação do pedido. Para pedidos realizados até as 12h, a entrega pode ser feita no mesmo dia.`
-            }
-          },
-          {
-            "@type": "Question",
-            "name": `Quais marcas de ${serviceName.toLowerCase()} a KY Drywall trabalha?`,
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Trabalhamos com as melhores marcas do mercado: Barbieri, Gypsum, Holdflex, Eternit, Isover, Placo, Fortíssima e LP. Todas com garantia do fabricante e certificações ABNT."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": `Como solicitar orçamento de ${serviceName.toLowerCase()} para ${formattedName}?`,
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": `Solicite seu orçamento gratuito pelo WhatsApp (41) 99645-7421 ou pelo telefone (41) 3528-4232. Nossa equipe técnica responde rapidamente com preços e condições especiais para ${formattedName}.`
-            }
+            "item": `${BASE_URL}/${type === 'drywall' ? 'drywall' : 'steel-frame'}-em/${location}`
           }
         ]
       }
@@ -337,8 +96,8 @@ const LocationPage: React.FC<LocationPageProps> = ({ type }) => {
   };
 
   const pageTitle = `${serviceName} em ${formattedName} | Entrega Rápida | Orçamento Grátis | KY Drywall`;
-  const pageDescription = `${serviceName} em ${formattedName}, ${isCity ? 'PR' : 'Curitiba - PR'} com a KY Drywall & Steel Frame. Entrega imediata de placas, perfis, massas e acessórios. Atendimento especializado, orçamento via WhatsApp e os melhores preços. Maior estoque de Curitiba. Ligue: (41) 3528-4232`;
-  const pageKeywords = `${serviceName.toLowerCase()} ${formattedName.toLowerCase()}, ${serviceName.toLowerCase()} curitiba, materiais ${serviceName.toLowerCase()}, instalação ${serviceName.toLowerCase()}, orçamento ${serviceName.toLowerCase()}, ${type} ${formattedName.toLowerCase()}, construção a seco ${formattedName.toLowerCase()}, entrega ${formattedName.toLowerCase()}, loja drywall ${formattedName.toLowerCase()}, preço ${serviceName.toLowerCase()} ${formattedName.toLowerCase()}`;
+  const pageDescription = `${serviceName} em ${formattedName} com a KY Drywall & Steel Frame. Entrega imediata de placas, perfis, massas e acessórios. Atendimento especializado, orçamento via WhatsApp e os melhores preços. Maior estoque de Curitiba. Ligue: (41) 3528-4232`;
+  const pageKeywords = `${serviceName.toLowerCase()} ${formattedName.toLowerCase()}, ${serviceName.toLowerCase()} curitiba, materiais ${serviceName.toLowerCase()}, instalação ${serviceName.toLowerCase()}, orçamento ${serviceName.toLowerCase()}, ${type} ${formattedName.toLowerCase()}, construção a seco ${formattedName.toLowerCase()}`;
 
   if (!location) {
     return null;
@@ -350,7 +109,7 @@ const LocationPage: React.FC<LocationPageProps> = ({ type }) => {
         title={pageTitle}
         description={pageDescription}
         keywords={pageKeywords}
-        canonical={canonicalUrl}
+        canonical={`${BASE_URL}/${type === 'drywall' ? 'drywall' : 'steel-frame'}-em/${location}`}
         schema={schema}
       />
 
@@ -572,43 +331,6 @@ const LocationPage: React.FC<LocationPageProps> = ({ type }) => {
                 </div>
               </div>
             </div>
-
-            {/* FAQ Section */}
-            <div>
-              <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tighter text-gray-900 mb-12 leading-tight">
-                Perguntas <span className="text-[#D31219]">Frequentes</span>
-              </h2>
-              <div className="space-y-6">
-                {[
-                  {
-                    q: `A KY Drywall entrega materiais de ${serviceName.toLowerCase()} em ${formattedName}?`,
-                    a: `Sim! A KY Drywall realiza entregas de todos os materiais para ${serviceName.toLowerCase()} em ${formattedName} com frota própria. Entrega no mesmo dia, sujeito a disponibilidade de estoque. Atendemos ${formattedName} e toda a Região Metropolitana de Curitiba.`
-                  },
-                  {
-                    q: `Qual o prazo de entrega de ${serviceName.toLowerCase()} para ${formattedName}?`,
-                    a: `O prazo de entrega para ${formattedName} é de até 24 horas úteis após a confirmação do pedido. Para pedidos realizados até as 12h, a entrega pode ser feita no mesmo dia.`
-                  },
-                  {
-                    q: `Quais marcas de ${serviceName.toLowerCase()} a KY Drywall trabalha?`,
-                    a: `Trabalhamos com as melhores marcas do mercado: Barbieri, Gypsum, Holdflex, Eternit, Isover, Placo, Fortíssima e LP. Todas com garantia do fabricante e certificações ABNT.`
-                  },
-                  {
-                    q: `Como solicitar orçamento de ${serviceName.toLowerCase()} para ${formattedName}?`,
-                    a: `Solicite seu orçamento gratuito pelo WhatsApp (41) 99645-7421 ou pelo telefone (41) 3528-4232. Nossa equipe técnica responde rapidamente com preços e condições especiais para ${formattedName}.`
-                  }
-                ].map((faq, i) => (
-                  <details key={i} className="bg-gradient-to-br from-gray-50 to-white rounded-[2rem] border border-gray-100 group open:shadow-xl transition-all">
-                    <summary className="p-8 cursor-pointer font-black text-lg uppercase tracking-tight text-gray-900 flex items-center justify-between gap-4 list-none [&::-webkit-details-marker]:hidden">
-                      <span className="flex-1 leading-tight">{faq.q}</span>
-                      <ChevronRight size={20} className="text-[#D31219] shrink-0 group-open:rotate-90 transition-transform" />
-                    </summary>
-                    <div className="px-8 pb-8 -mt-2">
-                      <p className="text-gray-600 leading-relaxed font-medium text-base">{faq.a}</p>
-                    </div>
-                  </details>
-                ))}
-              </div>
-            </div>
           </div>
 
           <aside className="lg:w-1/3">
@@ -650,7 +372,7 @@ const LocationPage: React.FC<LocationPageProps> = ({ type }) => {
                   {NEIGHBORHOODS.map(n => (
                     <Link
                       key={n}
-                      to={`/${type}-em/${normalizeLocationName(n)}`}
+                      to={`/drywall-em/${normalizeLocationName(n)}`}
                       onClick={() => window.scrollTo(0, 0)}
                       className={`group flex items-center justify-between p-4 rounded-2xl hover:bg-gray-50 transition-all ${normalizeLocationName(n) === location ? 'bg-[#D31219]/5 border border-[#D31219]/20' : ''}`}
                     >
@@ -669,7 +391,7 @@ const LocationPage: React.FC<LocationPageProps> = ({ type }) => {
                   {CITIES_RMC.map(c => (
                     <Link
                       key={c}
-                      to={`/${type}-em/${normalizeLocationName(c)}`}
+                      to={`/drywall-em/${normalizeLocationName(c)}`}
                       onClick={() => window.scrollTo(0, 0)}
                       className={`group flex items-center justify-between p-4 rounded-2xl hover:bg-gray-50 transition-all ${normalizeLocationName(c) === location ? 'bg-[#D31219]/5 border border-[#D31219]/20' : ''}`}
                     >
