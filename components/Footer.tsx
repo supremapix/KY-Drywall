@@ -1,3 +1,4 @@
+// Footer - Updated: Suprema Sites Express credit with heartbeat animation
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 // Fixed: Added ChevronRight to the lucide-react imports
