@@ -48,6 +48,7 @@ export const NAV_ITEMS: NavItem[] = [
     ]
   },
   { label: 'Nossos Produtos', path: '/produtos' },
+  { label: 'Blog', path: '/blog' },
   { label: 'Contato', path: '/contato' },
 ];
 
@@ -227,7 +228,7 @@ export const PRODUCTS: Product[] = [
     category: 'Parafusos',
     name: 'Parafuso L.A',
     description: 'Parafuso para estruturas metálicas leves. Essencial para montagem de perfis e estruturas.',
-    image: 'https://images.pexels.com/photos/209235/pexels-photo-209235.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/parafuso-la-sGIXxeXIl22aRQ7DzARzBUoT8zSnSJ.jpg',
     rating: 4.8,
     specs: ['Tipo: L.A', 'Uso: Estruturas Leves', 'Alta Resistência'],
     applications: ['Montagem de Perfis', 'Estruturas Auxiliares', 'Fixações Leves']
@@ -317,7 +318,7 @@ export const PRODUCTS: Product[] = [
     category: 'Perfis',
     name: 'Perfil Montante 70 Barbieri',
     description: 'Perfil vertical de 70mm com galvanização Z180. Alta resistência estrutural para paredes e divisórias.',
-    image: 'https://images.pexels.com/photos/5691601/pexels-photo-5691601.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Perfil%20Guia%20de%2070%20Barbieri-j9RwkBqOi0XOh2hsjHev8eEwEHLmrl.jpg',
     rating: 5,
     specs: ['Largura: 70mm', 'Comprimento: 3000mm', 'Galvanização: Z180'],
     applications: ['Estrutura de Paredes', 'Divisórias', 'Steel Frame']
@@ -327,7 +328,7 @@ export const PRODUCTS: Product[] = [
     category: 'Perfis',
     name: 'Perfil Guia de 70 Barbieri',
     description: 'Perfil guia de 70mm para estruturas mais robustas. Barbieri com galvanização premium.',
-    image: '/perfil_guia_de_70_barbieri.jpg',
+    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Perfil%20Guia%20de%2070%20Barbieri-j9RwkBqOi0XOh2hsjHev8eEwEHLmrl.jpg',
     rating: 4.9,
     specs: ['Largura: 70mm', 'Comprimento: 3000mm', 'Marca: Barbieri'],
     applications: ['Estruturas Reforçadas', 'Paredes Duplas', 'Base de Montantes']
