@@ -114,7 +114,7 @@ const About: React.FC = () => {
             </div>
             <div className="relative order-1 lg:order-2">
               <div className="rounded-[4rem] overflow-hidden shadow-2xl border-[12px] border-gray-50">
-                <img src="/gemini_generated_image_jk8nftjk8nftjk8n.png" alt="Loja KY Drywall na BR-277 Curitiba" className="w-full h-full object-cover" />
+                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ky-loja-cajuru-drywall-stell-fame.png-CAi9KHi0wcqQLptb0qLFGSWQZaXr98.jpeg" alt="Loja KY Drywall na BR-277 Cajuru - Materiais de Construção a Seco" className="w-full h-full object-cover" />
               </div>
               <div className="absolute -bottom-10 -left-6 bg-white p-8 rounded-[2.5rem] shadow-2xl border border-gray-100 text-center">
                  <Award size={40} className="text-[#D31219] mx-auto mb-4" />

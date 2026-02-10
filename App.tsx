@@ -13,6 +13,7 @@ import Blog from './pages/Blog';
 import LocationPage from './pages/LocationPage';
 import Sitemap from './pages/Sitemap';
 import BlogPostPage from './pages/BlogPostPage';
+import SteelFramePage from './pages/SteelFramePage';
 import NotFound from './pages/NotFound';
 import WhatsAppWidget from './components/WhatsAppWidget';
 import FloatingActions from './components/FloatingActions';
@@ -51,6 +52,7 @@ const App: React.FC = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/empresa" element={<About />} />
+            <Route path="/steel-frame" element={<SteelFramePage />} />
             <Route path="/servicos" element={<ServicesPage />} />
             <Route path="/servicos/:serviceId" element={<ServicesPage />} />
             <Route path="/produtos" element={<ProductList />} />
