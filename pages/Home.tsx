@@ -7,7 +7,7 @@ import EnhancedSEO from '../components/EnhancedSEO';
 
 const HERO_SLIDES = [
   {
-    image: '/gemini_generated_image_jk8nftjk8nftjk8n.png',
+    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ky-loja-cajuru-drywall-stell-fame.png-CAi9KHi0wcqQLptb0qLFGSWQZaXr98.jpeg',
     title: 'A <span class="text-[#D31219]">Maior Loja</span> de Curitiba',
     subtitle: 'Venha nos visitar na BR-277 - Cajuru'
   },
