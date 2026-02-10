@@ -40,7 +40,7 @@ export const NAV_ITEMS: NavItem[] = [
     label: 'Serviços',
     path: '/servicos',
     children: [
-      { label: 'Construção com Steel Frame', path: '/servicos/steel-frame' },
+      { label: 'Construção com Steel Frame', path: '/steel-frame' },
       { label: 'Estrutura Steel Frame para Telhado', path: '/servicos/telhado-steel' },
       { label: 'Forro e Parede com Drywall', path: '/servicos/drywall' },
       { label: 'Cobertura com Telhado Shingle', path: '/servicos/shingle' },
@@ -648,7 +648,7 @@ export const SERVICES: Service[] = [
     id: 'steel-frame',
     title: 'Construção com Steel Frame',
     description: 'Sistema construtivo industrializado com estrutura metálica. Obra até 70% mais rápida que construção tradicional, sustentável e econômica.',
-    image: 'https://images.pexels.com/photos/159306/construction-site-build-construction-work-159306.jpeg?auto=compress&cs=tinysrgb&w=800'
+    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/projeto-stell-frame.png-bAiwJLHNjOpiURXX8I0tGfLyNCau5x.jpeg'
   },
   {
     id: 'telhado-steel',
@@ -681,7 +681,7 @@ export const BLOG_POSTS: BlogPost[] = [
     id: 'b1',
     title: 'Steel Frame: A revolução na construção civil em Curitiba',
     excerpt: 'Descubra como o Steel Frame está transformando a construção em Curitiba com obras até 70% mais rápidas e sustentáveis.',
-    img: 'https://images.pexels.com/photos/159306/construction-site-build-construction-work-159306.jpeg?auto=compress&cs=tinysrgb&w=600',
+    img: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/projeto-stell-frame.png-bAiwJLHNjOpiURXX8I0tGfLyNCau5x.jpeg',
     tag: 'Steel Frame',
     date: 'Jan 2025'
   },

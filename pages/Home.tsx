@@ -12,9 +12,9 @@ const HERO_SLIDES = [
     subtitle: 'Venha nos visitar na BR-277 - Cajuru'
   },
   {
-    image: 'https://images.pexels.com/photos/159306/construction-site-build-construction-work-159306.jpeg?auto=compress&cs=tinysrgb&w=1920',
-    title: 'Sua Obra <span class="text-[#D31219]">70% Mais Rápida</span>',
-    subtitle: 'Sistemas de Construção a Seco'
+    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/projeto-stell-frame.png-bAiwJLHNjOpiURXX8I0tGfLyNCau5x.jpeg',
+    title: '<span class="text-[#D31219]">Steel Frame</span> Construção Inteligente',
+    subtitle: 'Obra 70% Mais Rápida e Sustentável'
   },
   {
     image: 'https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=1920',
@@ -57,7 +57,7 @@ const Home: React.FC = () => {
         url: BASE_URL,
         logo: {
           '@type': 'ImageObject',
-          url: `${BASE_URL}/gemini_generated_image_jk8nftjk8nftjk8n.png`
+          url: `${BASE_URL}/logotipo-ky-drywall.png`
         },
         contactPoint: {
           '@type': 'ContactPoint',
@@ -83,7 +83,7 @@ const Home: React.FC = () => {
         '@type': 'Store',
         '@id': `${BASE_URL}/#store`,
         name: 'KY Drywall & Steel Frame - Loja Física',
-        image: `${BASE_URL}/gemini_generated_image_jk8nftjk8nftjk8n.png`,
+        image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ky-loja-cajuru-drywall-stell-fame.png-CAi9KHi0wcqQLptb0qLFGSWQZaXr98.jpeg',
         priceRange: '$$',
         address: {
           '@type': 'PostalAddress',
@@ -146,6 +146,68 @@ const Home: React.FC = () => {
               <Link to="/produtos" className="bg-white/10 text-white font-black px-12 py-6 rounded-2xl flex items-center justify-center border-2 border-white/30 backdrop-blur-md uppercase tracking-widest text-xs hover:bg-white/20 transition-all">
                 Ver Catálogo Completo
               </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Destaque: Steel Frame */}
+      <section className="py-24 lg:py-32 bg-[#111] text-white relative overflow-hidden">
+        <div className="absolute inset-0 opacity-[0.03]">
+          <svg viewBox="0 0 400 400" className="w-full h-full">
+            <pattern id="homeGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+              <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" strokeWidth="1" />
+            </pattern>
+            <rect width="100%" height="100%" fill="url(#homeGrid)" />
+          </svg>
+        </div>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-[2px] bg-[#D31219]" />
+                <span className="text-[#D31219] text-[10px] font-black uppercase tracking-[0.4em]">Novo Servico</span>
+              </div>
+              <h2 className="text-4xl md:text-7xl font-black uppercase tracking-tighter leading-[0.85] mb-8">
+                Steel<br /><span className="text-[#D31219]">Frame</span>
+              </h2>
+              <p className="text-gray-400 text-lg leading-relaxed mb-8 max-w-xl">
+                Construcao inteligente com estrutura de aco galvanizado. Sua obra ate <strong className="text-white">70% mais rapida</strong>, sustentavel e com projeto executivo completo.
+              </p>
+              <div className="grid grid-cols-2 gap-4 mb-10">
+                {[
+                  { value: '70%', label: 'Mais Rapido' },
+                  { value: '90%', label: 'Menos Residuos' },
+                  { value: '40%', label: 'Mais Leve' },
+                  { value: '25+', label: 'Anos Durabilidade' },
+                ].map(stat => (
+                  <div key={stat.label} className="bg-white/5 border border-white/10 rounded-2xl p-4 text-center">
+                    <div className="text-2xl font-black text-[#D31219]">{stat.value}</div>
+                    <div className="text-[9px] font-bold uppercase tracking-widest text-gray-500 mt-1">{stat.label}</div>
+                  </div>
+                ))}
+              </div>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link to="/steel-frame" className="bg-[#D31219] text-white font-black px-10 py-5 rounded-2xl flex items-center justify-center gap-3 shadow-xl hover:scale-105 transition-all uppercase tracking-widest text-xs group">
+                  Conhecer Steel Frame <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                </Link>
+                <a href="https://wa.me/5541996457421?text=Olá! Quero saber mais sobre construção em Steel Frame." className="bg-white/10 text-white font-black px-10 py-5 rounded-2xl flex items-center justify-center gap-3 border-2 border-white/20 uppercase tracking-widest text-xs hover:bg-white/20 transition-all">
+                  <MessageCircle size={18} /> Falar com Especialista
+                </a>
+              </div>
+            </div>
+            <div className="relative">
+              <div className="rounded-[3rem] overflow-hidden shadow-2xl border border-white/10">
+                <img
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/steel-frame-yfbTyNsPB5CHvelFOwWPfb75qIZ8vl.png"
+                  alt="Steel Frame - Construcao Inteligente KY Drywall"
+                  className="w-full h-auto"
+                />
+              </div>
+              <div className="absolute -bottom-6 -right-6 bg-[#D31219] text-white p-6 rounded-2xl shadow-2xl hidden lg:block">
+                <div className="text-3xl font-black">Desde</div>
+                <div className="text-4xl font-black">1998</div>
+              </div>
             </div>
           </div>
         </div>
@@ -348,7 +410,7 @@ const EliteServiceCard: React.FC<{ service: any, isFeatured?: boolean }> = ({ se
           <span>Orçamento Grátis Agora</span>
           <MessageCircle size={18} className="group-hover/btn:rotate-12 transition-transform" />
         </a>
-        <Link to={`/servicos/${service.id}`} className="block text-center text-[9px] font-black uppercase tracking-[0.2em] text-gray-400 hover:text-[#D31219] transition-colors">
+        <Link to={service.id === 'steel-frame' ? '/steel-frame' : `/servicos/${service.id}`} className="block text-center text-[9px] font-black uppercase tracking-[0.2em] text-gray-400 hover:text-[#D31219] transition-colors">
           Ver Especificações Técnicas
         </Link>
       </div>
