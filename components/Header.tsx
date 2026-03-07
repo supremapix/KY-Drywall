@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ChevronRight, ShoppingCart, Phone, Mail, Home, Building2, Wrench, Package, MessageCircle, BookOpen, MapPin } from 'lucide-react';
+import { Menu, X, ChevronRight, ShoppingCart, Phone, Mail, Home, Building2, Wrench, Package, MessageCircle, BookOpen, MapPin, HelpCircle } from 'lucide-react';
 import { NAV_ITEMS, SITE_ASSETS, COMPANY_INFO } from '../constants';
 import { QuoteItem } from '../types';
 import QuoteDrawer from './QuoteDrawer';
@@ -13,6 +13,7 @@ const MENU_ICONS: Record<string, React.ReactNode> = {
   'Nossos Produtos': <Package size={18} />,
   'Contato': <MessageCircle size={18} />,
   'Blog': <BookOpen size={18} />,
+  'Perguntas Frequentes': <HelpCircle size={18} />,
   'Mapa do Site': <MapPin size={18} />,
 };
 
@@ -56,6 +57,7 @@ const Header: React.FC = () => {
   const allNavItems = [
     ...NAV_ITEMS,
     { label: 'Blog', path: '/blog' },
+    { label: 'Perguntas Frequentes', path: '/faq' },
     { label: 'Mapa do Site', path: '/sitemap' },
   ];
 
@@ -125,6 +127,15 @@ const Header: React.FC = () => {
               className="font-semibold text-gray-900 hover:text-[#D31219] transition-colors text-sm"
             >
               Blog
+            </Link>
+            <Link
+              to="/faq"
+              className="relative font-black text-white bg-gradient-to-r from-[#D31219] to-[#ff0000] hover:from-[#ff0000] hover:to-[#D31219] transition-all text-xs px-6 py-3 rounded-full flex items-center gap-2 shadow-lg hover:shadow-xl hover:scale-105"
+            >
+              <HelpCircle size={16} />
+              FAQ
+              <span className="absolute -top-1 -right-1 w-3 h-3 bg-yellow-400 rounded-full animate-ping"></span>
+              <span className="absolute -top-1 -right-1 w-3 h-3 bg-yellow-400 rounded-full"></span>
             </Link>
           </nav>
 

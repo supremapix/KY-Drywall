@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, MessageCircle, Star, TrendingUp, MapPin, Globe, ChevronRight, Clock, Building2, Map, ShieldCheck, Sparkles, Zap } from 'lucide-react';
+import { ArrowRight, MessageCircle, Star, TrendingUp, MapPin, Globe, ChevronRight, Clock, Building2, Map, ShieldCheck, Sparkles, Zap, BookOpen, Phone } from 'lucide-react';
 import { SERVICES, BLOG_POSTS, NEIGHBORHOODS, CITIES_RMC, getRandomCTA, SITE_ASSETS, PRODUCTS, normalizeLocationName, BASE_URL } from '../constants';
 import EnhancedSEO from '../components/EnhancedSEO';
 
@@ -336,6 +336,99 @@ const Home: React.FC = () => {
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ CTA Section */}
+      <section className="py-32 bg-gradient-to-br from-[#0a0a0a] via-[#111] to-[#0a0a0a] text-white relative overflow-hidden">
+        {/* Animated Background Particles */}
+        <div className="absolute inset-0 overflow-hidden opacity-20">
+          <div className="absolute w-96 h-96 bg-[#D31219] rounded-full blur-[120px] -top-48 -left-48 animate-pulse"></div>
+          <div className="absolute w-96 h-96 bg-[#003366] rounded-full blur-[120px] -bottom-48 -right-48 animate-pulse" style={{ animationDelay: '1s' }}></div>
+        </div>
+
+        {/* Grid Pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <svg viewBox="0 0 400 400" className="w-full h-full">
+            <pattern id="faqCtaGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+              <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" strokeWidth="1" />
+            </pattern>
+            <rect width="100%" height="100%" fill="url(#faqCtaGrid)" />
+          </svg>
+        </div>
+
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="text-center mb-16">
+            <span className="inline-block bg-[#D31219] text-white text-[10px] font-black px-6 py-3 rounded-full uppercase tracking-[0.3em] mb-6 animate-pulse">
+              <BookOpen size={14} className="inline-block mr-2" />
+              Central de Conhecimento
+            </span>
+
+            <h2 className="text-4xl md:text-7xl font-black uppercase tracking-tighter leading-none mb-6 animate-fadeIn">
+              Tem Dúvidas sobre <span className="text-[#D31219]">Drywall</span>
+              <br />ou <span className="text-[#D31219]">Steel Frame</span> em Curitiba?
+            </h2>
+
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+              Respondemos as <strong className="text-white">119 perguntas</strong> mais feitas sobre construção a seco, drywall, steel frame, telha shingle e forro PVC em Curitiba.
+            </p>
+          </div>
+
+          {/* Mini Cards Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16 max-w-6xl mx-auto">
+            {[
+              { icon: '🏗️', title: 'Drywall', desc: 'Como funciona, tipos, instalação e manutenção', count: '20 respostas' },
+              { icon: '🏠', title: 'Steel Frame', desc: 'Construção completa, estrutura e telhado', count: '20 respostas' },
+              { icon: '♻️', title: 'Construção a Seco', desc: 'Vantagens, comparativos e custos', count: '15 respostas' },
+              { icon: '🏘️', title: 'Telha Shingle', desc: 'Tipos, instalação e durabilidade', count: '15 respostas' },
+              { icon: '🎨', title: 'Forro PVC', desc: 'Instalação, modelos e acabamento', count: '15 respostas' },
+              { icon: '📍', title: 'Curitiba e Região', desc: 'Onde atendemos e prazos', count: 'Saiba tudo' }
+            ].map((card, idx) => (
+              <div
+                key={idx}
+                className="bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl p-8 hover:bg-white/10 hover:border-[#D31219]/50 transition-all duration-500 group hover:-translate-y-2"
+                style={{ animationDelay: `${idx * 100}ms` }}
+              >
+                <div className="text-4xl mb-4 group-hover:scale-110 transition-transform">{card.icon}</div>
+                <h3 className="text-xl font-black uppercase tracking-tight mb-3">{card.title}</h3>
+                <p className="text-sm text-gray-400 leading-relaxed mb-4">{card.desc}</p>
+                <div className="text-[#D31219] font-black text-sm uppercase tracking-wider">
+                  {card.count}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* CTA Button */}
+          <div className="text-center">
+            <Link
+              to="/faq"
+              className="inline-flex items-center gap-4 bg-[#D31219] text-white font-black px-16 py-8 rounded-3xl text-lg uppercase tracking-widest hover:bg-white hover:text-[#D31219] transition-all shadow-[0_20px_60px_rgba(211,18,25,0.4)] hover:shadow-[0_30px_80px_rgba(211,18,25,0.6)] hover:scale-105 group relative overflow-hidden"
+            >
+              <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1000"></span>
+              <span className="relative">Ver Todas as 119 Perguntas</span>
+              <ArrowRight size={24} className="relative group-hover:translate-x-2 transition-transform" />
+            </Link>
+
+            <p className="text-gray-400 text-sm mt-8 mb-4">
+              Ou fale direto com nossos especialistas
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href={`https://wa.me/5541996457421?text=Olá! Vim do site e tenho dúvidas sobre construção a seco`}
+                className="inline-flex items-center gap-3 bg-green-600 text-white font-black px-8 py-4 rounded-2xl hover:bg-green-700 transition-all uppercase text-xs tracking-wider"
+              >
+                <MessageCircle size={20} /> WhatsApp
+              </a>
+              <a
+                href="tel:4135284232"
+                className="inline-flex items-center gap-3 bg-white/10 text-white font-black px-8 py-4 rounded-2xl border-2 border-white/20 hover:bg-white/20 transition-all uppercase text-xs tracking-wider"
+              >
+                <Phone size={20} /> (41) 3528-4232
+              </a>
             </div>
           </div>
         </div>

@@ -14,6 +14,7 @@ import LocationPage from './pages/LocationPage';
 import Sitemap from './pages/Sitemap';
 import BlogPostPage from './pages/BlogPostPage';
 import SteelFramePage from './pages/SteelFramePage';
+import FAQPage from './pages/FAQPage';
 import NotFound from './pages/NotFound';
 import WhatsAppWidget from './components/WhatsAppWidget';
 import FloatingActions from './components/FloatingActions';
@@ -60,6 +61,7 @@ const App: React.FC = () => {
             <Route path="/contato" element={<Contact />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:postId" element={<BlogPostPage />} />
+            <Route path="/faq" element={<FAQPage />} />
             <Route path="/drywall-em/:location" element={<LocationPage type="drywall" />} />
             <Route path="/steel-frame-em/:location" element={<LocationPage type="steel" />} />
             <Route path="/localizacao/:location" element={<LocationPage type="drywall" />} />

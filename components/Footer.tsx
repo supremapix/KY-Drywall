@@ -112,6 +112,9 @@ const Footer: React.FC = () => {
               <li><Link to="/produtos" className="hover:text-white hover:pl-2 transition-all flex items-center gap-2"><ChevronRight size={14} className="text-[#D31219]"/> Produtos</Link></li>
               <li><Link to="/servicos" className="hover:text-white hover:pl-2 transition-all flex items-center gap-2"><ChevronRight size={14} className="text-[#D31219]"/> {"Servi\u00E7os"}</Link></li>
               <li><Link to="/blog" className="hover:text-white hover:pl-2 transition-all flex items-center gap-2"><ChevronRight size={14} className="text-[#D31219]"/> Blog Regional</Link></li>
+              <li><Link to="/faq" className="hover:text-white hover:pl-2 transition-all flex items-center gap-2 text-[#D31219] hover:text-white"><ChevronRight size={14} className="text-[#D31219]"/> Perguntas Frequentes</Link></li>
+              <li><Link to="/faq#drywall" className="hover:text-white hover:pl-2 transition-all flex items-center gap-2"><ChevronRight size={14} className="text-[#D31219]"/> Drywall (FAQ)</Link></li>
+              <li><Link to="/faq#steelframe" className="hover:text-white hover:pl-2 transition-all flex items-center gap-2"><ChevronRight size={14} className="text-[#D31219]"/> Steel Frame (FAQ)</Link></li>
             </ul>
           </div>
 
