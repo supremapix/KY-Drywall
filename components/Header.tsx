@@ -155,14 +155,14 @@ const Header: React.FC = () => {
       {/* Mobile menu overlay */}
       {isMenuOpen && (
         <div
-          className="fixed inset-0 bg-black/50 z-[55] lg:hidden"
+          className="fixed inset-0 bg-black/50 z-[70] lg:hidden"
           onClick={() => setIsMenuOpen(false)}
         />
       )}
 
       {/* Mobile menu drawer */}
       <div
-        className={`fixed top-0 right-0 h-full w-[85%] max-w-[340px] bg-white z-[56] lg:hidden transform transition-transform duration-300 ease-in-out overflow-y-auto ${
+        className={`fixed top-0 right-0 h-full w-[85%] max-w-[340px] bg-white z-[80] lg:hidden transform transition-transform duration-300 ease-in-out overflow-y-auto ${
           isMenuOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
