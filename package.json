@@ -5,9 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
-    "build:prerender": "vite build && react-snap",
-    "preview": "vite preview"
+    "build": "vite build && node scripts/static-build.mjs",
+    "build:prerender": "npm run build",
+    "preview": "vite preview",
+    "verify:seo": "node scripts/verify-seo.mjs"
   },
   "reactSnap": {
     "source": "dist",

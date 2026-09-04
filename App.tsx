@@ -15,6 +15,7 @@ import Sitemap from './pages/Sitemap';
 import BlogPostPage from './pages/BlogPostPage';
 import SteelFramePage from './pages/SteelFramePage';
 import FAQPage from './pages/FAQPage';
+import LinksPage from './pages/LinksPage';
 import NotFound from './pages/NotFound';
 import WhatsAppWidget from './components/WhatsAppWidget';
 import FloatingActions from './components/FloatingActions';
@@ -28,7 +29,8 @@ const ScrollToTop = () => {
   return null;
 };
 
-const App: React.FC = () => {
+export const AppContent: React.FC = () => {
+  const isLinksPage = useLocation().pathname.replace(/\/+$/, '') === '/links';
   const [isCookieAccepted, setIsCookieAccepted] = useState(false);
 
   useEffect(() => {
@@ -44,14 +46,15 @@ const App: React.FC = () => {
   };
 
   return (
-    <Router>
+    <>
       <ScrollToTop />
       <div className="flex flex-col min-h-screen">
-        <Header />
+        {!isLinksPage && <Header />}
         
         <main className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/links" element={<LinksPage />} />
             <Route path="/empresa" element={<About />} />
             <Route path="/steel-frame" element={<SteelFramePage />} />
             <Route path="/servicos" element={<ServicesPage />} />
@@ -70,13 +73,14 @@ const App: React.FC = () => {
           </Routes>
         </main>
 
-        <Footer />
-        <WhatsAppWidget />
-        <FloatingActions />
-        {!isCookieAccepted && <CookieConsent onAccept={handleAcceptCookies} />}
+        {!isLinksPage && <Footer />}
+        {!isLinksPage && <WhatsAppWidget />}
+        {!isLinksPage && <FloatingActions />}
+        {!isLinksPage && !isCookieAccepted && <CookieConsent onAccept={handleAcceptCookies} />}
       </div>
-    </Router>
+    </>
   );
 };
 
+const App = () => <Router><AppContent /></Router>;
 export default App;

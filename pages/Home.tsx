@@ -87,10 +87,10 @@ const Home: React.FC = () => {
         priceRange: '$$',
         address: {
           '@type': 'PostalAddress',
-          streetAddress: 'BR-277, Cajuru',
+          streetAddress: 'Rod. BR-277, 3641 - Cajuru',
           addressLocality: 'Curitiba',
           addressRegion: 'PR',
-          postalCode: '82900-000',
+          postalCode: '81480-270',
           addressCountry: 'BR'
         },
         geo: {
@@ -114,8 +114,8 @@ const Home: React.FC = () => {
   return (
     <div className="overflow-hidden bg-white">
       <EnhancedSEO
-        title="KY Drywall & Steel Frame - Maior Loja de Curitiba | BR-277 Cajuru"
-        description="A maior loja de Drywall e Steel Frame de Curitiba. Distribuidor oficial Barbieri. Placas, perfis, massas, parafusos e acessórios. Entrega imediata. Venha nos visitar na BR-277, Cajuru."
+        title="Loja de Drywall em Curitiba | KY Drywall & Steel Frame"
+        description="Loja de drywall em Curitiba, no Cajuru. Materiais para drywall, Steel Frame e construção a seco. Atendimento em Curitiba e Região Metropolitana. Solicite orçamento."
         keywords="drywall curitiba, steel frame curitiba, placas drywall, perfis steel frame, construção a seco, gesso acartonado, barbieri, loja drywall curitiba, materiais construção"
         canonical={BASE_URL}
         schema={homeSchema}

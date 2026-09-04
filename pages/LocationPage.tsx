@@ -4,6 +4,7 @@ import { useParams, Link, useNavigate } from 'react-router-dom';
 import { MapPin, CheckCircle2, ShieldCheck, Zap, HardHat, Recycle, Timer, ChevronRight, MessageCircle, ArrowLeft, Phone, Package, Clock, Truck, Star, Home } from 'lucide-react';
 import { BASE_URL, SERVICES, NEIGHBORHOODS, CITIES_RMC, getRandomCTA, PRODUCTS, COMPANY_INFO, normalizeLocationName } from '../constants';
 import EnhancedSEO from '../components/EnhancedSEO';
+import NotFound from './NotFound';
 import ProductCard from '../components/ProductCard';
 
 interface LocationPageProps {
@@ -53,22 +54,8 @@ const LocationPage: React.FC<LocationPageProps> = ({ type }) => {
         "name": `${serviceName} em ${formattedName}`,
         "serviceType": "Construção a Seco",
         "description": `Serviços completos de ${serviceName} em ${formattedName}. Instalação, materiais e assessoria técnica especializada.`,
-        "provider": {
-          "@type": "LocalBusiness",
-          "@id": `${BASE_URL}/#organization`,
-          "name": "KY Drywall & Steel Frame",
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": formattedName,
-            "addressRegion": "PR",
-            "addressCountry": "BR"
-          },
-          "telephone": "+554135284232",
-          "areaServed": {
-            "@type": "City",
-            "name": formattedName
-          }
-        },
+        "provider": { "@id": `${BASE_URL}/#organization` },
+        "areaServed": { "@type": "Place", "name": formattedName },
         "availableChannel": {
           "@type": "ServiceChannel",
           "serviceUrl": `${BASE_URL}/${type === 'drywall' ? 'drywall' : 'steel-frame'}-em/${location}`,
@@ -95,12 +82,12 @@ const LocationPage: React.FC<LocationPageProps> = ({ type }) => {
     ]
   };
 
-  const pageTitle = `${serviceName} em ${formattedName} | Entrega Rápida | Orçamento Grátis | KY Drywall`;
-  const pageDescription = `${serviceName} em ${formattedName} com a KY Drywall & Steel Frame. Entrega imediata de placas, perfis, massas e acessórios. Atendimento especializado, orçamento via WhatsApp e os melhores preços. Maior estoque de Curitiba. Ligue: (41) 3528-4232`;
+  const pageTitle = `${serviceName} em ${formattedName} | KY Drywall`;
+  const pageDescription = `${serviceName} para ${formattedName}: materiais e atendimento da KY Drywall & Steel Frame. Loja física na Rod. BR-277, 3641 - Cajuru, Curitiba. Solicite orçamento: (41) 3528-4232.`;
   const pageKeywords = `${serviceName.toLowerCase()} ${formattedName.toLowerCase()}, ${serviceName.toLowerCase()} curitiba, materiais ${serviceName.toLowerCase()}, instalação ${serviceName.toLowerCase()}, orçamento ${serviceName.toLowerCase()}, ${type} ${formattedName.toLowerCase()}, construção a seco ${formattedName.toLowerCase()}`;
 
-  if (!location) {
-    return null;
+  if (!location || !allLocations.some(loc => normalizeLocationName(loc) === location)) {
+    return <NotFound />;
   }
 
   return (

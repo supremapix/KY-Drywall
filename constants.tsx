@@ -10,7 +10,11 @@ export const COMPANY_INFO = {
   email: 'carlos@kydrywall.com.br',
   emailLucilene: 'lucilene@kydrywall.com.br',
   phoneLucilene: '(41) 99906-7259',
-  address: 'Rod. BR 277 - 3641, Cajuru, Curitiba, PR',
+  address: 'Rod. BR-277, 3641 - Cajuru, Curitiba - PR, CEP 81480-270',
+  instagram: 'https://instagram.com/kydrywall',
+  mapsUrl: 'https://maps.app.goo.gl/RcpAnuqvVRpjQBQD6',
+  phoneCarlos: '(41) 99645-7421',
+  whatsappLucilene: '5541999067259',
   hours: {
     weekdays: 'Segunda a Sexta: 7:30 - 17:30',
     saturday: 'Sábado: 7:30 - 12:00'

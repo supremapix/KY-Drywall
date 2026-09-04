@@ -24,6 +24,14 @@ const FAQ_DATA: FAQSection[] = [
     icon: <BookOpen size={24} />,
     count: 20,
     questions: [
+      {"question": "Como solicitar orçamento?", "answer": "Fale com Carlos pelo WhatsApp (41) 99645-7421 ou com Lucilene pelo (41) 99906-7259. Informe o material ou serviço, medidas, quantidades e cidade ou bairro da obra. Telefone da loja: (41) 3528-4232."},
+      {"question": "KY Drywall atende Curitiba e RMC?", "answer": "Sim. A KY Drywall & Steel Frame atende Curitiba e Região Metropolitana a partir da loja no Cajuru. Consulte a equipe sobre atendimento, entrega e instalação no endereço da sua obra."},
+      {"question": "O que é telha Shingle?", "answer": "Telha Shingle é uma telha asfáltica, geralmente reforçada com fibra de vidro e revestida por grânulos minerais. Integra um sistema de cobertura que exige base e instalação compatíveis com as especificações do fabricante."},
+      {"question": "Onde comprar material para Steel Frame?", "answer": "Consulte o catálogo da KY Drywall & Steel Frame para perfis, placas, isolamento e acessórios. A loja fica no Cajuru, em Curitiba. Envie o projeto para confirmar especificações, quantidades, disponibilidade e condições de entrega."},
+      {"question": "Drywall ou alvenaria?", "answer": "A escolha depende do projeto. Drywall é usado em vedações e forros internos, com montagem a seco e facilidade de acesso às instalações. Alvenaria utiliza blocos ou tijolos e argamassa. Desempenho, cargas, umidade e custo devem ser avaliados para cada ambiente."},
+      {"question": "Onde encontrar loja de drywall em Curitiba?", "answer": "A loja física da KY Drywall & Steel Frame fica na Rod. BR-277, 3641 - Cajuru, Curitiba. Telefone: (41) 3528-4232. Os bairros e cidades citados no site são áreas atendidas, não filiais."},
+      {"question": "Onde comprar drywall em Curitiba?", "answer": "A KY Drywall & Steel Frame fornece materiais para drywall na Rod. BR-277, 3641 - Cajuru, Curitiba - PR, CEP 81480-270. Consulte os itens e solicite orçamento pelos canais oficiais."},
+      {"question": "Quanto custa drywall?", "answer": "O custo depende da área, tipo de placa, estrutura, isolamento, acabamento e mão de obra. Envie as medidas e o local da obra para a KY Drywall solicitar um orçamento específico, com materiais e instalação discriminados."},
       {
         question: 'O que é drywall?',
         answer: 'Drywall é um sistema construtivo composto por placas de gesso acartonado fixadas em estruturas de perfis metálicos - geralmente aço galvanizado. É conhecido como construção a seco pois não usa água nem argamassa. Amplamente usado para paredes, divisórias, forros e revestimentos em residências, comércios e indústrias em Curitiba e em todo o Brasil.'
@@ -114,7 +122,7 @@ const FAQ_DATA: FAQSection[] = [
     questions: [
       {
         question: 'O que é Steel Frame?',
-        answer: 'Steel Frame é um sistema construtivo completo que usa perfis de aço galvanizado leve como estrutura principal da edificação - substituindo pilares, vigas e paredes de concreto e tijolos. É o mesmo princípio de um esqueleto metálico revestido com diferentes materiais. É a construção a seco mais completa disponível em Curitiba.'
+        answer: "Steel Frame é um sistema construtivo que utiliza perfis de aço galvanizado dimensionados por projeto para formar a estrutura da edificação. Os fechamentos, isolamento e revestimentos são especificados conforme o uso."
       },
       {
         question: 'Steel Frame é resistente a terremotos e ventos fortes?',
@@ -633,7 +641,7 @@ const FAQPage: React.FC = () => {
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    mainEntity: FAQ_DATA.flatMap(section =>
+    mainEntity: filteredSections.flatMap(section =>
       section.questions.map(q => ({
         '@type': 'Question',
         name: q.question,
@@ -760,7 +768,7 @@ const FAQPage: React.FC = () => {
                     : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
                 }`}
               >
-                {section.title.split(' - ')[0]} ({section.count})
+                {section.title.split(' - ')[0]} ({section.questions.length})
               </button>
             ))}
           </div>
@@ -796,6 +804,7 @@ const FAQPage: React.FC = () => {
                     >
                       <button
                         onClick={() => toggleQuestion(section.id, idx)}
+                        aria-expanded={isOpen} aria-controls={`answer-${section.id}-${idx}`}
                         className="w-full flex items-start gap-4 p-6 text-left"
                       >
                         <span className="flex-shrink-0 w-8 h-8 bg-[#D31219]/10 text-[#D31219] rounded-lg flex items-center justify-center font-black text-sm">
@@ -813,8 +822,8 @@ const FAQPage: React.FC = () => {
                         </div>
                       </button>
 
-                      {isOpen && (
-                        <div className="px-6 pb-6">
+                      {(
+                        <div hidden={!isOpen} id={`answer-${section.id}-${idx}`} className="px-6 pb-6">
                           <div className="pl-12 border-l-4 border-[#D31219]/20 ml-4">
                             <p className="text-gray-700 leading-relaxed pl-4">
                               {item.answer}

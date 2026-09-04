@@ -122,10 +122,10 @@ const SteelFramePage: React.FC = () => {
       telephone: '+554135284232',
       address: {
         '@type': 'PostalAddress',
-        streetAddress: 'Rod. BR 277 - 3641',
+        streetAddress: 'Rod. BR-277, 3641 - Cajuru',
         addressLocality: 'Curitiba',
         addressRegion: 'PR',
-        postalCode: '82590-300',
+        postalCode: '81480-270',
         addressCountry: 'BR',
       },
     },

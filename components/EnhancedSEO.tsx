@@ -1,5 +1,7 @@
-import { useEffect } from 'react';
+import React, { useEffect, useContext } from 'react';
 import { BASE_URL } from '../constants';
+import { useLocation } from 'react-router-dom';
+import { SeoCollector, buildGraph, canonicalUrl } from '../seo/entity';
 
 interface SEOProps {
   title: string;
@@ -22,49 +24,13 @@ const EnhancedSEO: React.FC<SEOProps> = ({
   schema,
   noindex = false
 }) => {
+  const { pathname } = useLocation();
   const fullTitle = title.includes('KY Drywall') ? title : `${title} | KY Drywall & Steel Frame`;
-  const url = canonical || BASE_URL;
-
-  const defaultSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
-    name: 'KY Drywall & Steel Frame',
-    description: 'Especialista em Drywall e Steel Frame em Curitiba e Região Metropolitana',
-    url: BASE_URL,
-    telephone: '+554135284232',
-    address: {
-      '@type': 'PostalAddress',
-      addressLocality: 'Curitiba',
-      addressRegion: 'PR',
-      addressCountry: 'BR'
-    },
-    geo: {
-      '@type': 'GeoCoordinates',
-      latitude: '-25.4284',
-      longitude: '-49.2733'
-    },
-    openingHoursSpecification: {
-      '@type': 'OpeningHoursSpecification',
-      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-      opens: '08:00',
-      closes: '18:00'
-    },
-    priceRange: '$$',
-    areaServed: [
-      {
-        '@type': 'City',
-        name: 'Curitiba',
-        '@id': 'https://www.wikidata.org/wiki/Q3196'
-      },
-      {
-        '@type': 'State',
-        name: 'Paraná',
-        '@id': 'https://www.wikidata.org/wiki/Q15499'
-      }
-    ]
-  };
-
-  const combinedSchema = schema || defaultSchema;
+  const url = canonicalUrl(canonical || pathname);
+  const imageUrl = new URL(ogImage, BASE_URL).href;
+  const combinedSchema = buildGraph(url, fullTitle, description, schema);
+  const collect = useContext(SeoCollector);
+  collect?.({ title: fullTitle, description, url, image: imageUrl, type: ogType, noindex, schema: combinedSchema });
 
   useEffect(() => {
     document.documentElement.lang = 'pt-BR';
@@ -117,28 +83,27 @@ const EnhancedSEO: React.FC<SEOProps> = ({
     updateOrCreateMeta('meta[property="og:title"]', 'content', fullTitle);
     updateOrCreateMeta('meta[property="og:description"]', 'content', description);
     updateOrCreateMeta('meta[property="og:url"]', 'content', url);
-    updateOrCreateMeta('meta[property="og:image"]', 'content', ogImage);
+    updateOrCreateMeta('meta[property="og:image"]', 'content', imageUrl);
     updateOrCreateMeta('meta[property="og:site_name"]', 'content', 'KY Drywall & Steel Frame');
     updateOrCreateMeta('meta[property="og:locale"]', 'content', 'pt_BR');
 
     updateOrCreateMeta('meta[name="twitter:card"]', 'content', 'summary_large_image');
     updateOrCreateMeta('meta[name="twitter:title"]', 'content', fullTitle);
     updateOrCreateMeta('meta[name="twitter:description"]', 'content', description);
-    updateOrCreateMeta('meta[name="twitter:image"]', 'content', ogImage);
+    updateOrCreateMeta('meta[name="twitter:image"]', 'content', imageUrl);
 
     updateOrCreateMeta('meta[name="geo.region"]', 'content', 'BR-PR');
     updateOrCreateMeta('meta[name="geo.placename"]', 'content', 'Curitiba');
-    updateOrCreateMeta('meta[name="geo.position"]', 'content', '-25.4284;-49.2733');
-    updateOrCreateMeta('meta[name="ICBM"]', 'content', '-25.4284, -49.2733');
 
     updateOrCreateLink('dns-prefetch', 'https://images.pexels.com');
     updateOrCreateLink('preconnect', 'https://fonts.googleapis.com');
     updateOrCreateLink('preconnect', 'https://fonts.gstatic.com', { crossorigin: 'anonymous' });
 
-    let schemaScript = document.querySelector('script[type="application/ld+json"]');
+    let schemaScript = document.querySelector('script#ky-schema');
     if (!schemaScript) {
       schemaScript = document.createElement('script');
       schemaScript.setAttribute('type', 'application/ld+json');
+      schemaScript.id = 'ky-schema';
       document.head.appendChild(schemaScript);
     }
     schemaScript.textContent = JSON.stringify(combinedSchema);
@@ -146,7 +111,7 @@ const EnhancedSEO: React.FC<SEOProps> = ({
     return () => {
       document.title = 'KY Drywall & Steel Frame';
     };
-  }, [fullTitle, description, keywords, url, ogType, ogImage, noindex, combinedSchema]);
+  }, [fullTitle, description, keywords, url, ogType, ogImage, noindex, imageUrl, JSON.stringify(combinedSchema)]);
 
   return null;
 };

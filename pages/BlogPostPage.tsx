@@ -2,6 +2,7 @@ import React, { useMemo } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { ChevronRight, Clock, ArrowLeft, MessageCircle, Tag } from 'lucide-react';
 import { BLOG_POSTS, BASE_URL } from '../constants';
+import NotFound from './NotFound';
 import EnhancedSEO from '../components/EnhancedSEO';
 
 const BLOG_CONTENT: Record<string, { sections: { title: string; content: string }[] }> = {
@@ -77,21 +78,9 @@ const BlogPostPage: React.FC = () => {
 
   const content = postId ? BLOG_CONTENT[postId] : null;
 
-  if (!post) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-50">
-        <div className="text-center">
-          <h1 className="text-4xl font-black uppercase tracking-tighter mb-4">Artigo nao encontrado</h1>
-          <Link to="/blog" className="text-[#D31219] font-black uppercase tracking-widest text-xs hover:underline">
-            Voltar ao Blog
-          </Link>
-        </div>
-      </div>
-    );
-  }
+  if (!post) return <NotFound />;
 
-  const whatsappUrl = `https://wa.me/5541996457421?text=${encodeURIComponent(`Olá, li o artigo "${post.title}" e gostaria de mais informações.`)}`;
-
+  const whatsappUrl = `https://wa.me/5541996457421?text=${encodeURIComponent('Olá! Gostaria de saber mais sobre ' + post.title)}`;
   const blogPostSchema = {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',

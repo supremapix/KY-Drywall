@@ -1,4 +1,5 @@
 
+import EnhancedSEO from '../components/EnhancedSEO';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { NEIGHBORHOODS, CITIES_RMC, SERVICES, PRODUCTS, BASE_URL, normalizeLocationName } from '../constants';
@@ -7,6 +8,7 @@ import { Globe, Map, Package, Wrench, Info, Mail } from 'lucide-react';
 const Sitemap: React.FC = () => {
   return (
     <div className="bg-gray-50 min-h-screen py-24">
+      <EnhancedSEO title="Mapa do site | KY Drywall" description="Páginas, serviços, produtos e áreas atendidas pela KY Drywall & Steel Frame." canonical={`${BASE_URL}/sitemap`} />
       <div className="container mx-auto px-4">
         <header className="text-center mb-20">
           <h1 className="text-5xl md:text-7xl font-black mb-6 uppercase tracking-tighter">Sitemap <span className="text-[#D31219]">Geral</span></h1>
@@ -27,6 +29,8 @@ const Sitemap: React.FC = () => {
               <li><Link to="/produtos" className="hover:text-[#D31219] flex items-center gap-2">• Catálogo de Produtos</Link></li>
               <li><Link to="/servicos" className="hover:text-[#D31219] flex items-center gap-2">• Nossos Serviços</Link></li>
               <li><Link to="/blog" className="hover:text-[#D31219] flex items-center gap-2">• Blog & Regiões</Link></li>
+              <li><Link to="/links" className="hover:text-[#D31219]">• Canais oficiais</Link></li>
+              <li><Link to="/faq" className="hover:text-[#D31219]">• Central de Conhecimento</Link></li>
               <li><Link to="/contato" className="hover:text-[#D31219] flex items-center gap-2">• Fale Conosco</Link></li>
             </ul>
           </section>

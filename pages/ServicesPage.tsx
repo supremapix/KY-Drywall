@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { SERVICES, getRandomCTA, BASE_URL } from '../constants';
 import { CheckCircle2, MessageCircle, ChevronRight, Sparkles, ShieldAlert, ArrowRight } from 'lucide-react';
+import NotFound from './NotFound';
 import EnhancedSEO from '../components/EnhancedSEO';
 
 const ServicesPage: React.FC = () => {
@@ -22,10 +23,10 @@ const ServicesPage: React.FC = () => {
       telephone: '+554135284232',
       address: {
         '@type': 'PostalAddress',
-        streetAddress: 'Rod. BR 277 - 3641',
+        streetAddress: 'Rod. BR-277, 3641 - Cajuru',
         addressLocality: 'Curitiba',
         addressRegion: 'PR',
-        postalCode: '82590-300',
+        postalCode: '81480-270',
         addressCountry: 'BR'
       }
     },
@@ -58,13 +59,15 @@ const ServicesPage: React.FC = () => {
     window.scrollTo(0, 0);
   }, [serviceId]);
 
+  if (serviceId && !currentService) return <NotFound />;
+
   return (
     <div className="bg-white">
       <EnhancedSEO
-        title={`${currentService?.title} - Serviços`}
-        description={`${currentService?.description} Assessoria técnica especializada da KY Drywall. Materiais certificados ABNT. Atendimento em Curitiba e Região Metropolitana.`}
+        title={serviceId ? `${currentService?.title} em Curitiba` : "Serviços de construção a seco em Curitiba"}
+        description={`${currentService?.description} Assessoria técnica especializada da KY Drywall. Soluções em construção a seco. Atendimento em Curitiba e Região Metropolitana.`}
         keywords={`${serviceId}, serviços ${serviceId} curitiba, ${currentService?.title}, construção a seco, steel frame curitiba, drywall curitiba, telhado shingle, materiais certificados`}
-        canonical={`${BASE_URL}/servicos/${serviceId || 'steel-frame'}`}
+        canonical={serviceId ? `${BASE_URL}/servicos/${serviceId}` : `${BASE_URL}/servicos`}
         ogType="website"
         ogImage={currentService?.image}
         schema={serviceSchema}
@@ -77,7 +80,7 @@ const ServicesPage: React.FC = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
         <div className="container mx-auto px-4 relative z-10 text-white">
           <h1 className="text-5xl md:text-8xl font-black uppercase tracking-tighter leading-none mb-6">
-            {currentService?.title}
+            {serviceId ? currentService?.title : "Serviços de construção a seco"}
           </h1>
           <div className="flex items-center gap-2 text-xs font-black uppercase tracking-widest text-[#D31219]">
             <Link to="/" className="text-white hover:text-[#D31219]">Início</Link>

@@ -2,7 +2,9 @@
 import React, { useMemo, useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { ChevronRight, MessageCircle, Star, Shield, Truck, PhoneCall, Info, PlusCircle, Check, Share2, ClipboardList, Target, User, Send } from 'lucide-react';
-import { PRODUCTS, getRandomCTA } from '../constants';
+import { PRODUCTS, getRandomCTA, BASE_URL } from '../constants';
+import EnhancedSEO from '../components/EnhancedSEO';
+import NotFound from './NotFound';
 import { Review, QuoteItem } from '../types';
 
 const ProductDetails: React.FC = () => {
@@ -26,15 +28,9 @@ const ProductDetails: React.FC = () => {
     if (productId) {
       const stored = localStorage.getItem(`ky_reviews_${productId}`);
       if (stored) {
-        setReviews(JSON.parse(stored));
+        setReviews(JSON.parse(stored).filter((review: Review) => !['1', '2'].includes(review.id)));
       } else {
-        // Mock initial reviews
-        const initial = [
-          { id: '1', userName: 'Carlos Engenharia', rating: 5, comment: 'Material de excelente qualidade, entrega rápida no Cajuru.', date: '10/01/2025' },
-          { id: '2', userName: 'Juliana Arq', rating: 4, comment: 'Ótimo acabamento para forros de alto padrão.', date: '05/01/2025' }
-        ];
-        setReviews(initial);
-        localStorage.setItem(`ky_reviews_${productId}`, JSON.stringify(initial));
+        setReviews([]);
       }
     }
     setCtaPhrase(getRandomCTA());
@@ -81,12 +77,16 @@ const ProductDetails: React.FC = () => {
     setIsReviewing(false);
   };
 
-  if (!product) return null;
+  if (!product) return <NotFound />;
 
   const whatsappUrl = `https://wa.me/5541996457421?text=${encodeURIComponent(`Olá, gostaria de um orçamento para o produto: ${product.name}`)}`;
 
   return (
     <div className="bg-white py-12">
+      <EnhancedSEO title={`${product.name} | KY Drywall`} description={product.description}
+        canonical={`${BASE_URL}/produto/${product.id}`} ogImage={product.image} ogType="product"
+        schema={{ '@type': 'Product', name: product.name, description: product.description,
+          image: new URL(product.image, BASE_URL).href, url: `${BASE_URL}/produto/${product.id}` }} />
       <div className="container mx-auto px-4">
         {/* Breadcrumbs */}
         <div className="flex items-center gap-2 text-[10px] font-black uppercase text-gray-400 mb-10 tracking-[0.2em]">

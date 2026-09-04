@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 // Fixed: Added ChevronRight to the lucide-react imports
 import { MapPin, Phone, Instagram, Facebook, Mail, Clock, Navigation, Star, Users, ShieldCheck, CheckCircle2, Quote, Map, ChevronRight } from 'lucide-react';
-import { SITE_ASSETS } from '../constants';
+import { SITE_ASSETS, COMPANY_INFO } from '../constants';
 
 const testimonials = [
   { name: "Arq. Ricardo S.", role: "Arquiteto", text: "Material de primeira e entrega no prazo. Recomendo para todas as obras de alto padrão em Curitiba!" },
@@ -127,10 +127,10 @@ const Footer: React.FC = () => {
             <div className="space-y-8 relative z-10">
               <div className="space-y-2">
                 <p className="text-xs font-black text-[#D31219] uppercase tracking-[0.3em]">Showroom Curitiba</p>
-                <p className="text-lg font-black text-white leading-tight uppercase tracking-tight">Rod. BR 277 <br/>{"N\u00BA 3641 - Cajuru"}</p>
+                <p className="text-lg font-black text-white leading-tight uppercase tracking-tight">{COMPANY_INFO.address}</p>
               </div>
               <a 
-                href="https://maps.app.goo.gl/RcpAnuqvVRpjQBQD6" 
+                href={COMPANY_INFO.mapsUrl}
                 target="_blank" 
                 rel="noreferrer" 
                 className="flex items-center justify-between bg-[#D31219] text-white p-5 rounded-2xl text-[11px] font-black uppercase tracking-widest hover:bg-white hover:text-[#D31219] transition-all group/btn shadow-xl"
@@ -152,7 +152,8 @@ const Footer: React.FC = () => {
             <a href="https://facebook.com/kydrywall" className="p-4 bg-white/5 rounded-full hover:bg-[#D31219] transition-colors shadow-xl group">
               <Facebook size={20} className="group-hover:scale-110 transition-transform"/>
             </a>
-            <a href="https://instagram.com/kydrywall" className="p-4 bg-white/5 rounded-full hover:bg-[#D31219] transition-colors shadow-xl group">
+            <Link to="/links" className="p-4 text-white font-bold">Canais oficiais</Link>
+            <a href={COMPANY_INFO.instagram} className="p-4 bg-white/5 rounded-full hover:bg-[#D31219] transition-colors shadow-xl group">
               <Instagram size={20} className="group-hover:scale-110 transition-transform"/>
             </a>
           </div>
