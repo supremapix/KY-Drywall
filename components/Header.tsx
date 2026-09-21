@@ -130,34 +130,36 @@ const Header: React.FC = () => {
             </Link>
             <Link
               to="/faq"
-              className="relative font-black text-white bg-gradient-to-r from-[#D31219] to-[#ff0000] hover:from-[#ff0000] hover:to-[#D31219] transition-all text-xs px-6 py-3 rounded-full flex items-center gap-2 shadow-lg hover:shadow-xl hover:scale-105"
+              className="font-semibold text-slate-700 hover:text-[#D31219] transition-colors text-sm"
             >
-              <HelpCircle size={16} />
               FAQ
-              <span className="absolute -top-1 -right-1 w-3 h-3 bg-yellow-400 rounded-full animate-ping"></span>
-              <span className="absolute -top-1 -right-1 w-3 h-3 bg-yellow-400 rounded-full"></span>
             </Link>
           </nav>
 
           {/* Actions */}
-          <div className="flex items-center gap-3 md:gap-6">
-            <button onClick={() => setIsQuoteOpen(true)} className="relative p-2.5 text-[#003366] rounded-full hover:bg-gray-100">
-              <ShoppingCart size={22} />
+          <div className="flex items-center gap-3 md:gap-5">
+            <button 
+              onClick={() => setIsQuoteOpen(true)} 
+              className="relative p-2 text-slate-700 rounded-lg hover:bg-slate-100 transition-colors flex items-center gap-2"
+              title="Lista de cotação"
+            >
+              <ShoppingCart size={20} />
+              <span className="hidden sm:inline text-xs font-semibold text-slate-700">Cotação</span>
               {quoteCount > 0 && (
-                <span className="absolute top-0 right-0 bg-[#D31219] text-white text-[10px] font-bold w-5 h-5 flex items-center justify-center rounded-full border-2 border-white">
+                <span className="bg-[#D31219] text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full min-w-[18px] text-center">
                   {quoteCount}
                 </span>
               )}
             </button>
-            <Link to="/produtos" className="hidden md:block bg-[#D31219] text-white font-bold px-8 py-3 rounded-lg hover:bg-black transition-all text-sm shadow-md">
-              Nossos Produtos
+            <Link to="/produtos" className="hidden md:inline-flex items-center gap-2 bg-[#D31219] text-white font-semibold px-5 py-2.5 rounded text-xs uppercase tracking-wider hover:bg-slate-900 transition-colors shadow-sm">
+              Catálogo de Produtos
             </Link>
             <button
-              className="lg:hidden text-gray-900 p-1"
+              className="lg:hidden text-slate-900 p-1.5 rounded-lg hover:bg-slate-100"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label={isMenuOpen ? 'Fechar menu' : 'Abrir menu'}
             >
-              {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
+              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
         </div>

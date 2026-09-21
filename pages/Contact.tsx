@@ -102,99 +102,140 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <div className="bg-white min-h-screen py-24">
+    <div className="bg-slate-50 min-h-screen py-16 lg:py-20">
       <EnhancedSEO
-        title="Contato - Orçamento Rápido"
-        description="Entre em contato com a KY Drywall para orçamento gratuito. Atendimento especializado em Drywall, Steel Frame e Telhado Shingle. Fale com nossos especialistas Carlos e Lucilene. Atendimento imediato em Curitiba e região."
+        title="Contato e Orçamento Técnico - KY Drywall Curitiba"
+        description="Fale diretamente com os consultores da KY Drywall para cotações técnicas e pedidos. Atendimento rápido para obras em Curitiba e Região Metropolitana."
         keywords="contato ky drywall, orçamento drywall curitiba, telefone ky drywall, whatsapp drywall, orçamento steel frame, falar com especialista, carlos ky drywall, lucilene ky drywall"
         canonical={`${BASE_URL}/contato`}
         ogType="website"
         schema={contactPageSchema}
       />
-      <div className="container mx-auto px-4">
-        <div className="max-w-6xl mx-auto">
-          <header className="text-center mb-20">
-            <span className="text-[#D31219] font-black uppercase tracking-[0.3em] text-xs mb-6 block">Atendimento Imediato 2025</span>
-            <h1 className="text-6xl md:text-8xl font-black text-gray-900 mb-8 uppercase tracking-tighter leading-none">
-              Orçamento <span className="text-[#D31219]">Rápido</span>
+      <div className="container mx-auto px-4 lg:px-8">
+        <div className="max-w-5xl mx-auto">
+          <header className="mb-12">
+            <span className="text-[#D31219] text-xs font-bold uppercase tracking-wider block mb-2">
+              Atendimento Comercial & Técnico
+            </span>
+            <h1 className="text-3xl sm:text-5xl font-bold text-slate-900 tracking-tight leading-tight mb-3">
+              Cotação e Suporte Técnico
             </h1>
-            <p className="text-xl text-gray-500 max-w-2xl mx-auto font-medium leading-relaxed italic">
-              "Fale diretamente com nossos especialistas ou preencha o formulário abaixo para receber uma proposta técnica detalhada."
+            <p className="text-slate-600 text-sm sm:text-base max-w-2xl leading-relaxed">
+              Fale com um dos nossos consultores técnicos ou envie uma mensagem direta para calcular o quantitativo exato dos insumos da sua obra.
             </p>
           </header>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-24">
+          {/* Cards de Especialistas */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-12">
             {/* Especialista 1 */}
-            <button
-              onClick={() => handleWhatsAppAgent('Carlos', COMPANY_INFO.whatsapp)}
-              className="bg-[#1A1A1A] text-white p-12 rounded-[4rem] flex flex-col items-center text-center group hover:bg-[#D31219] transition-all duration-500 shadow-2xl relative overflow-hidden"
-            >
-              <div className="bg-white/10 p-6 rounded-full mb-8 group-hover:scale-110 transition-transform">
-                <User size={60} className="text-[#D31219] group-hover:text-white" />
+            <div className="bg-white p-6 rounded-lg border border-slate-200 shadow-sm flex flex-col justify-between">
+              <div>
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 rounded bg-[#D31219]/10 flex items-center justify-center text-[#D31219]">
+                    <User size={20} />
+                  </div>
+                  <div>
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-[#D31219] block">Suporte de Engenharia</span>
+                    <h3 className="text-lg font-bold text-slate-900">Carlos</h3>
+                  </div>
+                </div>
+                <p className="text-slate-600 text-xs leading-relaxed mb-3">
+                  Especificação estrutural para Steel Frame, sistemas drywall e telhados shingle de alta performance.
+                </p>
+                <p className="text-xs font-semibold text-slate-700 mb-5">
+                  (41) 99645-7421
+                </p>
               </div>
-              <span className="text-[10px] font-black uppercase tracking-[0.3em] text-[#D31219] group-hover:text-white mb-2">Suporte Técnico</span>
-              <h3 className="text-4xl font-black uppercase mb-4">Carlos</h3>
-              <p className="text-gray-400 group-hover:text-white/80 mb-4 font-medium">Especialista em especificações de Steel Frame e Telhado Shingle.</p>
-              <p className="text-gray-500 group-hover:text-white/60 mb-8 text-sm font-bold">{COMPANY_INFO.phone.replace('(41) ', '(41) 9 ')}</p>
-              <div className="bg-[#D31219] group-hover:bg-white group-hover:text-[#D31219] text-white px-10 py-5 rounded-2xl font-black uppercase tracking-widest text-[10px] flex items-center gap-3">
-                <MessageCircle size={20} /> {cta1 || 'Iniciar WhatsApp'}
-              </div>
-            </button>
+              <button
+                onClick={() => handleWhatsAppAgent('Carlos', COMPANY_INFO.whatsapp)}
+                className="w-full bg-[#D31219] hover:bg-red-700 text-white py-3 rounded text-xs font-semibold uppercase tracking-wider flex items-center justify-center gap-2 transition-colors"
+              >
+                <MessageCircle size={15} /> Conversar com Carlos
+              </button>
+            </div>
 
             {/* Especialista 2 */}
-            <button
-              onClick={() => handleWhatsAppAgent('Lucilene', '5541999067259')}
-              className="bg-gray-50 text-gray-900 p-12 rounded-[4rem] flex flex-col items-center text-center group hover:bg-green-600 hover:text-white transition-all duration-500 shadow-2xl border border-gray-100"
-            >
-              <div className="bg-gray-200 p-6 rounded-full mb-8 group-hover:scale-110 transition-transform">
-                <User size={60} className="text-green-600 group-hover:text-white" />
+            <div className="bg-white p-6 rounded-lg border border-slate-200 shadow-sm flex flex-col justify-between">
+              <div>
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 rounded bg-emerald-100 flex items-center justify-center text-emerald-700">
+                    <User size={20} />
+                  </div>
+                  <div>
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-emerald-700 block">Comercial & Faturamento</span>
+                    <h3 className="text-lg font-bold text-slate-900">Lucilene</h3>
+                  </div>
+                </div>
+                <p className="text-slate-600 text-xs leading-relaxed mb-3">
+                  Cotações de atacado, condições de pagamento faturado e agendamento de entregas com frete dedicado.
+                </p>
+                <p className="text-xs font-semibold text-slate-700 mb-5">
+                  {COMPANY_INFO.phoneLucilene}
+                </p>
               </div>
-              <span className="text-[10px] font-black uppercase tracking-[0.3em] text-green-600 group-hover:text-white mb-2">Comercial & Vendas</span>
-              <h3 className="text-4xl font-black uppercase mb-4">Lucilene</h3>
-              <p className="text-gray-500 group-hover:text-white/80 mb-4 font-medium">Atendimento focado em prazos, logística e melhores condições de pagamento.</p>
-              <p className="text-gray-600 group-hover:text-white/60 mb-8 text-sm font-bold">{COMPANY_INFO.phoneLucilene}</p>
-              <div className="bg-green-600 group-hover:bg-white group-hover:text-green-600 text-white px-10 py-5 rounded-2xl font-black uppercase tracking-widest text-[10px] flex items-center gap-3">
-                <MessageCircle size={20} /> {cta2 || 'Chamar no WhatsApp'}
-              </div>
-            </button>
+              <button
+                onClick={() => handleWhatsAppAgent('Lucilene', '5541999067259')}
+                className="w-full bg-emerald-700 hover:bg-emerald-800 text-white py-3 rounded text-xs font-semibold uppercase tracking-wider flex items-center justify-center gap-2 transition-colors"
+              >
+                <MessageCircle size={15} /> Conversar com Lucilene
+              </button>
+            </div>
           </div>
 
           {/* FORMULÁRIO DE CONTATO */}
-          <section className="mb-24">
-            <div className="bg-white rounded-[4rem] shadow-[0_32px_64px_-12px_rgba(0,0,0,0.1)] border border-gray-100 overflow-hidden">
+          <section className="mb-12">
+            <div className="bg-white rounded-lg border border-slate-200 shadow-sm overflow-hidden">
               <div className="grid grid-cols-1 lg:grid-cols-5">
-                <div className="lg:col-span-2 bg-[#1A1A1A] p-12 md:p-16 text-white flex flex-col justify-center">
-                  <ClipboardList size={48} className="text-[#D31219] mb-8" />
-                  <h2 className="text-4xl font-black uppercase tracking-tighter mb-6 leading-tight">Solicite seu <span className="text-[#D31219]">Orçamento Online</span></h2>
-                  <p className="text-gray-400 font-medium mb-10 leading-relaxed">
-                    Preencha os dados ao lado e nossa central de atendimento receberá sua solicitação instantaneamente via WhatsApp.
-                  </p>
-                  <ul className="space-y-4">
-                    {['Resposta em minutos', 'Assessoria técnica inclusa', 'Tabela de preços atualizada'].map((item, i) => (
-                      <li key={i} className="flex items-center gap-3 text-xs font-black uppercase tracking-widest">
-                        <div className="w-2 h-2 rounded-full bg-[#D31219]"></div>
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
+                <div className="lg:col-span-2 bg-slate-900 p-8 text-white flex flex-col justify-between">
+                  <div>
+                    <div className="w-10 h-10 rounded bg-[#D31219]/20 border border-[#D31219]/40 flex items-center justify-center text-[#D31219] mb-6">
+                      <ClipboardList size={20} />
+                    </div>
+                    <h2 className="text-xl font-bold tracking-tight mb-3">
+                      Envie Sua Solicitação
+                    </h2>
+                    <p className="text-slate-300 text-xs leading-relaxed mb-8">
+                      Preencha os campos ao lado com a metragem ou lista de materiais. Sua mensagem será enviada diretamente aos nossos operadores.
+                    </p>
+                    <div className="space-y-3 text-xs text-slate-300">
+                      <div className="flex items-center gap-2">
+                        <div className="w-1.5 h-1.5 rounded-full bg-[#D31219]"></div>
+                        <span>Atendimento no mesmo dia útil</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <div className="w-1.5 h-1.5 rounded-full bg-[#D31219]"></div>
+                        <span>Apoio no cálculo de modulação</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <div className="w-1.5 h-1.5 rounded-full bg-[#D31219]"></div>
+                        <span>Preços direto de distribuidor</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="mt-8 pt-6 border-t border-slate-800 text-xs text-slate-400">
+                    <p className="font-semibold text-white">Central Telefônica:</p>
+                    <p>{COMPANY_INFO.phone}</p>
+                  </div>
                 </div>
-                <div className="lg:col-span-3 p-12 md:p-16">
-                  <form onSubmit={handleFormSubmit} className="space-y-6">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      <div className="space-y-2">
-                        <label className="text-[10px] font-black uppercase tracking-widest text-gray-400 ml-1">Seu Nome</label>
+
+                <div className="lg:col-span-3 p-8">
+                  <form onSubmit={handleFormSubmit} className="space-y-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div className="space-y-1.5">
+                        <label className="text-xs font-semibold text-slate-700">Seu Nome / Empresa</label>
                         <input 
                           type="text" 
                           name="name"
                           required
                           value={formData.name}
                           onChange={handleInputChange}
-                          placeholder="Ex: João da Silva"
-                          className="w-full bg-gray-50 border border-gray-100 rounded-2xl px-6 py-4 focus:outline-none focus:ring-2 focus:ring-[#D31219]/20 transition-all font-medium"
+                          placeholder="Ex: Engenharia & Cia"
+                          className="w-full bg-slate-50 border border-slate-200 rounded px-3.5 py-2.5 text-xs text-slate-900 focus:outline-none focus:border-slate-400 transition-colors"
                         />
                       </div>
-                      <div className="space-y-2">
-                        <label className="text-[10px] font-black uppercase tracking-widest text-gray-400 ml-1">WhatsApp / Telefone</label>
+                      <div className="space-y-1.5">
+                        <label className="text-xs font-semibold text-slate-700">WhatsApp / Telefone</label>
                         <input 
                           type="tel" 
                           name="phone"
@@ -202,52 +243,52 @@ const Contact: React.FC = () => {
                           value={formData.phone}
                           onChange={handleInputChange}
                           placeholder="(41) 99999-9999"
-                          className="w-full bg-gray-50 border border-gray-100 rounded-2xl px-6 py-4 focus:outline-none focus:ring-2 focus:ring-[#D31219]/20 transition-all font-medium"
+                          className="w-full bg-slate-50 border border-slate-200 rounded px-3.5 py-2.5 text-xs text-slate-900 focus:outline-none focus:border-slate-400 transition-colors"
                         />
                       </div>
                     </div>
                     
-                    <div className="space-y-2">
-                      <label className="text-[10px] font-black uppercase tracking-widest text-gray-400 ml-1">Assunto do Contato</label>
+                    <div className="space-y-1.5">
+                      <label className="text-xs font-semibold text-slate-700">Segmento do Projeto</label>
                       <select 
                         name="subject"
                         value={formData.subject}
                         onChange={handleInputChange}
-                        className="w-full bg-gray-50 border border-gray-100 rounded-2xl px-6 py-4 focus:outline-none focus:ring-2 focus:ring-[#D31219]/20 transition-all font-black uppercase tracking-widest text-xs"
+                        className="w-full bg-slate-50 border border-slate-200 rounded px-3.5 py-2.5 text-xs text-slate-900 focus:outline-none focus:border-slate-400 transition-colors"
                       >
-                        <option value="Drywall">Forro e Parede Drywall</option>
-                        <option value="Steel Frame">Construção Steel Frame</option>
-                        <option value="Telhado Shingle">Telhado Shingle</option>
-                        <option value="Produtos">Compra de Materiais</option>
-                        <option value="Outros">Outros Assuntos</option>
+                        <option value="Drywall">Paredes e Forros em Drywall</option>
+                        <option value="Steel Frame">Estrutura em Steel Frame</option>
+                        <option value="Telhado Shingle">Telhas e Sistema Shingle</option>
+                        <option value="Produtos">Compra de Materiais e Acessórios</option>
+                        <option value="Outros">Outras Dúvidas Técnicas</option>
                       </select>
                     </div>
 
-                    <div className="space-y-2">
-                      <label className="text-[10px] font-black uppercase tracking-widest text-gray-400 ml-1">Sua Mensagem</label>
+                    <div className="space-y-1.5">
+                      <label className="text-xs font-semibold text-slate-700">Descrição do Pedido ou Metragem</label>
                       <textarea 
                         name="message"
                         required
                         value={formData.message}
                         onChange={handleInputChange}
                         rows={4}
-                        placeholder="Descreva brevemente o que você precisa..."
-                        className="w-full bg-gray-50 border border-gray-100 rounded-2xl px-6 py-4 focus:outline-none focus:ring-2 focus:ring-[#D31219]/20 transition-all font-medium resize-none"
+                        placeholder="Informe metragens, tipos de placas ou dúvidas sobre perfis..."
+                        className="w-full bg-slate-50 border border-slate-200 rounded px-3.5 py-2.5 text-xs text-slate-900 focus:outline-none focus:border-slate-400 transition-colors resize-none"
                       ></textarea>
                     </div>
 
                     {isQuoteView && quoteItems.length > 0 && (
-                      <div className="bg-red-50 p-4 rounded-xl border border-red-100 text-[10px] font-bold text-red-800">
-                         ⚠️ Sua lista de cotação com {quoteItems.length} itens será enviada junto com esta mensagem.
+                      <div className="bg-red-50 p-3 rounded border border-red-200 text-xs text-red-800">
+                        Sua lista de cotação com {quoteItems.length} {quoteItems.length === 1 ? 'item' : 'itens'} será incluída automaticamente.
                       </div>
                     )}
 
                     <button 
                       type="submit"
-                      className="w-full bg-[#D31219] hover:bg-black text-white font-black py-6 rounded-2xl transition-all shadow-2xl uppercase tracking-widest text-xs flex items-center justify-center gap-4 group"
+                      className="w-full bg-[#D31219] hover:bg-red-700 text-white font-semibold py-3.5 rounded transition-colors text-xs uppercase tracking-wider flex items-center justify-center gap-2"
                     >
-                      <Send size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                      {formCTA || 'Enviar para o WhatsApp'}
+                      <Send size={15} />
+                      Enviar Solicitação no WhatsApp
                     </button>
                   </form>
                 </div>
@@ -255,27 +296,33 @@ const Contact: React.FC = () => {
             </div>
           </section>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <a href={`tel:${COMPANY_INFO.phone.replace(/\D/g, '')}`} className="flex items-center gap-6 p-8 bg-white rounded-3xl border border-gray-100 hover:shadow-xl transition-all">
-              <div className="bg-gray-100 p-4 rounded-2xl text-[#D31219]"><Phone size={32}/></div>
+          {/* Dados de Contato e Balcão */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <a href={`tel:${COMPANY_INFO.phone.replace(/\D/g, '')}`} className="flex items-center gap-4 p-5 bg-white rounded-lg border border-slate-200 hover:border-slate-300 transition-colors">
+              <div className="w-10 h-10 rounded bg-slate-100 flex items-center justify-center text-[#D31219] shrink-0">
+                <Phone size={18}/>
+              </div>
               <div>
-                <p className="text-[10px] font-black uppercase text-gray-400 mb-1">Telefone Fixo</p>
-                <p className="text-xl font-black">{COMPANY_INFO.phone}</p>
+                <p className="text-[11px] uppercase font-bold text-slate-400">Telefone Fixo</p>
+                <p className="text-xs font-bold text-slate-900">{COMPANY_INFO.phone}</p>
               </div>
             </a>
-            <div className="flex items-center gap-6 p-8 bg-white rounded-3xl border border-gray-100">
-              <div className="bg-gray-100 p-4 rounded-2xl text-[#D31219]"><Clock size={32}/></div>
+            <div className="flex items-center gap-4 p-5 bg-white rounded-lg border border-slate-200">
+              <div className="w-10 h-10 rounded bg-slate-100 flex items-center justify-center text-[#D31219] shrink-0">
+                <Clock size={18}/>
+              </div>
               <div>
-                <p className="text-[10px] font-black uppercase text-gray-400 mb-1">Horário</p>
-                <p className="text-sm font-black uppercase">{COMPANY_INFO.hours.weekdays}</p>
-                <p className="text-xs font-bold text-gray-500 mt-1">{COMPANY_INFO.hours.saturday}</p>
+                <p className="text-[11px] uppercase font-bold text-slate-400">Expediente</p>
+                <p className="text-xs font-bold text-slate-900">{COMPANY_INFO.hours.weekdays}</p>
               </div>
             </div>
-            <a href="https://maps.app.goo.gl/RcpAnuqvVRpjQBQD6" target="_blank" rel="noreferrer" className="flex items-center gap-6 p-8 bg-white rounded-3xl border border-gray-100 hover:shadow-xl transition-all">
-              <div className="bg-gray-100 p-4 rounded-2xl text-[#D31219]"><MapPin size={32}/></div>
+            <a href="https://maps.app.goo.gl/RcpAnuqvVRpjQBQD6" target="_blank" rel="noreferrer" className="flex items-center gap-4 p-5 bg-white rounded-lg border border-slate-200 hover:border-slate-300 transition-colors">
+              <div className="w-10 h-10 rounded bg-slate-100 flex items-center justify-center text-[#D31219] shrink-0">
+                <MapPin size={18}/>
+              </div>
               <div>
-                <p className="text-[10px] font-black uppercase text-gray-400 mb-1">Visite-nos</p>
-                <p className="text-sm font-black uppercase">BR 277, 3641 - Cajuru</p>
+                <p className="text-[11px] uppercase font-bold text-slate-400">Endereço</p>
+                <p className="text-xs font-bold text-slate-900">BR-277, 3641 - Cajuru</p>
               </div>
             </a>
           </div>

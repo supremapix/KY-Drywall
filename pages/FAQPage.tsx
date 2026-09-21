@@ -683,61 +683,53 @@ const FAQPage: React.FC = () => {
       />
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-[#111] via-[#1a1a1a] to-[#111] text-white py-24 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-5">
-          <svg viewBox="0 0 400 400" className="w-full h-full">
-            <pattern id="faqGrid" width="40" height="40" patternUnits="userSpaceOnUse">
-              <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" strokeWidth="1" />
-            </pattern>
-            <rect width="100%" height="100%" fill="url(#faqGrid)" />
-          </svg>
-        </div>
-
-        <div className="container mx-auto px-4 relative z-10">
+      <section className="bg-slate-900 text-white py-16 border-b border-slate-800">
+        <div className="container mx-auto px-4">
           {/* Breadcrumb */}
-          <div className="flex items-center gap-2 text-sm text-gray-400 mb-8">
-            <Link to="/" className="hover:text-[#D31219] transition-colors">Home</Link>
-            <ChevronRight size={14} />
-            <span className="text-white">Perguntas Frequentes</span>
+          <div className="flex items-center gap-2 text-xs text-slate-400 mb-6 font-medium">
+            <Link to="/" className="hover:text-white transition-colors">Home</Link>
+            <ChevronRight size={12} />
+            <span className="text-slate-200">Perguntas Frequentes</span>
           </div>
 
-          <div className="max-w-4xl">
-            <span className="inline-block bg-[#D31219] text-white text-[10px] font-black px-6 py-2 rounded-full uppercase tracking-[0.3em] mb-6 animate-pulse">
-              Central de Conhecimento
-            </span>
+          <div className="max-w-3xl">
+            <div className="inline-flex items-center gap-2 text-[#D31219] text-xs font-bold uppercase tracking-wider mb-3">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#D31219]"></span>
+              Base de Conhecimento Técnico
+            </div>
 
-            <h1 className="text-4xl md:text-7xl font-black uppercase tracking-tighter leading-none mb-6">
-              Perguntas Frequentes sobre <span className="text-[#D31219]">Drywall</span> e <span className="text-[#D31219]">Steel Frame</span>
+            <h1 className="text-2xl sm:text-4xl font-bold tracking-tight mb-4">
+              Perguntas Frequentes sobre Drywall e Steel Frame
             </h1>
 
-            <p className="text-xl text-gray-300 mb-10 leading-relaxed">
-              O guia técnico mais completo sobre construção a seco em Curitiba — respondido pelos especialistas da KY Drywall com mais de 10 anos de experiência no mercado.
+            <p className="text-sm sm:text-base text-slate-300 mb-8 leading-relaxed">
+              Respostas técnicas fundamentadas pelas normas da ABNT e validadas por nossos especialistas em sistemas construtivos a seco em Curitiba e Região Metropolitana.
             </p>
 
             {/* Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8">
               {[
-                { value: totalQuestions, label: 'Perguntas' },
-                { value: '10+', label: 'Anos' },
-                { value: FAQ_DATA.length, label: 'Temas' },
-                { value: 'Curitiba', label: 'e RMC' }
+                { value: totalQuestions, label: 'Perguntas Respondidas' },
+                { value: '10+', label: 'Anos de Mercado' },
+                { value: FAQ_DATA.length, label: 'Áreas Técnicas' },
+                { value: 'Curitiba', label: 'e Região' }
               ].map((stat, idx) => (
-                <div key={idx} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-4 text-center">
-                  <div className="text-2xl md:text-3xl font-black text-[#D31219]">{stat.value}</div>
-                  <div className="text-xs font-bold uppercase tracking-widest text-gray-500 mt-1">{stat.label}</div>
+                <div key={idx} className="bg-slate-800/80 border border-slate-700/60 rounded p-3 text-center">
+                  <div className="text-lg sm:text-xl font-bold text-white">{stat.value}</div>
+                  <div className="text-[11px] text-slate-400 mt-0.5">{stat.label}</div>
                 </div>
               ))}
             </div>
 
             {/* Search Bar */}
-            <div className="relative">
-              <Search className="absolute left-6 top-1/2 -translate-y-1/2 text-gray-400" size={20} />
+            <div className="relative max-w-xl">
+              <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" size={16} />
               <input
                 type="text"
-                placeholder="Buscar pergunta..."
+                placeholder="Pesquise por termo técnico, norma ou material..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full bg-white/10 backdrop-blur-md border-2 border-white/20 rounded-2xl py-5 pl-16 pr-6 text-white placeholder-gray-400 focus:outline-none focus:border-[#D31219] transition-all"
+                className="w-full bg-slate-800 border border-slate-700 rounded py-3 pl-11 pr-4 text-xs sm:text-sm text-white placeholder-slate-400 focus:outline-none focus:border-slate-500 transition-colors"
               />
             </div>
           </div>
@@ -745,15 +737,15 @@ const FAQPage: React.FC = () => {
       </section>
 
       {/* Category Filters */}
-      <section className="bg-white border-b border-gray-200 sticky top-[68px] md:top-[72px] z-40 shadow-sm">
+      <section className="bg-white border-b border-slate-200 sticky top-[68px] md:top-[72px] z-40 shadow-xs">
         <div className="container mx-auto px-4">
-          <div className="flex gap-2 overflow-x-auto py-4 no-scrollbar">
+          <div className="flex gap-2 overflow-x-auto py-3 no-scrollbar">
             <button
               onClick={() => setActiveCategory('all')}
-              className={`px-6 py-3 rounded-xl font-black uppercase text-xs tracking-wider whitespace-nowrap transition-all ${
+              className={`px-3 py-1.5 rounded text-xs font-semibold whitespace-nowrap transition-colors ${
                 activeCategory === 'all'
-                  ? 'bg-[#D31219] text-white'
-                  : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                  ? 'bg-slate-900 text-white'
+                  : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
               }`}
             >
               Todos ({totalQuestions})
@@ -762,10 +754,10 @@ const FAQPage: React.FC = () => {
               <button
                 key={section.id}
                 onClick={() => setActiveCategory(section.id)}
-                className={`px-6 py-3 rounded-xl font-black uppercase text-xs tracking-wider whitespace-nowrap transition-all ${
+                className={`px-3 py-1.5 rounded text-xs font-semibold whitespace-nowrap transition-colors ${
                   activeCategory === section.id
-                    ? 'bg-[#D31219] text-white'
-                    : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                    ? 'bg-slate-900 text-white'
+                    : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
                 }`}
               >
                 {section.title.split(' - ')[0]} ({section.questions.length})
@@ -776,59 +768,54 @@ const FAQPage: React.FC = () => {
       </section>
 
       {/* FAQ Sections */}
-      <section className="py-20">
-        <div className="container mx-auto px-4 max-w-5xl">
+      <section className="py-12 bg-slate-50/50">
+        <div className="container mx-auto px-4 max-w-4xl">
           {filteredSections.map((section: any) => (
-            <div key={section.id} id={section.id} className="mb-16 scroll-mt-32">
-              <div className="flex items-center gap-4 mb-8">
-                <div className="p-4 bg-[#D31219] text-white rounded-2xl">
+            <div key={section.id} id={section.id} className="mb-12 scroll-mt-32">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="p-2 bg-slate-100 text-slate-800 rounded border border-slate-200">
                   {section.icon}
                 </div>
                 <div>
-                  <h2 className="text-3xl md:text-4xl font-black uppercase tracking-tight">
+                  <h2 className="text-xl font-bold text-slate-900">
                     {section.title}
                   </h2>
-                  <p className="text-sm text-gray-500 font-bold uppercase tracking-wider mt-1">
-                    {section.questions.length} {section.questions.length === 1 ? 'Pergunta' : 'Perguntas'}
+                  <p className="text-xs text-slate-500">
+                    {section.questions.length} {section.questions.length === 1 ? 'questão' : 'questões'} respondidas
                   </p>
                 </div>
               </div>
 
-              <div className="space-y-4">
+              <div className="space-y-3">
                 {section.questions.map((item: FAQItem, idx: number) => {
                   const isOpen = openQuestions.has(`${section.id}-${idx}`);
                   return (
                     <div
                       key={idx}
-                      className="bg-white rounded-2xl border-2 border-gray-100 overflow-hidden hover:border-[#D31219]/20 transition-all"
+                      className="bg-white rounded border border-slate-200 overflow-hidden"
                     >
                       <button
                         onClick={() => toggleQuestion(section.id, idx)}
                         aria-expanded={isOpen} aria-controls={`answer-${section.id}-${idx}`}
-                        className="w-full flex items-start gap-4 p-6 text-left"
+                        className="w-full flex items-start justify-between gap-4 p-4 text-left hover:bg-slate-50/60 transition-colors"
                       >
-                        <span className="flex-shrink-0 w-8 h-8 bg-[#D31219]/10 text-[#D31219] rounded-lg flex items-center justify-center font-black text-sm">
-                          {idx + 1}
-                        </span>
-                        <h3 className="flex-1 text-lg font-black text-gray-900 uppercase tracking-tight">
+                        <h3 className="text-sm font-semibold text-slate-900">
                           {item.question}
                         </h3>
-                        <div className="flex-shrink-0">
+                        <div className="shrink-0 mt-0.5">
                           {isOpen ? (
-                            <ChevronUp className="text-[#D31219]" size={24} />
+                            <ChevronUp className="text-slate-600" size={16} />
                           ) : (
-                            <ChevronDown className="text-gray-400" size={24} />
+                            <ChevronDown className="text-slate-400" size={16} />
                           )}
                         </div>
                       </button>
 
-                      {(
-                        <div hidden={!isOpen} id={`answer-${section.id}-${idx}`} className="px-6 pb-6">
-                          <div className="pl-12 border-l-4 border-[#D31219]/20 ml-4">
-                            <p className="text-gray-700 leading-relaxed pl-4">
-                              {item.answer}
-                            </p>
-                          </div>
+                      {isOpen && (
+                        <div id={`answer-${section.id}-${idx}`} className="px-4 pb-4 pt-1 border-t border-slate-100">
+                          <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                            {item.answer}
+                          </p>
                         </div>
                       )}
                     </div>
@@ -839,19 +826,18 @@ const FAQPage: React.FC = () => {
           ))}
 
           {filteredSections.length === 0 && (
-            <div className="text-center py-20">
-              <div className="text-6xl mb-6">🔍</div>
-              <h3 className="text-2xl font-black text-gray-900 mb-4">
-                Nenhuma pergunta encontrada
+            <div className="text-center py-16 bg-white rounded border border-slate-200 p-8">
+              <h3 className="text-lg font-bold text-slate-900 mb-2">
+                Nenhuma resposta encontrada para sua pesquisa
               </h3>
-              <p className="text-gray-600 mb-8">
-                Tente buscar com outras palavras ou entre em contato conosco
+              <p className="text-xs text-slate-500 mb-6">
+                Fale diretamente com nosso setor de engenharia e consultoria técnica.
               </p>
               <a
-                href={`https://wa.me/${COMPANY_INFO.whatsapp}?text=Olá! Tenho uma dúvida que não está no FAQ`}
-                className="inline-flex items-center gap-3 bg-green-600 text-white font-black px-8 py-4 rounded-xl hover:bg-green-700 transition-all"
+                href={`https://wa.me/${COMPANY_INFO.whatsapp}?text=Olá! Tenho uma dúvida técnica que não localizei no FAQ`}
+                className="inline-flex items-center gap-2 bg-[#D31219] hover:bg-red-700 text-white text-xs font-semibold uppercase tracking-wider px-5 py-2.5 rounded transition-colors"
               >
-                <MessageCircle size={20} /> Falar com Especialista
+                <MessageCircle size={15} /> Falar com Técnico no WhatsApp
               </a>
             </div>
           )}
@@ -859,32 +845,34 @@ const FAQPage: React.FC = () => {
       </section>
 
       {/* Blog Section */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tighter mb-4">
-              Artigos Técnicos sobre <span className="text-[#D31219]">Construção a Seco</span>
+      <section className="py-14 bg-white border-t border-slate-200">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <div className="mb-8">
+            <h2 className="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight">
+              Artigos Técnicos e Guias de Montagem
             </h2>
-            <p className="text-gray-600 font-medium">
-              Conteúdo especializado para seu projeto em Curitiba
+            <p className="text-xs sm:text-sm text-slate-500 mt-1">
+              Publicações detalhadas para orientar seu projeto do planejamento à execução.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {BLOG_ARTICLES.map((article, idx) => (
               <Link
                 key={idx}
                 to={article.link}
-                className="group bg-gray-50 rounded-3xl p-8 hover:bg-[#D31219] hover:text-white transition-all duration-500 border-2 border-transparent hover:border-[#D31219]"
+                className="group bg-slate-50 rounded border border-slate-200 p-5 hover:border-slate-400 transition-colors flex flex-col justify-between"
               >
-                <div className="w-12 h-12 bg-[#D31219] group-hover:bg-white rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                  <BookOpen size={24} className="text-white group-hover:text-[#D31219]" />
+                <div>
+                  <div className="w-8 h-8 bg-white border border-slate-200 rounded flex items-center justify-center mb-3">
+                    <BookOpen size={16} className="text-slate-700" />
+                  </div>
+                  <h3 className="text-sm font-semibold text-slate-900 leading-snug group-hover:text-[#D31219] transition-colors">
+                    {article.title}
+                  </h3>
                 </div>
-                <h3 className="text-xl font-black uppercase tracking-tight leading-tight group-hover:text-white">
-                  {article.title}
-                </h3>
-                <div className="mt-6 flex items-center gap-2 text-sm font-black uppercase text-[#D31219] group-hover:text-white">
-                  Ler artigo <ArrowUp size={16} className="rotate-45 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                <div className="mt-4 flex items-center gap-1.5 text-xs font-semibold text-[#D31219]">
+                  Ler artigo <ArrowUp size={12} className="rotate-45" />
                 </div>
               </Link>
             ))}
@@ -893,27 +881,27 @@ const FAQPage: React.FC = () => {
       </section>
 
       {/* CTA Final */}
-      <section className="py-20 bg-[#111] text-white">
-        <div className="container mx-auto px-4 text-center max-w-3xl">
-          <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter mb-6">
-            Não encontrou sua <span className="text-[#D31219]">resposta?</span>
+      <section className="py-14 bg-slate-900 text-white border-t border-slate-800">
+        <div className="container mx-auto px-4 text-center max-w-2xl">
+          <h2 className="text-xl sm:text-3xl font-bold tracking-tight mb-3">
+            Precisa de auxílio para calcular seu projeto?
           </h2>
-          <p className="text-xl text-gray-300 mb-10">
-            Nossa equipe técnica está pronta para atender você com assessoria especializada
+          <p className="text-xs sm:text-sm text-slate-300 mb-6 leading-relaxed">
+            Nossa equipe técnica analisa sua planta ou lista de medidas para especificar perfis, fixadores e chapas ideais.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a
-              href={`https://wa.me/${COMPANY_INFO.whatsapp}?text=Olá! Vim do FAQ e tenho uma dúvida`}
-              className="bg-[#D31219] text-white font-black px-10 py-6 rounded-2xl flex items-center justify-center gap-3 hover:bg-white hover:text-[#D31219] transition-all shadow-xl"
+              href={`https://wa.me/${COMPANY_INFO.whatsapp}?text=Olá! Gostaria de consultoria técnica sobre materiais.`}
+              className="bg-[#D31219] hover:bg-red-700 text-white text-xs font-semibold uppercase tracking-wider px-6 py-3 rounded flex items-center justify-center gap-2 transition-colors"
             >
-              <MessageCircle size={22} /> WhatsApp Direto
+              <MessageCircle size={16} /> Atendimento WhatsApp
             </a>
             <a
               href={`tel:${COMPANY_INFO.phone.replace(/\D/g, '')}`}
-              className="bg-white/10 text-white font-black px-10 py-6 rounded-2xl flex items-center justify-center gap-3 border-2 border-white/20 hover:bg-white/20 transition-all"
+              className="bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold uppercase tracking-wider px-6 py-3 rounded flex items-center justify-center gap-2 border border-slate-700 transition-colors"
             >
-              <Phone size={22} /> {COMPANY_INFO.phone}
+              <Phone size={16} /> {COMPANY_INFO.phone}
             </a>
           </div>
         </div>
@@ -923,10 +911,10 @@ const FAQPage: React.FC = () => {
       {showBackToTop && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-24 right-6 bg-[#D31219] text-white p-4 rounded-full shadow-2xl hover:bg-black transition-all z-50 animate-bounce"
+          className="fixed bottom-24 right-6 bg-slate-900 text-white p-3 rounded shadow-md hover:bg-slate-800 transition-colors z-40 border border-slate-700"
           aria-label="Voltar ao topo"
         >
-          <ArrowUp size={24} />
+          <ArrowUp size={18} />
         </button>
       )}
     </div>

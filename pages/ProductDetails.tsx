@@ -97,156 +97,158 @@ const ProductDetails: React.FC = () => {
           <span className="text-gray-900 truncate">{product.name}</span>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-20">
-          <div className="space-y-6">
-            <div className="aspect-square rounded-[3rem] overflow-hidden shadow-2xl bg-gray-50 border-8 border-gray-50 group">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 mb-16">
+          <div className="lg:col-span-6 space-y-4">
+            <div className="aspect-square rounded-lg overflow-hidden bg-slate-50 border border-slate-200">
               <img 
                 src={product.image} 
                 alt={product.name} 
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                className="w-full h-full object-cover"
               />
             </div>
             
-            <div className="bg-gray-50 p-6 rounded-3xl border border-gray-100 flex items-center justify-between">
-               <div className="flex items-center gap-3">
-                 <Shield size={24} className="text-[#D31219]" />
-                 <span className="text-[10px] font-black uppercase tracking-widest text-gray-600">Certificação Técnica ABNT</span>
+            <div className="bg-slate-50 p-4 rounded border border-slate-200 flex items-center justify-between">
+               <div className="flex items-center gap-2.5">
+                 <Shield size={18} className="text-[#D31219]" />
+                 <span className="text-xs font-semibold text-slate-700">Conformidade e Laudo Técnico ABNT</span>
                </div>
-               <button className="p-3 text-gray-400 hover:text-[#D31219] transition-colors"><Share2 size={20}/></button>
+               <span className="text-[11px] font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
+                 Pronta Entrega
+               </span>
             </div>
           </div>
 
-          <div className="flex flex-col">
-            <div className="mb-4">
-              <span className="bg-[#D31219]/10 text-[#D31219] text-[10px] font-black px-4 py-2 rounded-full uppercase tracking-widest">
-                {product.category}
-              </span>
-            </div>
-            <h1 className="text-4xl md:text-5xl font-black text-gray-900 mb-6 uppercase tracking-tighter leading-[1.1]">
-              {product.name}
-            </h1>
-            
-            <div className="flex items-center gap-2 mb-8">
-              <div className="flex items-center">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} size={18} className={i < Math.round(product.rating) ? "text-[#D31219] fill-[#D31219]" : "text-gray-200"} />
-                ))}
+          <div className="lg:col-span-6 flex flex-col justify-between">
+            <div>
+              <div className="mb-3">
+                <span className="text-[#D31219] text-xs font-bold uppercase tracking-wider">
+                  {product.category}
+                </span>
               </div>
-              <span className="text-sm font-black text-gray-900 ml-2">{reviews.length} Avaliações Técnicas</span>
-            </div>
-
-            <div className="prose prose-red max-w-none text-gray-600 text-lg leading-relaxed mb-10 font-medium italic">
-              <p>"{product.description}"</p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-              {product.specs && (
-                <div className="bg-gray-50 p-8 rounded-[2rem] border border-gray-100">
-                  <h4 className="flex items-center gap-2 text-sm font-black uppercase tracking-widest text-gray-900 mb-6">
-                    <ClipboardList size={20} className="text-[#D31219]" /> Ficha Técnica
-                  </h4>
-                  <ul className="space-y-3">
-                    {product.specs.map((s, i) => (
-                      <li key={i} className="text-[11px] font-bold text-gray-500 uppercase flex items-start gap-2">
-                        <div className="w-1.5 h-1.5 rounded-full bg-[#D31219] mt-1 shrink-0"></div>
-                        {s}
-                      </li>
-                    ))}
-                  </ul>
+              <h1 className="text-2xl sm:text-4xl font-bold text-slate-900 mb-3 tracking-tight">
+                {product.name}
+              </h1>
+              
+              <div className="flex items-center gap-2 mb-6">
+                <div className="flex items-center">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} size={15} className={i < Math.round(product.rating) ? "text-[#D31219] fill-[#D31219]" : "text-slate-200"} />
+                  ))}
                 </div>
-              )}
-              {product.applications && (
-                <div className="bg-[#1A1A1A] p-8 rounded-[2rem] text-white">
-                  <h4 className="flex items-center gap-2 text-sm font-black uppercase tracking-widest text-[#D31219] mb-6">
-                    <Target size={20} /> Aplicações
-                  </h4>
-                  <ul className="space-y-3">
-                    {product.applications.map((a, i) => (
-                      <li key={i} className="text-[11px] font-bold text-gray-300 uppercase flex items-start gap-2">
-                        <div className="w-1.5 h-1.5 rounded-full bg-[#D31219] mt-1 shrink-0 shadow-[0_0_10px_rgba(211,18,25,1)]"></div>
-                        {a}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
-              <a 
-                href={whatsappUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="flex items-center justify-center gap-3 bg-[#D31219] hover:bg-black text-white font-black py-6 rounded-2xl transition-all shadow-2xl uppercase tracking-widest text-xs animate-pulse text-center"
-              >
-                <MessageCircle size={24} />
-                {ctaPhrase || 'Consultar Preço AGORA'}
-              </a>
-              <button 
-                onClick={addToQuote}
-                className={`flex items-center justify-center gap-3 font-black py-6 rounded-2xl transition-all border-2 uppercase tracking-widest text-xs ${isAdded ? 'bg-green-500 border-green-500 text-white' : 'border-gray-200 text-gray-800 hover:border-[#D31219] hover:text-[#D31219]'}`}
-              >
-                {isAdded ? <Check size={24} /> : <PlusCircle size={24} />}
-                Adicionar à Cotação
-              </button>
-            </div>
-            
-            <a 
-              href="https://wa.me/5541996457421?text=Olá, preciso de suporte técnico para o produto: "
-              target="_blank"
-              rel="noreferrer"
-              className="flex items-center justify-center gap-3 bg-gray-100 hover:bg-gray-200 text-gray-700 font-black py-5 rounded-2xl transition-all uppercase tracking-widest text-[10px]"
-            >
-              <PhoneCall size={20} />
-              Falar com Técnico de Plantão
-            </a>
-
-            <div className="grid grid-cols-2 gap-6 pt-12 border-t border-gray-100 mt-12">
-              <div className="flex items-center gap-4">
-                <Shield className="text-[#D31219]" size={32} />
-                <p className="text-[10px] font-black uppercase tracking-widest leading-tight text-gray-500">Padrão<br/>Certificado</p>
+                <span className="text-xs text-slate-500 ml-1">({reviews.length} avaliações de montadores)</span>
               </div>
-              <div className="flex items-center gap-4">
-                <Truck className="text-[#D31219]" size={32} />
-                <p className="text-[10px] font-black uppercase tracking-widest leading-tight text-gray-500">Logística<br/>Curitiba e RMC</p>
+
+              <div className="text-slate-600 text-sm sm:text-base leading-relaxed mb-8">
+                <p>{product.description}</p>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+                {product.specs && (
+                  <div className="bg-slate-50 p-4 rounded border border-slate-200">
+                    <h4 className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-slate-900 mb-3">
+                      <ClipboardList size={14} className="text-[#D31219]" />
+                      Especificações
+                    </h4>
+                    <ul className="space-y-1.5">
+                      {product.specs.map((s, i) => (
+                        <li key={i} className="text-xs text-slate-600 flex items-start gap-2">
+                          <span className="w-1 h-1 rounded-full bg-[#D31219] mt-1.5 shrink-0"></span>
+                          <span>{s}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+                {product.applications && (
+                  <div className="bg-slate-900 p-4 rounded text-white border border-slate-800">
+                    <h4 className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-white mb-3">
+                      <Target size={14} className="text-[#D31219]" />
+                      Aplicações
+                    </h4>
+                    <ul className="space-y-1.5">
+                      {product.applications.map((a, i) => (
+                        <li key={i} className="text-xs text-slate-300 flex items-start gap-2">
+                          <span className="w-1 h-1 rounded-full bg-[#D31219] mt-1.5 shrink-0"></span>
+                          <span>{a}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
+            </div>
+
+            <div className="space-y-3 pt-4 border-t border-slate-100">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <a 
+                  href={whatsappUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center justify-center gap-2 bg-[#D31219] hover:bg-red-700 text-white font-semibold py-3.5 px-4 rounded transition-colors text-xs uppercase tracking-wider text-center shadow-sm"
+                >
+                  <MessageCircle size={16} />
+                  {ctaPhrase || 'Cotação Imediata no WhatsApp'}
+                </a>
+                <button 
+                  onClick={addToQuote}
+                  className={`flex items-center justify-center gap-2 font-semibold py-3.5 px-4 rounded transition-colors border text-xs uppercase tracking-wider ${
+                    isAdded 
+                      ? 'bg-emerald-600 border-emerald-600 text-white' 
+                      : 'border-slate-300 text-slate-800 hover:border-slate-400 bg-white'
+                  }`}
+                >
+                  {isAdded ? <Check size={16} /> : <PlusCircle size={16} />}
+                  {isAdded ? 'Item Adicionado' : 'Adicionar à Cotação'}
+                </button>
+              </div>
+              
+              <div className="grid grid-cols-2 gap-4 pt-4 border-t border-slate-100 text-xs text-slate-500">
+                <div className="flex items-center gap-2">
+                  <Shield className="text-slate-400" size={16} />
+                  <span>Produto Homologado</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Truck className="text-slate-400" size={16} />
+                  <span>Entrega em Curitiba e RMC</span>
+                </div>
               </div>
             </div>
           </div>
         </div>
 
         {/* Reviews Section */}
-        <section className="py-20 border-t border-gray-100">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 gap-6">
+        <section className="py-12 border-t border-slate-200">
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 gap-4">
             <div>
-              <h3 className="text-3xl font-black uppercase tracking-tighter mb-2">Comunidade <span className="text-[#D31219]">Técnica</span></h3>
-              <p className="text-gray-500 font-medium">Experiências de quem constrói com KY Drywall.</p>
+              <h3 className="text-xl font-bold text-slate-900 tracking-tight">Avaliações Técnicas</h3>
+              <p className="text-slate-500 text-xs mt-0.5">Opiniões de aplicadores e engenheiros sobre este material.</p>
             </div>
             <button 
               onClick={() => setIsReviewing(!isReviewing)}
-              className="bg-[#003366] text-white px-8 py-4 rounded-2xl font-black text-[10px] uppercase tracking-widest hover:bg-[#D31219] transition-colors"
+              className="bg-slate-900 text-white px-4 py-2 rounded text-xs font-semibold uppercase tracking-wider hover:bg-slate-800 transition-colors"
             >
-              {isReviewing ? 'Cancelar' : 'Deixar Avaliação'}
+              {isReviewing ? 'Fechar Formulário' : 'Avaliar Produto'}
             </button>
           </div>
 
           {isReviewing && (
-            <div className="bg-gray-50 p-8 md:p-12 rounded-[3rem] mb-12 border border-gray-200 animate-in fade-in slide-in-from-top-4 duration-300">
-              <form onSubmit={handleSubmitReview} className="max-w-2xl">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                  <div className="space-y-2">
-                    <label className="text-[10px] font-black uppercase tracking-widest text-gray-400">Seu Nome / Empresa</label>
+            <div className="bg-slate-50 p-6 rounded-lg mb-8 border border-slate-200">
+              <form onSubmit={handleSubmitReview} className="max-w-xl space-y-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="space-y-1.5">
+                    <label className="text-xs font-semibold text-slate-700">Seu Nome / Construtora</label>
                     <input 
                       type="text" 
                       required
                       value={userName}
                       onChange={(e) => setUserName(e.target.value)}
-                      className="w-full bg-white border border-gray-200 rounded-xl px-5 py-3 focus:outline-none focus:ring-2 focus:ring-[#D31219]/20 font-medium"
-                      placeholder="Ex: João Silva Construtora"
+                      className="w-full bg-white border border-slate-200 rounded px-3 py-2 text-xs focus:outline-none focus:border-slate-400"
+                      placeholder="Ex: Carlos M. - Montador"
                     />
                   </div>
-                  <div className="space-y-2">
-                    <label className="text-[10px] font-black uppercase tracking-widest text-gray-400">Nota da Experiência</label>
-                    <div className="flex gap-2">
+                  <div className="space-y-1.5">
+                    <label className="text-xs font-semibold text-slate-700">Classificação</label>
+                    <div className="flex gap-1 pt-1">
                       {[1, 2, 3, 4, 5].map((star) => (
                         <button 
                           key={star}
@@ -254,53 +256,47 @@ const ProductDetails: React.FC = () => {
                           onClick={() => setNewRating(star)}
                           className="p-1"
                         >
-                          <Star size={24} className={star <= newRating ? "fill-[#D31219] text-[#D31219]" : "text-gray-300"} />
+                          <Star size={18} className={star <= newRating ? "fill-[#D31219] text-[#D31219]" : "text-slate-300"} />
                         </button>
                       ))}
                     </div>
                   </div>
                 </div>
-                <div className="space-y-2 mb-8">
-                  <label className="text-[10px] font-black uppercase tracking-widest text-gray-400">Seu Comentário Técnico</label>
+                <div className="space-y-1.5">
+                  <label className="text-xs font-semibold text-slate-700">Comentário Técnico</label>
                   <textarea 
                     required
                     value={newComment}
                     onChange={(e) => setNewComment(e.target.value)}
-                    className="w-full bg-white border border-gray-200 rounded-xl px-5 py-3 focus:outline-none focus:ring-2 focus:ring-[#D31219]/20 font-medium h-32 resize-none"
-                    placeholder="Conte como foi utilizar este material em sua obra..."
+                    className="w-full bg-white border border-slate-200 rounded px-3 py-2 text-xs focus:outline-none focus:border-slate-400 h-24 resize-none"
+                    placeholder="Comente sobre facilidade de manuseio, resistência, encaixes ou acabamento..."
                   ></textarea>
                 </div>
                 <button 
                   type="submit"
-                  className="bg-[#D31219] text-white px-10 py-5 rounded-2xl font-black uppercase tracking-widest text-xs flex items-center gap-3 shadow-xl hover:bg-black transition-colors group"
+                  className="bg-[#D31219] text-white px-5 py-2.5 rounded text-xs font-semibold uppercase tracking-wider hover:bg-red-700 transition-colors"
                 >
-                  <Send size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                   Publicar Avaliação
                 </button>
               </form>
             </div>
           )}
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {reviews.map((review) => (
-              <div key={review.id} className="bg-white p-8 rounded-[2.5rem] border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
-                <div className="flex justify-between items-start mb-6">
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center font-black text-[#003366]">
-                      {review.userName[0]}
-                    </div>
-                    <div>
-                      <h4 className="font-black text-sm uppercase tracking-tight">{review.userName}</h4>
-                      <p className="text-[10px] font-bold text-gray-400 uppercase">{review.date}</p>
-                    </div>
+              <div key={review.id} className="bg-white p-5 rounded-lg border border-slate-200">
+                <div className="flex justify-between items-start mb-3">
+                  <div>
+                    <h4 className="font-bold text-xs text-slate-900">{review.userName}</h4>
+                    <p className="text-[10px] text-slate-400">{review.date}</p>
                   </div>
                   <div className="flex gap-0.5">
                     {[...Array(5)].map((_, i) => (
-                      <Star key={i} size={14} className={i < review.rating ? "fill-[#D31219] text-[#D31219]" : "text-gray-200"} />
+                      <Star key={i} size={12} className={i < review.rating ? "fill-[#D31219] text-[#D31219]" : "text-slate-200"} />
                     ))}
                   </div>
                 </div>
-                <p className="text-gray-600 font-medium italic leading-relaxed">"{review.comment}"</p>
+                <p className="text-slate-600 text-xs leading-relaxed">"{review.comment}"</p>
               </div>
             ))}
           </div>

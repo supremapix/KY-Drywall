@@ -1,52 +1,59 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Home, AlertTriangle, ArrowLeft, MessageCircle } from 'lucide-react';
+import { Home, ArrowLeft, MessageCircle } from 'lucide-react';
 import SEO from '../components/SEO';
+import { COMPANY_INFO } from '../constants';
 
 const NotFound: React.FC = () => {
   return (
-    <div className="min-h-[80vh] flex items-center justify-center bg-white px-4">
-      <SEO noindex
-        title="404 - Página Não Encontrada" 
-        description="A página que você procura não foi encontrada. Explore nossos serviços de Drywall e Steel Frame em Curitiba."
+    <div className="min-h-[70vh] flex items-center justify-center bg-white px-4 py-16">
+      <SEO
+        noindex
+        title="404 - Página Não Encontrada | KY Drywall"
+        description="A página solicitada não foi encontrada. Navegue pelo catálogo de produtos e serviços da KY Drywall & Steel Frame."
       />
       
-      <div className="max-w-2xl w-full text-center">
-        <div className="relative inline-block mb-12">
-          <div className="absolute inset-0 bg-[#D31219] blur-[100px] opacity-10 animate-pulse"></div>
-          <AlertTriangle size={120} className="text-[#D31219] mx-auto relative z-10" />
-          <h1 className="text-9xl font-black text-[#003366] opacity-10 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none">404</h1>
+      <div className="max-w-lg w-full text-center">
+        <div className="mb-6">
+          <span className="text-xs font-bold uppercase tracking-wider text-[#D31219]">Erro 404</span>
+          <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight mt-1 mb-3">
+            Página Não Encontrada
+          </h1>
+          <p className="text-xs sm:text-sm text-slate-600 leading-relaxed max-w-md mx-auto">
+            O endereço acessado não existe, foi alterado ou está temporariamente indisponível. Utilize as opções abaixo para continuar sua navegação.
+          </p>
         </div>
 
-        <h2 className="text-4xl md:text-6xl font-black text-gray-900 uppercase tracking-tighter mb-6">
-          Obra <span className="text-[#D31219]">Interrompida!</span>
-        </h2>
-        
-        <p className="text-xl text-gray-500 font-medium mb-12 italic">
-          "A página que você está tentando acessar não existe em nosso servidor ou foi movida para um novo endereço."
-        </p>
-
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <div className="flex flex-col sm:flex-row gap-3 justify-center mb-10">
           <Link 
             to="/" 
-            className="bg-[#003366] text-white font-black px-10 py-5 rounded-2xl flex items-center justify-center gap-3 hover:bg-black transition-all shadow-xl uppercase tracking-widest text-xs"
+            className="bg-[#D31219] hover:bg-red-700 text-white font-semibold px-5 py-2.5 rounded flex items-center justify-center gap-2 text-xs uppercase tracking-wider transition-colors"
           >
-            <Home size={18} /> Voltar ao Início
+            <Home size={15} /> Ir para Página Inicial
           </Link>
           
           <a 
-            href="https://wa.me/5541996457421" 
-            className="bg-white text-[#D31219] border-2 border-[#D31219] font-black px-10 py-5 rounded-2xl flex items-center justify-center gap-3 hover:bg-[#D31219] hover:text-white transition-all text-xs uppercase tracking-widest"
+            href={`https://wa.me/${COMPANY_INFO.whatsapp}?text=Olá! Estava navegando no site e encontrei um link quebrado.`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-slate-900 hover:bg-slate-800 text-white font-semibold px-5 py-2.5 rounded flex items-center justify-center gap-2 text-xs uppercase tracking-wider transition-colors"
           >
-            <MessageCircle size={18} /> Suporte Técnico
+            <MessageCircle size={15} /> Falar com Suporte
           </a>
         </div>
 
-        <div className="mt-20 pt-10 border-t border-gray-100 grid grid-cols-2 md:grid-cols-3 gap-8 text-[10px] font-black uppercase text-gray-400 tracking-widest">
-          <Link to="/produtos" className="hover:text-[#D31219] transition-colors">Produtos</Link>
-          <Link to="/servicos" className="hover:text-[#D31219] transition-colors">Serviços</Link>
-          <Link to="/blog" className="hover:text-[#D31219] transition-colors">Blog Regional</Link>
+        <div className="pt-6 border-t border-slate-100">
+          <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3">
+            Principais Seções
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs text-slate-700 font-medium">
+            <Link to="/produtos" className="hover:text-[#D31219] transition-colors">Produtos</Link>
+            <Link to="/steel-frame" className="hover:text-[#D31219] transition-colors">Steel Frame</Link>
+            <Link to="/servicos" className="hover:text-[#D31219] transition-colors">Serviços</Link>
+            <Link to="/blog" className="hover:text-[#D31219] transition-colors">Blog & Regiões</Link>
+            <Link to="/contato" className="hover:text-[#D31219] transition-colors">Contato</Link>
+          </div>
         </div>
       </div>
     </div>

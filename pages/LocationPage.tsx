@@ -100,290 +100,281 @@ const LocationPage: React.FC<LocationPageProps> = ({ type }) => {
         schema={schema}
       />
 
-      <section className="bg-gradient-to-br from-[#003366] via-[#002447] to-[#001829] py-16 md:py-28 text-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
-        </div>
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="flex items-center gap-2 text-[10px] font-black uppercase text-[#D31219] mb-8 tracking-[0.3em]">
-            <Link to="/" className="hover:text-white flex items-center gap-1 transition-colors"><Home size={14}/> Início</Link>
-            <ChevronRight size={10}/>
-            <span className="text-white/60">Atendimento em {formattedName}</span>
+      <section className="bg-slate-900 py-12 md:py-16 text-white border-b border-slate-800">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <div className="flex items-center gap-1.5 text-xs text-slate-400 mb-4 font-medium">
+            <Link to="/" className="hover:text-white flex items-center gap-1 transition-colors">
+              <Home size={13} /> Início
+            </Link>
+            <ChevronRight size={11} />
+            <Link to="/blog" className="hover:text-white transition-colors">Atendimento Regional</Link>
+            <ChevronRight size={11} />
+            <span className="text-slate-200">{formattedName}</span>
           </div>
-          <h1 className="text-4xl md:text-7xl font-black mb-6 uppercase tracking-tighter leading-tight">
-            {serviceName} em <span className="text-[#D31219]">{formattedName}</span>
-          </h1>
-          <p className="text-lg md:text-xl text-gray-300 max-w-3xl font-medium leading-relaxed mb-10">
-            A KY Drywall é a maior distribuidora de materiais para construção a seco em Curitiba. Atendemos {formattedName} com entrega rápida, assessoria técnica especializada e os melhores preços do mercado.
-          </p>
-          <div className="flex flex-wrap gap-4 mb-8">
-            <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md px-6 py-3 rounded-full border border-white/20">
-              <Truck size={18} className="text-[#D31219]" />
-              <span className="text-sm font-bold">Entrega Rápida</span>
+
+          <div className="max-w-3xl">
+            <span className="text-[#D31219] text-xs font-bold uppercase tracking-wider mb-2 block">
+              Distribuição & Especificação Técnica
+            </span>
+            <h1 className="text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-4 leading-tight">
+              {serviceName} em <span className="text-white">{formattedName}</span>
+            </h1>
+            <p className="text-xs sm:text-base text-slate-300 font-normal leading-relaxed mb-6">
+              Distribuição autorizada de insumos de {serviceName.toLowerCase()} para {formattedName} e região. Fornecimento direto com pronta entrega, memorial de cálculo e suporte técnico para instaladores, engenheiros e construtores.
+            </p>
+
+            <div className="flex flex-wrap gap-2.5 mb-6 text-xs text-slate-300">
+              <div className="flex items-center gap-1.5 bg-slate-800/80 px-3 py-1.5 rounded border border-slate-700">
+                <Truck size={14} className="text-[#D31219]" />
+                <span>Logística para {formattedName}</span>
+              </div>
+              <div className="flex items-center gap-1.5 bg-slate-800/80 px-3 py-1.5 rounded border border-slate-700">
+                <Package size={14} className="text-[#D31219]" />
+                <span>Estoque Permanente</span>
+              </div>
+              <div className="flex items-center gap-1.5 bg-slate-800/80 px-3 py-1.5 rounded border border-slate-700">
+                <ShieldCheck size={14} className="text-[#D31219]" />
+                <span>Normas ABNT NBR 15758</span>
+              </div>
             </div>
-            <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md px-6 py-3 rounded-full border border-white/20">
-              <Package size={18} className="text-[#D31219]" />
-              <span className="text-sm font-bold">Maior Estoque</span>
+
+            <div className="flex flex-wrap gap-3">
+              <a
+                href={`https://wa.me/${COMPANY_INFO.whatsapp}?text=Olá! Gostaria de um orçamento para ${serviceName} em ${formattedName}`}
+                className="bg-[#D31219] hover:bg-red-700 text-white font-semibold px-5 py-2.5 rounded text-xs uppercase tracking-wider transition-colors flex items-center justify-center gap-2"
+              >
+                <MessageCircle size={15} /> Solicitar Cotação
+              </a>
+              <a
+                href={`tel:${COMPANY_INFO.phone.replace(/\D/g, '')}`}
+                className="bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold px-4 py-2.5 rounded text-xs uppercase tracking-wider transition-colors border border-slate-700 flex items-center justify-center gap-2"
+              >
+                <Phone size={15} /> {COMPANY_INFO.phone}
+              </a>
             </div>
-            <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md px-6 py-3 rounded-full border border-white/20">
-              <Star size={18} className="text-[#D31219]" />
-              <span className="text-sm font-bold">Assessoria Técnica</span>
-            </div>
-          </div>
-          <div className="flex flex-col sm:flex-row gap-4">
-            <a
-              href={`https://wa.me/${COMPANY_INFO.whatsapp}?text=Olá! Gostaria de um orçamento para ${serviceName} em ${formattedName}`}
-              className="bg-[#D31219] text-white font-black px-10 py-5 rounded-2xl text-xs uppercase tracking-widest hover:bg-white hover:text-[#D31219] transition-all shadow-2xl flex items-center justify-center gap-3 group"
-            >
-              <MessageCircle size={20} className="group-hover:rotate-12 transition-transform"/> Orçamento Gratuito
-            </a>
-            <a
-              href={`tel:${COMPANY_INFO.phone.replace(/\D/g, '')}`}
-              className="bg-white/10 backdrop-blur-md text-white font-black px-10 py-5 rounded-2xl text-xs uppercase tracking-widest hover:bg-white hover:text-[#003366] transition-all border-2 border-white/30 flex items-center justify-center gap-3"
-            >
-              <Phone size={20}/> {COMPANY_INFO.phone}
-            </a>
           </div>
         </div>
       </section>
 
-      <div className="container mx-auto px-4 py-16 md:py-24">
-        <div className="flex flex-col lg:flex-row gap-16">
-          <div className="lg:w-2/3 space-y-20">
+      <div className="container mx-auto px-4 py-12 max-w-5xl">
+        <div className="flex flex-col lg:flex-row gap-10">
+          <div className="lg:w-2/3 space-y-12">
             <div>
-              <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tighter text-gray-900 mb-12 leading-tight">
-                Por que escolher a <span className="text-[#D31219]">KY Drywall</span><br/>em {formattedName}?
+              <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-slate-900 mb-6">
+                Vantagens e Logística em {formattedName}
               </h2>
-              <div className="grid grid-cols-1 gap-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {[
                   {
-                    title: `Entrega Expressa em ${formattedName}`,
+                    title: `Entrega Programada em ${formattedName}`,
                     icon: Truck,
-                    text: `Nossa frota própria garante entrega no mesmo dia para ${formattedName}. Trabalhamos com as melhores marcas como Barbieri, Gypsum e Holdflex. Receba seus materiais rapidamente e comece sua obra sem atrasos.`
+                    text: `Frota própria e logística ágil para transporte com integridade de placas, perfis de até 3m e compostos pastosos.`
                   },
                   {
-                    title: `Assessoria Técnica Especializada`,
+                    title: `Cálculo de Quantitativo`,
                     icon: HardHat,
-                    text: `Equipe técnica qualificada para orientar na escolha dos materiais ideais para sua obra. Calculamos quantitativos precisos, evitando desperdícios. Suporte completo do projeto à execução em ${formattedName}.`
+                    text: `Nossa equipe técnica apoia o levantamento preciso de montantes, parafusos e fitas para evitar sobras.`
                   },
                   {
-                    title: `Maior Estoque de Curitiba`,
+                    title: `Marcas Homologadas`,
                     icon: Package,
-                    text: `Mais de 50 produtos disponíveis em estoque permanente. Placas ST, RU e RF, perfis de todas as medidas, parafusos, fitas, massas e todos os acessórios para ${serviceName.toLowerCase()}. Tudo em pronta entrega para ${formattedName}.`
+                    text: `Trabalhamos com marcas de referência nacional com laudos técnicos de conformidade e garantia de fábrica.`
                   },
                   {
-                    title: `Obra 70% Mais Rápida`,
+                    title: `Eficiência e Agilidade`,
                     icon: Zap,
-                    text: `O sistema de construção a seco reduz o tempo de obra drasticamente. Menos resíduos, mais economia e acabamento profissional. Reduza custos com mão de obra e finalize projetos em ${formattedName} no prazo.`
+                    text: `A montagem a seco reduz o cronograma da obra em até 70% sem sobrecarga na estrutura predial.`
                   },
                   {
-                    title: `Garantia de Qualidade`,
+                    title: `Garantia e Laudos`,
                     icon: ShieldCheck,
-                    text: `Todos os produtos com certificação e garantia do fabricante. Materiais testados e aprovados para construção civil. Atendemos normas técnicas brasileiras e garantimos a qualidade em cada entrega para ${formattedName}.`
+                    text: `Atendimento integral às normas ABNT NBR 15758 (Drywall) e ABNT NBR 16970 (Light Steel Framing).`
                   },
                   {
-                    title: `Sustentabilidade`,
+                    title: `Resíduo Mínimo`,
                     icon: Recycle,
-                    text: `Construção a seco gera até 80% menos resíduos que obras convencionais. Materiais recicláveis e processos sustentáveis. Contribua para o meio ambiente com tecnologia moderna em sua obra em ${formattedName}.`
+                    text: `Construção sustentável com aço reciclável e gesso reutilizável, gerando até 80% menos entulho.`
                   }
                 ].map((item, i) => (
-                  <div key={i} className="flex flex-col md:flex-row gap-6 items-start bg-gradient-to-br from-gray-50 to-white p-10 rounded-[3rem] border border-gray-100 group hover:shadow-2xl hover:scale-[1.02] transition-all duration-500">
-                    <div className="bg-gradient-to-br from-[#003366] to-[#002447] p-6 rounded-3xl text-[#D31219] group-hover:from-[#D31219] group-hover:to-[#a00e13] group-hover:text-white transition-all duration-500 shrink-0 shadow-xl">
-                      <item.icon size={40} />
+                  <div key={i} className="p-4 rounded border border-slate-200 bg-white flex flex-col justify-between">
+                    <div className="flex items-center gap-2.5 mb-2.5">
+                      <div className="p-2 rounded bg-slate-100 text-[#D31219] shrink-0">
+                        <item.icon size={18} />
+                      </div>
+                      <h3 className="text-xs font-bold text-slate-900 leading-snug">{item.title}</h3>
                     </div>
-                    <div>
-                      <h3 className="text-2xl font-black uppercase tracking-tight text-gray-900 mb-4 leading-tight">{item.title}</h3>
-                      <p className="text-gray-600 leading-relaxed font-medium text-base">{item.text}</p>
-                    </div>
+                    <p className="text-xs text-slate-600 leading-relaxed">{item.text}</p>
                   </div>
                 ))}
               </div>
             </div>
 
             <div>
-              <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tighter text-gray-900 mb-4 leading-tight">
-                Produtos para <span className="text-[#D31219]">{formattedName}</span>
-              </h2>
-              <p className="text-gray-600 font-medium mb-12 text-lg leading-relaxed">
-                Confira os principais materiais que entregamos em {formattedName} com pronta entrega. Estoque completo para sua obra de {serviceName.toLowerCase()}.
-              </p>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="flex items-center justify-between mb-4 border-b border-slate-100 pb-3">
+                <div>
+                  <h2 className="text-lg sm:text-xl font-bold text-slate-900">
+                    Materiais em Destaque para {formattedName}
+                  </h2>
+                  <p className="text-xs text-slate-500">Insumos homologados disponíveis para expedição imediata.</p>
+                </div>
+                <Link to="/produtos" className="text-xs font-semibold text-[#D31219] hover:text-red-700">
+                  Ver Todos →
+                </Link>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {featuredProducts.map(product => (
                   <ProductCard key={product.id} product={product} />
                 ))}
               </div>
-              <div className="text-center mt-12">
-                <Link to="/produtos" className="inline-flex items-center gap-3 bg-[#003366] text-white font-black px-12 py-6 rounded-2xl text-xs uppercase tracking-widest hover:bg-[#D31219] transition-all shadow-xl hover:scale-105 group">
-                  Ver Catálogo Completo <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform"/>
-                </Link>
-              </div>
             </div>
 
-            <div className="bg-gradient-to-br from-[#D31219] to-[#a00e13] p-12 md:p-20 rounded-[4rem] text-white shadow-2xl relative overflow-hidden">
-              <div className="absolute top-0 right-0 opacity-10 pointer-events-none">
-                <MessageCircle size={300} />
-              </div>
-              <div className="relative z-10">
-                <h3 className="text-3xl md:text-6xl font-black uppercase tracking-tighter mb-6 leading-none">
-                  Solicite seu<br/>Orçamento Agora
+            {/* In-page CTA */}
+            <div className="bg-slate-900 p-6 sm:p-8 rounded text-white border border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-6">
+              <div>
+                <span className="text-[#D31219] text-[10px] font-bold uppercase tracking-wider block mb-1">Cotação Rápida</span>
+                <h3 className="text-lg font-bold mb-1">
+                  Orçamento de {serviceName} para {formattedName}
                 </h3>
-                <p className="text-lg md:text-xl mb-10 text-white/90 font-medium leading-relaxed max-w-2xl">
-                  Atendimento especializado para {formattedName}. Resposta rápida via WhatsApp com preços competitivos e condições especiais para sua obra.
+                <p className="text-xs text-slate-300 max-w-md">
+                  Envie sua lista de medidas ou projeto arquitetônico. Retornamos com quantitativo e custos de frete.
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <a
-                    href={`https://wa.me/${COMPANY_INFO.whatsapp}?text=Olá! Gostaria de um orçamento para ${serviceName} em ${formattedName}. Preciso de assessoria técnica.`}
-                    className="bg-white text-[#D31219] font-black px-12 py-6 rounded-2xl text-xs uppercase tracking-widest hover:bg-[#003366] hover:text-white transition-all shadow-2xl flex items-center justify-center gap-3 group"
-                  >
-                    <MessageCircle size={22} className="group-hover:rotate-12 transition-transform"/> {cta1}
-                  </a>
-                  <a
-                    href={`tel:${COMPANY_INFO.phone.replace(/\D/g, '')}`}
-                    className="bg-[#003366] text-white font-black px-12 py-6 rounded-2xl text-xs uppercase tracking-widest hover:bg-white hover:text-[#003366] transition-all shadow-xl flex items-center justify-center gap-3"
-                  >
-                    <Phone size={22}/> Ligar Agora
-                  </a>
-                </div>
+              </div>
+              <div className="flex items-center gap-2 shrink-0">
+                <a
+                  href={`https://wa.me/${COMPANY_INFO.whatsapp}?text=Olá! Gostaria de um orçamento para ${serviceName} em ${formattedName}. Preciso de assessoria técnica.`}
+                  className="bg-[#D31219] hover:bg-red-700 text-white text-xs font-semibold uppercase tracking-wider px-5 py-2.5 rounded transition-colors flex items-center gap-2"
+                >
+                  <MessageCircle size={15} /> WhatsApp
+                </a>
+                <a
+                  href={`tel:${COMPANY_INFO.phone.replace(/\D/g, '')}`}
+                  className="bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold uppercase tracking-wider px-4 py-2.5 rounded border border-slate-700 transition-colors flex items-center gap-1.5"
+                >
+                  <Phone size={14} /> Ligar
+                </a>
               </div>
             </div>
 
+            {/* Servicos */}
             <div>
-              <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tighter text-gray-900 mb-12 leading-tight">
-                Nossos <span className="text-[#D31219]">Serviços</span> em {formattedName}
+              <h2 className="text-lg sm:text-xl font-bold text-slate-900 mb-4">
+                Sistemas e Soluções Construtivas
               </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {SERVICES.map(service => (
                   <Link
                     key={service.id}
                     to={`/servicos/${service.id}`}
-                    className="group relative overflow-hidden rounded-[3rem] h-80 hover:shadow-2xl transition-all hover:scale-[1.02] duration-500"
+                    className="p-4 rounded border border-slate-200 bg-white hover:border-slate-400 transition-colors flex flex-col justify-between"
                   >
-                    <img src={service.image} alt={service.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"></div>
-                    <div className="absolute bottom-8 left-8 right-8 text-white">
-                      <h3 className="text-2xl font-black uppercase mb-3 group-hover:text-[#D31219] transition-colors leading-tight">{service.title}</h3>
-                      <p className="text-sm text-gray-300 line-clamp-2 leading-relaxed font-medium">{service.description.replace(/<[^>]*>/g, '')}</p>
+                    <div>
+                      <h3 className="text-sm font-bold text-slate-900 mb-1">{service.title}</h3>
+                      <p className="text-xs text-slate-600 line-clamp-2 leading-relaxed">
+                        {service.description.replace(/<[^>]*>/g, '')}
+                      </p>
                     </div>
+                    <span className="text-xs font-semibold text-[#D31219] mt-3 inline-flex items-center gap-1">
+                      Ver detalhes <ChevronRight size={12} />
+                    </span>
                   </Link>
                 ))}
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-gray-50 to-white p-12 md:p-16 rounded-[4rem] border border-gray-100 shadow-xl">
-              <h2 className="text-3xl md:text-4xl font-black uppercase tracking-tighter text-gray-900 mb-8 leading-tight">
-                Informações de <span className="text-[#D31219]">Entrega</span>
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className="space-y-6">
-                  <div className="flex items-start gap-4">
-                    <div className="bg-[#D31219] p-3 rounded-2xl text-white shrink-0">
-                      <Clock size={24} />
-                    </div>
-                    <div>
-                      <h4 className="font-black uppercase text-sm mb-2 text-gray-900">Horário de Atendimento</h4>
-                      <p className="text-sm text-gray-600 font-medium">{COMPANY_INFO.hours.weekdays}</p>
-                      <p className="text-sm text-gray-600 font-medium">{COMPANY_INFO.hours.saturday}</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4">
-                    <div className="bg-[#D31219] p-3 rounded-2xl text-white shrink-0">
-                      <Truck size={24} />
-                    </div>
-                    <div>
-                      <h4 className="font-black uppercase text-sm mb-2 text-gray-900">Prazo de Entrega</h4>
-                      <p className="text-sm text-gray-600 font-medium">Entrega no mesmo dia para {formattedName} (sujeito a disponibilidade)</p>
-                    </div>
-                  </div>
+            {/* Informações de entrega */}
+            <div className="p-5 rounded border border-slate-200 bg-slate-50/70">
+              <h3 className="text-sm font-bold text-slate-900 mb-4 border-b border-slate-200 pb-2">
+                Diretrizes de Retirada & Expedição
+              </h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs text-slate-700">
+                <div>
+                  <p className="font-semibold text-slate-900 mb-0.5">Endereço do Centro de Distribuição:</p>
+                  <p>{COMPANY_INFO.address}</p>
                 </div>
-                <div className="space-y-6">
-                  <div className="flex items-start gap-4">
-                    <div className="bg-[#D31219] p-3 rounded-2xl text-white shrink-0">
-                      <MapPin size={24} />
-                    </div>
-                    <div>
-                      <h4 className="font-black uppercase text-sm mb-2 text-gray-900">Loja Física</h4>
-                      <p className="text-sm text-gray-600 font-medium">{COMPANY_INFO.address}</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4">
-                    <div className="bg-[#D31219] p-3 rounded-2xl text-white shrink-0">
-                      <Phone size={24} />
-                    </div>
-                    <div>
-                      <h4 className="font-black uppercase text-sm mb-2 text-gray-900">Contato</h4>
-                      <p className="text-sm text-gray-600 font-medium">{COMPANY_INFO.phone}</p>
-                      <a href={`https://wa.me/${COMPANY_INFO.whatsapp}`} className="text-sm text-[#D31219] font-black hover:underline">WhatsApp: {COMPANY_INFO.whatsapp}</a>
-                    </div>
-                  </div>
+                <div>
+                  <p className="font-semibold text-slate-900 mb-0.5">Horário de Expedição:</p>
+                  <p>{COMPANY_INFO.hours.weekdays} | {COMPANY_INFO.hours.saturday}</p>
+                </div>
+                <div>
+                  <p className="font-semibold text-slate-900 mb-0.5">Prazo Estimado para {formattedName}:</p>
+                  <p>Sob consulta no momento do pedido (expedições diárias).</p>
+                </div>
+                <div>
+                  <p className="font-semibold text-slate-900 mb-0.5">Central Telefônica:</p>
+                  <p>{COMPANY_INFO.phone} / WhatsApp: {COMPANY_INFO.whatsapp}</p>
                 </div>
               </div>
             </div>
           </div>
 
           <aside className="lg:w-1/3">
-            <div className="sticky top-28 space-y-8">
-              <div className="bg-gradient-to-br from-[#003366] to-[#002447] p-10 rounded-[3rem] shadow-2xl text-white border border-white/10">
-                <h4 className="text-xl font-black uppercase tracking-tight mb-8 flex items-center gap-2 border-b border-white/20 pb-6">
-                  <Phone className="text-[#D31219]" size={24}/> Fale Conosco
+            <div className="sticky top-24 space-y-6">
+              {/* Contact Card */}
+              <div className="bg-slate-900 p-5 rounded border border-slate-800 text-white">
+                <h4 className="text-sm font-bold text-white mb-3 border-b border-slate-800 pb-2 flex items-center gap-2">
+                  <Phone size={15} className="text-[#D31219]" />
+                  Central de Atendimento
                 </h4>
-                <div className="space-y-6 mb-8">
+                <div className="space-y-3 text-xs text-slate-300 mb-5">
                   <div>
-                    <p className="text-[10px] uppercase tracking-widest text-gray-400 mb-2 font-black">Telefone</p>
-                    <a href={`tel:${COMPANY_INFO.phone.replace(/\D/g, '')}`} className="text-xl font-black hover:text-[#D31219] transition-colors block">
+                    <span className="text-[10px] uppercase font-semibold text-slate-400 block">Telefone</span>
+                    <a href={`tel:${COMPANY_INFO.phone.replace(/\D/g, '')}`} className="font-bold text-white hover:text-[#D31219]">
                       {COMPANY_INFO.phone}
                     </a>
                   </div>
                   <div>
-                    <p className="text-[10px] uppercase tracking-widest text-gray-400 mb-2 font-black">Horário</p>
-                    <p className="text-sm font-bold leading-relaxed">{COMPANY_INFO.hours.weekdays}</p>
-                    <p className="text-sm font-bold">{COMPANY_INFO.hours.saturday}</p>
+                    <span className="text-[10px] uppercase font-semibold text-slate-400 block">Horário</span>
+                    <p>{COMPANY_INFO.hours.weekdays}</p>
+                    <p>{COMPANY_INFO.hours.saturday}</p>
                   </div>
                   <div>
-                    <p className="text-[10px] uppercase tracking-widest text-gray-400 mb-2 font-black">Endereço</p>
-                    <p className="text-sm font-bold leading-relaxed">{COMPANY_INFO.address}</p>
+                    <span className="text-[10px] uppercase font-semibold text-slate-400 block">Endereço</span>
+                    <p>{COMPANY_INFO.address}</p>
                   </div>
                 </div>
                 <a
                   href={`https://wa.me/${COMPANY_INFO.whatsapp}?text=Olá! Vim do site e gostaria de informações sobre ${serviceName} em ${formattedName}`}
-                  className="w-full bg-[#D31219] text-white font-black px-8 py-5 rounded-2xl text-xs uppercase tracking-widest hover:bg-white hover:text-[#D31219] transition-all flex items-center justify-center gap-3 shadow-xl hover:scale-105 group"
+                  className="w-full bg-[#D31219] hover:bg-red-700 text-white text-xs font-semibold uppercase tracking-wider py-2.5 px-4 rounded transition-colors flex items-center justify-center gap-2"
                 >
-                  <MessageCircle size={20} className="group-hover:rotate-12 transition-transform"/> {cta2}
+                  <MessageCircle size={15} /> Contatar via WhatsApp
                 </a>
               </div>
 
-              <div className="bg-white p-10 rounded-[3rem] shadow-2xl border border-gray-100">
-                <h4 className="text-xl font-black uppercase tracking-tight mb-8 border-b-2 border-[#D31219] pb-6 flex items-center gap-2">
-                  <MapPin className="text-[#D31219]" size={24}/> Bairros de Curitiba
+              {/* Bairros de Curitiba */}
+              <div className="bg-white p-5 rounded border border-slate-200">
+                <h4 className="text-xs font-bold text-slate-900 uppercase tracking-wider mb-3 border-b border-slate-100 pb-2 flex items-center gap-1.5">
+                  <MapPin size={14} className="text-[#D31219]" />
+                  Outros Bairros de Curitiba
                 </h4>
-                <div className="grid grid-cols-1 gap-2 max-h-[400px] overflow-y-auto pr-2 custom-scrollbar">
+                <div className="grid grid-cols-1 gap-1 max-h-[300px] overflow-y-auto pr-1 text-xs">
                   {NEIGHBORHOODS.map(n => (
                     <Link
                       key={n}
                       to={`/drywall-em/${normalizeLocationName(n)}`}
-                      onClick={() => window.scrollTo(0, 0)}
-                      className={`group flex items-center justify-between p-4 rounded-2xl hover:bg-gray-50 transition-all ${normalizeLocationName(n) === location ? 'bg-[#D31219]/5 border border-[#D31219]/20' : ''}`}
+                      className={`flex items-center justify-between py-1.5 px-2 rounded hover:bg-slate-50 transition-colors ${normalizeLocationName(n) === location ? 'bg-red-50 text-[#D31219] font-bold' : 'text-slate-600'}`}
                     >
-                      <span className={`text-xs font-bold ${normalizeLocationName(n) === location ? 'text-[#D31219]' : 'text-gray-600 group-hover:text-[#D31219]'}`}>{n}</span>
-                      <ChevronRight size={16} className={`${normalizeLocationName(n) === location ? 'text-[#D31219]' : 'text-gray-300 group-hover:text-[#D31219]'}`} />
+                      <span className="truncate">{n}</span>
+                      <ChevronRight size={12} className="text-slate-400 shrink-0" />
                     </Link>
                   ))}
                 </div>
               </div>
 
-              <div className="bg-white p-10 rounded-[3rem] shadow-2xl border border-gray-100">
-                <h4 className="text-xl font-black uppercase tracking-tight mb-8 border-b-2 border-[#D31219] pb-6 flex items-center gap-2">
-                  <MapPin className="text-[#D31219]" size={24}/> Região Metropolitana
+              {/* Cidades da RMC */}
+              <div className="bg-white p-5 rounded border border-slate-200">
+                <h4 className="text-xs font-bold text-slate-900 uppercase tracking-wider mb-3 border-b border-slate-100 pb-2 flex items-center gap-1.5">
+                  <MapPin size={14} className="text-[#003366]" />
+                  Cidades da Região Metropolitana
                 </h4>
-                <div className="grid grid-cols-1 gap-2">
+                <div className="grid grid-cols-1 gap-1 text-xs">
                   {CITIES_RMC.map(c => (
                     <Link
                       key={c}
                       to={`/drywall-em/${normalizeLocationName(c)}`}
-                      onClick={() => window.scrollTo(0, 0)}
-                      className={`group flex items-center justify-between p-4 rounded-2xl hover:bg-gray-50 transition-all ${normalizeLocationName(c) === location ? 'bg-[#D31219]/5 border border-[#D31219]/20' : ''}`}
+                      className={`flex items-center justify-between py-1.5 px-2 rounded hover:bg-slate-50 transition-colors ${normalizeLocationName(c) === location ? 'bg-red-50 text-[#D31219] font-bold' : 'text-slate-600'}`}
                     >
-                      <span className={`text-xs font-bold ${normalizeLocationName(c) === location ? 'text-[#D31219]' : 'text-gray-600 group-hover:text-[#D31219]'}`}>{c}</span>
-                      <ChevronRight size={16} className={`${normalizeLocationName(c) === location ? 'text-[#D31219]' : 'text-gray-300 group-hover:text-[#D31219]'}`} />
+                      <span className="truncate">{c}</span>
+                      <ChevronRight size={12} className="text-slate-400 shrink-0" />
                     </Link>
                   ))}
                 </div>

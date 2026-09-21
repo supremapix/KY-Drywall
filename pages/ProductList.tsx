@@ -97,62 +97,77 @@ const ProductList: React.FC = () => {
       />
       <div className="container mx-auto px-4">
         
-        {/* Banner de Categoria (Impactante) */}
-        <div className="bg-[#003366] rounded-[3rem] p-12 mb-16 relative overflow-hidden text-white shadow-2xl">
-          <div className="absolute top-0 right-0 p-12 opacity-10 pointer-events-none">
-            <Info size={200} />
-          </div>
+        {/* Banner de Categoria */}
+        <div className="bg-slate-900 rounded-lg p-8 sm:p-12 mb-10 relative overflow-hidden text-white border border-slate-800">
           <div className="relative z-10 max-w-2xl">
-            <span className="bg-[#D31219] text-white text-[10px] font-black px-4 py-2 rounded-full uppercase tracking-[0.2em] mb-6 inline-block">
-              Estoque Imediato Curitiba
-            </span>
-            <h1 className="text-4xl md:text-6xl font-black uppercase tracking-tighter mb-6 leading-tight">
-              {selectedCategory === 'Todos' ? 'Catálogo Completo de Materiais' : selectedCategory}
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-[#D31219]/20 border border-[#D31219]/30 text-[#D31219] text-xs font-semibold uppercase tracking-wider mb-4">
+              Estoque Imediato em Curitiba
+            </div>
+            <h1 className="text-3xl sm:text-4xl font-bold tracking-tight mb-3 text-white">
+              {selectedCategory === 'Todos' ? 'Catálogo Geral de Materiais' : selectedCategory}
             </h1>
-            <p className="text-lg text-gray-300 font-medium mb-10 italic">
-              "Qualidade técnica comprovada para obras residenciais e comerciais. Não feche sua obra em Curitiba sem consultar nossos especialistas."
+            <p className="text-slate-300 text-sm leading-relaxed mb-6">
+              Placas, perfis metálicos estruturais, massas de tratamento de juntas e isolamentos termoacústicos homologados para obras residenciais e corporativas.
             </p>
-            <a 
-              href="https://wa.me/5541996457421" 
-              className="bg-white text-[#003366] font-black px-10 py-5 rounded-2xl flex items-center justify-center gap-4 text-xs uppercase tracking-widest hover:bg-[#D31219] hover:text-white transition-all shadow-xl w-fit"
-            >
-              <MessageCircle size={20} />
-              {cta}
-            </a>
+            <div className="flex flex-wrap items-center gap-3">
+              <a 
+                href="https://wa.me/5541996457421?text=Olá! Gostaria de uma cotação com base no catálogo de materiais."
+                target="_blank"
+                rel="noreferrer"
+                className="bg-[#D31219] text-white font-semibold px-6 py-3 rounded flex items-center gap-2 text-xs uppercase tracking-wider hover:bg-red-700 transition-colors shadow-sm"
+              >
+                <MessageCircle size={16} />
+                Solicitar Cotação Rápida
+              </a>
+              <span className="text-xs text-slate-400">
+                {filteredProducts.length} itens disponíveis
+              </span>
+            </div>
           </div>
         </div>
 
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Sidebar Filters */}
-          <aside className="hidden lg:block w-72 flex-shrink-0">
-            <div className="bg-white p-8 rounded-[2.5rem] shadow-sm border border-gray-100 sticky top-28">
-              <h3 className="font-black text-xl text-gray-900 mb-8 border-b-2 border-[#D31219] pb-4 uppercase tracking-tighter flex items-center gap-2">
-                <Filter size={20} className="text-[#D31219]" /> Departamentos
+          <aside className="hidden lg:block w-64 flex-shrink-0">
+            <div className="bg-white p-5 rounded-lg border border-slate-200 sticky top-28">
+              <h3 className="font-bold text-xs text-slate-900 mb-4 pb-2 border-b border-slate-100 uppercase tracking-wider flex items-center gap-2">
+                <Filter size={14} className="text-[#D31219]" />
+                Departamentos
               </h3>
-              <div className="space-y-3">
+              <div className="space-y-1">
                 <button
                   onClick={() => setSelectedCategory('Todos')}
-                  className={`w-full text-left px-5 py-4 rounded-2xl text-[11px] font-black uppercase tracking-widest transition-all ${
+                  className={`w-full text-left px-3 py-2 rounded text-xs font-medium transition-colors flex items-center justify-between ${
                     selectedCategory === 'Todos' 
-                      ? 'bg-[#003366] text-white shadow-lg' 
-                      : 'text-gray-500 hover:bg-gray-50'
+                      ? 'bg-slate-900 text-white font-semibold' 
+                      : 'text-slate-600 hover:bg-slate-50 hover:text-slate-900'
                   }`}
                 >
-                  Ver Todos os Produtos
+                  <span>Todos os Produtos</span>
+                  <span className={`text-[10px] px-1.5 py-0.5 rounded ${selectedCategory === 'Todos' ? 'bg-white/20 text-white' : 'text-slate-400 bg-slate-100'}`}>
+                    {PRODUCTS.length}
+                  </span>
                 </button>
-                {CATEGORIES.map((cat) => (
-                  <button
-                    key={cat}
-                    onClick={() => setSelectedCategory(cat)}
-                    className={`w-full text-left px-5 py-4 rounded-2xl text-[11px] font-black uppercase tracking-widest transition-all ${
-                      selectedCategory === cat 
-                        ? 'bg-[#003366] text-white shadow-lg' 
-                        : 'text-gray-500 hover:bg-gray-50'
-                    }`}
-                  >
-                    {cat}
-                  </button>
-                ))}
+                {CATEGORIES.map((cat) => {
+                  const count = PRODUCTS.filter(p => p.category === cat).length;
+                  const isSelected = selectedCategory === cat;
+                  return (
+                    <button
+                      key={cat}
+                      onClick={() => setSelectedCategory(cat)}
+                      className={`w-full text-left px-3 py-2 rounded text-xs font-medium transition-colors flex items-center justify-between ${
+                        isSelected 
+                          ? 'bg-slate-900 text-white font-semibold' 
+                          : 'text-slate-600 hover:bg-slate-50 hover:text-slate-900'
+                      }`}
+                    >
+                      <span className="truncate pr-2">{cat}</span>
+                      <span className={`text-[10px] px-1.5 py-0.5 rounded shrink-0 ${isSelected ? 'bg-white/20 text-white' : 'text-slate-400 bg-slate-100'}`}>
+                        {count}
+                      </span>
+                    </button>
+                  );
+                })}
               </div>
             </div>
           </aside>
@@ -160,13 +175,13 @@ const ProductList: React.FC = () => {
           {/* Main Content */}
           <div className="flex-grow">
             {/* Toolbar */}
-            <div className="bg-white p-4 rounded-[2rem] shadow-sm border border-gray-100 mb-10 flex flex-col md:flex-row justify-between items-center gap-6">
-              <div className="relative w-full md:w-96" ref={searchRef}>
-                <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" size={18} />
+            <div className="bg-white p-3.5 rounded-lg border border-slate-200 mb-6 flex flex-col md:flex-row justify-between items-center gap-4">
+              <div className="relative w-full md:w-80" ref={searchRef}>
+                <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" size={16} />
                 <input
                   type="text"
-                  placeholder="Pesquise por placa, perfil, massa..."
-                  className="w-full pl-12 pr-10 py-4 bg-gray-50 border border-gray-100 rounded-2xl focus:outline-none focus:ring-4 focus:ring-[#003366]/5 transition-all text-sm font-semibold"
+                  placeholder="Buscar placa, perfil, fita..."
+                  className="w-full pl-9 pr-4 py-2 bg-slate-50 border border-slate-200 rounded text-xs font-medium focus:outline-none focus:border-slate-400 transition-colors"
                   value={searchTerm}
                   onFocus={() => setShowSuggestions(true)}
                   onChange={(e) => {
@@ -177,38 +192,43 @@ const ProductList: React.FC = () => {
                 <SearchSuggestions suggestions={searchSuggestions} isVisible={showSuggestions} onSelect={() => setShowSuggestions(false)} />
               </div>
 
-              <div className="flex items-center gap-4 w-full md:w-auto">
+              <div className="flex items-center gap-3 w-full md:w-auto">
                 <button 
                   onClick={() => setIsSidebarOpen(true)}
-                  className="lg:hidden flex-1 flex items-center justify-center gap-3 px-6 py-4 bg-[#1A1A1A] text-white rounded-2xl text-[10px] font-black uppercase tracking-widest"
+                  className="lg:hidden flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-slate-900 text-white rounded text-xs font-semibold"
                 >
-                  <Filter size={18} /> Filtrar
+                  <Filter size={14} /> Filtrar
                 </button>
 
                 <select
-                  className="w-full md:w-auto bg-gray-50 border border-gray-100 rounded-2xl px-6 py-4 text-[10px] font-black uppercase tracking-widest focus:outline-none focus:ring-4 focus:ring-[#003366]/5"
+                  className="w-full md:w-auto bg-slate-50 border border-slate-200 rounded px-3 py-2 text-xs font-medium focus:outline-none focus:border-slate-400 text-slate-700"
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value as any)}
                 >
-                  <option value="name-asc">Ordem Alfabética (A-Z)</option>
-                  <option value="name-desc">Ordem Alfabética (Z-A)</option>
+                  <option value="name-asc">Ordenar por Nome (A-Z)</option>
+                  <option value="name-desc">Ordenar por Nome (Z-A)</option>
                 </select>
               </div>
             </div>
 
             {/* Product Grid */}
             {filteredProducts.length > 0 ? (
-              <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
                 {filteredProducts.map((product) => (
                   <ProductCard key={product.id} product={product} />
                 ))}
               </div>
             ) : (
-              <div className="bg-white p-20 rounded-[4rem] text-center border-2 border-dashed border-gray-100">
-                <Search size={60} className="text-gray-200 mx-auto mb-8" />
-                <h3 className="text-2xl font-black uppercase mb-4 tracking-tighter">Produto não encontrado</h3>
-                <p className="text-gray-400 font-medium mb-10">Tente buscar por termos genéricos como "placa", "perfil" ou "holdflex".</p>
-                <button onClick={() => {setSearchTerm(''); setSelectedCategory('Todos');}} className="bg-[#003366] text-white font-black px-12 py-5 rounded-2xl text-[10px] uppercase tracking-widest shadow-xl">Limpar Todos os Filtros</button>
+              <div className="bg-white p-12 rounded-lg text-center border border-slate-200">
+                <Search size={40} className="text-slate-300 mx-auto mb-4" />
+                <h3 className="text-base font-bold text-slate-900 mb-1">Nenhum produto localizado</h3>
+                <p className="text-slate-500 text-xs mb-6">Tente buscar por termos genéricos como "placa", "perfil" ou "massa".</p>
+                <button 
+                  onClick={() => {setSearchTerm(''); setSelectedCategory('Todos');}} 
+                  className="bg-slate-900 text-white font-semibold px-5 py-2.5 rounded text-xs hover:bg-slate-800 transition-colors"
+                >
+                  Limpar Todos os Filtros
+                </button>
               </div>
             )}
           </div>
@@ -217,17 +237,17 @@ const ProductList: React.FC = () => {
 
       {/* Mobile Drawer Filter */}
       {isSidebarOpen && (
-        <div className="fixed inset-0 z-[100] bg-black/80 lg:hidden backdrop-blur-sm">
-          <div className="absolute bottom-0 left-0 w-full bg-white rounded-t-[3rem] p-10 animate-in slide-in-from-bottom duration-500 max-h-[90vh] overflow-y-auto">
-            <div className="flex justify-between items-center mb-10 border-b pb-6">
-              <h3 className="text-2xl font-black uppercase tracking-tighter">Escolher Categoria</h3>
-              <button onClick={() => setIsSidebarOpen(false)} className="bg-gray-100 p-3 rounded-full text-gray-500"><X size={24} /></button>
+        <div className="fixed inset-0 z-[100] bg-slate-950/60 lg:hidden backdrop-blur-xs flex flex-col justify-end">
+          <div className="bg-white rounded-t-xl p-6 max-h-[80vh] overflow-y-auto border-t border-slate-200">
+            <div className="flex justify-between items-center mb-6 pb-3 border-b border-slate-100">
+              <h3 className="text-sm font-bold text-slate-900 uppercase tracking-wider">Filtrar por Categoria</h3>
+              <button onClick={() => setIsSidebarOpen(false)} className="p-1 rounded text-slate-500 hover:text-slate-900"><X size={20} /></button>
             </div>
             
-            <div className="grid grid-cols-1 gap-4 pb-10">
+            <div className="grid grid-cols-1 gap-2 pb-6">
               <button
                 onClick={() => {setSelectedCategory('Todos'); setIsSidebarOpen(false);}}
-                className={`text-left px-8 py-5 rounded-2xl text-[11px] font-black uppercase tracking-widest transition-all ${selectedCategory === 'Todos' ? 'bg-[#003366] text-white shadow-xl' : 'bg-gray-50 text-gray-500'}`}
+                className={`text-left px-4 py-3 rounded text-xs font-semibold transition-colors ${selectedCategory === 'Todos' ? 'bg-slate-900 text-white' : 'bg-slate-50 text-slate-700 hover:bg-slate-100'}`}
               >
                 Todas as Categorias
               </button>
@@ -235,7 +255,7 @@ const ProductList: React.FC = () => {
                 <button
                   key={cat}
                   onClick={() => {setSelectedCategory(cat); setIsSidebarOpen(false);}}
-                  className={`text-left px-8 py-5 rounded-2xl text-[11px] font-black uppercase tracking-widest transition-all ${selectedCategory === cat ? 'bg-[#003366] text-white shadow-xl' : 'bg-gray-50 text-gray-500'}`}
+                  className={`text-left px-4 py-3 rounded text-xs font-semibold transition-colors ${selectedCategory === cat ? 'bg-slate-900 text-white' : 'bg-slate-50 text-slate-700 hover:bg-slate-100'}`}
                 >
                   {cat}
                 </button>

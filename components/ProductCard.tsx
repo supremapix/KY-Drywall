@@ -35,17 +35,17 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   };
 
   return (
-    <div className="bg-white rounded-2xl shadow-sm hover:shadow-[0_20px_50px_rgba(0,0,0,0.12)] hover:-translate-y-3 transition-all duration-500 border border-gray-100 overflow-hidden group flex flex-col h-full active:scale-[0.98]">
+    <div className="bg-white rounded-lg border border-slate-200 hover:border-[#D31219]/50 hover:shadow-lg transition-all duration-300 overflow-hidden group flex flex-col h-full">
       {/* Image Wrapper */}
-      <Link to={`/produto/${product.id}`} className="block relative overflow-hidden aspect-square">
+      <Link to={`/produto/${product.id}`} className="block relative overflow-hidden aspect-square bg-slate-50 border-b border-slate-100">
         <img
           src={product.image}
           alt={product.name}
-          className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+          className="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-500"
           loading="lazy"
         />
-        <div className="absolute top-3 left-3">
-          <span className="bg-[#1A1A1A] text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-widest shadow-lg">
+        <div className="absolute top-3 left-3 flex items-center gap-1.5">
+          <span className="bg-slate-900 text-white text-[10px] font-bold px-2.5 py-0.5 rounded uppercase tracking-wider">
             {product.category}
           </span>
         </div>
@@ -53,49 +53,46 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         {/* Quick Add Overlay */}
         <button
           onClick={addToQuote}
-          className="absolute bottom-4 right-4 bg-white text-[#D31219] p-3 rounded-full shadow-2xl opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all hover:bg-[#D31219] hover:text-white duration-300"
+          title="Adicionar à cotação rápida"
+          className="absolute bottom-3 right-3 bg-white text-slate-800 p-2.5 rounded shadow-md opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all hover:bg-[#D31219] hover:text-white duration-200 border border-slate-200"
         >
-          {added ? <Check size={20} strokeWidth={3} /> : <PlusCircle size={20} strokeWidth={3} />}
+          {added ? <Check size={18} strokeWidth={2.5} className="text-emerald-600 group-hover:text-white" /> : <PlusCircle size={18} strokeWidth={2} />}
         </button>
       </Link>
 
       {/* Content */}
-      <div className="p-5 md:p-6 flex flex-col flex-grow">
+      <div className="p-4 md:p-5 flex flex-col flex-grow">
         <Link to={`/produto/${product.id}`} className="flex-grow">
-          <h3 className="text-gray-900 font-bold text-base md:text-lg mb-2 group-hover:text-[#D31219] transition-colors line-clamp-2">
+          <h3 className="text-slate-900 font-semibold text-sm md:text-base leading-snug mb-2 group-hover:text-[#D31219] transition-colors line-clamp-2">
             {product.name}
           </h3>
           
-          <div className="flex items-center gap-1 mb-4">
-            <div className="flex items-center">
-              {[...Array(5)].map((_, i) => (
-                <Star 
-                  key={i} 
-                  size={14} 
-                  className={i < 4 ? "text-[#D31219] fill-[#D31219]" : "text-gray-200"} 
-                />
-              ))}
-            </div>
-            <span className="text-[10px] font-bold text-gray-400 ml-1">Rated 5.0</span>
+          <div className="flex items-center gap-2 mb-4 text-[11px] text-slate-500 font-medium">
+            <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+            <span>Estoque Curitiba & Região</span>
           </div>
         </Link>
 
         {/* Action Buttons */}
-        <div className="grid grid-cols-2 gap-2 mt-auto">
+        <div className="grid grid-cols-2 gap-2 mt-auto pt-2">
           <button
             onClick={addToQuote}
-            className={`flex items-center justify-center gap-1 py-3 px-2 border-2 rounded-xl text-[10px] font-black uppercase tracking-wider transition-all ${added ? 'bg-green-50 text-green-600 border-green-200' : 'text-gray-800 border-gray-100 hover:border-[#D31219] hover:text-[#D31219]'}`}
+            className={`flex items-center justify-center gap-1.5 py-2.5 px-2 border rounded text-[11px] font-semibold tracking-wide transition-colors ${
+              added 
+                ? 'bg-emerald-50 text-emerald-700 border-emerald-300' 
+                : 'text-slate-700 border-slate-200 hover:border-[#D31219] hover:text-[#D31219] hover:bg-red-50/20'
+            }`}
           >
-            {added ? 'Salvo' : 'Cotar'}
+            {added ? 'Adicionado' : 'Cotação'}
           </button>
           <a
             href={whatsappUrl}
             target="_blank"
             rel="noreferrer"
-            className="flex items-center justify-center gap-2 py-3 px-2 bg-[#D31219] text-white rounded-xl text-[10px] font-black uppercase tracking-wider hover:bg-[#1A1A1A] transition-all shadow-md"
+            className="flex items-center justify-center gap-1.5 py-2.5 px-2 bg-[#D31219] text-white rounded text-[11px] font-semibold tracking-wide hover:bg-slate-900 transition-colors shadow-sm"
           >
             <MessageCircle size={14} />
-            Preço
+            Consultar
           </a>
         </div>
       </div>

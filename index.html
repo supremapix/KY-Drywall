@@ -11,7 +11,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://images.unsplash.com">
-    <link rel="dns-prefetch" href="https://esm.sh">
 
     <!-- SEO Meta Tags -->
     <meta name="description" content="KY Drywall & Steel Frame: A maior distribuidora de materiais de construção a seco de Curitiba. Especialistas em Steel Frame, Drywall, Telhado Shingle e Isolamento Acústico.">
@@ -26,56 +25,44 @@
     <meta property="og:image" content="https://images.pexels.com/photos/1292294/pexels-photo-1292294.jpeg?auto=compress&cs=tinysrgb&w=800">
     
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <style>
       body {
-        font-family: 'Inter', sans-serif;
+        font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
       }
       .dropdown:hover .dropdown-menu { display: block; }
       
-      /* Critical Animations */
-      @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-      .animate-marquee { display: flex; width: max-content; animation: marquee 40s linear infinite; }
-      .animate-marquee:hover { animation-play-state: paused; }
-
-      /* Custom Scrollbars */
-      ::-webkit-scrollbar { width: 6px; }
-      ::-webkit-scrollbar-track { background: #f9f9f9; }
-      ::-webkit-scrollbar-thumb { background: #D31219; border-radius: 10px; }
+      /* Refined Scrollbars */
+      ::-webkit-scrollbar { width: 8px; height: 8px; }
+      ::-webkit-scrollbar-track { background: #f1f5f9; }
+      ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+      ::-webkit-scrollbar-thumb:hover { background: #D31219; }
 
       .custom-scrollbar::-webkit-scrollbar { width: 6px; }
-      .custom-scrollbar::-webkit-scrollbar-track { background: #f9f9f9; border-radius: 10px; }
-      .custom-scrollbar::-webkit-scrollbar-thumb { background: #D31219; border-radius: 10px; }
-      .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #a00e13; }
-      
-      /* Heartbeat Animation */
-      @keyframes heartbeat {
-        0%, 100% { transform: scale(1); }
-        15% { transform: scale(1.25); }
-        30% { transform: scale(1); }
-        45% { transform: scale(1.2); }
-        60% { transform: scale(1); }
+      .custom-scrollbar::-webkit-scrollbar-track { background: #1e293b; border-radius: 4px; }
+      .custom-scrollbar::-webkit-scrollbar-thumb { background: #475569; border-radius: 4px; }
+      .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #D31219; }
+
+      /* Architectural subtle grid pattern */
+      .bg-architectural-grid {
+        background-size: 32px 32px;
+        background-image: 
+          linear-gradient(to right, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+      }
+      .bg-architectural-grid-dark {
+        background-size: 32px 32px;
+        background-image: 
+          linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
       }
 
       /* Performance Optimizations */
       img { content-visibility: auto; }
-      .blur-load { filter: blur(20px); transition: filter 0.3s; }
-      .blur-load.loaded { filter: blur(0); }
     </style>
-
-    <script type="importmap">
-    {
-      "imports": {
-        "lucide-react": "https://esm.sh/lucide-react@^0.475.0",
-        "react/": "https://esm.sh/react@^19.2.3/",
-        "react": "https://esm.sh/react@^19.2.3",
-        "react-router-dom": "https://esm.sh/react-router-dom@^7.11.0",
-        "react-dom/": "https://esm.sh/react-dom@^19.2.3/"
-      }
-    }
-    </script>
   </head>
   <body class="bg-white text-gray-900 overflow-x-hidden">
     <div id="root"></div>

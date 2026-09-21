@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { X, ShoppingCart, Trash2, Plus, Minus, MessageCircle, ArrowRight, PackageOpen } from 'lucide-react';
 import { QuoteItem, Product } from '../types';
-import { PRODUCTS } from '../constants';
+import { PRODUCTS, COMPANY_INFO } from '../constants';
 
 interface QuoteDrawerProps {
   isOpen: boolean;
@@ -57,15 +57,15 @@ const QuoteDrawer: React.FC<QuoteDrawerProps> = ({ isOpen, onClose }) => {
   const sendToWhatsApp = () => {
     if (items.length === 0) return;
 
-    const messageHeader = "*SOLICITAÇÃO DE ORÇAMENTO - KY DRYWALL*\n\nOlá! Gostaria de uma cotação para os seguintes materiais:\n\n";
+    const messageHeader = "*SOLICITAÇÃO DE COTAÇÃO - KY DRYWALL*\n\nOlá! Gostaria de um orçamento para os seguintes itens:\n\n";
     const messageBody = items.map((item, index) => {
-      return `${index + 1}. *${item.name}* \n   📦 Quantidade: ${item.quantity}\n`;
+      return `${index + 1}. *${item.name}* (Quantidade: ${item.quantity})`;
     }).join('\n');
     
-    const messageFooter = "\n\nFavor informar disponibilidade e condições de pagamento.";
+    const messageFooter = "\n\nPor gentileza, informar preços, disponibilidade e condições de entrega.";
     const fullMessage = encodeURIComponent(messageHeader + messageBody + messageFooter);
     
-    window.open(`https://wa.me/5541996457421?text=${fullMessage}`, '_blank');
+    window.open(`https://wa.me/${COMPANY_INFO.whatsapp}?text=${fullMessage}`, '_blank');
   };
 
   if (!isOpen) return null;
@@ -74,31 +74,32 @@ const QuoteDrawer: React.FC<QuoteDrawerProps> = ({ isOpen, onClose }) => {
     <div className="fixed inset-0 z-[100] flex justify-end">
       {/* Backdrop */}
       <div 
-        className="absolute inset-0 bg-black/60 backdrop-blur-sm animate-in fade-in duration-300"
+        className="absolute inset-0 bg-slate-900/60 backdrop-blur-xs transition-opacity duration-200"
         onClick={onClose}
       />
       
       {/* Sidebar */}
-      <div className="relative w-full max-w-md bg-white h-full shadow-2xl flex flex-col animate-in slide-in-from-right duration-500">
+      <div className="relative w-full max-w-md bg-white h-full shadow-xl flex flex-col z-10">
         {/* Header */}
-        <div className="p-6 bg-[#003366] text-white flex justify-between items-center shadow-lg">
-          <div className="flex items-center gap-3">
-            <ShoppingCart size={24} className="text-[#D31219]" />
+        <div className="px-5 py-4 bg-slate-900 text-white flex justify-between items-center border-b border-slate-800">
+          <div className="flex items-center gap-2.5">
+            <ShoppingCart size={18} className="text-[#D31219]" />
             <div>
-              <h2 className="text-xl font-black uppercase tracking-tighter">Minha Cotação</h2>
-              <p className="text-[10px] font-bold text-gray-300 uppercase tracking-widest">{items.length} itens selecionados</p>
+              <h2 className="text-sm font-bold tracking-tight">Lista de Cotação</h2>
+              <p className="text-[11px] text-slate-400">{items.length} {items.length === 1 ? 'item selecionado' : 'itens selecionados'}</p>
             </div>
           </div>
           <button 
             onClick={onClose}
-            className="p-2 hover:bg-white/10 rounded-full transition-colors"
+            className="p-1 text-slate-400 hover:text-white rounded transition-colors"
+            aria-label="Fechar gaveta de cotação"
           >
-            <X size={24} />
+            <X size={20} />
           </button>
         </div>
 
         {/* Content */}
-        <div className="flex-grow overflow-y-auto p-6 space-y-4">
+        <div className="flex-grow overflow-y-auto p-4 sm:p-5 space-y-3">
           {items.length > 0 ? (
             <>
               {items.map((item) => {
@@ -106,43 +107,46 @@ const QuoteDrawer: React.FC<QuoteDrawerProps> = ({ isOpen, onClose }) => {
                 return (
                   <div 
                     key={item.productId}
-                    className="flex gap-4 bg-gray-50 p-4 rounded-2xl border border-gray-100 group hover:border-[#D31219] transition-all"
+                    className="flex gap-3 bg-white p-3 rounded border border-slate-200"
                   >
-                    <div className="w-20 h-20 rounded-xl overflow-hidden bg-white border border-gray-100 flex-shrink-0">
+                    <div className="w-16 h-16 rounded overflow-hidden bg-slate-50 border border-slate-100 flex-shrink-0 flex items-center justify-center p-1">
                       <img 
-                        src={product?.image || 'https://via.placeholder.com/150'} 
+                        src={product?.image || '/ky-drywall-logo.webp'} 
                         alt={item.name} 
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-contain"
                       />
                     </div>
                     
-                    <div className="flex-grow">
-                      <h4 className="text-xs font-black text-gray-900 uppercase tracking-tight mb-2 line-clamp-2">
+                    <div className="flex-grow min-w-0 flex flex-col justify-between">
+                      <h4 className="text-xs font-semibold text-slate-900 leading-snug truncate" title={item.name}>
                         {item.name}
                       </h4>
                       
-                      <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-2 bg-white border border-gray-200 rounded-lg p-1">
+                      <div className="flex items-center justify-between mt-2">
+                        <div className="inline-flex items-center border border-slate-200 rounded bg-slate-50">
                           <button 
                             onClick={() => updateQuantity(item.productId, -1)}
-                            className="p-1 hover:text-[#D31219] transition-colors"
+                            className="p-1 text-slate-600 hover:text-[#D31219] transition-colors"
+                            aria-label="Diminuir quantidade"
                           >
-                            <Minus size={14} />
+                            <Minus size={13} />
                           </button>
-                          <span className="text-xs font-black min-w-[20px] text-center">{item.quantity}</span>
+                          <span className="text-xs font-bold px-2 min-w-[24px] text-center text-slate-900">{item.quantity}</span>
                           <button 
                             onClick={() => updateQuantity(item.productId, 1)}
-                            className="p-1 hover:text-[#D31219] transition-colors"
+                            className="p-1 text-slate-600 hover:text-[#D31219] transition-colors"
+                            aria-label="Aumentar quantidade"
                           >
-                            <Plus size={14} />
+                            <Plus size={13} />
                           </button>
                         </div>
                         
                         <button 
                           onClick={() => removeItem(item.productId)}
-                          className="text-gray-300 hover:text-red-500 transition-colors p-2"
+                          className="text-slate-400 hover:text-red-600 transition-colors p-1"
+                          aria-label="Remover item"
                         >
-                          <Trash2 size={16} />
+                          <Trash2 size={15} />
                         </button>
                       </div>
                     </div>
@@ -150,27 +154,31 @@ const QuoteDrawer: React.FC<QuoteDrawerProps> = ({ isOpen, onClose }) => {
                 );
               })}
               
-              <button 
-                onClick={clearQuote}
-                className="w-full text-center py-2 text-[10px] font-black text-gray-400 uppercase tracking-widest hover:text-[#D31219] transition-colors"
-              >
-                Limpar toda a lista
-              </button>
+              <div className="pt-2 text-center">
+                <button 
+                  onClick={clearQuote}
+                  className="text-xs text-slate-400 hover:text-[#D31219] font-medium transition-colors"
+                >
+                  Limpar lista de cotação
+                </button>
+              </div>
             </>
           ) : (
-            <div className="h-full flex flex-col items-center justify-center text-center space-y-6 py-20">
-              <div className="bg-gray-100 p-8 rounded-full">
-                <PackageOpen size={64} className="text-gray-300" />
+            <div className="h-full flex flex-col items-center justify-center text-center space-y-4 py-16">
+              <div className="w-12 h-12 rounded-full bg-slate-100 flex items-center justify-center text-slate-400">
+                <PackageOpen size={24} />
               </div>
               <div>
-                <h3 className="text-xl font-black uppercase text-gray-400">Sua lista está vazia</h3>
-                <p className="text-sm text-gray-400 max-w-[200px] mx-auto mt-2">Navegue por nossos produtos e adicione itens para cotação.</p>
+                <h3 className="text-sm font-bold text-slate-900">Sua lista está vazia</h3>
+                <p className="text-xs text-slate-500 max-w-[220px] mx-auto mt-1 leading-relaxed">
+                  Adicione insumos e perfis através do nosso catálogo para solicitar um orçamento.
+                </p>
               </div>
               <button 
                 onClick={onClose}
-                className="bg-[#003366] text-white px-8 py-4 rounded-xl text-xs font-black uppercase tracking-widest shadow-xl hover:bg-[#D31219] transition-all"
+                className="bg-slate-900 hover:bg-slate-800 text-white px-4 py-2 rounded text-xs font-semibold uppercase tracking-wider transition-colors"
               >
-                Ver Produtos
+                Explorar Catálogo
               </button>
             </div>
           )}
@@ -178,25 +186,25 @@ const QuoteDrawer: React.FC<QuoteDrawerProps> = ({ isOpen, onClose }) => {
 
         {/* Footer */}
         {items.length > 0 && (
-          <div className="p-6 bg-gray-50 border-t border-gray-200 space-y-4">
-            <div className="flex justify-between items-center mb-2">
-              <span className="text-[10px] font-black uppercase text-gray-500 tracking-widest">Total de Itens</span>
-              <span className="text-lg font-black text-[#003366]">
+          <div className="p-4 sm:p-5 bg-slate-50 border-t border-slate-200 space-y-3">
+            <div className="flex justify-between items-center text-xs">
+              <span className="font-semibold text-slate-600 uppercase tracking-wider text-[11px]">Total de volumes:</span>
+              <span className="font-bold text-slate-900 text-sm">
                 {items.reduce((acc, curr) => acc + curr.quantity, 0)} un
               </span>
             </div>
             
             <button 
               onClick={sendToWhatsApp}
-              className="w-full bg-[#25D366] hover:bg-[#128C7E] text-white font-black py-5 rounded-2xl flex items-center justify-center gap-3 shadow-2xl transition-all uppercase tracking-widest text-xs group"
+              className="w-full bg-[#D31219] hover:bg-red-700 text-white font-semibold py-3 px-4 rounded flex items-center justify-center gap-2 text-xs uppercase tracking-wider transition-colors"
             >
-              <MessageCircle size={24} />
-              Pedir Cotação WhatsApp
-              <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+              <MessageCircle size={16} />
+              <span>Enviar Cotação via WhatsApp</span>
+              <ArrowRight size={14} />
             </button>
             
-            <p className="text-[9px] text-center text-gray-400 font-bold uppercase tracking-widest leading-relaxed">
-              Enviaremos sua lista completa para <br/>nossa equipe comercial via WhatsApp.
+            <p className="text-[11px] text-center text-slate-500 leading-snug">
+              Atendimento ágil com cálculo de frete para Curitiba e Região Metropolitana.
             </p>
           </div>
         )}

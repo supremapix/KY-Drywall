@@ -113,84 +113,87 @@ const BlogPostPage: React.FC = () => {
       />
 
       {/* Hero */}
-      <section className="relative h-[50vh] min-h-[400px]">
-        <img
-          src={post.img}
-          alt={post.title}
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-        <div className="absolute bottom-0 left-0 right-0 p-8 md:p-16">
-          <div className="container mx-auto">
-            <span className="bg-[#D31219] text-white text-[10px] font-black px-4 py-2 rounded-full uppercase tracking-widest mb-4 inline-flex items-center gap-2">
-              <Tag size={12} /> {post.tag}
-            </span>
-            <h1 className="text-3xl md:text-5xl lg:text-6xl font-black text-white uppercase tracking-tighter leading-tight max-w-4xl mt-4">
+      <section className="bg-slate-900 text-white py-14 border-b border-slate-800">
+        <div className="container mx-auto px-4 max-w-4xl">
+          {/* Breadcrumbs */}
+          <div className="flex items-center gap-2 text-xs text-slate-400 mb-6 font-medium">
+            <Link to="/" className="hover:text-white transition-colors">Home</Link>
+            <ChevronRight size={12} />
+            <Link to="/blog" className="hover:text-white transition-colors">Blog</Link>
+            <ChevronRight size={12} />
+            <span className="text-slate-200 truncate">{post.title}</span>
+          </div>
+
+          <div>
+            <div className="inline-flex items-center gap-1.5 text-[#D31219] text-xs font-bold uppercase tracking-wider mb-3">
+              <Tag size={13} />
+              <span>{post.tag}</span>
+            </div>
+            <h1 className="text-2xl sm:text-4xl font-bold tracking-tight mb-4 leading-snug">
               {post.title}
             </h1>
-            <div className="flex items-center gap-4 mt-6 text-white/60">
-              <Clock size={14} />
-              <span className="text-xs font-black uppercase tracking-widest">{post.date}</span>
+            <div className="flex items-center gap-2 text-slate-400 text-xs font-medium">
+              <Clock size={13} />
+              <span>{post.date}</span>
+              <span className="mx-1">•</span>
+              <span>Engenharia & Suporte KY Drywall</span>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Breadcrumbs */}
-      <div className="bg-gray-50 border-b border-gray-100">
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex items-center gap-2 text-[10px] font-black uppercase text-gray-400 tracking-[0.2em]">
-            <Link to="/" className="hover:text-[#D31219]">Home</Link>
-            <ChevronRight size={12} />
-            <Link to="/blog" className="hover:text-[#D31219]">Blog</Link>
-            <ChevronRight size={12} />
-            <span className="text-gray-900 truncate">{post.title}</span>
-          </div>
-        </div>
-      </div>
-
       {/* Content */}
-      <article className="py-16 md:py-24">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto">
-            <p className="text-xl md:text-2xl text-gray-600 font-medium italic leading-relaxed mb-16 border-l-4 border-[#D31219] pl-6">
+      <article className="py-12">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <div className="aspect-video rounded overflow-hidden mb-8 border border-slate-200">
+            <img
+              src={post.img}
+              alt={post.title}
+              className="w-full h-full object-cover"
+            />
+          </div>
+
+          <div className="space-y-6">
+            <p className="text-base sm:text-lg text-slate-900 font-medium leading-relaxed pb-4 border-b border-slate-100">
               {post.excerpt}
             </p>
 
             {content?.sections.map((section, i) => (
-              <div key={i} className="mb-12">
-                <h2 className="text-2xl md:text-3xl font-black uppercase tracking-tighter mb-6 text-gray-900">
+              <div key={i} className="pt-4">
+                <h2 className="text-lg sm:text-xl font-bold tracking-tight mb-2 text-slate-900">
                   {section.title}
                 </h2>
-                <p className="text-gray-600 text-lg leading-relaxed font-medium">
+                <p className="text-slate-700 text-sm sm:text-base leading-relaxed">
                   {section.content}
                 </p>
               </div>
             ))}
 
             {/* CTA */}
-            <div className="bg-[#003366] rounded-[2rem] p-10 md:p-16 text-white text-center mt-20">
-              <h3 className="text-2xl md:text-3xl font-black uppercase tracking-tighter mb-4">
-                Precisa de materiais para sua obra?
-              </h3>
-              <p className="text-gray-300 font-medium mb-8 max-w-xl mx-auto">
-                A KY Drywall tem tudo que voce precisa com pronta entrega em Curitiba e regiao metropolitana. Fale com nossos especialistas.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="bg-slate-900 rounded p-6 sm:p-8 text-white mt-10 border border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-6">
+              <div>
+                <h3 className="text-lg font-bold mb-1">
+                  Precisa de materiais para sua obra?
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-300">
+                  A KY Drywall tem pronta entrega em Curitiba e Região Metropolitana com assessoria técnica inclusa.
+                </p>
+              </div>
+              <div className="flex items-center gap-3 shrink-0">
                 <a
                   href={whatsappUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="bg-[#D31219] hover:bg-white hover:text-[#D31219] text-white font-black px-10 py-5 rounded-2xl flex items-center justify-center gap-3 text-xs uppercase tracking-widest transition-all shadow-xl"
+                  className="bg-[#D31219] hover:bg-red-700 text-white text-xs font-semibold uppercase tracking-wider px-5 py-2.5 rounded transition-colors flex items-center gap-2"
                 >
-                  <MessageCircle size={20} />
-                  Falar com Especialista
+                  <MessageCircle size={15} />
+                  Falar no WhatsApp
                 </a>
                 <Link
                   to="/produtos"
-                  className="bg-white/10 hover:bg-white hover:text-[#003366] text-white font-black px-10 py-5 rounded-2xl flex items-center justify-center gap-3 text-xs uppercase tracking-widest transition-all border border-white/20"
+                  className="bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold uppercase tracking-wider px-4 py-2.5 rounded border border-slate-700 transition-colors"
                 >
-                  Ver Catalogo Completo
+                  Ver Catálogo
                 </Link>
               </div>
             </div>
@@ -200,24 +203,24 @@ const BlogPostPage: React.FC = () => {
 
       {/* Related Posts */}
       {otherPosts.length > 0 && (
-        <section className="py-20 bg-gray-50 border-t border-gray-100">
-          <div className="container mx-auto px-4">
-            <h3 className="text-3xl font-black uppercase tracking-tighter mb-12 text-center">
-              Outras <span className="text-[#D31219]">Materias</span>
+        <section className="py-12 bg-slate-50 border-t border-slate-200">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <h3 className="text-base font-bold text-slate-900 mb-6">
+              Outras Matérias Relacionadas
             </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {otherPosts.map((p) => (
                 <Link
                   key={p.id}
                   to={`/blog/${p.id}`}
-                  className="bg-white rounded-[2rem] overflow-hidden shadow-lg border border-gray-100 group hover:-translate-y-2 transition-all"
+                  className="bg-white rounded border border-slate-200 overflow-hidden hover:border-slate-400 transition-colors flex flex-col justify-between"
                 >
-                  <div className="aspect-video overflow-hidden">
-                    <img src={p.img} alt={p.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                  <div className="aspect-video overflow-hidden border-b border-slate-100">
+                    <img src={p.img} alt={p.title} className="w-full h-full object-cover" />
                   </div>
-                  <div className="p-8">
-                    <span className="text-[10px] font-black uppercase tracking-widest text-[#D31219] mb-2 block">{p.tag}</span>
-                    <h4 className="text-lg font-black uppercase tracking-tight group-hover:text-[#D31219] transition-colors">{p.title}</h4>
+                  <div className="p-4">
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-[#D31219] mb-1 block">{p.tag}</span>
+                    <h4 className="text-xs font-bold text-slate-900 leading-snug">{p.title}</h4>
                   </div>
                 </Link>
               ))}
@@ -227,12 +230,12 @@ const BlogPostPage: React.FC = () => {
       )}
 
       {/* Back to Blog */}
-      <div className="py-12 text-center">
+      <div className="py-8 text-center bg-white border-t border-slate-100">
         <Link
           to="/blog"
-          className="inline-flex items-center gap-3 text-[#D31219] font-black uppercase tracking-widest text-xs hover:gap-5 transition-all"
+          className="inline-flex items-center gap-2 text-xs font-semibold text-slate-700 hover:text-[#D31219] transition-colors uppercase tracking-wider"
         >
-          <ArrowLeft size={16} /> Voltar ao Blog e Localidades
+          <ArrowLeft size={14} /> Voltar ao Blog & Localidades
         </Link>
       </div>
     </div>

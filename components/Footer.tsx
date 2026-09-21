@@ -1,14 +1,12 @@
-// Footer - Updated: Suprema Sites Express credit with heartbeat animation
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-// Fixed: Added ChevronRight to the lucide-react imports
-import { MapPin, Phone, Instagram, Facebook, Mail, Clock, Navigation, Star, Users, ShieldCheck, CheckCircle2, Quote, Map, ChevronRight } from 'lucide-react';
+import { MapPin, Phone, Instagram, Facebook, Mail, Clock, Navigation, Star, Users, ShieldCheck, Quote, ChevronRight } from 'lucide-react';
 import { SITE_ASSETS, COMPANY_INFO } from '../constants';
 
 const testimonials = [
-  { name: "Arq. Ricardo S.", role: "Arquiteto", text: "Material de primeira e entrega no prazo. Recomendo para todas as obras de alto padrão em Curitiba!" },
-  { name: "Eng. Marina F.", role: "Gestora", text: "O suporte técnico da KY fez toda a diferença na especificação do Steel Frame para nosso projeto comercial." },
-  { name: "Marcos G.", role: "Gesseiro", text: "Melhor preço da região e estoque sempre em dia. A KY é parceira de verdade de quem está no canteiro." }
+  { name: "Arq. Ricardo Silveira", role: "Arquiteto • Projetos Residenciais", text: "Material rigorosamente dentro das normas técnicas e logística pontual. A KY é nossa fornecedora padrão para projetos em Steel Frame em Curitiba." },
+  { name: "Eng. Marina Fontana", role: "Engenheira Civil • Gestão de Obras", text: "A assessoria técnica para cálculo de modulação e especificação das chapas e perfis Barbieri otimizou nosso custo de fundação e reduziu o cronograma." },
+  { name: "Marcos Guimarães", role: "Empreiteiro Especialista em Drywall", text: "Estoque garantido de placas, montantes e massas. Nunca deixam a obra parada e o atendimento técnico no balcão é diferenciado." }
 ];
 
 const Footer: React.FC = () => {
@@ -17,155 +15,223 @@ const Footer: React.FC = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       setActiveTestimonial((prev) => (prev + 1) % testimonials.length);
-    }, 6000);
+    }, 7000);
     return () => clearInterval(timer);
   }, []);
 
   return (
-    <footer className="bg-[#050505] text-white pt-24 pb-8 border-t-[12px] border-[#D31219]">
-      <div className="container mx-auto px-4">
+    <footer className="bg-slate-950 text-slate-200 pt-16 pb-10 border-t-2 border-[#D31219]">
+      <div className="container mx-auto px-4 lg:px-8">
         
-        {/* Prova Social Section */}
-        <div className="mb-24">
-          <div className="flex flex-col lg:flex-row gap-12 items-stretch">
-            <div className="lg:w-1/3 flex flex-col gap-6">
-              <div className="bg-white/5 p-10 rounded-[3rem] border border-white/10 relative overflow-hidden group hover:border-[#D31219]/50 transition-all shadow-2xl">
-                <div className="absolute top-0 right-0 p-4 opacity-5 pointer-events-none group-hover:scale-125 transition-transform"><Users size={120} /></div>
-                <div className="relative z-10">
-                  <p className="text-6xl font-black mb-2 tracking-tighter text-[#D31219]">+8.500</p>
-                  <p className="text-[10px] font-black uppercase text-gray-500 tracking-[0.2em]">Clientes Atendidos no PR</p>
+        {/* Social Proof & Testimonials */}
+        <div className="mb-16 pb-16 border-b border-slate-800/80">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+            {/* Metrics */}
+            <div className="lg:col-span-4 flex flex-col justify-between gap-4">
+              <div className="bg-slate-900/90 p-6 rounded-lg border border-slate-800 flex items-center justify-between">
+                <div>
+                  <p className="text-3xl font-extrabold text-[#D31219] tracking-tight">+8.500</p>
+                  <p className="text-xs text-slate-400 font-medium mt-1">Obras e projetos atendidos no Paraná</p>
+                </div>
+                <div className="w-12 h-12 rounded bg-red-950/40 text-[#D31219] flex items-center justify-center border border-red-900/30">
+                  <Users size={24} />
                 </div>
               </div>
-              <div className="bg-white/5 p-10 rounded-[3rem] border border-white/10 flex items-center justify-between shadow-2xl">
+
+              <div className="bg-slate-900/90 p-6 rounded-lg border border-slate-800 flex items-center justify-between">
                 <div>
-                  <div className="flex gap-1 mb-2">
-                    {[...Array(5)].map((_, i) => (<Star key={i} size={14} className="fill-[#D31219] text-[#D31219]" />))}
+                  <div className="flex gap-1 mb-1.5">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} size={15} className="fill-[#D31219] text-[#D31219]" />
+                    ))}
                   </div>
-                  <p className="text-2xl font-black">4.9 / 5.0</p>
-                  <p className="text-[10px] font-black text-gray-600 uppercase tracking-widest">Avaliacao Google</p>
+                  <p className="text-xl font-bold text-white">4.9 / 5.0</p>
+                  <p className="text-xs text-slate-400 font-medium">Avaliação de clientes no Google</p>
                 </div>
-                <div className="bg-white/10 p-5 rounded-3xl animate-pulse"><CheckCircle2 size={40} className="text-[#D31219]" /></div>
+                <div className="w-12 h-12 rounded bg-slate-800/60 text-slate-300 flex items-center justify-center border border-slate-700/50">
+                  <ShieldCheck size={24} />
+                </div>
               </div>
             </div>
 
-            <div className="lg:w-2/3">
-              <div className="h-full bg-gradient-to-br from-white/10 to-transparent p-12 md:p-20 rounded-[4rem] border border-white/10 relative shadow-2xl overflow-hidden group">
-                <div className="absolute -bottom-10 -right-10 p-20 opacity-5 pointer-events-none group-hover:rotate-12 transition-transform"><Quote size={200} /></div>
-                <Quote size={80} className="absolute top-12 right-12 opacity-10 text-[#D31219]" />
-                <div className="relative z-10">
-                  <p className="text-2xl md:text-4xl font-medium italic text-gray-100 mb-12 leading-relaxed tracking-tight">
-                    "{testimonials[activeTestimonial].text}"
-                  </p>
-                  <div className="flex items-center gap-6">
-                    <div className="w-16 h-16 bg-[#D31219] rounded-full flex items-center justify-center font-black text-2xl shadow-xl shadow-[#D31219]/20">{testimonials[activeTestimonial].name[0]}</div>
-                    <div>
-                      <p className="font-black text-lg uppercase tracking-tight">{testimonials[activeTestimonial].name}</p>
-                      <p className="text-[11px] font-black text-[#D31219] uppercase tracking-[0.3em]">{testimonials[activeTestimonial].role}</p>
-                    </div>
-                  </div>
+            {/* Testimonial Quote */}
+            <div className="lg:col-span-8 bg-slate-900/60 p-8 rounded-lg border border-slate-800 flex flex-col justify-between relative">
+              <Quote size={40} className="text-[#D31219]/20 absolute top-6 right-6" />
+              <div>
+                <p className="text-xs uppercase tracking-widest text-[#D31219] font-bold mb-3">Depoimento Profissional</p>
+                <blockquote className="text-slate-200 text-base md:text-lg leading-relaxed italic font-normal mb-6 max-w-2xl">
+                  "{testimonials[activeTestimonial].text}"
+                </blockquote>
+              </div>
+              <div className="flex items-center justify-between pt-4 border-t border-slate-800/60">
+                <div>
+                  <p className="font-semibold text-white text-sm">{testimonials[activeTestimonial].name}</p>
+                  <p className="text-xs text-slate-400">{testimonials[activeTestimonial].role}</p>
+                </div>
+                <div className="flex gap-1.5">
+                  {testimonials.map((_, i) => (
+                    <button
+                      key={i}
+                      onClick={() => setActiveTestimonial(i)}
+                      className={`h-1.5 rounded-full transition-all ${
+                        i === activeTestimonial ? 'w-6 bg-[#D31219]' : 'w-2 bg-slate-700 hover:bg-slate-500'
+                      }`}
+                      aria-label={`Ver depoimento ${i + 1}`}
+                    />
+                  ))}
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Info Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-20 border-t border-white/5 pt-20">
-          <div className="space-y-8">
-            <Link to="/" className="bg-white p-4 rounded-3xl inline-block shadow-2xl hover:scale-105 transition-transform">
+        {/* Main Columns */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-16">
+          {/* Brand & Authority */}
+          <div className="space-y-4">
+            <Link to="/" className="inline-block bg-white p-2.5 rounded border border-slate-200">
               <img 
                 src={SITE_ASSETS.logo} 
-                alt="KY Drywall" 
-                className="h-14 w-auto" 
+                alt="KY Drywall & Steel Frame" 
+                className="h-10 w-auto" 
                 onError={(e) => (e.target as HTMLImageElement).src = 'https://via.placeholder.com/200x80?text=KY+DRYWALL'}
               />
             </Link>
-            <p className="text-gray-500 text-sm leading-relaxed font-bold uppercase tracking-tight">{"Refer\u00EAncia t\u00E9cnica em sistemas construtivos a seco no Paran\u00E1 h\u00E1 mais de duas d\u00E9cadas."}</p>
-            <div className="flex items-center gap-3 text-[10px] font-black uppercase text-white/40"><ShieldCheck size={20} className="text-[#D31219]" /> Certificado ABNT NBR 15575</div>
+            <p className="text-slate-400 text-xs leading-relaxed">
+              Distribuidora especializada em sistemas construtivos industrializados a seco em Curitiba e Região Metropolitana.
+            </p>
+            <div className="flex items-center gap-2 text-xs text-slate-400 pt-2">
+              <ShieldCheck size={16} className="text-[#D31219]" />
+              <span>Conformidade ABNT NBR 15253 / 15575</span>
+            </div>
           </div>
 
+          {/* Contacts */}
           <div>
-            <h3 className="text-2xl font-black mb-10 uppercase tracking-tighter border-b border-[#D31219]/50 pb-3">Contatos</h3>
-            <div className="space-y-6">
-              <a href="tel:4135284232" className="flex items-center gap-4 text-gray-300 hover:text-[#D31219] transition-colors group">
-                <div className="p-3 bg-white/5 rounded-2xl group-hover:bg-[#D31219] group-hover:text-white transition-all"><Phone size={20} /></div>
-                <span className="text-base font-black">(41) 3528-4232</span>
+            <h4 className="text-white text-xs font-bold uppercase tracking-wider mb-4 border-b border-slate-800 pb-2">
+              Atendimento & Vendas
+            </h4>
+            <div className="space-y-3.5 text-xs text-slate-300">
+              <a href="tel:4135284232" className="flex items-center gap-2.5 hover:text-[#D31219] transition-colors">
+                <Phone size={15} className="text-[#D31219]" />
+                <span className="font-semibold">(41) 3528-4232</span>
               </a>
-              <a href="mailto:contato@kydrywall.com.br" className="flex items-center gap-4 text-gray-300 hover:text-[#D31219] transition-colors group">
-                <div className="p-3 bg-white/5 rounded-2xl group-hover:bg-[#D31219] group-hover:text-white transition-all"><Mail size={20} /></div>
-                <span className="text-sm font-black uppercase tracking-tight">contato@kydrywall.com.br</span>
+              <a href="mailto:contato@kydrywall.com.br" className="flex items-center gap-2.5 hover:text-[#D31219] transition-colors">
+                <Mail size={15} className="text-[#D31219]" />
+                <span>contato@kydrywall.com.br</span>
               </a>
-              <div className="flex items-start gap-4 mt-8">
-                <div className="p-3 bg-white/5 rounded-2xl text-[#D31219]"><Clock size={20} /></div>
-                <div className="text-[11px] font-black uppercase text-gray-500 tracking-widest pt-1">
-                  <p className="text-white">Seg-Sex: 07:30 - 17:30</p>
-                  <p>{"S\u00E1b: 07:30 - 12:00"}</p>
+              <div className="flex items-start gap-2.5 text-slate-400 pt-2 border-t border-slate-900">
+                <Clock size={15} className="text-[#D31219] mt-0.5" />
+                <div className="space-y-0.5">
+                  <p>Segunda a Sexta: 07:30 - 17:30</p>
+                  <p>Sábado: 07:30 - 12:00</p>
                 </div>
               </div>
             </div>
           </div>
 
+          {/* Quick Navigation */}
           <div>
-            <h3 className="text-2xl font-black mb-10 uppercase tracking-tighter border-b border-[#D31219]/50 pb-3">{"Navega\u00E7\u00E3o"}</h3>
-            <ul className="grid grid-cols-1 gap-4 text-xs font-black uppercase text-gray-600 tracking-widest">
-              <li><Link to="/empresa" className="hover:text-white hover:pl-2 transition-all flex items-center gap-2"><ChevronRight size={14} className="text-[#D31219]"/> A Empresa</Link></li>
-              <li><Link to="/produtos" className="hover:text-white hover:pl-2 transition-all flex items-center gap-2"><ChevronRight size={14} className="text-[#D31219]"/> Produtos</Link></li>
-              <li><Link to="/servicos" className="hover:text-white hover:pl-2 transition-all flex items-center gap-2"><ChevronRight size={14} className="text-[#D31219]"/> {"Servi\u00E7os"}</Link></li>
-              <li><Link to="/blog" className="hover:text-white hover:pl-2 transition-all flex items-center gap-2"><ChevronRight size={14} className="text-[#D31219]"/> Blog Regional</Link></li>
-              <li><Link to="/faq" className="hover:text-white hover:pl-2 transition-all flex items-center gap-2 text-[#D31219] hover:text-white"><ChevronRight size={14} className="text-[#D31219]"/> Perguntas Frequentes</Link></li>
-              <li><Link to="/faq#drywall" className="hover:text-white hover:pl-2 transition-all flex items-center gap-2"><ChevronRight size={14} className="text-[#D31219]"/> Drywall (FAQ)</Link></li>
-              <li><Link to="/faq#steelframe" className="hover:text-white hover:pl-2 transition-all flex items-center gap-2"><ChevronRight size={14} className="text-[#D31219]"/> Steel Frame (FAQ)</Link></li>
+            <h4 className="text-white text-xs font-bold uppercase tracking-wider mb-4 border-b border-slate-800 pb-2">
+              Sistemas & Links
+            </h4>
+            <ul className="space-y-2 text-xs text-slate-400">
+              <li>
+                <Link to="/steel-frame" className="hover:text-white transition-colors flex items-center gap-1.5">
+                  <ChevronRight size={13} className="text-[#D31219]" /> Steel Frame Estrutural
+                </Link>
+              </li>
+              <li>
+                <Link to="/servicos/drywall" className="hover:text-white transition-colors flex items-center gap-1.5">
+                  <ChevronRight size={13} className="text-[#D31219]" /> Paredes & Forros Drywall
+                </Link>
+              </li>
+              <li>
+                <Link to="/produtos" className="hover:text-white transition-colors flex items-center gap-1.5">
+                  <ChevronRight size={13} className="text-[#D31219]" /> Catálogo Completo
+                </Link>
+              </li>
+              <li>
+                <Link to="/servicos/shingle" className="hover:text-white transition-colors flex items-center gap-1.5">
+                  <ChevronRight size={13} className="text-[#D31219]" /> Cobertura Telhado Shingle
+                </Link>
+              </li>
+              <li>
+                <Link to="/faq" className="hover:text-white transition-colors flex items-center gap-1.5">
+                  <ChevronRight size={13} className="text-[#D31219]" /> Perguntas Frequentes (FAQ)
+                </Link>
+              </li>
+              <li>
+                <Link to="/empresa" className="hover:text-white transition-colors flex items-center gap-1.5">
+                  <ChevronRight size={13} className="text-[#D31219]" /> Sobre a KY Drywall
+                </Link>
+              </li>
             </ul>
           </div>
 
-          {/* Onde Estamos Destaque Animado */}
-          <div className="bg-[#111] p-10 rounded-[3.5rem] border-2 border-[#D31219] shadow-[0_0_50px_rgba(211,18,25,0.2)] relative overflow-hidden group">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-[#D31219] opacity-5 -translate-y-1/2 translate-x-1/2 rounded-full blur-3xl animate-pulse"></div>
-            <h3 className="text-2xl font-black mb-8 flex items-center gap-3 uppercase tracking-tighter text-white">
-              <MapPin size={24} className="text-[#D31219] animate-bounce" /> Onde Estamos
-            </h3>
-            <div className="space-y-8 relative z-10">
-              <div className="space-y-2">
-                <p className="text-xs font-black text-[#D31219] uppercase tracking-[0.3em]">Showroom Curitiba</p>
-                <p className="text-lg font-black text-white leading-tight uppercase tracking-tight">{COMPANY_INFO.address}</p>
-              </div>
-              <a 
-                href={COMPANY_INFO.mapsUrl}
-                target="_blank" 
-                rel="noreferrer" 
-                className="flex items-center justify-between bg-[#D31219] text-white p-5 rounded-2xl text-[11px] font-black uppercase tracking-widest hover:bg-white hover:text-[#D31219] transition-all group/btn shadow-xl"
-              >
-                Abrir GPS 
-                <Navigation size={20} className="group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
-              </a>
-              <div className="flex items-center gap-2 text-[9px] font-black uppercase text-gray-600 tracking-tighter">
-                <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-ping"></span> {"Aberto para Visita\u00E7\u00E3o T\u00E9cnica"}
-              </div>
-            </div>
+          {/* Location / Showroom */}
+          <div className="bg-slate-900/80 p-5 rounded-lg border border-slate-800">
+            <h4 className="text-white text-xs font-bold uppercase tracking-wider mb-3 flex items-center gap-2">
+              <MapPin size={16} className="text-[#D31219]" />
+              Showroom Curitiba
+            </h4>
+            <p className="text-xs text-slate-300 leading-relaxed mb-4">
+              {COMPANY_INFO.address}
+            </p>
+            <a 
+              href={COMPANY_INFO.mapsUrl}
+              target="_blank" 
+              rel="noreferrer" 
+              className="inline-flex items-center justify-between w-full bg-[#D31219] text-white px-4 py-2.5 rounded text-xs font-semibold hover:bg-slate-800 transition-colors"
+            >
+              <span>Abrir no Google Maps</span>
+              <Navigation size={14} />
+            </a>
+            <p className="text-[11px] text-emerald-400 font-medium mt-3 flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+              Estacionamento próprio no local
+            </p>
           </div>
         </div>
 
-        {/* Bottom Bar - Copyright and Credits */}
-        <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-10 text-center">
-          <p className="text-[10px] font-black uppercase text-gray-600 tracking-widest">{"© "}{new Date().getFullYear()}{" KY Drywall & Steel Frame. Todos os direitos reservados."}</p>
-          <div className="flex gap-6">
-            <a href="https://facebook.com/kydrywall" className="p-4 bg-white/5 rounded-full hover:bg-[#D31219] transition-colors shadow-xl group">
-              <Facebook size={20} className="group-hover:scale-110 transition-transform"/>
+        {/* Bottom Bar */}
+        <div className="pt-8 border-t border-slate-900 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
+          <p>© {new Date().getFullYear()} KY Drywall & Steel Frame. Todos os direitos reservados.</p>
+          
+          <div className="flex items-center gap-4">
+            <a 
+              href="https://facebook.com/kydrywall" 
+              target="_blank" 
+              rel="noreferrer"
+              className="p-2 rounded bg-slate-900 hover:text-white hover:bg-slate-800 transition-colors"
+              aria-label="Facebook"
+            >
+              <Facebook size={16} />
             </a>
-            <Link to="/links" className="p-4 text-white font-bold">Canais oficiais</Link>
-            <a href={COMPANY_INFO.instagram} className="p-4 bg-white/5 rounded-full hover:bg-[#D31219] transition-colors shadow-xl group">
-              <Instagram size={20} className="group-hover:scale-110 transition-transform"/>
+            <a 
+              href={COMPANY_INFO.instagram} 
+              target="_blank" 
+              rel="noreferrer"
+              className="p-2 rounded bg-slate-900 hover:text-white hover:bg-slate-800 transition-colors"
+              aria-label="Instagram"
+            >
+              <Instagram size={16} />
             </a>
+            <Link to="/links" className="text-slate-400 hover:text-white transition-colors">
+              Canais Oficiais
+            </Link>
           </div>
-          <p className="text-[10px] font-black uppercase text-gray-600 tracking-widest flex items-center gap-1.5 justify-center md:justify-end">
-            Desenvolvido
-            <span className="inline-block animate-[heartbeat_1.2s_ease-in-out_infinite] text-[#D31219]">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
-                <path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z" />
-              </svg>
-            </span>
-            por
-            <a href="https://supremasite.com.br" target="_blank" rel="noreferrer" className="text-white hover:text-[#D31219] transition-colors underline decoration-[#D31219] underline-offset-4">Suprema Sites Express</a>
+
+          <p className="text-slate-500">
+            Desenvolvido por{' '}
+            <a 
+              href="https://supremasite.com.br" 
+              target="_blank" 
+              rel="noreferrer" 
+              className="text-slate-400 hover:text-white transition-colors underline decoration-slate-700 underline-offset-2"
+            >
+              Suprema Sites Express
+            </a>
           </p>
         </div>
       </div>

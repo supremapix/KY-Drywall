@@ -77,71 +77,139 @@ const About: React.FC = () => {
         ogType="website"
         schema={organizationSchema}
       />
-      <section className="bg-[#003366] py-32 text-white relative overflow-hidden text-center">
-        <div className="absolute inset-0 opacity-10">
+      {/* Hero Section */}
+      <section className="bg-slate-950 py-20 lg:py-24 text-white relative overflow-hidden">
+        <div className="absolute inset-0 opacity-20">
           <img src="https://images.pexels.com/photos/159306/construction-site-build-construction-work-159306.jpeg?auto=compress&cs=tinysrgb&w=1920" alt="" className="w-full h-full object-cover" />
         </div>
-        <div className="container mx-auto px-4 relative z-10">
-          <span className="bg-[#D31219] text-white font-black uppercase tracking-[0.4em] text-[10px] px-6 py-2 rounded-full mb-8 inline-block">A Maior Distribuidora de Curitiba</span>
-          <h1 className="text-6xl md:text-9xl font-black mb-10 uppercase tracking-tighter leading-none">KY Drywall <br/><span className="text-gray-400">&amp; Steel Frame</span></h1>
-          <p className="text-xl md:text-2xl max-w-4xl mx-auto text-gray-200 font-medium">Líder em distribuição de materiais para construção a seco em Curitiba. Especialistas em Steel Frame, Drywall, Telhado Shingle e Isolamento Acústico.</p>
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-slate-950/50"></div>
+        <div className="container mx-auto px-4 lg:px-8 relative z-10">
+          <div className="max-w-3xl">
+            <span className="inline-flex items-center gap-2 px-3 py-1 rounded bg-[#D31219]/20 border border-[#D31219]/30 text-[#D31219] text-xs font-semibold uppercase tracking-wider mb-4">
+              Distribuidora Especializada em Curitiba
+            </span>
+            <h1 className="text-3xl sm:text-5xl font-bold tracking-tight mb-4 text-white leading-tight">
+              A Solidez da KY Drywall & Steel Frame
+            </h1>
+            <p className="text-base sm:text-lg text-slate-300 font-normal leading-relaxed">
+              Mais de duas décadas de liderança na distribuição técnica de insumos para construção a seco, steel frame, isolamento acústico e coberturas em Curitiba e Região Metropolitana.
+            </p>
+          </div>
         </div>
       </section>
 
-      <section className="py-24">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
-            <div className="space-y-8 order-2 lg:order-1">
-              <h2 className="text-4xl md:text-6xl font-black text-[#003366] uppercase tracking-tighter leading-none">Sua Obra <br/><span className="text-[#D31219]">70% Mais Rápida</span></h2>
-              <div className="prose prose-lg text-gray-600 font-medium space-y-6">
-                <p>A <strong>KY Drywall & Steel Frame</strong> é a maior distribuidora de materiais para construção a seco de Curitiba. Localizada na Rod. BR 277 - 3641, no bairro Cajuru, somos especialistas em sistemas construtivos modernos e eficientes.</p>
-                <p>Trabalhamos com as melhores marcas do mercado, incluindo <strong>Barbieri</strong> para perfis steel frame, oferecendo materiais de alta qualidade com entrega rápida em Curitiba e Região Metropolitana.</p>
-                <p>Nossa equipe oferece assessoria técnica especializada para arquitetos, engenheiros e construtores, garantindo que você escolha os materiais certos para cada tipo de projeto.</p>
-                <div className="bg-gray-50 p-6 rounded-2xl">
-                  <p className="text-sm font-bold text-[#003366] mb-2">Horário de Atendimento:</p>
-                  <p className="text-sm"><Clock className="inline mr-2" size={16}/>{COMPANY_INFO.hours.weekdays}</p>
-                  <p className="text-sm"><Clock className="inline mr-2" size={16}/>{COMPANY_INFO.hours.saturday}</p>
+      {/* Sobre a Empresa */}
+      <section className="py-20 lg:py-24 bg-white">
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            <div className="lg:col-span-7 space-y-6">
+              <span className="text-[#D31219] text-xs font-bold uppercase tracking-wider">
+                Infraestrutura & Tradição
+              </span>
+              <h2 className="text-3xl sm:text-4xl font-bold text-slate-950 tracking-tight leading-tight">
+                Fornecimento Estruturado para o Canteiro de Obras
+              </h2>
+              <div className="space-y-4 text-slate-600 text-sm sm:text-base leading-relaxed">
+                <p>
+                  A <strong className="text-slate-900 font-semibold">KY Drywall & Steel Frame</strong> é referência no fornecimento de materiais para construtoras, engenheiros, arquitetos e montadores especializados. Localizada estrategicamente na Rod. BR-277, no Cajuru, contamos com acesso logístico imediato para atendimento em toda a Grande Curitiba e Litoral.
+                </p>
+                <p>
+                  Somos parceiros e distribuidores autorizados de indústrias consagradas, como <strong className="text-slate-900 font-semibold">Barbieri</strong> (perfis estruturais galvanizados Z180), <strong className="text-slate-900 font-semibold">Holdflex</strong> (massas de acabamento) e principais fabricantes de placas de gesso acartonado e isolamentos.
+                </p>
+                <p>
+                  Oferecemos assessoria técnica consultiva para elaboração de quantitativos, compatibilização de projetos estruturais em steel frame e especificação de soluções termoacústicas sob medida.
+                </p>
+              </div>
+
+              <div className="bg-slate-50 p-5 rounded border border-slate-200">
+                <p className="text-xs font-bold text-slate-900 uppercase tracking-wider mb-2">Horário de Funcionamento do Balcão</p>
+                <div className="space-y-1.5 text-xs text-slate-700">
+                  <p className="flex items-center gap-2"><Clock size={14} className="text-[#D31219]"/> {COMPANY_INFO.hours.weekdays}</p>
+                  <p className="flex items-center gap-2"><Clock size={14} className="text-[#D31219]"/> {COMPANY_INFO.hours.saturday}</p>
                 </div>
               </div>
-              <div className="pt-6 flex flex-col sm:flex-row gap-4">
-                <a href={`https://wa.me/${COMPANY_INFO.whatsapp}?text=Olá! Quero fazer um orçamento. Preciso de assessoria técnica.`} className="bg-[#D31219] text-white font-black px-12 py-6 rounded-2xl inline-flex items-center justify-center gap-4 text-xs uppercase tracking-widest shadow-xl hover:bg-[#003366] hover:scale-105 transition-all">
-                  <MessageCircle size={24} /> Orçamento Gratuito
+
+              <div className="pt-2 flex flex-col sm:flex-row gap-3">
+                <a 
+                  href={`https://wa.me/${COMPANY_INFO.whatsapp}?text=Olá! Gostaria de falar com o time comercial da KY Drywall.`} 
+                  target="_blank"
+                  rel="noreferrer"
+                  className="bg-[#D31219] text-white font-semibold px-6 py-3.5 rounded inline-flex items-center justify-center gap-2 text-xs uppercase tracking-wider hover:bg-red-700 transition-colors shadow-sm"
+                >
+                  <MessageCircle size={16} /> Falar no WhatsApp
                 </a>
-                <a href={`tel:${COMPANY_INFO.phone.replace(/\D/g, '')}`} className="bg-white text-[#003366] border-2 border-[#003366] font-black px-12 py-6 rounded-2xl inline-flex items-center justify-center gap-4 text-xs uppercase tracking-widest hover:bg-[#003366] hover:text-white transition-all">
-                  Ligar Agora
+                <a 
+                  href={`tel:${COMPANY_INFO.phone.replace(/\D/g, '')}`} 
+                  className="bg-white text-slate-800 border border-slate-300 font-semibold px-6 py-3.5 rounded inline-flex items-center justify-center gap-2 text-xs uppercase tracking-wider hover:border-[#D31219] hover:text-[#D31219] transition-colors"
+                >
+                  Ligar: (41) 3528-4232
                 </a>
               </div>
             </div>
-            <div className="relative order-1 lg:order-2">
-              <div className="rounded-[4rem] overflow-hidden shadow-2xl border-[12px] border-gray-50">
-                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ky-loja-cajuru-drywall-stell-fame.png-CAi9KHi0wcqQLptb0qLFGSWQZaXr98.jpeg" alt="Loja KY Drywall na BR-277 Cajuru - Materiais de Construção a Seco" className="w-full h-full object-cover" />
-              </div>
-              <div className="absolute -bottom-10 -left-6 bg-white p-8 rounded-[2.5rem] shadow-2xl border border-gray-100 text-center">
-                 <Award size={40} className="text-[#D31219] mx-auto mb-4" />
-                 <p className="text-3xl font-black text-[#003366]">70%</p>
-                 <p className="text-[8px] font-black uppercase text-gray-400 tracking-wider">Mais Rápido</p>
+
+            <div className="lg:col-span-5">
+              <div className="rounded-lg overflow-hidden border border-slate-200 shadow-md bg-white">
+                <img 
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ky-loja-cajuru-drywall-stell-fame.png-CAi9KHi0wcqQLptb0qLFGSWQZaXr98.jpeg" 
+                  alt="Loja KY Drywall na BR-277 Cajuru - Materiais de Construção a Seco" 
+                  className="w-full h-auto object-cover" 
+                />
+                <div className="p-4 bg-slate-900 text-white flex items-center justify-between">
+                  <div>
+                    <p className="text-xs font-semibold">Unidade Cajuru (BR-277)</p>
+                    <p className="text-[11px] text-slate-400">Ponto de retirada e showroom de produtos</p>
+                  </div>
+                  <span className="text-xs font-semibold text-[#D31219] bg-red-950/50 border border-[#D31219]/30 px-2.5 py-1 rounded">
+                    Curitiba - PR
+                  </span>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="py-24 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-6xl font-black text-[#003366] uppercase tracking-tighter mb-6">Por que escolher a <span className="text-[#D31219]">KY?</span></h2>
-            <p className="text-gray-600 text-lg font-medium max-w-2xl mx-auto">Mais do que uma distribuidora, somos parceiros do seu projeto</p>
+      {/* Diferenciais Competitivos */}
+      <section className="py-20 bg-slate-50 border-t border-slate-200">
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="text-center max-w-2xl mx-auto mb-14">
+            <span className="text-[#D31219] text-xs font-bold uppercase tracking-wider">
+              Compromisso Técnico
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight mt-1">
+              Por que Comprar na KY Drywall?
+            </h2>
+            <p className="text-slate-600 text-sm mt-2">
+              Segurança operacional e pontualidade na cadeia de suprimentos da sua edificação.
+            </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              { icon: Warehouse, title: 'Maior Estoque de Curitiba', desc: 'Pronta entrega de placas de drywall, perfis metálicos, parafusos, fitas e todos os acessórios para sua obra.' },
-              { icon: HardHat, title: 'Assessoria Técnica Especializada', desc: 'Equipe treinada para orientar na escolha dos materiais ideais para cada tipo de projeto residencial ou comercial.' },
-              { icon: Truck, title: 'Entrega Rápida', desc: 'Frota própria garantindo entregas ágeis e seguras em toda Curitiba e Região Metropolitana.' }
+              { 
+                icon: Warehouse, 
+                title: 'Estoque Centralizado Pronta Entrega', 
+                desc: 'Centenas de toneladas de placas de drywall, montantes, guias, parafusos fosfatizados e massas para retirada imediata ou entrega no mesmo dia.' 
+              },
+              { 
+                icon: HardHat, 
+                title: 'Consultoria e Apoio a Projetos', 
+                desc: 'Profissionais capacitados para validar especificações de carga, desempenho acústico e modulação estrutural de perfis metálicos Barbieri.' 
+              },
+              { 
+                icon: Truck, 
+                title: 'Frota Própria com Entrega Segura', 
+                desc: 'Veículos preparados para transportar placas sem quebras e perfis sem empenamentos, com descarregamento técnico no local de obra.' 
+              }
             ].map((item, i) => (
-              <div key={i} className="bg-white p-12 rounded-[3rem] shadow-lg hover:shadow-2xl transition-shadow group">
-                <div className="bg-[#003366] p-5 rounded-2xl text-white mb-8 group-hover:bg-[#D31219] transition-colors inline-block"><item.icon size={32} /></div>
-                <h3 className="text-2xl font-black uppercase mb-4 tracking-tight">{item.title}</h3>
-                <p className="text-gray-500 font-medium leading-relaxed">{item.desc}</p>
+              <div key={i} className="bg-white p-6 rounded-lg border border-slate-200 shadow-sm hover:border-[#D31219]/40 transition-colors flex flex-col justify-between">
+                <div>
+                  <div className="w-10 h-10 bg-[#D31219]/10 rounded flex items-center justify-center text-[#D31219] mb-4">
+                    <item.icon size={20} />
+                  </div>
+                  <h3 className="text-base font-bold text-slate-900 mb-2">{item.title}</h3>
+                  <p className="text-slate-600 text-xs leading-relaxed">{item.desc}</p>
+                </div>
               </div>
             ))}
           </div>
