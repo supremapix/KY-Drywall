@@ -17,7 +17,6 @@ import SteelFramePage from './pages/SteelFramePage';
 import FAQPage from './pages/FAQPage';
 import LinksPage from './pages/LinksPage';
 import NotFound from './pages/NotFound';
-import WhatsAppWidget from './components/WhatsAppWidget';
 import FloatingActions from './components/FloatingActions';
 import CookieConsent from './components/CookieConsent';
 
@@ -76,7 +75,6 @@ export const AppContent: React.FC = () => {
         </main>
 
         {!isLinksPage && <Footer />}
-        {!isLinksPage && <WhatsAppWidget />}
         {!isLinksPage && <FloatingActions />}
         {!isLinksPage && !isCookieAccepted && <CookieConsent onAccept={handleAcceptCookies} />}
       </div>

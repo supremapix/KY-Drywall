@@ -2,6 +2,7 @@ import React from 'react';
 import EnhancedSEO from '../components/EnhancedSEO';
 import { BASE_URL, COMPANY_INFO, SITE_ASSETS } from '../constants';
 import { Globe, Instagram, MessageCircle, MapPin, Download, Phone } from 'lucide-react';
+import { SupremaCredit } from '../components/Footer';
 
 export default function LinksPage() {
   const channels = [
@@ -92,6 +93,8 @@ export default function LinksPage() {
             </a>
           </div>
         </div>
+
+        <SupremaCredit />
       </div>
     </section>
   );
