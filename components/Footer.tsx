@@ -196,7 +196,17 @@ const Footer: React.FC = () => {
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-slate-900 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
-          <p>© {new Date().getFullYear()} KY Drywall & Steel Frame. Todos os direitos reservados.</p>
+          <div className="flex flex-wrap items-center justify-center md:justify-start gap-x-2 gap-y-1">
+            <p>© {new Date().getFullYear()} KY Drywall & Steel Frame. Todos os direitos reservados.</p>
+            <span className="text-slate-800 hidden sm:inline">•</span>
+            <Link 
+              to="/sitemap" 
+              className="text-slate-600 hover:text-slate-400 transition-colors text-[11px]"
+              title="Mapa do Site"
+            >
+              Mapa do Site
+            </Link>
+          </div>
           
           <div className="flex items-center gap-4">
             <a 

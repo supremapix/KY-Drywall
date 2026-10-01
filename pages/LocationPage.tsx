@@ -1,8 +1,8 @@
 
 import React, { useEffect, useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
-import { MapPin, CheckCircle2, ShieldCheck, Zap, HardHat, Recycle, Timer, ChevronRight, MessageCircle, ArrowLeft, Phone, Package, Clock, Truck, Star, Home } from 'lucide-react';
-import { BASE_URL, SERVICES, NEIGHBORHOODS, CITIES_RMC, getRandomCTA, PRODUCTS, COMPANY_INFO, normalizeLocationName } from '../constants';
+import { MapPin, CheckCircle2, ShieldCheck, Zap, HardHat, Recycle, Timer, ChevronRight, MessageCircle, ArrowLeft, Phone, Package, Clock, Truck, Star, Home, Building2, ExternalLink } from 'lucide-react';
+import { BASE_URL, SERVICES, NEIGHBORHOODS, CITIES_RMC, getRandomCTA, PRODUCTS, COMPANY_INFO, SITE_ASSETS, normalizeLocationName } from '../constants';
 import EnhancedSEO from '../components/EnhancedSEO';
 import NotFound from './NotFound';
 import ProductCard from '../components/ProductCard';
@@ -100,63 +100,119 @@ const LocationPage: React.FC<LocationPageProps> = ({ type }) => {
         schema={schema}
       />
 
-      <section className="bg-slate-900 py-12 md:py-16 text-white border-b border-slate-800">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <div className="flex items-center gap-1.5 text-xs text-slate-400 mb-4 font-medium">
+      {/* Hero Section with High-Visibility Store Facade Image */}
+      <section className="bg-slate-900 py-10 md:py-14 text-white border-b border-slate-800">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <div className="flex items-center gap-1.5 text-xs text-slate-400 mb-6 font-medium">
             <Link to="/" className="hover:text-white flex items-center gap-1 transition-colors">
               <Home size={13} /> Início
             </Link>
             <ChevronRight size={11} />
             <Link to="/blog" className="hover:text-white transition-colors">Atendimento Regional</Link>
             <ChevronRight size={11} />
-            <span className="text-slate-200">{formattedName}</span>
+            <span className="text-slate-200 font-semibold">{formattedName}</span>
           </div>
 
-          <div className="max-w-3xl">
-            <span className="text-[#D31219] text-xs font-bold uppercase tracking-wider mb-2 block">
-              Distribuição & Especificação Técnica
-            </span>
-            <h1 className="text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-4 leading-tight">
-              {serviceName} em <span className="text-white">{formattedName}</span>
-            </h1>
-            <p className="text-xs sm:text-base text-slate-300 font-normal leading-relaxed mb-6">
-              Distribuição autorizada de insumos de {serviceName.toLowerCase()} para {formattedName} e região. Fornecimento direto com pronta entrega, memorial de cálculo e suporte técnico para instaladores, engenheiros e construtores.
-            </p>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+            {/* Left Content Column */}
+            <div className="lg:col-span-7">
+              <div className="inline-flex items-center gap-2 bg-red-950/70 border border-red-800/80 px-3 py-1 rounded text-xs font-semibold text-red-300 uppercase tracking-wider mb-3.5">
+                <span className="w-2 h-2 rounded-full bg-[#D31219] inline-block"></span>
+                Distribuição & Especificação Técnica em {formattedName}
+              </div>
 
-            <div className="flex flex-wrap gap-2.5 mb-6 text-xs text-slate-300">
-              <div className="flex items-center gap-1.5 bg-slate-800/80 px-3 py-1.5 rounded border border-slate-700">
-                <Truck size={14} className="text-[#D31219]" />
-                <span>Logística para {formattedName}</span>
+              <h1 className="text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-4 leading-tight">
+                {serviceName} em <span className="text-white">{formattedName}</span>
+              </h1>
+
+              <p className="text-sm sm:text-base text-slate-300 font-normal leading-relaxed mb-6">
+                Distribuição autorizada e estoque permanente de chapas, perfis normatizados, fitas, massas e isolamentos para obras em <strong className="text-white font-semibold">{formattedName}</strong> e região. Expedição diária a partir da nossa loja e centro de distribuição em Curitiba (Rod. BR-277, Cajuru), com consultoria técnica e cálculo de quantitativos para instaladores e engenheiros.
+              </p>
+
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 mb-6 text-xs text-slate-200">
+                <div className="flex items-center gap-2 bg-slate-800/90 px-3 py-2 rounded border border-slate-700">
+                  <Truck size={15} className="text-[#D31219] shrink-0" />
+                  <span className="font-medium">Logística para {formattedName}</span>
+                </div>
+                <div className="flex items-center gap-2 bg-slate-800/90 px-3 py-2 rounded border border-slate-700">
+                  <Building2 size={15} className="text-[#D31219] shrink-0" />
+                  <span className="font-medium">Estoque Próprio & CD</span>
+                </div>
+                <div className="flex items-center gap-2 bg-slate-800/90 px-3 py-2 rounded border border-slate-700">
+                  <ShieldCheck size={15} className="text-[#D31219] shrink-0" />
+                  <span className="font-medium">Normas ABNT NBR</span>
+                </div>
               </div>
-              <div className="flex items-center gap-1.5 bg-slate-800/80 px-3 py-1.5 rounded border border-slate-700">
-                <Package size={14} className="text-[#D31219]" />
-                <span>Estoque Permanente</span>
+
+              <div className="flex flex-wrap gap-3">
+                <a
+                  href={`https://wa.me/${COMPANY_INFO.whatsapp}?text=Olá! Gostaria de um orçamento para ${serviceName} em ${formattedName}`}
+                  className="bg-[#D31219] hover:bg-red-700 text-white font-semibold px-5 py-3 rounded text-xs uppercase tracking-wider transition-colors flex items-center justify-center gap-2 shadow-lg shadow-red-900/20"
+                >
+                  <MessageCircle size={16} /> Solicitar Cotação no WhatsApp
+                </a>
+                <a
+                  href={`tel:${COMPANY_INFO.phone.replace(/\D/g, '')}`}
+                  className="bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold px-4 py-3 rounded text-xs uppercase tracking-wider transition-colors border border-slate-700 flex items-center justify-center gap-2"
+                >
+                  <Phone size={15} /> {COMPANY_INFO.phone}
+                </a>
               </div>
-              <div className="flex items-center gap-1.5 bg-slate-800/80 px-3 py-1.5 rounded border border-slate-700">
-                <ShieldCheck size={14} className="text-[#D31219]" />
-                <span>Normas ABNT NBR 15758</span>
+
+              <div className="flex items-center gap-2 text-xs text-slate-400 mt-4 pt-3 border-t border-slate-800/80">
+                <MapPin size={13} className="text-[#D31219] shrink-0" />
+                <span>Centro de Distribuição: {COMPANY_INFO.address}</span>
               </div>
             </div>
 
-            <div className="flex flex-wrap gap-3">
-              <a
-                href={`https://wa.me/${COMPANY_INFO.whatsapp}?text=Olá! Gostaria de um orçamento para ${serviceName} em ${formattedName}`}
-                className="bg-[#D31219] hover:bg-red-700 text-white font-semibold px-5 py-2.5 rounded text-xs uppercase tracking-wider transition-colors flex items-center justify-center gap-2"
-              >
-                <MessageCircle size={15} /> Solicitar Cotação
-              </a>
-              <a
-                href={`tel:${COMPANY_INFO.phone.replace(/\D/g, '')}`}
-                className="bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold px-4 py-2.5 rounded text-xs uppercase tracking-wider transition-colors border border-slate-700 flex items-center justify-center gap-2"
-              >
-                <Phone size={15} /> {COMPANY_INFO.phone}
-              </a>
+            {/* Right Storefront Image with High Visibility */}
+            <div className="lg:col-span-5">
+              <div className="relative rounded-lg overflow-hidden border border-slate-700/80 bg-slate-800 shadow-2xl">
+                <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-950">
+                  <img
+                    src={SITE_ASSETS.storefront}
+                    alt="Fachada da loja KY Drywall & Steel Frame na Rodovia BR-277 Cajuru Curitiba"
+                    className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500 block"
+                    loading="eager"
+                  />
+                  <div className="absolute top-3 left-3 bg-slate-900/90 backdrop-blur-sm border border-slate-700 px-2.5 py-1 rounded text-[11px] font-semibold text-white flex items-center gap-1.5 shadow">
+                    <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
+                    Loja Física & Showroom Real
+                  </div>
+                  <div className="absolute top-3 right-3 bg-[#D31219] text-white px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider shadow">
+                    Curitiba - PR
+                  </div>
+                </div>
+
+                <div className="p-3.5 sm:p-4 bg-slate-900 border-t border-slate-800">
+                  <div className="flex items-start justify-between gap-3">
+                    <div>
+                      <h3 className="text-xs font-bold text-white uppercase tracking-wider">
+                        KY Drywall & Steel Frame
+                      </h3>
+                      <p className="text-[11px] text-slate-400 mt-0.5 leading-snug">
+                        Rod. BR-277, 3641 - Cajuru • Expedição diária e pronta entrega para {formattedName}
+                      </p>
+                    </div>
+                    <a
+                      href={COMPANY_INFO.mapsUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="shrink-0 px-2.5 py-1.5 rounded bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white border border-slate-700 transition-colors text-xs flex items-center gap-1.5"
+                      title="Ver rota no Google Maps"
+                    >
+                      <MapPin size={13} className="text-[#D31219]" />
+                      <span className="text-[10px] font-semibold">Como Chegar</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <div className="container mx-auto px-4 py-12 max-w-5xl">
+      <div className="container mx-auto px-4 py-12 max-w-6xl">
         <div className="flex flex-col lg:flex-row gap-10">
           <div className="lg:w-2/3 space-y-12">
             <div>

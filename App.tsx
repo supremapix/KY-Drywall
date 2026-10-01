@@ -69,6 +69,8 @@ export const AppContent: React.FC = () => {
             <Route path="/steel-frame-em/:location" element={<LocationPage type="steel" />} />
             <Route path="/localizacao/:location" element={<LocationPage type="drywall" />} />
             <Route path="/sitemap" element={<Sitemap />} />
+            <Route path="/mapa-do-site" element={<Sitemap />} />
+            <Route path="/mapa-site" element={<Sitemap />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
