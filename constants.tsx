@@ -685,7 +685,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     id: 'b1',
     title: 'Steel Frame: A revolução na construção civil em Curitiba',
-    excerpt: 'Descubra como o Steel Frame está transformando a construção em Curitiba com obras até 70% mais rápidas e sustentáveis.',
+    excerpt: 'Descubra como o Steel Frame está transformando a construção em Curitiba com obras até 70% mais rápidas, sustentáveis e precisas.',
     img: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/projeto-stell-frame.png-bAiwJLHNjOpiURXX8I0tGfLyNCau5x.jpeg',
     tag: 'Steel Frame',
     date: 'Jan 2025'
@@ -693,18 +693,50 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     id: 'b2',
     title: 'Drywall: Isolamento acústico e térmico para seu conforto',
-    excerpt: 'Conheça as vantagens do drywall para projetos residenciais e comerciais. Acabamento perfeito e isolamento superior.',
+    excerpt: 'Conheça as vantagens do drywall para projetos residenciais e comerciais em Curitiba. Acabamento perfeito e isolamento acústico superior.',
     img: '/forro-e-parede-em-drywall.jpeg',
     tag: 'Drywall',
     date: 'Dez 2024'
   },
   {
     id: 'b3',
-    title: 'Telhado Shingle: Beleza e proteção para sua casa',
-    excerpt: 'Saiba por que o telhado shingle é a escolha ideal para quem busca estética, durabilidade e estanqueidade absoluta.',
+    title: 'Telhado Shingle: Beleza e proteção contra intempéries',
+    excerpt: 'Saiba por que o telhado shingle é a escolha ideal para quem busca estética moderna, resistência a vendavais e estanqueidade absoluta no Paraná.',
     img: '/telhado-shingle.jpg',
     tag: 'Telhado',
     date: 'Nov 2024'
+  },
+  {
+    id: 'b4',
+    title: 'Quanto Custa Construir em Steel Frame em Curitiba? Guia de Custos e Economia Real',
+    excerpt: 'Análise detalhada de custos por metro quadrado de obras em Steel Frame em Curitiba e RMC. Entenda o comparativo real com a alvenaria, economia em fundações e retorno do investimento.',
+    img: 'https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=800',
+    tag: 'Custos & Economia',
+    date: 'Fev 2025'
+  },
+  {
+    id: 'b5',
+    title: '7 Curiosidades e Fatos do Steel Frame que Você Precisa Saber Antes de Construir',
+    excerpt: 'Descubra dados surpreendentes do Light Steel Framing: resistência a vendavais, durabilidade de mais de 100 anos do aço galvanizado Z180, conforto no inverno curitibano e manutenção descomplicada.',
+    img: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/projeto-stell-frame.png-bAiwJLHNjOpiURXX8I0tGfLyNCau5x.jpeg',
+    tag: 'Curiosidades & Engenharia',
+    date: 'Mar 2025'
+  },
+  {
+    id: 'b6',
+    title: 'Guia Passo a Passo da Obra em Steel Frame: Do Radier ao Acabamento',
+    excerpt: 'Conheça o cronograma executivo detalhado de uma construção industrializada a seco: dimensionamento estrutural, montagem de painéis, barreiras hidrófugas, isolamento e fechamento.',
+    img: 'https://images.pexels.com/photos/8092357/pexels-photo-8092357.jpeg?auto=compress&cs=tinysrgb&w=800',
+    tag: 'Guia Executivo',
+    date: 'Abr 2025'
+  },
+  {
+    id: 'b7',
+    title: 'Como a KY Drywall Otimiza sua Obra a Seco em Curitiba e Região Metropolitana',
+    excerpt: 'Descubra como o centro de distribuição da KY Drywall na BR-277 reduz custos de canteiro através de estoque permanente a pronta entrega, memorial de cálculo de quantitativos e logística ágil.',
+    img: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ky-loja-cajuru-drywall-stell-fame.png-CAi9KHi0wcqQLptb0qLFGSWQZaXr98.jpeg',
+    tag: 'Distribuição & Logística',
+    date: 'Mai 2025'
   }
 ];
 

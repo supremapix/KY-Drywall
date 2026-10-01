@@ -7,7 +7,13 @@ import EnhancedSEO from '../components/EnhancedSEO';
 
 const Blog: React.FC = () => {
   const { postId } = useParams<{ postId?: string }>();
+  const [selectedTag, setSelectedTag] = React.useState<string>('Todos');
   const currentPost = postId ? BLOG_POSTS.find(p => p.id === postId) : null;
+
+  const allTags = ['Todos', ...Array.from(new Set(BLOG_POSTS.map(p => p.tag)))];
+  const filteredPosts = selectedTag === 'Todos'
+    ? BLOG_POSTS
+    : BLOG_POSTS.filter(p => p.tag === selectedTag);
 
   if (currentPost) {
     return (
@@ -168,31 +174,55 @@ const Blog: React.FC = () => {
 
       {/* Featured Posts */}
       <section className="py-14">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <div className="flex items-center gap-2 mb-6 text-slate-900 font-bold text-base">
-            <TrendingUp size={18} className="text-[#D31219]" />
-            <span>Matérias Técnicas em Destaque</span>
+        <div className="container mx-auto px-4 max-w-6xl">
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
+            <div className="flex items-center gap-2 text-slate-900 font-bold text-base sm:text-lg">
+              <TrendingUp size={20} className="text-[#D31219]" />
+              <span>Artigos Técnicos & Guias de Engenharia</span>
+            </div>
+
+            {/* Tag Filter Pills */}
+            <div className="flex flex-wrap gap-1.5">
+              {allTags.map((tag) => (
+                <button
+                  key={tag}
+                  onClick={() => setSelectedTag(tag)}
+                  className={`px-3 py-1.5 rounded text-xs font-semibold uppercase tracking-wider transition-colors ${
+                    selectedTag === tag
+                      ? 'bg-[#D31219] text-white'
+                      : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
+                  }`}
+                >
+                  {tag}
+                </button>
+              ))}
+            </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {BLOG_POSTS.map((post, i) => (
-              <div key={i} className="bg-white rounded border border-slate-200 overflow-hidden flex flex-col justify-between hover:border-slate-400 transition-colors">
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {filteredPosts.map((post, i) => (
+              <div key={i} className="bg-white rounded-lg border border-slate-200 overflow-hidden flex flex-col justify-between hover:border-slate-400 hover:shadow-md transition-all group">
                 <div>
-                  <div className="aspect-video relative overflow-hidden border-b border-slate-100">
-                    <img src={post.img} alt={post.title} className="w-full h-full object-cover" />
-                    <span className="absolute top-3 right-3 bg-slate-900/90 text-white text-[10px] font-semibold px-2 py-0.5 rounded uppercase tracking-wider">
+                  <div className="aspect-video relative overflow-hidden border-b border-slate-100 bg-slate-900">
+                    <img src={post.img} alt={post.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                    <span className="absolute top-3 right-3 bg-slate-900/90 backdrop-blur-sm text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider">
                       {post.tag}
                     </span>
                   </div>
                   <div className="p-5">
                     <div className="flex items-center gap-1.5 text-slate-400 text-xs mb-2 font-medium">
-                      <Clock size={12} /> {post.date}
+                      <Clock size={12} className="text-[#D31219]" /> {post.date}
                     </div>
-                    <h3 className="text-sm font-bold text-slate-900 mb-2 leading-snug">{post.title}</h3>
-                    <p className="text-slate-600 text-xs mb-4 leading-relaxed line-clamp-3">{post.excerpt}</p>
+                    <h3 className="text-sm font-bold text-slate-900 mb-2 leading-snug group-hover:text-[#D31219] transition-colors line-clamp-2">
+                      {post.title}
+                    </h3>
+                    <p className="text-slate-600 text-xs mb-4 leading-relaxed line-clamp-3">
+                      {post.excerpt}
+                    </p>
                   </div>
                 </div>
                 <div className="p-5 pt-0">
-                  <Link to={`/blog/${post.id}`} className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#D31219] hover:text-red-700 transition-colors">
+                  <Link to={`/blog/${post.id}`} className="inline-flex items-center gap-1.5 text-xs font-bold text-[#D31219] hover:text-red-700 transition-colors uppercase tracking-wider">
                     Ler Artigo Completo <ArrowRight size={13} />
                   </Link>
                 </div>
