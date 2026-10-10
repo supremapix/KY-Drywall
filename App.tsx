@@ -47,10 +47,10 @@ export const AppContent: React.FC = () => {
   return (
     <>
       <ScrollToTop />
-      <div className="flex flex-col min-h-screen">
+      <div className="flex flex-col min-h-screen overflow-x-hidden bg-white text-slate-900 font-sans antialiased">
         {!isLinksPage && <Header />}
         
-        <main className="flex-grow">
+        <main className="flex-grow pb-28 md:pb-12">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/links" element={<LinksPage />} />

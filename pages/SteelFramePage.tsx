@@ -146,62 +146,65 @@ const SteelFramePage: React.FC = () => {
       />
 
       {/* Hero Section */}
-      <section className="relative min-h-[80vh] flex items-center bg-slate-950 overflow-hidden">
+      <section className="relative min-h-[75vh] flex items-center bg-slate-950 text-white overflow-hidden py-16 lg:py-24 bg-[radial-gradient(#334155_1px,transparent_1px)] [background-size:20px_20px]">
         <div className="absolute inset-0 z-0">
           <img
             src={STEEL_FRAME_IMAGES.hero}
             alt="Projeto Steel Frame KY Drywall - Estrutura metálica galvanizada"
-            className="w-full h-full object-cover opacity-35"
+            className="w-full h-full object-cover opacity-30"
+            onError={(e) => {
+              (e.target as HTMLImageElement).src = 'https://via.placeholder.com/1200x800?text=STEEL+FRAME+KY+DRYWALL';
+            }}
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/85 to-slate-950/40" />
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/90 to-slate-950/60" />
         </div>
 
-        <div className="container mx-auto px-4 lg:px-8 relative z-10 py-20">
-          <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-white/10 border border-white/15 text-white text-xs font-semibold uppercase tracking-wider mb-6">
+        <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 relative z-10 py-12 w-full text-center md:text-left">
+          <div className="max-w-3xl mx-auto md:mx-0">
+            <div className="inline-flex items-center justify-center md:justify-start gap-2 px-3.5 py-1.5 rounded-md bg-slate-900 border border-slate-800 text-white text-xs font-mono font-bold uppercase tracking-wider mb-6">
               <span className="w-2 h-2 rounded-full bg-[#D31219]"></span>
-              Engenharia e Construção a Seco
+              <span>01 — ENGENHARIA E CONSTRUÇÃO A SECO</span>
             </div>
 
-            <h1 className="text-4xl sm:text-6xl font-bold text-white tracking-tight leading-[1.1] mb-6">
+            <h1 className="text-4xl sm:text-6xl font-black text-white tracking-tight leading-[1.1] mb-6">
               Sistemas Construtivos em <span className="text-[#D31219]">Steel Frame</span>
             </h1>
 
-            <p className="text-base sm:text-lg text-slate-300 font-normal leading-relaxed max-w-2xl mb-10">
+            <p className="text-base sm:text-lg text-slate-300 font-normal leading-relaxed max-w-2xl mb-10 mx-auto md:mx-0">
               Construção industrializada com perfis de aço galvanizado Barbieri Z180. Sua obra até{' '}
-              <strong className="text-white font-semibold">70% mais rápida</strong>, sustentável e com projeto executivo calculado.
+              <strong className="text-white font-bold">70% mais rápida</strong>, sustentável e com projeto executivo calculado.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 mb-14">
+            <div className="flex flex-col sm:flex-row gap-4 mb-12 justify-center md:justify-start">
               <a
                 href="https://wa.me/5541996457421?text=Olá! Gostaria de consultar projeto e valores para Steel Frame."
                 target="_blank"
                 rel="noreferrer"
-                className="bg-[#D31219] text-white font-semibold px-8 py-4 rounded flex items-center justify-center gap-2.5 hover:bg-red-700 transition-colors text-sm shadow-sm"
+                className="w-full sm:w-auto bg-[#D31219] text-white font-bold px-8 py-4 rounded-xl flex items-center justify-center gap-2.5 hover:bg-red-700 transition-colors text-sm shadow-md min-h-[52px]"
               >
-                <MessageCircle size={18} />
-                Solicitar Cotação no WhatsApp
+                <MessageCircle size={20} />
+                <span>Solicitar Cotação no WhatsApp</span>
               </a>
               <a
                 href="tel:+554135284232"
-                className="bg-white/10 text-white font-semibold px-8 py-4 rounded flex items-center justify-center gap-2.5 border border-white/20 hover:bg-white/20 transition-colors text-sm backdrop-blur-sm"
+                className="w-full sm:w-auto bg-slate-900/80 text-white font-bold px-8 py-4 rounded-xl flex items-center justify-center gap-2.5 border border-slate-700 hover:bg-slate-800 transition-colors text-sm min-h-[52px]"
               >
-                <Phone size={18} />
-                (41) 3528-4232
+                <Phone size={20} />
+                <span>Ligar (41) 3528-4232</span>
               </a>
             </div>
 
             {/* Quick stats */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
               {[
                 { value: '70%', label: 'Mais Rápido que Alvenaria' },
                 { value: '90%', label: 'Menos Resíduos no Canteiro' },
                 { value: '40%', label: 'Mais Leve na Fundação' },
                 { value: 'NBR 15253', label: 'Norma Técnica Atendida' },
               ].map((stat) => (
-                <div key={stat.label} className="bg-white/5 border border-white/10 rounded p-4 text-left">
-                  <div className="text-2xl font-bold text-[#D31219]">{stat.value}</div>
-                  <div className="text-[11px] font-medium text-slate-400 mt-1">{stat.label}</div>
+                <div key={stat.label} className="bg-slate-900/80 border border-slate-800 rounded-xl p-4">
+                  <div className="text-2xl font-black text-[#D31219]">{stat.value}</div>
+                  <div className="text-xs font-bold text-slate-300 mt-1">{stat.label}</div>
                 </div>
               ))}
             </div>

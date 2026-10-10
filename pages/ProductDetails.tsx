@@ -87,23 +87,26 @@ const ProductDetails: React.FC = () => {
         canonical={`${BASE_URL}/produto/${product.id}`} ogImage={product.image} ogType="product"
         schema={{ '@type': 'Product', name: product.name, description: product.description,
           image: new URL(product.image, BASE_URL).href, url: `${BASE_URL}/produto/${product.id}` }} />
-      <div className="container mx-auto px-4">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
         {/* Breadcrumbs */}
-        <div className="flex items-center gap-2 text-[10px] font-black uppercase text-gray-400 mb-10 tracking-[0.2em]">
+        <div className="flex items-center gap-2 text-xs font-bold uppercase text-slate-500 mb-8 tracking-wider flex-wrap">
           <Link to="/" className="hover:text-[#D31219]">Home</Link>
-          <ChevronRight size={12} />
+          <ChevronRight size={14} />
           <Link to="/produtos" className="hover:text-[#D31219]">Produtos</Link>
-          <ChevronRight size={12} />
-          <span className="text-gray-900 truncate">{product.name}</span>
+          <ChevronRight size={14} />
+          <span className="text-slate-900 truncate">{product.name}</span>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 mb-16">
           <div className="lg:col-span-6 space-y-4">
-            <div className="aspect-square rounded-lg overflow-hidden bg-slate-50 border border-slate-200">
+            <div className="aspect-square rounded-2xl overflow-hidden bg-slate-50 border border-slate-200 shadow-sm flex items-center justify-center p-4">
               <img 
                 src={product.image} 
                 alt={product.name} 
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain"
+                onError={(e) => {
+                  (e.target as HTMLImageElement).src = 'https://via.placeholder.com/600x600?text=KY+DRYWALL';
+                }}
               />
             </div>
             

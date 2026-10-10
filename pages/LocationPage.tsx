@@ -100,109 +100,71 @@ const LocationPage: React.FC<LocationPageProps> = ({ type }) => {
         schema={schema}
       />
 
-      {/* Hero Section with High-Visibility Store Facade Image */}
-      <section className="bg-slate-900 py-10 md:py-14 text-white border-b border-slate-800">
-        <div className="container mx-auto px-4 max-w-6xl">
-          <div className="flex items-center gap-1.5 text-xs text-slate-400 mb-6 font-medium">
+      {/* Hero Section with Technical Pattern */}
+      <section className="bg-slate-950 py-16 md:py-24 text-white relative overflow-hidden bg-[radial-gradient(#334155_1px,transparent_1px)] [background-size:20px_20px]">
+        <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 relative z-10">
+          <div className="flex items-center justify-center lg:justify-start gap-1.5 text-xs text-slate-400 mb-8 font-bold uppercase tracking-wider">
             <Link to="/" className="hover:text-white flex items-center gap-1 transition-colors">
-              <Home size={13} /> Início
+              Início
             </Link>
-            <ChevronRight size={11} />
-            <Link to="/blog" className="hover:text-white transition-colors">Atendimento Regional</Link>
-            <ChevronRight size={11} />
-            <span className="text-slate-200 font-semibold">{formattedName}</span>
+            <ChevronRight size={11} className="text-[#D31219]" />
+            <span className="text-slate-200">{formattedName}</span>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Left Content Column */}
-            <div className="lg:col-span-7">
-              <div className="inline-flex items-center gap-2 bg-red-950/70 border border-red-800/80 px-3 py-1 rounded text-xs font-semibold text-red-300 uppercase tracking-wider mb-3.5">
-                <span className="w-2 h-2 rounded-full bg-[#D31219] inline-block"></span>
-                Distribuição & Especificação Técnica em {formattedName}
+            <div className="lg:col-span-7 text-center lg:text-left">
+              <div className="inline-flex items-center gap-2 bg-[#D31219]/10 border border-[#D31219]/30 px-3 py-1 rounded text-xs font-bold text-[#D31219] uppercase tracking-wider mb-6">
+                <span>01 — ATENDIMENTO EM {formattedName}</span>
               </div>
 
-              <h1 className="text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-4 leading-tight">
+              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.1] mb-6">
                 {serviceName} em <span className="text-white">{formattedName}</span>
               </h1>
 
-              <p className="text-sm sm:text-base text-slate-300 font-normal leading-relaxed mb-6">
-                Distribuição autorizada e estoque permanente de chapas, perfis normatizados, fitas, massas e isolamentos para obras em <strong className="text-white font-semibold">{formattedName}</strong> e região. Expedição diária a partir da nossa loja e centro de distribuição em Curitiba (Rod. BR-277, Cajuru), com consultoria técnica e cálculo de quantitativos para instaladores e engenheiros.
+              <p className="text-slate-400 text-lg sm:text-xl leading-relaxed mb-10 max-w-2xl mx-auto lg:mx-0">
+                Distribuição autorizada e estoque permanente de chapas, perfis normatizados e isolamentos para obras em <strong className="text-white font-bold">{formattedName}</strong>. Expedição diária a partir do nosso CD no Cajuru.
               </p>
 
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 mb-6 text-xs text-slate-200">
-                <div className="flex items-center gap-2 bg-slate-800/90 px-3 py-2 rounded border border-slate-700">
-                  <Truck size={15} className="text-[#D31219] shrink-0" />
-                  <span className="font-medium">Logística para {formattedName}</span>
-                </div>
-                <div className="flex items-center gap-2 bg-slate-800/90 px-3 py-2 rounded border border-slate-700">
-                  <Building2 size={15} className="text-[#D31219] shrink-0" />
-                  <span className="font-medium">Estoque Próprio & CD</span>
-                </div>
-                <div className="flex items-center gap-2 bg-slate-800/90 px-3 py-2 rounded border border-slate-700">
-                  <ShieldCheck size={15} className="text-[#D31219] shrink-0" />
-                  <span className="font-medium">Normas ABNT NBR</span>
-                </div>
-              </div>
-
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-col sm:flex-row flex-wrap gap-4 justify-center lg:justify-start">
                 <a
                   href={`https://wa.me/${COMPANY_INFO.whatsapp}?text=Olá! Gostaria de um orçamento para ${serviceName} em ${formattedName}`}
-                  className="bg-[#D31219] hover:bg-red-700 text-white font-semibold px-5 py-3 rounded text-xs uppercase tracking-wider transition-colors flex items-center justify-center gap-2 shadow-lg shadow-red-900/20"
+                  className="bg-[#D31219] hover:bg-red-700 text-white font-black px-8 py-4 rounded-xl text-sm uppercase tracking-widest transition-all flex items-center justify-center gap-3 shadow-lg active:scale-[0.98]"
                 >
-                  <MessageCircle size={16} /> Solicitar Cotação no WhatsApp
+                  <MessageCircle size={20} /> Orçamento no WhatsApp
                 </a>
                 <a
                   href={`tel:${COMPANY_INFO.phone.replace(/\D/g, '')}`}
-                  className="bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold px-4 py-3 rounded text-xs uppercase tracking-wider transition-colors border border-slate-700 flex items-center justify-center gap-2"
+                  className="bg-slate-900 hover:bg-slate-800 text-white font-bold px-8 py-4 rounded-xl text-sm uppercase tracking-widest transition-all border-2 border-slate-800 flex items-center justify-center gap-3 active:scale-[0.98]"
                 >
-                  <Phone size={15} /> {COMPANY_INFO.phone}
+                  <Phone size={18} /> {COMPANY_INFO.phone}
                 </a>
-              </div>
-
-              <div className="flex items-center gap-2 text-xs text-slate-400 mt-4 pt-3 border-t border-slate-800/80">
-                <MapPin size={13} className="text-[#D31219] shrink-0" />
-                <span>Centro de Distribuição: {COMPANY_INFO.address}</span>
               </div>
             </div>
 
-            {/* Right Storefront Image with High Visibility */}
+            {/* Right Storefront Image */}
             <div className="lg:col-span-5">
-              <div className="relative rounded-lg overflow-hidden border border-slate-700/80 bg-slate-800 shadow-2xl">
+              <div className="relative rounded-2xl overflow-hidden border border-slate-800 bg-slate-900 shadow-2xl">
                 <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-950">
                   <img
                     src={SITE_ASSETS.storefront}
-                    alt="Fachada da loja KY Drywall & Steel Frame na Rodovia BR-277 Cajuru Curitiba"
-                    className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-500 block"
-                    loading="eager"
+                    alt="Fachada KY Drywall Curitiba"
+                    className="w-full h-full object-cover"
+                    onError={(e) => (e.target as HTMLImageElement).src = 'https://images.pexels.com/photos/159306/construction-site-build-construction-structure-159306.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'}
                   />
-                  <div className="absolute top-3 left-3 bg-slate-900/90 backdrop-blur-sm border border-slate-700 px-2.5 py-1 rounded text-[11px] font-semibold text-white flex items-center gap-1.5 shadow">
-                    <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
-                    Loja Física & Showroom Real
-                  </div>
-                  <div className="absolute top-3 right-3 bg-[#D31219] text-white px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider shadow">
-                    Curitiba - PR
-                  </div>
-                </div>
-
-                <div className="p-3.5 sm:p-4 bg-slate-900 border-t border-slate-800">
-                  <div className="flex items-start justify-between gap-3">
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 to-transparent"></div>
+                  <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between">
                     <div>
-                      <h3 className="text-xs font-bold text-white uppercase tracking-wider">
-                        KY Drywall & Steel Frame
-                      </h3>
-                      <p className="text-[11px] text-slate-400 mt-0.5 leading-snug">
-                        Rod. BR-277, 3641 - Cajuru • Expedição diária e pronta entrega para {formattedName}
-                      </p>
+                      <p className="text-[10px] font-black uppercase tracking-widest text-[#D31219] mb-1">Loja Física & CD</p>
+                      <h3 className="text-sm font-bold text-white">Curitiba - BR-277</h3>
                     </div>
                     <a
                       href={COMPANY_INFO.mapsUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="shrink-0 px-2.5 py-1.5 rounded bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white border border-slate-700 transition-colors text-xs flex items-center gap-1.5"
-                      title="Ver rota no Google Maps"
+                      className="bg-white/10 backdrop-blur-md hover:bg-white/20 text-white p-2 rounded-lg transition-all border border-white/10"
                     >
-                      <MapPin size={13} className="text-[#D31219]" />
-                      <span className="text-[10px] font-semibold">Como Chegar</span>
+                      <ExternalLink size={18} />
                     </a>
                   </div>
                 </div>
@@ -212,72 +174,77 @@ const LocationPage: React.FC<LocationPageProps> = ({ type }) => {
         </div>
       </section>
 
-      <div className="container mx-auto px-4 py-12 max-w-6xl">
-        <div className="flex flex-col lg:flex-row gap-10">
-          <div className="lg:w-2/3 space-y-12">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-16 lg:py-24">
+        <div className="flex flex-col lg:flex-row gap-16">
+          <div className="lg:w-2/3 space-y-20">
             <div>
-              <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-slate-900 mb-6">
-                Vantagens e Logística em {formattedName}
+              <div className="inline-flex items-center gap-2 text-[#D31219] text-xs font-mono font-bold uppercase tracking-wider mb-6">
+                <span>02 — VANTAGENS LOGÍSTICAS</span>
+              </div>
+              <h2 className="text-2xl sm:text-4xl font-black tracking-tight text-slate-900 mb-10 text-center md:text-left">
+                Eficiência para Obras em {formattedName}
               </h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {[
                   {
-                    title: `Entrega Programada em ${formattedName}`,
+                    title: `Entrega em ${formattedName}`,
                     icon: Truck,
-                    text: `Frota própria e logística ágil para transporte com integridade de placas, perfis de até 3m e compostos pastosos.`
+                    text: `Logística ágil para transporte de placas e perfis com integridade total.`
                   },
                   {
-                    title: `Cálculo de Quantitativo`,
+                    title: `Cálculo Técnico`,
                     icon: HardHat,
-                    text: `Nossa equipe técnica apoia o levantamento preciso de montantes, parafusos e fitas para evitar sobras.`
+                    text: `Apoio no levantamento preciso de montantes e fixadores para evitar desperdício.`
                   },
                   {
                     title: `Marcas Homologadas`,
                     icon: Package,
-                    text: `Trabalhamos com marcas de referência nacional com laudos técnicos de conformidade e garantia de fábrica.`
+                    text: `Trabalhamos com marcas de referência com laudos técnicos de conformidade.`
                   },
                   {
-                    title: `Eficiência e Agilidade`,
+                    title: `Rapidez de Montagem`,
                     icon: Zap,
-                    text: `A montagem a seco reduz o cronograma da obra em até 70% sem sobrecarga na estrutura predial.`
+                    text: `A construção a seco reduz o cronograma da obra em até 70% comparado à alvenaria.`
                   },
                   {
-                    title: `Garantia e Laudos`,
+                    title: `Normas ABNT`,
                     icon: ShieldCheck,
-                    text: `Atendimento integral às normas ABNT NBR 15758 (Drywall) e ABNT NBR 16970 (Light Steel Framing).`
+                    text: `Atendimento integral às normas NBR 15758 (Drywall) e NBR 16970 (Steel Frame).`
                   },
                   {
-                    title: `Resíduo Mínimo`,
+                    title: `Obra Limpa`,
                     icon: Recycle,
-                    text: `Construção sustentável com aço reciclável e gesso reutilizável, gerando até 80% menos entulho.`
+                    text: `Sistema sustentável que gera até 80% menos entulho no canteiro.`
                   }
                 ].map((item, i) => (
-                  <div key={i} className="p-4 rounded border border-slate-200 bg-white flex flex-col justify-between">
-                    <div className="flex items-center gap-2.5 mb-2.5">
-                      <div className="p-2 rounded bg-slate-100 text-[#D31219] shrink-0">
-                        <item.icon size={18} />
+                  <div key={i} className="p-6 rounded-xl border border-slate-200 bg-white hover:border-[#D31219]/20 transition-all shadow-sm">
+                    <div className="flex items-center gap-4 mb-4">
+                      <div className="w-10 h-10 rounded-lg bg-slate-50 text-[#D31219] flex items-center justify-center shrink-0 border border-slate-100">
+                        <item.icon size={20} />
                       </div>
-                      <h3 className="text-xs font-bold text-slate-900 leading-snug">{item.title}</h3>
+                      <h3 className="text-base font-bold text-slate-900 leading-tight">{item.title}</h3>
                     </div>
-                    <p className="text-xs text-slate-600 leading-relaxed">{item.text}</p>
+                    <p className="text-sm text-slate-600 leading-relaxed">{item.text}</p>
                   </div>
                 ))}
               </div>
             </div>
 
             <div>
-              <div className="flex items-center justify-between mb-4 border-b border-slate-100 pb-3">
-                <div>
-                  <h2 className="text-lg sm:text-xl font-bold text-slate-900">
-                    Materiais em Destaque para {formattedName}
+              <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10 border-b border-slate-100 pb-6">
+                <div className="text-center sm:text-left">
+                  <div className="inline-flex items-center gap-2 text-[#D31219] text-xs font-mono font-bold uppercase tracking-wider mb-3">
+                    <span>03 — MATERIAIS</span>
+                  </div>
+                  <h2 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
+                    Destaques para {formattedName}
                   </h2>
-                  <p className="text-xs text-slate-500">Insumos homologados disponíveis para expedição imediata.</p>
                 </div>
-                <Link to="/produtos" className="text-xs font-semibold text-[#D31219] hover:text-red-700">
-                  Ver Todos →
+                <Link to="/produtos" className="text-sm font-bold text-[#D31219] hover:underline uppercase tracking-widest text-center">
+                  Ver Catálogo Completo →
                 </Link>
               </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {featuredProducts.map(product => (
                   <ProductCard key={product.id} product={product} />
                 ))}
@@ -285,152 +252,79 @@ const LocationPage: React.FC<LocationPageProps> = ({ type }) => {
             </div>
 
             {/* In-page CTA */}
-            <div className="bg-slate-900 p-6 sm:p-8 rounded text-white border border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-6">
-              <div>
-                <span className="text-[#D31219] text-[10px] font-bold uppercase tracking-wider block mb-1">Cotação Rápida</span>
-                <h3 className="text-lg font-bold mb-1">
-                  Orçamento de {serviceName} para {formattedName}
-                </h3>
-                <p className="text-xs text-slate-300 max-w-md">
-                  Envie sua lista de medidas ou projeto arquitetônico. Retornamos com quantitativo e custos de frete.
-                </p>
-              </div>
-              <div className="flex items-center gap-2 shrink-0">
-                <a
-                  href={`https://wa.me/${COMPANY_INFO.whatsapp}?text=Olá! Gostaria de um orçamento para ${serviceName} em ${formattedName}. Preciso de assessoria técnica.`}
-                  className="bg-[#D31219] hover:bg-red-700 text-white text-xs font-semibold uppercase tracking-wider px-5 py-2.5 rounded transition-colors flex items-center gap-2"
-                >
-                  <MessageCircle size={15} /> WhatsApp
-                </a>
-                <a
-                  href={`tel:${COMPANY_INFO.phone.replace(/\D/g, '')}`}
-                  className="bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold uppercase tracking-wider px-4 py-2.5 rounded border border-slate-700 transition-colors flex items-center gap-1.5"
-                >
-                  <Phone size={14} /> Ligar
-                </a>
-              </div>
-            </div>
-
-            {/* Servicos */}
-            <div>
-              <h2 className="text-lg sm:text-xl font-bold text-slate-900 mb-4">
-                Sistemas e Soluções Construtivas
-              </h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {SERVICES.map(service => (
-                  <Link
-                    key={service.id}
-                    to={`/servicos/${service.id}`}
-                    className="p-4 rounded border border-slate-200 bg-white hover:border-slate-400 transition-colors flex flex-col justify-between"
+            <div className="bg-slate-900 p-8 md:p-12 rounded-2xl text-white relative overflow-hidden group">
+              <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#334155_1px,transparent_1px)] [background-size:20px_20px]"></div>
+              <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-10">
+                <div className="text-center md:text-left">
+                  <span className="text-[#D31219] text-[10px] font-black uppercase tracking-[0.2em] block mb-3">Cotação Imediata</span>
+                  <h3 className="text-2xl sm:text-3xl font-black mb-4 leading-tight">
+                    Orçamento de {serviceName} para {formattedName}
+                  </h3>
+                  <p className="text-slate-400 text-base max-w-md leading-relaxed">
+                    Envie seu projeto ou lista de medidas. Retornamos com o quantitativo exato e custos de logística.
+                  </p>
+                </div>
+                <div className="flex flex-col gap-3 shrink-0">
+                  <a
+                    href={`https://wa.me/${COMPANY_INFO.whatsapp}?text=Olá! Gostaria de um orçamento para ${serviceName} em ${formattedName}.`}
+                    className="bg-[#D31219] hover:bg-red-700 text-white text-sm font-black uppercase tracking-widest px-8 py-4 rounded-xl transition-all flex items-center justify-center gap-3 shadow-lg active:scale-[0.98]"
                   >
-                    <div>
-                      <h3 className="text-sm font-bold text-slate-900 mb-1">{service.title}</h3>
-                      <p className="text-xs text-slate-600 line-clamp-2 leading-relaxed">
-                        {service.description.replace(/<[^>]*>/g, '')}
-                      </p>
-                    </div>
-                    <span className="text-xs font-semibold text-[#D31219] mt-3 inline-flex items-center gap-1">
-                      Ver detalhes <ChevronRight size={12} />
-                    </span>
-                  </Link>
-                ))}
-              </div>
-            </div>
-
-            {/* Informações de entrega */}
-            <div className="p-5 rounded border border-slate-200 bg-slate-50/70">
-              <h3 className="text-sm font-bold text-slate-900 mb-4 border-b border-slate-200 pb-2">
-                Diretrizes de Retirada & Expedição
-              </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs text-slate-700">
-                <div>
-                  <p className="font-semibold text-slate-900 mb-0.5">Endereço do Centro de Distribuição:</p>
-                  <p>{COMPANY_INFO.address}</p>
-                </div>
-                <div>
-                  <p className="font-semibold text-slate-900 mb-0.5">Horário de Expedição:</p>
-                  <p>{COMPANY_INFO.hours.weekdays} | {COMPANY_INFO.hours.saturday}</p>
-                </div>
-                <div>
-                  <p className="font-semibold text-slate-900 mb-0.5">Prazo Estimado para {formattedName}:</p>
-                  <p>Sob consulta no momento do pedido (expedições diárias).</p>
-                </div>
-                <div>
-                  <p className="font-semibold text-slate-900 mb-0.5">Central Telefônica:</p>
-                  <p>{COMPANY_INFO.phone} / WhatsApp: {COMPANY_INFO.whatsapp}</p>
+                    <MessageCircle size={18} /> WhatsApp
+                  </a>
+                  <a
+                    href={`tel:${COMPANY_INFO.phone.replace(/\D/g, '')}`}
+                    className="bg-slate-800 hover:bg-slate-700 text-white text-sm font-black uppercase tracking-widest px-8 py-4 rounded-xl border border-slate-700 transition-all flex items-center justify-center gap-3 active:scale-[0.98]"
+                  >
+                    <Phone size={18} /> Ligar Agora
+                  </a>
                 </div>
               </div>
             </div>
           </div>
 
           <aside className="lg:w-1/3">
-            <div className="sticky top-24 space-y-6">
+            <div className="sticky top-24 space-y-8">
               {/* Contact Card */}
-              <div className="bg-slate-900 p-5 rounded border border-slate-800 text-white">
-                <h4 className="text-sm font-bold text-white mb-3 border-b border-slate-800 pb-2 flex items-center gap-2">
-                  <Phone size={15} className="text-[#D31219]" />
-                  Central de Atendimento
+              <div className="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
+                <h4 className="text-sm font-black text-slate-900 uppercase tracking-widest mb-6 flex items-center gap-3">
+                  <Phone size={18} className="text-[#D31219]" />
+                  Central Curitiba
                 </h4>
-                <div className="space-y-3 text-xs text-slate-300 mb-5">
+                <div className="space-y-6 mb-8">
                   <div>
-                    <span className="text-[10px] uppercase font-semibold text-slate-400 block">Telefone</span>
-                    <a href={`tel:${COMPANY_INFO.phone.replace(/\D/g, '')}`} className="font-bold text-white hover:text-[#D31219]">
+                    <span className="text-[10px] uppercase font-black text-slate-400 tracking-[0.15em] block mb-1">Telefone Principal</span>
+                    <a href={`tel:${COMPANY_INFO.phone.replace(/\D/g, '')}`} className="text-xl font-black text-slate-900 hover:text-[#D31219] transition-colors">
                       {COMPANY_INFO.phone}
                     </a>
                   </div>
                   <div>
-                    <span className="text-[10px] uppercase font-semibold text-slate-400 block">Horário</span>
-                    <p>{COMPANY_INFO.hours.weekdays}</p>
-                    <p>{COMPANY_INFO.hours.saturday}</p>
-                  </div>
-                  <div>
-                    <span className="text-[10px] uppercase font-semibold text-slate-400 block">Endereço</span>
-                    <p>{COMPANY_INFO.address}</p>
+                    <span className="text-[10px] uppercase font-black text-slate-400 tracking-[0.15em] block mb-1">Centro de Distribuição</span>
+                    <p className="text-sm text-slate-600 font-bold leading-relaxed">{COMPANY_INFO.address}</p>
                   </div>
                 </div>
                 <a
-                  href={`https://wa.me/${COMPANY_INFO.whatsapp}?text=Olá! Vim do site e gostaria de informações sobre ${serviceName} em ${formattedName}`}
-                  className="w-full bg-[#D31219] hover:bg-red-700 text-white text-xs font-semibold uppercase tracking-wider py-2.5 px-4 rounded transition-colors flex items-center justify-center gap-2"
+                  href={`https://wa.me/${COMPANY_INFO.whatsapp}?text=Olá! Gostaria de informações sobre ${serviceName} em ${formattedName}`}
+                  className="w-full bg-slate-950 hover:bg-slate-900 text-white text-xs font-black uppercase tracking-widest py-4 rounded-xl transition-all flex items-center justify-center gap-3 shadow-md"
                 >
-                  <MessageCircle size={15} /> Contatar via WhatsApp
+                  <MessageCircle size={18} /> Falar com Especialista
                 </a>
               </div>
 
-              {/* Bairros de Curitiba */}
-              <div className="bg-white p-5 rounded border border-slate-200">
-                <h4 className="text-xs font-bold text-slate-900 uppercase tracking-wider mb-3 border-b border-slate-100 pb-2 flex items-center gap-1.5">
-                  <MapPin size={14} className="text-[#D31219]" />
-                  Outros Bairros de Curitiba
+              {/* Bairros */}
+              <div className="bg-slate-50 p-8 rounded-2xl border border-slate-100">
+                <h4 className="text-xs font-black text-slate-900 uppercase tracking-widest mb-6 flex items-center gap-2">
+                  <MapPin size={16} className="text-[#D31219]" />
+                  Curitiba: Outras Regiões
                 </h4>
-                <div className="grid grid-cols-1 gap-1 max-h-[300px] overflow-y-auto pr-1 text-xs">
+                <div className="grid grid-cols-1 gap-2 max-h-[300px] overflow-y-auto pr-4 custom-scrollbar">
                   {NEIGHBORHOODS.map(n => (
                     <Link
                       key={n}
                       to={`/drywall-em/${normalizeLocationName(n)}`}
-                      className={`flex items-center justify-between py-1.5 px-2 rounded hover:bg-slate-50 transition-colors ${normalizeLocationName(n) === location ? 'bg-red-50 text-[#D31219] font-bold' : 'text-slate-600'}`}
+                      className={`flex items-center justify-between py-2 px-3 rounded-lg transition-all text-xs font-bold ${normalizeLocationName(n) === location ? 'bg-white text-[#D31219] shadow-sm border border-[#D31219]/10' : 'text-slate-500 hover:bg-white hover:text-slate-900'}`}
                     >
                       <span className="truncate">{n}</span>
-                      <ChevronRight size={12} className="text-slate-400 shrink-0" />
-                    </Link>
-                  ))}
-                </div>
-              </div>
-
-              {/* Cidades da RMC */}
-              <div className="bg-white p-5 rounded border border-slate-200">
-                <h4 className="text-xs font-bold text-slate-900 uppercase tracking-wider mb-3 border-b border-slate-100 pb-2 flex items-center gap-1.5">
-                  <MapPin size={14} className="text-[#003366]" />
-                  Cidades da Região Metropolitana
-                </h4>
-                <div className="grid grid-cols-1 gap-1 text-xs">
-                  {CITIES_RMC.map(c => (
-                    <Link
-                      key={c}
-                      to={`/drywall-em/${normalizeLocationName(c)}`}
-                      className={`flex items-center justify-between py-1.5 px-2 rounded hover:bg-slate-50 transition-colors ${normalizeLocationName(c) === location ? 'bg-red-50 text-[#D31219] font-bold' : 'text-slate-600'}`}
-                    >
-                      <span className="truncate">{c}</span>
-                      <ChevronRight size={12} className="text-slate-400 shrink-0" />
+                      <ChevronRight size={14} className={normalizeLocationName(n) === location ? 'text-[#D31219]' : 'text-slate-300'} />
                     </Link>
                   ))}
                 </div>

@@ -95,31 +95,31 @@ const ProductList: React.FC = () => {
         ogType="website"
         schema={itemListSchema}
       />
-      <div className="container mx-auto px-4">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
         
         {/* Banner de Categoria */}
-        <div className="bg-slate-900 rounded-lg p-8 sm:p-12 mb-10 relative overflow-hidden text-white border border-slate-800">
-          <div className="relative z-10 max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-[#D31219]/20 border border-[#D31219]/30 text-[#D31219] text-xs font-semibold uppercase tracking-wider mb-4">
-              Estoque Imediato em Curitiba
+        <div className="bg-slate-950 rounded-2xl p-6 sm:p-10 md:p-12 mb-10 relative overflow-hidden text-white border border-slate-800 text-center md:text-left bg-[radial-gradient(#334155_1px,transparent_1px)] [background-size:20px_20px]">
+          <div className="relative z-10 max-w-2xl mx-auto md:mx-0">
+            <div className="inline-flex items-center justify-center md:justify-start gap-2 px-3.5 py-1.5 rounded-md bg-slate-900 border border-slate-800 text-white text-xs font-mono font-bold uppercase tracking-wider mb-4">
+              <span>01 — ESTOQUE IMMEDIATO EM CURITIBA</span>
             </div>
-            <h1 className="text-3xl sm:text-4xl font-bold tracking-tight mb-3 text-white">
+            <h1 className="text-3xl sm:text-4xl font-black tracking-tight mb-3 text-white">
               {selectedCategory === 'Todos' ? 'Catálogo Geral de Materiais' : selectedCategory}
             </h1>
             <p className="text-slate-300 text-sm leading-relaxed mb-6">
-              Placas, perfis metálicos estruturais, massas de tratamento de juntas e isolamentos termoacústicos homologados para obras residenciais e corporativas.
+              Placas, perfis metálicos estruturais Barbieri, massas de tratamento de juntas e isolamentos termoacústicos para obras residenciais e comerciais.
             </p>
-            <div className="flex flex-wrap items-center gap-3">
+            <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-3">
               <a 
                 href="https://wa.me/5541996457421?text=Olá! Gostaria de uma cotação com base no catálogo de materiais."
                 target="_blank"
                 rel="noreferrer"
-                className="bg-[#D31219] text-white font-semibold px-6 py-3 rounded flex items-center gap-2 text-xs uppercase tracking-wider hover:bg-red-700 transition-colors shadow-sm"
+                className="w-full sm:w-auto bg-[#D31219] text-white font-bold px-6 py-3.5 rounded-xl flex items-center justify-center gap-2 text-xs uppercase tracking-wider hover:bg-red-700 transition-colors shadow-md min-h-[48px]"
               >
-                <MessageCircle size={16} />
-                Solicitar Cotação Rápida
+                <MessageCircle size={18} />
+                <span>Solicitar Cotação Rápida</span>
               </a>
-              <span className="text-xs text-slate-400">
+              <span className="text-xs font-bold text-slate-400">
                 {filteredProducts.length} itens disponíveis
               </span>
             </div>

@@ -17,98 +17,108 @@ const Blog: React.FC = () => {
 
   if (currentPost) {
     return (
-      <div className="bg-white min-h-screen">
-        <EnhancedSEO
-          title={`${currentPost.title} | Blog KY Drywall`}
-          description={currentPost.excerpt}
-          keywords={`${currentPost.tag}, drywall curitiba, steel frame, construção a seco`}
-          canonical={`${BASE_URL}/blog/${currentPost.id}`}
-          ogType="article"
-          schema={{
-            '@context': 'https://schema.org',
-            '@type': 'BlogPosting',
-            headline: currentPost.title,
-            description: currentPost.excerpt,
-            image: currentPost.img,
-            datePublished: '2025-01-01',
-            author: { '@type': 'Organization', name: 'KY Drywall & Steel Frame' },
-            publisher: { '@type': 'Organization', name: 'KY Drywall & Steel Frame' }
-          }}
-        />
-        <section className="bg-slate-900 py-14 text-white border-b border-slate-800">
-          <div className="container mx-auto px-4 max-w-4xl">
-            <Link to="/blog" className="inline-flex items-center gap-1.5 text-xs text-slate-400 hover:text-white font-medium mb-4 transition-colors">
-              <ArrowLeft size={14} /> Voltar ao Blog
-            </Link>
-            <div className="mb-2">
-              <span className="text-[#D31219] text-xs font-bold uppercase tracking-wider">{currentPost.tag}</span>
-            </div>
-            <h1 className="text-2xl sm:text-4xl font-bold tracking-tight mb-3">{currentPost.title}</h1>
-            <div className="flex items-center gap-2 text-slate-400 text-xs font-medium">
-              <Clock size={13} /> {currentPost.date}
-            </div>
+    <div className="bg-white min-h-screen">
+      <EnhancedSEO
+        title={`${currentPost.title} | Blog KY Drywall`}
+        description={currentPost.excerpt}
+        keywords={`${currentPost.tag}, drywall curitiba, steel frame, construção a seco`}
+        canonical={`${BASE_URL}/blog/${currentPost.id}`}
+        ogType="article"
+        schema={{
+          '@context': 'https://schema.org',
+          '@type': 'BlogPosting',
+          headline: currentPost.title,
+          description: currentPost.excerpt,
+          image: currentPost.img,
+          datePublished: '2025-01-01',
+          author: { '@type': 'Organization', name: 'KY Drywall & Steel Frame' },
+          publisher: { '@type': 'Organization', name: 'KY Drywall & Steel Frame' }
+        }}
+      />
+      {/* Article Hero */}
+      <section className="bg-slate-950 py-16 md:py-24 text-white relative overflow-hidden bg-[radial-gradient(#334155_1px,transparent_1px)] [background-size:20px_20px]">
+        <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 relative z-10 text-center">
+          <Link to="/blog" className="inline-flex items-center gap-2 text-xs font-bold text-slate-400 hover:text-white uppercase tracking-widest mb-8 transition-colors">
+            <ArrowLeft size={16} className="text-[#D31219]" /> Voltar ao Blog
+          </Link>
+          <div className="mb-4">
+            <span className="text-[#D31219] text-xs font-mono font-bold uppercase tracking-wider bg-[#D31219]/10 border border-[#D31219]/30 px-3 py-1 rounded">{currentPost.tag}</span>
           </div>
-        </section>
-        <section className="py-12">
-          <div className="container mx-auto px-4 max-w-4xl">
-            <div className="aspect-video rounded overflow-hidden mb-8 border border-slate-200">
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.1] mb-6">{currentPost.title}</h1>
+          <div className="flex items-center justify-center gap-3 text-slate-400 text-sm font-bold uppercase tracking-widest">
+            <Clock size={16} /> {currentPost.date}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 lg:py-24">
+        <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto">
+            <div className="aspect-video rounded-2xl overflow-hidden mb-12 border border-slate-200 shadow-xl bg-slate-100">
               <img src={currentPost.img} alt={currentPost.title} className="w-full h-full object-cover" />
             </div>
-            <div className="space-y-5 text-slate-700 text-sm sm:text-base leading-relaxed">
-              <p className="text-base sm:text-lg text-slate-900 font-medium leading-relaxed pb-2 border-b border-slate-100">
+            <div className="space-y-8 text-slate-700 text-lg sm:text-xl leading-relaxed">
+              <p className="text-xl sm:text-2xl text-slate-900 font-bold leading-relaxed pb-8 border-b border-slate-100">
                 {currentPost.excerpt}
               </p>
               <p>
-                A KY Drywall & Steel Frame é distribuidora de materiais para construção a seco em Curitiba e Região Metropolitana. Oferecemos linha completa de perfis, chapas e fixações para {currentPost.tag.toLowerCase()}, com suporte técnico para calcular e orçar sua obra.
+                A KY Drywall & Steel Frame é distribuidora líder de materiais para construção a seco em Curitiba e Região Metropolitana. Oferecemos linha completa de perfis, chapas e fixações para {currentPost.tag.toLowerCase()}, com suporte técnico especializado para cada fase da sua obra.
               </p>
               <p>
-                Trabalhamos com marcas homologadas no mercado nacional como Placo, Knauf, Barbieri e Gypsum, assegurando estanqueidade, resistência ao fogo e isolamento acústico em conformidade com as normas ABNT.
-              </p>
-              <p>
-                Nossa logística atende obras comerciais e residenciais com agilidade. Envie sua relação de materiais ou projeto para orçamento sem compromisso.
+                Trabalhamos exclusivamente com marcas homologadas como Placo, Knauf e Barbieri, garantindo conformidade total com as normas ABNT. Nossa logística é focada na agilidade, atendendo canteiros de obras com prontidão.
               </p>
             </div>
-            <div className="bg-slate-900 p-6 sm:p-8 rounded text-white mt-10 border border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-6">
-              <div>
-                <h3 className="text-lg font-bold mb-1">Deseja cotar materiais para seu projeto?</h3>
-                <p className="text-xs sm:text-sm text-slate-300">Nossa equipe calcula quantitativos e envia proposta detalhada via WhatsApp.</p>
-              </div>
-              <div className="flex items-center gap-3 shrink-0">
-                <a
-                  href={`https://wa.me/${COMPANY_INFO.whatsapp}?text=Olá! Vim do blog (${currentPost.title}) e gostaria de um orçamento.`}
-                  className="bg-[#D31219] hover:bg-red-700 text-white text-xs font-semibold uppercase tracking-wider px-5 py-2.5 rounded transition-colors flex items-center gap-2"
-                >
-                  <MessageCircle size={15} /> WhatsApp
-                </a>
-                <Link
-                  to="/produtos"
-                  className="bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold uppercase tracking-wider px-4 py-2.5 rounded border border-slate-700 transition-colors"
-                >
-                  Produtos
-                </Link>
+
+            {/* Post CTA */}
+            <div className="bg-slate-900 p-8 md:p-12 rounded-2xl text-white mt-16 border border-slate-800 relative overflow-hidden group">
+              <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#334155_1px,transparent_1px)] [background-size:20px_20px]"></div>
+              <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-10 text-center md:text-left">
+                <div>
+                  <h3 className="text-2xl font-black mb-3 leading-tight">Precisa de orçamento técnico?</h3>
+                  <p className="text-slate-400 text-base leading-relaxed">Nossa equipe calcula seus quantitativos e envia proposta detalhada via WhatsApp.</p>
+                </div>
+                <div className="flex flex-col gap-3 shrink-0">
+                  <a
+                    href={`https://wa.me/${COMPANY_INFO.whatsapp}?text=Olá! Vim do blog (${currentPost.title}) e gostaria de um orçamento.`}
+                    className="bg-[#D31219] hover:bg-red-700 text-white text-sm font-black uppercase tracking-widest px-8 py-4 rounded-xl transition-all flex items-center justify-center gap-3 shadow-lg active:scale-[0.98]"
+                  >
+                    <MessageCircle size={20} /> WhatsApp
+                  </a>
+                  <Link
+                    to="/produtos"
+                    className="bg-slate-800 hover:bg-slate-700 text-white text-sm font-black uppercase tracking-widest px-8 py-4 rounded-xl border border-slate-700 transition-all text-center active:scale-[0.98]"
+                  >
+                    Produtos
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
-        </section>
-        <section className="py-12 bg-slate-50 border-t border-slate-200">
-          <div className="container mx-auto px-4 max-w-4xl">
-            <h2 className="text-lg font-bold text-slate-900 mb-6">Outras Matérias do Blog</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              {BLOG_POSTS.filter(p => p.id !== currentPost.id).map(post => (
-                <Link key={post.id} to={`/blog/${post.id}`} className="bg-white rounded border border-slate-200 overflow-hidden hover:border-slate-400 transition-colors flex flex-col justify-between">
-                  <div className="aspect-video overflow-hidden border-b border-slate-100">
-                    <img src={post.img} alt={post.title} className="w-full h-full object-cover" />
+        </div>
+      </section>
+
+      <section className="py-20 bg-slate-50 border-t border-slate-200">
+        <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-2xl font-black text-slate-900 mb-10 text-center md:text-left">Outras Matérias do Blog</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+              {BLOG_POSTS.filter(p => p.id !== currentPost.id).slice(0, 3).map(post => (
+                <Link key={post.id} to={`/blog/${post.id}`} className="group bg-white rounded-xl border border-slate-200 overflow-hidden hover:border-[#D31219]/30 hover:shadow-md transition-all flex flex-col">
+                  <div className="aspect-video overflow-hidden border-b border-slate-100 bg-slate-100">
+                    <img src={post.img} alt={post.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                   </div>
-                  <div className="p-4">
-                    <span className="text-[#D31219] text-[10px] font-bold uppercase tracking-wider">{post.tag}</span>
-                    <h3 className="text-xs font-bold text-slate-900 mt-1 line-clamp-2 leading-snug">{post.title}</h3>
+                  <div className="p-5">
+                    <span className="text-[#D31219] text-[10px] font-black uppercase tracking-widest block mb-2">{post.tag}</span>
+                    <h3 className="text-sm font-bold text-slate-900 leading-snug group-hover:text-[#D31219] transition-colors line-clamp-2">{post.title}</h3>
                   </div>
                 </Link>
               ))}
             </div>
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
+    </div>
+
     );
   }
 
@@ -158,39 +168,41 @@ const Blog: React.FC = () => {
         ogType="website"
         schema={blogSchema}
       />
-      <section className="bg-slate-900 py-16 text-white border-b border-slate-800">
-        <div className="container mx-auto px-4 max-w-4xl text-center">
-          <span className="text-[#D31219] font-bold uppercase tracking-wider text-xs mb-2 block">
-            Publicações & Normas Técnicas
-          </span>
-          <h1 className="text-2xl sm:text-4xl font-bold tracking-tight mb-3">
-            Blog & Guia Regional de Atendimento
+      
+      {/* Blog Hero */}
+      <section className="bg-slate-950 py-16 md:py-24 text-white relative overflow-hidden bg-[radial-gradient(#334155_1px,transparent_1px)] [background-size:20px_20px]">
+        <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 relative z-10 text-center">
+          <div className="inline-flex items-center gap-2 text-[#D31219] text-xs font-mono font-bold uppercase tracking-wider bg-[#D31219]/10 border border-[#D31219]/30 px-3 py-1 rounded mb-6">
+            <span>01 — CONHECIMENTO TÉCNICO</span>
+          </div>
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.1] mb-6">
+            Blog & Guia Regional
           </h1>
-          <p className="text-xs sm:text-base text-slate-300 max-w-2xl mx-auto leading-relaxed">
-            Artigos técnicos sobre montagem, normas da ABNT e diretrizes de logística para Curitiba e todos os municípios da Região Metropolitana.
+          <p className="text-slate-400 text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto">
+            Artigos técnicos sobre montagem, normas da ABNT e diretrizes de atendimento para Curitiba e todos os municípios da RMC.
           </p>
         </div>
       </section>
 
       {/* Featured Posts */}
-      <section className="py-14">
-        <div className="container mx-auto px-4 max-w-6xl">
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
-            <div className="flex items-center gap-2 text-slate-900 font-bold text-base sm:text-lg">
-              <TrendingUp size={20} className="text-[#D31219]" />
-              <span>Artigos Técnicos & Guias de Engenharia</span>
+      <section className="py-16 lg:py-24">
+        <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-12 border-b border-slate-100 pb-8">
+            <div className="flex items-center gap-3 text-slate-900 font-black text-xl sm:text-2xl uppercase tracking-tight">
+              <TrendingUp size={24} className="text-[#D31219]" />
+              <span>Artigos Recentes</span>
             </div>
 
             {/* Tag Filter Pills */}
-            <div className="flex flex-wrap gap-1.5">
+            <div className="flex flex-wrap gap-2">
               {allTags.map((tag) => (
                 <button
                   key={tag}
                   onClick={() => setSelectedTag(tag)}
-                  className={`px-3 py-1.5 rounded text-xs font-semibold uppercase tracking-wider transition-colors ${
+                  className={`px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-widest transition-all ${
                     selectedTag === tag
-                      ? 'bg-[#D31219] text-white'
-                      : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
+                      ? 'bg-[#D31219] text-white shadow-md'
+                      : 'bg-slate-50 text-slate-600 hover:bg-slate-100 border border-slate-200'
                   }`}
                 >
                   {tag}
@@ -199,31 +211,31 @@ const Blog: React.FC = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredPosts.map((post, i) => (
-              <div key={i} className="bg-white rounded-lg border border-slate-200 overflow-hidden flex flex-col justify-between hover:border-slate-400 hover:shadow-md transition-all group">
+              <div key={i} className="bg-white rounded-2xl border border-slate-200 overflow-hidden flex flex-col justify-between hover:border-[#D31219]/30 hover:shadow-xl transition-all group">
                 <div>
-                  <div className="aspect-video relative overflow-hidden border-b border-slate-100 bg-slate-900">
-                    <img src={post.img} alt={post.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
-                    <span className="absolute top-3 right-3 bg-slate-900/90 backdrop-blur-sm text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider">
+                  <div className="aspect-video relative overflow-hidden bg-slate-900">
+                    <img src={post.img} alt={post.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                    <span className="absolute top-4 right-4 bg-slate-950/90 backdrop-blur-sm text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-[0.1em] border border-white/10">
                       {post.tag}
                     </span>
                   </div>
-                  <div className="p-5">
-                    <div className="flex items-center gap-1.5 text-slate-400 text-xs mb-2 font-medium">
+                  <div className="p-6 md:p-8">
+                    <div className="flex items-center gap-2 text-slate-400 text-[10px] font-black uppercase tracking-widest mb-4">
                       <Clock size={12} className="text-[#D31219]" /> {post.date}
                     </div>
-                    <h3 className="text-sm font-bold text-slate-900 mb-2 leading-snug group-hover:text-[#D31219] transition-colors line-clamp-2">
+                    <h3 className="text-xl font-bold text-slate-900 mb-4 leading-tight group-hover:text-[#D31219] transition-colors line-clamp-2">
                       {post.title}
                     </h3>
-                    <p className="text-slate-600 text-xs mb-4 leading-relaxed line-clamp-3">
+                    <p className="text-slate-600 text-base mb-6 leading-relaxed line-clamp-3">
                       {post.excerpt}
                     </p>
                   </div>
                 </div>
-                <div className="p-5 pt-0">
-                  <Link to={`/blog/${post.id}`} className="inline-flex items-center gap-1.5 text-xs font-bold text-[#D31219] hover:text-red-700 transition-colors uppercase tracking-wider">
-                    Ler Artigo Completo <ArrowRight size={13} />
+                <div className="p-6 md:p-8 pt-0 mt-auto">
+                  <Link to={`/blog/${post.id}`} className="inline-flex items-center gap-2 text-sm font-black text-[#D31219] hover:text-red-700 transition-colors uppercase tracking-[0.15em]">
+                    Ler Artigo <ArrowRight size={16} />
                   </Link>
                 </div>
               </div>
@@ -233,52 +245,50 @@ const Blog: React.FC = () => {
       </section>
 
       {/* Regional Index */}
-      <section className="py-14 bg-slate-50 border-y border-slate-200">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <div className="text-center mb-10 max-w-2xl mx-auto">
-            <h2 className="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight mb-2">
-              Guia Regional: Curitiba & Região Metropolitana
+      <section className="py-20 bg-slate-950 text-white relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#334155_1px,transparent_1px)] [background-size:20px_20px]"></div>
+        <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-16 max-w-3xl mx-auto">
+            <div className="inline-flex items-center gap-2 text-[#D31219] text-xs font-mono font-bold uppercase tracking-wider mb-6">
+              <span>02 — ATENDIMENTO REGIONAL</span>
+            </div>
+            <h2 className="text-3xl sm:text-5xl font-black tracking-tight mb-6">
+              Curitiba & Região Metropolitana
             </h2>
-            <p className="text-xs sm:text-sm text-slate-500">
-              Páginas dedicadas com especificações de entrega, dados climáticos e atendimento para cada bairro e município.
+            <p className="text-slate-400 text-lg leading-relaxed">
+              Consulte as especificações de entrega, prazos e consultoria técnica para sua localidade específica.
             </p>
           </div>
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <div className="bg-white p-6 rounded border border-slate-200">
-              <div className="flex items-center gap-2.5 mb-4 border-b border-slate-100 pb-3">
-                <Building2 size={20} className="text-[#D31219]" />
-                <h3 className="text-base font-bold text-slate-900">Bairros de Curitiba</h3>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+            <div className="bg-slate-900 p-8 rounded-2xl border border-slate-800 shadow-2xl">
+              <div className="flex items-center gap-4 mb-8 border-b border-slate-800 pb-6">
+                <div className="w-12 h-12 rounded-xl bg-red-600/10 text-[#D31219] flex items-center justify-center border border-red-600/20">
+                  <Building2 size={24} />
+                </div>
+                <h3 className="text-xl font-bold uppercase tracking-widest text-white">Bairros de Curitiba</h3>
               </div>
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-4 gap-y-2.5 max-h-[360px] overflow-y-auto pr-2 text-xs">
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-4 max-h-[400px] overflow-y-auto pr-4 custom-scrollbar text-sm text-slate-300">
                 {NEIGHBORHOODS.map(n => (
-                  <div key={n} className="flex flex-col gap-0.5 border-b border-slate-50 pb-1.5">
-                    <Link to={`/drywall-em/${normalizeLocationName(n)}`} className="text-slate-700 hover:text-[#D31219] font-medium truncate">
-                      Drywall {n}
-                    </Link>
-                    <Link to={`/steel-frame-em/${normalizeLocationName(n)}`} className="text-[10px] text-slate-400 hover:text-slate-900 truncate">
-                      Steel Frame {n}
-                    </Link>
-                  </div>
+                  <Link key={n} to={`/drywall-em/${normalizeLocationName(n)}`} className="hover:text-white font-bold transition-colors border-b border-slate-800/50 pb-2">
+                    {n}
+                  </Link>
                 ))}
               </div>
             </div>
 
-            <div className="bg-white p-6 rounded border border-slate-200">
-              <div className="flex items-center gap-2.5 mb-4 border-b border-slate-100 pb-3">
-                <Landmark size={20} className="text-[#003366]" />
-                <h3 className="text-base font-bold text-slate-900">Cidades da RMC</h3>
+            <div className="bg-slate-900 p-8 rounded-2xl border border-slate-800 shadow-2xl">
+              <div className="flex items-center gap-4 mb-8 border-b border-slate-800 pb-6">
+                <div className="w-12 h-12 rounded-xl bg-red-600/10 text-[#D31219] flex items-center justify-center border border-red-600/20">
+                  <Landmark size={24} />
+                </div>
+                <h3 className="text-xl font-bold uppercase tracking-widest text-white">Cidades da RMC</h3>
               </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2.5 max-h-[360px] overflow-y-auto pr-2 text-xs">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4 max-h-[400px] overflow-y-auto pr-4 custom-scrollbar text-sm text-slate-300">
                 {CITIES_RMC.map(c => (
-                  <div key={c} className="flex flex-col gap-0.5 border-b border-slate-50 pb-1.5">
-                    <Link to={`/drywall-em/${normalizeLocationName(c)}`} className="text-slate-700 hover:text-[#D31219] font-medium truncate">
-                      Drywall em {c}
-                    </Link>
-                    <Link to={`/steel-frame-em/${normalizeLocationName(c)}`} className="text-[10px] text-slate-400 hover:text-slate-900 truncate">
-                      Steel Frame em {c}
-                    </Link>
-                  </div>
+                  <Link key={c} to={`/drywall-em/${normalizeLocationName(c)}`} className="hover:text-white font-bold transition-colors border-b border-slate-800/50 pb-2">
+                    {c}
+                  </Link>
                 ))}
               </div>
             </div>

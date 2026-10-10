@@ -270,6 +270,116 @@ const BLOG_CONTENT: Record<string, BlogPostContent> = {
         answer: 'Você pode enviar sua lista de materiais ou projeto pelo WhatsApp oficial (41) 99645-7421 / (41) 99906-7259 ou ligar para (41) 3528-4232. Retornamos com proposta técnica imediata.'
       }
     ]
+  },
+  'b8': {
+    highlights: [
+      'Valores atualizados por m² para paredes, forros de drywall e estruturas de Steel Frame em Curitiba.',
+      'Comparativo claro entre custos de materiais e economia em fundações.',
+      'Redução de encargos trabalhistas com prazos de execução até 70% menores.',
+      'Orçamento direto com preço de distribuidor na Rod. BR-277 (Cajuru).'
+    ],
+    sections: [
+      {
+        title: 'Quanto custa o m² de Drywall e Steel Frame em Curitiba em 2026?',
+        content: 'O investimento em construção a seco varia de acordo com a tipologia da obra. Para paredes divisorias de drywall com isolamento acústico, o custo médio instalado fica entre R$ 90 e R$ 160 por m². Já para forros de gesso acartonado, os valores oscilam de R$ 65 a R$ 110 por m². No caso de residências completas em Light Steel Frame (chassi estrutural, vedações, cobertura e isolamento), o custo por metro quadrado construído fica entre R$ 2.100 e R$ 3.800, dependendo do padrão de acabamento.'
+      },
+      {
+        title: 'Tabela Prática de Referência de Custos e Materiais',
+        content: 'Veja os valores médios de referência para insumos essenciais fornecidos pela KY Drywall:',
+        table: {
+          headers: ['Sistema / Insumo', 'Faixa de Preço Média', 'Rendimento / Unidade'],
+          rows: [
+            ['Parede Drywall ST (Simples)', 'R$ 90 - R$ 120 / m²', 'Chapa 1.20 x 2.40m + Perfis 48mm'],
+            ['Parede Drywall RU (Áreas Úmidas)', 'R$ 110 - R$ 145 / m²', 'Chapa Verde + Tratamento Antimofo'],
+            ['Forro Drywall F530', 'R$ 65 - R$ 95 / m²', 'Perfis F530 + Placa ST 12.5mm'],
+            ['Estrutura Steel Frame (Chassi)', 'R$ 800 - R$ 1.250 / m²', 'Perfis Z180 Barbieri + Cargas'],
+            ['Manta Lã de Rocha / Vidro', 'R$ 22 - R$ 48 / m²', 'Espessura 50mm a 100mm']
+          ]
+        }
+      },
+      {
+        title: 'Onde está a verdadeira economia?',
+        content: 'Muitos clientes olham apenas para o preço unitário da chapa ou do perfil, mas a economia real do Steel Frame e do Drywall reside na fundação (laje radier mais leve), na ausência de caçambas de entulho (desperdício menor que 2%) e no fato de que a obra é concluída em meses, economizando meses de aluguel ou juros de financiamento.'
+      },
+      {
+        title: 'Faça seu orçamento personalizado na KY Drywall',
+        content: 'Envie sua planta ou lista de materiais para nossa equipe na Rodovia BR-277 (Cajuru). Elaboramos o quantitativo completo com preços competitivos para Curitiba e região.'
+      }
+    ],
+    faq: [
+      {
+        question: 'O orçamento inclui a mão de obra de instalação?',
+        answer: 'A KY Drywall atua como fornecedora especializada de materiais e sistemas completos, fornecendo indicação de instaladores e parceiros homologados na região de Curitiba.'
+      },
+      {
+        question: 'Posso retirar os materiais na loja física?',
+        answer: 'Sim! Nosso centro de distribuição no Cajuru possui amplo estoque e estacionamento para fácil carregamento.'
+      }
+    ]
+  },
+  'b9': {
+    highlights: [
+      'Isolamento térmico contínuo impede a troca de calor com o exterior gelado de Curitiba.',
+      'Ausência de pontes térmicas e condensação reduz drásticamente o risco de mofo e umidade.',
+      'Aço galvanizado Z180 com alta inércia estrutural e estabilidade milimétrica.',
+      'Aquecimento dos ambientes mais rápido e eficiente com menor consumo de energia.'
+    ],
+    sections: [
+      {
+        title: 'O desafio climático de Curitiba para a construção civil',
+        content: 'Curitiba é conhecida por seu clima subtropical úmido, com invernos rigorosos, geadas frequentes e períodos prolongados de chuvas e neblina. Nas construções tradicionais de alvenaria com blocos cerâmicos maciços ou vazados, a parede absorve a umidade e o frio externo, criando a clássica sensação de "parede gelada" e propiciando o surgimento de bolor.'
+      },
+      {
+        title: 'Como o Steel Frame resolve o problema do frio',
+        content: 'O sistema Light Steel Framing utiliza uma abordagem multicamadas de alta tecnologia. O espaço oco entre os montantes metálicos recebe espessa camada de lã de vidro ou lã de rocha. Pelo lado externo, a placa OSB e a membrana hidrófuga barram a infiltração de vento e água, enquanto mantêm a temperatura interna estável. O resultado é um ambiente aconchegante sem precisar de aquecedores ligados 24 horas por dia.'
+      },
+      {
+        title: 'Fim do mofo e da umidade nas paredes',
+        content: 'Como as paredes a seco não utilizam água na montagem estrutural e contam com barreiras de vapor e ventilação adequada nos painéis, a umidade relativa do ar interna não condensa nas superfícies, protegendo a saúde da família e preservando a pintura e a mobília.'
+      }
+    ],
+    faq: [
+      {
+        question: 'Casas em Steel Frame são quentes no verão?',
+        answer: 'Sim, o isolamento térmico bidirecional funciona mantendo a casa fresca no verão e aquecida no inverno, garantindo conforto térmico o ano todo.'
+      }
+    ]
+  },
+  'b10': {
+    highlights: [
+      'Diferença prática entre chapas ST (branca), RU (verde) e RF (rosa).',
+      'Normas ABNT NBR 15758 para instalação correta em ambientes secos e úmidos.',
+      'Dicas para evitar patologias e garantir acabamento perfeito em pinturas.',
+      'Disponibilidade imediata de todas as linhas de chapas e perfis na KY Drywall.'
+    ],
+    sections: [
+      {
+        title: 'Conhecendo os tipos de chapas de gesso acartonado (Drywall)',
+        content: 'O drywall não é apenas uma "placa de gesso comum". Existem formulações específicas desenvolvidas para atender a exigências rigorosas de umidade, resistência mecânica e proteção contra incêndio.'
+      },
+      {
+        title: '1. Chapa ST (Standard / Branca)',
+        content: 'Indicada para áreas secas, como salas, quartos, corredores e escritórios. É a mais utilizada em forros e divisórias internas de uso geral.'
+      },
+      {
+        title: '2. Chapa RU (Resistente à Umidade / Verde)',
+        content: 'Aditivada com silicone e agentes fungicidas em seu núcleo de gesso, a chapa verde é obrigatória em banheiros, lavabos, cozinhas e áreas de serviço sujeitas a vapor e respingos.'
+      },
+      {
+        title: '3. Chapa RF (Resistente ao Fogo / Rosa)',
+        content: 'Contém fibras de vidro em sua composição, o que retarda a propagação de chamas em caso de incêndio. Ideal para shafts de elevadores, saídas de emergência e cozinhas industriais.'
+      },
+      {
+        title: 'Onde comprar com garantia em Curitiba?',
+        content: 'A KY Drywall (Cajuru, BR-277) oferece todas as linhas de chapas Placo e Knauf com selo de conformidade e entrega ágil.'
+      }
+    ],
+    faq: [
+      {
+        question: 'Posso usar chapa ST no banheiro se impermeabilizar bem?',
+        answer: 'Não é recomendado pelas normas técnicas ABNT. A umidade do vapor do chuveiro danificará a placa ST com o tempo. Utilize sempre a Chapa RU (verde) em áreas molhadas.'
+      }
+    ]
   }
 };
 
@@ -329,41 +439,36 @@ const BlogPostPage: React.FC = () => {
       />
 
       {/* Hero Header */}
-      <section className="bg-slate-900 text-white py-12 md:py-16 border-b border-slate-800">
-        <div className="container mx-auto px-4 max-w-4xl">
-          {/* Breadcrumbs */}
-          <div className="flex items-center gap-1.5 text-xs text-slate-400 mb-6 font-medium">
-            <Link to="/" className="hover:text-white transition-colors">Início</Link>
-            <ChevronRight size={11} />
-            <Link to="/blog" className="hover:text-white transition-colors">Blog & Engenharia</Link>
-            <ChevronRight size={11} />
-            <span className="text-slate-200 truncate">{post.title}</span>
-          </div>
+      <section className="bg-slate-950 py-16 md:py-24 text-white relative overflow-hidden bg-[radial-gradient(#334155_1px,transparent_1px)] [background-size:20px_20px]">
+        <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 relative z-10">
+          <div className="max-w-4xl mx-auto text-center">
+            {/* Breadcrumbs */}
+            <div className="flex items-center justify-center gap-2 text-xs text-slate-500 mb-8 font-bold uppercase tracking-widest">
+              <Link to="/" className="hover:text-white transition-colors">Início</Link>
+              <ChevronRight size={12} className="text-[#D31219]" />
+              <Link to="/blog" className="hover:text-white transition-colors">Blog</Link>
+            </div>
 
-          <div>
-            <div className="inline-flex items-center gap-1.5 bg-red-950/70 border border-red-800/80 px-3 py-1 rounded text-xs font-semibold text-red-300 uppercase tracking-wider mb-4">
-              <Tag size={13} className="text-[#D31219]" />
+            <div className="inline-flex items-center gap-2 bg-[#D31219]/10 border border-[#D31219]/30 px-3 py-1 rounded text-xs font-mono font-bold text-[#D31219] uppercase tracking-wider mb-6">
               <span>{post.tag}</span>
             </div>
 
-            <h1 className="text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-4 leading-tight">
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight mb-8 leading-[1.1]">
               {post.title}
             </h1>
 
-            <div className="flex flex-wrap items-center gap-4 text-slate-400 text-xs font-medium pt-2 border-t border-slate-800">
-              <div className="flex items-center gap-1.5">
-                <Clock size={13} className="text-[#D31219]" />
+            <div className="flex flex-wrap justify-center items-center gap-6 text-slate-400 text-xs font-bold uppercase tracking-[0.15em] pt-8 border-t border-slate-900">
+              <div className="flex items-center gap-2">
+                <Clock size={16} className="text-[#D31219]" />
                 <span>{post.date}</span>
               </div>
-              <span>•</span>
-              <div className="flex items-center gap-1.5">
-                <Building2 size={13} className="text-[#D31219]" />
-                <span>Centro de Distribuição KY Drywall — BR-277 (Cajuru)</span>
+              <div className="flex items-center gap-2">
+                <Building2 size={16} className="text-[#D31219]" />
+                <span>Curitiba - BR-277</span>
               </div>
-              <span>•</span>
-              <div className="flex items-center gap-1.5">
-                <ShieldCheck size={13} className="text-emerald-400" />
-                <span>Normas ABNT NBR 15253 / 15758</span>
+              <div className="flex items-center gap-2">
+                <ShieldCheck size={16} className="text-emerald-500" />
+                <span>Normas ABNT</span>
               </div>
             </div>
           </div>
@@ -371,130 +476,134 @@ const BlogPostPage: React.FC = () => {
       </section>
 
       {/* Article Content */}
-      <article className="py-12">
-        <div className="container mx-auto px-4 max-w-4xl">
-          {/* Featured Image */}
-          <div className="rounded-xl overflow-hidden mb-8 border border-slate-200 shadow-sm bg-slate-900 aspect-video">
-            <img
-              src={post.img}
-              alt={post.title}
-              className="w-full h-full object-cover"
-              loading="eager"
-            />
-          </div>
+      <article className="py-16 lg:py-24">
+        <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto">
+            {/* Featured Image */}
+            <div className="rounded-2xl overflow-hidden mb-12 border border-slate-200 shadow-xl bg-slate-900 aspect-video">
+              <img
+                src={post.img}
+                alt={post.title}
+                className="w-full h-full object-cover"
+                loading="eager"
+              />
+            </div>
 
-          <div className="space-y-8">
-            {/* Excerpt Lead */}
-            <p className="text-base sm:text-xl text-slate-900 font-medium leading-relaxed pb-4 border-b border-slate-100">
-              {post.excerpt}
-            </p>
+            <div className="space-y-12">
+              {/* Excerpt Lead */}
+              <p className="text-xl sm:text-2xl text-slate-900 font-bold leading-relaxed pb-8 border-b border-slate-100">
+                {post.excerpt}
+              </p>
 
-            {/* Quick Highlights Box (AIO / Rich Snippets Ready) */}
-            {content?.highlights && content.highlights.length > 0 && (
-              <div className="bg-slate-50 border border-slate-200 rounded-xl p-5 md:p-6 my-6">
-                <div className="flex items-center gap-2 mb-3 text-[#D31219] font-bold text-sm uppercase tracking-wider">
-                  <Sparkles size={16} />
-                  <span>Destaques Técnicos & Principais Conclusões</span>
+              {/* Quick Highlights Box */}
+              {content?.highlights && content.highlights.length > 0 && (
+                <div className="bg-slate-50 border border-slate-200 rounded-2xl p-8 md:p-10 my-10 relative overflow-hidden">
+                  <div className="absolute top-0 left-0 w-1 h-full bg-[#D31219]"></div>
+                  <div className="flex items-center gap-3 mb-6 text-[#D31219] font-black text-sm uppercase tracking-[0.2em]">
+                    <Sparkles size={18} />
+                    <span>Destaques Técnicos</span>
+                  </div>
+                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-5 text-base sm:text-lg text-slate-700 font-medium">
+                    {content.highlights.map((h, idx) => (
+                      <li key={idx} className="flex items-start gap-3">
+                        <CheckCircle2 size={18} className="text-emerald-600 shrink-0 mt-1" />
+                        <span>{h}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs sm:text-sm text-slate-700">
-                  {content.highlights.map((h, idx) => (
-                    <li key={idx} className="flex items-start gap-2">
-                      <CheckCircle2 size={15} className="text-emerald-600 shrink-0 mt-0.5" />
-                      <span>{h}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
+              )}
 
-            {/* Content Sections */}
-            {content?.sections.map((section, i) => (
-              <div key={i} className="pt-4 space-y-3">
-                <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-slate-900">
-                  {section.title}
-                </h2>
-                <p className="text-slate-700 text-sm sm:text-base leading-relaxed whitespace-pre-line">
-                  {section.content}
-                </p>
+              {/* Content Sections */}
+              {content?.sections.map((section, i) => (
+                <div key={i} className="space-y-6">
+                  <h2 className="text-2xl sm:text-3xl font-black tracking-tight text-slate-900">
+                    {section.title}
+                  </h2>
+                  <p className="text-slate-600 text-lg sm:text-xl leading-relaxed whitespace-pre-line">
+                    {section.content}
+                  </p>
 
-                {/* Optional Table */}
-                {section.table && (
-                  <div className="overflow-x-auto my-6 rounded-lg border border-slate-200 shadow-sm">
-                    <table className="w-full text-xs sm:text-sm text-left border-collapse">
-                      <thead className="bg-slate-900 text-white">
-                        <tr>
-                          {section.table.headers.map((head, hIdx) => (
-                            <th key={hIdx} className="py-3 px-4 font-semibold border-b border-slate-800">
-                              {head}
-                            </th>
-                          ))}
-                        </tr>
-                      </thead>
-                      <tbody className="divide-y divide-slate-200 bg-white">
-                        {section.table.rows.map((row, rIdx) => (
-                          <tr key={rIdx} className={rIdx % 2 === 0 ? 'bg-white' : 'bg-slate-50/70'}>
-                            {row.map((cell, cIdx) => (
-                              <td key={cIdx} className={`py-3 px-4 ${cIdx === 0 ? 'font-semibold text-slate-900' : 'text-slate-700'}`}>
-                                {cell}
-                              </td>
+                  {/* Optional Table */}
+                  {section.table && (
+                    <div className="overflow-x-auto my-10 rounded-2xl border border-slate-200 shadow-lg">
+                      <table className="w-full text-sm sm:text-base text-left border-collapse">
+                        <thead className="bg-slate-950 text-white">
+                          <tr>
+                            {section.table.headers.map((head, hIdx) => (
+                              <th key={hIdx} className="py-5 px-6 font-black uppercase tracking-widest text-[11px] border-b border-slate-800">
+                                {head}
+                              </th>
                             ))}
                           </tr>
-                        ))}
-                      </tbody>
-                    </table>
-                  </div>
-                )}
-              </div>
-            ))}
-
-            {/* FAQ Section if available */}
-            {content?.faq && content.faq.length > 0 && (
-              <div className="pt-8 border-t border-slate-200 space-y-4">
-                <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
-                  <ShieldCheck size={20} className="text-[#D31219]" />
-                  <span>Dúvidas Frequentes sobre {post.tag}</span>
-                </h3>
-                <div className="space-y-3">
-                  {content.faq.map((item, qIdx) => (
-                    <div key={qIdx} className="p-4 rounded-lg bg-slate-50 border border-slate-200">
-                      <h4 className="text-sm font-bold text-slate-900 mb-1.5">{item.question}</h4>
-                      <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">{item.answer}</p>
+                        </thead>
+                        <tbody className="divide-y divide-slate-100 bg-white">
+                          {section.table.rows.map((row, rIdx) => (
+                            <tr key={rIdx} className={rIdx % 2 === 0 ? 'bg-white' : 'bg-slate-50/50'}>
+                              {row.map((cell, cIdx) => (
+                                <td key={cIdx} className={`py-5 px-6 ${cIdx === 0 ? 'font-bold text-slate-900' : 'text-slate-600'}`}>
+                                  {cell}
+                                </td>
+                              ))}
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
                     </div>
-                  ))}
+                  )}
                 </div>
-              </div>
-            )}
+              ))}
 
-            {/* Action Card CTA */}
-            <div className="bg-slate-900 rounded-xl p-6 sm:p-8 text-white mt-10 border border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-6 shadow-xl">
-              <div>
-                <span className="text-[#D31219] text-xs font-bold uppercase tracking-wider block mb-1">
-                  Atendimento Técnico Especializado
-                </span>
-                <h3 className="text-lg sm:text-xl font-bold mb-1">
-                  Solicite seu Orçamento de Materiais
-                </h3>
-                <p className="text-xs sm:text-sm text-slate-300 max-w-lg">
-                  Envie seu projeto ou lista de medidas. A equipe técnica da KY Drywall elabora o quantitativo exato com pronta entrega em Curitiba e RMC.
-                </p>
-              </div>
-              <div className="flex flex-wrap items-center gap-3 shrink-0">
-                <a
-                  href={whatsappUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="bg-[#D31219] hover:bg-red-700 text-white text-xs font-semibold uppercase tracking-wider px-5 py-3 rounded transition-colors flex items-center gap-2 shadow-lg shadow-red-900/30"
-                >
-                  <MessageCircle size={16} />
-                  Falar no WhatsApp
-                </a>
-                <a
-                  href={`tel:${COMPANY_INFO.phone.replace(/\D/g, '')}`}
-                  className="bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold uppercase tracking-wider px-4 py-3 rounded border border-slate-700 transition-colors flex items-center gap-1.5"
-                >
-                  <Phone size={14} />
-                  Ligar
-                </a>
+              {/* FAQ Section if available */}
+              {content?.faq && content.faq.length > 0 && (
+                <div className="pt-16 border-t border-slate-100 space-y-8">
+                  <div className="inline-flex items-center gap-3 text-[#D31219] font-black text-sm uppercase tracking-[0.2em]">
+                    <ShieldCheck size={20} />
+                    <span>Dúvidas Frequentes</span>
+                  </div>
+                  <div className="grid grid-cols-1 gap-6">
+                    {content.faq.map((item, qIdx) => (
+                      <div key={qIdx} className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm">
+                        <h4 className="text-lg font-bold text-slate-900 mb-3">{item.question}</h4>
+                        <p className="text-slate-600 text-base leading-relaxed">{item.answer}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Action Card CTA */}
+              <div className="bg-slate-900 rounded-3xl p-8 md:p-12 text-white mt-16 border border-slate-800 relative overflow-hidden group shadow-2xl">
+                <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#334155_1px,transparent_1px)] [background-size:20px_20px]"></div>
+                <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-10">
+                  <div className="text-center md:text-left">
+                    <span className="text-[#D31219] text-[10px] font-black uppercase tracking-[0.2em] block mb-4">Suporte de Engenharia</span>
+                    <h3 className="text-2xl sm:text-3xl font-black mb-4 leading-tight">
+                      Orçamento Técnico de Materiais
+                    </h3>
+                    <p className="text-slate-400 text-lg max-w-lg leading-relaxed">
+                      Envie sua planta ou lista de medidas. Nossa engenharia analisa sem custo para Curitiba e Região.
+                    </p>
+                  </div>
+                  <div className="flex flex-col gap-4 shrink-0">
+                    <a
+                      href={whatsappUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="bg-[#D31219] hover:bg-red-700 text-white text-sm font-black uppercase tracking-widest px-10 py-5 rounded-xl transition-all flex items-center justify-center gap-3 shadow-lg active:scale-[0.98]"
+                    >
+                      <MessageCircle size={20} />
+                      Falar no WhatsApp
+                    </a>
+                    <a
+                      href={`tel:${COMPANY_INFO.phone.replace(/\D/g, '')}`}
+                      className="bg-slate-800 hover:bg-slate-700 text-white text-sm font-black uppercase tracking-widest px-10 py-5 rounded-xl border-2 border-slate-800 transition-all flex items-center justify-center gap-3 active:scale-[0.98]"
+                    >
+                      <Phone size={18} />
+                      {COMPANY_INFO.phone}
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -503,45 +612,44 @@ const BlogPostPage: React.FC = () => {
 
       {/* Related Posts */}
       {otherPosts.length > 0 && (
-        <section className="py-12 bg-slate-50 border-t border-slate-200">
-          <div className="container mx-auto px-4 max-w-4xl">
-            <h3 className="text-base sm:text-lg font-bold text-slate-900 mb-6 flex items-center justify-between">
-              <span>Outras Matérias Recomendadas</span>
-              <Link to="/blog" className="text-xs font-semibold text-[#D31219] hover:underline">
-                Ver Todo o Blog →
-              </Link>
-            </h3>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              {otherPosts.map((p) => (
-                <Link
-                  key={p.id}
-                  to={`/blog/${p.id}`}
-                  className="bg-white rounded-lg border border-slate-200 overflow-hidden hover:border-slate-400 hover:shadow-md transition-all flex flex-col justify-between group"
-                >
-                  <div className="aspect-video overflow-hidden border-b border-slate-100 bg-slate-900">
-                    <img src={p.img} alt={p.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
-                  </div>
-                  <div className="p-4 flex-1 flex flex-col justify-between">
-                    <div>
-                      <span className="text-[10px] font-bold uppercase tracking-wider text-[#D31219] mb-1 block">{p.tag}</span>
-                      <h4 className="text-xs font-bold text-slate-900 leading-snug group-hover:text-[#D31219] transition-colors line-clamp-2">{p.title}</h4>
-                    </div>
-                    <span className="text-[11px] text-slate-400 mt-2 block">{p.date}</span>
-                  </div>
+        <section className="py-20 bg-slate-50 border-t border-slate-200">
+          <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+            <div className="max-w-4xl mx-auto">
+              <div className="flex items-center justify-between mb-12 border-b border-slate-200 pb-6">
+                <h3 className="text-2xl font-black text-slate-900 tracking-tight">Leia Também</h3>
+                <Link to="/blog" className="text-sm font-bold text-[#D31219] hover:underline uppercase tracking-widest">
+                  Ver Todo o Blog →
                 </Link>
-              ))}
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
+                {otherPosts.map((p) => (
+                  <Link
+                    key={p.id}
+                    to={`/blog/${p.id}`}
+                    className="group bg-white rounded-2xl border border-slate-200 overflow-hidden hover:border-[#D31219]/30 hover:shadow-lg transition-all flex flex-col"
+                  >
+                    <div className="aspect-video overflow-hidden border-b border-slate-100 bg-slate-900">
+                      <img src={p.img} alt={p.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                    </div>
+                    <div className="p-6 flex-1 flex flex-col">
+                      <span className="text-[10px] font-black uppercase tracking-widest text-[#D31219] mb-3 block">{p.tag}</span>
+                      <h4 className="text-base font-bold text-slate-900 leading-tight group-hover:text-[#D31219] transition-colors line-clamp-2">{p.title}</h4>
+                    </div>
+                  </Link>
+                ))}
+              </div>
             </div>
           </div>
         </section>
       )}
 
-      {/* Back to Blog */}
-      <div className="py-8 text-center bg-white border-t border-slate-100">
+      {/* Back to Blog Footer Link */}
+      <div className="py-12 text-center bg-white border-t border-slate-100">
         <Link
           to="/blog"
-          className="inline-flex items-center gap-2 text-xs font-semibold text-slate-700 hover:text-[#D31219] transition-colors uppercase tracking-wider"
+          className="inline-flex items-center gap-3 text-sm font-black text-slate-500 hover:text-[#D31219] transition-all uppercase tracking-widest"
         >
-          <ArrowLeft size={14} /> Voltar ao Índice do Blog & Regiões
+          <ArrowLeft size={18} /> Voltar ao Índice
         </Link>
       </div>
     </div>

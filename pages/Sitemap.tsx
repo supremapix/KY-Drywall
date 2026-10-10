@@ -78,47 +78,35 @@ const Sitemap: React.FC = () => {
       />
 
       {/* Hero Header */}
-      <section className="bg-slate-900 py-12 md:py-16 text-white border-b border-slate-800">
-        <div className="container mx-auto px-4 max-w-6xl">
-          <div className="flex items-center gap-1.5 text-xs text-slate-400 mb-4 font-medium">
-            <Link to="/" className="hover:text-white flex items-center gap-1 transition-colors">
-              <Home size={13} /> Início
-            </Link>
-            <ChevronRight size={11} />
-            <span className="text-slate-200">Mapa do Site</span>
+      <section className="bg-slate-950 py-16 md:py-24 text-white relative overflow-hidden bg-[radial-gradient(#334155_1px,transparent_1px)] [background-size:20px_20px]">
+        <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 relative z-10 text-center">
+          <div className="inline-flex items-center gap-2 text-[#D31219] text-xs font-mono font-bold uppercase tracking-wider bg-[#D31219]/10 border border-[#D31219]/30 px-3 py-1 rounded mb-6">
+            <span>01 — ESTRUTURA COMPLETA</span>
           </div>
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.1] mb-6">
+            Mapa do Site
+          </h1>
+          <p className="text-slate-400 text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto mb-10">
+            Acesse integralmente o índice de soluções, produtos e cobertura regional da KY Drywall em Curitiba.
+          </p>
 
-          <div className="max-w-3xl">
-            <span className="text-[#D31219] text-xs font-bold uppercase tracking-wider block mb-2">
-              Estrutura & Navegação Completa
-            </span>
-            <h1 className="text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-4 leading-tight">
-              Mapa do Site
-            </h1>
-            <p className="text-sm sm:text-base text-slate-300 font-normal leading-relaxed mb-6">
-              Acesse o índice integral da KY Drywall & Steel Frame: páginas institucionais, soluções construtivas, especificações de produtos, artigos técnicos do blog e cobertura regional completa para Curitiba e Região Metropolitana.
-            </p>
-
-            {/* Quick Metrics Bar */}
-            <div className="flex flex-wrap gap-2.5 text-xs text-slate-300">
-              <div className="bg-slate-800/80 px-3 py-1.5 rounded border border-slate-700 flex items-center gap-1.5">
-                <span className="font-bold text-white">{totalPages}+</span>
-                <span>Páginas Mapeadas</span>
+          {/* Quick Metrics Bar */}
+          <div className="flex flex-wrap gap-4 justify-center">
+            {[
+              { value: `${totalPages}+`, label: 'Páginas' },
+              { value: totalProducts, label: 'Produtos' },
+              { value: totalNeighborhoods + totalCities, label: 'Regiões' }
+            ].map((stat, i) => (
+              <div key={i} className="bg-slate-900/50 backdrop-blur-sm px-6 py-3 rounded-xl border border-slate-800 text-center min-w-[120px]">
+                <div className="text-xl font-black text-[#D31219]">{stat.value}</div>
+                <div className="text-[10px] font-bold uppercase tracking-widest text-slate-500 mt-1">{stat.label}</div>
               </div>
-              <div className="bg-slate-800/80 px-3 py-1.5 rounded border border-slate-700 flex items-center gap-1.5">
-                <span className="font-bold text-white">{totalProducts}</span>
-                <span>Produtos no Catálogo</span>
-              </div>
-              <div className="bg-slate-800/80 px-3 py-1.5 rounded border border-slate-700 flex items-center gap-1.5">
-                <span className="font-bold text-white">{totalNeighborhoods + totalCities}</span>
-                <span>Regiões Atendidas</span>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
-      <div className="container mx-auto px-4 py-12 max-w-6xl space-y-12">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-16 lg:py-24 space-y-20">
         {/* Core Top Sections Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Section: Institucional */}

@@ -73,19 +73,26 @@ const ServicesPage: React.FC = () => {
         schema={serviceSchema}
       />
       {/* Hero Section */}
-      <section className="relative h-[48vh] min-h-[380px] flex items-center bg-slate-950 overflow-hidden">
-        <div className="absolute inset-0 z-0 opacity-40">
-          <img src={currentService?.image} alt="" className="w-full h-full object-cover" />
+      <section className="relative h-[48vh] min-h-[380px] flex items-center bg-slate-950 overflow-hidden bg-[radial-gradient(#334155_1px,transparent_1px)] [background-size:20px_20px]">
+        <div className="absolute inset-0 z-0 opacity-30">
+          <img 
+            src={currentService?.image} 
+            alt="" 
+            className="w-full h-full object-cover" 
+            onError={(e) => {
+              (e.target as HTMLImageElement).src = 'https://via.placeholder.com/1200x800?text=KY+DRYWALL+SERVICES';
+            }}
+          />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-slate-950/40"></div>
-        <div className="container mx-auto px-4 lg:px-8 relative z-10 text-white">
-          <div className="max-w-3xl">
-            <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#D31219] mb-4">
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/80 to-slate-950/50"></div>
+        <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 relative z-10 text-white w-full text-center md:text-left">
+          <div className="max-w-3xl mx-auto md:mx-0">
+            <div className="flex items-center justify-center md:justify-start gap-2 text-xs font-mono font-bold uppercase tracking-wider text-slate-300 mb-4 bg-slate-900/80 border border-slate-800 px-3 py-1 rounded w-fit mx-auto md:mx-0">
               <Link to="/" className="text-slate-400 hover:text-white transition-colors">Início</Link>
               <ChevronRight size={13} />
-              <span className="text-white">Serviços & Sistemas</span>
+              <span className="text-white">01 — SERVIÇOS & SISTEMAS</span>
             </div>
-            <h1 className="text-3xl sm:text-5xl font-bold tracking-tight leading-tight text-white mb-4">
+            <h1 className="text-3xl sm:text-5xl font-black tracking-tight leading-tight text-white mb-4">
               {serviceId ? currentService?.title : "Serviços de Construção a Seco"}
             </h1>
             <p className="text-slate-300 text-sm sm:text-base leading-relaxed max-w-2xl">

@@ -673,79 +673,54 @@ const FAQPage: React.FC = () => {
   };
 
   return (
-    <div className="bg-gray-50 min-h-screen">
+    <div className="bg-white min-h-screen">
       <EnhancedSEO
-        title="119 Perguntas sobre Drywall e Steel Frame em Curitiba | KY Drywall"
-        description="Respondemos as 119 perguntas mais frequentes sobre drywall, steel frame e construção a seco em Curitiba. Guia técnico completo da KY Drywall - a maior distribuidora de Curitiba. Orçamento grátis!"
-        keywords="faq drywall, perguntas steel frame, duvidas construcao seco, drywall curitiba, steel frame curitiba, telha shingle, forro pvc"
+        title="Dúvidas Frequentes (FAQ) - Drywall e Steel Frame Curitiba"
+        description="Respostas para as principais dúvidas sobre drywall, steel frame, telha shingle e forros em Curitiba. Guia técnico completo da KY Drywall."
         canonical={`${BASE_URL}/faq`}
+        ogType="website"
         schema={[faqSchema, breadcrumbSchema]}
       />
 
       {/* Hero Section */}
-      <section className="bg-slate-900 text-white py-16 border-b border-slate-800">
-        <div className="container mx-auto px-4">
-          {/* Breadcrumb */}
-          <div className="flex items-center gap-2 text-xs text-slate-400 mb-6 font-medium">
-            <Link to="/" className="hover:text-white transition-colors">Home</Link>
-            <ChevronRight size={12} />
-            <span className="text-slate-200">Perguntas Frequentes</span>
-          </div>
-
-          <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 text-[#D31219] text-xs font-bold uppercase tracking-wider mb-3">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#D31219]"></span>
-              Base de Conhecimento Técnico
+      <section className="bg-slate-950 py-16 md:py-24 text-white relative overflow-hidden bg-[radial-gradient(#334155_1px,transparent_1px)] [background-size:20px_20px]">
+        <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 relative z-10">
+          <div className="max-w-3xl mx-auto text-center">
+            <div className="inline-flex items-center gap-2 text-[#D31219] text-xs font-mono font-bold uppercase tracking-wider bg-[#D31219]/10 border border-[#D31219]/30 px-3 py-1 rounded mb-6">
+              <span>01 — CENTRAL DE AJUDA TÉCNICA</span>
             </div>
-
-            <h1 className="text-2xl sm:text-4xl font-bold tracking-tight mb-4">
-              Perguntas Frequentes sobre Drywall e Steel Frame
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.1] mb-6">
+              Dúvidas Frequentes
             </h1>
-
-            <p className="text-sm sm:text-base text-slate-300 mb-8 leading-relaxed">
-              Respostas técnicas fundamentadas pelas normas da ABNT e validadas por nossos especialistas em sistemas construtivos a seco em Curitiba e Região Metropolitana.
+            <p className="text-slate-400 text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto mb-10">
+              Encontre respostas rápidas sobre sistemas construtivos a seco, materiais e processos de instalação em Curitiba.
             </p>
 
-            {/* Stats */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8">
-              {[
-                { value: totalQuestions, label: 'Perguntas Respondidas' },
-                { value: '10+', label: 'Anos de Mercado' },
-                { value: FAQ_DATA.length, label: 'Áreas Técnicas' },
-                { value: 'Curitiba', label: 'e Região' }
-              ].map((stat, idx) => (
-                <div key={idx} className="bg-slate-800/80 border border-slate-700/60 rounded p-3 text-center">
-                  <div className="text-lg sm:text-xl font-bold text-white">{stat.value}</div>
-                  <div className="text-[11px] text-slate-400 mt-0.5">{stat.label}</div>
-                </div>
-              ))}
-            </div>
-
             {/* Search Bar */}
-            <div className="relative max-w-xl">
-              <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" size={16} />
+            <div className="relative max-w-xl mx-auto">
+              <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500" size={20} />
               <input
                 type="text"
-                placeholder="Pesquise por termo técnico, norma ou material..."
+                placeholder="Pesquisar dúvida ou material..."
+                className="w-full bg-slate-900 border-2 border-slate-800 rounded-xl py-4 pl-12 pr-4 text-white focus:outline-none focus:border-[#D31219] transition-all placeholder:text-slate-500 text-lg"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full bg-slate-800 border border-slate-700 rounded py-3 pl-11 pr-4 text-xs sm:text-sm text-white placeholder-slate-400 focus:outline-none focus:border-slate-500 transition-colors"
               />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Category Filters */}
-      <section className="bg-white border-b border-slate-200 sticky top-[68px] md:top-[72px] z-40 shadow-xs">
-        <div className="container mx-auto px-4">
-          <div className="flex gap-2 overflow-x-auto py-3 no-scrollbar">
+      {/* Category Filters Bar */}
+      <section className="sticky top-16 z-30 bg-white border-b border-slate-200 shadow-sm overflow-x-auto">
+        <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-4">
+          <div className="flex items-center gap-3 min-w-max md:justify-center">
             <button
               onClick={() => setActiveCategory('all')}
-              className={`px-3 py-1.5 rounded text-xs font-semibold whitespace-nowrap transition-colors ${
+              className={`px-5 py-2.5 rounded-lg text-sm font-bold uppercase tracking-wider transition-all whitespace-nowrap ${
                 activeCategory === 'all'
-                  ? 'bg-slate-900 text-white'
-                  : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+                  ? 'bg-slate-900 text-white shadow-md'
+                  : 'bg-slate-50 text-slate-600 hover:bg-slate-100'
               }`}
             >
               Todos ({totalQuestions})
@@ -754,13 +729,13 @@ const FAQPage: React.FC = () => {
               <button
                 key={section.id}
                 onClick={() => setActiveCategory(section.id)}
-                className={`px-3 py-1.5 rounded text-xs font-semibold whitespace-nowrap transition-colors ${
+                className={`px-5 py-2.5 rounded-lg text-sm font-bold uppercase tracking-wider transition-all whitespace-nowrap ${
                   activeCategory === section.id
-                    ? 'bg-slate-900 text-white'
-                    : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+                    ? 'bg-slate-900 text-white shadow-md'
+                    : 'bg-slate-50 text-slate-600 hover:bg-slate-100'
                 }`}
               >
-                {section.title.split(' - ')[0]} ({section.questions.length})
+                {section.title.split(' - ')[0]}
               </button>
             ))}
           </div>
@@ -768,111 +743,127 @@ const FAQPage: React.FC = () => {
       </section>
 
       {/* FAQ Sections */}
-      <section className="py-12 bg-slate-50/50">
-        <div className="container mx-auto px-4 max-w-4xl">
-          {filteredSections.map((section: any) => (
-            <div key={section.id} id={section.id} className="mb-12 scroll-mt-32">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="p-2 bg-slate-100 text-slate-800 rounded border border-slate-200">
-                  {section.icon}
+      <section className="py-16 md:py-24 bg-slate-50/30">
+        <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto">
+            {filteredSections.map((section: any) => (
+              <div key={section.id} id={section.id} className="mb-20 scroll-mt-40">
+                <div className="flex items-center gap-4 mb-8">
+                  <div className="w-12 h-12 bg-white text-slate-900 rounded-xl border-2 border-slate-100 shadow-sm flex items-center justify-center">
+                    {section.icon}
+                  </div>
+                  <div>
+                    <h2 className="text-2xl font-black text-slate-900 tracking-tight">
+                      {section.title}
+                    </h2>
+                    <p className="text-sm font-bold text-slate-500 uppercase tracking-widest mt-0.5">
+                      {section.questions.length} {section.questions.length === 1 ? 'resposta' : 'respostas'}
+                    </p>
+                  </div>
                 </div>
-                <div>
-                  <h2 className="text-xl font-bold text-slate-900">
-                    {section.title}
-                  </h2>
-                  <p className="text-xs text-slate-500">
-                    {section.questions.length} {section.questions.length === 1 ? 'questão' : 'questões'} respondidas
-                  </p>
-                </div>
-              </div>
 
-              <div className="space-y-3">
-                {section.questions.map((item: FAQItem, idx: number) => {
-                  const isOpen = openQuestions.has(`${section.id}-${idx}`);
-                  return (
-                    <div
-                      key={idx}
-                      className="bg-white rounded border border-slate-200 overflow-hidden"
-                    >
-                      <button
-                        onClick={() => toggleQuestion(section.id, idx)}
-                        aria-expanded={isOpen} aria-controls={`answer-${section.id}-${idx}`}
-                        className="w-full flex items-start justify-between gap-4 p-4 text-left hover:bg-slate-50/60 transition-colors"
+                <div className="space-y-4">
+                  {section.questions.map((item: FAQItem, idx: number) => {
+                    const isOpen = openQuestions.has(`${section.id}-${idx}`);
+                    return (
+                      <div
+                        key={idx}
+                        className={`bg-white rounded-xl border transition-all ${
+                          isOpen ? 'border-[#D31219]/30 shadow-md ring-1 ring-[#D31219]/5' : 'border-slate-200 hover:border-slate-300'
+                        }`}
                       >
-                        <h3 className="text-sm font-semibold text-slate-900">
-                          {item.question}
-                        </h3>
-                        <div className="shrink-0 mt-0.5">
-                          {isOpen ? (
-                            <ChevronUp className="text-slate-600" size={16} />
-                          ) : (
-                            <ChevronDown className="text-slate-400" size={16} />
-                          )}
-                        </div>
-                      </button>
+                        <button
+                          onClick={() => toggleQuestion(section.id, idx)}
+                          aria-expanded={isOpen}
+                          aria-controls={`answer-${section.id}-${idx}`}
+                          className="w-full flex items-center justify-between gap-6 p-6 text-left group transition-all"
+                        >
+                          <h3 className={`text-lg font-bold leading-tight transition-colors ${
+                            isOpen ? 'text-[#D31219]' : 'text-slate-900 group-hover:text-slate-700'
+                          }`}>
+                            {item.question}
+                          </h3>
+                          <div className={`shrink-0 w-8 h-8 rounded-full border flex items-center justify-center transition-all ${
+                            isOpen ? 'bg-[#D31219] border-[#D31219] text-white rotate-180' : 'bg-slate-50 border-slate-200 text-slate-400 group-hover:border-slate-300'
+                          }`}>
+                            <ChevronDown size={18} />
+                          </div>
+                        </button>
 
-                      {isOpen && (
-                        <div id={`answer-${section.id}-${idx}`} className="px-4 pb-4 pt-1 border-t border-slate-100">
-                          <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                            {item.answer}
-                          </p>
+                        <div 
+                          id={`answer-${section.id}-${idx}`} 
+                          className={`grid transition-all duration-300 ease-in-out ${
+                            isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0 overflow-hidden'
+                          }`}
+                        >
+                          <div className="overflow-hidden">
+                            <div className="px-6 pb-6 pt-0">
+                              <div className="w-full h-px bg-slate-100 mb-6"></div>
+                              <p className="text-slate-600 text-lg leading-relaxed max-w-3xl">
+                                {item.answer}
+                              </p>
+                            </div>
+                          </div>
                         </div>
-                      )}
-                    </div>
-                  );
-                })}
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
 
           {filteredSections.length === 0 && (
-            <div className="text-center py-16 bg-white rounded border border-slate-200 p-8">
-              <h3 className="text-lg font-bold text-slate-900 mb-2">
-                Nenhuma resposta encontrada para sua pesquisa
+            <div className="text-center py-20 bg-white rounded-2xl border border-slate-200 p-8 shadow-sm">
+              <h3 className="text-2xl font-black text-slate-900 mb-3">
+                Nenhuma resposta encontrada
               </h3>
-              <p className="text-xs text-slate-500 mb-6">
+              <p className="text-slate-500 mb-10 text-lg">
                 Fale diretamente com nosso setor de engenharia e consultoria técnica.
               </p>
               <a
                 href={`https://wa.me/${COMPANY_INFO.whatsapp}?text=Olá! Tenho uma dúvida técnica que não localizei no FAQ`}
-                className="inline-flex items-center gap-2 bg-[#D31219] hover:bg-red-700 text-white text-xs font-semibold uppercase tracking-wider px-5 py-2.5 rounded transition-colors"
+                className="inline-flex items-center gap-3 bg-[#D31219] hover:bg-red-700 text-white text-base font-bold uppercase tracking-widest px-8 py-4 rounded-xl transition-all shadow-lg active:scale-[0.98]"
               >
-                <MessageCircle size={15} /> Falar com Técnico no WhatsApp
+                <MessageCircle size={20} /> Falar com Técnico no WhatsApp
               </a>
             </div>
           )}
         </div>
-      </section>
+      </div>
+    </section>
 
       {/* Blog Section */}
-      <section className="py-14 bg-white border-t border-slate-200">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <div className="mb-8">
-            <h2 className="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight">
-              Artigos Técnicos e Guias de Montagem
+      <section className="py-20 bg-white border-t border-slate-200">
+        <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+          <div className="mb-12 text-center md:text-left">
+            <div className="inline-flex items-center gap-2 text-[#D31219] text-xs font-mono font-bold uppercase tracking-wider mb-4">
+              <span>02 — CONHECIMENTO TÉCNICO</span>
+            </div>
+            <h2 className="text-2xl sm:text-4xl font-black text-slate-900 tracking-tight">
+              Artigos e Guias de Montagem
             </h2>
-            <p className="text-xs sm:text-sm text-slate-500 mt-1">
+            <p className="text-slate-500 mt-2 text-lg">
               Publicações detalhadas para orientar seu projeto do planejamento à execução.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {BLOG_ARTICLES.map((article, idx) => (
               <Link
                 key={idx}
                 to={article.link}
-                className="group bg-slate-50 rounded border border-slate-200 p-5 hover:border-slate-400 transition-colors flex flex-col justify-between"
+                className="group bg-white rounded-xl border border-slate-200 p-6 hover:border-[#D31219] transition-all flex flex-col justify-between shadow-sm hover:shadow-md"
               >
                 <div>
-                  <div className="w-8 h-8 bg-white border border-slate-200 rounded flex items-center justify-center mb-3">
-                    <BookOpen size={16} className="text-slate-700" />
+                  <div className="w-10 h-10 bg-slate-50 rounded-lg flex items-center justify-center mb-5 group-hover:bg-[#D31219]/10 transition-colors">
+                    <BookOpen size={20} className="text-slate-700 group-hover:text-[#D31219]" />
                   </div>
-                  <h3 className="text-sm font-semibold text-slate-900 leading-snug group-hover:text-[#D31219] transition-colors">
+                  <h3 className="text-lg font-bold text-slate-900 leading-tight group-hover:text-[#D31219] transition-colors">
                     {article.title}
                   </h3>
                 </div>
-                <div className="mt-4 flex items-center gap-1.5 text-xs font-semibold text-[#D31219]">
-                  Ler artigo <ArrowUp size={12} className="rotate-45" />
+                <div className="mt-6 flex items-center gap-2 text-sm font-bold text-[#D31219] uppercase tracking-wider">
+                  Ler artigo <ChevronRight size={16} />
                 </div>
               </Link>
             ))}
@@ -881,28 +872,31 @@ const FAQPage: React.FC = () => {
       </section>
 
       {/* CTA Final */}
-      <section className="py-14 bg-slate-900 text-white border-t border-slate-800">
-        <div className="container mx-auto px-4 text-center max-w-2xl">
-          <h2 className="text-xl sm:text-3xl font-bold tracking-tight mb-3">
-            Precisa de auxílio para calcular seu projeto?
-          </h2>
-          <p className="text-xs sm:text-sm text-slate-300 mb-6 leading-relaxed">
-            Nossa equipe técnica analisa sua planta ou lista de medidas para especificar perfis, fixadores e chapas ideais.
-          </p>
+      <section className="py-20 bg-slate-950 text-white relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#334155_1px,transparent_1px)] [background-size:20px_20px]"></div>
+        <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 relative z-10 text-center">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-3xl sm:text-5xl font-black tracking-tight mb-6">
+              Ainda tem dúvidas técnicas?
+            </h2>
+            <p className="text-slate-400 text-lg sm:text-xl mb-10 leading-relaxed">
+              Nossa engenharia analisa seu projeto sem custo para recomendar a melhor modulação e materiais.
+            </p>
 
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <a
-              href={`https://wa.me/${COMPANY_INFO.whatsapp}?text=Olá! Gostaria de consultoria técnica sobre materiais.`}
-              className="bg-[#D31219] hover:bg-red-700 text-white text-xs font-semibold uppercase tracking-wider px-6 py-3 rounded flex items-center justify-center gap-2 transition-colors"
-            >
-              <MessageCircle size={16} /> Atendimento WhatsApp
-            </a>
-            <a
-              href={`tel:${COMPANY_INFO.phone.replace(/\D/g, '')}`}
-              className="bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold uppercase tracking-wider px-6 py-3 rounded flex items-center justify-center gap-2 border border-slate-700 transition-colors"
-            >
-              <Phone size={16} /> {COMPANY_INFO.phone}
-            </a>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href={`https://wa.me/${COMPANY_INFO.whatsapp}?text=Olá! Gostaria de consultoria técnica sobre materiais.`}
+                className="bg-[#D31219] hover:bg-red-700 text-white text-base font-bold uppercase tracking-widest px-8 py-5 rounded-xl flex items-center justify-center gap-3 transition-all shadow-lg active:scale-[0.98]"
+              >
+                <MessageCircle size={22} /> Atendimento WhatsApp
+              </a>
+              <a
+                href={`tel:${COMPANY_INFO.phone.replace(/\D/g, '')}`}
+                className="bg-slate-900 hover:bg-slate-800 text-white text-base font-bold uppercase tracking-widest px-8 py-5 rounded-xl flex items-center justify-center gap-3 border-2 border-slate-800 transition-all active:scale-[0.98]"
+              >
+                <Phone size={22} /> {COMPANY_INFO.phone}
+              </a>
+            </div>
           </div>
         </div>
       </section>

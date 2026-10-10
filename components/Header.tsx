@@ -46,6 +46,16 @@ const Header: React.FC = () => {
   }, [location.pathname]);
 
   useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && isMenuOpen) {
+        setIsMenuOpen(false);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isMenuOpen]);
+
+  useEffect(() => {
     if (isMenuOpen) {
       document.body.style.overflow = 'hidden';
     } else {
@@ -65,28 +75,28 @@ const Header: React.FC = () => {
     <>
       {/* Top bar */}
       <div className="bg-[#D31219] text-white py-2 px-4 sticky top-0 z-[60] border-b border-white/10">
-        <div className="container mx-auto flex justify-between items-center text-[9px] md:text-[11px] font-black uppercase tracking-widest">
+        <div className="max-w-7xl mx-auto flex justify-between items-center text-xs font-bold uppercase tracking-wider">
           <div className="flex items-center gap-4 md:gap-8">
-            <a href={`tel:${COMPANY_INFO.phone.replace(/\D/g, '')}`} className="flex items-center gap-2 hover:text-black transition-colors">
-              <Phone size={12} />
+            <a href={`tel:${COMPANY_INFO.phone.replace(/\D/g, '')}`} className="flex items-center gap-2 hover:text-slate-200 transition-colors">
+              <Phone size={14} />
               <span>{COMPANY_INFO.phone}</span>
             </a>
-            <a href={`mailto:${COMPANY_INFO.email}`} className="hidden sm:flex items-center gap-2 hover:text-black transition-colors">
-              <Mail size={12} />
+            <a href={`mailto:${COMPANY_INFO.email}`} className="hidden sm:flex items-center gap-2 hover:text-slate-200 transition-colors">
+              <Mail size={14} />
               <span>{COMPANY_INFO.email}</span>
             </a>
           </div>
-          <div className="hidden lg:block opacity-90">Entrega Rapida em Curitiba e RMC</div>
+          <div className="hidden lg:block opacity-90 text-xs">Atendimento Técnico & Entrega Rápida — Curitiba e RMC</div>
         </div>
       </div>
 
       {/* Main header */}
-      <header className="sticky top-[32px] md:top-[36px] z-50 bg-white shadow-sm border-b border-gray-100">
-        <div className="container mx-auto px-4 py-3 flex justify-between items-center">
-          <Link to="/" className="flex items-center" onClick={() => setIsMenuOpen(false)}>
+      <header className="sticky top-[36px] z-50 bg-white shadow-md border-b border-slate-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
+          <Link to="/" className="flex items-center focus:outline-none focus:ring-2 focus:ring-[#D31219] rounded-md" onClick={() => setIsMenuOpen(false)}>
             <img
               src={SITE_ASSETS.logo}
-              alt="KY Drywall"
+              alt="KY Drywall & Steel Frame"
               className="h-10 md:h-14 w-auto"
               onError={(e) => {
                 (e.target as HTMLImageElement).src = 'https://via.placeholder.com/200x80?text=KY+DRYWALL';
@@ -95,24 +105,24 @@ const Header: React.FC = () => {
           </Link>
 
           {/* Desktop nav */}
-          <nav className="hidden lg:flex items-center gap-8">
+          <nav className="hidden lg:flex items-center gap-7">
             {NAV_ITEMS.map((item) =>
               item.label !== 'Nossos Produtos' ? (
                 <div key={item.label} className="relative group py-2">
                   <Link
                     to={item.path}
-                    className="flex items-center gap-1 font-semibold text-gray-900 hover:text-[#D31219] transition-colors text-sm"
+                    className="flex items-center gap-1 font-bold text-slate-800 hover:text-[#D31219] transition-colors text-sm uppercase tracking-wide focus:outline-none focus:ring-2 focus:ring-[#D31219] rounded px-1"
                   >
                     {item.label}
-                    {item.children && <ChevronRight size={14} className="rotate-90" />}
+                    {item.children && <ChevronRight size={14} className="rotate-90 text-slate-400 group-hover:text-[#D31219]" />}
                   </Link>
                   {item.children && (
-                    <div className="absolute left-0 top-full hidden group-hover:block bg-white shadow-xl rounded-lg py-2 w-64 border-t-2 border-[#D31219]">
+                    <div className="absolute left-0 top-full hidden group-hover:block bg-white shadow-xl rounded-lg py-2 w-64 border-t-2 border-[#D31219] border-x border-b border-slate-200">
                       {item.children.map((child) => (
                         <Link
                           key={child.label}
                           to={child.path}
-                          className="block px-4 py-2.5 text-xs text-gray-700 hover:bg-gray-50 hover:text-[#D31219] font-medium"
+                          className="block px-4 py-2.5 text-xs text-slate-700 hover:bg-slate-50 hover:text-[#D31219] font-bold"
                         >
                           {child.label}
                         </Link>
@@ -124,198 +134,179 @@ const Header: React.FC = () => {
             )}
             <Link
               to="/blog"
-              className="font-semibold text-gray-900 hover:text-[#D31219] transition-colors text-sm"
+              className="font-bold text-slate-800 hover:text-[#D31219] transition-colors text-sm uppercase tracking-wide"
             >
               Blog
             </Link>
             <Link
               to="/faq"
-              className="font-semibold text-slate-700 hover:text-[#D31219] transition-colors text-sm"
+              className="font-bold text-slate-800 hover:text-[#D31219] transition-colors text-sm uppercase tracking-wide"
             >
               FAQ
             </Link>
           </nav>
 
           {/* Actions */}
-          <div className="flex items-center gap-3 md:gap-5">
+          <div className="flex items-center gap-3 md:gap-4">
             <button 
               onClick={() => setIsQuoteOpen(true)} 
-              className="relative p-2 text-slate-700 rounded-lg hover:bg-slate-100 transition-colors flex items-center gap-2"
+              className="relative min-h-[48px] px-3 py-2 text-slate-800 rounded-lg bg-slate-100 hover:bg-slate-200 transition-colors flex items-center gap-2 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#D31219]"
               title="Lista de cotação"
+              aria-label="Acessar lista de cotação"
             >
-              <ShoppingCart size={20} />
-              <span className="hidden sm:inline text-xs font-semibold text-slate-700">Cotação</span>
+              <ShoppingCart size={20} className="text-[#D31219]" />
+              <span className="hidden sm:inline text-xs font-bold text-slate-800 uppercase tracking-wider">Cotação</span>
               {quoteCount > 0 && (
-                <span className="bg-[#D31219] text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full min-w-[18px] text-center">
+                <span className="bg-[#D31219] text-white text-xs font-extrabold px-2 py-0.5 rounded-full min-w-[20px] text-center">
                   {quoteCount}
                 </span>
               )}
             </button>
-            <Link to="/produtos" className="hidden md:inline-flex items-center gap-2 bg-[#D31219] text-white font-semibold px-5 py-2.5 rounded text-xs uppercase tracking-wider hover:bg-slate-900 transition-colors shadow-sm">
+            <Link to="/produtos" className="hidden md:inline-flex items-center gap-2 bg-[#D31219] text-white font-bold px-5 py-3 rounded text-xs uppercase tracking-wider hover:bg-slate-900 transition-colors shadow-sm min-h-[48px]">
               Catálogo de Produtos
             </Link>
+            
+            {/* Mobile Menu Button - Minimum 56x56px with "MENU" text */}
             <button
-              className="lg:hidden text-slate-900 p-1.5 rounded-lg hover:bg-slate-100"
+              className="lg:hidden min-w-[56px] min-h-[56px] bg-[#D31219] text-white font-bold px-3 py-2 rounded-lg hover:bg-slate-900 transition-colors flex items-center justify-center gap-2 shadow-md focus:outline-none focus:ring-2 focus:ring-slate-900"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              aria-label={isMenuOpen ? 'Fechar menu' : 'Abrir menu'}
+              aria-label={isMenuOpen ? 'Fechar menu de navegação' : 'Abrir menu de navegação'}
+              aria-expanded={isMenuOpen}
             >
-              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              {isMenuOpen ? <X size={26} /> : <Menu size={26} />}
+              <span className="text-xs font-black uppercase tracking-wider">MENU</span>
             </button>
           </div>
         </div>
       </header>
 
-      {/* Mobile menu overlay */}
+      {/* Full-Screen Mobile Menu Drawer */}
       {isMenuOpen && (
         <div
-          className="fixed inset-0 bg-black/50 z-[70] lg:hidden"
-          onClick={() => setIsMenuOpen(false)}
-        />
-      )}
+          className="fixed inset-0 z-[100] bg-slate-950 text-white w-full h-full overflow-y-auto flex flex-col animate-in fade-in duration-200"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Menu principal"
+        >
+          {/* Menu Top Bar */}
+          <div className="flex items-center justify-between px-5 py-4 border-b border-slate-800/80 bg-slate-900/90 sticky top-0 z-10">
+            <Link to="/" onClick={() => setIsMenuOpen(false)} className="flex items-center bg-white p-1.5 rounded">
+              <img src={SITE_ASSETS.logo} alt="KY Drywall" className="h-8 w-auto" />
+            </Link>
+            <button
+              onClick={() => setIsMenuOpen(false)}
+              className="min-w-[56px] min-h-[56px] flex items-center justify-center gap-2 bg-slate-800 hover:bg-red-600 text-white rounded-lg font-bold text-sm uppercase transition-colors border border-slate-700"
+              aria-label="FECHAR menu"
+            >
+              <X size={24} />
+              <span>FECHAR</span>
+            </button>
+          </div>
 
-      {/* Mobile menu drawer */}
-      <div
-        className={`fixed top-0 right-0 h-full w-[85%] max-w-[340px] bg-white z-[80] lg:hidden transform transition-transform duration-300 ease-in-out overflow-y-auto ${
-          isMenuOpen ? 'translate-x-0' : 'translate-x-full'
-        }`}
-      >
-        {/* Header do menu */}
-        <div className="flex items-center justify-between px-5 py-4 border-b border-gray-100">
-          <span className="text-sm font-bold text-gray-900 uppercase tracking-wider">Menu</span>
-          <button
-            onClick={() => setIsMenuOpen(false)}
-            className="p-1.5 rounded-lg hover:bg-gray-100 text-gray-500"
-            aria-label="Fechar menu"
-          >
-            <X size={22} />
-          </button>
-        </div>
+          {/* Quick Call & WhatsApp Buttons in Menu Header */}
+          <div className="p-5 border-b border-slate-800/80 bg-slate-900/50">
+            <p className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-3 text-center">Atendimento Rápido Balcão & Obras</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <a
+                href={`tel:${COMPANY_INFO.phone.replace(/\D/g, '')}`}
+                className="flex items-center justify-center gap-3 bg-[#D31219] hover:bg-red-700 text-white font-bold py-3.5 px-4 rounded-xl text-base transition-colors min-h-[56px] shadow-lg"
+              >
+                <Phone size={20} />
+                <span>Ligar (41) 3528-4232</span>
+              </a>
+              <a
+                href={`https://wa.me/${COMPANY_INFO.whatsapp}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-3 bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3.5 px-4 rounded-xl text-base transition-colors min-h-[56px] shadow-lg"
+              >
+                <MessageCircle size={20} />
+                <span>WhatsApp 24h</span>
+              </a>
+            </div>
+          </div>
 
-        {/* Itens do menu */}
-        <nav className="py-2">
-          {allNavItems.map((item) => {
-            const isActive = location.pathname === item.path;
-            const hasChildren = item.children && item.children.length > 0;
-            const isExpanded = expandedItem === item.label;
+          {/* Nav Links list - 20px+ font size, 60px+ touch target height */}
+          <nav className="flex-1 py-4">
+            {allNavItems.map((item) => {
+              const isActive = location.pathname === item.path;
+              const hasChildren = item.children && item.children.length > 0;
+              const isExpanded = expandedItem === item.label;
 
-            return (
-              <div key={item.label}>
-                <div className="flex items-center">
+              return (
+                <div key={item.label} className="border-b border-slate-800/80">
                   {hasChildren ? (
-                    <button
-                      onClick={() => setExpandedItem(isExpanded ? null : item.label)}
-                      className={`flex items-center gap-3 w-full px-5 py-3.5 text-left transition-colors ${
-                        isActive
-                          ? 'bg-red-50 text-[#D31219] font-bold'
-                          : 'text-gray-800 hover:bg-gray-50 font-medium'
-                      }`}
-                    >
-                      <span className={`flex-shrink-0 ${isActive ? 'text-[#D31219]' : 'text-gray-400'}`}>
-                        {MENU_ICONS[item.label] || <ChevronRight size={18} />}
-                      </span>
-                      <span className="text-sm flex-1">{item.label}</span>
-                      <ChevronRight
-                        size={16}
-                        className={`text-gray-400 transition-transform duration-200 ${
-                          isExpanded ? 'rotate-90' : ''
+                    <div>
+                      <button
+                        onClick={() => setExpandedItem(isExpanded ? null : item.label)}
+                        className={`w-full min-h-[64px] px-6 flex items-center justify-between text-left transition-colors ${
+                          isActive ? 'bg-red-950/40 text-red-400 font-black' : 'text-slate-100 hover:bg-slate-900 font-bold'
                         }`}
-                      />
-                    </button>
+                        aria-expanded={isExpanded}
+                      >
+                        <div className="flex items-center gap-4">
+                          <span className={isActive ? 'text-[#D31219]' : 'text-slate-400'}>
+                            {MENU_ICONS[item.label] || <ChevronRight size={22} />}
+                          </span>
+                          <span className="text-xl sm:text-2xl">{item.label}</span>
+                        </div>
+                        <ChevronRight
+                          size={22}
+                          className={`text-slate-400 transition-transform duration-200 ${
+                            isExpanded ? 'rotate-90 text-[#D31219]' : ''
+                          }`}
+                        />
+                      </button>
+
+                      {/* Accordion sub-items */}
+                      {isExpanded && (
+                        <div className="bg-slate-900/90 border-l-4 border-[#D31219] py-2">
+                          <Link
+                            to={item.path}
+                            onClick={() => setIsMenuOpen(false)}
+                            className="block px-8 py-3.5 text-base font-extrabold text-[#D31219] uppercase tracking-wider hover:bg-slate-800 min-h-[48px] flex items-center"
+                          >
+                            Ver Todos os {item.label}
+                          </Link>
+                          {item.children!.map((child) => (
+                            <Link
+                              key={child.label}
+                              to={child.path}
+                              onClick={() => setIsMenuOpen(false)}
+                              className="block px-8 py-3.5 text-base font-semibold text-slate-300 hover:text-white hover:bg-slate-800 min-h-[48px] flex items-center border-t border-slate-800/50"
+                            >
+                              {child.label}
+                            </Link>
+                          ))}
+                        </div>
+                      )}
+                    </div>
                   ) : (
                     <Link
                       to={item.path}
-                      className={`flex items-center gap-3 w-full px-5 py-3.5 transition-colors ${
-                        isActive
-                          ? 'bg-red-50 text-[#D31219] font-bold'
-                          : 'text-gray-800 hover:bg-gray-50 font-medium'
+                      onClick={() => setIsMenuOpen(false)}
+                      className={`min-h-[64px] px-6 flex items-center gap-4 transition-colors ${
+                        isActive ? 'bg-red-950/40 text-red-400 font-black' : 'text-slate-100 hover:bg-slate-900 font-bold'
                       }`}
                     >
-                      <span className={`flex-shrink-0 ${isActive ? 'text-[#D31219]' : 'text-gray-400'}`}>
-                        {MENU_ICONS[item.label] || <ChevronRight size={18} />}
+                      <span className={isActive ? 'text-[#D31219]' : 'text-slate-400'}>
+                        {MENU_ICONS[item.label] || <ChevronRight size={22} />}
                       </span>
-                      <span className="text-sm">{item.label}</span>
+                      <span className="text-xl sm:text-2xl">{item.label}</span>
                     </Link>
                   )}
                 </div>
+              );
+            })}
+          </nav>
 
-                {/* Sub-menu items */}
-                {hasChildren && isExpanded && (
-                  <div className="bg-gray-50 border-l-2 border-[#D31219] ml-5">
-                    <Link
-                      to={item.path}
-                      className="block px-5 py-2.5 text-xs font-bold text-[#D31219] uppercase tracking-wider hover:bg-gray-100 border-b border-gray-100"
-                    >
-                      Ver Todos os {item.label}
-                    </Link>
-                    {item.children!.map((child) => {
-                      const isChildActive = location.pathname === child.path;
-                      return (
-                        <Link
-                          key={child.label}
-                          to={child.path}
-                          className={`block px-5 py-2.5 text-xs transition-colors ${
-                            isChildActive
-                              ? 'text-[#D31219] font-bold bg-red-50/50'
-                              : 'text-gray-600 hover:text-[#D31219] hover:bg-gray-100 font-medium'
-                          }`}
-                        >
-                          {child.label}
-                        </Link>
-                      );
-                    })}
-                  </div>
-                )}
-              </div>
-            );
-          })}
-        </nav>
-
-        {/* Separador */}
-        <div className="mx-5 my-2 border-t border-gray-100" />
-
-        {/* CTA Produtos */}
-        <div className="px-5 py-3">
-          <Link
-            to="/produtos"
-            className="flex items-center justify-center gap-2 w-full bg-[#D31219] text-white font-bold py-3 rounded-lg hover:bg-red-700 transition-colors text-sm shadow-md"
-          >
-            <Package size={18} />
-            Ver Todos os Produtos
-          </Link>
+          {/* Menu Footer Info */}
+          <div className="p-6 bg-slate-900 border-t border-slate-800 text-center">
+            <p className="text-sm font-bold text-slate-300 mb-1">KY Drywall & Steel Frame Curitiba</p>
+            <p className="text-xs text-slate-400">{COMPANY_INFO.address}</p>
+          </div>
         </div>
-
-        {/* WhatsApp CTA */}
-        <div className="px-5 pb-3">
-          <a
-            href={`https://wa.me/${COMPANY_INFO.whatsapp}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center justify-center gap-2 w-full bg-green-600 text-white font-bold py-3 rounded-lg hover:bg-green-700 transition-colors text-sm shadow-md"
-          >
-            <Phone size={18} />
-            Fale pelo WhatsApp
-          </a>
-        </div>
-
-        {/* Contatos rapidos */}
-        <div className="px-5 py-4 bg-gray-50 border-t border-gray-100 mt-2">
-          <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-3">Contato Direto</p>
-          <a
-            href={`tel:${COMPANY_INFO.phone.replace(/\D/g, '')}`}
-            className="flex items-center gap-2 text-xs text-gray-600 hover:text-[#D31219] mb-2 font-medium"
-          >
-            <Phone size={14} className="text-gray-400" />
-            {COMPANY_INFO.phone}
-          </a>
-          <a
-            href={`mailto:${COMPANY_INFO.email}`}
-            className="flex items-center gap-2 text-xs text-gray-600 hover:text-[#D31219] font-medium"
-          >
-            <Mail size={14} className="text-gray-400" />
-            {COMPANY_INFO.email}
-          </a>
-        </div>
-      </div>
+      )}
 
       <QuoteDrawer isOpen={isQuoteOpen} onClose={() => setIsQuoteOpen(false)} />
     </>

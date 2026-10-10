@@ -14,44 +14,42 @@ export default function LinksPage() {
   ];
 
   return (
-    <section className="bg-slate-50 min-h-screen px-4 py-12 flex items-center justify-center">
+    <section className="bg-slate-950 min-h-screen px-4 py-16 flex items-center justify-center relative overflow-hidden bg-[radial-gradient(#334155_1px,transparent_1px)] [background-size:30px_30px]">
       <EnhancedSEO
         title="KY Drywall | Canais Oficiais de Atendimento"
         description="Acesse os canais oficiais da KY Drywall & Steel Frame: site, WhatsApp comercial e técnico, Instagram e localização."
         canonical={`${BASE_URL}/links`}
         ogImage={`${BASE_URL}${SITE_ASSETS.logo}`}
       />
-      <div className="w-full max-w-md bg-white rounded border border-slate-200 p-6 sm:p-8 shadow-sm text-center">
-        <div className="mb-5">
+      <div className="w-full max-w-md bg-white rounded-3xl border border-slate-200 p-8 md:p-10 shadow-2xl text-center relative z-10">
+        <div className="mb-8">
           <img
             src={SITE_ASSETS.logo}
             alt="KY Drywall & Steel Frame"
-            width="180"
-            height="80"
-            className="mx-auto w-40 h-20 object-contain"
+            className="mx-auto w-48 h-auto object-contain"
           />
         </div>
-        <h1 className="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight leading-snug">
-          KY Drywall &amp; Steel Frame
+        <h1 className="text-2xl font-black text-slate-900 tracking-tight leading-snug mb-3">
+          Canais de Atendimento
         </h1>
-        <p className="text-xs sm:text-sm text-slate-600 mt-2 mb-6 leading-relaxed">
-          Distribuição especializada em Drywall, Steel Frame e construção a seco em Curitiba e Região Metropolitana.
+        <p className="text-sm text-slate-500 mb-10 leading-relaxed font-bold uppercase tracking-widest">
+          Curitiba & Região Metropolitana
         </p>
 
-        <nav aria-label="Canais oficiais" className="flex flex-col gap-2.5">
+        <nav aria-label="Canais oficiais" className="flex flex-col gap-3">
           {channels.map(({ label, href, icon: Icon, highlight }) => (
             <a
               key={label}
               href={href}
               target={href.startsWith('http') ? '_blank' : undefined}
               rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
-              className={`flex items-center justify-center gap-2.5 py-3 px-4 rounded text-xs font-semibold uppercase tracking-wider transition-colors ${
+              className={`flex items-center justify-center gap-3 py-4 px-6 rounded-xl text-xs font-black uppercase tracking-[0.2em] transition-all shadow-sm active:scale-[0.98] ${
                 highlight
-                  ? 'bg-[#D31219] hover:bg-red-700 text-white'
+                  ? 'bg-[#D31219] hover:bg-red-700 text-white shadow-red-900/10'
                   : 'bg-slate-900 hover:bg-slate-800 text-white'
               }`}
             >
-              <Icon size={16} />
+              <Icon size={18} />
               <span>{label}</span>
             </a>
           ))}

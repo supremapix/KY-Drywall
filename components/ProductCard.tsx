@@ -35,17 +35,18 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   };
 
   return (
-    <div className="bg-white rounded-lg border border-slate-200 hover:border-[#D31219]/50 hover:shadow-lg transition-all duration-300 overflow-hidden group flex flex-col h-full">
+    <div className="bg-white rounded-2xl border border-slate-200 hover:border-[#D31219]/30 hover:shadow-xl transition-all duration-500 overflow-hidden group flex flex-col h-full">
       {/* Image Wrapper */}
       <Link to={`/produto/${product.id}`} className="block relative overflow-hidden aspect-square bg-slate-50 border-b border-slate-100">
         <img
           src={product.image}
           alt={product.name}
-          className="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-500"
+          className="w-full h-full object-contain p-6 group-hover:scale-110 transition-transform duration-700"
           loading="lazy"
+          onError={(e) => (e.target as HTMLImageElement).src = 'https://images.pexels.com/photos/159306/construction-site-build-construction-structure-159306.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&dpr=1'}
         />
-        <div className="absolute top-3 left-3 flex items-center gap-1.5">
-          <span className="bg-slate-900 text-white text-[10px] font-bold px-2.5 py-0.5 rounded uppercase tracking-wider">
+        <div className="absolute top-4 left-4">
+          <span className="bg-slate-950/90 backdrop-blur-sm text-white text-[9px] font-black px-2.5 py-1 rounded-full uppercase tracking-widest border border-white/10">
             {product.category}
           </span>
         </div>
@@ -53,46 +54,46 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         {/* Quick Add Overlay */}
         <button
           onClick={addToQuote}
-          title="Adicionar à cotação rápida"
-          className="absolute bottom-3 right-3 bg-white text-slate-800 p-2.5 rounded shadow-md opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all hover:bg-[#D31219] hover:text-white duration-200 border border-slate-200"
+          title="Adicionar à cotação"
+          className="absolute bottom-4 right-4 bg-white text-slate-900 p-3 rounded-xl shadow-lg opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all hover:bg-[#D31219] hover:text-white duration-300 border border-slate-200"
         >
-          {added ? <Check size={18} strokeWidth={2.5} className="text-emerald-600 group-hover:text-white" /> : <PlusCircle size={18} strokeWidth={2} />}
+          {added ? <Check size={20} strokeWidth={3} className="text-emerald-600 group-hover:text-white" /> : <PlusCircle size={20} strokeWidth={2.5} />}
         </button>
       </Link>
 
       {/* Content */}
-      <div className="p-4 md:p-5 flex flex-col flex-grow">
-        <Link to={`/produto/${product.id}`} className="flex-grow">
-          <h3 className="text-slate-900 font-semibold text-sm md:text-base leading-snug mb-2 group-hover:text-[#D31219] transition-colors line-clamp-2">
+      <div className="p-5 md:p-6 flex flex-col flex-grow">
+        <Link to={`/produto/${product.id}`} className="flex-grow group/title">
+          <h3 className="text-slate-900 font-bold text-base md:text-lg leading-tight mb-3 group-hover/title:text-[#D31219] transition-colors line-clamp-2">
             {product.name}
           </h3>
           
-          <div className="flex items-center gap-2 mb-4 text-[11px] text-slate-500 font-medium">
-            <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-            <span>Estoque Curitiba & Região</span>
+          <div className="flex items-center gap-2 mb-6 text-[10px] text-slate-400 font-black uppercase tracking-widest">
+            <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></div>
+            <span>Pronta Entrega Curitiba</span>
           </div>
         </Link>
 
         {/* Action Buttons */}
-        <div className="grid grid-cols-2 gap-2 mt-auto pt-2">
+        <div className="grid grid-cols-2 gap-3 mt-auto">
           <button
             onClick={addToQuote}
-            className={`flex items-center justify-center gap-1.5 py-2.5 px-2 border rounded text-[11px] font-semibold tracking-wide transition-colors ${
+            className={`flex items-center justify-center gap-2 py-3 px-2 border-2 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all active:scale-[0.95] ${
               added 
-                ? 'bg-emerald-50 text-emerald-700 border-emerald-300' 
-                : 'text-slate-700 border-slate-200 hover:border-[#D31219] hover:text-[#D31219] hover:bg-red-50/20'
+                ? 'bg-emerald-50 text-emerald-700 border-emerald-200' 
+                : 'text-slate-900 border-slate-100 hover:border-slate-300 bg-slate-50'
             }`}
           >
-            {added ? 'Adicionado' : 'Cotação'}
+            {added ? 'Feito' : 'Cote+'}
           </button>
           <a
             href={whatsappUrl}
             target="_blank"
             rel="noreferrer"
-            className="flex items-center justify-center gap-1.5 py-2.5 px-2 bg-[#D31219] text-white rounded text-[11px] font-semibold tracking-wide hover:bg-slate-900 transition-colors shadow-sm"
+            className="flex items-center justify-center gap-2 py-3 px-2 bg-[#D31219] text-white rounded-xl text-[10px] font-black uppercase tracking-widest hover:bg-slate-950 transition-all shadow-md active:scale-[0.95]"
           >
-            <MessageCircle size={14} />
-            Consultar
+            <MessageCircle size={16} />
+            Preço
           </a>
         </div>
       </div>

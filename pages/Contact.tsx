@@ -102,7 +102,7 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <div className="bg-slate-50 min-h-screen py-16 lg:py-20">
+    <div className="bg-white min-h-screen">
       <EnhancedSEO
         title="Contato e Orçamento Técnico - KY Drywall Curitiba"
         description="Fale diretamente com os consultores da KY Drywall para cotações técnicas e pedidos. Atendimento rápido para obras em Curitiba e Região Metropolitana."
@@ -111,131 +111,143 @@ const Contact: React.FC = () => {
         ogType="website"
         schema={contactPageSchema}
       />
-      <div className="container mx-auto px-4 lg:px-8">
-        <div className="max-w-5xl mx-auto">
-          <header className="mb-12">
-            <span className="text-[#D31219] text-xs font-bold uppercase tracking-wider block mb-2">
-              Atendimento Comercial & Técnico
-            </span>
-            <h1 className="text-3xl sm:text-5xl font-bold text-slate-900 tracking-tight leading-tight mb-3">
+
+      {/* Hero Section */}
+      <section className="bg-slate-950 py-16 md:py-24 text-white relative overflow-hidden bg-[radial-gradient(#334155_1px,transparent_1px)] [background-size:20px_20px]">
+        <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 relative z-10">
+          <div className="max-w-3xl mx-auto text-center">
+            <div className="inline-flex items-center gap-2 text-[#D31219] text-xs font-mono font-bold uppercase tracking-wider bg-[#D31219]/10 border border-[#D31219]/30 px-3 py-1 rounded mb-6">
+              <span>01 — ATENDIMENTO DIRETO</span>
+            </div>
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.1] mb-6">
               Cotação e Suporte Técnico
             </h1>
-            <p className="text-slate-600 text-sm sm:text-base max-w-2xl leading-relaxed">
-              Fale com um dos nossos consultores técnicos ou envie uma mensagem direta para calcular o quantitativo exato dos insumos da sua obra.
+            <p className="text-slate-400 text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto">
+              Fale com nossos consultores técnicos em Curitiba para calcular o quantitativo exato da sua obra. Atendimento humano e especializado.
             </p>
-          </header>
+          </div>
+        </div>
+      </section>
 
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-16 lg:py-24">
+        <div className="max-w-5xl mx-auto">
           {/* Cards de Especialistas */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-16">
             {/* Especialista 1 */}
-            <div className="bg-white p-6 rounded-lg border border-slate-200 shadow-sm flex flex-col justify-between">
+            <div className="bg-white p-8 rounded-xl border border-slate-200 shadow-sm flex flex-col justify-between group hover:border-[#D31219]/30 transition-all">
               <div>
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 rounded bg-[#D31219]/10 flex items-center justify-center text-[#D31219]">
-                    <User size={20} />
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-12 h-12 rounded-lg bg-slate-100 flex items-center justify-center text-[#D31219] group-hover:bg-[#D31219] group-hover:text-white transition-colors">
+                    <User size={24} />
                   </div>
                   <div>
-                    <span className="text-[11px] font-bold uppercase tracking-wider text-[#D31219] block">Suporte de Engenharia</span>
-                    <h3 className="text-lg font-bold text-slate-900">Carlos</h3>
+                    <span className="text-xs font-bold uppercase tracking-wider text-[#D31219] block mb-0.5">Suporte de Engenharia</span>
+                    <h3 className="text-xl font-bold text-slate-900">Carlos</h3>
                   </div>
                 </div>
-                <p className="text-slate-600 text-xs leading-relaxed mb-3">
-                  Especificação estrutural para Steel Frame, sistemas drywall e telhados shingle de alta performance.
+                <p className="text-slate-600 text-sm leading-relaxed mb-6">
+                  Especialista em especificação estrutural para Steel Frame, sistemas drywall e telhados shingle de alta performance.
                 </p>
-                <p className="text-xs font-semibold text-slate-700 mb-5">
+                <div className="flex items-center gap-2 text-slate-900 font-bold mb-8 text-lg">
+                  <Smartphone size={18} className="text-slate-400" />
                   (41) 99645-7421
-                </p>
+                </div>
               </div>
               <button
                 onClick={() => handleWhatsAppAgent('Carlos', COMPANY_INFO.whatsapp)}
-                className="w-full bg-[#D31219] hover:bg-red-700 text-white py-3 rounded text-xs font-semibold uppercase tracking-wider flex items-center justify-center gap-2 transition-colors"
+                className="w-full bg-[#D31219] hover:bg-red-700 text-white py-4 rounded-lg font-bold uppercase tracking-wider flex items-center justify-center gap-2 transition-all shadow-md active:scale-[0.98]"
               >
-                <MessageCircle size={15} /> Conversar com Carlos
+                <MessageCircle size={20} /> Conversar com Carlos
               </button>
             </div>
 
             {/* Especialista 2 */}
-            <div className="bg-white p-6 rounded-lg border border-slate-200 shadow-sm flex flex-col justify-between">
+            <div className="bg-white p-8 rounded-xl border border-slate-200 shadow-sm flex flex-col justify-between group hover:border-emerald-600/30 transition-all">
               <div>
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 rounded bg-emerald-100 flex items-center justify-center text-emerald-700">
-                    <User size={20} />
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-12 h-12 rounded-lg bg-slate-100 flex items-center justify-center text-emerald-600 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                    <User size={24} />
                   </div>
                   <div>
-                    <span className="text-[11px] font-bold uppercase tracking-wider text-emerald-700 block">Comercial & Faturamento</span>
-                    <h3 className="text-lg font-bold text-slate-900">Lucilene</h3>
+                    <span className="text-xs font-bold uppercase tracking-wider text-emerald-600 block mb-0.5">Comercial & Faturamento</span>
+                    <h3 className="text-xl font-bold text-slate-900">Lucilene</h3>
                   </div>
                 </div>
-                <p className="text-slate-600 text-xs leading-relaxed mb-3">
-                  Cotações de atacado, condições de pagamento faturado e agendamento de entregas com frete dedicado.
+                <p className="text-slate-600 text-sm leading-relaxed mb-6">
+                  Foco em cotações de atacado, condições de pagamento faturado e logística de entrega para grandes obras.
                 </p>
-                <p className="text-xs font-semibold text-slate-700 mb-5">
+                <div className="flex items-center gap-2 text-slate-900 font-bold mb-8 text-lg">
+                  <Smartphone size={18} className="text-slate-400" />
                   {COMPANY_INFO.phoneLucilene}
-                </p>
+                </div>
               </div>
               <button
                 onClick={() => handleWhatsAppAgent('Lucilene', '5541999067259')}
-                className="w-full bg-emerald-700 hover:bg-emerald-800 text-white py-3 rounded text-xs font-semibold uppercase tracking-wider flex items-center justify-center gap-2 transition-colors"
+                className="w-full bg-emerald-600 hover:bg-emerald-700 text-white py-4 rounded-lg font-bold uppercase tracking-wider flex items-center justify-center gap-2 transition-all shadow-md active:scale-[0.98]"
               >
-                <MessageCircle size={15} /> Conversar com Lucilene
+                <MessageCircle size={20} /> Conversar com Lucilene
               </button>
             </div>
           </div>
 
           {/* FORMULÁRIO DE CONTATO */}
-          <section className="mb-12">
-            <div className="bg-white rounded-lg border border-slate-200 shadow-sm overflow-hidden">
+          <section className="mb-16">
+            <div className="inline-flex items-center gap-2 text-[#D31219] text-xs font-mono font-bold uppercase tracking-wider mb-6">
+              <span>02 — SOLICITAÇÃO FORMAL</span>
+            </div>
+            <div className="bg-slate-900 rounded-2xl border border-slate-800 shadow-2xl overflow-hidden">
               <div className="grid grid-cols-1 lg:grid-cols-5">
-                <div className="lg:col-span-2 bg-slate-900 p-8 text-white flex flex-col justify-between">
-                  <div>
-                    <div className="w-10 h-10 rounded bg-[#D31219]/20 border border-[#D31219]/40 flex items-center justify-center text-[#D31219] mb-6">
-                      <ClipboardList size={20} />
+                <div className="lg:col-span-2 bg-slate-950 p-8 md:p-12 text-white flex flex-col justify-between relative overflow-hidden">
+                  {/* Decorative ruler line */}
+                  <div className="absolute top-0 right-0 w-px h-full bg-slate-800 hidden lg:block"></div>
+                  
+                  <div className="relative z-10">
+                    <div className="w-12 h-12 rounded-lg bg-[#D31219]/20 border border-[#D31219]/40 flex items-center justify-center text-[#D31219] mb-8">
+                      <ClipboardList size={24} />
                     </div>
-                    <h2 className="text-xl font-bold tracking-tight mb-3">
-                      Envie Sua Solicitação
+                    <h2 className="text-2xl font-bold tracking-tight mb-4">
+                      Envie Seu Pedido
                     </h2>
-                    <p className="text-slate-300 text-xs leading-relaxed mb-8">
-                      Preencha os campos ao lado com a metragem ou lista de materiais. Sua mensagem será enviada diretamente aos nossos operadores.
+                    <p className="text-slate-400 text-base leading-relaxed mb-10">
+                      Informe os detalhes do seu projeto ou anexe sua lista de materiais. Atendimento técnico especializado.
                     </p>
-                    <div className="space-y-3 text-xs text-slate-300">
-                      <div className="flex items-center gap-2">
-                        <div className="w-1.5 h-1.5 rounded-full bg-[#D31219]"></div>
-                        <span>Atendimento no mesmo dia útil</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <div className="w-1.5 h-1.5 rounded-full bg-[#D31219]"></div>
-                        <span>Apoio no cálculo de modulação</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <div className="w-1.5 h-1.5 rounded-full bg-[#D31219]"></div>
-                        <span>Preços direto de distribuidor</span>
-                      </div>
+                    <div className="space-y-4">
+                      {[
+                        'Atendimento no mesmo dia útil',
+                        'Apoio no cálculo de modulação',
+                        'Preços direto de distribuidor'
+                      ].map((text, i) => (
+                        <div key={i} className="flex items-center gap-3 text-sm text-slate-300">
+                          <div className="w-1.5 h-1.5 rounded-full bg-[#D31219]"></div>
+                          <span>{text}</span>
+                        </div>
+                      ))}
                     </div>
                   </div>
 
-                  <div className="mt-8 pt-6 border-t border-slate-800 text-xs text-slate-400">
-                    <p className="font-semibold text-white">Central Telefônica:</p>
-                    <p>{COMPANY_INFO.phone}</p>
+                  <div className="mt-12 pt-8 border-t border-slate-800 relative z-10">
+                    <p className="text-xs uppercase font-bold text-slate-500 mb-2 tracking-widest">Loja Física Curitiba:</p>
+                    <p className="text-lg font-bold text-white">{COMPANY_INFO.phone}</p>
                   </div>
                 </div>
 
-                <div className="lg:col-span-3 p-8">
-                  <form onSubmit={handleFormSubmit} className="space-y-4">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <div className="space-y-1.5">
-                        <label className="text-xs font-semibold text-slate-700">Seu Nome / Empresa</label>
+                <div className="lg:col-span-3 p-8 md:p-12 bg-white">
+                  <form onSubmit={handleFormSubmit} className="space-y-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div className="space-y-2">
+                        <label className="text-sm font-bold text-slate-700 block ml-1">Seu Nome / Empresa</label>
                         <input 
                           type="text" 
                           name="name"
                           required
                           value={formData.name}
                           onChange={handleInputChange}
-                          placeholder="Ex: Engenharia & Cia"
-                          className="w-full bg-slate-50 border border-slate-200 rounded px-3.5 py-2.5 text-xs text-slate-900 focus:outline-none focus:border-slate-400 transition-colors"
+                          placeholder="Nome completo ou empresa"
+                          className="w-full bg-slate-50 border-2 border-slate-100 rounded-xl px-5 h-[56px] text-lg text-slate-900 focus:outline-none focus:border-[#D31219] transition-all placeholder:text-slate-400"
                         />
                       </div>
-                      <div className="space-y-1.5">
-                        <label className="text-xs font-semibold text-slate-700">WhatsApp / Telefone</label>
+                      <div className="space-y-2">
+                        <label className="text-sm font-bold text-slate-700 block ml-1">WhatsApp / Telefone</label>
                         <input 
                           type="tel" 
                           name="phone"
@@ -243,18 +255,18 @@ const Contact: React.FC = () => {
                           value={formData.phone}
                           onChange={handleInputChange}
                           placeholder="(41) 99999-9999"
-                          className="w-full bg-slate-50 border border-slate-200 rounded px-3.5 py-2.5 text-xs text-slate-900 focus:outline-none focus:border-slate-400 transition-colors"
+                          className="w-full bg-slate-50 border-2 border-slate-100 rounded-xl px-5 h-[56px] text-lg text-slate-900 focus:outline-none focus:border-[#D31219] transition-all placeholder:text-slate-400"
                         />
                       </div>
                     </div>
                     
-                    <div className="space-y-1.5">
-                      <label className="text-xs font-semibold text-slate-700">Segmento do Projeto</label>
+                    <div className="space-y-2">
+                      <label className="text-sm font-bold text-slate-700 block ml-1">Segmento do Projeto</label>
                       <select 
                         name="subject"
                         value={formData.subject}
                         onChange={handleInputChange}
-                        className="w-full bg-slate-50 border border-slate-200 rounded px-3.5 py-2.5 text-xs text-slate-900 focus:outline-none focus:border-slate-400 transition-colors"
+                        className="w-full bg-slate-50 border-2 border-slate-100 rounded-xl px-5 h-[56px] text-lg text-slate-900 focus:outline-none focus:border-[#D31219] transition-all appearance-none"
                       >
                         <option value="Drywall">Paredes e Forros em Drywall</option>
                         <option value="Steel Frame">Estrutura em Steel Frame</option>
@@ -264,8 +276,8 @@ const Contact: React.FC = () => {
                       </select>
                     </div>
 
-                    <div className="space-y-1.5">
-                      <label className="text-xs font-semibold text-slate-700">Descrição do Pedido ou Metragem</label>
+                    <div className="space-y-2">
+                      <label className="text-sm font-bold text-slate-700 block ml-1">Descrição do Pedido ou Metragem</label>
                       <textarea 
                         name="message"
                         required
@@ -273,21 +285,22 @@ const Contact: React.FC = () => {
                         onChange={handleInputChange}
                         rows={4}
                         placeholder="Informe metragens, tipos de placas ou dúvidas sobre perfis..."
-                        className="w-full bg-slate-50 border border-slate-200 rounded px-3.5 py-2.5 text-xs text-slate-900 focus:outline-none focus:border-slate-400 transition-colors resize-none"
+                        className="w-full bg-slate-50 border-2 border-slate-100 rounded-xl px-5 py-4 text-lg text-slate-900 focus:outline-none focus:border-[#D31219] transition-all resize-none placeholder:text-slate-400"
                       ></textarea>
                     </div>
 
                     {isQuoteView && quoteItems.length > 0 && (
-                      <div className="bg-red-50 p-3 rounded border border-red-200 text-xs text-red-800">
-                        Sua lista de cotação com {quoteItems.length} {quoteItems.length === 1 ? 'item' : 'itens'} será incluída automaticamente.
+                      <div className="bg-red-50 p-4 rounded-xl border border-red-100 text-sm font-bold text-[#D31219] flex items-center gap-3">
+                        <div className="w-2 h-2 rounded-full bg-[#D31219] animate-pulse"></div>
+                        Lista de cotação ({quoteItems.length} {quoteItems.length === 1 ? 'item' : 'itens'}) será enviada.
                       </div>
                     )}
 
                     <button 
                       type="submit"
-                      className="w-full bg-[#D31219] hover:bg-red-700 text-white font-semibold py-3.5 rounded transition-colors text-xs uppercase tracking-wider flex items-center justify-center gap-2"
+                      className="w-full bg-[#D31219] hover:bg-red-700 text-white font-black py-5 rounded-xl transition-all text-base uppercase tracking-widest flex items-center justify-center gap-3 shadow-lg hover:shadow-red-900/20 active:scale-[0.98]"
                     >
-                      <Send size={15} />
+                      <Send size={20} />
                       Enviar Solicitação no WhatsApp
                     </button>
                   </form>
@@ -297,32 +310,32 @@ const Contact: React.FC = () => {
           </section>
 
           {/* Dados de Contato e Balcão */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            <a href={`tel:${COMPANY_INFO.phone.replace(/\D/g, '')}`} className="flex items-center gap-4 p-5 bg-white rounded-lg border border-slate-200 hover:border-slate-300 transition-colors">
-              <div className="w-10 h-10 rounded bg-slate-100 flex items-center justify-center text-[#D31219] shrink-0">
-                <Phone size={18}/>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            <a href={`tel:${COMPANY_INFO.phone.replace(/\D/g, '')}`} className="flex items-center gap-5 p-6 bg-white rounded-xl border border-slate-200 hover:border-[#D31219] transition-all group shadow-sm">
+              <div className="w-12 h-12 rounded-lg bg-slate-100 flex items-center justify-center text-[#D31219] shrink-0 group-hover:bg-[#D31219] group-hover:text-white transition-colors">
+                <Phone size={22}/>
               </div>
               <div>
-                <p className="text-[11px] uppercase font-bold text-slate-400">Telefone Fixo</p>
-                <p className="text-xs font-bold text-slate-900">{COMPANY_INFO.phone}</p>
+                <p className="text-[10px] uppercase font-bold text-slate-500 tracking-widest mb-0.5">Telefone Fixo</p>
+                <p className="text-base font-bold text-slate-900">{COMPANY_INFO.phone}</p>
               </div>
             </a>
-            <div className="flex items-center gap-4 p-5 bg-white rounded-lg border border-slate-200">
-              <div className="w-10 h-10 rounded bg-slate-100 flex items-center justify-center text-[#D31219] shrink-0">
-                <Clock size={18}/>
+            <div className="flex items-center gap-5 p-6 bg-white rounded-xl border border-slate-200 shadow-sm">
+              <div className="w-12 h-12 rounded-lg bg-slate-100 flex items-center justify-center text-[#D31219] shrink-0">
+                <Clock size={22}/>
               </div>
               <div>
-                <p className="text-[11px] uppercase font-bold text-slate-400">Expediente</p>
-                <p className="text-xs font-bold text-slate-900">{COMPANY_INFO.hours.weekdays}</p>
+                <p className="text-[10px] uppercase font-bold text-slate-500 tracking-widest mb-0.5">Expediente</p>
+                <p className="text-base font-bold text-slate-900">{COMPANY_INFO.hours.weekdays}</p>
               </div>
             </div>
-            <a href="https://maps.app.goo.gl/RcpAnuqvVRpjQBQD6" target="_blank" rel="noreferrer" className="flex items-center gap-4 p-5 bg-white rounded-lg border border-slate-200 hover:border-slate-300 transition-colors">
-              <div className="w-10 h-10 rounded bg-slate-100 flex items-center justify-center text-[#D31219] shrink-0">
-                <MapPin size={18}/>
+            <a href="https://maps.app.goo.gl/RcpAnuqvVRpjQBQD6" target="_blank" rel="noreferrer" className="flex items-center gap-5 p-6 bg-white rounded-xl border border-slate-200 hover:border-[#D31219] transition-all group shadow-sm">
+              <div className="w-12 h-12 rounded-lg bg-slate-100 flex items-center justify-center text-[#D31219] shrink-0 group-hover:bg-[#D31219] group-hover:text-white transition-colors">
+                <MapPin size={22}/>
               </div>
               <div>
-                <p className="text-[11px] uppercase font-bold text-slate-400">Endereço</p>
-                <p className="text-xs font-bold text-slate-900">BR-277, 3641 - Cajuru</p>
+                <p className="text-[10px] uppercase font-bold text-slate-500 tracking-widest mb-0.5">Endereço</p>
+                <p className="text-base font-bold text-slate-900">BR-277, 3641 - Cajuru</p>
               </div>
             </a>
           </div>

@@ -737,6 +737,30 @@ export const BLOG_POSTS: BlogPost[] = [
     img: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ky-loja-cajuru-drywall-stell-fame.png-CAi9KHi0wcqQLptb0qLFGSWQZaXr98.jpeg',
     tag: 'Distribuição & Logística',
     date: 'Mai 2025'
+  },
+  {
+    id: 'b8',
+    title: 'Custos Detalhados de Drywall e Steel Frame por m² em Curitiba (2026)',
+    excerpt: 'Planilha de custos atualizada para construção e reforma a seco em Curitiba e RMC. Entenda o valor por m² de paredes, forros e estruturas completas.',
+    img: 'https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=800',
+    tag: 'Custos & Orçamento',
+    date: 'Jun 2025'
+  },
+  {
+    id: 'b9',
+    title: 'Por que o Steel Frame Supera a Alvenaria no Rigoroso Inverno de Curitiba',
+    excerpt: 'Entenda como o isolamento térmico avançado com lã mineral em estruturas LSF elimina paredes geladas, mofo e garante economia com aquecimento.',
+    img: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/projeto-stell-frame.png-bAiwJLHNjOpiURXX8I0tGfLyNCau5x.jpeg',
+    tag: 'Conforto & Engenharia',
+    date: 'Jul 2025'
+  },
+  {
+    id: 'b10',
+    title: 'Guia Definitivo do Drywall: Placas ST, RU e RF na Construção a Seco',
+    excerpt: 'Saiba exatamente quando usar placa padrão (branca), resistente à umidade (verde) e resistente ao fogo (rosa) em projetos residenciais e comerciais.',
+    img: '/forro-e-parede-em-drywall.jpeg',
+    tag: 'Materiais & Aplicação',
+    date: 'Ago 2025'
   }
 ];
 
