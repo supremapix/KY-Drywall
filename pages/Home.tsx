@@ -20,12 +20,13 @@ import {
 import { SERVICES, BLOG_POSTS, NEIGHBORHOODS, CITIES_RMC, PRODUCTS, normalizeLocationName, BASE_URL, COMPANY_INFO } from '../constants';
 import EnhancedSEO from '../components/EnhancedSEO';
 import ProductCard from '../components/ProductCard';
+import RegionalNotice from '../components/RegionalNotice';
 
 const HERO_SLIDES = [
   {
     image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ky-loja-cajuru-drywall-stell-fame.png-CAi9KHi0wcqQLptb0qLFGSWQZaXr98.jpeg',
     badge: 'Showroom & Distribuidora',
-    title: 'A Maior Loja de Drywall e Steel Frame de Curitiba',
+    title: 'Materiais para Drywall e Steel Frame em Curitiba',
     subtitle: 'Estruturas completas, perfis normatizados e estoque a pronta entrega na BR-277 (Cajuru).'
   },
   {
@@ -55,6 +56,7 @@ const Home: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState('Todos');
 
   useEffect(() => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     const timer = setInterval(() => {
       setCurrentHero((prev) => (prev + 1) % HERO_SLIDES.length);
     }, 7000);
@@ -508,7 +510,7 @@ const Home: React.FC = () => {
               {/* Bairros */}
               <div className="bg-slate-50 p-6 rounded-xl border border-slate-200">
                 <h3 className="text-xs font-bold text-slate-900 uppercase tracking-wider mb-4 pb-2 border-b border-slate-200 flex items-center justify-between">
-                  <span>Bairros de Curitiba</span>
+                  <span>Bairros e referências locais</span>
                   <span className="text-[10px] text-slate-500 font-normal">{NEIGHBORHOODS.length} regiões</span>
                 </h3>
                 <div className="grid grid-cols-1 gap-2 max-h-[320px] overflow-y-auto custom-scrollbar pr-2">
@@ -548,6 +550,8 @@ const Home: React.FC = () => {
           </div>
         </div>
       </section>
+
+      <RegionalNotice />
 
       {/* FAQ & Central de Dúvidas Técnicas */}
       <section className="py-16 md:py-24 bg-slate-950 text-white relative bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:20px_20px]">

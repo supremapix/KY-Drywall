@@ -20,7 +20,7 @@ const EnhancedSEO: React.FC<SEOProps> = ({
   keywords = 'drywall, steel frame, curitiba, construção a seco, gesso acartonado, divisórias, forros, isolamento acústico, isolamento térmico',
   canonical,
   ogType = 'website',
-  ogImage = `${BASE_URL}/gemini_generated_image_jk8nftjk8nftjk8n.png`,
+  ogImage = `${BASE_URL}/logotipo-ky-drywall.png`,
   schema,
   noindex = false
 }) => {
@@ -69,12 +69,9 @@ const EnhancedSEO: React.FC<SEOProps> = ({
     updateOrCreateMeta('meta[name="keywords"]', 'content', keywords);
 
     if (noindex) {
-      updateOrCreateMeta('meta[name="robots"]', 'content', 'noindex, nofollow');
+      updateOrCreateMeta('meta[name="robots"]', 'content', 'noindex, follow');
     } else {
-      const robotsMeta = document.querySelector('meta[name="robots"]');
-      if (robotsMeta) {
-        robotsMeta.remove();
-      }
+      updateOrCreateMeta('meta[name="robots"]', 'content', 'index, follow, max-image-preview:large');
     }
 
     updateOrCreateLink('canonical', url);

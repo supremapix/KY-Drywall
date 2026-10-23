@@ -48,9 +48,9 @@ export const AppContent: React.FC = () => {
     <>
       <ScrollToTop />
       <div className="flex flex-col min-h-screen overflow-x-hidden bg-white text-slate-900 font-sans antialiased">
+        <a href="#conteudo" className="skip-link">Pular para o conteúdo</a>
         {!isLinksPage && <Header />}
-        
-        <main className="flex-grow pb-28 md:pb-12">
+        <main id="conteudo" tabIndex={-1} className="flex-grow pb-28 md:pb-12">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/links" element={<LinksPage />} />
@@ -75,7 +75,7 @@ export const AppContent: React.FC = () => {
         </main>
 
         {!isLinksPage && <Footer />}
-        {!isLinksPage && <FloatingActions />}
+        <FloatingActions />
         {!isLinksPage && !isCookieAccepted && <CookieConsent onAccept={handleAcceptCookies} />}
       </div>
     </>

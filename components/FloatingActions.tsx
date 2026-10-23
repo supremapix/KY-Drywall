@@ -25,6 +25,14 @@ export const FloatingActions: React.FC = () => {
   const [pageTitle, setPageTitle] = useState('');
 
   useEffect(() => {
+    const close = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') { setIsShareOpen(false); setIsWhatsAppOpen(false); }
+    };
+    window.addEventListener('keydown', close);
+    return () => window.removeEventListener('keydown', close);
+  }, []);
+
+  useEffect(() => {
     if (typeof window !== 'undefined') {
       setCurrentUrl(window.location.href);
       setPageTitle(document.title || 'KY Drywall & Steel Frame');
@@ -34,6 +42,7 @@ export const FloatingActions: React.FC = () => {
       setShowScrollTop(window.scrollY > 300);
     };
 
+    handleScroll();
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -47,7 +56,7 @@ export const FloatingActions: React.FC = () => {
   }, [isShareOpen]);
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
   };
 
   const handleCopyLink = () => {
@@ -149,7 +158,7 @@ export const FloatingActions: React.FC = () => {
   return (
     <>
       {/* 1. CANTO INFERIOR ESQUERDO: BOTÃO DE COMPARTILHAMENTO */}
-      <div className="fixed bottom-6 left-6 z-50">
+      <div className="fixed bottom-6 left-3 sm:left-6 z-50 floating-actions">
         {/* Popup de Compartilhamento com efeito Glassmorphism */}
         {isShareOpen && (
           <div className="mb-3 w-72 sm:w-80 bg-slate-900/95 backdrop-blur-md rounded-2xl border border-slate-700/80 p-4 shadow-2xl text-white animate-in fade-in slide-in-from-bottom-4 duration-200">
@@ -215,7 +224,7 @@ export const FloatingActions: React.FC = () => {
 
         {/* Botão Gatilho do Compartilhamento */}
         <button
-          onClick={() => setIsShareOpen(!isShareOpen)}
+          aria-expanded={isShareOpen} onClick={() => { setIsShareOpen(!isShareOpen); setIsWhatsAppOpen(false); }}
           className="relative group bg-slate-900 hover:bg-slate-800 text-white p-3.5 rounded-full shadow-2xl border border-slate-700/80 flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95"
           aria-label="Compartilhar esta página"
           title="Compartilhar nas redes sociais"
@@ -233,22 +242,22 @@ export const FloatingActions: React.FC = () => {
       </div>
 
       {/* 2. CANTO INFERIOR DIREITO: CONTATO RÁPIDO & VOLTAR AO TOPO */}
-      <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
+      <div className="fixed bottom-6 right-3 sm:right-6 z-50 floating-actions flex flex-col items-end gap-3">
         {/* Botão Voltar ao Topo */}
         {showScrollTop && (
           <button
             onClick={scrollToTop}
-            className="bg-slate-900/90 text-white hover:bg-[#D31219] p-2.5 rounded-full shadow-lg transition-all duration-300 hover:scale-110 flex items-center justify-center border border-slate-700/60 backdrop-blur-sm animate-in fade-in slide-in-from-bottom-2"
+            className="bg-slate-900 text-white hover:bg-[#D31219] min-w-[52px] min-h-[52px] px-4 gap-2 rounded-full shadow-lg transition-all duration-300 hover:scale-110 flex items-center justify-center border border-slate-700/60 backdrop-blur-sm animate-in fade-in slide-in-from-bottom-2"
             title="Voltar ao topo da página"
             aria-label="Voltar ao topo"
           >
-            <ChevronUp size={18} />
+            <ChevronUp size={22} /><span className="text-base font-bold">Topo</span>
           </button>
         )}
 
         {/* Popup WhatsApp Agents (se aberto) */}
         {isWhatsAppOpen && (
-          <div className="bg-white rounded-2xl shadow-2xl w-80 overflow-hidden border border-slate-200 animate-in fade-in slide-in-from-bottom-4 duration-200">
+          <div className="bg-white rounded-2xl shadow-2xl w-80 max-w-[calc(100vw-24px)] overflow-hidden border border-slate-200 animate-in fade-in slide-in-from-bottom-4 duration-200">
             <div className="bg-slate-900 px-4 py-3.5 text-white flex justify-between items-center border-b border-slate-800">
               <div className="flex items-center gap-2.5">
                 <span className="relative flex h-2.5 w-2.5">
@@ -296,7 +305,7 @@ export const FloatingActions: React.FC = () => {
           </div>
         )}
 
-        {/* Grupo de Ações de Contato Rápido (Ligar + WhatsApp 24h) */}
+        {/* Grupo de Ações de Contato Rápido (Ligar + WhatsApp) */}
         <div className="flex items-center gap-2">
           {/* Botão Ligar Agora */}
           <a
@@ -311,14 +320,14 @@ export const FloatingActions: React.FC = () => {
             </span>
           </a>
 
-          {/* Botão WhatsApp 24h */}
+          {/* Botão WhatsApp */}
           <button
-            onClick={() => setIsWhatsAppOpen(!isWhatsAppOpen)}
+            aria-expanded={isWhatsAppOpen} onClick={() => { setIsWhatsAppOpen(!isWhatsAppOpen); setIsShareOpen(false); }}
             className="relative bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 text-white px-4 py-3 rounded-full shadow-xl hover:shadow-[0_0_20px_rgba(34,197,94,0.45)] flex items-center gap-2.5 transition-all duration-300 hover:scale-105 active:scale-95 group border border-emerald-400/30"
             title="Falar no WhatsApp"
             aria-label="Atendimento no WhatsApp"
           >
-            {/* Luz indicadora verde Online Agora */}
+            {/* Luz indicadora verde Enviar mensagem */}
             <span className="relative flex h-2.5 w-2.5">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-200 opacity-80"></span>
               <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-white"></span>
@@ -327,8 +336,8 @@ export const FloatingActions: React.FC = () => {
             <MessageCircle size={20} className="shrink-0 transition-transform duration-300 group-hover:rotate-12" />
 
             <div className="hidden sm:flex flex-col items-start leading-none text-left">
-              <span className="text-xs font-extrabold tracking-wide">WhatsApp 24h</span>
-              <span className="text-[9px] font-medium text-emerald-100 opacity-90">Online Agora</span>
+              <span className="text-xs font-extrabold tracking-wide">WhatsApp</span>
+              <span className="text-[9px] font-medium text-emerald-100 opacity-90">Enviar mensagem</span>
             </div>
           </button>
         </div>

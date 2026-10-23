@@ -24,6 +24,24 @@ const Header: React.FC = () => {
   const [quoteCount, setQuoteCount] = useState(0);
   const location = useLocation();
 
+  useEffect(() => {
+    if (!isMenuOpen) return;
+    const previousFocus = document.activeElement as HTMLElement | null;
+    const dialog = document.querySelector<HTMLElement>('[aria-label="Menu principal"]');
+    const controls = () => Array.from(dialog?.querySelectorAll<HTMLElement>('a[href], button') || []).filter(el => el.offsetParent !== null);
+    controls()[0]?.focus();
+    const trapFocus = (event: KeyboardEvent) => {
+      if (event.key !== 'Tab') return;
+      const elements = controls();
+      const first = elements[0];
+      const last = elements[elements.length - 1];
+      if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last?.focus(); }
+      if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first?.focus(); }
+    };
+    document.addEventListener('keydown', trapFocus);
+    return () => { document.removeEventListener('keydown', trapFocus); previousFocus?.focus(); };
+  }, [isMenuOpen]);
+
   const updateCount = () => {
     const stored = localStorage.getItem('ky_quote_list');
     if (stored) {
@@ -117,7 +135,7 @@ const Header: React.FC = () => {
                     {item.children && <ChevronRight size={14} className="rotate-90 text-slate-400 group-hover:text-[#D31219]" />}
                   </Link>
                   {item.children && (
-                    <div className="absolute left-0 top-full hidden group-hover:block bg-white shadow-xl rounded-lg py-2 w-64 border-t-2 border-[#D31219] border-x border-b border-slate-200">
+                    <div className="absolute left-0 top-full hidden group-hover:block group-focus-within:block bg-white shadow-xl rounded-lg py-2 w-64 border-t-2 border-[#D31219] border-x border-b border-slate-200">
                       {item.children.map((child) => (
                         <Link
                           key={child.label}
@@ -221,7 +239,7 @@ const Header: React.FC = () => {
                 className="flex items-center justify-center gap-3 bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3.5 px-4 rounded-xl text-base transition-colors min-h-[56px] shadow-lg"
               >
                 <MessageCircle size={20} />
-                <span>WhatsApp 24h</span>
+                <span>WhatsApp</span>
               </a>
             </div>
           </div>

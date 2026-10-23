@@ -4,6 +4,7 @@ import { useParams, Link } from 'react-router-dom';
 import { SERVICES, getRandomCTA, BASE_URL } from '../constants';
 import { CheckCircle2, MessageCircle, ChevronRight, Sparkles, ShieldAlert, ArrowRight } from 'lucide-react';
 import NotFound from './NotFound';
+import ProjectChecklist from '../components/ProjectChecklist';
 import EnhancedSEO from '../components/EnhancedSEO';
 
 const ServicesPage: React.FC = () => {
@@ -122,15 +123,15 @@ const ServicesPage: React.FC = () => {
               />
 
               <p className="text-slate-600 text-sm leading-relaxed">
-                Para assegurar máxima conformidade técnica, utilizamos placas de gesso acartonado e perfis estruturais de espessura nominal certificada pela ABNT. Nosso time técnico oferece suporte para cálculo de modulação e modulação de montantes.
+                A seleção de placas, perfis e acessórios depende do ambiente e do projeto. Consulte a equipe sobre os materiais e o escopo disponível; confirme dimensionamento e requisitos técnicos com o profissional responsável pela obra.
               </p>
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
                 {[
-                  { title: "Agilidade de Execução", desc: "Obra até 70% mais rápida que alvenaria" },
-                  { title: "Sustentabilidade", desc: "Redução de mais de 80% do entulho" },
+                  { title: "Agilidade de Execução", desc: "Planejamento e montagem por etapas" },
+                  { title: "Sustentabilidade", desc: "Planeje os cortes e o uso dos materiais" },
                   { title: "Conforto Termoacústico", desc: "Isolamento com lã mineral ou PET" },
-                  { title: "Precisão Dimensional", desc: "Encaixes perfeitos e prumo milimétrico" }
+                  { title: "Precisão Dimensional", desc: "Dimensionamento conforme o projeto" }
                 ].map(b => (
                   <div key={b.title} className="p-4 bg-slate-50 rounded border border-slate-200">
                     <div className="flex items-center gap-2 mb-1">
@@ -195,6 +196,7 @@ const ServicesPage: React.FC = () => {
         </div>
       </section>
 
+      <ProjectChecklist serviceId={serviceId} />
       {/* Outros Serviços Navegação */}
       <section className="py-20 bg-slate-50 border-t border-slate-200">
         <div className="container mx-auto px-4 lg:px-8">
@@ -208,7 +210,7 @@ const ServicesPage: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {SERVICES.filter(s => s.id !== serviceId).slice(0, 3).map(s => (
+            {SERVICES.filter(s => s.id !== serviceId).map(s => (
               <Link 
                 key={s.id} 
                 to={`/servicos/${s.id}`} 

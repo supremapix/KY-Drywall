@@ -1,0 +1,41 @@
+[
+  {
+    "width": 320,
+    "overflow": false,
+    "skip": "Pular para o conteúdo",
+    "top": {
+      "x": 206.578125,
+      "y": 768,
+      "width": 101.421875,
+      "height": 48
+    },
+    "errors": [],
+    "linksTop": 1
+  },
+  {
+    "width": 390,
+    "overflow": false,
+    "skip": "Pular para o conteúdo",
+    "top": {
+      "x": 276.578125,
+      "y": 768,
+      "width": 101.421875,
+      "height": 48
+    },
+    "errors": [],
+    "linksTop": 1
+  },
+  {
+    "width": 1440,
+    "overflow": false,
+    "skip": "Pular para o conteúdo",
+    "top": {
+      "x": 1314.578125,
+      "y": 765,
+      "width": 101.421875,
+      "height": 48
+    },
+    "errors": [],
+    "linksTop": 1
+  }
+]

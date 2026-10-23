@@ -6,6 +6,7 @@ import { BASE_URL, SERVICES, NEIGHBORHOODS, CITIES_RMC, getRandomCTA, PRODUCTS, 
 import EnhancedSEO from '../components/EnhancedSEO';
 import NotFound from './NotFound';
 import ProductCard from '../components/ProductCard';
+import RegionalNotice from '../components/RegionalNotice';
 
 interface LocationPageProps {
   type: 'drywall' | 'steel';
@@ -55,7 +56,7 @@ const LocationPage: React.FC<LocationPageProps> = ({ type }) => {
         "serviceType": "Construção a Seco",
         "description": `Serviços completos de ${serviceName} em ${formattedName}. Instalação, materiais e assessoria técnica especializada.`,
         "provider": { "@id": `${BASE_URL}/#organization` },
-        "areaServed": { "@type": "Place", "name": formattedName },
+
         "availableChannel": {
           "@type": "ServiceChannel",
           "serviceUrl": `${BASE_URL}/${type === 'drywall' ? 'drywall' : 'steel-frame'}-em/${location}`,
@@ -98,8 +99,10 @@ const LocationPage: React.FC<LocationPageProps> = ({ type }) => {
         keywords={pageKeywords}
         canonical={`${BASE_URL}/${type === 'drywall' ? 'drywall' : 'steel-frame'}-em/${location}`}
         schema={schema}
+        noindex
       />
 
+      <RegionalNotice />
       {/* Hero Section with Technical Pattern */}
       <section className="bg-slate-950 py-16 md:py-24 text-white relative overflow-hidden bg-[radial-gradient(#334155_1px,transparent_1px)] [background-size:20px_20px]">
         <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 relative z-10">
@@ -123,7 +126,7 @@ const LocationPage: React.FC<LocationPageProps> = ({ type }) => {
               </h1>
 
               <p className="text-slate-400 text-lg sm:text-xl leading-relaxed mb-10 max-w-2xl mx-auto lg:mx-0">
-                Distribuição autorizada e estoque permanente de chapas, perfis normatizados e isolamentos para obras em <strong className="text-white font-bold">{formattedName}</strong>. Expedição diária a partir do nosso CD no Cajuru.
+                Consulte materiais, disponibilidade e condições de entrega para obras em <strong className="text-white font-bold">{formattedName}</strong>. O atendimento parte da loja no Cajuru, em Curitiba. Esta página não representa uma filial na localidade.
               </p>
 
               <div className="flex flex-col sm:flex-row flex-wrap gap-4 justify-center lg:justify-start">

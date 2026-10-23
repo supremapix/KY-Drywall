@@ -1,0 +1,20 @@
+:root { color-scheme: light; }
+html { scroll-padding-top: 9rem; }
+:focus-visible { outline: 3px solid #2563eb !important; outline-offset: 4px; }
+.skip-link { position: fixed; top: 8px; left: 8px; z-index: 200; padding: 16px; background: white; color: #0f172a; transform: translateY(-160%); }
+.skip-link:focus { transform: none; }
+header nav a, footer a, footer button { min-height: 44px; }
+header nav a { display: flex; align-items: center; }
+footer .text-xs, footer .text-sm { font-size: 1rem; line-height: 1.6; }
+footer a { overflow-wrap: anywhere; }
+.floating-actions button, .floating-actions a { min-height: 48px; min-width: 48px; }
+.floating-actions { max-width: calc(100vw - 24px); }
+footer[class] { padding-bottom: 160px; }
+[aria-label="Armazenamento local"][role="region"] { padding-bottom: 240px; }
+#conteudo { scroll-margin-top: 9rem; }
+.reading-large p, .reading-large main li, .reading-large footer a { font-size: 1.2rem; line-height: 1.7; }
+header nav a { font-size: 1rem; }
+@media (min-width: 1024px) and (max-width: 1279px) { header nav { gap: .5rem !important; } }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+}
