@@ -5,26 +5,6 @@
     "type": "image/jpeg"
   },
   {
-    "url": "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/projeto-stell-frame.png-bAiwJLHNjOpiURXX8I0tGfLyNCau5x.jpeg",
-    "status": 200,
-    "type": "image/jpeg"
-  },
-  {
-    "url": "https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=800",
-    "status": 200,
-    "type": "image/jpeg"
-  },
-  {
-    "url": "https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=1920",
-    "status": 200,
-    "type": "image/jpeg"
-  },
-  {
-    "url": "https://images.pexels.com/photos/159306/construction-site-build-construction-work-159306.jpeg?auto=compress&cs=tinysrgb&w=1920",
-    "status": 200,
-    "type": "image/jpeg"
-  },
-  {
     "url": "https://images.pexels.com/photos/8092357/pexels-photo-8092357.jpeg?auto=compress&cs=tinysrgb&w=800",
     "status": 200,
     "type": "image/jpeg"
@@ -35,12 +15,22 @@
     "type": "image/png"
   },
   {
-    "url": "https://images.pexels.com/photos/534220/pexels-photo-534220.jpeg?auto=compress&cs=tinysrgb&w=800",
+    "url": "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/projeto-stell-frame.png-bAiwJLHNjOpiURXX8I0tGfLyNCau5x.jpeg",
     "status": 200,
     "type": "image/jpeg"
   },
   {
-    "url": "https://images.pexels.com/photos/8092357/pexels-photo-8092357.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "url": "https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=800",
+    "status": 200,
+    "type": "image/jpeg"
+  },
+  {
+    "url": "https://images.pexels.com/photos/159306/construction-site-build-construction-work-159306.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    "status": 200,
+    "type": "image/jpeg"
+  },
+  {
+    "url": "https://images.pexels.com/photos/534220/pexels-photo-534220.jpeg?auto=compress&cs=tinysrgb&w=800",
     "status": 200,
     "type": "image/jpeg"
   }

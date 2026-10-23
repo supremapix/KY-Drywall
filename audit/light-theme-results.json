@@ -1,0 +1,272 @@
+[
+  {
+    "width": 320,
+    "route": "/",
+    "issues": [],
+    "violations": []
+  },
+  {
+    "width": 320,
+    "route": "/empresa",
+    "issues": [],
+    "violations": []
+  },
+  {
+    "width": 320,
+    "route": "/servicos",
+    "issues": [],
+    "violations": []
+  },
+  {
+    "width": 320,
+    "route": "/servicos/drywall",
+    "issues": [],
+    "violations": []
+  },
+  {
+    "width": 320,
+    "route": "/steel-frame",
+    "issues": [],
+    "violations": []
+  },
+  {
+    "width": 320,
+    "route": "/produtos",
+    "issues": [],
+    "violations": []
+  },
+  {
+    "width": 320,
+    "route": "/produto/m1",
+    "issues": [],
+    "violations": []
+  },
+  {
+    "width": 320,
+    "route": "/contato",
+    "issues": [],
+    "violations": []
+  },
+  {
+    "width": 320,
+    "route": "/blog",
+    "issues": [],
+    "violations": []
+  },
+  {
+    "width": 320,
+    "route": "/blog/b1",
+    "issues": [],
+    "violations": []
+  },
+  {
+    "width": 320,
+    "route": "/faq",
+    "issues": [],
+    "violations": []
+  },
+  {
+    "width": 320,
+    "route": "/sitemap",
+    "issues": [],
+    "violations": []
+  },
+  {
+    "width": 320,
+    "route": "/links",
+    "issues": [],
+    "violations": []
+  },
+  {
+    "width": 320,
+    "route": "/drywall-em/cajuru",
+    "issues": [],
+    "violations": []
+  },
+  {
+    "width": 320,
+    "route": "/not-a-page",
+    "issues": [],
+    "violations": []
+  },
+  {
+    "width": 390,
+    "route": "/",
+    "issues": [],
+    "violations": []
+  },
+  {
+    "width": 390,
+    "route": "/empresa",
+    "issues": [],
+    "violations": []
+  },
+  {
+    "width": 390,
+    "route": "/servicos",
+    "issues": [],
+    "violations": []
+  },
+  {
+    "width": 390,
+    "route": "/servicos/drywall",
+    "issues": [],
+    "violations": []
+  },
+  {
+    "width": 390,
+    "route": "/steel-frame",
+    "issues": [],
+    "violations": []
+  },
+  {
+    "width": 390,
+    "route": "/produtos",
+    "issues": [],
+    "violations": []
+  },
+  {
+    "width": 390,
+    "route": "/produto/m1",
+    "issues": [],
+    "violations": []
+  },
+  {
+    "width": 390,
+    "route": "/contato",
+    "issues": [],
+    "violations": []
+  },
+  {
+    "width": 390,
+    "route": "/blog",
+    "issues": [],
+    "violations": []
+  },
+  {
+    "width": 390,
+    "route": "/blog/b1",
+    "issues": [],
+    "violations": []
+  },
+  {
+    "width": 390,
+    "route": "/faq",
+    "issues": [],
+    "violations": []
+  },
+  {
+    "width": 390,
+    "route": "/sitemap",
+    "issues": [],
+    "violations": []
+  },
+  {
+    "width": 390,
+    "route": "/links",
+    "issues": [],
+    "violations": []
+  },
+  {
+    "width": 390,
+    "route": "/drywall-em/cajuru",
+    "issues": [],
+    "violations": []
+  },
+  {
+    "width": 390,
+    "route": "/not-a-page",
+    "issues": [],
+    "violations": []
+  },
+  {
+    "width": 1440,
+    "route": "/",
+    "issues": [],
+    "violations": []
+  },
+  {
+    "width": 1440,
+    "route": "/empresa",
+    "issues": [],
+    "violations": []
+  },
+  {
+    "width": 1440,
+    "route": "/servicos",
+    "issues": [],
+    "violations": []
+  },
+  {
+    "width": 1440,
+    "route": "/servicos/drywall",
+    "issues": [],
+    "violations": []
+  },
+  {
+    "width": 1440,
+    "route": "/steel-frame",
+    "issues": [],
+    "violations": []
+  },
+  {
+    "width": 1440,
+    "route": "/produtos",
+    "issues": [],
+    "violations": []
+  },
+  {
+    "width": 1440,
+    "route": "/produto/m1",
+    "issues": [],
+    "violations": []
+  },
+  {
+    "width": 1440,
+    "route": "/contato",
+    "issues": [],
+    "violations": []
+  },
+  {
+    "width": 1440,
+    "route": "/blog",
+    "issues": [],
+    "violations": []
+  },
+  {
+    "width": 1440,
+    "route": "/blog/b1",
+    "issues": [],
+    "violations": []
+  },
+  {
+    "width": 1440,
+    "route": "/faq",
+    "issues": [],
+    "violations": []
+  },
+  {
+    "width": 1440,
+    "route": "/sitemap",
+    "issues": [],
+    "violations": []
+  },
+  {
+    "width": 1440,
+    "route": "/links",
+    "issues": [],
+    "violations": []
+  },
+  {
+    "width": 1440,
+    "route": "/drywall-em/cajuru",
+    "issues": [],
+    "violations": []
+  },
+  {
+    "width": 1440,
+    "route": "/not-a-page",
+    "issues": [],
+    "violations": []
+  }
+]

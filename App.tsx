@@ -19,6 +19,7 @@ import LinksPage from './pages/LinksPage';
 import NotFound from './pages/NotFound';
 import FloatingActions from './components/FloatingActions';
 import CookieConsent from './components/CookieConsent';
+import './components/LightTheme.css';
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -47,7 +48,7 @@ export const AppContent: React.FC = () => {
   return (
     <>
       <ScrollToTop />
-      <div className="flex flex-col min-h-screen overflow-x-hidden bg-white text-slate-900 font-sans antialiased">
+      <div className="ky-light flex flex-col min-h-screen overflow-x-hidden bg-white text-slate-900 font-sans antialiased">
         <a href="#conteudo" className="skip-link">Pular para o conteúdo</a>
         {!isLinksPage && <Header />}
         <main id="conteudo" tabIndex={-1} className="flex-grow pb-28 md:pb-12">

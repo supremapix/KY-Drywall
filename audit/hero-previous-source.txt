@@ -1,0 +1,27 @@
+const HERO_SLIDES = [
+  {
+    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ky-loja-cajuru-drywall-stell-fame.png-CAi9KHi0wcqQLptb0qLFGSWQZaXr98.jpeg',
+    badge: 'Showroom & Distribuidora',
+    title: 'Materiais para Drywall e Steel Frame em Curitiba',
+    subtitle: 'Estruturas completas, perfis normatizados e estoque a pronta entrega na BR-277 (Cajuru).'
+  },
+  {
+    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/projeto-stell-frame.png-bAiwJLHNjOpiURXX8I0tGfLyNCau5x.jpeg',
+    badge: 'Engenharia Construtiva',
+    title: 'Construção Inteligente em Steel Frame',
+    subtitle: 'Sua obra residencial ou comercial até 70% mais rápida, sustentável e com projeto executivo calculado.'
+  },
+  {
+    image: 'https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=1920',
+    badge: 'Distribuidor Oficial Barbieri',
+    title: 'Perfis de Aço Galvanizado Z180 de Alta Resistência',
+    subtitle: 'Segurança estrutural rigorosamente alinhada às normas ABNT NBR 15253 e NBR 15575.'
+  },
+  {
+    image: 'https://images.pexels.com/photos/8092357/pexels-photo-8092357.jpeg?auto=compress&cs=tinysrgb&w=1920',
+    badge: 'Logística Ágil',
+    title: 'Pronta Entrega em Curitiba e Região Metropolitana',
+    subtitle: 'Frota própria para entrega rápida de placas, perfis, massas e isolamentos direto no seu canteiro.'
+  }
+];
+

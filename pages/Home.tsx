@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { 
   ArrowRight, 
@@ -21,47 +21,14 @@ import { SERVICES, BLOG_POSTS, NEIGHBORHOODS, CITIES_RMC, PRODUCTS, normalizeLoc
 import EnhancedSEO from '../components/EnhancedSEO';
 import ProductCard from '../components/ProductCard';
 import RegionalNotice from '../components/RegionalNotice';
-
-const HERO_SLIDES = [
-  {
-    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ky-loja-cajuru-drywall-stell-fame.png-CAi9KHi0wcqQLptb0qLFGSWQZaXr98.jpeg',
-    badge: 'Showroom & Distribuidora',
-    title: 'Materiais para Drywall e Steel Frame em Curitiba',
-    subtitle: 'Estruturas completas, perfis normatizados e estoque a pronta entrega na BR-277 (Cajuru).'
-  },
-  {
-    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/projeto-stell-frame.png-bAiwJLHNjOpiURXX8I0tGfLyNCau5x.jpeg',
-    badge: 'Engenharia Construtiva',
-    title: 'Construção Inteligente em Steel Frame',
-    subtitle: 'Sua obra residencial ou comercial até 70% mais rápida, sustentável e com projeto executivo calculado.'
-  },
-  {
-    image: 'https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=1920',
-    badge: 'Distribuidor Oficial Barbieri',
-    title: 'Perfis de Aço Galvanizado Z180 de Alta Resistência',
-    subtitle: 'Segurança estrutural rigorosamente alinhada às normas ABNT NBR 15253 e NBR 15575.'
-  },
-  {
-    image: 'https://images.pexels.com/photos/8092357/pexels-photo-8092357.jpeg?auto=compress&cs=tinysrgb&w=1920',
-    badge: 'Logística Ágil',
-    title: 'Pronta Entrega em Curitiba e Região Metropolitana',
-    subtitle: 'Frota própria para entrega rápida de placas, perfis, massas e isolamentos direto no seu canteiro.'
-  }
-];
+import StoreHero from '../components/StoreHero';
 
 const FEATURED_CATEGORIES = ['Todos', 'Placas', 'Perfis', 'Lã (Isolamento)', 'Massas'];
 
 const Home: React.FC = () => {
-  const [currentHero, setCurrentHero] = useState(0);
   const [selectedCategory, setSelectedCategory] = useState('Todos');
 
-  useEffect(() => {
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    const timer = setInterval(() => {
-      setCurrentHero((prev) => (prev + 1) % HERO_SLIDES.length);
-    }, 7000);
-    return () => clearInterval(timer);
-  }, []);
+
 
   const filteredProducts = PRODUCTS.filter(p => {
     if (selectedCategory === 'Todos') {
@@ -70,50 +37,7 @@ const Home: React.FC = () => {
     return p.category === selectedCategory;
   }).slice(0, 8);
 
-  const homeSchema = {
-    '@context': 'https://schema.org',
-    '@graph': [
-      {
-        '@type': 'Organization',
-        '@id': `${BASE_URL}/#organization`,
-        name: 'KY Drywall & Steel Frame',
-        url: BASE_URL,
-        logo: {
-          '@type': 'ImageObject',
-          url: `${BASE_URL}/logotipo-ky-drywall.png`
-        },
-        contactPoint: {
-          '@type': 'ContactPoint',
-          telephone: '+554135284232',
-          contactType: 'customer service',
-          areaServed: 'BR',
-          availableLanguage: 'Portuguese'
-        },
-        sameAs: ['https://wa.me/5541996457421']
-      },
-      {
-        '@type': 'Store',
-        '@id': `${BASE_URL}/#store`,
-        name: 'KY Drywall & Steel Frame - Loja Física',
-        image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ky-loja-cajuru-drywall-stell-fame.png-CAi9KHi0wcqQLptb0qLFGSWQZaXr98.jpeg',
-        priceRange: '$$',
-        address: {
-          '@type': 'PostalAddress',
-          streetAddress: 'Rod. BR-277, 3641 - Cajuru',
-          addressLocality: 'Curitiba',
-          addressRegion: 'PR',
-          postalCode: '81480-270',
-          addressCountry: 'BR'
-        },
-        geo: {
-          '@type': 'GeoCoordinates',
-          latitude: '-25.4284',
-          longitude: '-49.2733'
-        },
-        telephone: '+554135284232'
-      }
-    ]
-  };
+
 
   return (
     <div className="bg-white text-slate-900">
@@ -122,135 +46,9 @@ const Home: React.FC = () => {
         description="Loja e distribuidora de Drywall e Steel Frame em Curitiba. Placas, perfis galvanizados Barbieri, isolamento termoacústico e assessoria técnica para obras."
         keywords="drywall curitiba, steel frame curitiba, placas drywall, perfis steel frame, barbieri z180, construcao a seco curitiba, materiais drywall"
         canonical={BASE_URL}
-        schema={homeSchema}
       />
 
-      {/* Hero Section */}
-      <section className="relative min-h-[600px] lg:min-h-[700px] flex items-center bg-slate-950 text-white overflow-hidden py-16 lg:py-24">
-        {/* Technical Blueprint Grid Pattern */}
-        <div className="absolute inset-0 z-0 bg-[radial-gradient(#334155_1px,transparent_1px)] [background-size:20px_20px] opacity-40"></div>
-
-        {/* Background Slides */}
-        <div className="absolute inset-0 z-0">
-          {HERO_SLIDES.map((slide, index) => (
-            <div 
-              key={index} 
-              className={`absolute inset-0 transition-opacity duration-1000 ${
-                index === currentHero ? 'opacity-100' : 'opacity-0'
-              }`}
-            >
-              <img 
-                src={slide.image} 
-                alt="" 
-                className="w-full h-full object-cover opacity-30" 
-                onError={(e) => {
-                  (e.target as HTMLImageElement).src = 'https://via.placeholder.com/1200x800?text=KY+DRYWALL+CURITIBA';
-                }}
-              />
-              <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/90 to-slate-950/60" />
-            </div>
-          ))}
-        </div>
-
-        {/* Content - Centralized on mobile */}
-        <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 relative z-10 w-full">
-          <div className="max-w-3xl text-center lg:text-left mx-auto lg:mx-0">
-            <div className="inline-flex items-center justify-center lg:justify-start gap-2 px-3.5 py-1.5 rounded-md bg-slate-900/90 border border-slate-800 text-white text-xs font-mono tracking-widest uppercase mb-6 shadow-sm">
-              <span className="w-2 h-2 rounded-full bg-[#D31219]"></span>
-              <span>01 — {HERO_SLIDES[currentHero].badge}</span>
-            </div>
-
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-[1.15] mb-6">
-              {HERO_SLIDES[currentHero].title}
-            </h1>
-
-            <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl mb-10 font-normal mx-auto lg:mx-0">
-              {HERO_SLIDES[currentHero].subtitle}
-            </p>
-
-            {/* Buttons - Full Width Stacked on Mobile */}
-            <div className="flex flex-col sm:flex-row gap-4 mb-10 justify-center lg:justify-start">
-              <a 
-                href="https://wa.me/5541996457421?text=Olá! Vim pelo site da KY Drywall e gostaria de solicitar uma cotação."
-                target="_blank"
-                rel="noreferrer"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-[#D31219] text-white font-bold px-8 py-4 rounded-xl text-sm sm:text-base hover:bg-red-700 transition-colors shadow-lg min-h-[52px]"
-              >
-                <MessageCircle size={20} />
-                <span>Solicitar Cotação no WhatsApp</span>
-              </a>
-              <Link 
-                to="/produtos" 
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-slate-900/80 text-white font-bold px-8 py-4 rounded-xl text-sm sm:text-base border border-slate-700 hover:bg-slate-800 transition-colors min-h-[52px]"
-              >
-                <span>Catálogo de Produtos</span>
-                <ArrowRight size={18} />
-              </Link>
-            </div>
-
-            {/* Slide navigation indicators */}
-            <div className="flex items-center justify-center lg:justify-start gap-2">
-              {HERO_SLIDES.map((_, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => setCurrentHero(idx)}
-                  className={`h-2 rounded-full transition-all ${
-                    idx === currentHero ? 'w-8 bg-[#D31219]' : 'w-2.5 bg-slate-700 hover:bg-slate-500'
-                  }`}
-                  aria-label={`Slide ${idx + 1}`}
-                />
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Authority & Benefits Bar - 1 Col on Mobile */}
-      <section className="bg-slate-900 border-b border-slate-800 text-slate-200 py-8 relative">
-        <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-center sm:text-left">
-            <div className="flex flex-col sm:flex-row items-center sm:items-start gap-3.5 p-3 rounded-lg bg-slate-950/40 border border-slate-800/80">
-              <div className="w-12 h-12 rounded-lg bg-red-950/60 text-[#D31219] flex items-center justify-center shrink-0 border border-red-900/40">
-                <Truck size={22} />
-              </div>
-              <div className="text-center sm:text-left">
-                <p className="font-bold text-sm text-white">Pronta Entrega</p>
-                <p className="text-xs text-slate-400 mt-0.5">Frota própria em Curitiba e RMC</p>
-              </div>
-            </div>
-
-            <div className="flex flex-col sm:flex-row items-center sm:items-start gap-3.5 p-3 rounded-lg bg-slate-950/40 border border-slate-800/80">
-              <div className="w-12 h-12 rounded-lg bg-red-950/60 text-[#D31219] flex items-center justify-center shrink-0 border border-red-900/40">
-                <ShieldCheck size={22} />
-              </div>
-              <div className="text-center sm:text-left">
-                <p className="font-bold text-sm text-white">Aço Z180 Barbieri</p>
-                <p className="text-xs text-slate-400 mt-0.5">Conformidade ABNT NBR 15253</p>
-              </div>
-            </div>
-
-            <div className="flex flex-col sm:flex-row items-center sm:items-start gap-3.5 p-3 rounded-lg bg-slate-950/40 border border-slate-800/80">
-              <div className="w-12 h-12 rounded-lg bg-red-950/60 text-[#D31219] flex items-center justify-center shrink-0 border border-red-900/40">
-                <Building2 size={22} />
-              </div>
-              <div className="text-center sm:text-left">
-                <p className="font-bold text-sm text-white">Engenharia e Suporte</p>
-                <p className="text-xs text-slate-400 mt-0.5">Cálculo de modulação para obra</p>
-              </div>
-            </div>
-
-            <div className="flex flex-col sm:flex-row items-center sm:items-start gap-3.5 p-3 rounded-lg bg-slate-950/40 border border-slate-800/80">
-              <div className="w-12 h-12 rounded-lg bg-red-950/60 text-[#D31219] flex items-center justify-center shrink-0 border border-red-900/40">
-                <MapPin size={22} />
-              </div>
-              <div className="text-center sm:text-left">
-                <p className="font-bold text-sm text-white">Showroom Cajuru</p>
-                <p className="text-xs text-slate-400 mt-0.5">BR-277 com estoque físico</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <StoreHero />
 
       {/* Destaque: Steel Frame Construtivo */}
       <section className="py-16 md:py-24 bg-slate-50 border-b border-slate-200">

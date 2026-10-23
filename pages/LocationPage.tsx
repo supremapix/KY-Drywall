@@ -163,6 +163,7 @@ const LocationPage: React.FC<LocationPageProps> = ({ type }) => {
                     </div>
                     <a
                       href={COMPANY_INFO.mapsUrl}
+                      aria-label="Ver endereço da loja KY no mapa"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="bg-white/10 backdrop-blur-md hover:bg-white/20 text-white p-2 rounded-lg transition-all border border-white/10"
