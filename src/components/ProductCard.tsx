@@ -35,7 +35,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   };
 
   return (
-    <div className="bg-white rounded-2xl border border-slate-200 hover:border-[#D31219]/30 hover:shadow-xl transition-all duration-500 overflow-hidden group flex flex-col h-full">
+    <div className="ky-card rounded-2xl overflow-hidden group flex flex-col h-full">
       {/* Image Wrapper */}
       <Link to={`/produto/${product.id}`} className="block relative overflow-hidden aspect-square bg-slate-50 border-b border-slate-100">
         <img
@@ -78,10 +78,10 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         <div className="grid grid-cols-2 gap-3 mt-auto">
           <button
             onClick={addToQuote}
-            className={`flex items-center justify-center gap-2 py-3 px-2 border-2 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all active:scale-[0.95] ${
+            className={`flex items-center justify-center gap-2 py-3 px-2 border rounded-xl text-[10px] font-black uppercase tracking-widest transition-all active:scale-[0.95] ${
               added 
                 ? 'bg-emerald-50 text-emerald-700 border-emerald-200' 
-                : 'text-slate-900 border-slate-100 hover:border-slate-300 bg-slate-50'
+                : 'text-slate-900 border-slate-200 hover:border-slate-300 bg-slate-50'
             }`}
           >
             {added ? 'Feito' : 'Cote+'}
@@ -98,6 +98,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         </div>
       </div>
     </div>
+
   );
 };
 

@@ -93,10 +93,10 @@ const Home: React.FC = () => {
       <StoreHero />
 
       {/* Authority & Benefits Bar - Light Version */}
-      <section className="bg-slate-50 border-b border-slate-200 text-slate-700 py-10 relative">
+      <section className="ky-section-alt border-b border-slate-200 text-slate-700 py-12 relative">
         <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-center sm:text-left">
-            <div className="flex flex-col sm:flex-row items-center sm:items-start gap-3.5 p-4 rounded-xl bg-white border border-slate-200 shadow-sm">
+            <div className="ky-card flex flex-col sm:flex-row items-center sm:items-start gap-3.5 p-5 rounded-xl">
               <div className="w-12 h-12 rounded-lg bg-red-50 text-[#D31219] flex items-center justify-center shrink-0 border border-red-100">
                 <Truck size={22} />
               </div>
@@ -106,7 +106,7 @@ const Home: React.FC = () => {
               </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row items-center sm:items-start gap-3.5 p-4 rounded-xl bg-white border border-slate-200 shadow-sm">
+            <div className="ky-card flex flex-col sm:flex-row items-center sm:items-start gap-3.5 p-5 rounded-xl">
               <div className="w-12 h-12 rounded-lg bg-red-50 text-[#D31219] flex items-center justify-center shrink-0 border border-red-100">
                 <ShieldCheck size={22} />
               </div>
@@ -116,7 +116,7 @@ const Home: React.FC = () => {
               </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row items-center sm:items-start gap-3.5 p-4 rounded-xl bg-white border border-slate-200 shadow-sm">
+            <div className="ky-card flex flex-col sm:flex-row items-center sm:items-start gap-3.5 p-5 rounded-xl">
               <div className="w-12 h-12 rounded-lg bg-red-50 text-[#D31219] flex items-center justify-center shrink-0 border border-red-100">
                 <Building2 size={22} />
               </div>
@@ -126,7 +126,7 @@ const Home: React.FC = () => {
               </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row items-center sm:items-start gap-3.5 p-4 rounded-xl bg-white border border-slate-200 shadow-sm">
+            <div className="ky-card flex flex-col sm:flex-row items-center sm:items-start gap-3.5 p-5 rounded-xl">
               <div className="w-12 h-12 rounded-lg bg-red-50 text-[#D31219] flex items-center justify-center shrink-0 border border-red-100">
                 <MapPin size={22} />
               </div>
@@ -149,7 +149,7 @@ const Home: React.FC = () => {
                 <span>02 — STEEL FRAME ESTRUTURAL</span>
               </div>
 
-              <h2 className="text-3xl sm:text-4xl font-black tracking-tight text-slate-950">
+              <h2 className="ky-title-mark text-3xl sm:text-4xl font-black tracking-tight text-slate-950">
                 Construção Industrializada em <span className="text-[#D31219]">Steel Frame</span>
               </h2>
 
@@ -229,67 +229,95 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Sistemas Construtivos (Services Grid) */}
-      <section className="py-16 md:py-24 bg-white border-b border-slate-200">
+      {/* Sistemas Construtivos (Feature Row Layout) */}
+      <section className="py-20 md:py-32 ky-section-white border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mb-14 text-center lg:text-left mx-auto lg:mx-0">
-            <div className="inline-flex items-center justify-center lg:justify-start gap-2 text-[#D31219] text-xs font-mono font-bold uppercase tracking-wider bg-red-50 border border-red-200 px-3 py-1 rounded mb-3">
+          <div className="max-w-3xl mb-20 text-center lg:text-left mx-auto lg:mx-0">
+            <div className="inline-flex items-center justify-center lg:justify-start gap-2 text-[#D31219] text-xs font-mono font-bold uppercase tracking-wider bg-red-50 border border-red-200 px-3 py-1 rounded mb-4">
               <span>03 — SISTEMAS CONSTRUTIVOS</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl font-black tracking-tight text-slate-950">
-              Soluções Completas para Reformas, Edificações e Obras Comerciais
+            <h2 className="ky-title-mark text-3xl sm:text-5xl font-black tracking-tight text-slate-950">
+              Soluções Completas para sua Obra
             </h2>
-            <p className="text-slate-600 text-sm sm:text-base mt-3 leading-relaxed">
+            <p className="text-slate-600 text-base sm:text-lg mt-5 leading-relaxed">
               Materiais de marcas consolidadas com certificação técnica ABNT e suporte logístico ágil para o seu canteiro.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {SERVICES.slice(0, 3).map((service) => (
+          <div className="space-y-24 md:space-y-32">
+            {SERVICES.slice(0, 3).map((service, index) => (
               <div 
                 key={service.id} 
-                className="bg-white rounded-xl border border-slate-200 overflow-hidden flex flex-col hover:border-[#D31219]/50 hover:shadow-lg transition-all duration-300 group"
+                className={`flex flex-col ${index % 2 === 1 ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-12 lg:gap-20 items-center`}
               >
-                <div className="h-56 overflow-hidden relative bg-slate-100">
-                  <img 
-                    src={service.image} 
-                    alt={service.title} 
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
-                    onError={(e) => {
-                      (e.target as HTMLImageElement).src = 'https://via.placeholder.com/600x400?text=KY+DRYWALL';
-                    }}
-                  />
-                  <div className="absolute top-3 left-3">
-                    <span className="bg-slate-900 text-white text-[10px] font-bold px-2.5 py-1 rounded uppercase tracking-wider">
-                      Sistema Técnico
-                    </span>
+                <div className="w-full lg:w-1/2">
+                  <div className="relative group">
+                    <div className="absolute -inset-4 bg-slate-100 rounded-3xl -z-10 transition-transform group-hover:scale-105 duration-500" />
+                    <div className="ky-card rounded-2xl overflow-hidden shadow-2xl">
+                      <img 
+                        src={service.image} 
+                        alt={service.title} 
+                        className="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-700" 
+                        onError={(e) => {
+                          (e.target as HTMLImageElement).src = 'https://via.placeholder.com/800x600?text=KY+DRYWALL';
+                        }}
+                      />
+                    </div>
+                    <div className="absolute top-6 right-6">
+                      <span className="bg-[#D31219] text-white text-[10px] font-black px-4 py-1.5 rounded-full uppercase tracking-widest shadow-lg">
+                        Premium
+                      </span>
+                    </div>
                   </div>
                 </div>
 
-                <div className="p-6 flex flex-col flex-grow text-center md:text-left">
-                  <h3 className="text-lg font-bold text-slate-900 mb-2.5 group-hover:text-[#D31219] transition-colors">
+                <div className="w-full lg:w-1/2 space-y-6 text-center lg:text-left">
+                  <div className="inline-block text-[#D31219] font-bold text-sm tracking-widest uppercase mb-2">
+                    Sistema {index + 1}
+                  </div>
+                  <h3 className="text-3xl md:text-4xl font-black text-slate-900 leading-tight">
                     {service.title}
                   </h3>
-                  <p 
-                    className="text-slate-600 text-xs leading-relaxed mb-6 flex-grow"
+                  <div 
+                    className="text-slate-600 text-base md:text-lg leading-relaxed"
                     dangerouslySetInnerHTML={{ __html: service.description }}
                   />
+                  
+                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 text-left">
+                    <li className="flex items-center gap-2 text-sm font-bold text-slate-700">
+                      <CheckCircle2 size={18} className="text-[#D31219]" />
+                      <span>Certificado ABNT</span>
+                    </li>
+                    <li className="flex items-center gap-2 text-sm font-bold text-slate-700">
+                      <CheckCircle2 size={18} className="text-[#D31219]" />
+                      <span>Pronta Entrega</span>
+                    </li>
+                    <li className="flex items-center gap-2 text-sm font-bold text-slate-700">
+                      <CheckCircle2 size={18} className="text-[#D31219]" />
+                      <span>Suporte Técnico</span>
+                    </li>
+                    <li className="flex items-center gap-2 text-sm font-bold text-slate-700">
+                      <CheckCircle2 size={18} className="text-[#D31219]" />
+                      <span>Alta Durabilidade</span>
+                    </li>
+                  </ul>
 
-                  <div className="pt-4 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-3">
+                  <div className="flex flex-col sm:flex-row items-center gap-4 pt-6 justify-center lg:justify-start">
                     <Link
                       to={service.id === 'steel-frame' ? '/steel-frame' : `/servicos/${service.id}`}
-                      className="w-full sm:w-auto text-xs font-bold text-slate-800 hover:text-[#D31219] transition-colors flex items-center justify-center gap-1 py-2"
+                      className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-slate-900 text-white font-bold px-8 py-4 rounded-xl text-sm uppercase tracking-wider hover:bg-[#D31219] transition-all"
                     >
-                      <span>Ver Detalhes</span>
-                      <ChevronRight size={14} />
+                      <span>Ver Especificações</span>
+                      <ChevronRight size={18} />
                     </Link>
                     <a
                       href={`https://wa.me/5541996457421?text=Olá! Gostaria de um orçamento para ${encodeURIComponent(service.title)}.`}
                       target="_blank"
                       rel="noreferrer"
-                      className="w-full sm:w-auto bg-[#D31219] text-white text-xs font-bold px-4 py-2.5 rounded-lg hover:bg-slate-900 transition-colors text-center"
+                      className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white text-slate-900 font-bold px-8 py-4 rounded-xl text-sm uppercase tracking-wider border-2 border-slate-200 hover:border-[#D31219] hover:text-[#D31219] transition-all"
                     >
-                      Orçar Material
+                      <MessageCircle size={18} />
+                      <span>Solicitar Orçamento</span>
                     </a>
                   </div>
                 </div>
@@ -307,7 +335,7 @@ const Home: React.FC = () => {
               <div className="inline-flex items-center justify-center md:justify-start gap-2 text-[#D31219] text-xs font-mono font-bold uppercase tracking-wider bg-red-50 border border-red-200 px-3 py-1 rounded mb-3">
                 <span>04 — ESTOQUE PRONTA ENTREGA</span>
               </div>
-              <h2 className="text-3xl font-black tracking-tight text-slate-950">
+              <h2 className="ky-title-mark text-3xl font-black tracking-tight text-slate-950">
                 Materiais e Insumos em Destaque
               </h2>
               <p className="text-slate-600 text-xs sm:text-sm mt-1">
@@ -358,7 +386,7 @@ const Home: React.FC = () => {
               <div className="inline-flex items-center justify-center lg:justify-start gap-2 text-[#D31219] text-xs font-mono font-bold uppercase tracking-wider bg-red-50 border border-red-200 px-3 py-1 rounded">
                 <span>05 — LOGÍSTICA CURITIBA & RMC</span>
               </div>
-              <h2 className="text-3xl font-black tracking-tight text-slate-950">
+              <h2 className="ky-title-mark text-3xl font-black tracking-tight text-slate-950">
                 Entrega Rápida e Suporte Técnico nos Canteiros
               </h2>
               <p className="text-slate-600 text-sm leading-relaxed">
@@ -448,7 +476,7 @@ const Home: React.FC = () => {
               <HelpCircle size={14} />
               <span>06 — CENTRAL TÉCNICA (FAQ)</span>
             </span>
-            <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-slate-950">
+            <h2 className="ky-title-mark text-3xl sm:text-5xl font-black tracking-tight text-slate-950">
               Dúvidas Frequentes
             </h2>
             <p className="text-slate-600 text-base sm:text-lg mt-4 leading-relaxed font-medium">
@@ -517,7 +545,7 @@ const Home: React.FC = () => {
               <div className="inline-flex items-center justify-center md:justify-start gap-2 text-[#D31219] text-xs font-mono font-bold uppercase tracking-wider bg-red-50 border border-red-200 px-3 py-1 rounded mb-3">
                 <span>07 — ARTIGOS & MANUAIS TÉCNICOS</span>
               </div>
-              <h2 className="text-3xl font-black tracking-tight text-slate-950">
+              <h2 className="ky-title-mark text-3xl font-black tracking-tight text-slate-950">
                 Guias Executivos e Dicas de Engenharia
               </h2>
             </div>

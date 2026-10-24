@@ -78,8 +78,8 @@ const About: React.FC = () => {
         schema={organizationSchema}
       />
       {/* Hero Section - Industrial Showroom */}
-      <section className="bg-white py-20 md:py-32 text-slate-900 relative overflow-hidden border-b-2 border-slate-100">
-        <div className="absolute inset-0 z-0 bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] [background-size:24px_24px] opacity-100"></div>
+      <section className="ky-section-white py-20 md:py-32 text-slate-900 relative overflow-hidden border-b border-slate-200">
+        <div className="absolute inset-0 z-0 bg-[radial-gradient(var(--ky-border)_1px,transparent_1px)] [background-size:24px_24px] opacity-100"></div>
         <div className="absolute inset-0 opacity-10 z-0">
           <img 
             src="https://images.pexels.com/photos/159306/construction-site-build-construction-work-159306.jpeg?auto=compress&cs=tinysrgb&w=1920" 
@@ -93,7 +93,7 @@ const About: React.FC = () => {
               <span className="w-1.5 h-1.5 rounded-full bg-[#D31219]"></span>
               <span>01 — DISTRIBUIDORA ESPECIALIZADA</span>
             </span>
-            <h1 className="text-5xl sm:text-7xl font-black tracking-tight mb-8 text-slate-950 leading-[1.05]">
+            <h1 className="ky-title-mark text-5xl sm:text-7xl font-black tracking-tight mb-8 text-slate-950 leading-[1.05]">
               A Solidez da <br/> <span className="text-[#D31219]">KY Drywall</span> & Steel Frame
             </h1>
             <p className="text-lg sm:text-2xl text-slate-600 font-medium leading-relaxed max-w-2xl">
@@ -104,14 +104,14 @@ const About: React.FC = () => {
       </section>
 
       {/* Sobre a Empresa */}
-      <section className="py-20 md:py-32 bg-white">
+      <section className="py-20 md:py-32 ky-section-white border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-center">
             <div className="lg:col-span-7 space-y-8">
               <div className="inline-flex items-center gap-2 text-[#D31219] text-[10px] font-black uppercase tracking-[0.2em] bg-red-50 border border-red-100 px-3 py-1 rounded">
                 <span>02 — INFRAESTRUTURA & TRADIÇÃO</span>
               </div>
-              <h2 className="text-3xl sm:text-5xl font-black text-slate-950 tracking-tight leading-tight">
+              <h2 className="ky-title-mark text-3xl sm:text-5xl font-black text-slate-950 tracking-tight leading-tight">
                 Fornecimento Estruturado para <br/> o Canteiro de Obras
               </h2>
               <div className="space-y-6 text-slate-600 text-base sm:text-lg leading-relaxed font-medium">
@@ -126,7 +126,7 @@ const About: React.FC = () => {
                 </p>
               </div>
 
-              <div className="bg-slate-50 p-8 rounded-3xl border-2 border-slate-100 max-w-md">
+              <div className="ky-card p-8 rounded-3xl max-w-md">
                 <p className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] mb-4">Atendimento de Balcão</p>
                 <div className="space-y-3 text-sm text-slate-900 font-black uppercase tracking-tight">
                   <p className="flex items-center gap-3"><Clock size={18} className="text-[#D31219] shrink-0"/> {COMPANY_INFO.hours.weekdays}</p>
@@ -139,14 +139,14 @@ const About: React.FC = () => {
                   href={`https://wa.me/${COMPANY_INFO.whatsapp}`} 
                   target="_blank"
                   rel="noreferrer"
-                  className="w-full sm:w-auto bg-[#D31219] text-white font-black px-10 py-5 rounded-2xl inline-flex items-center justify-center gap-3 text-xs uppercase tracking-[0.2em] hover:bg-red-700 transition-all shadow-xl active:scale-[0.98]"
+                  className="w-full sm:w-auto bg-[#D31219] text-white font-black px-10 py-5 rounded-2xl inline-flex items-center justify-center gap-3 text-xs uppercase tracking-[0.2em] hover:bg-slate-900 transition-all shadow-xl active:scale-[0.98]"
                 >
                   <MessageCircle size={20} />
                   <span>WhatsApp Comercial</span>
                 </a>
                 <a 
                   href={`tel:${COMPANY_INFO.phone.replace(/\D/g, '')}`} 
-                  className="w-full sm:w-auto bg-white text-slate-950 border-2 border-slate-100 font-black px-10 py-5 rounded-2xl inline-flex items-center justify-center gap-3 text-xs uppercase tracking-[0.2em] hover:border-[#D31219] transition-all active:scale-[0.98]"
+                  className="w-full sm:w-auto bg-white text-slate-950 border border-slate-200 font-black px-10 py-5 rounded-2xl inline-flex items-center justify-center gap-3 text-xs uppercase tracking-[0.2em] hover:border-[#D31219] transition-all active:scale-[0.98]"
                 >
                   <span>Ligar: {COMPANY_INFO.phone}</span>
                 </a>
@@ -154,7 +154,7 @@ const About: React.FC = () => {
             </div>
 
             <div className="lg:col-span-5">
-              <div className="rounded-[40px] overflow-hidden border-2 border-slate-100 shadow-2xl bg-white relative">
+              <div className="ky-card rounded-[40px] overflow-hidden shadow-2xl relative border-t-8 border-t-[#D31219]">
                 <div className="absolute top-6 left-6 z-10 bg-white/90 backdrop-blur px-4 py-2 rounded-full border border-slate-100 shadow-sm">
                   <p className="text-[10px] font-black text-[#D31219] uppercase tracking-widest">Showroom BR-277</p>
                 </div>
@@ -163,7 +163,7 @@ const About: React.FC = () => {
                   alt="Loja KY Drywall Curitiba" 
                   className="w-full h-auto object-cover" 
                 />
-                <div className="p-8 bg-slate-50 border-t-2 border-slate-100">
+                <div className="p-8 bg-slate-50 border-t border-slate-100">
                   <div className="flex items-center justify-between gap-4">
                     <div>
                       <p className="text-sm font-black text-slate-900 uppercase tracking-widest">Unidade Cajuru</p>
@@ -181,13 +181,13 @@ const About: React.FC = () => {
       </section>
 
       {/* Diferenciais Competitivos */}
-      <section className="py-20 md:py-32 bg-slate-50 border-t-2 border-slate-100">
+      <section className="py-20 md:py-32 ky-section-tech border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-20">
             <div className="inline-flex items-center gap-2 text-[#D31219] text-[10px] font-black uppercase tracking-[0.2em] bg-red-50 border border-red-100 px-3 py-1 rounded mb-6">
               <span>03 — COMPROMISSO TÉCNICO</span>
             </div>
-            <h2 className="text-3xl sm:text-5xl font-black text-slate-950 tracking-tight leading-tight">
+            <h2 className="ky-title-mark text-3xl sm:text-5xl font-black text-slate-950 tracking-tight leading-tight mx-auto inline-block">
               A Logística que sua <br/> Obra Necessita
             </h2>
           </div>
@@ -210,8 +210,8 @@ const About: React.FC = () => {
                 desc: 'Veículos equipados para transporte de placas sem quebras e perfis sem empenamento, com descarga técnica.' 
               }
             ].map((item, i) => (
-              <div key={i} className="bg-white p-10 rounded-3xl border-2 border-slate-100 shadow-sm hover:border-[#D31219]/40 transition-all group">
-                <div className="w-16 h-16 bg-slate-50 border-2 border-slate-100 rounded-2xl flex items-center justify-center text-[#D31219] mb-8 group-hover:bg-[#D31219] group-hover:text-white transition-all">
+              <div key={i} className="ky-card p-10 rounded-3xl group">
+                <div className="w-16 h-16 bg-slate-50 border border-slate-100 rounded-2xl flex items-center justify-center text-[#D31219] mb-8 group-hover:bg-[#D31219] group-hover:text-white transition-all">
                   <item.icon size={28} />
                 </div>
                 <h3 className="text-xl font-black text-slate-950 mb-4 tracking-tight">{item.title}</h3>
@@ -221,6 +221,7 @@ const About: React.FC = () => {
           </div>
         </div>
       </section>
+
     </div>
   );
 };

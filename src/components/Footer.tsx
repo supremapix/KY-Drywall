@@ -5,27 +5,22 @@ import { SITE_ASSETS, COMPANY_INFO, NEIGHBORHOODS, CITIES_RMC, normalizeLocation
 
 export function SupremaCredit() {
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pt-8 border-t border-slate-200 flex justify-center items-center">
-      <div className="bg-white border border-slate-200 rounded-full px-8 py-3 shadow-md flex items-center justify-center transition-all duration-300 hover:shadow-lg">
-        <p className="text-slate-600 transition-colors duration-200 text-sm sm:text-base font-bold flex flex-wrap items-center justify-center gap-2">
-          <span className="opacity-90">Desenvolvido com</span> 
-          <Heart 
-            size={14} 
-            className="text-red-500 animate-[pulse_1.5s_infinite] shrink-0" 
-          /> 
-          <span className="opacity-90">por</span>
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 pt-10 border-t border-slate-200 flex justify-center items-center">
+      <div className="bg-white border border-slate-200 rounded-full px-10 py-4 shadow-lg flex items-center justify-center transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+        <p className="text-slate-700 text-sm sm:text-base font-bold flex flex-wrap items-center justify-center gap-3">
+          <span className="opacity-90">Orgulhosamente desenvolvido por</span>
           <a 
             id="developer-suprema-link"
             href="https://supremasite.com.br" 
             target="_blank" 
             rel="noopener noreferrer" 
-            className="text-yellow-600 hover:text-yellow-700 transition-all font-black inline-flex items-center gap-2 cursor-pointer border-b border-dashed border-yellow-600/50 hover:border-yellow-700"
+            className="text-slate-900 hover:text-[#D31219] transition-all font-black inline-flex items-center gap-3 cursor-pointer group"
           >
-            Suprema Sites Express
+            <span className="border-b-2 border-yellow-400 group-hover:border-[#D31219]">Suprema Sites Express</span>
             <img 
               src="https://img.supremamidia.com/suprema-img.png" 
               alt="Suprema" 
-              className="h-[24px] w-auto inline select-none shrink-0 transition-all duration-300" 
+              className="h-[36px] w-auto inline select-none shrink-0 transition-all duration-500 group-hover:scale-110" 
               referrerPolicy="no-referrer"
             />
           </a>
@@ -54,9 +49,7 @@ const Footer: React.FC = () => {
   }, []);
 
   return (
-    <footer className="bg-slate-50 text-slate-800 pt-20 pb-12 border-t-8 border-[#D31219] relative overflow-hidden">
-      <div className="absolute inset-0 z-0 bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] [background-size:32px_32px] opacity-100"></div>
-      
+    <footer className="ky-section-tech text-slate-800 pt-20 pb-16 border-t-8 border-[#D31219] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 relative z-10">
         
         {/* Prancha Header Blueprint Tag */}
@@ -76,7 +69,7 @@ const Footer: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch">
             {/* Metrics */}
             <div className="lg:col-span-4 flex flex-col justify-between gap-6">
-              <div className="bg-white p-8 rounded-3xl border border-slate-200 flex items-center justify-between text-center sm:text-left shadow-sm hover:shadow-md transition-shadow">
+              <div className="ky-card p-8 rounded-3xl flex items-center justify-between text-center sm:text-left transition-shadow">
                 <div>
                   <p className="text-4xl font-black text-slate-950 tracking-tighter">Engenharia</p>
                   <p className="text-xs font-black text-[#D31219] mt-2 uppercase tracking-widest">Suporte Técnico Especializado</p>
@@ -86,7 +79,7 @@ const Footer: React.FC = () => {
                 </div>
               </div>
 
-              <div className="bg-white p-8 rounded-3xl border border-slate-200 flex items-center justify-between text-center sm:text-left shadow-sm hover:shadow-md transition-shadow">
+              <div className="ky-card p-8 rounded-3xl flex items-center justify-between text-center sm:text-left transition-shadow">
                 <div>
                   <div className="flex justify-center sm:justify-start gap-1 mb-2">
                     {[...Array(5)].map((_, i) => (
@@ -103,7 +96,7 @@ const Footer: React.FC = () => {
             </div>
 
             {/* Testimonial Quote */}
-            <div className="lg:col-span-8 bg-white p-10 sm:p-12 rounded-[40px] border border-slate-200 flex flex-col justify-between relative text-center md:text-left shadow-xl">
+            <div className="lg:col-span-8 ky-card p-10 sm:p-12 rounded-[40px] flex flex-col justify-between relative text-center md:text-left shadow-xl">
               <Quote size={56} className="text-slate-100 absolute top-10 right-10 hidden sm:block" />
               <div className="relative z-10">
                 <span className="inline-block text-[10px] uppercase tracking-[0.3em] text-[#D31219] font-black mb-6">Voz da Engenharia</span>
@@ -142,7 +135,7 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16 text-center md:text-left">
           {/* Brand & Authority */}
           <div className="flex flex-col items-center md:items-start space-y-6">
-            <Link to="/" className="inline-block bg-white p-4 rounded-2xl border border-slate-200 shadow-sm transition-transform hover:scale-105">
+            <Link to="/" className="inline-block ky-card p-4 rounded-2xl transition-transform hover:scale-105">
               <img 
                 src={SITE_ASSETS.logo} 
                 alt="KY Drywall & Steel Frame" 
@@ -240,7 +233,7 @@ const Footer: React.FC = () => {
             <h4 className="text-slate-950 text-xs font-black uppercase tracking-[0.2em] border-b-2 border-[#D31219] pb-3 w-full">
               Onde Estamos
             </h4>
-            <div className="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm w-full space-y-6">
+            <div className="ky-card p-6 rounded-3xl w-full space-y-6">
               <div className="flex items-start gap-4">
                 <MapPin size={24} className="text-[#D31219] shrink-0 mt-1" />
                 <p className="text-sm text-slate-700 font-bold leading-relaxed">
@@ -267,7 +260,7 @@ const Footer: React.FC = () => {
 
         {/* SEO Regions Accordions */}
         <div className="mb-20 space-y-4">
-          <div className="bg-white border border-slate-200 rounded-3xl overflow-hidden shadow-sm">
+          <div className="ky-card rounded-3xl overflow-hidden">
             <button
               onClick={() => setIsNeighborhoodsOpen(!isNeighborhoodsOpen)}
               className="w-full p-6 flex items-center justify-between text-left text-sm font-black text-slate-900 hover:bg-slate-50 transition-all"
@@ -294,7 +287,7 @@ const Footer: React.FC = () => {
             )}
           </div>
 
-          <div className="bg-white border border-slate-200 rounded-3xl overflow-hidden shadow-sm">
+          <div className="ky-card rounded-3xl overflow-hidden">
             <button
               onClick={() => setIsCitiesOpen(!isCitiesOpen)}
               className="w-full p-6 flex items-center justify-between text-left text-sm font-black text-slate-900 hover:bg-slate-50 transition-all"
@@ -354,3 +347,4 @@ const Footer: React.FC = () => {
 };
 
 export default Footer;
+

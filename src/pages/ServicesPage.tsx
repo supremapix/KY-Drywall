@@ -75,8 +75,8 @@ const ServicesPage: React.FC = () => {
         schema={serviceSchema}
       />
       {/* Hero Section - Industrial Showroom */}
-      <section className="relative py-24 md:py-32 bg-white overflow-hidden border-b-2 border-slate-100">
-        <div className="absolute inset-0 z-0 bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] [background-size:24px_24px] opacity-100"></div>
+      <section className="relative py-24 md:py-32 ky-section-white overflow-hidden border-b border-slate-200">
+        <div className="absolute inset-0 z-0 bg-[radial-gradient(var(--ky-border)_1px,transparent_1px)] [background-size:24px_24px] opacity-100"></div>
         <div className="absolute inset-0 z-0 opacity-10">
           <img 
             src={currentService?.image} 
@@ -91,7 +91,7 @@ const ServicesPage: React.FC = () => {
               <ChevronRight size={10} className="text-slate-300" />
               <span className="text-slate-950 font-black">01 — SISTEMAS TÉCNICOS</span>
             </div>
-            <h1 className="text-5xl sm:text-7xl font-black tracking-tight leading-[1.05] text-slate-950 mb-10">
+            <h1 className="ky-title-mark text-5xl sm:text-7xl font-black tracking-tight leading-[1.05] text-slate-950 mb-10">
               {serviceId ? currentService?.title : "Sistemas de Construção"}
             </h1>
             <p className="text-slate-600 text-lg sm:text-2xl leading-relaxed max-w-2xl font-medium">
@@ -102,7 +102,7 @@ const ServicesPage: React.FC = () => {
       </section>
 
       {/* Conteúdo SEO */}
-      <section className="py-20 md:py-32 bg-white">
+      <section className="py-20 md:py-32 ky-section-white border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-start">
             <div className="lg:col-span-7 space-y-10">
@@ -110,7 +110,7 @@ const ServicesPage: React.FC = () => {
                 <span className="text-[#D31219] text-[10px] font-black uppercase tracking-[0.2em] bg-red-50 border border-red-100 px-3 py-1 rounded">
                   02 — DESEMPENHO & ENGENHARIA
                 </span>
-                <h2 className="text-3xl sm:text-4xl font-black text-slate-950 tracking-tight mt-6">
+                <h2 className="ky-title-mark text-3xl sm:text-4xl font-black text-slate-950 tracking-tight mt-6">
                   Soluções em Construção a Seco
                 </h2>
               </div>
@@ -131,7 +131,7 @@ const ServicesPage: React.FC = () => {
                   { title: "CONFORTO", desc: "Isolamento térmico e acústico superior" },
                   { title: "PRECISÃO", desc: "Encaixes perfeitos e prumo milimétrico" }
                 ].map(b => (
-                  <div key={b.title} className="p-6 bg-slate-50 rounded-2xl border-2 border-slate-100 group hover:border-[#D31219]/20 transition-all">
+                  <div key={b.title} className="ky-card p-6 rounded-2xl group transition-all">
                     <div className="flex items-center gap-3 mb-2">
                       <CheckCircle2 size={18} className="text-[#D31219] shrink-0" />
                       <span className="text-xs font-black text-slate-950 uppercase tracking-widest">{b.title}</span>
@@ -146,20 +146,20 @@ const ServicesPage: React.FC = () => {
                   href={`https://wa.me/5541996457421?text=Olá! Gostaria de um orçamento para ${encodeURIComponent(currentService?.title || 'serviços')}.`}
                   target="_blank"
                   rel="noreferrer"
-                  className="bg-[#D31219] text-white font-black px-10 py-5 rounded-2xl inline-flex items-center justify-center gap-3 text-xs uppercase tracking-[0.2em] hover:bg-red-700 transition-all shadow-xl active:scale-[0.98]"
+                  className="bg-[#D31219] text-white font-black px-10 py-5 rounded-2xl inline-flex items-center justify-center gap-3 text-xs uppercase tracking-[0.2em] hover:bg-slate-900 transition-all shadow-xl active:scale-[0.98]"
                 >
                   <MessageCircle size={20} /> Solicitar Cotação
                 </a>
                 <Link 
                   to="/produtos" 
-                  className="bg-white text-slate-950 border-2 border-slate-100 font-black px-10 py-5 rounded-2xl inline-flex items-center justify-center gap-3 text-xs uppercase tracking-[0.2em] hover:border-[#D31219] transition-all active:scale-[0.98]"
+                  className="bg-white text-slate-950 border border-slate-200 font-black px-10 py-5 rounded-2xl inline-flex items-center justify-center gap-3 text-xs uppercase tracking-[0.2em] hover:border-[#D31219] transition-all active:scale-[0.98]"
                 >
                   Ver Materiais
                 </Link>
               </div>
             </div>
 
-            <div className="lg:col-span-5 bg-white p-10 rounded-[40px] border border-slate-200 shadow-2xl relative overflow-hidden">
+            <div className="lg:col-span-5 ky-card p-10 rounded-[40px] relative overflow-hidden border-t-8 border-t-[#D31219]">
               <div className="absolute top-0 right-0 w-32 h-32 bg-red-50 rounded-full -mr-16 -mt-16 opacity-50"></div>
               <div className="relative z-10">
                 <div className="flex items-center gap-4 mb-8">
@@ -198,13 +198,13 @@ const ServicesPage: React.FC = () => {
       <ProjectChecklist serviceId={serviceId} />
 
       {/* Outros Serviços Navegação */}
-      <section className="py-20 bg-slate-50 border-t border-slate-200">
+      <section className="py-20 ky-section-tech border-t border-slate-200">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-12">
             <span className="text-[#D31219] text-xs font-bold uppercase tracking-wider">
               Portfólio de Soluções
             </span>
-            <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight mt-1">
+            <h3 className="ky-title-mark text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight mt-1 mx-auto inline-block">
               Conheça Nossas Especialidades
             </h3>
           </div>
@@ -214,7 +214,7 @@ const ServicesPage: React.FC = () => {
               <Link 
                 key={s.id} 
                 to={`/servicos/${s.id}`} 
-                className="bg-white rounded-lg overflow-hidden border border-slate-200 hover:border-[#D31219]/40 hover:shadow-md transition-all group flex flex-col"
+                className="ky-card rounded-lg overflow-hidden group flex flex-col"
               >
                 <div className="h-44 overflow-hidden bg-slate-100">
                   <img 
@@ -243,6 +243,7 @@ const ServicesPage: React.FC = () => {
           </div>
         </div>
       </section>
+
     </div>
   );
 };

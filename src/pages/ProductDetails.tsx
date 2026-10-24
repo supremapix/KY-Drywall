@@ -82,7 +82,7 @@ const ProductDetails: React.FC = () => {
   const whatsappUrl = `https://wa.me/5541996457421?text=${encodeURIComponent(`Olá, gostaria de um orçamento para o produto: ${product.name}`)}`;
 
   return (
-    <div className="bg-white pt-24 pb-20">
+    <div className="ky-section-white pt-24 pb-20">
       <EnhancedSEO 
         title={`${product.name} | Catálogo KY Drywall`} 
         description={product.description}
@@ -113,7 +113,7 @@ const ProductDetails: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 mb-20">
           {/* Left Column: Image Showcase */}
           <div className="lg:col-span-6 space-y-6">
-            <div className="relative group bg-[#F8F9FA] rounded-3xl border border-slate-200 aspect-square overflow-hidden flex items-center justify-center p-8 shadow-inner">
+            <div className="relative group ky-card rounded-3xl aspect-square overflow-hidden flex items-center justify-center p-8">
               <img 
                 src={product.image} 
                 alt={product.name} 
@@ -132,14 +132,14 @@ const ProductDetails: React.FC = () => {
             
             {/* Trust Indicators */}
             <div className="grid grid-cols-2 gap-4">
-               <div className="bg-slate-50 p-5 rounded-2xl border border-slate-100 flex flex-col items-center text-center gap-3">
+               <div className="ky-section-alt p-5 rounded-2xl border border-slate-100 flex flex-col items-center text-center gap-3">
                  <Shield size={24} className="text-[#D31219]" />
                  <div>
                    <div className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">Qualidade</div>
                    <div className="text-xs font-bold text-slate-800">Norma ABNT</div>
                  </div>
                </div>
-               <div className="bg-slate-50 p-5 rounded-2xl border border-slate-100 flex flex-col items-center text-center gap-3">
+               <div className="ky-section-alt p-5 rounded-2xl border border-slate-100 flex flex-col items-center text-center gap-3">
                  <Truck size={24} className="text-slate-900" />
                  <div>
                    <div className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">Logística</div>
@@ -156,7 +156,7 @@ const ProductDetails: React.FC = () => {
                 <span className="w-1.5 h-1.5 rounded-full bg-[#D31219]"></span>
                 {product.category}
               </div>
-              <h1 className="text-3xl sm:text-5xl font-black text-slate-900 mb-6 tracking-tight leading-tight">
+              <h1 className="ky-title-mark text-3xl sm:text-5xl font-black text-slate-900 mb-6 tracking-tight leading-tight">
                 {product.name}
               </h1>
               
@@ -228,7 +228,7 @@ const ProductDetails: React.FC = () => {
                 {(product.selectionCriteria || product.compatibility) && (
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     {product.selectionCriteria && (
-                      <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100">
+                      <div className="ky-section-alt p-6 rounded-2xl border border-slate-100">
                         <h4 className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-900 mb-4">Critérios de Escolha</h4>
                         <p className="text-xs text-slate-500 leading-relaxed">
                           {product.selectionCriteria}
@@ -251,7 +251,7 @@ const ProductDetails: React.FC = () => {
                     <h4 className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-900 mb-6">Dúvidas Frequentes</h4>
                     <div className="grid grid-cols-1 gap-4">
                       {product.faq.map((item, idx) => (
-                        <div key={idx} className="p-5 bg-white border border-slate-100 rounded-2xl hover:border-slate-200 transition-colors">
+                        <div key={idx} className="ky-card p-5 rounded-2xl transition-colors">
                           <div className="text-xs font-black text-slate-800 mb-2 flex items-start gap-2">
                             <span className="text-[#D31219]">Q:</span>
                             {item.question}
@@ -313,7 +313,7 @@ const ProductDetails: React.FC = () => {
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-12 gap-6">
               <div>
                 <div className="text-[11px] font-mono font-bold text-[#D31219] uppercase tracking-[0.2em] mb-2">Feedbacks</div>
-                <h3 className="text-3xl font-black text-slate-900 tracking-tight">Avaliações Técnicas</h3>
+                <h3 className="ky-title-mark text-3xl font-black text-slate-900 tracking-tight">Avaliações Técnicas</h3>
                 <p className="text-slate-500 text-sm mt-2">A palavra de quem utiliza nossos materiais no dia a dia da obra.</p>
               </div>
               <button 
@@ -325,7 +325,7 @@ const ProductDetails: React.FC = () => {
             </div>
 
             {isReviewing && (
-              <div className="bg-slate-50 p-8 rounded-3xl mb-12 border border-slate-200 shadow-inner animate-in fade-in slide-in-from-top-4">
+              <div className="ky-section-alt p-8 rounded-3xl mb-12 border border-slate-200 shadow-inner animate-in fade-in slide-in-from-top-4">
                 <form onSubmit={handleSubmitReview} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
@@ -377,7 +377,7 @@ const ProductDetails: React.FC = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {reviews.length > 0 ? reviews.map((review) => (
-                <div key={review.id} className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:border-slate-300 transition-colors">
+                <div key={review.id} className="ky-card p-6 rounded-2xl transition-colors">
                   <div className="flex justify-between items-start mb-4">
                     <div>
                       <h4 className="font-black text-sm text-slate-900 uppercase tracking-tight">{review.userName}</h4>
@@ -392,7 +392,7 @@ const ProductDetails: React.FC = () => {
                   <p className="text-slate-600 text-sm leading-relaxed italic">"{review.comment}"</p>
                 </div>
               )) : (
-                 <div className="col-span-2 py-10 text-center bg-slate-50 rounded-2xl border-2 border-dashed border-slate-200">
+                 <div className="col-span-2 py-10 text-center ky-section-alt rounded-2xl border-2 border-dashed border-slate-200">
                     <p className="text-slate-400 font-bold text-sm">Seja o primeiro a avaliar este material técnico.</p>
                  </div>
               )}
@@ -401,6 +401,7 @@ const ProductDetails: React.FC = () => {
         </section>
       </div>
     </div>
+
   );
 };
 

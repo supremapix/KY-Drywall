@@ -86,7 +86,7 @@ const ProductList: React.FC = () => {
   }, [searchTerm]);
 
   return (
-    <div className="bg-[#FDFDFD] min-h-screen pt-24 pb-20">
+    <div className="bg-[#f8fafc] min-h-screen pt-24 pb-20">
       <EnhancedSEO
         title="Catálogo de Materiais Drywall e Steel Frame | KY Drywall"
         description="Confira nosso catálogo completo: placas, perfis Barbieri, massas Holdflex e isolamentos Isover. Pronta entrega direto da BR-277 em Curitiba."
@@ -96,10 +96,9 @@ const ProductList: React.FC = () => {
         schema={itemListSchema}
       />
 
-      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
       {/* Hero Section - Industrial Showroom */}
-      <section className="bg-white py-20 md:py-32 text-slate-900 relative overflow-hidden border-b-2 border-slate-100">
-        <div className="absolute inset-0 z-0 bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] [background-size:24px_24px] opacity-100"></div>
+      <section className="ky-section-white py-20 md:py-32 text-slate-900 relative overflow-hidden border-b border-slate-200 mb-12">
+        <div className="absolute inset-0 z-0 bg-[radial-gradient(var(--ky-border)_1px,transparent_1px)] [background-size:24px_24px] opacity-100"></div>
         
         <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-4xl">
@@ -107,7 +106,7 @@ const ProductList: React.FC = () => {
               <span className="w-1.5 h-1.5 rounded-full bg-[#D31219]"></span>
               <span>01 — CATÁLOGO TÉCNICO</span>
             </div>
-            <h1 className="text-5xl sm:text-7xl font-black tracking-tight leading-[1.05] mb-10 text-slate-950">
+            <h1 className="ky-title-mark text-5xl sm:text-7xl font-black tracking-tight leading-[1.05] mb-10 text-slate-950">
               {selectedCategory === 'Todos' ? 'Materiais e Insumos' : selectedCategory}
             </h1>
             <p className="text-slate-600 text-lg sm:text-2xl leading-relaxed max-w-2xl font-medium mb-12">
@@ -119,7 +118,7 @@ const ProductList: React.FC = () => {
                 href="https://wa.me/5541996457421"
                 target="_blank"
                 rel="noreferrer"
-                className="w-full sm:w-auto bg-[#D31219] text-white font-black px-10 py-5 rounded-2xl inline-flex items-center justify-center gap-3 text-xs uppercase tracking-[0.2em] hover:bg-red-700 transition-all shadow-xl active:scale-[0.98]"
+                className="w-full sm:w-auto bg-[#D31219] text-white font-black px-10 py-5 rounded-2xl inline-flex items-center justify-center gap-3 text-xs uppercase tracking-[0.2em] hover:bg-slate-900 transition-all shadow-xl active:scale-[0.98]"
               >
                 <MessageCircle size={20} />
                 <span>Consultar Preços</span>
@@ -133,10 +132,11 @@ const ProductList: React.FC = () => {
         </div>
       </section>
 
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row gap-10">
           {/* Desktop Sidebar */}
           <aside className="hidden lg:block w-72 flex-shrink-0">
-            <div className="bg-white p-6 rounded-2xl border border-slate-200 sticky top-32 shadow-sm">
+            <div className="ky-card p-6 rounded-2xl sticky top-32">
               <div className="flex items-center gap-2 mb-6 pb-4 border-b border-slate-100">
                 <div className="w-8 h-8 rounded bg-[#D31219]/10 flex items-center justify-center text-[#D31219]">
                   <Filter size={16} />
@@ -183,7 +183,7 @@ const ProductList: React.FC = () => {
               </nav>
 
               {/* Info Box */}
-              <div className="mt-8 p-5 bg-red-50 rounded-xl border border-red-100">
+              <div className="mt-8 p-5 ky-section-alt rounded-xl border border-slate-200">
                 <div className="flex items-center gap-2 mb-3 text-[#D31219]">
                   <Info size={16} />
                   <span className="text-[10px] font-black uppercase tracking-widest">Dica Técnica</span>
@@ -198,7 +198,7 @@ const ProductList: React.FC = () => {
           {/* Main Content Area */}
           <div className="flex-grow">
             {/* Control Bar */}
-            <div className="bg-white p-4 rounded-2xl border border-slate-200 mb-8 flex flex-col md:flex-row justify-between items-center gap-4 shadow-sm">
+            <div className="ky-card p-4 rounded-2xl mb-8 flex flex-col md:flex-row justify-between items-center gap-4">
               <div className="relative w-full md:w-96" ref={searchRef}>
                 <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" size={18} />
                 <input
@@ -242,7 +242,7 @@ const ProductList: React.FC = () => {
                 ))}
               </div>
             ) : (
-              <div className="bg-white py-24 px-10 rounded-3xl text-center border-2 border-dashed border-slate-200">
+              <div className="ky-card py-24 px-10 rounded-3xl text-center border-dashed">
                 <div className="w-20 h-20 bg-slate-50 rounded-full flex items-center justify-center mx-auto mb-6">
                   <Search size={32} className="text-slate-300" />
                 </div>
