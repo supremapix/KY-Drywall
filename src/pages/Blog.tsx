@@ -35,18 +35,21 @@ const Blog: React.FC = () => {
           publisher: { '@type': 'Organization', name: 'KY Drywall & Steel Frame' }
         }}
       />
-      {/* Article Hero */}
-      <section className="bg-slate-950 py-16 md:py-24 text-white relative overflow-hidden bg-[radial-gradient(#334155_1px,transparent_1px)] [background-size:20px_20px]">
-        <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 relative z-10 text-center">
-          <Link to="/blog" className="inline-flex items-center gap-2 text-xs font-bold text-slate-400 hover:text-white uppercase tracking-widest mb-8 transition-colors">
-            <ArrowLeft size={16} className="text-[#D31219]" /> Voltar ao Blog
+      {/* Article Hero - Industrial Showroom */}
+      <section className="bg-white py-20 md:py-32 text-slate-900 relative overflow-hidden border-b-2 border-slate-100">
+        <div className="absolute inset-0 z-0 bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] [background-size:24px_24px] opacity-100"></div>
+        <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 relative z-10">
+          <Link to="/blog" className="inline-flex items-center gap-2 text-[10px] font-black text-slate-400 hover:text-[#D31219] uppercase tracking-[0.2em] mb-12 transition-all">
+            <ArrowLeft size={16} /> VOLTAR AO ÍNDICE
           </Link>
-          <div className="mb-4">
-            <span className="text-[#D31219] text-xs font-mono font-bold uppercase tracking-wider bg-[#D31219]/10 border border-[#D31219]/30 px-3 py-1 rounded">{currentPost.tag}</span>
-          </div>
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.1] mb-6">{currentPost.title}</h1>
-          <div className="flex items-center justify-center gap-3 text-slate-400 text-sm font-bold uppercase tracking-widest">
-            <Clock size={16} /> {currentPost.date}
+          <div className="max-w-4xl">
+            <div className="mb-8">
+              <span className="text-[#D31219] text-[10px] font-black uppercase tracking-[0.2em] bg-red-50 border border-red-100 px-4 py-1.5 rounded-full shadow-sm">{currentPost.tag}</span>
+            </div>
+            <h1 className="text-4xl sm:text-6xl font-black tracking-tight leading-[1.1] mb-10 text-slate-950">{currentPost.title}</h1>
+            <div className="flex items-center gap-4 text-slate-400 text-[10px] font-black uppercase tracking-[0.2em]">
+              <Clock size={16} className="text-[#D31219]" /> PUBLICADO EM {currentPost.date}
+            </div>
           </div>
         </div>
       </section>
@@ -169,18 +172,22 @@ const Blog: React.FC = () => {
         schema={blogSchema}
       />
       
-      {/* Blog Hero */}
-      <section className="bg-slate-950 py-16 md:py-24 text-white relative overflow-hidden bg-[radial-gradient(#334155_1px,transparent_1px)] [background-size:20px_20px]">
-        <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 relative z-10 text-center">
-          <div className="inline-flex items-center gap-2 text-[#D31219] text-xs font-mono font-bold uppercase tracking-wider bg-[#D31219]/10 border border-[#D31219]/30 px-3 py-1 rounded mb-6">
-            <span>01 — CONHECIMENTO TÉCNICO</span>
+      {/* Blog Hero - Industrial Showroom */}
+      <section className="bg-white py-20 md:py-32 text-slate-900 relative overflow-hidden border-b-2 border-slate-100">
+        <div className="absolute inset-0 z-0 bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] [background-size:24px_24px] opacity-100"></div>
+        <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 relative z-10">
+          <div className="max-w-4xl">
+            <div className="inline-flex items-center gap-2 text-[#D31219] text-[10px] font-black uppercase tracking-[0.2em] bg-red-50 border border-red-100 px-4 py-2 rounded-full mb-10 shadow-sm">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#D31219]"></span>
+              <span>01 — CONHECIMENTO TÉCNICO</span>
+            </div>
+            <h1 className="text-5xl sm:text-7xl font-black tracking-tight leading-[1.05] mb-10 text-slate-950">
+              Blog & <span className="text-[#D31219]">Guia</span> Regional
+            </h1>
+            <p className="text-slate-600 text-lg sm:text-2xl leading-relaxed max-w-2xl font-medium">
+              Artigos técnicos sobre montagem, normas da ABNT e diretrizes de atendimento para Curitiba e todos os municípios da RMC.
+            </p>
           </div>
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.1] mb-6">
-            Blog & Guia Regional
-          </h1>
-          <p className="text-slate-400 text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto">
-            Artigos técnicos sobre montagem, normas da ABNT e diretrizes de atendimento para Curitiba e todos os municípios da RMC.
-          </p>
         </div>
       </section>
 
@@ -244,50 +251,57 @@ const Blog: React.FC = () => {
         </div>
       </section>
 
-      {/* Regional Index */}
-      <section className="py-20 bg-slate-950 text-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#334155_1px,transparent_1px)] [background-size:20px_20px]"></div>
+      {/* Regional Index - Light Theme */}
+      <section className="py-24 bg-slate-50 text-slate-900 relative overflow-hidden border-t border-slate-200">
+        <div className="absolute inset-0 z-0 bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] [background-size:24px_24px] opacity-100"></div>
         <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-16 max-w-3xl mx-auto">
-            <div className="inline-flex items-center gap-2 text-[#D31219] text-xs font-mono font-bold uppercase tracking-wider mb-6">
+          <div className="text-center mb-20 max-w-4xl mx-auto">
+            <div className="inline-flex items-center gap-2 text-[#D31219] text-[10px] font-black uppercase tracking-[0.2em] mb-8 bg-red-50 border border-red-100 px-4 py-2 rounded-full shadow-sm">
+              <Building2 size={14} />
               <span>02 — ATENDIMENTO REGIONAL</span>
             </div>
-            <h2 className="text-3xl sm:text-5xl font-black tracking-tight mb-6">
-              Curitiba & Região Metropolitana
+            <h2 className="text-4xl sm:text-6xl font-black tracking-tight mb-8 text-slate-950">
+              Curitiba & <span className="text-[#D31219]">Região</span> Metropolitana
             </h2>
-            <p className="text-slate-400 text-lg leading-relaxed">
+            <p className="text-slate-600 text-lg sm:text-xl leading-relaxed font-medium">
               Consulte as especificações de entrega, prazos e consultoria técnica para sua localidade específica.
             </p>
           </div>
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-            <div className="bg-slate-900 p-8 rounded-2xl border border-slate-800 shadow-2xl">
-              <div className="flex items-center gap-4 mb-8 border-b border-slate-800 pb-6">
-                <div className="w-12 h-12 rounded-xl bg-red-600/10 text-[#D31219] flex items-center justify-center border border-red-600/20">
-                  <Building2 size={24} />
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div className="bg-white p-10 rounded-[40px] border border-slate-200 shadow-xl">
+              <div className="flex items-center gap-5 mb-10 border-b border-slate-50 pb-8">
+                <div className="w-16 h-16 rounded-2xl bg-red-50 text-[#D31219] flex items-center justify-center border border-red-100 shadow-sm">
+                  <Building2 size={32} />
                 </div>
-                <h3 className="text-xl font-bold uppercase tracking-widest text-white">Bairros de Curitiba</h3>
+                <div>
+                  <h3 className="text-2xl font-black uppercase tracking-widest text-slate-950">Bairros de Curitiba</h3>
+                  <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mt-1">{NEIGHBORHOODS.length} regiões atendidas</p>
+                </div>
               </div>
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-4 max-h-[400px] overflow-y-auto pr-4 custom-scrollbar text-sm text-slate-300">
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-8 gap-y-4 max-h-[440px] overflow-y-auto pr-6 custom-scrollbar text-sm">
                 {NEIGHBORHOODS.map(n => (
-                  <Link key={n} to={`/drywall-em/${normalizeLocationName(n)}`} className="hover:text-white font-bold transition-colors border-b border-slate-800/50 pb-2">
-                    {n}
+                  <Link key={n} to={`/drywall-em/${normalizeLocationName(n)}`} className="text-slate-600 hover:text-[#D31219] font-bold transition-all border-b border-slate-50 pb-2 hover:translate-x-1 inline-block">
+                    • {n}
                   </Link>
                 ))}
               </div>
             </div>
 
-            <div className="bg-slate-900 p-8 rounded-2xl border border-slate-800 shadow-2xl">
-              <div className="flex items-center gap-4 mb-8 border-b border-slate-800 pb-6">
-                <div className="w-12 h-12 rounded-xl bg-red-600/10 text-[#D31219] flex items-center justify-center border border-red-600/20">
-                  <Landmark size={24} />
+            <div className="bg-white p-10 rounded-[40px] border border-slate-200 shadow-xl">
+              <div className="flex items-center gap-5 mb-10 border-b border-slate-50 pb-8">
+                <div className="w-16 h-16 rounded-2xl bg-slate-900 text-white flex items-center justify-center shadow-lg">
+                  <Landmark size={32} />
                 </div>
-                <h3 className="text-xl font-bold uppercase tracking-widest text-white">Cidades da RMC</h3>
+                <div>
+                  <h3 className="text-2xl font-black uppercase tracking-widest text-slate-950">Cidades da RMC</h3>
+                  <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mt-1">{CITIES_RMC.length} municípios atendidos</p>
+                </div>
               </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4 max-h-[400px] overflow-y-auto pr-4 custom-scrollbar text-sm text-slate-300">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-4 max-h-[440px] overflow-y-auto pr-6 custom-scrollbar text-sm">
                 {CITIES_RMC.map(c => (
-                  <Link key={c} to={`/drywall-em/${normalizeLocationName(c)}`} className="hover:text-white font-bold transition-colors border-b border-slate-800/50 pb-2">
-                    {c}
+                  <Link key={c} to={`/drywall-em/${normalizeLocationName(c)}`} className="text-slate-600 hover:text-[#D31219] font-bold transition-all border-b border-slate-50 pb-2 hover:translate-x-1 inline-block">
+                    • {c}
                   </Link>
                 ))}
               </div>

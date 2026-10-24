@@ -638,71 +638,41 @@ const FAQPage: React.FC = () => {
 
   const totalQuestions = FAQ_DATA.reduce((sum, section) => sum + section.count, 0);
 
-  const faqSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: filteredSections.flatMap(section =>
-      section.questions.map(q => ({
-        '@type': 'Question',
-        name: q.question,
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: q.answer
-        }
-      }))
-    )
-  };
-
-  const breadcrumbSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        name: 'Home',
-        item: BASE_URL
-      },
-      {
-        '@type': 'ListItem',
-        position: 2,
-        name: 'Perguntas Frequentes',
-        item: `${BASE_URL}/faq`
-      }
-    ]
-  };
-
   return (
     <div className="bg-white min-h-screen">
       <EnhancedSEO
-        title="Dúvidas Frequentes (FAQ) - Drywall e Steel Frame Curitiba"
-        description="Respostas para as principais dúvidas sobre drywall, steel frame, telha shingle e forros em Curitiba. Guia técnico completo da KY Drywall."
+        title="Dúvidas Frequentes - FAQ KY Drywall Curitiba"
+        description="Encontre respostas técnicas sobre Drywall, Steel Frame e Telhado Shingle. Guia completo para obras em Curitiba e Região Metropolitana."
         canonical={`${BASE_URL}/faq`}
         ogType="website"
-        schema={[faqSchema, breadcrumbSchema]}
       />
 
-      {/* Hero Section */}
-      <section className="bg-slate-950 py-16 md:py-24 text-white relative overflow-hidden bg-[radial-gradient(#334155_1px,transparent_1px)] [background-size:20px_20px]">
+      {/* Hero Section - Industrial Showroom */}
+      <section className="bg-white py-24 md:py-32 text-slate-900 relative overflow-hidden border-b-2 border-slate-100">
+        <div className="absolute inset-0 z-0 bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] [background-size:24px_24px] opacity-100"></div>
+        
         <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-3xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 text-[#D31219] text-xs font-mono font-bold uppercase tracking-wider bg-[#D31219]/10 border border-[#D31219]/30 px-3 py-1 rounded mb-6">
-              <span>01 — CENTRAL DE AJUDA TÉCNICA</span>
+          <div className="max-w-4xl">
+            <div className="inline-flex items-center gap-2 text-[#D31219] text-[10px] font-black uppercase tracking-[0.2em] bg-red-50 border border-red-100 px-4 py-2 rounded-full mb-10 shadow-sm">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#D31219]"></span>
+              <span>01 — BASE DE CONHECIMENTO (FAQ)</span>
             </div>
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.1] mb-6">
-              Dúvidas Frequentes
+            <h1 className="text-5xl sm:text-7xl font-black tracking-tight leading-[1.05] mb-10 text-slate-950">
+              Dúvidas <span className="text-[#D31219]">Técnicas</span> Frequentes
             </h1>
-            <p className="text-slate-400 text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto mb-10">
-              Encontre respostas rápidas sobre sistemas construtivos a seco, materiais e processos de instalação em Curitiba.
+            <p className="text-slate-600 text-lg sm:text-2xl leading-relaxed max-w-2xl font-medium mb-12">
+              Consulte especificações técnicas sobre placas, isolamento acústico e normas ABNT para obras em Curitiba.
             </p>
 
-            {/* Search Bar */}
-            <div className="relative max-w-xl mx-auto">
-              <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500" size={20} />
+            {/* Search Bar - Industrial Style */}
+            <div className="relative max-w-2xl group">
+              <div className="absolute inset-y-0 left-0 pl-6 flex items-center pointer-events-none">
+                <Search className="h-6 w-6 text-slate-400 group-focus-within:text-[#D31219] transition-colors" />
+              </div>
               <input
                 type="text"
-                placeholder="Pesquisar dúvida ou material..."
-                className="w-full bg-slate-900 border-2 border-slate-800 rounded-xl py-4 pl-12 pr-4 text-white focus:outline-none focus:border-[#D31219] transition-all placeholder:text-slate-500 text-lg"
+                placeholder="Busque por placa RU, perfis Barbieri, isolamento..."
+                className="block w-full pl-16 pr-6 py-6 border-2 border-slate-100 rounded-2xl bg-white text-lg text-slate-900 placeholder:text-slate-300 focus:outline-none focus:border-[#D31219] focus:ring-4 focus:ring-red-50 transition-all shadow-xl"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
@@ -711,204 +681,132 @@ const FAQPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Category Filters Bar */}
-      <section className="sticky top-16 z-30 bg-white border-b border-slate-200 shadow-sm overflow-x-auto">
-        <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-4">
-          <div className="flex items-center gap-3 min-w-max md:justify-center">
+        {/* Categories Bar */}
+        <div className="flex flex-wrap justify-center gap-3 mb-16 px-4">
+          <button
+            onClick={() => setActiveCategory('all')}
+            className={`px-8 py-4 rounded-2xl text-xs font-black uppercase tracking-widest transition-all border-2 ${activeCategory === 'all' ? 'bg-slate-900 border-slate-900 text-white shadow-xl' : 'bg-white border-slate-100 text-slate-500 hover:border-slate-300'}`}
+          >
+            Todas as Áreas
+          </button>
+          {FAQ_DATA.map((cat) => (
             <button
-              onClick={() => setActiveCategory('all')}
-              className={`px-5 py-2.5 rounded-lg text-sm font-bold uppercase tracking-wider transition-all whitespace-nowrap ${
-                activeCategory === 'all'
-                  ? 'bg-slate-900 text-white shadow-md'
-                  : 'bg-slate-50 text-slate-600 hover:bg-slate-100'
-              }`}
+              key={cat.id}
+              onClick={() => setActiveCategory(cat.id)}
+              className={`px-8 py-4 rounded-2xl text-xs font-black uppercase tracking-widest transition-all border-2 ${activeCategory === cat.id ? 'bg-slate-900 border-slate-900 text-white shadow-xl' : 'bg-white border-slate-100 text-slate-500 hover:border-slate-300'}`}
             >
-              Todos ({totalQuestions})
+              {cat.title.split(' - ')[0]}
             </button>
-            {FAQ_DATA.map(section => (
-              <button
-                key={section.id}
-                onClick={() => setActiveCategory(section.id)}
-                className={`px-5 py-2.5 rounded-lg text-sm font-bold uppercase tracking-wider transition-all whitespace-nowrap ${
-                  activeCategory === section.id
-                    ? 'bg-slate-900 text-white shadow-md'
-                    : 'bg-slate-50 text-slate-600 hover:bg-slate-100'
-                }`}
-              >
-                {section.title.split(' - ')[0]}
-              </button>
-            ))}
-          </div>
+          ))}
         </div>
-      </section>
 
-      {/* FAQ Sections */}
-      <section className="py-16 md:py-24 bg-slate-50/30">
-        <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto">
-            {filteredSections.map((section: any) => (
-              <div key={section.id} id={section.id} className="mb-20 scroll-mt-40">
-                <div className="flex items-center gap-4 mb-8">
-                  <div className="w-12 h-12 bg-white text-slate-900 rounded-xl border-2 border-slate-100 shadow-sm flex items-center justify-center">
-                    {section.icon}
-                  </div>
-                  <div>
-                    <h2 className="text-2xl font-black text-slate-900 tracking-tight">
-                      {section.title}
-                    </h2>
-                    <p className="text-sm font-bold text-slate-500 uppercase tracking-widest mt-0.5">
-                      {section.questions.length} {section.questions.length === 1 ? 'resposta' : 'respostas'}
-                    </p>
-                  </div>
+        {/* FAQ Content - High Contrast Accordions */}
+        <div className="max-w-4xl mx-auto space-y-16">
+          {filteredSections.map((section: any) => (
+            <div key={section.id} className="animate-in fade-in slide-in-from-bottom-4">
+              <div className="flex items-center gap-4 mb-8 pb-4 border-b-2 border-slate-900/5">
+                <div className="w-14 h-14 rounded-2xl bg-[#D31219] text-white flex items-center justify-center shadow-lg shadow-red-900/20">
+                  {section.icon}
                 </div>
-
-                <div className="space-y-4">
-                  {section.questions.map((item: FAQItem, idx: number) => {
-                    const isOpen = openQuestions.has(`${section.id}-${idx}`);
-                    return (
-                      <div
-                        key={idx}
-                        className={`bg-white rounded-xl border transition-all ${
-                          isOpen ? 'border-[#D31219]/30 shadow-md ring-1 ring-[#D31219]/5' : 'border-slate-200 hover:border-slate-300'
-                        }`}
-                      >
-                        <button
-                          onClick={() => toggleQuestion(section.id, idx)}
-                          aria-expanded={isOpen}
-                          aria-controls={`answer-${section.id}-${idx}`}
-                          className="w-full flex items-center justify-between gap-6 p-6 text-left group transition-all"
-                        >
-                          <h3 className={`text-lg font-bold leading-tight transition-colors ${
-                            isOpen ? 'text-[#D31219]' : 'text-slate-900 group-hover:text-slate-700'
-                          }`}>
-                            {item.question}
-                          </h3>
-                          <div className={`shrink-0 w-8 h-8 rounded-full border flex items-center justify-center transition-all ${
-                            isOpen ? 'bg-[#D31219] border-[#D31219] text-white rotate-180' : 'bg-slate-50 border-slate-200 text-slate-400 group-hover:border-slate-300'
-                          }`}>
-                            <ChevronDown size={18} />
-                          </div>
-                        </button>
-
-                        <div 
-                          id={`answer-${section.id}-${idx}`} 
-                          className={`grid transition-all duration-300 ease-in-out ${
-                            isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0 overflow-hidden'
-                          }`}
-                        >
-                          <div className="overflow-hidden">
-                            <div className="px-6 pb-6 pt-0">
-                              <div className="w-full h-px bg-slate-100 mb-6"></div>
-                              <p className="text-slate-600 text-lg leading-relaxed max-w-3xl">
-                                {item.answer}
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    );
-                  })}
+                <div>
+                  <h2 className="text-2xl font-black text-slate-900 tracking-tight uppercase">{section.title}</h2>
+                  <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mt-1">{section.questions.length} perguntas frequentes</p>
                 </div>
               </div>
-            ))}
 
+              <div className="space-y-4">
+                {section.questions.map((q: any, idx: number) => {
+                  const isOpen = openQuestions.has(`${section.id}-${idx}`);
+                  return (
+                    <div 
+                      key={idx} 
+                      className={`group rounded-3xl border-2 transition-all duration-300 ${isOpen ? 'bg-white border-slate-900 shadow-xl' : 'bg-white border-slate-100 hover:border-slate-300 shadow-sm'}`}
+                    >
+                      <button
+                        onClick={() => toggleQuestion(section.id, idx)}
+                        className="w-full text-left px-8 py-6 flex items-center justify-between gap-4"
+                        aria-expanded={isOpen}
+                      >
+                        <span className={`text-lg font-black transition-colors ${isOpen ? 'text-[#D31219]' : 'text-slate-800'}`}>
+                          {q.question}
+                        </span>
+                        <div className={`w-10 h-10 rounded-full flex items-center justify-center transition-all ${isOpen ? 'bg-[#D31219] text-white rotate-180' : 'bg-slate-50 text-slate-400 group-hover:bg-slate-100'}`}>
+                          <ChevronDown size={20} />
+                        </div>
+                      </button>
+                      
+                      <div className={`overflow-hidden transition-all duration-300 ${isOpen ? 'max-h-[1000px] opacity-100' : 'max-h-0 opacity-0'}`}>
+                        <div className="px-8 pb-8 text-lg text-slate-600 leading-relaxed border-t border-slate-50 pt-6">
+                          {q.answer}
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          ))}
+          
           {filteredSections.length === 0 && (
-            <div className="text-center py-20 bg-white rounded-2xl border border-slate-200 p-8 shadow-sm">
-              <h3 className="text-2xl font-black text-slate-900 mb-3">
-                Nenhuma resposta encontrada
-              </h3>
-              <p className="text-slate-500 mb-10 text-lg">
-                Fale diretamente com nosso setor de engenharia e consultoria técnica.
-              </p>
-              <a
-                href={`https://wa.me/${COMPANY_INFO.whatsapp}?text=Olá! Tenho uma dúvida técnica que não localizei no FAQ`}
-                className="inline-flex items-center gap-3 bg-[#D31219] hover:bg-red-700 text-white text-base font-bold uppercase tracking-widest px-8 py-4 rounded-xl transition-all shadow-lg active:scale-[0.98]"
-              >
-                <MessageCircle size={20} /> Falar com Técnico no WhatsApp
-              </a>
+            <div className="py-24 text-center bg-white rounded-[40px] border-2 border-dashed border-slate-200">
+               <div className="w-20 h-20 bg-slate-50 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Search size={32} className="text-slate-300" />
+               </div>
+               <h3 className="text-2xl font-black text-slate-900 mb-2">Nenhum resultado encontrado</h3>
+               <p className="text-slate-500 mb-8 max-w-sm mx-auto">Tente buscar por termos mais genéricos ou selecione uma categoria específica acima.</p>
+               <button 
+                 onClick={() => {setSearchTerm(''); setActiveCategory('all');}} 
+                 className="bg-slate-900 text-white font-black px-10 py-5 rounded-2xl text-xs uppercase tracking-widest hover:bg-black transition-all shadow-lg active:scale-95"
+               >
+                 Ver Todas as Dúvidas
+               </button>
             </div>
           )}
         </div>
-      </div>
-    </section>
 
-      {/* Blog Section */}
-      <section className="py-20 bg-white border-t border-slate-200">
-        <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
-          <div className="mb-12 text-center md:text-left">
-            <div className="inline-flex items-center gap-2 text-[#D31219] text-xs font-mono font-bold uppercase tracking-wider mb-4">
-              <span>02 — CONHECIMENTO TÉCNICO</span>
-            </div>
-            <h2 className="text-2xl sm:text-4xl font-black text-slate-900 tracking-tight">
-              Artigos e Guias de Montagem
-            </h2>
-            <p className="text-slate-500 mt-2 text-lg">
-              Publicações detalhadas para orientar seu projeto do planejamento à execução.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {BLOG_ARTICLES.map((article, idx) => (
-              <Link
-                key={idx}
-                to={article.link}
-                className="group bg-white rounded-xl border border-slate-200 p-6 hover:border-[#D31219] transition-all flex flex-col justify-between shadow-sm hover:shadow-md"
-              >
-                <div>
-                  <div className="w-10 h-10 bg-slate-50 rounded-lg flex items-center justify-center mb-5 group-hover:bg-[#D31219]/10 transition-colors">
-                    <BookOpen size={20} className="text-slate-700 group-hover:text-[#D31219]" />
-                  </div>
-                  <h3 className="text-lg font-bold text-slate-900 leading-tight group-hover:text-[#D31219] transition-colors">
-                    {article.title}
-                  </h3>
+        {/* CTA Section - Engineering Support */}
+        <div className="max-w-4xl mx-auto mt-24">
+          <div className="bg-slate-900 rounded-[40px] p-10 md:p-16 text-white relative overflow-hidden shadow-2xl group">
+             <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#334155_1px,transparent_1px)] [background-size:24px_24px]"></div>
+             
+             <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-12">
+                <div className="text-center md:text-left">
+                   <div className="inline-flex items-center gap-2 text-[#D31219] text-[10px] font-black uppercase tracking-[0.2em] mb-6">
+                      <Zap size={14} />
+                      <span>Suporte Personalizado</span>
+                   </div>
+                   <h3 className="text-3xl sm:text-4xl font-black mb-6 leading-tight">Ainda tem dúvidas <br className="hidden sm:block" /> sobre o seu projeto?</h3>
+                   <p className="text-slate-400 text-lg max-w-lg leading-relaxed">
+                      Nossa engenharia oferece consultoria gratuita para especificação de materiais e cálculo de quantitativos em Curitiba.
+                   </p>
                 </div>
-                <div className="mt-6 flex items-center gap-2 text-sm font-bold text-[#D31219] uppercase tracking-wider">
-                  Ler artigo <ChevronRight size={16} />
+                
+                <div className="flex flex-col gap-4 w-full md:w-auto shrink-0">
+                   <a 
+                     href={`https://wa.me/${COMPANY_INFO.whatsapp}?text=Olá! Gostaria de tirar uma dúvida técnica sobre meu projeto.`}
+                     className="bg-[#D31219] hover:bg-red-700 text-white font-black px-10 py-6 rounded-2xl flex items-center justify-center gap-3 transition-all shadow-xl shadow-red-900/10 active:scale-95 text-xs uppercase tracking-widest"
+                   >
+                     <MessageCircle size={24} /> Falar com Especialista
+                   </a>
+                   <a 
+                     href={`tel:${COMPANY_INFO.phone.replace(/\D/g, '')}`}
+                     className="bg-slate-800 hover:bg-slate-700 text-white font-black px-10 py-6 rounded-2xl flex items-center justify-center gap-3 transition-all border-2 border-slate-700 active:scale-95 text-xs uppercase tracking-widest"
+                   >
+                     <Phone size={20} /> (41) 3528-4232
+                   </a>
                 </div>
-              </Link>
-            ))}
+             </div>
           </div>
         </div>
-      </section>
 
-      {/* CTA Final */}
-      <section className="py-20 bg-slate-950 text-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#334155_1px,transparent_1px)] [background-size:20px_20px]"></div>
-        <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 relative z-10 text-center">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl sm:text-5xl font-black tracking-tight mb-6">
-              Ainda tem dúvidas técnicas?
-            </h2>
-            <p className="text-slate-400 text-lg sm:text-xl mb-10 leading-relaxed">
-              Nossa engenharia analisa seu projeto sem custo para recomendar a melhor modulação e materiais.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href={`https://wa.me/${COMPANY_INFO.whatsapp}?text=Olá! Gostaria de consultoria técnica sobre materiais.`}
-                className="bg-[#D31219] hover:bg-red-700 text-white text-base font-bold uppercase tracking-widest px-8 py-5 rounded-xl flex items-center justify-center gap-3 transition-all shadow-lg active:scale-[0.98]"
-              >
-                <MessageCircle size={22} /> Atendimento WhatsApp
-              </a>
-              <a
-                href={`tel:${COMPANY_INFO.phone.replace(/\D/g, '')}`}
-                className="bg-slate-900 hover:bg-slate-800 text-white text-base font-bold uppercase tracking-widest px-8 py-5 rounded-xl flex items-center justify-center gap-3 border-2 border-slate-800 transition-all active:scale-[0.98]"
-              >
-                <Phone size={22} /> {COMPANY_INFO.phone}
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Back to Top Button */}
+      {/* Back to top button */}
       {showBackToTop && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-24 right-6 bg-slate-900 text-white p-3 rounded shadow-md hover:bg-slate-800 transition-colors z-40 border border-slate-700"
+          className="fixed bottom-24 right-6 p-4 bg-white border-2 border-slate-900 text-slate-900 rounded-full shadow-2xl hover:bg-slate-50 transition-all z-50 animate-in fade-in slide-in-from-bottom-4"
           aria-label="Voltar ao topo"
         >
-          <ArrowUp size={18} />
+          <ArrowUp size={24} />
         </button>
       )}
     </div>

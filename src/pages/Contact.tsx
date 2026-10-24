@@ -112,17 +112,19 @@ const Contact: React.FC = () => {
         schema={contactPageSchema}
       />
 
-      {/* Hero Section */}
-      <section className="bg-slate-950 py-16 md:py-24 text-white relative overflow-hidden bg-[radial-gradient(#334155_1px,transparent_1px)] [background-size:20px_20px]">
+      {/* Hero Section - Industrial Showroom */}
+      <section className="bg-white py-20 md:py-32 text-slate-900 relative overflow-hidden border-b-2 border-slate-100">
+        <div className="absolute inset-0 z-0 bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] [background-size:24px_24px] opacity-100"></div>
         <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-3xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 text-[#D31219] text-xs font-mono font-bold uppercase tracking-wider bg-[#D31219]/10 border border-[#D31219]/30 px-3 py-1 rounded mb-6">
+          <div className="max-w-4xl">
+            <div className="inline-flex items-center gap-2 text-[#D31219] text-[10px] font-black uppercase tracking-[0.2em] bg-red-50 border border-red-100 px-4 py-2 rounded-full mb-10 shadow-sm">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#D31219]"></span>
               <span>01 — ATENDIMENTO DIRETO</span>
             </div>
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.1] mb-6">
-              Cotação e Suporte Técnico
+            <h1 className="text-5xl sm:text-7xl font-black tracking-tight leading-[1.05] mb-10 text-slate-950">
+              Cotação e <span className="text-[#D31219]">Suporte</span> Técnico
             </h1>
-            <p className="text-slate-400 text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto">
+            <p className="text-slate-600 text-lg sm:text-2xl leading-relaxed max-w-2xl font-medium">
               Fale com nossos consultores técnicos em Curitiba para calcular o quantitativo exato da sua obra. Atendimento humano e especializado.
             </p>
           </div>
@@ -190,64 +192,62 @@ const Contact: React.FC = () => {
             </div>
           </div>
 
-          {/* FORMULÁRIO DE CONTATO */}
-          <section className="mb-16">
-            <div className="inline-flex items-center gap-2 text-[#D31219] text-xs font-mono font-bold uppercase tracking-wider mb-6">
-              <span>02 — SOLICITAÇÃO FORMAL</span>
+          {/* FORMULÁRIO DE CONTATO - Light Theme */}
+          <section className="mb-20">
+            <div className="inline-flex items-center gap-2 text-[#D31219] text-[10px] font-black uppercase tracking-[0.2em] mb-8 bg-red-50 border border-red-100 px-4 py-2 rounded-full shadow-sm">
+              <ClipboardList size={14} />
+              <span>02 — SOLICITAÇÃO DE ORÇAMENTO</span>
             </div>
-            <div className="bg-slate-900 rounded-2xl border border-slate-800 shadow-2xl overflow-hidden">
+            <div className="bg-white rounded-[32px] border border-slate-200 shadow-2xl overflow-hidden">
               <div className="grid grid-cols-1 lg:grid-cols-5">
-                <div className="lg:col-span-2 bg-slate-950 p-8 md:p-12 text-white flex flex-col justify-between relative overflow-hidden">
-                  {/* Decorative ruler line */}
-                  <div className="absolute top-0 right-0 w-px h-full bg-slate-800 hidden lg:block"></div>
+                <div className="lg:col-span-2 bg-slate-900 p-10 md:p-12 text-white flex flex-col justify-between relative overflow-hidden">
+                  <div className="absolute inset-0 z-0 bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:20px_20px] opacity-20"></div>
                   
                   <div className="relative z-10">
-                    <div className="w-12 h-12 rounded-lg bg-[#D31219]/20 border border-[#D31219]/40 flex items-center justify-center text-[#D31219] mb-8">
-                      <ClipboardList size={24} />
-                    </div>
-                    <h2 className="text-2xl font-bold tracking-tight mb-4">
-                      Envie Seu Pedido
+                    <h2 className="text-3xl font-black tracking-tight mb-6">
+                      Envie Seu <span className="text-[#D31219]">Projeto</span>
                     </h2>
-                    <p className="text-slate-400 text-base leading-relaxed mb-10">
-                      Informe os detalhes do seu projeto ou anexe sua lista de materiais. Atendimento técnico especializado.
+                    <p className="text-slate-400 text-lg leading-relaxed mb-12">
+                      Informe os detalhes da sua obra ou anexe sua lista de materiais. Retornamos com o quantitativo técnico exato.
                     </p>
-                    <div className="space-y-4">
+                    <div className="space-y-6">
                       {[
-                        'Atendimento no mesmo dia útil',
+                        'Cotação enviada no mesmo dia',
                         'Apoio no cálculo de modulação',
-                        'Preços direto de distribuidor'
+                        'Preços direto de distribuidora'
                       ].map((text, i) => (
-                        <div key={i} className="flex items-center gap-3 text-sm text-slate-300">
-                          <div className="w-1.5 h-1.5 rounded-full bg-[#D31219]"></div>
+                        <div key={i} className="flex items-center gap-4 text-base font-bold text-slate-100">
+                          <div className="w-2 h-2 rounded-full bg-[#D31219]"></div>
                           <span>{text}</span>
                         </div>
                       ))}
                     </div>
                   </div>
 
-                  <div className="mt-12 pt-8 border-t border-slate-800 relative z-10">
-                    <p className="text-xs uppercase font-bold text-slate-500 mb-2 tracking-widest">Loja Física Curitiba:</p>
-                    <p className="text-lg font-bold text-white">{COMPANY_INFO.phone}</p>
+                  <div className="mt-16 pt-8 border-t border-slate-800 relative z-10">
+                    <p className="text-[10px] uppercase font-black text-slate-500 mb-2 tracking-[0.2em]">Canais Oficiais Curitiba:</p>
+                    <p className="text-2xl font-black text-white leading-none">{COMPANY_INFO.phone}</p>
+                    <p className="text-xs text-slate-400 mt-2 font-medium">Rod. BR-277, 3641 - Cajuru</p>
                   </div>
                 </div>
 
-                <div className="lg:col-span-3 p-8 md:p-12 bg-white">
-                  <form onSubmit={handleFormSubmit} className="space-y-6">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      <div className="space-y-2">
-                        <label className="text-sm font-bold text-slate-700 block ml-1">Seu Nome / Empresa</label>
+                <div className="lg:col-span-3 p-10 md:p-16 bg-white">
+                  <form onSubmit={handleFormSubmit} className="space-y-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                      <div className="space-y-3">
+                        <label className="text-sm font-black text-slate-900 uppercase tracking-widest block ml-1">Seu Nome / Empresa</label>
                         <input 
                           type="text" 
                           name="name"
                           required
                           value={formData.name}
                           onChange={handleInputChange}
-                          placeholder="Nome completo ou empresa"
-                          className="w-full bg-slate-50 border-2 border-slate-100 rounded-xl px-5 h-[56px] text-lg text-slate-900 focus:outline-none focus:border-[#D31219] transition-all placeholder:text-slate-400"
+                          placeholder="Ex: Construtora Silva"
+                          className="w-full bg-slate-50 border-2 border-slate-100 rounded-2xl px-6 h-[64px] text-lg text-slate-900 focus:outline-none focus:border-[#D31219] focus:ring-4 focus:ring-red-50 transition-all placeholder:text-slate-300 font-medium"
                         />
                       </div>
-                      <div className="space-y-2">
-                        <label className="text-sm font-bold text-slate-700 block ml-1">WhatsApp / Telefone</label>
+                      <div className="space-y-3">
+                        <label className="text-sm font-black text-slate-900 uppercase tracking-widest block ml-1">WhatsApp de Contato</label>
                         <input 
                           type="tel" 
                           name="phone"
@@ -255,53 +255,53 @@ const Contact: React.FC = () => {
                           value={formData.phone}
                           onChange={handleInputChange}
                           placeholder="(41) 99999-9999"
-                          className="w-full bg-slate-50 border-2 border-slate-100 rounded-xl px-5 h-[56px] text-lg text-slate-900 focus:outline-none focus:border-[#D31219] transition-all placeholder:text-slate-400"
+                          className="w-full bg-slate-50 border-2 border-slate-100 rounded-2xl px-6 h-[64px] text-lg text-slate-900 focus:outline-none focus:border-[#D31219] focus:ring-4 focus:ring-red-50 transition-all placeholder:text-slate-300 font-medium"
                         />
                       </div>
                     </div>
                     
-                    <div className="space-y-2">
-                      <label className="text-sm font-bold text-slate-700 block ml-1">Segmento do Projeto</label>
+                    <div className="space-y-3">
+                      <label className="text-sm font-black text-slate-900 uppercase tracking-widest block ml-1">Tipo de Material ou Serviço</label>
                       <select 
                         name="subject"
                         value={formData.subject}
                         onChange={handleInputChange}
-                        className="w-full bg-slate-50 border-2 border-slate-100 rounded-xl px-5 h-[56px] text-lg text-slate-900 focus:outline-none focus:border-[#D31219] transition-all appearance-none"
+                        className="w-full bg-slate-50 border-2 border-slate-100 rounded-2xl px-6 h-[64px] text-lg text-slate-900 focus:outline-none focus:border-[#D31219] transition-all appearance-none font-bold"
                       >
                         <option value="Drywall">Paredes e Forros em Drywall</option>
                         <option value="Steel Frame">Estrutura em Steel Frame</option>
-                        <option value="Telhado Shingle">Telhas e Sistema Shingle</option>
-                        <option value="Produtos">Compra de Materiais e Acessórios</option>
+                        <option value="Telhado Shingle">Sistema de Telhado Shingle</option>
+                        <option value="Produtos">Compra de Materiais (Atacado)</option>
                         <option value="Outros">Outras Dúvidas Técnicas</option>
                       </select>
                     </div>
 
-                    <div className="space-y-2">
-                      <label className="text-sm font-bold text-slate-700 block ml-1">Descrição do Pedido ou Metragem</label>
+                    <div className="space-y-3">
+                      <label className="text-sm font-black text-slate-900 uppercase tracking-widest block ml-1">Mensagem ou Lista de Materiais</label>
                       <textarea 
                         name="message"
                         required
                         value={formData.message}
                         onChange={handleInputChange}
-                        rows={4}
-                        placeholder="Informe metragens, tipos de placas ou dúvidas sobre perfis..."
-                        className="w-full bg-slate-50 border-2 border-slate-100 rounded-xl px-5 py-4 text-lg text-slate-900 focus:outline-none focus:border-[#D31219] transition-all resize-none placeholder:text-slate-400"
+                        rows={5}
+                        placeholder="Informe as medidas das paredes, tipos de placas ou sua lista completa..."
+                        className="w-full bg-slate-50 border-2 border-slate-100 rounded-2xl px-6 py-5 text-lg text-slate-900 focus:outline-none focus:border-[#D31219] focus:ring-4 focus:ring-red-50 transition-all resize-none placeholder:text-slate-300 font-medium"
                       ></textarea>
                     </div>
 
                     {isQuoteView && quoteItems.length > 0 && (
-                      <div className="bg-red-50 p-4 rounded-xl border border-red-100 text-sm font-bold text-[#D31219] flex items-center gap-3">
-                        <div className="w-2 h-2 rounded-full bg-[#D31219] animate-pulse"></div>
-                        Lista de cotação ({quoteItems.length} {quoteItems.length === 1 ? 'item' : 'itens'}) será enviada.
+                      <div className="bg-red-50 p-6 rounded-2xl border-2 border-[#D31219]/20 text-sm font-black text-[#D31219] flex items-center gap-4">
+                        <div className="w-3 h-3 rounded-full bg-[#D31219] animate-ping"></div>
+                        <span>Sua lista de cotação com {quoteItems.length} {quoteItems.length === 1 ? 'item será anexada' : 'itens será anexada'}.</span>
                       </div>
                     )}
 
                     <button 
                       type="submit"
-                      className="w-full bg-[#D31219] hover:bg-red-700 text-white font-black py-5 rounded-xl transition-all text-base uppercase tracking-widest flex items-center justify-center gap-3 shadow-lg hover:shadow-red-900/20 active:scale-[0.98]"
+                      className="w-full bg-[#D31219] hover:bg-red-700 text-white font-black py-6 rounded-2xl transition-all text-lg uppercase tracking-widest flex items-center justify-center gap-4 shadow-xl active:scale-[0.98]"
                     >
-                      <Send size={20} />
-                      Enviar Solicitação no WhatsApp
+                      <Send size={24} />
+                      Enviar via WhatsApp
                     </button>
                   </form>
                 </div>

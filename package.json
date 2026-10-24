@@ -5,11 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host 0.0.0.0 --port 3000",
-    "build": "vite build && node scripts/static-build.mjs",
+    "build": "vite build && node src/scripts/static-build.mjs",
     "build:prerender": "npm run build",
     "preview": "vite preview --host 0.0.0.0 --port 3000",
     "lint": "tsc --noEmit",
-    "verify:seo": "node scripts/verify-seo.mjs"
+    "verify:seo": "node src/scripts/verify-seo.mjs"
   },
   "dependencies": {
     "lucide-react": "^0.475.0",
@@ -18,10 +18,8 @@
     "react-router-dom": "^7.11.0"
   },
   "devDependencies": {
-    "@axe-core/playwright": "^4.14.0",
     "@types/node": "^22.14.0",
     "@vitejs/plugin-react": "^5.0.0",
-    "playwright": "^1.64.1",
     "typescript": "~5.8.2",
     "vite": "^6.2.0"
   }

@@ -438,42 +438,43 @@ const BlogPostPage: React.FC = () => {
         schema={blogPostSchema}
       />
 
-      {/* Hero Header */}
-      <section className="bg-slate-950 py-16 md:py-24 text-white relative overflow-hidden bg-[radial-gradient(#334155_1px,transparent_1px)] [background-size:20px_20px]">
+      {/* Hero Header - Industrial Showroom */}
+      <header className="bg-white py-24 md:py-32 text-slate-900 relative overflow-hidden border-b-2 border-slate-100">
+        <div className="absolute inset-0 z-0 bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] [background-size:24px_24px] opacity-100"></div>
         <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
+          <div className="max-w-4xl">
             {/* Breadcrumbs */}
-            <div className="flex items-center justify-center gap-2 text-xs text-slate-500 mb-8 font-bold uppercase tracking-widest">
-              <Link to="/" className="hover:text-white transition-colors">Início</Link>
-              <ChevronRight size={12} className="text-[#D31219]" />
-              <Link to="/blog" className="hover:text-white transition-colors">Blog</Link>
+            <div className="flex items-center gap-2 text-[10px] text-slate-400 mb-10 font-black uppercase tracking-[0.2em]">
+              <Link to="/" className="hover:text-[#D31219] transition-colors">INÍCIO</Link>
+              <ChevronRight size={10} className="text-slate-300" />
+              <Link to="/blog" className="hover:text-[#D31219] transition-colors">BLOG</Link>
             </div>
 
-            <div className="inline-flex items-center gap-2 bg-[#D31219]/10 border border-[#D31219]/30 px-3 py-1 rounded text-xs font-mono font-bold text-[#D31219] uppercase tracking-wider mb-6">
-              <span>{post.tag}</span>
+            <div className="mb-8">
+              <span className="text-[#D31219] text-[10px] font-black uppercase tracking-[0.2em] bg-red-50 border border-red-100 px-4 py-1.5 rounded-full shadow-sm">{post.tag}</span>
             </div>
 
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight mb-8 leading-[1.1]">
+            <h1 className="text-5xl sm:text-7xl font-black tracking-tight leading-[1.05] text-slate-950 mb-10">
               {post.title}
             </h1>
 
-            <div className="flex flex-wrap justify-center items-center gap-6 text-slate-400 text-xs font-bold uppercase tracking-[0.15em] pt-8 border-t border-slate-900">
-              <div className="flex items-center gap-2">
+            <div className="flex flex-wrap items-center gap-8 text-slate-400 text-[10px] font-black uppercase tracking-[0.2em] pt-10 border-t border-slate-50">
+              <div className="flex items-center gap-2.5">
                 <Clock size={16} className="text-[#D31219]" />
                 <span>{post.date}</span>
               </div>
-              <div className="flex items-center gap-2">
-                <Building2 size={16} className="text-[#D31219]" />
-                <span>Curitiba - BR-277</span>
+              <div className="flex items-center gap-2.5">
+                <Building2 size={16} className="text-slate-400" />
+                <span>CURITIBA - BR-277</span>
               </div>
-              <div className="flex items-center gap-2">
-                <ShieldCheck size={16} className="text-emerald-500" />
-                <span>Normas ABNT</span>
+              <div className="flex items-center gap-2.5">
+                <ShieldCheck size={16} className="text-emerald-600" />
+                <span>NORMAS ABNT</span>
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </header>
 
       {/* Article Content */}
       <article className="py-16 lg:py-24">
