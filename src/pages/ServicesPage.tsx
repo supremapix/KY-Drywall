@@ -78,11 +78,11 @@ const ServicesPage: React.FC = () => {
       <section className="relative py-24 md:py-32 ky-section-white overflow-hidden border-b border-slate-200">
         <div className="absolute inset-0 z-0 bg-[radial-gradient(var(--ky-border)_1px,transparent_1px)] [background-size:24px_24px] opacity-100"></div>
         <div className="absolute inset-0 z-0 opacity-10">
-          <img 
-            src={currentService?.image} 
-            alt={currentService?.title} 
-            className="w-full h-full object-cover" 
-          />
+            <img 
+              src={currentService?.image} 
+              alt={`${currentService?.title} (Imagem Ilustrativa)`} 
+              className="w-full h-full object-cover" 
+            />
         </div>
         <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 relative z-10 w-full">
           <div className="max-w-4xl">

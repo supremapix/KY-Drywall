@@ -161,7 +161,7 @@ const About: React.FC = () => {
                 <img 
                   src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ky-loja-cajuru-drywall-stell-fame.png-CAi9KHi0wcqQLptb0qLFGSWQZaXr98.jpeg" 
                   alt="Loja KY Drywall Curitiba" 
-                  className="w-full h-auto object-cover" 
+                  className="w-full aspect-[16/10] object-cover object-top" 
                 />
                 <div className="p-8 bg-slate-50 border-t border-slate-100">
                   <div className="flex items-center justify-between gap-4">

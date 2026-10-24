@@ -205,15 +205,20 @@ const Home: React.FC = () => {
 
             {/* Right Image */}
             <div className="lg:col-span-6">
-              <div className="relative rounded-2xl overflow-hidden border border-slate-200 bg-white shadow-xl">
+              <div className="relative rounded-2xl overflow-hidden border border-slate-200 bg-white shadow-xl group">
                 <img
                   src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/steel-frame-yfbTyNsPB5CHvelFOwWPfb75qIZ8vl.png"
-                  alt="Estrutura de Steel Frame KY Drywall Curitiba"
-                  className="w-full h-auto object-cover"
+                  alt="Estrutura de Steel Frame (Imagem Ilustrativa)"
+                  className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700"
                   onError={(e) => {
                     (e.target as HTMLImageElement).src = 'https://via.placeholder.com/800x600?text=STEEL+FRAME+KY+DRYWALL';
                   }}
                 />
+                <div className="absolute top-4 right-4">
+                  <span className="bg-slate-900/80 backdrop-blur-sm text-white text-[9px] font-black px-2.5 py-1 rounded-full uppercase tracking-widest border border-white/10">
+                    Imagem Ilustrativa
+                  </span>
+                </div>
                 <div className="p-4 bg-slate-950 text-white flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
                   <div>
                     <p className="text-sm font-bold">Suporte Técnico para Construtores e Engenheiros</p>

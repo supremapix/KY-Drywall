@@ -214,9 +214,14 @@ const SteelFramePage: React.FC = () => {
               <div className="relative rounded-2xl overflow-hidden border-8 border-white shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-500">
                 <img
                   src={STEEL_FRAME_IMAGES.hero}
-                  alt="Estrutura Steel Frame KY Drywall"
+                  alt="Estrutura Steel Frame KY Drywall (Imagem Ilustrativa)"
                   className="w-full aspect-[4/5] object-cover"
                 />
+                <div className="absolute top-4 right-4">
+                  <span className="bg-slate-900/80 backdrop-blur-sm text-white text-[9px] font-black px-2.5 py-1 rounded-full uppercase tracking-widest border border-white/10">
+                    Imagem Ilustrativa
+                  </span>
+                </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
                 <div className="absolute bottom-6 left-6 right-6">
                   <div className="bg-white/90 backdrop-blur p-4 rounded-lg border border-white/20">
@@ -276,11 +281,18 @@ const SteelFramePage: React.FC = () => {
                 <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
                   <Building2 size={120} />
                 </div>
-                <img
-                  src={STEEL_FRAME_IMAGES.render}
-                  alt="Estrutura de montagem Steel Frame"
-                  className="w-full rounded-lg shadow-lg mb-8"
-                />
+                <div className="relative mb-8">
+                  <img
+                    src={STEEL_FRAME_IMAGES.render}
+                    alt="Estrutura de montagem Steel Frame (Imagem Ilustrativa)"
+                    className="w-full rounded-lg shadow-lg"
+                  />
+                  <div className="absolute top-3 right-3">
+                    <span className="bg-white/80 backdrop-blur-sm text-slate-900 text-[8px] font-black px-2 py-1 rounded uppercase tracking-widest border border-slate-200">
+                      Imagem Ilustrativa
+                    </span>
+                  </div>
+                </div>
                 <h3 className="text-xl font-bold text-slate-900 mb-4">Por que escolher o sistema seco?</h3>
                 <p className="text-slate-600 mb-6">
                   A construção a seco elimina 95% do consumo de água e reduz o peso da estrutura em até 40%. 
