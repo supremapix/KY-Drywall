@@ -28,6 +28,8 @@ const ScrollToTop = () => {
   return null;
 };
 
+import './components/LightTheme.css';
+
 export const AppContent: React.FC = () => {
   const isLinksPage = useLocation().pathname.replace(/\/+$/, '') === '/links';
   const [isCookieAccepted, setIsCookieAccepted] = useState(false);
@@ -47,7 +49,7 @@ export const AppContent: React.FC = () => {
   return (
     <>
       <ScrollToTop />
-      <div className="flex flex-col min-h-screen overflow-x-hidden bg-white text-slate-900 font-sans antialiased">
+      <div className="flex flex-col min-h-screen overflow-x-hidden bg-white text-slate-900 font-sans antialiased ky-light">
         {!isLinksPage && <Header />}
         
         <main className="flex-grow pb-28 md:pb-12">

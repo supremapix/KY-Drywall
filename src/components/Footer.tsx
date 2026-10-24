@@ -25,7 +25,7 @@ export function SupremaCredit() {
             <img 
               src="https://img.supremamidia.com/suprema-img.png" 
               alt="Suprema" 
-              className="h-[18px] w-auto inline select-none shrink-0 filter grayscale hover:grayscale-0 transition-all duration-300" 
+              className="h-[24px] w-auto inline select-none shrink-0 transition-all duration-300" 
               referrerPolicy="no-referrer"
             />
           </a>
@@ -78,8 +78,8 @@ const Footer: React.FC = () => {
             <div className="lg:col-span-4 flex flex-col justify-between gap-6">
               <div className="bg-white p-8 rounded-3xl border border-slate-200 flex items-center justify-between text-center sm:text-left shadow-sm hover:shadow-md transition-shadow">
                 <div>
-                  <p className="text-5xl font-black text-slate-950 tracking-tighter">+8.500</p>
-                  <p className="text-xs font-black text-[#D31219] mt-2 uppercase tracking-widest">Obras atendidas</p>
+                  <p className="text-4xl font-black text-slate-950 tracking-tighter">Engenharia</p>
+                  <p className="text-xs font-black text-[#D31219] mt-2 uppercase tracking-widest">Suporte Técnico Especializado</p>
                 </div>
                 <div className="w-14 h-14 rounded-2xl bg-red-50 text-[#D31219] flex items-center justify-center border border-red-100 shrink-0 hidden sm:flex">
                   <Users size={28} />
@@ -93,8 +93,8 @@ const Footer: React.FC = () => {
                       <Star key={i} size={18} className="fill-[#D31219] text-[#D31219]" />
                     ))}
                   </div>
-                  <p className="text-2xl font-black text-slate-900 tracking-tight leading-none">4.9 / 5.0 Google</p>
-                  <p className="text-xs text-slate-500 font-bold uppercase tracking-widest mt-2">Avaliações reais</p>
+                  <p className="text-2xl font-black text-slate-900 tracking-tight leading-none">Qualidade Técnica</p>
+                  <p className="text-xs text-slate-500 font-bold uppercase tracking-widest mt-2">Normas ABNT NBR</p>
                 </div>
                 <div className="w-14 h-14 rounded-2xl bg-slate-50 text-slate-400 flex items-center justify-center border border-slate-200 shrink-0 hidden sm:flex">
                   <ShieldCheck size={28} />

@@ -21,45 +21,12 @@ import { SERVICES, BLOG_POSTS, NEIGHBORHOODS, CITIES_RMC, PRODUCTS, normalizeLoc
 import EnhancedSEO from '../components/EnhancedSEO';
 import ProductCard from '../components/ProductCard';
 
-const HERO_SLIDES = [
-  {
-    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ky-loja-cajuru-drywall-stell-fame.png-CAi9KHi0wcqQLptb0qLFGSWQZaXr98.jpeg',
-    badge: 'Showroom & Distribuidora',
-    title: 'A Maior Loja de Drywall e Steel Frame de Curitiba',
-    subtitle: 'Estruturas completas, perfis normatizados e estoque a pronta entrega na BR-277 (Cajuru).'
-  },
-  {
-    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/projeto-stell-frame.png-bAiwJLHNjOpiURXX8I0tGfLyNCau5x.jpeg',
-    badge: 'Engenharia Construtiva',
-    title: 'Construção Inteligente em Steel Frame',
-    subtitle: 'Sua obra residencial ou comercial até 70% mais rápida, sustentável e com projeto executivo calculado.'
-  },
-  {
-    image: 'https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=1920',
-    badge: 'Distribuidor Oficial Barbieri',
-    title: 'Perfis de Aço Galvanizado Z180 de Alta Resistência',
-    subtitle: 'Segurança estrutural rigorosamente alinhada às normas ABNT NBR 15253 e NBR 15575.'
-  },
-  {
-    image: 'https://images.pexels.com/photos/8092357/pexels-photo-8092357.jpeg?auto=compress&cs=tinysrgb&w=1920',
-    badge: 'Logística Ágil',
-    title: 'Pronta Entrega em Curitiba e Região Metropolitana',
-    subtitle: 'Frota própria para entrega rápida de placas, perfis, massas e isolamentos direto no seu canteiro.'
-  }
-];
+import StoreHero from '../components/StoreHero';
 
 const FEATURED_CATEGORIES = ['Todos', 'Placas', 'Perfis', 'Lã (Isolamento)', 'Massas'];
 
 const Home: React.FC = () => {
-  const [currentHero, setCurrentHero] = useState(0);
   const [selectedCategory, setSelectedCategory] = useState('Todos');
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentHero((prev) => (prev + 1) % HERO_SLIDES.length);
-    }, 7000);
-    return () => clearInterval(timer);
-  }, []);
 
   const filteredProducts = PRODUCTS.filter(p => {
     if (selectedCategory === 'Todos') {
@@ -123,63 +90,7 @@ const Home: React.FC = () => {
         schema={homeSchema}
       />
 
-      {/* Hero Section - Industrial Showroom */}
-      <section className="relative min-h-[600px] lg:min-h-[800px] flex items-center bg-white text-slate-900 overflow-hidden py-24 lg:py-32 border-b-2 border-slate-100">
-        <div className="absolute inset-0 z-0 bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] [background-size:24px_24px] opacity-100"></div>
-
-        <div className="absolute inset-0 z-0 opacity-10">
-          {HERO_SLIDES.map((slide, index) => (
-            <div 
-              key={index} 
-              className={`absolute inset-0 transition-opacity duration-1000 ${
-                index === currentHero ? 'opacity-100' : 'opacity-0'
-              }`}
-            >
-              <img 
-                src={slide.image} 
-                alt={slide.title} 
-                className="w-full h-full object-cover" 
-              />
-            </div>
-          ))}
-        </div>
-
-        <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 relative z-10 w-full">
-          <div className="max-w-4xl">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-900 text-white text-[10px] font-black uppercase tracking-[0.2em] mb-10 shadow-xl">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#D31219]"></span>
-              <span>01 — {HERO_SLIDES[currentHero].badge.toUpperCase()}</span>
-            </div>
-
-            <h1 className="text-5xl sm:text-7xl lg:text-8xl font-black tracking-tight text-slate-950 leading-[1] mb-10">
-              {HERO_SLIDES[currentHero].title}
-            </h1>
-
-            <p className="text-lg sm:text-2xl text-slate-600 leading-relaxed max-w-2xl mb-12 font-medium">
-              {HERO_SLIDES[currentHero].subtitle}
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 mb-12">
-              <a 
-                href="https://wa.me/5541996457421"
-                target="_blank"
-                rel="noreferrer"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-[#D31219] text-white font-black px-10 py-5 rounded-2xl text-xs uppercase tracking-[0.2em] hover:bg-red-700 transition-all shadow-xl active:scale-[0.98] min-h-[64px]"
-              >
-                <MessageCircle size={20} />
-                <span>Solicitar Cotação</span>
-              </a>
-              <Link 
-                to="/produtos" 
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-white text-slate-950 font-black px-10 py-5 rounded-2xl text-xs uppercase tracking-[0.2em] border-2 border-slate-100 hover:border-slate-950 transition-all min-h-[64px]"
-              >
-                <span>Catálogo Técnico</span>
-                <ArrowRight size={20} />
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      <StoreHero />
 
       {/* Authority & Benefits Bar - Light Version */}
       <section className="bg-slate-50 border-b border-slate-200 text-slate-700 py-10 relative">

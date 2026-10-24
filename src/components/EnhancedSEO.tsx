@@ -69,7 +69,7 @@ const EnhancedSEO: React.FC<SEOProps> = ({
     updateOrCreateMeta('meta[name="keywords"]', 'content', keywords);
 
     if (noindex) {
-      updateOrCreateMeta('meta[name="robots"]', 'content', 'noindex, nofollow');
+      updateOrCreateMeta('meta[name="robots"]', 'content', 'noindex, follow');
     } else {
       const robotsMeta = document.querySelector('meta[name="robots"]');
       if (robotsMeta) {

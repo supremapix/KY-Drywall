@@ -210,10 +210,66 @@ const ProductDetails: React.FC = () => {
                   </div>
                 )}
               </div>
+
+              {/* Extended Technical Content - Industrial Showroom Style */}
+              <div className="space-y-12 mt-12 border-t border-slate-100 pt-12">
+                {product.whatIsIt && (
+                  <div className="group">
+                    <h4 className="text-[10px] font-black uppercase tracking-[0.2em] text-[#D31219] mb-4 flex items-center gap-3">
+                      <span className="w-8 h-[1px] bg-red-100"></span>
+                      O que é o produto
+                    </h4>
+                    <p className="text-slate-600 leading-relaxed font-medium">
+                      {product.whatIsIt}
+                    </p>
+                  </div>
+                )}
+
+                {(product.selectionCriteria || product.compatibility) && (
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    {product.selectionCriteria && (
+                      <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100">
+                        <h4 className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-900 mb-4">Critérios de Escolha</h4>
+                        <p className="text-xs text-slate-500 leading-relaxed">
+                          {product.selectionCriteria}
+                        </p>
+                      </div>
+                    )}
+                    {product.compatibility && (
+                      <div className="bg-red-50/30 p-6 rounded-2xl border border-red-100/50">
+                        <h4 className="text-[10px] font-black uppercase tracking-[0.2em] text-[#D31219] mb-4">Compatibilidade Técnica</h4>
+                        <p className="text-xs text-slate-500 leading-relaxed">
+                          {product.compatibility}
+                        </p>
+                      </div>
+                    )}
+                  </div>
+                )}
+
+                {product.faq && product.faq.length > 0 && (
+                  <div className="space-y-6">
+                    <h4 className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-900 mb-6">Dúvidas Frequentes</h4>
+                    <div className="grid grid-cols-1 gap-4">
+                      {product.faq.map((item, idx) => (
+                        <div key={idx} className="p-5 bg-white border border-slate-100 rounded-2xl hover:border-slate-200 transition-colors">
+                          <div className="text-xs font-black text-slate-800 mb-2 flex items-start gap-2">
+                            <span className="text-[#D31219]">Q:</span>
+                            {item.question}
+                          </div>
+                          <div className="text-xs text-slate-500 leading-relaxed flex items-start gap-2">
+                            <span className="text-slate-300">A:</span>
+                            {item.answer}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
             </div>
 
             {/* Sticky/Bottom CTA Section */}
-            <div className="mt-auto pt-8 border-t-2 border-slate-900/5">
+            <div className="mt-auto pt-8 border-t-2 border-slate-900/5 sticky bottom-0 bg-white/80 backdrop-blur-sm pb-4 lg:relative lg:bg-transparent lg:pb-0 z-10">
               <div className="flex flex-col sm:flex-row gap-4">
                 <a 
                   href={whatsappUrl}

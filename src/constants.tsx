@@ -65,7 +65,14 @@ export const PRODUCTS: Product[] = [
     image: '/massa_para_drywall_holdflex.png',
     rating: 5,
     specs: ['Embalagem: 28kg', 'Uso: Juntas Drywall', 'Marca: Holdflex'],
-    applications: ['Paredes Internas', 'Forros', 'Acabamento de Parafusos']
+    applications: ['Paredes Internas', 'Forros', 'Acabamento de Parafusos'],
+    whatIsIt: 'A Massa Holdflex é um composto pronto para uso, formulado especificamente para o tratamento de juntas em chapas de gesso para drywall. Sua composição balanceada garante excelente aderência e flexibilidade.',
+    selectionCriteria: 'Escolha a Holdflex quando buscar produtividade (secagem rápida) e um acabamento que dispense múltiplas demãos de lixamento.',
+    compatibility: 'Compatível com fitas de papel microperfuradas e fitas teladas de fibra de vidro em ambientes internos.',
+    faq: [
+      { question: 'Quanto tempo demora para secar?', answer: 'A secagem total ocorre entre 12 a 24 horas, dependendo da umidade e ventilação do local.' },
+      { question: 'Pode ser usada em áreas externas?', answer: 'Não, para áreas externas utilize a Massa para Placa Cimentícia.' }
+    ]
   },
   {
     id: 'm2',
@@ -245,7 +252,13 @@ export const PRODUCTS: Product[] = [
     image: '/chapa_rf_rosa.jpg',
     rating: 4.9,
     specs: ['Dimensão: 1,20 x 1,80m', 'Tipo: RF (Resistente ao Fogo)', 'Cor: Rosa'],
-    applications: ['Rotas de Fuga', 'Cozinhas', 'Áreas com Risco de Incêndio']
+    applications: ['Rotas de Fuga', 'Cozinhas', 'Áreas com Risco de Incêndio'],
+    whatIsIt: 'A Chapa RF (Resistente ao Fogo) possui aditivos em seu núcleo de gesso e fibra de vidro, o que retarda a propagação do fogo e mantém a integridade estrutural por mais tempo.',
+    selectionCriteria: 'Obrigatória em caixas de escada, rotas de fuga e compartimentação de riscos de incêndio conforme normas do corpo de bombeiros.',
+    compatibility: 'Deve ser utilizada com massa e fitas específicas que também suportem altas temperaturas.',
+    faq: [
+      { question: 'Ela é totalmente à prova de fogo?', answer: 'Ela é resistente, o que significa que retarda a queima por um período determinado (ex: 30, 60 ou 90 min), mas não é indestrutível.' }
+    ]
   },
   {
     id: 'pl2',
@@ -265,7 +278,12 @@ export const PRODUCTS: Product[] = [
     image: '/chapa_drywall_st_branca.jpg',
     rating: 4.8,
     specs: ['Dimensão: 1,20 x 1,80m', 'Espessura: 12.5mm', 'Tipo: ST Branca'],
-    applications: ['Divisórias', 'Forros', 'Revestimentos']
+    applications: ['Divisórias', 'Forros', 'Revestimentos'],
+    whatIsIt: 'A placa standard (ST) é a base de qualquer sistema drywall interno, composta por um núcleo de gesso natural e aditivos, revestida por papel cartão.',
+    selectionCriteria: 'A solução mais econômica para divisórias internas de escritórios e residências em ambientes sem umidade.',
+    faq: [
+      { question: 'Posso pendurar TV nela?', answer: 'Sim, desde que utilize buchas específicas para drywall (foguete ou basculante) e, se possível, fixe na estrutura metálica.' }
+    ]
   },
   {
     id: 'pl4',
@@ -375,7 +393,10 @@ export const PRODUCTS: Product[] = [
     image: '/montante_de_steel_frame_90.webp',
     rating: 5,
     specs: ['Largura: 90mm', 'Comprimento: 3000mm', 'Uso: Steel Frame'],
-    applications: ['Construção Steel Frame', 'Estruturas de Casas', 'Paredes Portantes']
+    applications: ['Construção Steel Frame', 'Estruturas de Casas', 'Paredes Portantes'],
+    whatIsIt: 'Perfil estrutural produzido em aço galvanizado Z275 de alta resistência. É a espinha dorsal de construções residenciais e comerciais em LSF.',
+    selectionCriteria: 'O montante de 90mm é o padrão para paredes portantes de casas térreas e sobrados, oferecendo o equilíbrio ideal entre custo e desempenho estrutural.',
+    compatibility: 'Compatível com Guias de 90mm e parafusos de cabeça chata ou flangeada para steel frame.'
   },
   {
     id: 'pe8',
@@ -718,7 +739,7 @@ export const BLOG_POSTS: BlogPost[] = [
     id: 'b5',
     title: '7 Curiosidades e Fatos do Steel Frame que Você Precisa Saber Antes de Construir',
     excerpt: 'Descubra dados surpreendentes do Light Steel Framing: resistência a vendavais, durabilidade de mais de 100 anos do aço galvanizado Z180, conforto no inverno curitibano e manutenção descomplicada.',
-    img: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/projeto-stell-frame.png-bAiwJLHNjOpiURXX8I0tGfLyNCau5x.jpeg',
+    img: 'https://images.pexels.com/photos/5691593/pexels-photo-5691593.jpeg?auto=compress&cs=tinysrgb&w=800',
     tag: 'Curiosidades & Engenharia',
     date: 'Mar 2025'
   },
@@ -742,7 +763,7 @@ export const BLOG_POSTS: BlogPost[] = [
     id: 'b8',
     title: 'Custos Detalhados de Drywall e Steel Frame por m² em Curitiba (2026)',
     excerpt: 'Planilha de custos atualizada para construção e reforma a seco em Curitiba e RMC. Entenda o valor por m² de paredes, forros e estruturas completas.',
-    img: 'https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=800',
+    img: 'https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=800',
     tag: 'Custos & Orçamento',
     date: 'Jun 2025'
   },
@@ -750,7 +771,7 @@ export const BLOG_POSTS: BlogPost[] = [
     id: 'b9',
     title: 'Por que o Steel Frame Supera a Alvenaria no Rigoroso Inverno de Curitiba',
     excerpt: 'Entenda como o isolamento térmico avançado com lã mineral em estruturas LSF elimina paredes geladas, mofo e garante economia com aquecimento.',
-    img: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/projeto-stell-frame.png-bAiwJLHNjOpiURXX8I0tGfLyNCau5x.jpeg',
+    img: 'https://images.pexels.com/photos/1292294/pexels-photo-1292294.jpeg?auto=compress&cs=tinysrgb&w=800',
     tag: 'Conforto & Engenharia',
     date: 'Jul 2025'
   },
@@ -758,7 +779,7 @@ export const BLOG_POSTS: BlogPost[] = [
     id: 'b10',
     title: 'Guia Definitivo do Drywall: Placas ST, RU e RF na Construção a Seco',
     excerpt: 'Saiba exatamente quando usar placa padrão (branca), resistente à umidade (verde) e resistente ao fogo (rosa) em projetos residenciais e comerciais.',
-    img: '/forro-e-parede-em-drywall.jpeg',
+    img: 'https://images.pexels.com/photos/5691551/pexels-photo-5691551.jpeg?auto=compress&cs=tinysrgb&w=800',
     tag: 'Materiais & Aplicação',
     date: 'Ago 2025'
   }

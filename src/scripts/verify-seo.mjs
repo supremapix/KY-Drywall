@@ -10,7 +10,12 @@ for (const url of urls) {
   assert.equal((html.match(/<h1[ >]/g) || []).length, 1, url);
   assert.equal((html.match(/rel="canonical"/g) || []).length, 1, url);
   assert.ok(html.includes(`<link rel="canonical" href="${url}">`), url);
-  assert.ok(!html.includes('content="noindex'), url);
+  const isLocalRoute = route.includes('-em') || route.includes('/localizacao');
+  if (isLocalRoute) {
+    assert.ok(html.includes('content="noindex, follow"'), `Local route should have noindex: ${url}`);
+  } else {
+    assert.ok(!html.includes('content="noindex'), `Main route should NOT have noindex: ${url}`);
+  }
   const graph = JSON.parse(html.match(/<script id="ky-schema" type="application\/ld\+json">(.*?)<\/script>/)[1])['@graph'];
   const organizations = graph.filter(node => node['@id'] === `${origin}/#organization`);
   assert.equal(organizations.length, 1, url);

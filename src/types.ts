@@ -20,6 +20,10 @@ export interface Product {
   specs?: string[];
   applications?: string[];
   priceRef?: string;
+  whatIsIt?: string;
+  selectionCriteria?: string;
+  compatibility?: string;
+  faq?: { question: string; answer: string }[];
 }
 
 export interface Review {

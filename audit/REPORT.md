@@ -14,15 +14,12 @@ Identidade e contatos preservados do site publicado e do código: KY Drywall & S
 
 ## Alterações
 
-- Voltar ao topo em todas as rotas, incluindo /links; alvo de pelo menos 48 px, após rolagem, separado do WhatsApp, com movimento reduzido.
-- Link para pular conteúdo como primeiro foco, submenu desktop por teclado, contenção de foco no menu móvel, Escape para fechar menu e painéis de contato.
-- Texto do rodapé ampliado, logo oficial Suprema já usada pelo site preservada em arquivo local e ampliada; crédito duplicado removido.
-- Alegações não verificadas de 4,9 no Google, 8.500 obras e depoimentos sem origem retiradas do rodapé. Referências a WhatsApp 24h/online agora removidas dos controles compartilhados. Não há comprovação de atendimento contínuo.
-- Aviso de armazenamento local com ação funcional e espaço para controles flutuantes; o antigo botão Configurar não tinha implementação.
-- Favicon e imagem OG padrão com logo KY existente, sem imagem gerada por IA como padrão social. Canonical, entidade única e HTML pré-renderizado mantidos. Robots consistente no HTML e no cliente.
-- 212 páginas locais existentes preservadas, agora noindex/follow; 120 URLs locais retiradas do sitemap, ficando 75 URLs principais. Sem novas páginas repetitivas ou filiais. Reindexar páginas locais somente após conteúdo próprio e cobertura comprovada.
-- Explicação visível de 75 bairros oficiais versus vilas, conjuntos e nomes populares. Fonte: IPPUC, https://ippuc.org.br/perfil-fisico-territorial-e-socioeconomico-75-bairros-de-curitiba-2. A lista antiga de 92 referências não é apresentada como 92 bairros oficiais. O texto esclarece que a lista geográfica não garante entrega.
-- Lockfile incluído para instalações reproduzíveis. Nenhum DNS, segredo, permissão ou custo alterado.
+- Guias técnicos detalhados adicionados aos principais produtos (Massa Holdflex, Chapas ST/RF, Montantes), incluindo explicações de aplicação, critérios de escolha e FAQ.
+- Integração do componente StoreHero na Home para valorizar a estrutura física e fachada da loja na BR-277.
+- Adição de avisos regionais (RegionalNotice) e checklists de projeto (ProjectChecklist) para orientar o usuário na solicitação de orçamentos.
+- Padronização de imagens do blog: cada postagem agora utiliza uma imagem única e contextualizada, eliminando capas repetidas.
+- Aplicação do tema 'ky-light' em todo o projeto para garantir fundo branco predominante e destaques em vermelho KY, conforme diretriz visual.
+- Verificação rigorosa do sitemap e robots: 212 páginas locais agora configuradas como 'noindex, follow' para priorizar o ranqueamento das páginas principais.
 
 ## Validação
 

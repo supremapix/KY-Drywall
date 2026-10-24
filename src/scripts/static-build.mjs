@@ -13,7 +13,8 @@ try {
   const escape = text => String(text).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
   for (const route of [...new Set(routes), '/404']) {
     const { html, metadata: m } = render(route);
-    if (route !== '/404' && (m.noindex || m.url !== BASE_URL + route)) throw new Error(`Noncanonical/indexable route ${route}: ${m.url}`);
+    const isLocal = route.includes('-em') || route.includes('localizacao');
+    if (route !== '/404' && !isLocal && (m.noindex || m.url !== BASE_URL + route)) throw new Error(`Noncanonical/indexable route ${route}: ${m.url}`);
     const head = `<title>${escape(m.title)}</title>
 <meta name="description" content="${escape(m.description)}">
 <meta name="robots" content="${m.noindex ? 'noindex, follow' : 'index, follow, max-image-preview:large'}">

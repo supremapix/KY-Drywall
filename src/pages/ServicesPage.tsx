@@ -6,6 +6,8 @@ import { CheckCircle2, MessageCircle, ChevronRight, Sparkles, ShieldAlert, Arrow
 import NotFound from './NotFound';
 import EnhancedSEO from '../components/EnhancedSEO';
 
+import ProjectChecklist from '../components/ProjectChecklist';
+
 const ServicesPage: React.FC = () => {
   const { serviceId } = useParams<{ serviceId: string }>();
   const [ctaPhrase, setCtaPhrase] = useState('');
@@ -192,6 +194,8 @@ const ServicesPage: React.FC = () => {
           </div>
         </div>
       </section>
+
+      <ProjectChecklist serviceId={serviceId} />
 
       {/* Outros Serviços Navegação */}
       <section className="py-20 bg-slate-50 border-t border-slate-200">

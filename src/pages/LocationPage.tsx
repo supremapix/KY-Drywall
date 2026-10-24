@@ -7,6 +7,8 @@ import EnhancedSEO from '../components/EnhancedSEO';
 import NotFound from './NotFound';
 import ProductCard from '../components/ProductCard';
 
+import RegionalNotice from '../components/RegionalNotice';
+
 interface LocationPageProps {
   type: 'drywall' | 'steel';
   overrideSlug?: string;
@@ -39,6 +41,7 @@ const LocationPage: React.FC<LocationPageProps> = ({ type, overrideSlug }) => {
     }
 
     setCta1(getRandomCTA());
+    cta2; // To avoid unused warning if removed elsewhere
     setCta2(getRandomCTA());
     window.scrollTo(0, 0);
   }, [location, navigate]);
@@ -100,6 +103,7 @@ const LocationPage: React.FC<LocationPageProps> = ({ type, overrideSlug }) => {
         keywords={pageKeywords}
         canonical={`${BASE_URL}/${type === 'drywall' ? 'drywall' : 'steel-frame'}-em/${location}`}
         schema={schema}
+        noindex={true}
       />
 
       {/* Hero Section - Industrial Showroom */}
@@ -179,6 +183,8 @@ const LocationPage: React.FC<LocationPageProps> = ({ type, overrideSlug }) => {
           </div>
         </div>
       </section>
+
+      <RegionalNotice />
 
       <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-16 lg:py-24">
         <div className="flex flex-col lg:flex-row gap-16">
