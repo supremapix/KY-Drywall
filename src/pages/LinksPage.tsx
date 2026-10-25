@@ -48,6 +48,16 @@ export default function LinksPage() {
     },
   ];
 
+  const [showScrollTop, setShowScrollTop] = React.useState(false);
+
+  React.useEffect(() => {
+    const handleScroll = () => setShowScrollTop(window.scrollY > 400);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+
   return (
     <section className="bg-slate-50 min-h-screen flex flex-col items-center justify-start relative overflow-hidden font-sans">
       <EnhancedSEO
@@ -197,6 +207,17 @@ export default function LinksPage() {
           </div>
         </div>
       </div>
+
+      {/* Back to Top */}
+      <button
+        onClick={scrollToTop}
+        className={`fixed bottom-8 right-8 z-50 p-4 bg-white border-2 border-slate-200 rounded-full shadow-2xl transition-all duration-300 active:scale-90 focus:outline-none focus:ring-2 focus:ring-[#D31219] ${
+          showScrollTop ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'
+        }`}
+        aria-label="Voltar ao topo"
+      >
+        <ChevronRight size={24} className="-rotate-90 text-[#D31219]" />
+      </button>
     </section>
   );
 }

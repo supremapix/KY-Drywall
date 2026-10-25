@@ -117,7 +117,10 @@ export const PRODUCTS: Product[] = [
     applications: ['Nivelamento de Paredes', 'Acabamento sobre Drywall', 'Paredes de Alvenaria'],
     whatIsIt: 'Massa niveladora de base PVA para superfícies internas de alvenaria ou gesso acartonado, proporcionando um acabamento liso e uniforme pronto para pintura.',
     selectionCriteria: 'Ideal para regularizar pequenas imperfeições superficiais antes da aplicação de tintas látex ou acrílicas em ambientes secos.',
-    compatibility: 'Uso exclusivo em áreas internas. Não recomendada para superfícies que receberão revestimento cerâmico.'
+    compatibility: 'Uso exclusivo em áreas internas sobre drywall ou reboco fino.',
+    faq: [
+      { question: 'Pode lixar?', answer: 'Sim, possui excelente lixabilidade, permitindo um acabamento extra liso com baixo esforço.' }
+    ]
   },
   {
     id: 'm5',
@@ -130,7 +133,10 @@ export const PRODUCTS: Product[] = [
     applications: ['Base para Pintura de Alto Brilho', 'Revestimentos Nobres', 'Sistemas EIFS'],
     whatIsIt: 'Composto técnico de alta tecnologia para preparação de superfícies que receberão acabamentos críticos ou tintas de alto brilho que evidenciam imperfeições.',
     selectionCriteria: 'Utilizada quando o projeto exige o Nível 5 de acabamento em drywall (superfície totalmente recoberta por massa).',
-    compatibility: 'Compatível com chapas Glasroc e cimentícias em sistemas de fachada leve.'
+    compatibility: 'Compatível com chapas Glasroc e cimentícias em sistemas de fachada leve.',
+    faq: [
+      { question: 'Qual a espessura da camada?', answer: 'Deve ser aplicada em camadas extra finas (até 1mm) para regularização superficial total.' }
+    ]
   },
   {
     id: 'm6',
@@ -159,7 +165,10 @@ export const PRODUCTS: Product[] = [
     applications: ['Fixação de Molduras de Gesso', 'Sancas', 'Placas 3D', 'Rodapés de Gesso'],
     whatIsIt: 'Adesivo em pó de base gesso com aditivos químicos que garantem uma "pega" rápida e colagem estrutural de elementos decorativos.',
     selectionCriteria: 'Indicado para instaladores que buscam segurança na fixação de molduras pesadas ou sancas amplas.',
-    compatibility: 'Pode ser aplicado sobre drywall, reboco de cimento ou concreto.'
+    compatibility: 'Pode ser aplicado sobre drywall, reboco de cimento ou concreto.',
+    faq: [
+      { question: 'Quanto tempo demora para secar?', answer: 'O tempo de trabalho é de aproximadamente 30 a 50 minutos; a cura total ocorre em 24h.' }
+    ]
   },
   {
     id: 'm8',
@@ -172,6 +181,7 @@ export const PRODUCTS: Product[] = [
     applications: ['Revestimento de Paredes', 'Pequenos Reparos', 'Moldagens em Obra'],
     whatIsIt: 'Gesso natural de alta pureza, com moagem controlada para garantir superfícies extremamente lisas e brancas.',
     selectionCriteria: 'O preferido por gesseiros tradicionais de Curitiba para revestimento direto sobre blocos de concreto ou lajes.',
+    compatibility: 'Ideal para superfícies porosas internas que necessitam de regularização manual.',
     faq: [
       { question: 'Dá para usar como massa de junta?', answer: 'Não recomendado. O gesso comum não possui a flexibilidade necessária para juntas de drywall, podendo causar trincas.' }
     ]
@@ -203,7 +213,10 @@ export const PRODUCTS: Product[] = [
     applications: ['Reparo de Trincas', 'Reforço de Cantos', 'Drywall Interno'],
     whatIsIt: 'Fita autoadesiva de malha de fibra de vidro, diferenciada pela cor azul que indica tratamento superior de resistência.',
     selectionCriteria: 'Recomendada para manutenção e reparos em drywall ou para reforçar áreas de maior vibração estrutural interna.',
-    compatibility: 'Utilizar com massa pronta para drywall em camadas finas.'
+    compatibility: 'Utilizar com massa pronta para drywall em camadas finas.',
+    faq: [
+      { question: 'Substitui a fita de papel?', answer: 'Em juntas estruturais novas, a fita de papel é a norma. A fita telada é excelente para reparos e reforços localizados.' }
+    ]
   },
   {
     id: 'f3',
@@ -232,7 +245,10 @@ export const PRODUCTS: Product[] = [
     applications: ['Proteção de Cantos de Paredes', 'Acabamento de Vigas e Pilares', 'Sancas'],
     whatIsIt: 'Fita de papel reforçada com duas tiras paralelas de aço galvanizado, que garantem rigidez e alinhamento milimétrico em quinas.',
     selectionCriteria: 'Indispensável para cantos de alto tráfego que necessitam de proteção contra batidas e um acabamento reto impecável.',
-    compatibility: 'Aplicável em qualquer sistema drywall.'
+    compatibility: 'Aplicável em qualquer sistema drywall interno.',
+    faq: [
+      { question: 'Como fazer o corte?', answer: 'Pode ser cortada com tesoura de aviação para metais ou estilete reforçado.' }
+    ]
   },
   {
     id: 'f5',
@@ -245,6 +261,7 @@ export const PRODUCTS: Product[] = [
     applications: ['Base de Perfis de Drywall', 'Vedações de Janelas LSF', 'Isolamento de Vibração'],
     whatIsIt: 'Fita de espuma autoadesiva aplicada no verso dos perfis (guias) que ficam em contato com a estrutura (laje/piso).',
     selectionCriteria: 'Essencial para projetos que exigem conforto acústico, pois elimina a "ponte sonora" entre a parede e a estrutura do prédio.',
+    compatibility: 'Essencial para perfis de 48, 70 e 90mm em sistemas de drywall e steel frame.',
     faq: [
       { question: 'É obrigatório usar?', answer: 'Sim, se você deseja que o isolamento acústico das placas e da lã funcione conforme o esperado no projeto.' }
     ]
@@ -277,7 +294,10 @@ export const PRODUCTS: Product[] = [
     applications: ['Steel Frame', 'Fixação OSB', 'Estruturas de Telhado'],
     whatIsIt: 'Parafuso autoperfurante com aletas que fresam a placa OSB, permitindo o embutimento perfeito da cabeça chata.',
     selectionCriteria: 'Obrigatório para sistemas LSF para garantir que a cabeça do parafuso não ressalte sob a barreira de água.',
-    compatibility: 'Utilize com parafusadeiras de alto torque configuradas corretamente para não romper as fibras do OSB.'
+    compatibility: 'Utilize com parafusadeiras de alto torque configuradas corretamente para não romper as fibras do OSB.',
+    faq: [
+      { question: 'Pode usar em madeira comum?', answer: 'Sim, porém sua performance de embutimento da cabeça é otimizada para a densidade de painéis OSB.' }
+    ]
   },
   {
     id: 'pa3',
@@ -402,10 +422,10 @@ export const PRODUCTS: Product[] = [
     specs: ['Tipo: Gesso com Véu de Vidro', 'Marca: Placo', 'Resistência Externa'],
     applications: ['Fachadas', 'Áreas Externas', 'Beirais', 'Ambientes Muito Úmidos'],
     whatIsIt: 'Placa técnica composta por núcleo de gesso aditivado com biocidas e vidro, revestida em ambas as faces por véu de vidro alcalino-resistente. Não contém papel cartão.',
-    selectionCriteria: 'A escolha definitiva para fechamentos externos em Light Steel Frame que buscam rapidez de instalação do drywall com a resistência do cimento.',
+    selectionCriteria: 'A escolha para fechamentos externos em Light Steel Frame que buscam rapidez de instalação com alta resistência.',
     compatibility: 'Deve ser instalada com massa base coat e fita de malha de vidro de 102mm para garantir a integridade da fachada.',
     faq: [
-      { question: 'Ela racha como o cimento?', answer: 'Não. Devido à sua estabilidade dimensional superior, a Glasroc X tem baixíssima dilatação térmica, reduzindo drasticamente o risco de fissuras.' }
+      { question: 'Ela racha como o cimento?', answer: 'Devido à sua estabilidade dimensional superior, a Glasroc X possui baixíssima dilatação térmica, o que reduz significativamente o risco de fissuras.' }
     ]
   },
   {
@@ -545,9 +565,9 @@ export const PRODUCTS: Product[] = [
     rating: 5,
     specs: ['Largura: 90mm', 'Espessura: 0.80mm a 1.25mm', 'Galvanização: Z275'],
     applications: ['Construção Steel Frame', 'Estruturas de Casas', 'Paredes Portantes', 'Vigas'],
-    whatIsIt: 'Perfil estrutural produzido em aço galvanizado Z275. É a espinha dorsal de construções residenciais em LSF (Light Steel Framing).',
-    selectionCriteria: 'O montante de 90mm é o padrão para paredes portantes de casas térreas e sobrados, oferecendo segurança estrutural comprovada por laudo.',
-    compatibility: 'Deve ser calculado por engenheiro responsável. Compatível com Guias de 90mm e parafusos de cabeça chata ou flangeada específicos.',
+    whatIsIt: 'Perfil estrutural produzido em aço galvanizado Z275 de alta resistência. É a espinha dorsal de construções residenciais em LSF (Light Steel Framing).',
+    selectionCriteria: 'O montante de 90mm é o padrão para paredes portantes de casas térreas e sobrados, oferecendo segurança estrutural conforme NBR 16970.',
+    compatibility: 'Deve ser calculado por engenheiro responsável. Compatível com Guias de 90mm (Z275) e parafusos de cabeça chata ou flangeada específicos.',
     faq: [
       { question: 'Pode construir sobrado com esse perfil?', answer: 'Sim, desde que dimensionado corretamente por um projeto estrutural, o perfil de 90mm é a base comum para sobrados em LSF.' }
     ]
@@ -561,9 +581,9 @@ export const PRODUCTS: Product[] = [
     rating: 5,
     specs: ['Largura: 140mm', 'Espessura: 0.95mm a 1.55mm', 'Galvanização: Z275'],
     applications: ['Vigas de Transição', 'Grandes Vãos', 'Estruturas de Cobertura', 'Paredes de Sobrados'],
-    whatIsIt: 'Perfil de alma larga e alta espessura de aço, projetado para suportar cargas elevadas e vencer vãos maiores sem flexão indesejada.',
+    whatIsIt: 'Perfil de alma larga e alta espessura de aço (Z275), projetado para suportar cargas elevadas e vencer vãos maiores sem flexão indesejada.',
     selectionCriteria: 'Indicado para paredes externas de sobrados de dois ou mais pavimentos e vigas que suportam lajes úmidas ou secas.',
-    compatibility: 'Exige fixadores de alta resistência e guias de 140mm.',
+    compatibility: 'Exige fixadores de alta resistência e guias de 140mm (Z275).',
     faq: [
       { question: 'Serve para fazer telhado?', answer: 'Sim, o perfil de 140mm é excelente para tesouras de telhado com grandes vãos.' }
     ]
@@ -627,7 +647,10 @@ export const PRODUCTS: Product[] = [
     applications: ['Locais de Difícil Acesso', 'Cantos de Sancas', 'Instalações em Nichos'],
     whatIsIt: 'Acessório de impacto para parafusadeiras que permite o acesso a locais estreitos ou em ângulos onde o corpo da máquina não entra, transmitindo o torque de forma eficiente.',
     selectionCriteria: 'Essencial para montagem de estruturas complexas de forros decorativos e móveis de drywall.',
-    compatibility: 'Compatível com qualquer parafusadeira de encaixe hexagonal padrão 1/4".'
+    compatibility: 'Compatível com qualquer parafusadeira de encaixe hexagonal padrão 1/4".',
+    faq: [
+      { question: 'Pode ser usado em parafusadeira de impacto?', answer: 'Sim, o modelo é projetado para suportar o torque de máquinas de impacto de 1/4".' }
+    ]
   },
   {
     id: 'd2',
@@ -639,6 +662,8 @@ export const PRODUCTS: Product[] = [
     specs: ['Tipo: 2P+T', 'Corrente: 10A/20A', 'Padrão: Brasileiro'],
     applications: ['Canteiros de Obra', 'Uso de Furadeiras', 'Ferramentas de Bancada'],
     whatIsIt: 'Adaptador elétrico de alta resistência para compatibilização de ferramentas e extensões no padrão NBR 14136.',
+    selectionCriteria: 'Garante a segurança elétrica no canteiro ao utilizar ferramentas com plugues de diferentes amperagens.',
+    compatibility: 'Ferramentas elétricas padrão brasileiro de 10A ou 20A.',
     faq: [
       { question: 'Suporta ferramentas potentes?', answer: 'Sim, mas verifique se a amperagem da ferramenta não excede a capacidade do adaptador e da rede local.' }
     ]
@@ -670,6 +695,7 @@ export const PRODUCTS: Product[] = [
     applications: ['Vedação de Banheiros', 'Acabamento de Louças', 'Passagens de Tubos'],
     whatIsIt: 'Selante de silicone profissional com fungicida, ideal para vedações em áreas molhadas plaqueadas com RU, prevenindo o bolor.',
     selectionCriteria: 'Garante a estanqueidade elástica necessária em encontros de materiais com diferentes coeficientes de dilatação.',
+    compatibility: 'Compatível com chapas RU (Verde), cerâmicas, vidros e metais galvanizados.',
     faq: [
       { question: 'Pode usar no Steel Frame externo?', answer: 'Para juntas externas, recomendamos o uso de selante de PU (Poliuretano), que possui maior resistência a UV e aceita pintura.' }
     ]
@@ -797,6 +823,7 @@ export const PRODUCTS: Product[] = [
     applications: ['Forros de Gesso', 'Design de Interiores', 'Prevenção de Trincas'],
     whatIsIt: 'Perfil perimetral que cria um vão (sombra) entre o forro e a parede, absorvendo as micro-movimentações da estrutura do prédio.',
     selectionCriteria: 'Utilizada para evitar trincas perimetrais e conferir um acabamento sofisticado de "forro solto".',
+    compatibility: 'Encaixe perfeito em perfis F530 e chapas de 12.5mm.',
     faq: [
       { question: 'Pode pintar?', answer: 'Sim, a tabica lisa aceita pintura após a limpeza da camada de proteção galvânica.' }
     ]
@@ -811,7 +838,11 @@ export const PRODUCTS: Product[] = [
     specs: ['Cor: Branco', 'Acabamento: Pré-pintado', 'Uso: Decorativo'],
     applications: ['Forros Residenciais', 'Instalações Rápidas', 'Sancas'],
     whatIsIt: 'Perfil de dilatação com acabamento em pintura eletrostática, pronto para instalação, eliminando a necessidade de pintura manual no teto.',
-    selectionCriteria: 'Ideal para reformas rápidas onde se deseja reduzir a sujeira e o tempo de finalização.'
+    selectionCriteria: 'Ideal para reformas rápidas onde se deseja reduzir a sujeira e o tempo de finalização.',
+    compatibility: 'Uso em forros de drywall internos com junta de dilatação.',
+    faq: [
+      { question: 'Precisa pintar depois?', answer: 'Não, ela já vem com acabamento branco industrial, economizando tempo de pintura em obra.' }
+    ]
   },
   {
     id: 'fe10',
@@ -824,7 +855,10 @@ export const PRODUCTS: Product[] = [
     applications: ['Grandes Forros', 'Extensão de Trilhos', 'União de Perfis'],
     whatIsIt: 'Peça de encaixe por pressão que une dois perfis F530, garantindo o alinhamento perfeito e a resistência mecânica da estrutura do forro.',
     selectionCriteria: 'Obrigatória em vãos de forro que excedam os 3 metros de comprimento do perfil padrão.',
-    compatibility: 'Exclusiva para perfis canaleta F530.'
+    compatibility: 'Exclusiva para perfis canaleta F530.',
+    faq: [
+      { question: 'Precisa parafusar?', answer: 'Geralmente o encaixe é por pressão, mas em áreas de grande vibração, um parafuso metal-metal (LA) pode ser usado para travamento extra.' }
+    ]
   },
   {
     id: 'fe11',
@@ -836,7 +870,11 @@ export const PRODUCTS: Product[] = [
     specs: ['Marca: Plaster', 'Tipo: Surform', 'Corpo: Metálico/Plástico'],
     applications: ['Chanfro de Bordas', 'Ajuste de Medidas', 'Regularização de Cortes'],
     whatIsIt: 'Ferramenta manual de desbaste essencial para preparar as bordas cortadas das chapas, permitindo que a massa de junta penetre corretamente.',
-    selectionCriteria: 'Acessório indispensável para o montador que preza pelo acabamento invisível das juntas.'
+    selectionCriteria: 'Acessório indispensável para o montador que preza pelo acabamento invisível das juntas.',
+    compatibility: 'Chapas de gesso Standard (ST), Resistente à Umidade (RU) e Resistente ao Fogo (RF).',
+    faq: [
+      { question: 'A lâmina perde o corte?', answer: 'Sim, a lâmina é um item de reposição e deve ser trocada quando começar a rasgar o papel cartão da placa.' }
+    ]
   },
   {
     id: 'fe12',
@@ -848,6 +886,8 @@ export const PRODUCTS: Product[] = [
     specs: ['Material: Aço Carbono', 'Tipo: Universal Plaster', 'Durabilidade: Alta'],
     applications: ['Manutenção de Ferramentas', 'Troca de Lâmina Cega'],
     whatIsIt: 'Lâmina de corte intercambiável que mantém a eficiência do desbaste do gesso sem "rasgar" o papel cartão.',
+    selectionCriteria: 'Mantenha lâminas reserva para garantir produtividade e acabamento perfeito em todas as chapas.',
+    compatibility: 'Exclusiva para plainas tipo Surform e modelos Plaster.',
     faq: [
       { question: 'Como saber a hora de trocar?', answer: 'Quando a plaina começar a exigir muito esforço ou começar a esfarelar a borda da chapa em vez de cortar limpo.' }
     ]
@@ -904,7 +944,7 @@ export const NEIGHBORHOODS = [
   "Abranches", "Água Verde", "Ahú", "Alto Boqueirão", "Alto da Glória", "Alto da XV", "Atuba", "Augusta",
   "Bacacheri", "Bairro Alto", "Barreirinha", "Batel", "Bigorrilho", "Boa Vista", "Bom Retiro", "Boqueirão",
   "Butiatuvinha", "Cabral", "Cachoeira", "Cajuru", "Campina do Siqueira", "Campo Comprido", "Campo de Santana",
-  "Capão da Imbuia", "Capão Raso", "Cascatinha", "Centro", "Centro Cívico", "Champagnat", "CIC", "Cidade Industrial",
+  "Capão da Imbuia", "Capão Raso", "Cascatinha", "Centro", "Centro Cívico", "Champagnat", "CIC",
   "Conjunto Caiuá", "Conjunto Parigot de Souza",
   "Cristo Rei", "Fanny", "Fazendinha", "Ganchinho", "Guabirotuba", "Guaíra", "Hauer", "Hugo Lange",
   "Jardim Botânico", "Jardim das Américas", "Jardim Social", "Juvevê", "Lamenha Pequena", "Lindoia",
@@ -918,10 +958,7 @@ export const NEIGHBORHOODS = [
 ];
 
 export const ALL_CIC_LOCATIONS = [
-  CIC_LOCATIONS.main,
-  ...CIC_LOCATIONS.divisions,
-  ...CIC_LOCATIONS.vilas,
-  ...CIC_LOCATIONS.areas
+  CIC_LOCATIONS.main
 ];
 
 export const CITIES_RMC = [
@@ -1066,4 +1103,16 @@ export const denormalizeLocationName = (slug: string): string => {
     .split('-')
     .map(word => word.charAt(0).toUpperCase() + word.slice(1))
     .join(' ');
+};
+
+export const REDIRECTIONS: Record<string, string> = {
+  'cidade-industrial-de-curitiba': 'cic',
+  'cidade-industrial': 'cic',
+  'cic-norte': 'cic',
+  'cic-central': 'cic',
+  'cic-sul': 'cic',
+  'area-industrial-cic': 'cic',
+  'polo-industrial-cic': 'cic',
+  'distrito-industrial-cic': 'cic',
+  'parque-industrial-cic': 'cic'
 };

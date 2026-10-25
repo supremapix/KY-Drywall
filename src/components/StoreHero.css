@@ -384,7 +384,7 @@
   margin: 0 0 18px;
   overflow: hidden;
   border-radius: 8px;
-  aspect-ratio: 16 / 8;
+  aspect-ratio: 16 / 9;
   background: var(--ky-bg-tech);
   position: relative;
 }

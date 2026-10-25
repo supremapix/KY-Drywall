@@ -4,7 +4,7 @@ import path from 'node:path';
 const server = await createServer({ server: { middlewareMode: true }, appType: 'custom', optimizeDeps: { noDiscovery: true, include: [] }, ssr: { noExternal: ['react-router-dom', 'react-router'], resolve: { conditions: ['module-sync', 'module', 'import'] } } });
 try {
   const app = await server.ssrLoadModule('/src/seo/render.tsx');
-  const { BASE_URL, PRODUCTS, SERVICES, BLOG_POSTS, NEIGHBORHOODS, CITIES_RMC, ALL_CIC_LOCATIONS, normalizeLocationName, render } = app;
+  const { BASE_URL, PRODUCTS, SERVICES, BLOG_POSTS, NEIGHBORHOODS, CITIES_RMC, ALL_CIC_LOCATIONS, REDIRECTIONS, normalizeLocationName, render } = app;
   const locations = [...new Set([...NEIGHBORHOODS, ...CITIES_RMC, ...ALL_CIC_LOCATIONS].map(normalizeLocationName))];
   const routes = ['/', '/empresa', '/steel-frame', '/servicos', '/produtos', '/contato', '/blog', '/faq', '/sitemap', '/links',
     ...SERVICES.map(s => `/servicos/${s.id}`), ...PRODUCTS.map(p => `/produto/${p.id}`), ...BLOG_POSTS.map(p => `/blog/${p.id}`),
@@ -41,8 +41,13 @@ try {
   const sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + [...new Set(indexable)].map(route => `  <url><loc>${BASE_URL}${route}</loc></url>`).join('\n') + '\n</urlset>\n';
   await writeFile('public/sitemap.xml', sitemap);
   await writeFile('dist/sitemap.xml', sitemap);
-  // All dynamic local routes already exist; aliases redirect before static lookup.
+  
   const redirects = locations.map(loc => `/localizacao/${loc} /drywall-em/${loc} 301`).join('\n');
-  await writeFile('dist/_redirects', `https://kydrywall.com.br/* https://www.kydrywall.com.br/:splat 301!\n${redirects}\n/* /404.html 404\n`);
+  const consolidated = Object.entries(REDIRECTIONS).flatMap(([from, to]) => [
+    `/drywall-em/${from} /drywall-em/${to} 301`,
+    `/steel-frame-em/${from} /steel-frame-em/${to} 301`
+  ]).join('\n');
+  
+  await writeFile('dist/_redirects', `https://kydrywall.com.br/* https://www.kydrywall.com.br/:splat 301!\n${redirects}\n${consolidated}\n/* /404.html 404\n`);
   console.log(`Static HTML: ${routes.length} existing routes; sitemap: ${indexable.length} URLs; real 404 generated.`);
 } finally { await server.close(); }

@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { MapPin, CheckCircle2, ShieldCheck, Zap, HardHat, Recycle, Timer, ChevronRight, MessageCircle, ArrowLeft, Phone, Package, Clock, Truck, Star, Home, Building2, ExternalLink } from 'lucide-react';
-import { BASE_URL, SERVICES, NEIGHBORHOODS, CITIES_RMC, getRandomCTA, PRODUCTS, COMPANY_INFO, SITE_ASSETS, normalizeLocationName } from '../constants';
+import { BASE_URL, SERVICES, NEIGHBORHOODS, CITIES_RMC, getRandomCTA, PRODUCTS, COMPANY_INFO, SITE_ASSETS, normalizeLocationName, REDIRECTIONS } from '../constants';
 import EnhancedSEO from '../components/EnhancedSEO';
 import NotFound from './NotFound';
 import ProductCard from '../components/ProductCard';
@@ -40,11 +40,15 @@ const LocationPage: React.FC<LocationPageProps> = ({ type, overrideSlug }) => {
       return;
     }
 
+    if (REDIRECTIONS[location]) {
+      navigate(`/${type === 'drywall' ? 'drywall' : 'steel-frame'}-em/${REDIRECTIONS[location]}`, { replace: true });
+      return;
+    }
+
     setCta1(getRandomCTA());
-    cta2; // To avoid unused warning if removed elsewhere
     setCta2(getRandomCTA());
     window.scrollTo(0, 0);
-  }, [location, navigate]);
+  }, [location, navigate, type]);
 
   const featuredProducts = type === 'drywall'
     ? PRODUCTS.filter(p => ['Placas', 'Massas', 'Fitas', 'Parafusos'].includes(p.category)).slice(0, 6)
@@ -172,6 +176,7 @@ const LocationPage: React.FC<LocationPageProps> = ({ type, overrideSlug }) => {
                       href={COMPANY_INFO.mapsUrl}
                       target="_blank"
                       rel="noopener noreferrer"
+                      aria-label="Ver localização do Showroom KY no Google Maps"
                       className="bg-[#D31219] text-white p-3 rounded-xl transition-all shadow-lg hover:scale-110 active:scale-95"
                     >
                       <ExternalLink size={20} />
