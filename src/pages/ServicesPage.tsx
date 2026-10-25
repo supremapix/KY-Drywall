@@ -148,7 +148,7 @@ const ServicesPage: React.FC = () => {
                     Suporte na Obra
                   </h4>
                   <p className="text-xs text-slate-500 leading-relaxed">
-                    Não apenas vendemos materiais. Nossa equipe oferece suporte para leitura de projetos e indicação de instaladores credenciados que seguem rigorosamente as normas de montagem.
+                    Não apenas vendemos materiais. Nossa equipe oferece suporte para leitura de projetos e indicação de parceiros instaladores experientes em sistemas de construção a seco.
                   </p>
                 </div>
                 <div>
@@ -157,7 +157,7 @@ const ServicesPage: React.FC = () => {
                     Logística KY
                   </h4>
                   <p className="text-xs text-slate-500 leading-relaxed">
-                    Entregas programadas com veículos adequados para o transporte de perfis de até 6 metros e placas sem avarias nas bordas, garantindo menor desperdício.
+                    Consulte nossa equipe sobre entregas programadas e disponibilidade de frota para o transporte de perfis e chapas de grande porte em sua região.
                   </p>
                 </div>
               </div>

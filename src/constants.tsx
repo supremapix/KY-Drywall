@@ -61,175 +61,193 @@ export const PRODUCTS: Product[] = [
     id: 'm1',
     category: 'Massas',
     name: 'Massa para Drywall Holdflex',
-    description: 'Massa para tratamento de juntas de drywall de alta qualidade. Secagem rápida e acabamento extra liso, ideal para juntas e fixações.',
+    description: 'Massa para tratamento de juntas de drywall de alta qualidade. Secagem rápida e acabamento extra liso.',
     image: '/massa_para_drywall_holdflex.png',
     rating: 5,
     specs: ['Embalagem: 28kg', 'Uso: Juntas Drywall', 'Marca: Holdflex'],
-    applications: ['Paredes Internas', 'Forros', 'Acabamento de Parafusos'],
+    applications: ['Paredes Internas', 'Forros', 'Acabamento de Parafusos', 'Reparos Rápidos'],
     whatIsIt: 'A Massa Holdflex é um composto pronto para uso, formulado especificamente para o tratamento de juntas em chapas de gesso para drywall. Sua composição balanceada garante excelente aderência e flexibilidade.',
     selectionCriteria: 'Escolha a Holdflex quando buscar produtividade (secagem rápida) e um acabamento que dispense múltiplas demãos de lixamento.',
     compatibility: 'Compatível com fitas de papel microperfuradas e fitas teladas de fibra de vidro em ambientes internos.',
     faq: [
       { question: 'Quanto tempo demora para secar?', answer: 'A secagem total ocorre entre 12 a 24 horas, dependendo da umidade e ventilação do local.' },
-      { question: 'Pode ser usada em áreas externas?', answer: 'Não, para áreas externas utilize a Massa para Placa Cimentícia.' }
+      { question: 'Pode ser usada em áreas externas?', answer: 'Não, para áreas externas utilize a Massa para Placa Cimentícia específica para resistir à chuva.' }
     ]
   },
   {
     id: 'm2',
     category: 'Massas',
     name: 'Massa para Placa Cimentícia Holdflex',
-    description: 'Massa específica para placas cimentícias. Alta aderência e resistência à umidade para áreas externas.',
+    description: 'Massa específica para placas cimentícias e fechamentos externos. Alta resistência à umidade.',
     image: '/massa_para_placa_cimenticia_holdflex.jpg',
     rating: 4.9,
     specs: ['Marca: Holdflex', 'Uso: Placas Cimentícias', 'Resistente à Água'],
-    applications: ['Áreas Externas', 'Fachadas', 'Áreas Úmidas'],
-    whatIsIt: 'Composto cimentício monocomponente desenvolvido para o tratamento de juntas em placas cimentícias e fechamentos externos em steel frame.',
-    selectionCriteria: 'Indicada para projetos que exigem estanqueidade e resistência a intempéries em fachadas e áreas externas.',
-    compatibility: 'Deve ser aplicada em conjunto com fita telada de 102mm para garantir a estabilidade da junta.',
+    applications: ['Fachadas de Steel Frame', 'Áreas Externas', 'Beirais', 'Ambientes Industriais'],
+    whatIsIt: 'Composto cimentício monocomponente de alta elasticidade desenvolvido para o tratamento de juntas em placas cimentícias e fechamentos externos em LSF.',
+    selectionCriteria: 'Indicada para projetos que exigem estanqueidade absoluta e resistência a variações térmicas intensas em Curitiba.',
+    compatibility: 'Deve ser aplicada em conjunto com fita telada de 102mm para garantir a estabilidade da junta externa.',
     faq: [
-      { question: 'Pode ser pintada?', answer: 'Sim, após a secagem total e lixamento, aceita diversos tipos de acabamentos e tintas para exterior.' }
+      { question: 'Pode ser pintada diretamente?', answer: 'Sim, após a secagem total e lixamento, aceita diversos tipos de acabamentos e tintas para exterior (elastroméricas ou acrílicas).' }
     ]
   },
   {
     id: 'm3',
     category: 'Massas',
     name: 'Massa em pó 20Kg Gypsum',
-    description: 'Massa em pó para tratamento de juntas. Fácil aplicação e excelente acabamento.',
+    description: 'Massa em pó para tratamento de juntas de drywall. Excelente custo-benefício para grandes obras.',
     image: '/massa_em_po_20kg,_gypsum.jpg',
     rating: 4.8,
-    specs: ['Embalagem: 20kg', 'Marca: Gypsum', 'Em Pó'],
-    applications: ['Juntas', 'Acabamento', 'Revestimentos'],
-    whatIsIt: 'Massa em pó de base gesso para preparo em obra, ideal para grandes volumes de tratamento de juntas em sistemas drywall.',
-    selectionCriteria: 'Escolha quando o custo-benefício em grandes obras for prioritário, permitindo controle da consistência no momento do preparo.',
-    compatibility: 'Compatível com chapas ST, RU e RF em ambientes internos.'
+    specs: ['Embalagem: 20kg', 'Marca: Gypsum', 'Preparo: Água'],
+    applications: ['Juntas de Drywall', 'Preenchimento de Fendas', 'Fixação de Cantoneiras'],
+    whatIsIt: 'Massa em pó de base gesso para preparo imediato em obra, permitindo o controle da consistência ideal para cada etapa do trabalho.',
+    selectionCriteria: 'Ideal para grandes canteiros onde o transporte de massa pronta é logisticamente difícil ou para quando se deseja uma massa mais densa para preenchimentos.',
+    compatibility: 'Compatível com todas as chapas Gypsum e Placo em ambientes internos.',
+    faq: [
+      { question: 'Quanto tempo dura depois de misturada?', answer: 'O tempo de trabalho (open time) é de aproximadamente 60 a 90 minutos após a mistura com água.' }
+    ]
   },
   {
     id: 'm4',
     category: 'Massas',
-    name: 'Massa corrida PVA branco 15Kg Induscril',
-    description: 'Massa corrida PVA para acabamento fino em paredes e tetos. Cor branca, fácil lixamento.',
+    name: 'Massa corrida PVA Induscril 15Kg',
+    description: 'Massa corrida PVA para acabamento fino em superfícies internas. Fácil lixamento.',
     image: '/massa_corrida_pva_branco_15kg,_induscril.jpg',
     rating: 4.7,
-    specs: ['Embalagem: 15kg', 'Marca: Induscril', 'Cor: Branco'],
-    applications: ['Acabamento Fino', 'Paredes', 'Tetos'],
-    whatIsIt: 'Massa niveladora de base PVA para superfícies internas de alvenaria ou gesso, proporcionando um acabamento liso e uniforme.',
-    selectionCriteria: 'Ideal para regularizar pequenas imperfeições antes da pintura final em ambientes secos.',
-    compatibility: 'Uso exclusivo em áreas internas não molháveis.'
+    specs: ['Embalagem: 15kg', 'Cor: Extra Branco', 'Base: PVA'],
+    applications: ['Nivelamento de Paredes', 'Acabamento sobre Drywall', 'Paredes de Alvenaria'],
+    whatIsIt: 'Massa niveladora de base PVA para superfícies internas de alvenaria ou gesso acartonado, proporcionando um acabamento liso e uniforme pronto para pintura.',
+    selectionCriteria: 'Ideal para regularizar pequenas imperfeições superficiais antes da aplicação de tintas látex ou acrílicas em ambientes secos.',
+    compatibility: 'Uso exclusivo em áreas internas. Não recomendada para superfícies que receberão revestimento cerâmico.'
   },
   {
     id: 'm5',
     category: 'Massas',
-    name: 'Massa Base plus 33',
-    description: 'Massa base de alta performance para revestimentos e acabamentos profissionais.',
+    name: 'Massa Base Plus 33',
+    description: 'Massa base de alta performance para revestimentos e acabamentos técnicos.',
     image: '/massa_base_plus_33.webp',
     rating: 4.9,
-    specs: ['Tipo: Base Plus', 'Alta Performance', 'Uso Profissional'],
-    applications: ['Base para Pintura', 'Revestimentos', 'Acabamento'],
-    whatIsIt: 'Composto de alta tecnologia para preparação de superfícies que receberão acabamentos nobres e tintas de alto brilho.',
-    selectionCriteria: 'Utilizada por profissionais que buscam o mais alto nível de nivelamento (Nível 5 de acabamento).'
+    specs: ['Tipo: Base Plus', 'Uso: Profissional', 'Acabamento Nível 5'],
+    applications: ['Base para Pintura de Alto Brilho', 'Revestimentos Nobres', 'Sistemas EIFS'],
+    whatIsIt: 'Composto técnico de alta tecnologia para preparação de superfícies que receberão acabamentos críticos ou tintas de alto brilho que evidenciam imperfeições.',
+    selectionCriteria: 'Utilizada quando o projeto exige o Nível 5 de acabamento em drywall (superfície totalmente recoberta por massa).',
+    compatibility: 'Compatível com chapas Glasroc e cimentícias em sistemas de fachada leve.'
   },
   {
     id: 'm6',
     category: 'Massas',
     name: 'Massa Base Coat Profort',
-    description: 'Massa base coat para sistemas de revestimento em fachadas. Alta durabilidade.',
+    description: 'Massa base coat para sistemas de fechamento externo. Máxima durabilidade.',
     image: '/massa_base_coat.webp',
     rating: 5,
-    specs: ['Marca: Profort', 'Uso: Fachadas', 'Alta Durabilidade'],
-    applications: ['Fachadas', 'Revestimento Externo', 'Base Coat'],
-    whatIsIt: 'Cimento polimérico reforçado com fibras, essencial para o sistema EIFS e fechamentos externos em steel frame.',
-    selectionCriteria: 'Fundamental para garantir a integridade e flexibilidade da fachada contra variações térmicas.',
+    specs: ['Marca: Profort', 'Uso: Fachadas LSF', 'Cimento Polimérico'],
+    applications: ['Revestimento de Placas Cimentícias', 'Base para Texturas Externas', 'Tratamento de Superfície'],
+    whatIsIt: 'Cimento polimérico reforçado com fibras, essencial para garantir a flexibilidade e resistência de fachadas em Steel Frame contra fissuras.',
+    selectionCriteria: 'Fundamental para assegurar a estanqueidade e a estabilidade da fachada contra vibrações estruturais e variações climáticas.',
+    compatibility: 'Deve ser usada com malha de fibra de vidro em toda a superfície da fachada.',
     faq: [
-      { question: 'Quanto rende um saco?', answer: 'O rendimento médio é de 1,2 kg/m² por mm de espessura aplicada.' }
+      { question: 'Pode ser usada como massa única?', answer: 'Sim, em sistemas de fachada LSF ela atua como camada de base, regularização e acabamento técnico.' }
     ]
   },
   {
     id: 'm7',
     category: 'Massas',
-    name: 'Gesso Cola Saco',
-    description: 'Gesso cola para fixação de placas e molduras. Secagem rápida e alta aderência.',
+    name: 'Gesso Cola 20kg',
+    description: 'Gesso cola para fixação de molduras e placas decorativas. Secagem rápida.',
     image: '/gesso_cola_saco.jpg',
     rating: 4.8,
-    specs: ['Embalagem: 20kg', 'Tipo: Cola', 'Secagem Rápida'],
-    applications: ['Fixação de Placas', 'Molduras', 'Sancas'],
-    whatIsIt: 'Adesivo à base de gesso com aditivos que prolongam o tempo de trabalho e garantem fixação química superior.',
-    selectionCriteria: 'Indicado para colagem de molduras de gesso e placas decorativas em substratos de gesso ou alvenaria.'
+    specs: ['Embalagem: 20kg', 'Tipo: Adesivo', 'Secagem: Rápida'],
+    applications: ['Fixação de Molduras de Gesso', 'Sancas', 'Placas 3D', 'Rodapés de Gesso'],
+    whatIsIt: 'Adesivo em pó de base gesso com aditivos químicos que garantem uma "pega" rápida e colagem estrutural de elementos decorativos.',
+    selectionCriteria: 'Indicado para instaladores que buscam segurança na fixação de molduras pesadas ou sancas amplas.',
+    compatibility: 'Pode ser aplicado sobre drywall, reboco de cimento ou concreto.'
   },
   {
     id: 'm8',
     category: 'Massas',
-    name: 'Gesso em pó Marília',
-    description: 'Gesso em pó massa fina para acabamentos e moldagens. Alta qualidade.',
+    name: 'Gesso em pó Marília 40kg',
+    description: 'Gesso em pó massa fina para acabamentos manuais. Alta pureza e brancura.',
     image: '/gesso_em_po_marilia.jpg',
     rating: 4.7,
-    specs: ['Embalagem: 40kg', 'Marca: Marília', 'Massa Fina'],
-    applications: ['Acabamento', 'Moldagens', 'Detalhes'],
-    whatIsIt: 'Gesso natural de alta pureza e brancura, moagem extrafina para garantir superfícies espelhadas.',
-    selectionCriteria: 'Preferido por gesseiros para revestimento direto sobre laje ou blocos de concreto em Curitiba.'
+    specs: ['Embalagem: 40kg', 'Marca: Marília', 'Tipo: Massa Fina'],
+    applications: ['Revestimento de Paredes', 'Pequenos Reparos', 'Moldagens em Obra'],
+    whatIsIt: 'Gesso natural de alta pureza, com moagem controlada para garantir superfícies extremamente lisas e brancas.',
+    selectionCriteria: 'O preferido por gesseiros tradicionais de Curitiba para revestimento direto sobre blocos de concreto ou lajes.',
+    faq: [
+      { question: 'Dá para usar como massa de junta?', answer: 'Não recomendado. O gesso comum não possui a flexibilidade necessária para juntas de drywall, podendo causar trincas.' }
+    ]
   },
   {
     id: 'f1',
     category: 'Drywall',
     name: 'Fita para Cimentícia 102mm x 46m',
-    description: 'Fita especial para placas cimentícias. Alta aderência e resistência à umidade.',
+    description: 'Fita de malha de vidro para tratamento de juntas em áreas externas.',
     image: '/fita_para_cimenticia_102mm_x_46m.png',
     rating: 4.9,
-    specs: ['Largura: 102mm', 'Comprimento: 46m', 'Uso: Placas Cimentícias'],
-    applications: ['Placas Cimentícias', 'Áreas Externas', 'Ambientes Úmidos'],
-    whatIsIt: 'Fita de malha de fibra de vidro alcalino-resistente, projetada para absorver as tensões das juntas em fachadas externas.',
-    selectionCriteria: 'Essencial para evitar fissuras nas juntas de placas cimentícias em sistemas de fachada.',
-    compatibility: 'Deve ser utilizada com massa base coat ou massa para cimentícia específica.'
+    specs: ['Largura: 102mm', 'Material: Fibra de Vidro', 'Resistente a Álcalis'],
+    applications: ['Juntas de Placas Cimentícias', 'Juntas de Glasroc X', 'Reforço de Fachadas'],
+    whatIsIt: 'Fita de malha de fibra de vidro com tratamento especial para suportar a alcalinidade do cimento, projetada para absorver tensões externas.',
+    selectionCriteria: 'Essencial para evitar fissuras nas juntas de sistemas externos. A largura de 102mm garante a cobertura ideal da zona de tensão.',
+    compatibility: 'Obrigatória em fechamentos de fachada LSF com massa base coat.',
+    faq: [
+      { question: 'Pode usar fita de papel na cimentícia?', answer: 'Não. O papel apodrece com a umidade externa e não resiste à alcalinidade das massas cimentícias.' }
+    ]
   },
   {
     id: 'f2',
     category: 'Fitas',
     name: 'Fita Telada Azul Ancora',
-    description: 'Fita telada em fibra de vidro. Maior resistência para juntas e áreas de maior tensão.',
+    description: 'Fita telada em fibra de vidro para reforço de juntas e reparos rápidos.',
     image: '/fita_telada_azul_-_ancora.jpg',
     rating: 4.9,
-    specs: ['Material: Fibra de Vidro', 'Marca: Ancora', 'Cor: Azul'],
-    applications: ['Placas Cimentícias', 'Áreas de Tensão', 'Juntas Estruturais'],
-    whatIsIt: 'Fita autoadesiva de fibra de vidro com tratamento especial para resistência a álcalis, diferenciada pela cor azul.',
-    selectionCriteria: 'Recomendada para reparos rápidos e reforço de juntas em áreas críticas de movimentação estrutural.'
+    specs: ['Material: Fibra de Vidro', 'Cor: Azul Especial', 'Autoadesiva'],
+    applications: ['Reparo de Trincas', 'Reforço de Cantos', 'Drywall Interno'],
+    whatIsIt: 'Fita autoadesiva de malha de fibra de vidro, diferenciada pela cor azul que indica tratamento superior de resistência.',
+    selectionCriteria: 'Recomendada para manutenção e reparos em drywall ou para reforçar áreas de maior vibração estrutural interna.',
+    compatibility: 'Utilizar com massa pronta para drywall em camadas finas.'
   },
   {
     id: 'f3',
     category: 'Fitas',
-    name: 'Fita Papel Gypsum',
-    description: 'Fita de papel microperfurada de alta resistência. Ideal para tratamento de juntas e cantos internos.',
+    name: 'Fita de Papel Gypsum microperfurada',
+    description: 'Fita de papel kraft especial para tratamento de juntas internas normatizado.',
     image: '/fita_papel.jpg',
     rating: 5,
-    specs: ['Material: Papel', 'Marca: Gypsum', 'Microperfurada'],
-    applications: ['Tratamento de Juntas', 'Reforço de Cantos', 'Acabamento'],
-    whatIsIt: 'Fita de papel kraft especial com fibras longas e microperfurações que facilitam a saída do ar durante a aplicação.',
-    selectionCriteria: 'A fita de papel é a única recomendada por normas técnicas para o tratamento de juntas em sistemas drywall internos.',
+    specs: ['Material: Papel Kraft', 'Característica: Microperfurada', 'Marca: Gypsum'],
+    applications: ['Tratamento de Juntas de Drywall', 'Reforço de Ângulos Internos'],
+    whatIsIt: 'Fita de papel especial com fibras longas dispostas para máxima resistência mecânica, com microperfurações que impedem a formação de bolhas de ar.',
+    selectionCriteria: 'A fita de papel é a única recomendada pelas normas NBR para o tratamento de juntas em paredes e forros de drywall internos.',
+    compatibility: 'Ideal para chapas ST, RU e RF.',
     faq: [
-      { question: 'Por que usar papel em vez de tela?', answer: 'O papel possui maior resistência mecânica e evita microfissuras que a fita telada simples pode permitir no drywall.' }
+      { question: 'Por que usar papel se a tela é autoadesiva?', answer: 'O papel "trava" a junta quimicamente com a massa, oferecendo uma resistência mecânica muito superior e prevenindo trincas futuras.' }
     ]
   },
   {
     id: 'f4',
     category: 'Fitas',
     name: 'Fita Metálica para Canto Ancora',
-    description: 'Fita metálica para proteção e reforço de cantos externos. Acabamento perfeito e durável.',
+    description: 'Fita de papel reforçada com tiras de aço para cantos externos perfeitos.',
     image: '/fita_metalica_para_canto,_ancora.webp',
     rating: 5,
-    specs: ['Material: Metal', 'Marca: Ancora', 'Uso: Cantos'],
-    applications: ['Proteção de Cantos', 'Acabamento Externo', 'Reforço Estrutural'],
-    whatIsIt: 'Fita de papel reforçada com duas tiras de aço galvanizado, flexível para se ajustar a qualquer ângulo de canto.',
-    selectionCriteria: 'Indispensável para cantos externos de drywall, protegendo contra impactos e garantindo alinhamento perfeito.'
+    specs: ['Material: Papel + Aço', 'Uso: Cantos Externos', 'Marca: Ancora'],
+    applications: ['Proteção de Cantos de Paredes', 'Acabamento de Vigas e Pilares', 'Sancas'],
+    whatIsIt: 'Fita de papel reforçada com duas tiras paralelas de aço galvanizado, que garantem rigidez e alinhamento milimétrico em quinas.',
+    selectionCriteria: 'Indispensável para cantos de alto tráfego que necessitam de proteção contra batidas e um acabamento reto impecável.',
+    compatibility: 'Aplicável em qualquer sistema drywall.'
   },
   {
     id: 'f5',
     category: 'Fitas',
-    name: 'Fita Banda Acústica 70mm x 10m Placo',
-    description: 'Fita especial para isolamento acústico. Reduz a propagação de ruídos entre ambientes.',
+    name: 'Fita Banda Acústica Placo 70mm',
+    description: 'Fita de espuma para vedação acústica e estanqueidade de sistemas.',
     image: '/fita_banda_acustica.webp',
     rating: 4.8,
-    specs: ['Largura: 70mm', 'Comprimento: 10m', 'Marca: Placo'],
-    applications: ['Isolamento Acústico', 'Base de Perfis', 'Redução de Ruído'],
-    whatIsIt: 'Fita de espuma de polietileno autoadesiva aplicada na base de guias e montantes em contato com a estrutura.',
-    selectionCriteria: 'Utilizada para vedar a passagem de som pelo piso, teto e paredes laterais, essencial para o desempenho acústico do sistema.'
+    specs: ['Largura: 70mm', 'Material: Espuma de Polietileno', 'Marca: Placo'],
+    applications: ['Base de Perfis de Drywall', 'Vedações de Janelas LSF', 'Isolamento de Vibração'],
+    whatIsIt: 'Fita de espuma autoadesiva aplicada no verso dos perfis (guias) que ficam em contato com a estrutura (laje/piso).',
+    selectionCriteria: 'Essencial para projetos que exigem conforto acústico, pois elimina a "ponte sonora" entre a parede e a estrutura do prédio.',
+    faq: [
+      { question: 'É obrigatório usar?', answer: 'Sim, se você deseja que o isolamento acústico das placas e da lã funcione conforme o esperado no projeto.' }
+    ]
   },
   {
     id: 'pa1',
@@ -241,7 +259,12 @@ export const PRODUCTS: Product[] = [
     specs: ['Bitola: 3,5mm', 'Comprimento: 35mm', 'Tipo: GN35'],
     applications: ['Fixação de Placas ST', 'Fixação de Placas RU', 'Montagem de Forros'],
     whatIsIt: 'Parafuso trombeta com rosca fina e tratamento fosfatizado para prevenir corrosão sob a massa.',
-    selectionCriteria: 'O modelo de 35mm é ideal para a fixação de segunda camada de placas ou chapas de 15mm.'
+    selectionCriteria: 'O modelo de 35mm é ideal para a fixação de segunda camada de placas ou chapas de 15mm.',
+    compatibility: 'Uso em perfis de drywall de espessura 0.50mm.',
+    faq: [
+      { question: 'Pode ser usado em metal?', answer: 'Sim, é ideal para fixar chapas em perfis metálicos de até 0.50mm.' },
+      { question: 'Precisa de pré-furo?', answer: 'Não, a ponta agulha permite a perfuração direta no drywall e no metal leve.' }
+    ]
   },
   {
     id: 'pa2',
@@ -266,7 +289,11 @@ export const PRODUCTS: Product[] = [
     specs: ['Bitola: 13mm', 'Comprimento: 42mm', 'Tipo: L.B'],
     applications: ['Fixação de Perfis', 'Estruturas Metálicas', 'Steel Frame'],
     whatIsIt: 'Parafuso "lentilha baixo" autoperfurante, projetado para unir perfis metálicos com mínima interferência na superfície.',
-    selectionCriteria: 'Indicado para junção de guia com montante onde o ressalto da cabeça deve ser mínimo.'
+    selectionCriteria: 'Indicado para junção de guia com montante onde o ressalto da cabeça deve ser mínimo.',
+    compatibility: 'Uso em perfis de aço galvanizado de até 2.0mm em Steel Frame.',
+    faq: [
+      { question: 'Ele fura o perfil sozinho?', answer: 'Sim, possui ponta broca capaz de perfurar chapas de aço sem necessidade de furação prévia.' }
+    ]
   },
   {
     id: 'pa4',
@@ -278,7 +305,11 @@ export const PRODUCTS: Product[] = [
     specs: ['Bitola: 3,5mm', 'Comprimento: 25mm', 'Marca: Patta'],
     applications: ['Placas Finas', 'Acabamentos', 'Fixação Rápida'],
     whatIsIt: 'Parafuso padrão para fixação de chapas de gesso de 12.5mm em perfis de aço leve.',
-    selectionCriteria: 'O parafuso mais utilizado em obras de drywall residencial.'
+    selectionCriteria: 'O parafuso mais utilizado em obras de drywall residencial.',
+    compatibility: 'Compatível com perfis de 48, 70 e 90mm de drywall.',
+    faq: [
+      { question: 'Quantos parafusos por placa?', answer: 'Recomenda-se o uso de aproximadamente 25 a 30 parafusos por placa de drywall padrão.' }
+    ]
   },
   {
     id: 'pa5',
@@ -290,7 +321,11 @@ export const PRODUCTS: Product[] = [
     specs: ['Tipo: L.A', 'Uso: Estruturas Leves', 'Alta Resistência'],
     applications: ['Montagem de Perfis', 'Estruturas Auxiliares', 'Fixações Leves'],
     whatIsIt: 'Parafuso "lentilha agulha" para união de perfis metálicos de espessura até 0.5mm.',
-    selectionCriteria: 'Ideal para montagem de caixilhos e reforços internos em paredes de drywall.'
+    selectionCriteria: 'Ideal para montagem de caixilhos e reforços internos em paredes de drywall.',
+    compatibility: 'Uso em estruturas de drywall interno.',
+    faq: [
+      { question: 'Qual a diferença para o L.B?', answer: 'O L.A possui ponta agulha para perfis finos (0.5mm), enquanto o L.B possui ponta broca para perfis mais grossos.' }
+    ]
   },
   {
     id: 'pl1',
@@ -300,12 +335,13 @@ export const PRODUCTS: Product[] = [
     image: '/chapa_rf_rosa.jpg',
     rating: 4.9,
     specs: ['Dimensão: 1,20 x 1,80m', 'Tipo: RF (Resistente ao Fogo)', 'Cor: Rosa'],
-    applications: ['Rotas de Fuga', 'Cozinhas', 'Áreas com Risco de Incêndio'],
-    whatIsIt: 'A Chapa RF (Resistente ao Fogo) possui aditivos em seu núcleo de gesso e fibra de vidro, o que retarda a propagação do fogo e mantém a integridade estrutural por mais tempo.',
-    selectionCriteria: 'Obrigatória em caixas de escada, rotas de fuga e compartimentação de riscos de incêndio conforme normas do corpo de bombeiros.',
-    compatibility: 'Deve ser utilizada com massa e fitas específicas que também suportem altas temperaturas.',
+    applications: ['Rotas de Fuga', 'Cozinhas', 'Áreas com Risco de Incêndio', 'Enclausuramento de Escadas'],
+    whatIsIt: 'A Chapa RF (Resistente ao Fogo) possui aditivos em seu núcleo de gesso e fibra de vidro, o que retarda a propagação do fogo e mantém a integridade estrutural por mais tempo em caso de sinistro.',
+    selectionCriteria: 'Obrigatória em caixas de escada, rotas de fuga e compartimentação de riscos de incêndio conforme normas NBR 15758 e exigências do corpo de bombeiros.',
+    compatibility: 'Deve ser utilizada em conjunto com estrutura metálica normatizada e massa para juntas que suporte as mesmas condições térmicas.',
     faq: [
-      { question: 'Ela é totalmente à prova de fogo?', answer: 'Ela é resistente, o que significa que retarda a queima por um período determinado (ex: 30, 60 ou 90 min), mas não é indestrutível.' }
+      { question: 'Ela é totalmente à prova de fogo?', answer: 'Ela é resistente, o que significa que retarda a queima por um período determinado (ex: 30, 60 ou 120 min dependendo do sistema), mas não é indestrutível.' },
+      { question: 'Pode ser usada no teto?', answer: 'Sim, inclusive é muito recomendada para forros de cozinhas industriais e áreas técnicas.' }
     ]
   },
   {
@@ -316,11 +352,12 @@ export const PRODUCTS: Product[] = [
     image: '/chapa_ru_verde.jpg',
     rating: 4.8,
     specs: ['Dimensão: 1,20 x 1,80m', 'Tipo: RU (Resistente à Umidade)', 'Cor: Verde'],
-    applications: ['Banheiros', 'Cozinhas', 'Áreas Externas Cobertas'],
-    whatIsIt: 'Chapa de gesso com hidrofugantes em seu núcleo, que reduzem a absorção de água por capilaridade.',
-    selectionCriteria: 'Essencial para paredes de banheiros, cozinhas e lavanderias onde haverá aplicação de revestimento cerâmico.',
+    applications: ['Banheiros', 'Cozinhas', 'Áreas Externas Cobertas', 'Lavanderias'],
+    whatIsIt: 'Chapa de gesso com hidrofugantes em seu núcleo, que reduzem a absorção de água por capilaridade. Identificada pela cor verde do papel cartão.',
+    selectionCriteria: 'Essencial para paredes de banheiros, cozinhas e lavanderias onde haverá aplicação de revestimento cerâmico ou contato com vapor.',
+    compatibility: 'Recomendado o uso de massa hidrofugante e fitas de papel para garantir a estanqueidade das juntas.',
     faq: [
-      { question: 'Pode tomar chuva?', answer: 'Não. Ela resiste à umidade ambiente, mas não ao contato direto e prolongado com água ou chuva.' }
+      { question: 'Pode tomar chuva?', answer: 'Não diretamente. Ela resiste à umidade ambiente e respingos, mas não deve ser exposta diretamente à chuva contínua sem proteção externa.' }
     ]
   },
   {
@@ -331,11 +368,12 @@ export const PRODUCTS: Product[] = [
     image: '/chapa_drywall_st_branca.jpg',
     rating: 4.8,
     specs: ['Dimensão: 1,20 x 1,80m', 'Espessura: 12.5mm', 'Tipo: ST Branca'],
-    applications: ['Divisórias', 'Forros', 'Revestimentos'],
-    whatIsIt: 'A placa standard (ST) é a base de qualquer sistema drywall interno, composta por um núcleo de gesso natural e aditivos, revestida por papel cartão.',
-    selectionCriteria: 'A solução mais econômica para divisórias internas de escritórios e residências em ambientes sem umidade.',
+    applications: ['Divisórias Internas', 'Forros', 'Revestimentos de Alvenaria', 'Closets'],
+    whatIsIt: 'A placa standard (ST) é a base de qualquer sistema drywall interno, composta por um núcleo de gesso natural e aditivos, revestida por papel cartão cinza/branco.',
+    selectionCriteria: 'A solução mais econômica e eficiente para divisórias internas de escritórios e residências em ambientes sem umidade.',
+    compatibility: 'Compatível com todos os perfis de drywall (48, 70, 90mm) e massas de base gesso.',
     faq: [
-      { question: 'Posso pendurar TV nela?', answer: 'Sim, desde que utilize buchas específicas para drywall (foguete ou basculante) e, se possível, fixe na estrutura metálica.' }
+      { question: 'Posso pendurar TV nela?', answer: 'Sim, desde que utilize buchas específicas para drywall (foguete ou basculante) e, preferencialmente, fixe o suporte nos montantes metálicos.' }
     ]
   },
   {
@@ -346,21 +384,29 @@ export const PRODUCTS: Product[] = [
     image: '/chapa_drywall_st_branca_fortissima.webp',
     rating: 5,
     specs: ['Dimensão: 1,20 x 1,80m', 'Espessura: 12.5mm', 'Marca: Fortissima'],
-    applications: ['Áreas de Alto Tráfego', 'Paredes Estruturais', 'Divisórias Reforçadas'],
-    whatIsIt: 'Placa premium com densidade superior e reforço de fibras, oferecendo maior resistência a impactos e fixação de cargas.',
-    selectionCriteria: 'Indicada para corredores de escolas, hospitais ou locais onde a parede sofrerá batidas constantes.'
+    applications: ['Áreas de Alto Tráfego', 'Paredes de Escolas', 'Hospitais', 'Divisórias Reforçadas'],
+    whatIsIt: 'Placa premium com densidade superior e reforço de fibras minerais, oferecendo maior resistência a impactos e melhor isolamento acústico que a ST comum.',
+    selectionCriteria: 'Indicada para corredores de grande circulação ou locais onde a parede sofrerá batidas mecânicas constantes.',
+    compatibility: 'Utiliza os mesmos perfis e acessórios do sistema drywall padrão, mas exige parafusos de alta performance para perfuração.',
+    faq: [
+      { question: 'Ela é mais pesada que a comum?', answer: 'Sim, devido à sua maior densidade e reforços internos, o que também garante sua maior resistência.' }
+    ]
   },
   {
     id: 'pl5',
     category: 'Placas',
-    name: 'Chapa Glasroc',
-    description: 'Placa cimentícia de alta performance. Resistência superior à água e ao impacto, ideal para áreas externas.',
+    name: 'Chapa Glasroc X',
+    description: 'Placa de gesso técnica para fachadas e áreas externas. Alta resistência a intempéries e raios UV.',
     image: '/chapa_glasroc.jpg',
     rating: 5,
-    specs: ['Tipo: Cimentícia', 'Marca: Glasroc', 'Alta Resistência'],
-    applications: ['Fachadas', 'Áreas Externas', 'Ambientes Úmidos'],
-    whatIsIt: 'Placa técnica de gesso com faces revestidas por véu de vidro alcalino-resistente, combinando a leveza do drywall com a resistência externa.',
-    selectionCriteria: 'A melhor escolha para fachadas arquitetônicas que exigem acabamento liso e alta estabilidade dimensional.'
+    specs: ['Tipo: Gesso com Véu de Vidro', 'Marca: Placo', 'Resistência Externa'],
+    applications: ['Fachadas', 'Áreas Externas', 'Beirais', 'Ambientes Muito Úmidos'],
+    whatIsIt: 'Placa técnica composta por núcleo de gesso aditivado com biocidas e vidro, revestida em ambas as faces por véu de vidro alcalino-resistente. Não contém papel cartão.',
+    selectionCriteria: 'A escolha definitiva para fechamentos externos em Light Steel Frame que buscam rapidez de instalação do drywall com a resistência do cimento.',
+    compatibility: 'Deve ser instalada com massa base coat e fita de malha de vidro de 102mm para garantir a integridade da fachada.',
+    faq: [
+      { question: 'Ela racha como o cimento?', answer: 'Não. Devido à sua estabilidade dimensional superior, a Glasroc X tem baixíssima dilatação térmica, reduzindo drasticamente o risco de fissuras.' }
+    ]
   },
   {
     id: 'pl6',
@@ -370,9 +416,13 @@ export const PRODUCTS: Product[] = [
     image: '/placa_cimenticia_eternit_6-8-10mm.jpg',
     rating: 4.9,
     specs: ['Marca: Eternit', 'Espessuras: 6, 8 ou 10mm', 'Uso Interno/Externo'],
-    applications: ['Fachadas', 'Áreas Molhadas', 'Revestimentos Externos'],
-    whatIsIt: 'Placa de fibrocimento produzida com a tecnologia CRFS (Cimento Reforçado com Fio Sintético).',
-    selectionCriteria: 'Versátil para fechamentos externos, mezaninos e paredes com alta exigência de dureza superficial.'
+    applications: ['Fachadas', 'Áreas Molhadas', 'Revestimentos Externos', 'Placas de Piso'],
+    whatIsIt: 'Placa de fibrocimento produzida com a tecnologia CRFS (Cimento Reforçado com Fio Sintético), oferecendo alta dureza superficial.',
+    selectionCriteria: 'Versátil para fechamentos externos e áreas que exigem máxima resistência à abrasão e impactos severos.',
+    compatibility: 'Exige estrutura metálica com espaçamento reduzido e parafusos específicos para cimentícia (com aletas).',
+    faq: [
+      { question: 'Pode ficar no tempo?', answer: 'Sim, é totalmente resistente à água e ao sol, sendo uma solução clássica para fechamentos externos.' }
+    ]
   },
   {
     id: 'pl7',
@@ -382,152 +432,189 @@ export const PRODUCTS: Product[] = [
     image: '/painel_lp_osb_home_plus.jpg',
     rating: 5,
     specs: ['Marca: LP', 'Tipo: OSB', 'Uso Estrutural'],
-    applications: ['Steel Frame', 'Coberturas', 'Estruturas'],
-    whatIsIt: 'Painel de tiras de madeira orientadas e prensadas com resinas especiais que garantem alta resistência estrutural e rigidez.',
-    selectionCriteria: 'Indispensável para o contraventamento de paredes e suporte de telhados shingle em sistemas LSF.',
+    applications: ['Contraventamento Steel Frame', 'Bases de Telhado Shingle', 'Mezaninos', 'Pisos'],
+    whatIsIt: 'Painel de tiras de madeira orientadas (Oriented Strand Board) prensadas com resinas MDI, garantindo alta rigidez e resistência estrutural.',
+    selectionCriteria: 'Indispensável para conferir rigidez estrutural às paredes de LSF e servir de base plana para telhados asfálticos.',
+    compatibility: 'Deve ser protegido pela membrana hidrófuga (barreira de água) imediatamente após a instalação.',
     faq: [
-      { question: 'Pode ficar exposto ao sol?', answer: 'O modelo Home Plus possui proteção temporária, mas deve ser coberto pela barreira de água o quanto antes.' }
+      { question: 'Pode pegar chuva?', answer: 'O modelo Home Plus resiste à umidade durante a obra, mas não foi projetado para exposição permanente ao tempo sem revestimento.' }
     ]
   },
   {
     id: 'pe1',
     category: 'Perfis',
     name: 'Perfil Drywall Guia 48 Barbieri',
-    description: 'Perfil guia horizontal de 48mm. Base essencial para estruturas de drywall, instalado no piso e teto.',
+    description: 'Perfil guia horizontal de 48mm para drywall. Base do sistema de paredes e divisórias.',
     image: '/perfil_drywall_guia_48_barbieri.webp',
     rating: 4.9,
-    specs: ['Largura: 48mm', 'Comprimento: 3000mm', 'Marca: Barbieri'],
-    applications: ['Base de Paredes', 'Estrutura de Forros', 'Fixação de Montantes'],
-    whatIsIt: 'Perfil de aço galvanizado em formato de "U", normatizado para garantir o alinhamento de paredes divisórias.',
-    selectionCriteria: 'Utilize para paredes de espessura final aproximada de 73mm (chapa simples em ambos os lados).'
+    specs: ['Largura: 48mm', 'Comprimento: 3000mm', 'Galvanização: Z270/Z180'],
+    applications: ['Base de Paredes', 'Estrutura de Forros', 'Fixação de Montantes', 'Sancas'],
+    whatIsIt: 'Perfil de aço galvanizado em formato de "U", normatizado para garantir o alinhamento e fixação de paredes divisórias no piso e no teto.',
+    selectionCriteria: 'Utilize para paredes de espessura final reduzida (aprox. 73mm), ideal para ganhar área útil em apartamentos.',
+    compatibility: 'Compatível exclusivamente com Montante de 48mm e parafusos metal-metal (LA ou LB).',
+    faq: [
+      { question: 'Pode ser usado em Steel Frame?', answer: 'Não. Este perfil é exclusivo para drywall (vedação interna). Para Steel Frame (estrutural), utilize perfis com espessura de aço superior e galvanização Z275.' }
+    ]
   },
   {
     id: 'pe2',
     category: 'Perfis',
     name: 'Perfil Montante 70 Barbieri',
-    description: 'Perfil vertical de 70mm com galvanização Z180. Alta resistência estrutural para paredes e divisórias.',
+    description: 'Perfil vertical de 70mm com galvanização Z180. Alta rigidez para paredes e divisórias.',
     image: '/perfil-montante-70-barbieri.jpg',
     rating: 5,
-    specs: ['Largura: 70mm', 'Comprimento: 3000mm', 'Galvanização: Z180'],
-    applications: ['Estrutura de Paredes', 'Divisórias', 'Steel Frame'],
-    whatIsIt: 'Perfil em formato de "C" com furações para passagem de instalações elétricas e hidráulicas.',
-    selectionCriteria: 'O montante de 70mm é o mais versátil para divisórias de escritórios que exigem maior rigidez e espaço para dutos.'
+    specs: ['Largura: 70mm', 'Comprimento: 3000mm', 'Aço: Galvanizado Z180'],
+    applications: ['Estrutura de Paredes', 'Divisórias Corporativas', 'Forros Pesados'],
+    whatIsIt: 'Perfil em formato de "C" com furações para passagem de instalações elétricas e hidráulicas sem necessidade de cortes em obra.',
+    selectionCriteria: 'O montante de 70mm é o mais versátil para divisórias que exigem maior rigidez e espaço para passagens técnicas de até 1.5 polegadas.',
+    compatibility: 'Deve ser encaixado em Guia de 70mm e fixado com parafusos metal-metal.',
+    faq: [
+      { question: 'Qual a distância entre montantes?', answer: 'Geralmente 40cm ou 60cm, dependendo da altura da parede e do tipo de placa.' }
+    ]
   },
   {
     id: 'pe3',
     category: 'Perfis',
     name: 'Perfil Guia de 70 Barbieri',
-    description: 'Perfil guia de 70mm para estruturas mais robustas. Barbieri com galvanização premium.',
+    description: 'Perfil guia de 70mm para estruturas robustas. Galvanização premium Barbieri.',
     image: '/perfil_guia_de_70_barbieri.jpg',
     rating: 4.9,
     specs: ['Largura: 70mm', 'Comprimento: 3000mm', 'Marca: Barbieri'],
-    applications: ['Estruturas Reforçadas', 'Paredes Duplas', 'Base de Montantes'],
-    whatIsIt: 'Guia horizontal correspondente ao montante de 70mm, fabricada com aço de alta qualidade Barbieri.',
-    selectionCriteria: 'Indicada para bases de paredes que receberão portas pesadas ou grandes vãos.'
+    applications: ['Estruturas Reforçadas', 'Paredes Duplas', 'Base de Montantes 70'],
+    whatIsIt: 'Guia horizontal correspondente ao montante de 70mm, fabricada com aço de alta qualidade Barbieri para garantir prumo e nível.',
+    selectionCriteria: 'Indicada para bases de paredes que receberão portas de madeira ou grandes vãos de vidro.',
+    compatibility: 'Utilizada sempre em par com montantes de 70mm.',
+    faq: [
+      { question: 'Precisa de bucha para fixar no chão?', answer: 'Sim, recomendamos o uso de buchas S6 ou S8 e parafusos adequados a cada 60cm.' }
+    ]
   },
   {
     id: 'pe4',
     category: 'Perfis',
     name: 'Perfil Guia de 90',
-    description: 'Perfil guia de 90mm para estruturas de grande porte e paredes espessas.',
+    description: 'Perfil guia de 90mm para estruturas de grande porte e paredes com alto isolamento.',
     image: '/perfil_guia_de_90.jpg',
     rating: 4.8,
-    specs: ['Largura: 90mm', 'Comprimento: 3000mm', 'Uso: Estruturas Grandes'],
-    applications: ['Paredes Espessas', 'Isolamento Acústico', 'Estruturas Robustas'],
-    whatIsIt: 'Guia larga para sistemas de drywall de alto desempenho, permitindo preenchimento com maior espessura de isolamento.',
-    selectionCriteria: 'Ideal para salas de cinema, estúdios ou paredes divisórias entre apartamentos.'
+    specs: ['Largura: 90mm', 'Comprimento: 3000mm', 'Uso: Sistemas de Alto Desempenho'],
+    applications: ['Paredes Espessas', 'Salas de Cinema', 'Estúdios', 'Divisórias Acústicas'],
+    whatIsIt: 'Guia larga para sistemas de drywall de alto desempenho, permitindo preenchimento com lãs minerais de maior espessura.',
+    selectionCriteria: 'Ideal para projetos que exigem isolamento acústico superior a 45dB ou paredes técnicas com tubulações de esgoto.',
+    compatibility: 'Exclusiva para montantes de 90mm.',
+    faq: [
+      { question: 'Cabe tubo de 75mm dentro?', answer: 'Sim, a largura de 90mm acomoda confortavelmente tubulações de esgoto e águas pluviais de médio porte.' }
+    ]
   },
   {
     id: 'pe5',
     category: 'Perfis',
     name: 'Montante de 48 Barbieri',
-    description: 'Perfil montante de 48mm. Ideal para divisórias leves e forros.',
+    description: 'Perfil montante de 48mm para divisórias leves e forros estruturados.',
     image: '/montante_de_48_barbieri.jpg',
     rating: 4.7,
     specs: ['Largura: 48mm', 'Comprimento: 3000mm', 'Marca: Barbieri'],
-    applications: ['Divisórias Leves', 'Forros', 'Revestimentos'],
-    whatIsIt: 'Montante estreito para economia de espaço interno em apartamentos e escritórios pequenos.',
-    selectionCriteria: 'Escolha para revestimentos de paredes existentes ("drylining") onde se deseja perder o mínimo de área útil.'
+    applications: ['Divisórias de Escritório', 'Forros F530', 'Revestimentos Estreitos'],
+    whatIsIt: 'Montante vertical estreito projetado para economizar espaço interno sem comprometer a estabilidade do plaqueamento.',
+    selectionCriteria: 'Escolha para revestimentos de paredes existentes (drylining) onde se deseja perder o mínimo de área útil possível.',
+    compatibility: 'Encaixe em Guia 48mm.',
+    faq: [
+      { question: 'Posso usar para forro?', answer: 'Sim, o perfil de 48mm é muito utilizado em forros estruturados (F530).' }
+    ]
   },
   {
     id: 'pe6',
     category: 'Perfis',
     name: 'Montante de 90',
-    description: 'Montante de 90mm para paredes com maior isolamento. Alta capacidade estrutural.',
+    description: 'Montante de 90mm para paredes robustas. Máxima capacidade de isolamento interno.',
     image: '/montante_de_90.png',
     rating: 4.9,
-    specs: ['Largura: 90mm', 'Comprimento: 3000mm', 'Alta Capacidade'],
-    applications: ['Isolamento Reforçado', 'Paredes Duplas', 'Áreas Acústicas'],
-    whatIsIt: 'Perfil vertical robusto que permite a criação de paredes com até 150mm de espessura final, dependendo do plaqueamento.',
-    selectionCriteria: 'Utilizado em paredes técnicas onde há necessidade de passagens hidráulicas de grande diâmetro.'
+    specs: ['Largura: 90mm', 'Comprimento: 3000mm', 'Alta Rigidez'],
+    applications: ['Paredes Altas', 'Isolamento Reforçado', 'Paredes Técnicas'],
+    whatIsIt: 'Perfil vertical robusto que permite a criação de paredes com até 150mm de espessura final, garantindo estabilidade para pés-direitos elevados.',
+    selectionCriteria: 'Utilizado em auditórios ou paredes industriais onde a resistência à pressão do vento e carga é crítica.',
+    compatibility: 'Encaixe em Guia 90mm.',
+    faq: [
+      { question: 'Qual a altura máxima dessa parede?', answer: 'Pode chegar a mais de 4 metros dependendo da modulação e do plaqueamento duplo.' }
+    ]
   },
   {
     id: 'pe7',
     category: 'Perfis',
     name: 'Montante Steel Frame 90',
-    description: 'Perfil estrutural para steel frame de 90mm. Ideal para construções completas em steel frame.',
+    description: 'Perfil estrutural para steel frame de 90mm. Aço Z275 de alta resistência.',
     image: '/montante_de_steel_frame_90.webp',
     rating: 5,
-    specs: ['Largura: 90mm', 'Comprimento: 3000mm', 'Uso: Steel Frame'],
-    applications: ['Construção Steel Frame', 'Estruturas de Casas', 'Paredes Portantes'],
-    whatIsIt: 'Perfil estrutural produzido em aço galvanizado Z275 de alta resistência. É a espinha dorsal de construções residenciais e comerciais em LSF.',
-    selectionCriteria: 'O montante de 90mm é o padrão para paredes portantes de casas térreas e sobrados, oferecendo o equilíbrio ideal entre custo e desempenho estrutural.',
-    compatibility: 'Compatível com Guias de 90mm e parafusos de cabeça chata ou flangeada para steel frame.'
+    specs: ['Largura: 90mm', 'Espessura: 0.80mm a 1.25mm', 'Galvanização: Z275'],
+    applications: ['Construção Steel Frame', 'Estruturas de Casas', 'Paredes Portantes', 'Vigas'],
+    whatIsIt: 'Perfil estrutural produzido em aço galvanizado Z275. É a espinha dorsal de construções residenciais em LSF (Light Steel Framing).',
+    selectionCriteria: 'O montante de 90mm é o padrão para paredes portantes de casas térreas e sobrados, oferecendo segurança estrutural comprovada por laudo.',
+    compatibility: 'Deve ser calculado por engenheiro responsável. Compatível com Guias de 90mm e parafusos de cabeça chata ou flangeada específicos.',
+    faq: [
+      { question: 'Pode construir sobrado com esse perfil?', answer: 'Sim, desde que dimensionado corretamente por um projeto estrutural, o perfil de 90mm é a base comum para sobrados em LSF.' }
+    ]
   },
   {
     id: 'pe8',
     category: 'Perfis',
     name: 'Montante Steel Frame 140',
-    description: 'Perfil estrutural para steel frame de 140mm. Máxima capacidade estrutural para grandes vãos.',
+    description: 'Perfil estrutural para steel frame de 140mm. Máxima capacidade para grandes vãos.',
     image: '/montante_de_steel_frame_140.jpg',
     rating: 5,
-    specs: ['Largura: 140mm', 'Comprimento: 3000mm', 'Máxima Capacidade'],
-    applications: ['Grandes Vãos', 'Estruturas Principais', 'Paredes Portantes'],
-    whatIsIt: 'Perfil de alma larga e alta espessura de aço, projetado para suportar cargas elevadas e vencer vãos maiores sem flexão.',
-    selectionCriteria: 'Indicado para paredes externas de sobrados de dois ou mais pavimentos e vigas de transição.',
-    compatibility: 'Combine com parafusos de alta resistência e guias de 140mm.'
+    specs: ['Largura: 140mm', 'Espessura: 0.95mm a 1.55mm', 'Galvanização: Z275'],
+    applications: ['Vigas de Transição', 'Grandes Vãos', 'Estruturas de Cobertura', 'Paredes de Sobrados'],
+    whatIsIt: 'Perfil de alma larga e alta espessura de aço, projetado para suportar cargas elevadas e vencer vãos maiores sem flexão indesejada.',
+    selectionCriteria: 'Indicado para paredes externas de sobrados de dois ou mais pavimentos e vigas que suportam lajes úmidas ou secas.',
+    compatibility: 'Exige fixadores de alta resistência e guias de 140mm.',
+    faq: [
+      { question: 'Serve para fazer telhado?', answer: 'Sim, o perfil de 140mm é excelente para tesouras de telhado com grandes vãos.' }
+    ]
   },
   {
     id: 'la1',
     category: 'Lã (Isolamento)',
     name: 'Lã de Pet',
-    description: 'Isolamento termo-acústico ecológico feito de material reciclado. Sustentável e eficiente.',
+    description: 'Isolamento termo-acústico ecológico feito de material reciclado. 100% sustentável.',
     image: '/la_de_pet.webp',
     rating: 4.9,
-    specs: ['Material: Pet Reciclado', 'Espessura: 50mm', 'Ecológico'],
-    applications: ['Isolamento Térmico', 'Isolamento Acústico', 'Construção Sustentável'],
-    whatIsIt: 'Manta isolante produzida a partir da reciclagem de garrafas PET, sem adição de resinas fenólicas.',
-    selectionCriteria: 'A melhor opção para quem busca sustentabilidade e facilidade de manuseio, pois não solta poeira irritante.',
+    specs: ['Material: Pet Reciclado', 'Espessura: 50mm', 'Hipoalergênica'],
+    applications: ['Isolamento Térmico', 'Isolamento Acústico', 'Hospitais', 'Residências'],
+    whatIsIt: 'Manta isolante produzida a partir da reciclagem de garrafas PET, sem adição de resinas fenólicas ou colas tóxicas.',
+    selectionCriteria: 'A melhor opção para quem busca saúde e facilidade de manuseio, pois não solta poeira irritante e pode ser tocada sem luvas.',
+    compatibility: 'Pode ser usada em qualquer sistema de drywall ou steel frame.',
     faq: [
-      { question: 'É inflamável?', answer: 'Não, ela possui tratamento antichamas e não propaga o fogo.' }
+      { question: 'É inflamável?', answer: 'Não. Ela possui tratamento antichamas autoextinguível, atendendo às normas de segurança contra incêndio.' }
     ]
   },
   {
     id: 'la2',
     category: 'Lã (Isolamento)',
     name: 'Lã de Rocha',
-    description: 'Manta de lã de rocha com tela. Excelente isolamento térmico e acústico, resistente ao fogo.',
+    description: 'Manta de lã de rocha de alta densidade. Máximo isolamento acústico e corta-fogo.',
     image: '/la_de_rocha.webp',
     rating: 5,
-    specs: ['Material: Lã de Rocha', 'Densidade: 64kg/m³', 'Espessura: 50mm'],
-    applications: ['Isolamento Térmico', 'Isolamento Acústico', 'Proteção contra Fogo'],
-    whatIsIt: 'Fibras minerais obtidas a partir de rochas basálticas fundidas, oferecendo o mais alto nível de resistência ao fogo.',
-    selectionCriteria: 'Obrigatória em salas de máquinas, cinemas e áreas que exigem isolamento acústico pesado e segurança contra incêndio.',
+    specs: ['Material: Rocha Basáltica', 'Densidade: 64kg/m³', 'Resistente a 750°C'],
+    applications: ['Isolamento Pesado', 'Cinemas', 'Salas de Máquinas', 'Proteção Passiva contra Fogo'],
+    whatIsIt: 'Fibras minerais obtidas a partir de rochas basálticas fundidas, oferecendo o mais alto nível de resistência ao calor e absorção sonora.',
+    selectionCriteria: 'Obrigatória em áreas com altíssima exigência acústica ou onde o projeto exige proteção passiva contra fogo reforçada.',
+    compatibility: 'Ideal para preenchimento de paredes RF (Rosa).',
     faq: [
-      { question: 'Qual a diferença para a lã de vidro?', answer: 'A lã de rocha possui maior densidade e resistência a temperaturas extremas (até 750°C).' }
+      { question: 'Qual a diferença para a lã de vidro?', answer: 'A lã de rocha é muito mais densa e suporta temperaturas significativamente mais altas, sendo superior em proteção contra incêndio.' }
     ]
   },
   {
     id: 'la3',
     category: 'Lã (Isolamento)',
     name: 'Lã de Vidro Isover',
-    description: 'Lã de vidro Isover de alta performance. Excelente isolamento termo-acústico.',
+    description: 'Lã de vidro Isover de alta performance. O padrão ouro em isolamento termo-acústico.',
     image: '/la_de_vidro_isover.webp',
     rating: 4.9,
-    specs: ['Marca: Isover', 'Material: Lã de Vidro', 'Alta Performance'],
-    applications: ['Isolamento Térmico', 'Isolamento Acústico', 'Forros e Paredes'],
-    whatIsIt: 'Manta isolante flexível e leve, com alto poder de compressão e absorção sonora.',
-    selectionCriteria: 'A solução clássica e mais econômica para isolamento de forros e divisórias de drywall em Curitiba.'
+    specs: ['Marca: Isover', 'Material: Vidro Reciclado', 'Alta Compressibilidade'],
+    applications: ['Isolamento Térmico', 'Isolamento Acústico em Forros', 'Divisórias Drywall'],
+    whatIsIt: 'Manta isolante flexível, leve e de fácil instalação, com alto poder de absorção sonora devido à sua estrutura porosa.',
+    selectionCriteria: 'A solução clássica e mais equilibrada em custo-benefício para isolamento de forros e divisórias residenciais em Curitiba.',
+    compatibility: 'Compatível com todos os sistemas drywall e LSF.',
+    faq: [
+      { question: 'Dá coceira?', answer: 'A tecnologia moderna da Isover reduz drasticamente o desprendimento de fibras, mas ainda recomendamos o uso de EPIs básicos para manuseio prolongado.' }
+    ]
   },
   {
     id: 'd1',
@@ -536,192 +623,251 @@ export const PRODUCTS: Product[] = [
     description: 'Adaptador angular para facilitar a aplicação de parafusos em locais de difícil acesso.',
     image: '/adaptador_angular_para_parafusadeira.webp',
     rating: 4.7,
-    specs: ['Tipo: Angular', 'Uso: Parafusadeira', 'Ângulo: 60°'],
-    applications: ['Locais de Difícil Acesso', 'Cantos', 'Instalações'],
-    whatIsIt: 'Acessório de impacto para parafusadeiras que permite o acesso a locais estreitos ou em ângulos onde o corpo da máquina não entra.',
-    selectionCriteria: 'Essencial para montagem de estruturas complexas de forros e sancas decorativas.'
+    specs: ['Tipo: Angular', 'Uso: Parafusadeira', 'Ângulo: 90°'],
+    applications: ['Locais de Difícil Acesso', 'Cantos de Sancas', 'Instalações em Nichos'],
+    whatIsIt: 'Acessório de impacto para parafusadeiras que permite o acesso a locais estreitos ou em ângulos onde o corpo da máquina não entra, transmitindo o torque de forma eficiente.',
+    selectionCriteria: 'Essencial para montagem de estruturas complexas de forros decorativos e móveis de drywall.',
+    compatibility: 'Compatível com qualquer parafusadeira de encaixe hexagonal padrão 1/4".'
   },
   {
     id: 'd2',
     category: 'Ferragens',
-    name: 'Adaptador de Tomada',
-    description: 'Adaptador de tomada 2P chato para 2P redondo. Prático e seguro.',
+    name: 'Adaptador de Tomada 2P+T',
+    description: 'Adaptador de tomada reforçado para ferramentas elétricas de canteiro.',
     image: '/adaptador_de_tomada.webp',
     rating: 4.5,
-    specs: ['Tipo: 2P', 'Corrente: 10A', 'Tensão: 250V'],
-    applications: ['Instalações Elétricas', 'Canteiros de Obra', 'Uso Geral'],
-    whatIsIt: 'Adaptador elétrico universal para compatibilização de ferramentas de canteiro com o padrão brasileiro de tomadas.'
+    specs: ['Tipo: 2P+T', 'Corrente: 10A/20A', 'Padrão: Brasileiro'],
+    applications: ['Canteiros de Obra', 'Uso de Furadeiras', 'Ferramentas de Bancada'],
+    whatIsIt: 'Adaptador elétrico de alta resistência para compatibilização de ferramentas e extensões no padrão NBR 14136.',
+    faq: [
+      { question: 'Suporta ferramentas potentes?', answer: 'Sim, mas verifique se a amperagem da ferramenta não excede a capacidade do adaptador e da rede local.' }
+    ]
   },
   {
     id: 'd3',
     category: 'Placas',
-    name: 'Compensado Fenólico',
-    description: 'Compensado fenólico de alta qualidade. Resistente à água, ideal para formas de concreto e estruturas.',
+    name: 'Compensado Fenólico Naval',
+    description: 'Compensado fenólico de alta qualidade para fôrmas e estruturas auxiliares.',
     image: '/compensado_fenolico.png',
     rating: 4.8,
-    specs: ['Tipo: Fenólico', 'Resistente à Água', 'Múltiplos Usos'],
-    applications: ['Formas de Concreto', 'Estruturas Temporárias', 'Construção Civil'],
-    whatIsIt: 'Chapa de madeira laminada colada com resina fenólica (WBP), garantindo alta resistência à umidade e reuso em formas.',
-    selectionCriteria: 'Utilizado em canteiros de steel frame para criação de fôrmas de radier e fechamentos temporários.'
+    specs: ['Tipo: Fenólico (WBP)', 'Resistência: Água/Umidade', 'Uso: Estrutural'],
+    applications: ['Fôrmas de Concreto', 'Canteiros de LSF', 'Fechamentos Temporários', 'Mezaninos'],
+    whatIsIt: 'Chapa de madeira laminada colada com resina fenólica resistente à fervura, garantindo estabilidade e reuso em condições úmidas.',
+    selectionCriteria: 'Utilizado em obras de Steel Frame para criação de fôrmas de radier e bases de apoio que necessitam de alta rigidez.',
+    compatibility: 'Pode receber pintura ou verniz para maior durabilidade.',
+    faq: [
+      { question: 'Pode ser usado como piso definitivo?', answer: 'Apesar da resistência, é um material técnico. Para pisos, recomendamos o uso de placas cimentícias ou OSB estrutural.' }
+    ]
   },
   {
     id: 'd4',
     category: 'Diversos',
-    name: 'Adesivo de Silicone Tytan Standard',
-    description: 'Adesivo de silicone para vedação e fixação. Resistente à água e intempéries.',
+    name: 'Adesivo de Silicone Tytan Professional',
+    description: 'Adesivo de silicone para vedação técnica e acabamentos de juntas.',
     image: '/adesivo_de_silicone_tytan_standard.webp',
     rating: 4.7,
-    specs: ['Marca: Tytan', 'Embalagem: 260g', 'Cor: Branco'],
-    applications: ['Vedação', 'Fixação', 'Acabamento'],
-    whatIsIt: 'Selante de silicone acético com fungicida, ideal para vedações em banheiros e cozinhas plaqueados com RU.',
-    selectionCriteria: 'Garante a estanqueidade em passagens de tubulações e encontros de paredes em áreas molháveis.'
+    specs: ['Marca: Tytan', 'Tipo: Acético', 'Cor: Branco/Incolor'],
+    applications: ['Vedação de Banheiros', 'Acabamento de Louças', 'Passagens de Tubos'],
+    whatIsIt: 'Selante de silicone profissional com fungicida, ideal para vedações em áreas molhadas plaqueadas com RU, prevenindo o bolor.',
+    selectionCriteria: 'Garante a estanqueidade elástica necessária em encontros de materiais com diferentes coeficientes de dilatação.',
+    faq: [
+      { question: 'Pode usar no Steel Frame externo?', answer: 'Para juntas externas, recomendamos o uso de selante de PU (Poliuretano), que possui maior resistência a UV e aceita pintura.' }
+    ]
   },
   {
     id: 'fe1',
     category: 'Diversos',
     name: 'Arame Galvanizado BWG20',
-    description: 'Arame galvanizado BWG20 para amarrações e fixações em estruturas de drywall.',
+    description: 'Arame galvanizado flexível para amarrações em estruturas de drywall.',
     image: '/arame_galvanizado_bwg20.webp',
     rating: 4.8,
-    specs: ['Bitola: BWG20', 'Diâmetro: 0,89mm', 'Galvanizado'],
-    applications: ['Amarrações', 'Fixações', 'Estruturas'],
-    whatIsIt: 'Arame macio e flexível com camada de zinco para proteção contra oxidação.',
-    selectionCriteria: 'Utilizado para pendural de forros F530 e amarrações auxiliares de perfis.'
+    specs: ['Bitola: BWG20 (0,89mm)', 'Material: Aço Zincado', 'Flexibilidade: Alta'],
+    applications: ['Amarração de Pendurais', 'Nivelamento de Forros', 'Fixação de Lãs'],
+    whatIsIt: 'Arame macio com camada de zinco que protege contra a oxidação em ambientes com umidade controlada.',
+    selectionCriteria: 'Utilizado para o ajuste fino da altura de forros F530 e amarrações auxiliares que não exigem carga estrutural elevada.',
+    compatibility: 'Uso em ambientes internos.',
+    faq: [
+      { question: 'Qual a metragem do rolo?', answer: 'Vendemos por peso (kg) ou rolos fechados. Consulte a metragem exata com nossa equipe.' }
+    ]
   },
   {
     id: 'fe2',
     category: 'Diversos',
     name: 'Arame Galvanizado BWG10',
-    description: 'Arame galvanizado BWG10 para fixações mais robustas. Embalagem de 5kg.',
+    description: 'Arame galvanizado robusto para suspensões e cargas maiores.',
     image: '/arame_galvanizado_bwg10.webp',
     rating: 4.9,
-    specs: ['Bitola: BWG10', 'Embalagem: 5kg', 'Marca: Ancora'],
-    applications: ['Fixações Robustas', 'Estruturas Pesadas', 'Amarrações'],
-    whatIsIt: 'Arame de bitola grossa para sustentação de cargas maiores em sistemas de teto.'
+    specs: ['Bitola: BWG10 (3,40mm)', 'Embalagem: Rolo 5kg', 'Resistência: Alta'],
+    applications: ['Suspensão de Dutos', 'Grandes Forros', 'Reforços de Estrutura'],
+    whatIsIt: 'Arame de bitola grossa com alta resistência à tração, ideal para suportar elementos pesados sobre o forro.',
+    selectionCriteria: 'Escolha quando o projeto prever cargas suspensas que excedam a capacidade do arame BWG18/20.',
+    compatibility: 'Uso estrutural pesado em forros.',
+    faq: [
+      { question: 'Ele é difícil de dobrar?', answer: 'Por ser mais grosso, exige o uso de alicates profissionais para a correta dobra e ancoragem.' }
+    ]
   },
   {
     id: 'fe3',
     category: 'Parafusos',
-    name: 'Bucha Nylon',
-    description: 'Bucha nylon para fixação em paredes maciças. Pacote com 200 peças.',
+    name: 'Bucha de Nylon S6/S8',
+    description: 'Bucha de expansão para fixação em alvenaria e concreto.',
     image: '/bucha_nylon.webp',
     rating: 4.6,
-    specs: ['Material: Nylon', 'Quantidade: 200 peças', 'Uso: Parede Maciça'],
-    applications: ['Fixação em Paredes', 'Instalações', 'Montagens'],
-    whatIsIt: 'Bucha de expansão em nylon de alta qualidade para fixação de guias de drywall em alvenaria ou concreto.'
+    specs: ['Material: Nylon Virgem', 'Quantidade: 100/200 unidades', 'Uso: Parede Maciça'],
+    applications: ['Fixação de Guias no Piso', 'Montagem de Suportes', 'Quadros'],
+    whatIsIt: 'Bucha de expansão em nylon de alta qualidade que não resseca, garantindo fixação permanente em substratos sólidos.',
+    selectionCriteria: 'Essencial para a ancoragem inicial das guias de drywall no piso de concreto ou paredes de bloco.',
+    compatibility: 'Utilizar com parafusos de rosca soberba compatíveis com o diâmetro da bucha.',
+    faq: [
+      { question: 'Serve para tijolo furado?', answer: 'Para tijolos furados, recomendamos buchas específicas de expansão lateral ou buchas universais.' }
+    ]
   },
   {
     id: 'fe4',
     category: 'Perfis',
-    name: 'Cantoneira',
-    description: 'Cantoneira metálica para proteção e reforço de cantos em drywall.',
+    name: 'Cantoneira L 25x30',
+    description: 'Cantoneira metálica lisa para proteção de cantos internos e arremates.',
     image: '/cantoneira.jpg',
     rating: 4.8,
-    specs: ['Material: Metal', 'Uso: Cantos', 'Proteção'],
-    applications: ['Proteção de Cantos', 'Reforço', 'Acabamento'],
-    whatIsIt: 'Perfil em "L" de aço galvanizado utilizado para dar acabamento e proteção mecânica a cantos externos de 90°.'
+    specs: ['Material: Aço Galvanizado', 'Uso: Arremates', 'Comprimento: 3000mm'],
+    applications: ['Proteção de Cantos', 'Arremates de Forro', 'Encontros de Parede'],
+    whatIsIt: 'Perfil em "L" de aço leve utilizado para dar acabamento e proteção mecânica a cantos onde não haverá massa de rejunte aparente.',
+    selectionCriteria: 'Ideal para fechamentos de shafts e arremates perimetrais simples.',
+    compatibility: 'Uso em drywall interno.',
+    faq: [
+      { question: 'Pode ser usada na parte externa?', answer: 'Não recomendado. Para áreas externas, utilize cantoneiras de PVC com tela de fibra de vidro.' }
+    ]
   },
   {
     id: 'fe5',
     category: 'Perfis',
-    name: 'Cantoneira Perfurada',
-    description: 'Cantoneira perfurada para melhor aderência da massa. Acabamento profissional.',
+    name: 'Cantoneira Perfurada de Alumínio/Aço',
+    description: 'Reforço de canto com perfurações para ancoragem química da massa.',
     image: '/cantoneira_perfurada.webp',
     rating: 4.7,
-    specs: ['Tipo: Perfurada', 'Material: Metal', 'Melhor Aderência'],
-    applications: ['Acabamento Profissional', 'Cantos', 'Reforço'],
-    whatIsIt: 'Reforço de canto com múltiplas perfurações que permitem que a massa de rejunte transpasse o metal, criando uma fixação mecânica superior.'
+    specs: ['Tipo: Perfurada', 'Uso: Proteção de Quinas', 'Acabamento: Invisível'],
+    applications: ['Cantos Externos de Paredes', 'Nichos', 'Vigas Drywall'],
+    whatIsIt: 'Reforço de quina com furos que permitem o traspasse da massa de junta, criando uma quina reta e extremamente resistente a impactos.',
+    selectionCriteria: 'Obrigatória em todas as quinas externas de drywall para evitar o esfarelamento do gesso com o uso diário.',
+    compatibility: 'Aplicada sobre a placa e recoberta com massa de acabamento.',
+    faq: [
+      { question: 'Alumínio ou aço?', answer: 'O alumínio é mais leve e não oxida, sendo ideal para áreas com maior umidade relativa.' }
+    ]
   },
   {
     id: 'fe6',
     category: 'Perfis',
-    name: 'Cantoneira PVC com Tela',
-    description: 'Cantoneira em PVC com tela para melhor fixação e acabamento em cantos.',
+    name: 'Cantoneira PVC com Tela de Fibra',
+    description: 'Cantoneira técnica para sistemas de fachada e reboco fino.',
     image: '/cantoneira_pvc_com_tela.webp',
     rating: 4.6,
-    specs: ['Material: PVC', 'Com Tela', 'Fácil Aplicação'],
-    applications: ['Cantos Internos', 'Acabamento', 'Proteção'],
-    whatIsIt: 'Acessório para sistemas de fachadas (EIFS) ou reboco fino, garantindo que o canto não trinque e fique perfeitamente reto.'
+    specs: ['Material: PVC + Fibra de Vidro', 'Uso: Externo/EIFS', 'Resistente a Álcalis'],
+    applications: ['Cantos de Fachadas LSF', 'Encontros de Janelas', 'Placas Cimentícias'],
+    whatIsIt: 'Acessório que combina a rigidez do PVC com a flexibilidade da tela de vidro, garantindo que o acabamento externo da fachada não apresente fissuras.',
+    selectionCriteria: 'Indispensável para o acabamento de janelas e portas em sistemas de construção a seco externa.',
+    compatibility: 'Deve ser fixada com massa base coat.',
+    faq: [
+      { question: 'Por que usar PVC em vez de metal?', answer: 'O PVC não sofre corrosão e sua flexibilidade evita que a dilatação térmica da fachada cause trincas na massa.' }
+    ]
   },
   {
     id: 'fe7',
     category: 'Perfis',
-    name: 'Cantoneira Branca Isover',
-    description: 'Cantoneira branca Isover de alta qualidade. Acabamento premium para cantos.',
+    name: 'Cantoneira Branca para Forro Modular',
+    description: 'Cantoneira com pintura eletrostática para acabamento de forros aparentes.',
     image: '/cantoneira_branca.jpeg',
     rating: 4.9,
-    specs: ['Marca: Isover', 'Cor: Branco', 'Alta Qualidade'],
-    applications: ['Acabamento Premium', 'Cantos Externos', 'Reforço'],
-    whatIsIt: 'Cantoneira com pintura eletrostática branca, ideal para acabamentos aparentes em forros modulares ou sancas que não receberão pintura posterior.'
+    specs: ['Cor: Branco Neve', 'Acabamento: Pintura Epóxi', 'Uso: Perimetral'],
+    applications: ['Forro de PVC Modular', 'Forro de Isopor', 'Forro de Lã de Vidro'],
+    whatIsIt: 'Perfil perimetral com acabamento final em branco, dispensando pintura em obra e garantindo limpeza visual.',
+    selectionCriteria: 'Utilizada como suporte de borda para forros modulares de 625x625mm.',
+    compatibility: 'Uso em forros modulares.',
+    faq: [
+      { question: 'Descasca com o tempo?', answer: 'A pintura eletrostática é altamente resistente e mantém a brancura por muitos anos em ambientes internos.' }
+    ]
   },
   {
     id: 'fe8',
     category: 'Perfis',
-    name: 'Tabica Lisa Galvanizada',
-    description: 'Tabica lisa galvanizada para acabamento de forros e transições.',
+    name: 'Tabica Lisa Zincada',
+    description: 'Perfil para forro dilatado ("flutuante") com efeito estético moderno.',
     image: '/tabica_lisa_galvanizada.webp',
     rating: 4.7,
-    specs: ['Material: Galvanizado', 'Tipo: Lisa', 'Uso: Forros'],
-    applications: ['Acabamento de Forros', 'Transições', 'Detalhes'],
-    whatIsIt: 'Perfil perimetral para forros de drywall que cria um efeito de "forro dilatado" ou flutuante, absorvendo as movimentações estruturais.',
-    selectionCriteria: 'Utilizada para evitar trincas no encontro entre o forro e a parede.'
+    specs: ['Material: Aço Zincado', 'Tipo: Lisa', 'Funcionalidade: Dilatação'],
+    applications: ['Forros de Gesso', 'Design de Interiores', 'Prevenção de Trincas'],
+    whatIsIt: 'Perfil perimetral que cria um vão (sombra) entre o forro e a parede, absorvendo as micro-movimentações da estrutura do prédio.',
+    selectionCriteria: 'Utilizada para evitar trincas perimetrais e conferir um acabamento sofisticado de "forro solto".',
+    faq: [
+      { question: 'Pode pintar?', answer: 'Sim, a tabica lisa aceita pintura após a limpeza da camada de proteção galvânica.' }
+    ]
   },
   {
     id: 'fe9',
     category: 'Perfis',
-    name: 'Tabica Branca',
-    description: 'Tabica branca para acabamento decorativo. Fácil instalação e pintura.',
+    name: 'Tabica Branca Pronta',
+    description: 'Tabica com pintura branca de fábrica para agilidade total na obra.',
     image: '/tabica_branca.jpg',
     rating: 4.6,
-    specs: ['Cor: Branco', 'Uso: Decorativo', 'Fácil Instalação'],
-    applications: ['Acabamento Decorativo', 'Forros', 'Detalhes'],
-    whatIsIt: 'Tabica com acabamento em pintura branca, pronta para instalação, agilizando a etapa de pintura do forro.'
+    specs: ['Cor: Branco', 'Acabamento: Pré-pintado', 'Uso: Decorativo'],
+    applications: ['Forros Residenciais', 'Instalações Rápidas', 'Sancas'],
+    whatIsIt: 'Perfil de dilatação com acabamento em pintura eletrostática, pronto para instalação, eliminando a necessidade de pintura manual no teto.',
+    selectionCriteria: 'Ideal para reformas rápidas onde se deseja reduzir a sujeira e o tempo de finalização.'
   },
   {
     id: 'fe10',
-    category: 'Perfis',
-    name: 'Emenda para F530',
-    description: 'Emenda específica para perfil F530. Conexão segura e resistente.',
+    category: 'Ferragens',
+    name: 'Emenda para Perfil F530',
+    description: 'Acessório de união para continuidade estrutural de perfis canaleta.',
     image: '/emenda_para_f530.jpg',
     rating: 4.7,
-    specs: ['Uso: Perfil F530', 'Material: Metal', 'Alta Resistência'],
-    applications: ['Emenda de Perfis', 'Estruturas de Forro', 'Conexões'],
-    whatIsIt: 'Acessório de encaixe por pressão para unir dois perfis canaleta F530, garantindo o alinhamento e a continuidade estrutural do forro.'
+    specs: ['Material: Aço Galvanizado', 'Uso: Perfil F530', 'Instalação: Encaixe'],
+    applications: ['Grandes Forros', 'Extensão de Trilhos', 'União de Perfis'],
+    whatIsIt: 'Peça de encaixe por pressão que une dois perfis F530, garantindo o alinhamento perfeito e a resistência mecânica da estrutura do forro.',
+    selectionCriteria: 'Obrigatória em vãos de forro que excedam os 3 metros de comprimento do perfil padrão.',
+    compatibility: 'Exclusiva para perfis canaleta F530.'
   },
   {
     id: 'fe11',
     category: 'Ferragens',
-    name: 'Plaina para Drywall Plaster',
-    description: 'Plaina manual para ajuste de bordas em placas de drywall. Acabamento perfeito.',
+    name: 'Plaina Manual para Drywall Plaster',
+    description: 'Ferramenta para ajuste de bordas e chanfros em chapas de gesso.',
     image: '/plaina_para_drywall_plaster.webp',
     rating: 4.8,
-    specs: ['Marca: Plaster', 'Uso: Bordas', 'Manual'],
-    applications: ['Ajuste de Bordas', 'Acabamento', 'Preparação'],
-    whatIsIt: 'Ferramenta manual de corte para desbastar e chanfrar as bordas das chapas de gesso, facilitando o rejuntamento.',
-    selectionCriteria: 'Ferramenta básica para todo montador de drywall que busca acabamento de nível superior.'
+    specs: ['Marca: Plaster', 'Tipo: Surform', 'Corpo: Metálico/Plástico'],
+    applications: ['Chanfro de Bordas', 'Ajuste de Medidas', 'Regularização de Cortes'],
+    whatIsIt: 'Ferramenta manual de desbaste essencial para preparar as bordas cortadas das chapas, permitindo que a massa de junta penetre corretamente.',
+    selectionCriteria: 'Acessório indispensável para o montador que preza pelo acabamento invisível das juntas.'
   },
   {
     id: 'fe12',
     category: 'Ferragens',
-    name: 'Lâmina para Plaina Plaster',
-    description: 'Lâmina de reposição para plaina Plaster. Alta durabilidade e corte preciso.',
+    name: 'Lâmina de Reposição para Plaina',
+    description: 'Lâmina de aço temperado para substituição em plainas Plaster.',
     image: '/lamina_para_plaina_plaster.webp',
     rating: 4.7,
-    specs: ['Marca: Plaster', 'Tipo: Reposição', 'Alta Durabilidade'],
-    applications: ['Reposição', 'Manutenção', 'Acabamento'],
-    whatIsIt: 'Lâmina de aço temperado para substituição em plainas Plaster, mantendo o poder de corte original.'
+    specs: ['Material: Aço Carbono', 'Tipo: Universal Plaster', 'Durabilidade: Alta'],
+    applications: ['Manutenção de Ferramentas', 'Troca de Lâmina Cega'],
+    whatIsIt: 'Lâmina de corte intercambiável que mantém a eficiência do desbaste do gesso sem "rasgar" o papel cartão.',
+    faq: [
+      { question: 'Como saber a hora de trocar?', answer: 'Quando a plaina começar a exigir muito esforço ou começar a esfarelar a borda da chapa em vez de cortar limpo.' }
+    ]
   },
   {
     id: 'fe13',
     category: 'Ferragens',
-    name: 'Bits Ponta Phillips 25mm Ciser',
-    description: 'Jogo de bits Phillips PH2 25mm. Ideal para parafusadeiras em instalações de drywall.',
+    name: 'Bits Phillips PH2 Ciser 25mm',
+    description: 'Ponteira magnética de alta durabilidade para parafusadeiras.',
     image: '/bits_ponta_phillips_25mm.webp',
     rating: 4.8,
-    specs: ['Tipo: Phillips PH2', 'Comprimento: 25mm', 'Marca: Ciser'],
-    applications: ['Parafusadeiras', 'Instalação de Drywall', 'Fixações'],
-    whatIsIt: 'Ponteira magnética de alta resistência (S2), projetada para o encaixe perfeito nos parafusos de drywall GN e metal-metal.',
-    selectionCriteria: 'Evita que a cabeça do parafuso "espane", garantindo agilidade na montagem.'
+    specs: ['Tipo: Phillips PH2', 'Material: Aço S2', 'Magnético: Sim'],
+    applications: ['Fixação de Drywall', 'Montagem de Perfis', 'Instalações em Geral'],
+    whatIsIt: 'Ponteira de precisão projetada para o encaixe perfeito na cabeça dos parafusos GN e metal-metal, evitando o desgaste prematuro.',
+    selectionCriteria: 'Essencial para garantir que o parafuso entre no prumo correto sem "pular" da ferramenta.',
+    compatibility: 'Compatível com todas as parafusadeiras de mandril hexagonal.',
+    faq: [
+      { question: 'Serve em qualquer parafusadeira?', answer: 'Sim, o encaixe de 1/4" é o padrão universal para parafusadeiras e furadeiras.' },
+      { question: 'Ele segura o parafuso?', answer: 'Sim, o bits possui imã integrado para manter o parafuso firme durante a aplicação.' }
+    ]
   },
 ];
 

@@ -310,7 +310,7 @@ const LocationPage: React.FC<LocationPageProps> = ({ type, overrideSlug }) => {
                     Orçamento de {serviceName} para {formattedName}
                   </h3>
                   <p className="text-slate-400 text-base max-w-md leading-relaxed">
-                    Envie seu projeto ou lista de medidas. Retornamos com o quantitativo exato e custos de logística.
+                    Envie seu projeto ou lista de medidas. Retornamos com um levantamento técnico preliminar e estimativa de materiais para sua obra.
                   </p>
                 </div>
                 <div className="flex flex-col gap-3 shrink-0">

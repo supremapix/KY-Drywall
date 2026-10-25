@@ -12,6 +12,7 @@
   --ky-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.05);
   background: var(--ky-bg-white);
   color: var(--ky-ink);
+  font-size: 18px;
 }
 
 .ky-section-white { background-color: var(--ky-bg-white); }

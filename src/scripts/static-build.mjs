@@ -4,8 +4,8 @@ import path from 'node:path';
 const server = await createServer({ server: { middlewareMode: true }, appType: 'custom', optimizeDeps: { noDiscovery: true, include: [] }, ssr: { noExternal: ['react-router-dom', 'react-router'], resolve: { conditions: ['module-sync', 'module', 'import'] } } });
 try {
   const app = await server.ssrLoadModule('/src/seo/render.tsx');
-  const { BASE_URL, PRODUCTS, SERVICES, BLOG_POSTS, NEIGHBORHOODS, CITIES_RMC, normalizeLocationName, render } = app;
-  const locations = [...new Set([...NEIGHBORHOODS, ...CITIES_RMC].map(normalizeLocationName))];
+  const { BASE_URL, PRODUCTS, SERVICES, BLOG_POSTS, NEIGHBORHOODS, CITIES_RMC, ALL_CIC_LOCATIONS, normalizeLocationName, render } = app;
+  const locations = [...new Set([...NEIGHBORHOODS, ...CITIES_RMC, ...ALL_CIC_LOCATIONS].map(normalizeLocationName))];
   const routes = ['/', '/empresa', '/steel-frame', '/servicos', '/produtos', '/contato', '/blog', '/faq', '/sitemap', '/links',
     ...SERVICES.map(s => `/servicos/${s.id}`), ...PRODUCTS.map(p => `/produto/${p.id}`), ...BLOG_POSTS.map(p => `/blog/${p.id}`),
     ...locations.flatMap(loc => [`/drywall-em/${loc}`, `/steel-frame-em/${loc}`])];

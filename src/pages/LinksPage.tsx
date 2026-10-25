@@ -102,12 +102,12 @@ export default function LinksPage() {
                     <link.icon size={22} strokeWidth={link.primary ? 2.5 : 2} />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <div className="font-bold text-sm md:text-base truncate">{link.label}</div>
-                    <div className={`text-[11px] md:text-xs font-medium truncate ${link.primary ? 'text-white/80' : 'text-slate-400'}`}>
+                    <div className="font-bold text-sm md:text-base leading-tight">{link.label}</div>
+                    <div className={`text-[11px] md:text-xs font-medium mt-1 ${link.primary ? 'text-white/80' : 'text-slate-400'}`}>
                       {link.desc}
                     </div>
                   </div>
-                  <ChevronRight size={18} className={link.primary ? 'text-white/40' : 'text-slate-300'} />
+                  <ChevronRight size={18} className={`shrink-0 ${link.primary ? 'text-white/40' : 'text-slate-300'}`} />
                 </a>
               ))}
             </div>
@@ -126,12 +126,12 @@ export default function LinksPage() {
                   href={link.href}
                   className="flex items-center gap-4 p-4 min-h-[72px] bg-white border border-slate-200 rounded-xl hover:border-[#D31219] transition-all shadow-sm group active:scale-[0.98]"
                 >
-                  <div className="p-2.5 bg-slate-50 rounded-lg group-hover:bg-red-50 group-hover:text-[#D31219] transition-colors">
+                  <div className="p-2.5 bg-slate-50 rounded-lg group-hover:bg-red-50 group-hover:text-[#D31219] transition-colors shrink-0">
                     <link.icon size={20} />
                   </div>
                   <div className="flex-1 min-w-0 text-left">
-                    <div className="font-bold text-sm text-slate-900 truncate leading-snug">{link.label}</div>
-                    <div className="text-[11px] font-medium text-slate-400 truncate">{link.desc}</div>
+                    <div className="font-bold text-sm text-slate-900 leading-tight mb-0.5">{link.label}</div>
+                    <div className="text-[11px] font-medium text-slate-400 leading-normal">{link.desc}</div>
                   </div>
                 </a>
               ))}
