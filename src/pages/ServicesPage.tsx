@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { SERVICES, getRandomCTA, BASE_URL } from '../constants';
-import { CheckCircle2, MessageCircle, ChevronRight, Sparkles, ShieldAlert, ArrowRight } from 'lucide-react';
+import { CheckCircle2, MessageCircle, ChevronRight, Sparkles, ShieldAlert, ArrowRight, HardHat } from 'lucide-react';
 import NotFound from './NotFound';
 import EnhancedSEO from '../components/EnhancedSEO';
 
@@ -139,6 +139,27 @@ const ServicesPage: React.FC = () => {
                     <p className="text-sm text-slate-500 pl-7 font-medium">{b.desc}</p>
                   </div>
                 ))}
+              </div>
+
+              <div className="pt-8 grid grid-cols-1 md:grid-cols-2 gap-8 border-t border-slate-100 mt-10">
+                <div>
+                  <h4 className="text-sm font-black text-slate-900 uppercase tracking-widest mb-4 flex items-center gap-2">
+                    <Sparkles size={16} className="text-[#D31219]" />
+                    Suporte na Obra
+                  </h4>
+                  <p className="text-xs text-slate-500 leading-relaxed">
+                    Não apenas vendemos materiais. Nossa equipe oferece suporte para leitura de projetos e indicação de instaladores credenciados que seguem rigorosamente as normas de montagem.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="text-sm font-black text-slate-900 uppercase tracking-widest mb-4 flex items-center gap-2">
+                    <HardHat size={16} className="text-[#D31219]" />
+                    Logística KY
+                  </h4>
+                  <p className="text-xs text-slate-500 leading-relaxed">
+                    Entregas programadas com veículos adequados para o transporte de perfis de até 6 metros e placas sem avarias nas bordas, garantindo menor desperdício.
+                  </p>
+                </div>
               </div>
 
               <div className="pt-8 flex flex-col sm:flex-row gap-4">

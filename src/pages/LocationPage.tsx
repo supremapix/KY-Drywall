@@ -103,7 +103,7 @@ const LocationPage: React.FC<LocationPageProps> = ({ type, overrideSlug }) => {
         keywords={pageKeywords}
         canonical={`${BASE_URL}/${type === 'drywall' ? 'drywall' : 'steel-frame'}-em/${location}`}
         schema={schema}
-        noindex={true}
+        noindex={false}
       />
 
       {/* Hero Section - Industrial Showroom */}
@@ -239,6 +239,43 @@ const LocationPage: React.FC<LocationPageProps> = ({ type, overrideSlug }) => {
                     <p className="text-sm text-slate-600 leading-relaxed">{item.text}</p>
                   </div>
                 ))}
+              </div>
+            </div>
+
+            {/* Nova Seção: Planejamento & Critérios */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 py-10 border-y border-slate-100">
+              <div className="space-y-6">
+                <h3 className="text-xl font-black text-slate-900 flex items-center gap-2">
+                  <Clock className="text-[#D31219]" size={20} />
+                  Planejamento da Obra
+                </h3>
+                <p className="text-sm text-slate-600 leading-relaxed">
+                  Para obras em <strong>{formattedName}</strong>, recomendamos iniciar o planejamento pelo levantamento de vãos e alturas de pé-direito. No {serviceName}, a modulação dos perfis (a cada 40cm ou 60cm) define o consumo de placas e isolamentos. Nossa equipe técnica na BR-277 pode ajudar a validar seu memorial de cálculo para evitar compras excessivas ou faltas de última hora.
+                </p>
+                <ul className="space-y-3 text-xs font-bold text-slate-700">
+                  <li className="flex items-center gap-2">
+                    <ChevronRight size={14} className="text-[#D31219]" />
+                    Verifique o acesso para caminhões de grande porte.
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <ChevronRight size={14} className="text-[#D31219]" />
+                    Providencie local seco e plano para estocagem das chapas.
+                  </li>
+                </ul>
+              </div>
+
+              <div className="space-y-6">
+                <h3 className="text-xl font-black text-slate-900 flex items-center gap-2">
+                  <ShieldCheck className="text-[#D31219]" size={20} />
+                  Critérios de Compra
+                </h3>
+                <p className="text-sm text-slate-600 leading-relaxed">
+                  Ao escolher materiais para {serviceName}, não considere apenas o preço unitário. A espessura do aço (Z180 Barbieri) e a densidade das placas são fundamentais para a estabilidade estrutural e conforto acústico em <strong>{formattedName}</strong>. Exija materiais normatizados que garantam a segurança da sua família ou do seu negócio.
+                </p>
+                <div className="p-4 bg-slate-50 rounded-xl border border-slate-100">
+                   <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2">Dica Especial KY</p>
+                   <p className="text-xs text-slate-700 font-medium italic">"Sempre utilize banda acústica na base dos perfis para evitar a transmissão de vibrações entre pavimentos."</p>
+                </div>
               </div>
             </div>
 
