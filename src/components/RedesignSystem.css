@@ -12,3 +12,6 @@
 .ky-light .ky-product-media{aspect-ratio:1/1;background:#fff;display:flex;align-items:center;justify-content:center;overflow:hidden;border-bottom:1px solid #d4d8ce}
 .ky-light .ky-product-media>img{width:100%;height:100%;object-fit:contain;object-position:center;padding:clamp(12px,2vw,24px);transform:none!important}
 .ky-product-no-image{display:block;padding:20px;text-align:center;font-size:.85rem;color:#535852;line-height:1.6}.ky-product-no-image small{display:block;font-size:.72rem}
+
+/* Solid caption keeps location information readable over every part of the photo. */
+.ky-light .ky-location-photo-caption{background:#202321;padding:16px;gap:16px;border-radius:3px}.ky-light .ky-location-photo-caption p{color:#e4e7e1!important;font-size:.75rem;line-height:1.5}.ky-light .ky-location-photo-caption h3{color:#fff!important;font-size:1.125rem;line-height:1.4}.ky-light .ky-location-photo-caption a{color:#fff!important;flex-shrink:0}

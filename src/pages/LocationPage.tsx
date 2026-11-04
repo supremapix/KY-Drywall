@@ -166,7 +166,7 @@ const LocationPage: React.FC<LocationPageProps> = ({ type, overrideSlug }) => {
                     onError={(e) => (e.target as HTMLImageElement).src = 'https://images.pexels.com/photos/159306/construction-site-build-construction-structure-159306.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 to-transparent"></div>
-                  <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between">
+                  <div className="ky-location-photo-caption absolute bottom-6 left-6 right-6 flex items-end justify-between">
                     <div>
                       <p className="text-xs font-bold uppercase tracking-wide text-white/80 mb-1">Unidade Curitiba</p>
                       <h3 className="text-lg font-bold text-white">Showroom BR-277</h3>
