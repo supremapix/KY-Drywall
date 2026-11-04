@@ -1,8 +1,9 @@
 // One route inventory for prerendering, sitemap generation and regression checks.
-export function getRoutes({ PRODUCTS, SERVICES, BLOG_POSTS, NEIGHBORHOODS, CITIES_RMC, ALL_CIC_LOCATIONS, REDIRECTIONS, normalizeLocationName }) {
+export function getRoutes({ regionalRoutes = [], PRODUCTS, SERVICES, BLOG_POSTS, NEIGHBORHOODS, CITIES_RMC, ALL_CIC_LOCATIONS, REDIRECTIONS, normalizeLocationName }) {
   const locations = [...new Set([...NEIGHBORHOODS, ...CITIES_RMC, ...ALL_CIC_LOCATIONS]
     .map(normalizeLocationName).map(slug => REDIRECTIONS[slug] || slug))];
   const routes = [...new Set(['/', '/empresa', '/steel-frame', '/servicos', '/produtos', '/contato', '/blog', '/faq', '/sitemap', '/links',
+    ...regionalRoutes,
     ...SERVICES.map(service => `/servicos/${service.id}`),
     ...PRODUCTS.map(product => `/produto/${product.id}`),
     ...BLOG_POSTS.map(post => `/blog/${post.id}`),

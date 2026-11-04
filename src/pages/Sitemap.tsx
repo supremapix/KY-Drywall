@@ -1,3 +1,4 @@
+import { municipalities, regionalRoutes } from '../regionalDirectory';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { 
@@ -37,7 +38,7 @@ const Sitemap: React.FC = () => {
   const totalPosts = BLOG_POSTS.length;
   const totalNeighborhoods = NEIGHBORHOODS.length;
   const totalCities = CITIES_RMC.length;
-  const totalPages = 9 + totalServices + totalPosts + totalProducts + (totalNeighborhoods * 2) + (totalCities * 2) + 3;
+  const totalPages = regionalRoutes.length + 9 + totalServices + totalPosts + totalProducts + (totalNeighborhoods * 2) + (totalCities * 2) + 3;
 
   const schema = {
     "@context": "https://schema.org",
@@ -80,6 +81,7 @@ const Sitemap: React.FC = () => {
       />
 
       <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+        <section className="mb-10 rounded border border-slate-200 p-6"><h2 className="text-2xl font-bold mb-4"><Link to="/regiao-metropolitana">Bairros e localidades dos 29 municípios da RMC →</Link></h2><p className="mb-4">Referências documentadas com classificação e fontes. A cobertura de nomes populares varia por município.</p><div className="flex flex-wrap gap-4">{municipalities.map(city => <Link className="underline py-2" key={city.slug} to={"/regiao-metropolitana/"+city.slug}>{city.name}</Link>)}</div></section>
         {/* Header - Showroom Style */}
         <div className="ky-interior-hero relative bg-white rounded-sm border border-slate-200 p-6 sm:p-12 mb-12 overflow-hidden shadow-sm text-center">
           

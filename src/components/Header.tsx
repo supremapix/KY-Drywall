@@ -65,6 +65,7 @@ const Header: React.FC = () => {
     ...NAV_ITEMS,
     { label: 'Blog', path: '/blog' },
     { label: 'Perguntas Frequentes', path: '/faq' },
+    { label: 'Bairros e localidades', path: '/regiao-metropolitana' },
     { label: 'Mapa do Site', path: '/sitemap' },
     { label: 'Contatos e links', path: '/links' },
   ];

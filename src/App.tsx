@@ -18,6 +18,7 @@ import SteelFramePage from './pages/SteelFramePage';
 import FAQPage from './pages/FAQPage';
 import LinksPage from './pages/LinksPage';
 import NotFound from './pages/NotFound';
+import RegionalDirectory from './pages/RegionalDirectory';
 import FloatingActions from './components/FloatingActions';
 import CookieConsent from './components/CookieConsent';
 
@@ -70,6 +71,9 @@ export const AppContent: React.FC = () => {
             <Route path="/contato" element={<Contact />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:postId" element={<BlogPostPage />} />
+            <Route path="/regiao-metropolitana" element={<RegionalDirectory />} />
+            <Route path="/regiao-metropolitana/:city" element={<RegionalDirectory />} />
+            <Route path="/regiao-metropolitana/:city/:place" element={<RegionalDirectory />} />
             <Route path="/faq" element={<FAQPage />} />
             <Route path="/drywall-em/:location" element={<LocationPage type="drywall" />} />
             <Route path="/steel-frame-em/:location" element={<LocationPage type="steel" />} />

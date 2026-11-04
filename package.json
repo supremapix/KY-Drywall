@@ -11,7 +11,8 @@
     "lint": "tsc --noEmit",
     "verify:seo": "node src/scripts/verify-seo.mjs",
     "css": "tailwindcss -i ./src/tailwind.css -o ./public/styles.css --minify",
-    "predev": "npm run css"
+    "predev": "npm run css",
+    "verify:regional": "node src/scripts/verify-regional.mjs"
   },
   "dependencies": {
     "lucide-react": "^0.475.0",
