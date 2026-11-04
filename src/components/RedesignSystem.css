@@ -51,3 +51,5 @@ html{scroll-padding-bottom:calc(100px + var(--ky-cookie-height,0px))}
 @media(max-width:480px){.ky-light .ky-action-bar{gap:10px}.ky-light .ky-contact-cluster{gap:8px}}
 .ky-light .ky-action-bar{margin-bottom:var(--ky-cookie-height,0px)}
 .ky-page-scroll{padding-bottom:0}
+
+.ky-light.ky-viewport{padding-bottom:0}
