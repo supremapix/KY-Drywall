@@ -595,14 +595,14 @@ const FAQPage: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setShowBackToTop(window.scrollY > 400);
+      setShowBackToTop((document.getElementById('ky-page-scroll')?.scrollTop || window.scrollY) > 400);
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    (document.getElementById('ky-page-scroll') || window).addEventListener('scroll', handleScroll);
+    return () => (document.getElementById('ky-page-scroll') || window).removeEventListener('scroll', handleScroll);
   }, []);
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    (document.getElementById('ky-page-scroll') || window).scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const toggleQuestion = (sectionId: string, questionIndex: number) => {

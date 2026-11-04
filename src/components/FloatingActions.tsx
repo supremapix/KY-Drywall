@@ -37,12 +37,12 @@ export const FloatingActions: React.FC = () => {
     }
 
     const handleScroll = () => {
-      setShowScrollTop(window.scrollY > 300);
+      setShowScrollTop((document.getElementById('ky-page-scroll')?.scrollTop || window.scrollY) > 300);
     };
 
     handleScroll();
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    (document.getElementById('ky-page-scroll') || window).addEventListener('scroll', handleScroll, { passive: true });
+    return () => (document.getElementById('ky-page-scroll') || window).removeEventListener('scroll', handleScroll);
   }, []);
 
   // Keep focused form fields and links above the compact floating control.
@@ -55,7 +55,7 @@ export const FloatingActions: React.FC = () => {
         const floating = rects.find(box => { const r = target.getBoundingClientRect(); return r.right > box.left && r.left < box.right && r.bottom > box.top && r.top < box.bottom; });
         const rect = target.getBoundingClientRect();
         if (floating && rect.right > floating.left && rect.left < floating.right && rect.bottom > floating.top && rect.top < floating.bottom) {
-          window.scrollBy({ top: rect.bottom - floating.top + 16, behavior: 'instant' });
+          (document.getElementById('ky-page-scroll') || window).scrollBy({ top: rect.bottom - floating.top + 16, behavior: 'instant' });
         }
       });
     };
@@ -72,7 +72,7 @@ export const FloatingActions: React.FC = () => {
   }, [isShareOpen]);
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+    (document.getElementById('ky-page-scroll') || window).scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
   };
 
   const handleCopyLink = () => {

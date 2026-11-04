@@ -42,7 +42,7 @@ const ProductDetails: React.FC = () => {
       } catch { setReviews([]); }
     }
     setCtaPhrase(getRandomCTA());
-    window.scrollTo(0, 0);
+    (document.getElementById('ky-page-scroll') || window).scrollTo(0, 0);
   }, [productId]);
 
   const addToQuote = () => {

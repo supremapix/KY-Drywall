@@ -48,7 +48,7 @@ const LocationPage: React.FC<LocationPageProps> = ({ type, overrideSlug }) => {
 
     setCta1(getRandomCTA());
     setCta2(getRandomCTA());
-    window.scrollTo(0, 0);
+    (document.getElementById('ky-page-scroll') || window).scrollTo(0, 0);
   }, [location, navigate, type]);
 
   const featuredProducts = type === 'drywall'

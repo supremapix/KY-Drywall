@@ -38,3 +38,16 @@ html{scroll-padding-bottom:calc(100px + var(--ky-cookie-height,0px))}
 @media(prefers-reduced-motion:no-preference){.ky-credit-heart{animation:ky-soft-pulse 1.5s infinite}.ky-share-cluster>button{animation:ky-soft-pulse 3s 3}.ky-whatsapp-float:hover svg{animation:ky-soft-pulse 1s infinite}@keyframes ky-soft-pulse{50%{filter:drop-shadow(0 0 5px #d3121955);transform:scale(1.04)}}}
 
 .ky-image-caption{display:block;background:#202321;color:white!important;font-size:10px;line-height:1.4;padding:5px 8px;position:relative;z-index:1}.aspect-video:has(>.ky-image-caption){position:relative}.aspect-video>.ky-image-caption{position:absolute;bottom:0;left:0;right:0}.ky-r-guide-grid .ky-image-caption{margin:0}
+
+/* Reserve a real viewport row for persistent controls, instead of covering page content. */
+.ky-viewport{height:100vh;height:100dvh;overflow:hidden}
+.ky-page-scroll{flex:1;min-height:0;overflow-y:auto;overflow-x:hidden;overscroll-behavior-y:contain;scroll-padding-block:20px; padding-bottom:var(--ky-cookie-height,0px)}
+.ky-light .ky-action-bar{flex:none;position:relative;z-index:70;height:calc(72px + env(safe-area-inset-bottom,0px));min-height:72px;padding:10px 12px calc(10px + env(safe-area-inset-bottom,0px));display:flex;flex-direction:row;align-items:center;justify-content:space-between;background:#fff;border-top:1px solid #d4d8ce;box-shadow:0 -2px 12px #2023210d}
+.ky-light .ky-share-cluster,.ky-light .ky-contact-cluster{position:relative;left:auto;right:auto;bottom:auto;display:flex;flex-direction:row;align-items:center;gap:10px}
+.ky-light .ky-contact-cluster>button{flex:none}
+.ky-light .ky-share-panel{bottom:62px;max-height:calc(100dvh - 100px)}
+.ky-light .ky-whatsapp-panel{position:absolute;right:0;bottom:62px;max-height:calc(100dvh - 100px)}
+.ky-light:has(.ky-action-bar) .ky-page-scroll{scrollbar-gutter:stable}
+@media(max-width:480px){.ky-light .ky-action-bar{gap:10px}.ky-light .ky-contact-cluster{gap:8px}}
+.ky-light .ky-action-bar{margin-bottom:var(--ky-cookie-height,0px)}
+.ky-page-scroll{padding-bottom:0}

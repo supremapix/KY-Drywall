@@ -55,10 +55,13 @@ const Header: React.FC = () => {
   useEffect(() => {
     if (isMenuOpen) {
       document.body.style.overflow = 'hidden';
+      document.getElementById('ky-page-scroll')?.style.setProperty('overflow-y', 'hidden');
     } else {
       document.body.style.overflow = '';
+      document.getElementById('ky-page-scroll')?.style.removeProperty('overflow-y');
     }
-    return () => { document.body.style.overflow = ''; };
+    return () => { document.body.style.overflow = '';
+      document.getElementById('ky-page-scroll')?.style.removeProperty('overflow-y'); };
   }, [isMenuOpen]);
 
   const allNavItems = [

@@ -25,7 +25,7 @@ import CookieConsent from './components/CookieConsent';
 const ScrollToTop = () => {
   const { pathname } = useLocation();
   useEffect(() => {
-    window.scrollTo(0, 0);
+    (document.getElementById('ky-page-scroll') || window).scrollTo(0, 0);
   }, [pathname]);
   return null;
 };
@@ -54,7 +54,8 @@ export const AppContent: React.FC = () => {
   return (
     <>
       <ScrollToTop />
-      <div className="flex flex-col min-h-screen overflow-x-hidden bg-white text-slate-900 font-sans antialiased ky-light">
+      <div className="ky-viewport flex flex-col bg-white text-slate-900 font-sans antialiased ky-light">
+        <div id="ky-page-scroll" className="ky-page-scroll">
         {!isLinksPage && <Header />}
         
         <a href="#conteudo" className="ky-skip-link">Pular para o conteúdo</a>
@@ -86,8 +87,9 @@ export const AppContent: React.FC = () => {
         </main>
 
         {!isHomePage && !isLinksPage && <StoreVisit />}
-        <FloatingActions />
         <Footer />
+        </div>
+        <FloatingActions />
         {!isLinksPage && !isCookieAccepted && <CookieConsent onAccept={handleAcceptCookies} />}
       </div>
     </>

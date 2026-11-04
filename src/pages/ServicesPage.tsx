@@ -58,7 +58,7 @@ const ServicesPage: React.FC = () => {
 
   useEffect(() => {
     setCtaPhrase(getRandomCTA());
-    window.scrollTo(0, 0);
+    (document.getElementById('ky-page-scroll') || window).scrollTo(0, 0);
   }, [serviceId]);
 
   if (serviceId && !currentService) return <NotFound />;
