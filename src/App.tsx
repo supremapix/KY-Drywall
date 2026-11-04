@@ -35,14 +35,15 @@ export const AppContent: React.FC = () => {
   const [isCookieAccepted, setIsCookieAccepted] = useState(false);
 
   useEffect(() => {
-    const consent = localStorage.getItem('cookie-consent');
+    let consent: string | null = null;
+    try { consent = localStorage.getItem('cookie-consent'); } catch { /* Storage may be unavailable in private contexts. */ }
     if (consent === 'true') {
       setIsCookieAccepted(true);
     }
   }, []);
 
   const handleAcceptCookies = () => {
-    localStorage.setItem('cookie-consent', 'true');
+    try { localStorage.setItem('cookie-consent', 'true'); } catch { /* Dismiss for this visit without persistence. */ }
     setIsCookieAccepted(true);
   };
 
@@ -52,7 +53,8 @@ export const AppContent: React.FC = () => {
       <div className="flex flex-col min-h-screen overflow-x-hidden bg-white text-slate-900 font-sans antialiased ky-light">
         {!isLinksPage && <Header />}
         
-        <main className="flex-grow pb-28 md:pb-12">
+        <a href="#conteudo" className="ky-skip-link">Pular para o conteúdo</a>
+        <main id="conteudo" tabIndex={-1} className="flex-grow pb-28 md:pb-12">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/links" element={<LinksPage />} />
@@ -77,7 +79,7 @@ export const AppContent: React.FC = () => {
         </main>
 
         {!isLinksPage && <Footer />}
-        {!isLinksPage && <FloatingActions />}
+        <FloatingActions />
         {!isLinksPage && !isCookieAccepted && <CookieConsent onAccept={handleAcceptCookies} />}
       </div>
     </>

@@ -5,7 +5,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>KY Drywall & Steel Frame | Líder em Construção a Seco em Curitiba</title>
+    <title>KY Drywall & Steel Frame | Materiais para Construção a Seco em Curitiba</title>
     
     <!-- Resource Hints -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://images.unsplash.com">
 
     <!-- SEO Meta Tags -->
-    <meta name="description" content="KY Drywall & Steel Frame: A maior distribuidora de materiais de construção a seco de Curitiba. Especialistas em Steel Frame, Drywall, Telhado Shingle e Isolamento Acústico.">
+    <meta name="description" content="KY Drywall & Steel Frame: Materiais de construção a seco em Curitiba. Especialistas em Steel Frame, Drywall, Telhado Shingle e Isolamento Acústico.">
     <meta name="keywords" content="drywall curitiba, steel frame curitiba, gesso acartonado, telhado shingle pr, barbieri steel frame, material construção seco">
     <meta name="author" content="KY Drywall">
     <meta name="robots" content="index, follow">
@@ -24,7 +24,7 @@
     <meta property="og:description" content="Otimize sua obra com a KY. Entrega rápida em Curitiba e RMC com assessoria técnica especializada.">
     <meta property="og:image" content="https://images.pexels.com/photos/1292294/pexels-photo-1292294.jpeg?auto=compress&cs=tinysrgb&w=800">
     
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <style>
@@ -61,19 +61,12 @@
       }
 
       /* Performance Optimizations */
-      img { content-visibility: auto; }
+
     </style>
   </head>
   <body class="bg-white text-gray-900 overflow-x-hidden">
     <div id="root"></div>
     <script type="module" src="/src/index.tsx"></script>
-    <script>
-      // Service Worker Registration for Offline/Cache
-      if ('serviceWorker' in navigator) {
-        window.addEventListener('load', () => {
-          navigator.serviceWorker.register('/sw.js').catch(err => console.log('SW fail:', err));
-        });
-      }
-    </script>
+
   </body>
 </html>

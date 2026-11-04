@@ -1,18 +1,18 @@
 
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { 
-  ArrowRight, 
-  MessageCircle, 
-  MapPin, 
-  ChevronRight, 
-  ShieldCheck, 
-  Clock, 
-  Building2, 
-  Truck, 
-  CheckCircle2, 
-  Layers, 
-  Home as HomeIcon, 
+import {
+  ArrowRight,
+  MessageCircle,
+  MapPin,
+  ChevronRight,
+  ShieldCheck,
+  Clock,
+  Building2,
+  Truck,
+  CheckCircle2,
+  Layers,
+  Home as HomeIcon,
   HelpCircle,
   FileText,
   Phone
@@ -61,7 +61,6 @@ const Home: React.FC = () => {
         '@id': `${BASE_URL}/#store`,
         name: 'KY Drywall & Steel Frame - Loja Física',
         image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ky-loja-cajuru-drywall-stell-fame.png-CAi9KHi0wcqQLptb0qLFGSWQZaXr98.jpeg',
-        priceRange: '$$',
         address: {
           '@type': 'PostalAddress',
           streetAddress: 'Rod. BR-277, 3641 - Cajuru',
@@ -69,11 +68,6 @@ const Home: React.FC = () => {
           addressRegion: 'PR',
           postalCode: '81480-270',
           addressCountry: 'BR'
-        },
-        geo: {
-          '@type': 'GeoCoordinates',
-          latitude: '-25.4284',
-          longitude: '-49.2733'
         },
         telephone: '+554135284232'
       }
@@ -101,7 +95,7 @@ const Home: React.FC = () => {
                 <Truck size={22} />
               </div>
               <div className="text-center sm:text-left">
-                <p className="font-bold text-sm text-slate-900">Pronta Entrega</p>
+                <p className="font-bold text-sm text-slate-900">Consultar disponibilidade</p>
                 <p className="text-xs text-slate-500 mt-0.5">Frota própria em Curitiba e RMC</p>
               </div>
             </div>
@@ -154,18 +148,18 @@ const Home: React.FC = () => {
               </h2>
 
               <p className="text-slate-700 text-base leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                O Light Steel Frame combina engenharia de precisão e perfis galvanizados de alta resistência Z180. Reduz o tempo de execução no canteiro, elimina desperdício de materiais e oferece excelente isolamento térmico no inverno curitibano.
+                O Light Steel Frame combina perfis de aço e fechamentos definidos em projeto. Prazos, consumo de materiais e desempenho térmico dependem da composição escolhida, das condições da obra e da execução.
               </p>
 
               <div className="grid grid-cols-2 gap-4 pt-2 text-center">
                 <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
-                  <p className="text-2xl sm:text-3xl font-black text-[#D31219]">Até 70%</p>
-                  <p className="text-xs font-bold text-slate-800 mt-1">Mais rápido que alvenaria</p>
+                  <p className="text-2xl sm:text-3xl font-black text-[#D31219]">Montagem</p>
+                  <p className="text-xs font-bold text-slate-800 mt-1">Cronograma do projeto</p>
                   <p className="text-xs text-slate-500 mt-0.5">Montagem limpa e ágil</p>
                 </div>
 
                 <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
-                  <p className="text-2xl sm:text-3xl font-black text-[#D31219]">90% Menos</p>
+                  <p className="text-2xl sm:text-3xl font-black text-[#D31219]">Planejamento</p>
                   <p className="text-xs font-bold text-slate-800 mt-1">Entulho e resíduos</p>
                   <p className="text-xs text-slate-500 mt-0.5">Construção sustentável</p>
                 </div>
@@ -177,8 +171,8 @@ const Home: React.FC = () => {
                 </div>
 
                 <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
-                  <p className="text-2xl sm:text-3xl font-black text-[#D31219]">100% Aço</p>
-                  <p className="text-xs font-bold text-slate-800 mt-1">Perfis Barbieri Z180</p>
+                  <p className="text-2xl sm:text-3xl font-black text-[#D31219]">Perfis de aço</p>
+                  <p className="text-xs font-bold text-slate-800 mt-1">Perfis Barbieri</p>
                   <p className="text-xs text-slate-500 mt-0.5">Proteção galvânica</p>
                 </div>
               </div>
@@ -245,24 +239,24 @@ const Home: React.FC = () => {
               Soluções Completas para sua Obra
             </h2>
             <p className="text-slate-600 text-base sm:text-lg mt-5 leading-relaxed">
-              Materiais de marcas consolidadas com certificação técnica ABNT e suporte logístico ágil para o seu canteiro.
+              Materiais para construção a seco. Confirme as especificações, a documentação e as condições de entrega para o seu canteiro.
             </p>
           </div>
 
           <div className="space-y-24 md:space-y-32">
             {SERVICES.slice(0, 3).map((service, index) => (
-              <div 
-                key={service.id} 
+              <div
+                key={service.id}
                 className={`flex flex-col ${index % 2 === 1 ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-12 lg:gap-20 items-center`}
               >
                 <div className="w-full lg:w-1/2">
                   <div className="relative group">
                     <div className="absolute -inset-4 bg-slate-100 rounded-3xl -z-10 transition-transform group-hover:scale-105 duration-500" />
                     <div className="ky-card rounded-2xl overflow-hidden shadow-2xl">
-                      <img 
-                        src={service.image} 
-                        alt={service.title} 
-                        className="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-700" 
+                      <img
+                        src={service.image}
+                        alt={service.title}
+                        className="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-700"
                         onError={(e) => {
                           (e.target as HTMLImageElement).src = 'https://via.placeholder.com/800x600?text=KY+DRYWALL';
                         }}
@@ -283,11 +277,11 @@ const Home: React.FC = () => {
                   <h3 className="text-3xl md:text-4xl font-black text-slate-900 leading-tight">
                     {service.title}
                   </h3>
-                  <div 
+                  <div
                     className="text-slate-600 text-base md:text-lg leading-relaxed"
                     dangerouslySetInnerHTML={{ __html: service.description }}
                   />
-                  
+
                   <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 text-left">
                     <li className="flex items-center gap-2 text-sm font-bold text-slate-700">
                       <CheckCircle2 size={18} className="text-[#D31219]" />
@@ -295,7 +289,7 @@ const Home: React.FC = () => {
                     </li>
                     <li className="flex items-center gap-2 text-sm font-bold text-slate-700">
                       <CheckCircle2 size={18} className="text-[#D31219]" />
-                      <span>Pronta Entrega</span>
+                      <span>Consultar disponibilidade</span>
                     </li>
                     <li className="flex items-center gap-2 text-sm font-bold text-slate-700">
                       <CheckCircle2 size={18} className="text-[#D31219]" />
@@ -435,9 +429,9 @@ const Home: React.FC = () => {
                 </h3>
                 <div className="grid grid-cols-1 gap-2 max-h-[320px] overflow-y-auto custom-scrollbar pr-2">
                   {NEIGHBORHOODS.map(n => (
-                    <Link 
-                      key={n} 
-                      to={`/drywall-em/${normalizeLocationName(n)}`} 
+                    <Link
+                      key={n}
+                      to={`/drywall-em/${normalizeLocationName(n)}`}
                       className="text-xs text-slate-600 hover:text-[#D31219] transition-colors py-1 flex items-center gap-1.5 font-medium"
                     >
                       <ChevronRight size={12} className="text-[#D31219]" />
@@ -455,9 +449,9 @@ const Home: React.FC = () => {
                 </h3>
                 <div className="grid grid-cols-1 gap-2 max-h-[320px] overflow-y-auto custom-scrollbar pr-2">
                   {CITIES_RMC.map(c => (
-                    <Link 
-                      key={c} 
-                      to={`/steel-frame-em/${normalizeLocationName(c)}`} 
+                    <Link
+                      key={c}
+                      to={`/steel-frame-em/${normalizeLocationName(c)}`}
                       className="text-xs text-slate-600 hover:text-[#D31219] transition-colors py-1 flex items-center gap-1.5 font-medium"
                     >
                       <ChevronRight size={12} className="text-[#D31219]" />
@@ -474,7 +468,7 @@ const Home: React.FC = () => {
       {/* FAQ & Central de Dúvidas Técnicas - Light Version */}
       <section className="py-16 md:py-24 bg-slate-50 text-slate-900 relative border-b border-slate-200">
         <div className="absolute inset-0 z-0 bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] [background-size:32px_32px] opacity-100"></div>
-        
+
         <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl mx-auto text-center mb-14">
             <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-red-50 border border-red-100 text-[#D31219] text-[10px] font-black uppercase tracking-widest mb-4 shadow-sm">
@@ -554,8 +548,8 @@ const Home: React.FC = () => {
                 Guias Executivos e Dicas de Engenharia
               </h2>
             </div>
-            <Link 
-              to="/blog" 
+            <Link
+              to="/blog"
               className="inline-flex items-center justify-center gap-1.5 text-xs font-bold text-[#D31219] hover:text-slate-900 transition-colors uppercase tracking-wider pb-1 border-b border-[#D31219]/30 min-h-[44px]"
             >
               <span>Ver Todos os Artigos</span>
@@ -565,15 +559,15 @@ const Home: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {BLOG_POSTS.slice(0, 3).map(post => (
-              <div 
-                key={post.id} 
+              <div
+                key={post.id}
                 className="bg-white rounded-xl border border-slate-200 overflow-hidden flex flex-col hover:border-[#D31219]/50 hover:shadow-lg transition-all duration-300 group"
               >
                 <div className="aspect-[16/10] overflow-hidden bg-slate-100 relative">
-                  <img 
-                    src={post.img} 
-                    alt={post.title} 
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                  <img
+                    src={post.img}
+                    alt={post.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     onError={(e) => {
                       (e.target as HTMLImageElement).src = 'https://via.placeholder.com/600x400?text=BLOG+KY+DRYWALL';
                     }}
@@ -593,8 +587,8 @@ const Home: React.FC = () => {
                   <p className="text-slate-600 text-xs leading-relaxed mb-6 line-clamp-2 flex-grow">
                     {post.excerpt}
                   </p>
-                  <Link 
-                    to={`/blog/${post.id}`} 
+                  <Link
+                    to={`/blog/${post.id}`}
                     className="text-xs font-bold text-slate-800 hover:text-[#D31219] transition-colors flex items-center justify-center md:justify-start gap-1 mt-auto"
                   >
                     <span>Ler Artigo Completo</span>

@@ -1,3 +1,4 @@
+import { useDialogFocus } from '../components/useDialogFocus';
 
 import React, { useMemo, useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
@@ -9,29 +10,35 @@ import { Review, QuoteItem } from '../types';
 
 const ProductDetails: React.FC = () => {
   const { productId } = useParams<{ productId: string }>();
+  const [imageOpen, setImageOpen] = useState(false);
+  const imageRef = useDialogFocus(imageOpen, () => setImageOpen(false));
+  const [storageError, setStorageError] = useState('');
   const [reviews, setReviews] = useState<Review[]>([]);
   const [isAdded, setIsAdded] = useState(false);
   const [ctaPhrase, setCtaPhrase] = useState('');
-  
+
   // Review form state
   const [newComment, setNewComment] = useState('');
   const [newRating, setNewRating] = useState(5);
   const [userName, setUserName] = useState('');
   const [isReviewing, setIsReviewing] = useState(false);
 
-  const product = useMemo(() => 
-    PRODUCTS.find(p => p.id === productId), 
+  const product = useMemo(() =>
+    PRODUCTS.find(p => p.id === productId),
     [productId]
   );
 
   useEffect(() => {
     if (productId) {
+      try {
       const stored = localStorage.getItem(`ky_reviews_${productId}`);
       if (stored) {
-        setReviews(JSON.parse(stored).filter((review: Review) => !['1', '2'].includes(review.id)));
+        const parsed = JSON.parse(stored);
+        setReviews(Array.isArray(parsed) ? parsed.filter((review: Review) => review && typeof review.id === 'string' && !['1', '2'].includes(review.id) && typeof review.userName === 'string' && typeof review.comment === 'string' && Number.isFinite(review.rating)) : []);
       } else {
         setReviews([]);
       }
+      } catch { setReviews([]); }
     }
     setCtaPhrase(getRandomCTA());
     window.scrollTo(0, 0);
@@ -39,19 +46,23 @@ const ProductDetails: React.FC = () => {
 
   const addToQuote = () => {
     if (!product) return;
-    const stored = localStorage.getItem('ky_quote_list');
-    let list: QuoteItem[] = stored ? JSON.parse(stored) : [];
-    
+    let list: QuoteItem[] = [];
+    try {
+      const parsed = JSON.parse(localStorage.getItem('ky_quote_list') || '[]');
+      list = Array.isArray(parsed) ? parsed.filter(item => item && typeof item.productId === 'string' && typeof item.name === 'string' && Number.isFinite(item.quantity) && item.quantity > 0) : [];
+    } catch { list = []; }
+
     const existingIndex = list.findIndex(item => item.productId === product.id);
     if (existingIndex > -1) {
       list[existingIndex].quantity += 1;
     } else {
       list.push({ productId: product.id, name: product.name, quantity: 1 });
     }
-    
-    localStorage.setItem('ky_quote_list', JSON.stringify(list));
+
+    try { localStorage.setItem('ky_quote_list', JSON.stringify(list)); setStorageError(''); }
+    catch { setStorageError('Não foi possível salvar a lista neste navegador. Envie o pedido pelo WhatsApp.'); return; }
     window.dispatchEvent(new CustomEvent('quote-updated'));
-    
+
     setIsAdded(true);
     setTimeout(() => setIsAdded(false), 2000);
   };
@@ -69,9 +80,10 @@ const ProductDetails: React.FC = () => {
     };
 
     const updatedReviews = [review, ...reviews];
+    try { localStorage.setItem(`ky_reviews_${productId}`, JSON.stringify(updatedReviews)); setStorageError(''); }
+    catch { setStorageError('Não foi possível salvar a anotação neste navegador.'); return; }
     setReviews(updatedReviews);
-    localStorage.setItem(`ky_reviews_${productId}`, JSON.stringify(updatedReviews));
-    
+
     setUserName('');
     setNewComment('');
     setIsReviewing(false);
@@ -83,21 +95,29 @@ const ProductDetails: React.FC = () => {
 
   return (
     <div className="ky-section-white pt-24 pb-20">
-      <EnhancedSEO 
-        title={`${product.name} | Catálogo KY Drywall`} 
+      <EnhancedSEO
+        title={`${product.name} | Catálogo KY Drywall`}
         description={product.description}
-        canonical={`${BASE_URL}/produto/${product.id}`} 
-        ogImage={product.image} 
+        canonical={`${BASE_URL}/produto/${product.id}`}
+        ogImage={product.image}
         ogType="product"
-        schema={{ 
-          '@type': 'Product', 
-          name: product.name, 
+        schema={{
+          '@type': 'Product',
+          name: product.name,
           description: product.description,
-          image: new URL(product.image, BASE_URL).href, 
-          url: `${BASE_URL}/produto/${product.id}` 
-        }} 
+          image: new URL(product.image, BASE_URL).href,
+          url: `${BASE_URL}/produto/${product.id}`
+        }}
       />
-      
+
+      {imageOpen && <div className="fixed inset-0 z-[150] bg-black/80 p-4 flex items-center justify-center" onClick={() => setImageOpen(false)}>
+        <div ref={imageRef} role="dialog" aria-modal="true" aria-label={`Foto: ${product.name}`} className="bg-white rounded-2xl p-4 max-w-4xl w-full max-h-[90vh] overflow-auto" onClick={event => event.stopPropagation()}>
+          <button type="button" onClick={() => setImageOpen(false)} className="border rounded px-4 py-3 mb-3 font-bold">Fechar foto</button>
+          <img src={product.image} alt={product.name} className="w-full max-h-[65vh] object-contain" />
+          <p className="mt-3 text-base font-bold">{product.name}</p>
+        </div>
+      </div>}
+      {storageError && <p role="alert" className="mx-auto max-w-7xl px-6 py-3 text-red-700">{storageError}</p>}
       <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
         {/* Breadcrumbs - Blueprint Style */}
         <div className="flex items-center gap-2 text-[10px] font-mono font-bold uppercase text-slate-400 mb-12 tracking-widest overflow-x-auto whitespace-nowrap pb-2 scrollbar-hide">
@@ -114,12 +134,14 @@ const ProductDetails: React.FC = () => {
           {/* Left Column: Image Showcase */}
           <div className="lg:col-span-6 space-y-6">
             <div className="relative group ky-card rounded-3xl aspect-square overflow-hidden flex items-center justify-center p-8">
-              <img 
-                src={product.image} 
-                alt={product.name} 
+              <img
+                src={product.image}
+                alt={product.name}
                 className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105"
                 onError={(e) => {
-                  (e.target as HTMLImageElement).src = 'https://via.placeholder.com/800x800?text=KY+DRYWALL';
+                  const image = e.target as HTMLImageElement;
+                  image.onerror = null;
+                  image.src = '/logotipo-ky-drywall.png';
                 }}
               />
               {/* Badge Overlay */}
@@ -129,21 +151,22 @@ const ProductDetails: React.FC = () => {
                 </span>
               </div>
             </div>
-            
+
+            <button type="button" onClick={() => setImageOpen(true)} className="w-full rounded-xl border border-slate-300 px-4 py-3 font-bold">Ampliar foto do produto</button>
             {/* Trust Indicators */}
             <div className="grid grid-cols-2 gap-4">
                <div className="ky-section-alt p-5 rounded-2xl border border-slate-100 flex flex-col items-center text-center gap-3">
                  <Shield size={24} className="text-[#D31219]" />
                  <div>
                    <div className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">Qualidade</div>
-                   <div className="text-xs font-bold text-slate-800">Norma ABNT</div>
+                   <div className="text-xs font-bold text-slate-800">Consultar ficha técnica</div>
                  </div>
                </div>
                <div className="ky-section-alt p-5 rounded-2xl border border-slate-100 flex flex-col items-center text-center gap-3">
                  <Truck size={24} className="text-slate-900" />
                  <div>
                    <div className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">Logística</div>
-                   <div className="text-xs font-bold text-slate-800">Pronta Entrega</div>
+                   <div className="text-xs font-bold text-slate-800">Consultar disponibilidade</div>
                  </div>
                </div>
             </div>
@@ -159,18 +182,8 @@ const ProductDetails: React.FC = () => {
               <h1 className="ky-title-mark text-3xl sm:text-5xl font-black text-slate-900 mb-6 tracking-tight leading-tight">
                 {product.name}
               </h1>
-              
-              <div className="flex items-center gap-3 mb-10 pb-6 border-b border-slate-100">
-                <div className="flex items-center gap-1">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} size={16} className={i < Math.round(product.rating) ? "text-[#D31219] fill-[#D31219]" : "text-slate-200"} />
-                  ))}
-                </div>
-                <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">
-                  ({reviews.length || 0} Avaliações Técnicas)
-                </span>
-              </div>
 
+              <p className="text-xs text-slate-500 mb-6">Referência de catálogo. Confirme a ficha técnica, disponibilidade e preço antes da compra.</p>
               <div className="text-lg text-slate-600 leading-relaxed mb-10">
                 {product.description}
               </div>
@@ -271,7 +284,7 @@ const ProductDetails: React.FC = () => {
             {/* Sticky/Bottom CTA Section */}
             <div className="mt-auto pt-8 border-t-2 border-slate-900/5 sticky bottom-0 bg-white/80 backdrop-blur-sm pb-4 lg:relative lg:bg-transparent lg:pb-0 z-10">
               <div className="flex flex-col sm:flex-row gap-4">
-                <a 
+                <a
                   href={whatsappUrl}
                   target="_blank"
                   rel="noreferrer"
@@ -280,11 +293,11 @@ const ProductDetails: React.FC = () => {
                   <MessageCircle size={20} />
                   {ctaPhrase || 'Solicitar Orçamento'}
                 </a>
-                <button 
+                <button
                   onClick={addToQuote}
                   className={`flex-1 flex items-center justify-center gap-3 font-black py-5 px-6 rounded-2xl transition-all border-2 text-xs uppercase tracking-widest active:scale-95 ${
-                    isAdded 
-                      ? 'bg-emerald-50 border-emerald-200 text-emerald-700' 
+                    isAdded
+                      ? 'bg-emerald-50 border-emerald-200 text-emerald-700'
                       : 'border-slate-200 text-slate-900 hover:border-slate-900 bg-white'
                   }`}
                 >
@@ -292,7 +305,7 @@ const ProductDetails: React.FC = () => {
                   {isAdded ? 'Item Adicionado' : 'Adicionar à Lista'}
                 </button>
               </div>
-              
+
               <div className="mt-6 flex flex-wrap gap-6 justify-center sm:justify-start">
                 <div className="flex items-center gap-2 text-[10px] font-black text-slate-400 uppercase tracking-widest">
                   <PhoneCall size={14} className="text-slate-300" />
@@ -300,7 +313,7 @@ const ProductDetails: React.FC = () => {
                 </div>
                 <div className="flex items-center gap-2 text-[10px] font-black text-slate-400 uppercase tracking-widest">
                   <User size={14} className="text-slate-300" />
-                  <span>Consultoria Gratuita</span>
+                  <span>Consultar Atendimento</span>
                 </div>
               </div>
             </div>
@@ -312,15 +325,15 @@ const ProductDetails: React.FC = () => {
           <div className="max-w-4xl">
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-12 gap-6">
               <div>
-                <div className="text-[11px] font-mono font-bold text-[#D31219] uppercase tracking-[0.2em] mb-2">Feedbacks</div>
-                <h3 className="ky-title-mark text-3xl font-black text-slate-900 tracking-tight">Avaliações Técnicas</h3>
-                <p className="text-slate-500 text-sm mt-2">A palavra de quem utiliza nossos materiais no dia a dia da obra.</p>
+                <div className="text-[11px] font-mono font-bold text-[#D31219] uppercase tracking-[0.2em] mb-2">Uso pessoal</div>
+                <h3 className="ky-title-mark text-3xl font-black text-slate-900 tracking-tight">Minhas anotações</h3>
+                <p className="text-slate-500 text-sm mt-2">Anotações privadas salvas apenas neste navegador. Não são publicadas nem enviadas à KY.</p>
               </div>
-              <button 
+              <button
                 onClick={() => setIsReviewing(!isReviewing)}
                 className="bg-slate-900 text-white px-8 py-4 rounded-xl text-xs font-black uppercase tracking-widest hover:bg-black transition-all shadow-lg"
               >
-                {isReviewing ? 'Cancelar' : 'Avaliar Material'}
+                {isReviewing ? 'Cancelar' : 'Adicionar anotação'}
               </button>
             </div>
 
@@ -330,8 +343,8 @@ const ProductDetails: React.FC = () => {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
                       <label className="text-[10px] font-black text-slate-500 uppercase tracking-widest">Seu Nome / Construtora</label>
-                      <input 
-                        type="text" 
+                      <input
+                        type="text"
                         required
                         value={userName}
                         onChange={(e) => setUserName(e.target.value)}
@@ -343,7 +356,7 @@ const ProductDetails: React.FC = () => {
                       <label className="text-[10px] font-black text-slate-500 uppercase tracking-widest">Classificação Técnica</label>
                       <div className="flex gap-2 bg-white border-2 border-slate-200 rounded-xl px-4 py-3">
                         {[1, 2, 3, 4, 5].map((star) => (
-                          <button 
+                          <button
                             key={star}
                             type="button"
                             onClick={() => setNewRating(star)}
@@ -357,7 +370,7 @@ const ProductDetails: React.FC = () => {
                   </div>
                   <div className="space-y-2">
                     <label className="text-[10px] font-black text-slate-500 uppercase tracking-widest">Comentário sobre o Insumo</label>
-                    <textarea 
+                    <textarea
                       required
                       value={newComment}
                       onChange={(e) => setNewComment(e.target.value)}
@@ -365,7 +378,7 @@ const ProductDetails: React.FC = () => {
                       placeholder="Fale sobre a resistência, acabamento ou facilidade de instalação..."
                     ></textarea>
                   </div>
-                  <button 
+                  <button
                     type="submit"
                     className="w-full sm:w-auto bg-[#D31219] text-white px-10 py-4 rounded-xl text-xs font-black uppercase tracking-widest hover:bg-red-700 transition-all shadow-xl shadow-red-900/10"
                   >
@@ -393,7 +406,7 @@ const ProductDetails: React.FC = () => {
                 </div>
               )) : (
                  <div className="col-span-2 py-10 text-center ky-section-alt rounded-2xl border-2 border-dashed border-slate-200">
-                    <p className="text-slate-400 font-bold text-sm">Seja o primeiro a avaliar este material técnico.</p>
+                    <p className="text-slate-400 font-bold text-sm">Você ainda não salvou anotações sobre este material.</p>
                  </div>
               )}
             </div>

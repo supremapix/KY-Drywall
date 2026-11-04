@@ -16,6 +16,301 @@
       "permanent": true
     },
     {
+      "source": "/mapa-do-site",
+      "destination": "/sitemap",
+      "permanent": true
+    },
+    {
+      "source": "/mapa-site",
+      "destination": "/sitemap",
+      "permanent": true
+    },
+    {
+      "source": "/drywall-em/cidade-industrial-de-curitiba",
+      "destination": "/drywall-em/cic",
+      "permanent": true
+    },
+    {
+      "source": "/drywall-em-cidade-industrial-de-curitiba",
+      "destination": "/drywall-em/cic",
+      "permanent": true
+    },
+    {
+      "source": "/steel-frame-em/cidade-industrial-de-curitiba",
+      "destination": "/steel-frame-em/cic",
+      "permanent": true
+    },
+    {
+      "source": "/steel-frame-em-cidade-industrial-de-curitiba",
+      "destination": "/steel-frame-em/cic",
+      "permanent": true
+    },
+    {
+      "source": "/localizacao/cidade-industrial-de-curitiba",
+      "destination": "/drywall-em/cic",
+      "permanent": true
+    },
+    {
+      "source": "/localizacao-cidade-industrial-de-curitiba",
+      "destination": "/drywall-em/cic",
+      "permanent": true
+    },
+    {
+      "source": "/drywall-em/cidade-industrial",
+      "destination": "/drywall-em/cic",
+      "permanent": true
+    },
+    {
+      "source": "/drywall-em-cidade-industrial",
+      "destination": "/drywall-em/cic",
+      "permanent": true
+    },
+    {
+      "source": "/steel-frame-em/cidade-industrial",
+      "destination": "/steel-frame-em/cic",
+      "permanent": true
+    },
+    {
+      "source": "/steel-frame-em-cidade-industrial",
+      "destination": "/steel-frame-em/cic",
+      "permanent": true
+    },
+    {
+      "source": "/localizacao/cidade-industrial",
+      "destination": "/drywall-em/cic",
+      "permanent": true
+    },
+    {
+      "source": "/localizacao-cidade-industrial",
+      "destination": "/drywall-em/cic",
+      "permanent": true
+    },
+    {
+      "source": "/drywall-em/cic-norte",
+      "destination": "/drywall-em/cic",
+      "permanent": true
+    },
+    {
+      "source": "/drywall-em-cic-norte",
+      "destination": "/drywall-em/cic",
+      "permanent": true
+    },
+    {
+      "source": "/steel-frame-em/cic-norte",
+      "destination": "/steel-frame-em/cic",
+      "permanent": true
+    },
+    {
+      "source": "/steel-frame-em-cic-norte",
+      "destination": "/steel-frame-em/cic",
+      "permanent": true
+    },
+    {
+      "source": "/localizacao/cic-norte",
+      "destination": "/drywall-em/cic",
+      "permanent": true
+    },
+    {
+      "source": "/localizacao-cic-norte",
+      "destination": "/drywall-em/cic",
+      "permanent": true
+    },
+    {
+      "source": "/drywall-em/cic-central",
+      "destination": "/drywall-em/cic",
+      "permanent": true
+    },
+    {
+      "source": "/drywall-em-cic-central",
+      "destination": "/drywall-em/cic",
+      "permanent": true
+    },
+    {
+      "source": "/steel-frame-em/cic-central",
+      "destination": "/steel-frame-em/cic",
+      "permanent": true
+    },
+    {
+      "source": "/steel-frame-em-cic-central",
+      "destination": "/steel-frame-em/cic",
+      "permanent": true
+    },
+    {
+      "source": "/localizacao/cic-central",
+      "destination": "/drywall-em/cic",
+      "permanent": true
+    },
+    {
+      "source": "/localizacao-cic-central",
+      "destination": "/drywall-em/cic",
+      "permanent": true
+    },
+    {
+      "source": "/drywall-em/cic-sul",
+      "destination": "/drywall-em/cic",
+      "permanent": true
+    },
+    {
+      "source": "/drywall-em-cic-sul",
+      "destination": "/drywall-em/cic",
+      "permanent": true
+    },
+    {
+      "source": "/steel-frame-em/cic-sul",
+      "destination": "/steel-frame-em/cic",
+      "permanent": true
+    },
+    {
+      "source": "/steel-frame-em-cic-sul",
+      "destination": "/steel-frame-em/cic",
+      "permanent": true
+    },
+    {
+      "source": "/localizacao/cic-sul",
+      "destination": "/drywall-em/cic",
+      "permanent": true
+    },
+    {
+      "source": "/localizacao-cic-sul",
+      "destination": "/drywall-em/cic",
+      "permanent": true
+    },
+    {
+      "source": "/drywall-em/area-industrial-cic",
+      "destination": "/drywall-em/cic",
+      "permanent": true
+    },
+    {
+      "source": "/drywall-em-area-industrial-cic",
+      "destination": "/drywall-em/cic",
+      "permanent": true
+    },
+    {
+      "source": "/steel-frame-em/area-industrial-cic",
+      "destination": "/steel-frame-em/cic",
+      "permanent": true
+    },
+    {
+      "source": "/steel-frame-em-area-industrial-cic",
+      "destination": "/steel-frame-em/cic",
+      "permanent": true
+    },
+    {
+      "source": "/localizacao/area-industrial-cic",
+      "destination": "/drywall-em/cic",
+      "permanent": true
+    },
+    {
+      "source": "/localizacao-area-industrial-cic",
+      "destination": "/drywall-em/cic",
+      "permanent": true
+    },
+    {
+      "source": "/drywall-em/polo-industrial-cic",
+      "destination": "/drywall-em/cic",
+      "permanent": true
+    },
+    {
+      "source": "/drywall-em-polo-industrial-cic",
+      "destination": "/drywall-em/cic",
+      "permanent": true
+    },
+    {
+      "source": "/steel-frame-em/polo-industrial-cic",
+      "destination": "/steel-frame-em/cic",
+      "permanent": true
+    },
+    {
+      "source": "/steel-frame-em-polo-industrial-cic",
+      "destination": "/steel-frame-em/cic",
+      "permanent": true
+    },
+    {
+      "source": "/localizacao/polo-industrial-cic",
+      "destination": "/drywall-em/cic",
+      "permanent": true
+    },
+    {
+      "source": "/localizacao-polo-industrial-cic",
+      "destination": "/drywall-em/cic",
+      "permanent": true
+    },
+    {
+      "source": "/drywall-em/distrito-industrial-cic",
+      "destination": "/drywall-em/cic",
+      "permanent": true
+    },
+    {
+      "source": "/drywall-em-distrito-industrial-cic",
+      "destination": "/drywall-em/cic",
+      "permanent": true
+    },
+    {
+      "source": "/steel-frame-em/distrito-industrial-cic",
+      "destination": "/steel-frame-em/cic",
+      "permanent": true
+    },
+    {
+      "source": "/steel-frame-em-distrito-industrial-cic",
+      "destination": "/steel-frame-em/cic",
+      "permanent": true
+    },
+    {
+      "source": "/localizacao/distrito-industrial-cic",
+      "destination": "/drywall-em/cic",
+      "permanent": true
+    },
+    {
+      "source": "/localizacao-distrito-industrial-cic",
+      "destination": "/drywall-em/cic",
+      "permanent": true
+    },
+    {
+      "source": "/drywall-em/parque-industrial-cic",
+      "destination": "/drywall-em/cic",
+      "permanent": true
+    },
+    {
+      "source": "/drywall-em-parque-industrial-cic",
+      "destination": "/drywall-em/cic",
+      "permanent": true
+    },
+    {
+      "source": "/steel-frame-em/parque-industrial-cic",
+      "destination": "/steel-frame-em/cic",
+      "permanent": true
+    },
+    {
+      "source": "/steel-frame-em-parque-industrial-cic",
+      "destination": "/steel-frame-em/cic",
+      "permanent": true
+    },
+    {
+      "source": "/localizacao/parque-industrial-cic",
+      "destination": "/drywall-em/cic",
+      "permanent": true
+    },
+    {
+      "source": "/localizacao-parque-industrial-cic",
+      "destination": "/drywall-em/cic",
+      "permanent": true
+    },
+    {
+      "source": "/drywall-em-:location",
+      "destination": "/drywall-em/:location",
+      "permanent": true
+    },
+    {
+      "source": "/steel-frame-em-:location",
+      "destination": "/steel-frame-em/:location",
+      "permanent": true
+    },
+    {
+      "source": "/localizacao-:location",
+      "destination": "/drywall-em/:location",
+      "permanent": true
+    },
+    {
       "source": "/localizacao/:location",
       "destination": "/drywall-em/:location",
       "permanent": true

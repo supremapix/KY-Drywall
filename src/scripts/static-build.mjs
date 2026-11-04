@@ -1,20 +1,17 @@
 import { createServer } from 'vite';
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import path from 'node:path';
+import { getRoutes } from '../seo/routes.mjs';
 const server = await createServer({ server: { middlewareMode: true }, appType: 'custom', optimizeDeps: { noDiscovery: true, include: [] }, ssr: { noExternal: ['react-router-dom', 'react-router'], resolve: { conditions: ['module-sync', 'module', 'import'] } } });
 try {
   const app = await server.ssrLoadModule('/src/seo/render.tsx');
-  const { BASE_URL, PRODUCTS, SERVICES, BLOG_POSTS, NEIGHBORHOODS, CITIES_RMC, ALL_CIC_LOCATIONS, REDIRECTIONS, normalizeLocationName, render } = app;
-  const locations = [...new Set([...NEIGHBORHOODS, ...CITIES_RMC, ...ALL_CIC_LOCATIONS].map(normalizeLocationName))];
-  const routes = ['/', '/empresa', '/steel-frame', '/servicos', '/produtos', '/contato', '/blog', '/faq', '/sitemap', '/links',
-    ...SERVICES.map(s => `/servicos/${s.id}`), ...PRODUCTS.map(p => `/produto/${p.id}`), ...BLOG_POSTS.map(p => `/blog/${p.id}`),
-    ...locations.flatMap(loc => [`/drywall-em/${loc}`, `/steel-frame-em/${loc}`])];
+  const { BASE_URL, render } = app;
+  const { routes, aliases } = getRoutes(app);
   const template = await readFile('dist/index.html', 'utf8');
   const escape = text => String(text).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
   for (const route of [...new Set(routes), '/404']) {
     const { html, metadata: m } = render(route);
-    const isLocal = route.includes('-em') || route.includes('localizacao');
-    if (route !== '/404' && !isLocal && (m.noindex || m.url !== BASE_URL + route)) throw new Error(`Noncanonical/indexable route ${route}: ${m.url}`);
+    if (route !== '/404' && (m.noindex || m.url !== BASE_URL + route)) throw new Error(`Noncanonical/indexable route ${route}: ${m.url}`);
     const head = `<title>${escape(m.title)}</title>
 <meta name="description" content="${escape(m.description)}">
 <meta name="robots" content="${m.noindex ? 'noindex, follow' : 'index, follow, max-image-preview:large'}">
@@ -36,18 +33,12 @@ try {
     await mkdir(path.dirname(destination), { recursive: true });
     await writeFile(destination, output);
   }
-  const indexable = JSON.parse(await readFile('src/seo/indexable-routes.json', 'utf8'));
-  if (indexable.some(route => !routes.includes(route))) throw new Error('Sitemap includes an unknown route');
+  const indexable = routes;
+  await writeFile('src/seo/indexable-routes.json', JSON.stringify(indexable, null, 2) + '\n');
   const sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + [...new Set(indexable)].map(route => `  <url><loc>${BASE_URL}${route}</loc></url>`).join('\n') + '\n</urlset>\n';
-  await writeFile('public/sitemap.xml', sitemap);
   await writeFile('dist/sitemap.xml', sitemap);
   
-  const redirects = locations.map(loc => `/localizacao/${loc} /drywall-em/${loc} 301`).join('\n');
-  const consolidated = Object.entries(REDIRECTIONS).flatMap(([from, to]) => [
-    `/drywall-em/${from} /drywall-em/${to} 301`,
-    `/steel-frame-em/${from} /steel-frame-em/${to} 301`
-  ]).join('\n');
-  
-  await writeFile('dist/_redirects', `https://kydrywall.com.br/* https://www.kydrywall.com.br/:splat 301!\n${redirects}\n${consolidated}\n/* /404.html 404\n`);
+  const redirects = Object.entries(aliases).map(([from, to]) => `${from} ${to} 301`).join('\n');
+  await writeFile('dist/_redirects', `https://kydrywall.com.br/* https://www.kydrywall.com.br/:splat 301!\n${redirects}\n/* /404.html 404\n`);
   console.log(`Static HTML: ${routes.length} existing routes; sitemap: ${indexable.length} URLs; real 404 generated.`);
 } finally { await server.close(); }

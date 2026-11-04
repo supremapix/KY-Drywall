@@ -113,7 +113,7 @@ const LocationPage: React.FC<LocationPageProps> = ({ type, overrideSlug }) => {
       {/* Hero Section - Industrial Showroom */}
       <section className="bg-white py-20 md:py-32 text-slate-900 relative overflow-hidden border-b-2 border-slate-100">
         <div className="absolute inset-0 z-0 bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] [background-size:24px_24px] opacity-100"></div>
-        
+
         <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 relative z-10">
           <div className="flex items-center gap-2 text-[10px] text-slate-400 mb-10 font-black uppercase tracking-[0.2em]">
             <Link to="/" className="hover:text-[#D31219] flex items-center gap-1.5 transition-colors">
@@ -137,7 +137,7 @@ const LocationPage: React.FC<LocationPageProps> = ({ type, overrideSlug }) => {
               </h1>
 
               <p className="text-slate-600 text-lg sm:text-2xl leading-relaxed mb-12 max-w-2xl font-medium">
-                Distribuição especializada e estoque a pronta entrega de chapas, perfis normatizados e isolamentos para obras em <strong className="text-slate-950 font-black">{formattedName}</strong>.
+                Consulte chapas, perfis e isolamentos, além das condições de entrega e atendimento para obras em <strong className="text-slate-950 font-black">{formattedName}</strong>.
               </p>
 
               <div className="flex flex-col sm:flex-row flex-wrap gap-4">
@@ -221,7 +221,7 @@ const LocationPage: React.FC<LocationPageProps> = ({ type, overrideSlug }) => {
                   {
                     title: `Rapidez de Montagem`,
                     icon: Zap,
-                    text: `A construção a seco reduz o cronograma da obra em até 70% comparado à alvenaria.`
+                    text: `A montagem a seco permite planejar etapas; o prazo depende do projeto e da equipe.`
                   },
                   {
                     title: `Normas ABNT`,
@@ -231,7 +231,7 @@ const LocationPage: React.FC<LocationPageProps> = ({ type, overrideSlug }) => {
                   {
                     title: `Obra Limpa`,
                     icon: Recycle,
-                    text: `Sistema sustentável que gera até 80% menos entulho no canteiro.`
+                    text: `O planejamento de cortes e compras ajuda a controlar os resíduos no canteiro.`
                   }
                 ].map((item, i) => (
                   <div key={i} className="p-6 rounded-xl border border-slate-200 bg-white hover:border-[#D31219]/20 transition-all shadow-sm">
@@ -275,7 +275,7 @@ const LocationPage: React.FC<LocationPageProps> = ({ type, overrideSlug }) => {
                   Critérios de Compra
                 </h3>
                 <p className="text-sm text-slate-600 leading-relaxed">
-                  Ao escolher materiais para {serviceName}, não considere apenas o preço unitário. A espessura do aço (Z180 Barbieri) e a densidade das placas são fundamentais para a estabilidade estrutural e conforto acústico em <strong>{formattedName}</strong>. Exija materiais normatizados que garantam a segurança da sua família ou do seu negócio.
+                  Ao escolher materiais para {serviceName}, não considere apenas o preço unitário. A espessura e o revestimento do aço, a composição das placas e o isolamento são fundamentais para a estabilidade estrutural e conforto acústico em <strong>{formattedName}</strong>. Confira as especificações e a documentação dos materiais com o responsável pelo projeto.
                 </p>
                 <div className="p-4 bg-slate-50 rounded-xl border border-slate-100">
                    <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2">Dica Especial KY</p>

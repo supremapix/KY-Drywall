@@ -1,3 +1,4 @@
+import { readQuote } from './quoteStorage';
 
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
@@ -17,9 +18,8 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
     e.preventDefault();
     e.stopPropagation();
     
-    const stored = localStorage.getItem('ky_quote_list');
-    let list: QuoteItem[] = stored ? JSON.parse(stored) : [];
-    
+    const list = readQuote();
+
     const existingIndex = list.findIndex(item => item.productId === product.id);
     if (existingIndex > -1) {
       list[existingIndex].quantity += 1;
@@ -51,14 +51,6 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           </span>
         </div>
         
-        {/* Quick Add Overlay */}
-        <button
-          onClick={addToQuote}
-          title="Adicionar à cotação"
-          className="absolute bottom-4 right-4 bg-white text-slate-900 p-3 rounded-xl shadow-lg opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all hover:bg-[#D31219] hover:text-white duration-300 border border-slate-200"
-        >
-          {added ? <Check size={20} strokeWidth={3} className="text-emerald-600 group-hover:text-white" /> : <PlusCircle size={20} strokeWidth={2.5} />}
-        </button>
       </Link>
 
       {/* Content */}
@@ -70,7 +62,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           
           <div className="flex items-center gap-2 mb-6 text-[10px] text-slate-400 font-black uppercase tracking-widest">
             <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></div>
-            <span>Pronta Entrega Curitiba</span>
+            <span>Consulte disponibilidade</span>
           </div>
         </Link>
 

@@ -75,7 +75,7 @@ const Blog: React.FC = () => {
                 A KY Drywall & Steel Frame é distribuidora líder de materiais para construção a seco em Curitiba e Região Metropolitana. Oferecemos linha completa de perfis, chapas e fixações para {currentPost.tag.toLowerCase()}, com suporte técnico especializado para cada fase da sua obra.
               </p>
               <p>
-                Trabalhamos exclusivamente com marcas homologadas como Placo, Knauf e Barbieri, garantindo conformidade total com as normas ABNT. Nossa logística é focada na agilidade, atendendo canteiros de obras com prontidão.
+                Consulte as marcas e referências do catálogo. A conformidade e o desempenho devem ser conferidos na documentação do produto e do sistema especificado. Prazos e condições de entrega dependem do orçamento.
               </p>
             </div>
 
@@ -178,7 +178,7 @@ const Blog: React.FC = () => {
         ogType="website"
         schema={blogSchema}
       />
-      
+
       {/* Blog Hero - Industrial Showroom */}
       <section className="bg-white py-20 md:py-32 text-slate-900 relative overflow-hidden border-b-2 border-slate-100">
         <div className="absolute inset-0 z-0 bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] [background-size:24px_24px] opacity-100"></div>
@@ -279,7 +279,7 @@ const Blog: React.FC = () => {
               Consulte as especificações de entrega, prazos e consultoria técnica para sua localidade específica.
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div className="bg-white p-10 rounded-[40px] border border-slate-200 shadow-xl">
               <div className="flex items-center gap-5 mb-10 border-b border-slate-50 pb-8">

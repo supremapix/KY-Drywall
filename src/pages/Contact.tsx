@@ -11,7 +11,7 @@ const Contact: React.FC = () => {
     '@context': 'https://schema.org',
     '@type': 'ContactPage',
     name: 'Contato - KY Drywall & Steel Frame',
-    description: 'Entre em contato com a KY Drywall. Orçamento gratuito e assessoria técnica especializada em Curitiba',
+    description: 'Entre em contato com a KY Drywall. Consulte orçamento, materiais e serviços em Curitiba',
     url: `${BASE_URL}/contato`,
     mainEntity: {
       '@type': 'LocalBusiness',
@@ -63,8 +63,10 @@ const Contact: React.FC = () => {
   });
 
   useEffect(() => {
-    const stored = localStorage.getItem('ky_quote_list');
-    if (stored) setQuoteItems(JSON.parse(stored));
+    try {
+      const parsed = JSON.parse(localStorage.getItem('ky_quote_list') || '[]');
+      setQuoteItems(Array.isArray(parsed) ? parsed.filter(item => item && typeof item.productId === 'string' && typeof item.name === 'string' && Number.isFinite(item.quantity) && item.quantity > 0) : []);
+    } catch { setQuoteItems([]); }
     setCta1(getRandomCTA());
     setCta2(getRandomCTA());
     setFormCTA(getRandomCTA());
@@ -77,7 +79,7 @@ const Contact: React.FC = () => {
 
   const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     let quoteText = "";
     if (isQuoteView && quoteItems.length > 0) {
       quoteText = "\n\n*ITENS DA COTAÇÃO:*\n" + quoteItems.map(i => `• ${i.name} (Qtd: ${i.quantity})`).join('\n');
@@ -148,7 +150,7 @@ const Contact: React.FC = () => {
                   </div>
                 </div>
                 <p className="text-slate-600 text-sm leading-relaxed mb-6">
-                  Especialista em especificação estrutural para Steel Frame, sistemas drywall e telhados shingle de alta performance.
+                  Atendimento para materiais de Steel Frame, drywall e telhados Shingle. Projetos estruturais devem ser definidos pelo responsável técnico.
                 </p>
                 <div className="flex items-center gap-2 text-slate-900 font-bold mb-8 text-lg">
                   <Smartphone size={18} className="text-slate-400" />
@@ -202,7 +204,7 @@ const Contact: React.FC = () => {
               <div className="grid grid-cols-1 lg:grid-cols-5">
                 <div className="lg:col-span-2 bg-slate-900 p-10 md:p-12 text-white flex flex-col justify-between relative overflow-hidden">
                   <div className="absolute inset-0 z-0 bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:20px_20px] opacity-20"></div>
-                  
+
                   <div className="relative z-10">
                     <h2 className="text-3xl font-black tracking-tight mb-6">
                       Envie Seu <span className="text-[#D31219]">Projeto</span>
@@ -236,8 +238,8 @@ const Contact: React.FC = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                       <div className="space-y-3">
                         <label className="text-sm font-black text-slate-900 uppercase tracking-widest block ml-1">Seu Nome / Empresa</label>
-                        <input 
-                          type="text" 
+                        <input
+                          type="text"
                           name="name"
                           required
                           value={formData.name}
@@ -248,8 +250,8 @@ const Contact: React.FC = () => {
                       </div>
                       <div className="space-y-3">
                         <label className="text-sm font-black text-slate-900 uppercase tracking-widest block ml-1">WhatsApp de Contato</label>
-                        <input 
-                          type="tel" 
+                        <input
+                          type="tel"
                           name="phone"
                           required
                           value={formData.phone}
@@ -259,10 +261,10 @@ const Contact: React.FC = () => {
                         />
                       </div>
                     </div>
-                    
+
                     <div className="space-y-3">
                       <label className="text-sm font-black text-slate-900 uppercase tracking-widest block ml-1">Tipo de Material ou Serviço</label>
-                      <select 
+                      <select
                         name="subject"
                         value={formData.subject}
                         onChange={handleInputChange}
@@ -278,7 +280,7 @@ const Contact: React.FC = () => {
 
                     <div className="space-y-3">
                       <label className="text-sm font-black text-slate-900 uppercase tracking-widest block ml-1">Mensagem ou Lista de Materiais</label>
-                      <textarea 
+                      <textarea
                         name="message"
                         required
                         value={formData.message}
@@ -296,7 +298,7 @@ const Contact: React.FC = () => {
                       </div>
                     )}
 
-                    <button 
+                    <button
                       type="submit"
                       className="w-full bg-[#D31219] hover:bg-red-700 text-white font-black py-6 rounded-2xl transition-all text-lg uppercase tracking-widest flex items-center justify-center gap-4 shadow-xl active:scale-[0.98]"
                     >

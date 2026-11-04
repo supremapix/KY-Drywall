@@ -1,3 +1,5 @@
+import { readQuote } from './quoteStorage';
+import { useDialogFocus } from './useDialogFocus';
 
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
@@ -23,15 +25,10 @@ const Header: React.FC = () => {
   const [isQuoteOpen, setIsQuoteOpen] = useState(false);
   const [quoteCount, setQuoteCount] = useState(0);
   const location = useLocation();
+  const menuRef = useDialogFocus(isMenuOpen, () => setIsMenuOpen(false));
 
   const updateCount = () => {
-    const stored = localStorage.getItem('ky_quote_list');
-    if (stored) {
-      const list: QuoteItem[] = JSON.parse(stored);
-      setQuoteCount(list.length);
-    } else {
-      setQuoteCount(0);
-    }
+    setQuoteCount(readQuote().length);
   };
 
   useEffect(() => {
@@ -86,7 +83,7 @@ const Header: React.FC = () => {
               <span>{COMPANY_INFO.email}</span>
             </a>
           </div>
-          <div className="hidden lg:block opacity-90 text-xs">Atendimento Técnico & Entrega Rápida — Curitiba e RMC</div>
+          <div className="hidden lg:block opacity-90 text-xs">Materiais & Consulta de Entrega — Curitiba e RMC</div>
         </div>
       </div>
 
@@ -117,7 +114,7 @@ const Header: React.FC = () => {
                     {item.children && <ChevronRight size={14} className="rotate-90 text-slate-400 group-hover:text-[#D31219]" />}
                   </Link>
                   {item.children && (
-                    <div className="absolute left-0 top-full hidden group-hover:block bg-white shadow-xl rounded-lg py-2 w-64 border-t-2 border-[#D31219] border-x border-b border-slate-200">
+                    <div className="absolute left-0 top-full hidden group-hover:block group-focus-within:block bg-white shadow-xl rounded-lg py-2 w-64 border-t-2 border-[#D31219] border-x border-b border-slate-200">
                       {item.children.map((child) => (
                         <Link
                           key={child.label}
@@ -184,6 +181,7 @@ const Header: React.FC = () => {
       {isMenuOpen && (
         <div
           className="fixed inset-0 z-[100] bg-white text-slate-900 w-full h-full overflow-y-auto flex flex-col animate-in fade-in slide-in-from-bottom duration-300"
+          ref={menuRef}
           role="dialog"
           aria-modal="true"
           aria-label="Menu principal"

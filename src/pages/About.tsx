@@ -10,9 +10,9 @@ const About: React.FC = () => {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: 'KY Drywall & Steel Frame',
-    description: 'Maior distribuidora de materiais para construção a seco de Curitiba. Especialistas em Steel Frame, Drywall, Telhado Shingle e Isolamento Acústico',
+    description: 'Distribuidora de materiais para construção a seco de Curitiba. Especialistas em Steel Frame, Drywall, Telhado Shingle e Isolamento Acústico',
     url: BASE_URL,
-    logo: 'https://images.pexels.com/photos/1292294/pexels-photo-1292294.jpeg?auto=compress&cs=tinysrgb&w=800',
+    logo: `${BASE_URL}/logotipo-ky-drywall.png`,
     telephone: '+554135284232',
     email: 'carlos@kydrywall.com.br',
     address: {
@@ -22,11 +22,6 @@ const About: React.FC = () => {
       addressRegion: 'PR',
       postalCode: '81480-270',
       addressCountry: 'BR'
-    },
-    geo: {
-      '@type': 'GeoCoordinates',
-      latitude: '-25.4284',
-      longitude: '-49.2733'
     },
     openingHoursSpecification: [
       {
@@ -42,7 +37,6 @@ const About: React.FC = () => {
         closes: '12:00'
       }
     ],
-    priceRange: '$$',
     areaServed: [
       {
         '@type': 'City',
@@ -57,8 +51,7 @@ const About: React.FC = () => {
       'https://www.facebook.com/kydrywall',
       'https://www.instagram.com/kydrywall'
     ],
-    foundingDate: '2010',
-    slogan: 'Sua Obra 70% Mais Rápida'
+    slogan: 'Materiais para construção a seco'
   };
 
   const [cta, setCta] = useState('');
@@ -71,8 +64,8 @@ const About: React.FC = () => {
     <div className="bg-white">
       <EnhancedSEO
         title="A Empresa - KY Drywall & Steel Frame"
-        description="Conheça a KY Drywall, maior distribuidora de materiais para construção a seco de Curitiba. Especialistas em Steel Frame, Drywall, Telhado Shingle e Isolamento Acústico. Assessoria técnica especializada."
-        keywords="sobre ky drywall, empresa drywall curitiba, distribuidora steel frame, história ky drywall, maior distribuidora curitiba, materiais construção seco, barbieri curitiba"
+        description="Conheça a KY Drywall, distribuidora de materiais para construção a seco de Curitiba. Especialistas em Steel Frame, Drywall, Telhado Shingle e Isolamento Acústico. Assessoria técnica especializada."
+        keywords="sobre ky drywall, empresa drywall curitiba, distribuidora steel frame, história ky drywall, distribuidora curitiba, materiais construção seco, barbieri curitiba"
         canonical={`${BASE_URL}/empresa`}
         ogType="website"
         schema={organizationSchema}
@@ -81,10 +74,10 @@ const About: React.FC = () => {
       <section className="ky-section-white py-20 md:py-32 text-slate-900 relative overflow-hidden border-b border-slate-200">
         <div className="absolute inset-0 z-0 bg-[radial-gradient(var(--ky-border)_1px,transparent_1px)] [background-size:24px_24px] opacity-100"></div>
         <div className="absolute inset-0 opacity-10 z-0">
-          <img 
-            src="https://images.pexels.com/photos/159306/construction-site-build-construction-work-159306.jpeg?auto=compress&cs=tinysrgb&w=1920" 
-            alt="Obra Industrial" 
-            className="w-full h-full object-cover" 
+          <img
+            src="https://images.pexels.com/photos/159306/construction-site-build-construction-work-159306.jpeg?auto=compress&cs=tinysrgb&w=1920"
+            alt="Obra Industrial"
+            className="w-full h-full object-cover"
           />
         </div>
         <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 relative z-10">
@@ -97,7 +90,7 @@ const About: React.FC = () => {
               A Solidez da <br/> <span className="text-[#D31219]">KY Drywall</span> & Steel Frame
             </h1>
             <p className="text-lg sm:text-2xl text-slate-600 font-medium leading-relaxed max-w-2xl">
-              Desde 1998, liderando o fornecimento de insumos para construção a seco e isolamento termoacústico em Curitiba e RMC.
+              Fornecimento de insumos para construção a seco e isolamento termoacústico em Curitiba e RMC.
             </p>
           </div>
         </div>
@@ -119,10 +112,10 @@ const About: React.FC = () => {
                   A <strong className="text-slate-950 font-black">KY Drywall & Steel Frame</strong> é referência no fornecimento de materiais para construtoras, engenheiros e montadores. Localizada estrategicamente na Rod. BR-277, no Cajuru, contamos com acesso logístico imediato.
                 </p>
                 <p>
-                  Somos parceiros e distribuidores de indústrias consagradas, como <strong className="text-slate-950 font-black">Barbieri</strong> (perfis Z180), <strong className="text-slate-950 font-black">Holdflex</strong> e principais fabricantes de placas e isolamentos.
+                  O catálogo inclui produtos de marcas como <strong className="text-slate-950 font-black">Barbieri</strong> (perfis de aço), <strong className="text-slate-950 font-black">Holdflex</strong> e principais fabricantes de placas e isolamentos.
                 </p>
                 <p>
-                  Oferecemos assessoria técnica consultiva para elaboração de quantitativos e compatibilização de projetos estruturais em steel frame.
+                  Converse com a equipe sobre a lista de materiais. Projetos estruturais e sua compatibilização exigem um profissional habilitado.
                 </p>
               </div>
 
@@ -135,8 +128,8 @@ const About: React.FC = () => {
               </div>
 
               <div className="pt-4 flex flex-col sm:flex-row gap-4">
-                <a 
-                  href={`https://wa.me/${COMPANY_INFO.whatsapp}`} 
+                <a
+                  href={`https://wa.me/${COMPANY_INFO.whatsapp}`}
                   target="_blank"
                   rel="noreferrer"
                   className="w-full sm:w-auto bg-[#D31219] text-white font-black px-10 py-5 rounded-2xl inline-flex items-center justify-center gap-3 text-xs uppercase tracking-[0.2em] hover:bg-slate-900 transition-all shadow-xl active:scale-[0.98]"
@@ -144,8 +137,8 @@ const About: React.FC = () => {
                   <MessageCircle size={20} />
                   <span>WhatsApp Comercial</span>
                 </a>
-                <a 
-                  href={`tel:${COMPANY_INFO.phone.replace(/\D/g, '')}`} 
+                <a
+                  href={`tel:${COMPANY_INFO.phone.replace(/\D/g, '')}`}
                   className="w-full sm:w-auto bg-white text-slate-950 border border-slate-200 font-black px-10 py-5 rounded-2xl inline-flex items-center justify-center gap-3 text-xs uppercase tracking-[0.2em] hover:border-[#D31219] transition-all active:scale-[0.98]"
                 >
                   <span>Ligar: {COMPANY_INFO.phone}</span>
@@ -158,10 +151,10 @@ const About: React.FC = () => {
                 <div className="absolute top-6 left-6 z-10 bg-white/90 backdrop-blur px-4 py-2 rounded-full border border-slate-100 shadow-sm">
                   <p className="text-[10px] font-black text-[#D31219] uppercase tracking-widest">Showroom BR-277</p>
                 </div>
-                <img 
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ky-loja-cajuru-drywall-stell-fame.png-CAi9KHi0wcqQLptb0qLFGSWQZaXr98.jpeg" 
-                  alt="Loja KY Drywall Curitiba" 
-                  className="w-full aspect-[16/10] object-cover object-top" 
+                <img
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ky-loja-cajuru-drywall-stell-fame.png-CAi9KHi0wcqQLptb0qLFGSWQZaXr98.jpeg"
+                  alt="Loja KY Drywall Curitiba"
+                  className="w-full aspect-[16/10] object-cover object-top"
                 />
                 <div className="p-8 bg-slate-50 border-t border-slate-100">
                   <div className="flex items-center justify-between gap-4">
@@ -194,20 +187,20 @@ const About: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { 
-                icon: Warehouse, 
-                title: 'Estoque Centralizado', 
-                desc: 'Centenas de toneladas de placas de drywall e perfis Barbieri para retirada imediata em nosso CD no Cajuru.' 
+              {
+                icon: Warehouse,
+                title: 'Estoque Centralizado',
+                desc: 'Consulte modelos, quantidades e disponibilidade de placas e perfis na unidade Cajuru.'
               },
-              { 
-                icon: HardHat, 
-                title: 'Apoio a Projetos', 
-                desc: 'Validação de especificações de carga e desempenho acústico por consultores com décadas de experiência.' 
+              {
+                icon: HardHat,
+                title: 'Apoio a Projetos',
+                desc: 'Envie seu projeto e lista de materiais para cotação. Dimensionamento e desempenho devem ser validados pelo responsável técnico.'
               },
-              { 
-                icon: Truck, 
-                title: 'Frota Especializada', 
-                desc: 'Veículos equipados para transporte de placas sem quebras e perfis sem empenamento, com descarga técnica.' 
+              {
+                icon: Truck,
+                title: 'Entrega sob Consulta',
+                desc: 'Consulte frete, prazo, acesso ao local e condições de descarga para o endereço da obra.'
               }
             ].map((item, i) => (
               <div key={i} className="ky-card p-10 rounded-3xl group">

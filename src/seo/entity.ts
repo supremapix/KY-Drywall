@@ -1,8 +1,14 @@
 import { createContext } from 'react';
-import { BASE_URL, COMPANY_INFO, SITE_ASSETS } from '../constants';
+import { BASE_URL, COMPANY_INFO, SITE_ASSETS, REDIRECTIONS } from '../constants';
 export const SeoCollector = createContext<((data: any) => void) | null>(null);
 export const canonicalUrl = (value: string) => {
-  const path = new URL(value, BASE_URL).pathname.replace(/\/+$/, '') || '/';
+  let path = new URL(value, BASE_URL).pathname.replace(/\/+$/, '') || '/';
+  if (['/mapa-site', '/mapa-do-site'].includes(path)) path = '/sitemap';
+  const local = path.match(/^\/(drywall-em|steel-frame-em|localizacao)[/-](.+)$/);
+  if (local) {
+    const prefix = local[1] === 'localizacao' ? 'drywall-em' : local[1];
+    path = `/${prefix}/${REDIRECTIONS[local[2]] || local[2]}`;
+  }
   return `${BASE_URL}${path}`;
 };
 export const organization = {

@@ -1,19 +1,19 @@
 import React, { useMemo } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { 
-  ChevronRight, 
-  Clock, 
-  ArrowLeft, 
-  MessageCircle, 
-  Tag, 
-  CheckCircle2, 
-  Building2, 
-  Truck, 
-  ShieldCheck, 
-  DollarSign, 
-  Sparkles, 
-  Layers, 
-  Phone 
+import {
+  ChevronRight,
+  Clock,
+  ArrowLeft,
+  MessageCircle,
+  Tag,
+  CheckCircle2,
+  Building2,
+  Truck,
+  ShieldCheck,
+  DollarSign,
+  Sparkles,
+  Layers,
+  Phone
 } from 'lucide-react';
 import { BLOG_POSTS, BASE_URL, COMPANY_INFO } from '../constants';
 import NotFound from './NotFound';
@@ -36,348 +36,213 @@ interface BlogPostContent {
 }
 
 const BLOG_CONTENT: Record<string, BlogPostContent> = {
-  'b1': {
-    highlights: [
-      'Construção até 70% mais rápida comparada à alvenaria tradicional.',
-      'Aço galvanizado Z180 Barbieri em conformidade com ABNT NBR 15253 e 15575.',
-      'Redução de até 80% na geração de entulho e desperdício de água no canteiro.',
-      'Isolamento termoacústico superior planejado para o inverno rigoroso de Curitiba.'
+  "b1": {
+    "highlights": [
+      "Entenda os componentes do sistema, a importância do projeto e os cuidados para comparar propostas.",
+      "Confirme especificações no projeto e nos documentos do fabricante.",
+      "Disponibilidade, preços e prazos são informados em orçamento."
     ],
-    sections: [
+    "sections": [
       {
-        title: 'O que é Light Steel Frame e como funciona?',
-        content: 'O Light Steel Framing (LSF) é um sistema construtivo industrializado e estrutural formado por perfis leves de aço galvanizado 100% recicláveis. Em vez de vigas pesadas de concreto e tijolos cerâmicos que exigem longos períodos de cura, a edificação em Steel Frame é montada com precisão milimétrica através de painéis estruturais autoportantes, contraventamentos e fechamentos multicamadas.'
+        "title": "O que compõe o sistema",
+        "content": "Light Steel Framing utiliza perfis leves de aço na estrutura e diferentes camadas de fechamento. Perfis, ligações, contraventamento, fundação e cobertura devem formar um conjunto dimensionado pelo responsável técnico."
       },
       {
-        title: 'Por que o Steel Frame é a escolha ideal para o clima de Curitiba e RMC?',
-        content: 'Curitiba e os municípios metropolitanos apresentam expressivas oscilações térmicas, com invernos frios, geadas pontuais e alta umidade. Nas construções convencionais de alvenaria, a inércia térmica faz com que as paredes fiquem geladas e propensas a mofo. No Steel Frame, o espaço entre os montantes de aço é preenchido com mantas de lã de vidro, lã de rocha ou lã de PET, criando uma barreira térmica contínua que mantém o ambiente aquecido com menor gasto em aquecedores.'
+        "title": "Antes de contratar",
+        "content": "Defina área, uso, localização, padrão de acabamento e requisitos de desempenho. Solicite projeto executivo, memorial de materiais e uma proposta com escopo claro. Compare prazo e custo com base no mesmo projeto."
       },
       {
-        title: 'Sustentabilidade e canteiro limpo: 80% menos resíduos',
-        content: 'Enquanto uma obra tradicional consome milhares de litros de água para massas e rebocos, a construção a seco dispensa água na estrutura. O aço utilizado possui certificação de sustentabilidade e pode ser reciclado infinitas vezes sem perder suas propriedades mecânicas, garantindo uma pegada de carbono reduzida para construtores conscientes.'
-      },
-      {
-        title: 'Como a KY Drywall apoia sua obra em Curitiba',
-        content: 'Localizada estrategicamente na Rodovia BR-277 (Cajuru), a KY Drywall & Steel Frame fornece a estrutura completa: perfis montantes e guias homologados Barbieri, placas OSB estruturais, chapas cimentícias, membranas hidrófugas, mantas termoacústicas e fixações especiais. Nossa equipe técnica auxilia engenheiros, arquitetos e instaladores no dimensionamento e no quantitativo exato dos materiais.'
-      }
-    ],
-    faq: [
-      {
-        question: 'O Steel Frame aguenta ventos fortes em Curitiba?',
-        answer: 'Sim. Projetos em Steel Frame são calculados por engenheiros estruturais para resistir a ventos de mais de 150 km/h, superando com folga os parâmetros da norma ABNT NBR 6123.'
-      },
-      {
-        question: 'Posso financiar uma casa em Steel Frame pela Caixa?',
-        answer: 'Sim, o sistema Light Steel Framing é homologado pelo SINAT/PBQP-H e aceito em financiamentos imobiliários da Caixa Econômica Federal e demais bancos.'
+        "title": "Umidade e conforto",
+        "content": "O desempenho depende da composição das paredes e da cobertura, do isolamento, das aberturas e da execução. Barreiras, impermeabilização, ventilação e manutenção precisam ser previstas para as condições do local."
       }
     ]
   },
-  'b2': {
-    highlights: [
-      'Divisórias e forros de rápida instalação com superfície lisa para pintura imediata.',
-      'Opções de chapas específicas: ST (padrão), RU (resistente à umidade) e RF (resistente ao fogo).',
-      'Desempenho acústico com atenuação de até 50 dB quando associado a lãs isolantes.',
-      'Facilidade de embutir tubulações elétricas, hidráulicas e dutos de ar-condicionado.'
+  "b2": {
+    "highlights": [
+      "Veja quais partes do sistema influenciam o desempenho de paredes e forros.",
+      "Confirme especificações no projeto e nos documentos do fabricante.",
+      "Disponibilidade, preços e prazos são informados em orçamento."
     ],
-    sections: [
+    "sections": [
       {
-        title: 'Drywall: Versatilidade arquitetônica e execução limpa',
-        content: 'O sistema drywall (gesso acartonado) transformou a engenharia de interiores ao substituir paredes pesadas de tijolos por paredes leves estruturadas com guias e montantes de aço galvanizado. Isso permite reformar apartamentos e salas comerciais em Curitiba sem sobrecarregar a laje do edifício.'
+        "title": "Sistema completo",
+        "content": "O resultado acústico depende das chapas, estrutura, preenchimento, juntas, portas e passagens de instalações. A presença de lã isolante, por si só, não define um índice de isolamento."
       },
       {
-        title: 'Isolamento Acústico de Alta Eficiência',
-        content: 'Para estúdios, consultórios, salas de reunião e dormitórios residenciais, o drywall oferece isolamento sonoro superior ao da alvenaria tradicional. Ao combinar placas duplas de gesso com lã de rocha ou lã de vidro de alta densidade no miolo da parede, bloqueia-se tanto o ruído aéreo quanto as vibrações estruturais.'
+        "title": "Escolha das chapas",
+        "content": "Chapas ST são usadas em ambientes internos secos. Chapas RU resistem melhor à umidade, mas não substituem impermeabilização. Para exigências de resistência ao fogo, consulte a composição do sistema ensaiado."
       },
       {
-        title: 'Chapas Especiais: ST, RU e RF',
-        content: 'A KY Drywall distribui os três tipos essenciais de chapas homologadas:\n• Chapa ST (Branca): para áreas secas, salas, quartos e corredores;\n• Chapa RU (Verde): enriquecida com silicone para banheiros, lavabos e cozinhas com umidade moderada;\n• Chapa RF (Rosa): com fibra de vidro antichamas para rotas de fuga, shafts elétricos e cozinhas industriais.'
-      },
-      {
-        title: 'Estoque de massas, fitas e perfis na KY Drywall',
-        content: 'O acabamento perfeito das juntas depende de produtos normatizados. Na KY Drywall você encontra massas prontas para acabamento, fitas teladas de fibra de vidro, fitas de papel microperfuradas, cantoneiras metálicas e parafusos ponta agulha GN e ponta broca.'
+        "title": "Detalhes de execução",
+        "content": "Planeje reforços para cargas suspensas, pontos elétricos e hidráulicos e encontros com outros elementos. Siga os manuais do sistema e confirme o desempenho exigido com o profissional responsável."
       }
     ]
   },
-  'b3': {
-    highlights: [
-      'Garantia de estanqueidade e resistência a vendavais de até 200 km/h.',
-      'Peso reduzido: até 4 vezes mais leve que a telha cerâmica ou de concreto.',
-      'Estética americana sofisticada com ampla gama de cores e texturas.',
-      'Compatibilidade total com estruturas de madeira ou Steel Frame.'
+  "b3": {
+    "highlights": [
+      "Conheça os itens que precisam ser definidos além da telha.",
+      "Confirme especificações no projeto e nos documentos do fabricante.",
+      "Disponibilidade, preços e prazos são informados em orçamento."
     ],
-    sections: [
+    "sections": [
       {
-        title: 'O que é o Telhado Shingle e como é composto?',
-        content: 'O Telhado Shingle é uma cobertura composta por mantas asfálticas de alta resistência revestidas com grânulos minerais basálticos na superfície e fibra de vidro no núcleo. Esse conjunto confere flexibilidade, durabilidade de décadas e proteção contra radiação UV e intempéries severas.'
+        "title": "Cobertura em camadas",
+        "content": "Telhas Shingle integram um sistema com base, subcobertura, fixadores e arremates. Inclinação, ventilação e detalhes de encontro devem seguir o projeto e o manual do fabricante."
       },
       {
-        title: 'Performance comprovada contra temporais e granizo no Paraná',
-        content: 'Diferente das telhas cerâmicas que trincam ou voam com ventos fortes, as telhas shingle são sobrepostas e vulcanizadas termicamente, formando uma barreira monolítica contínua e impermeável. São projetadas para suportar granizo e ventos com velocidade de furacão sem deslocamentos.'
+        "title": "Antes da compra",
+        "content": "Informe a área e inclinação da cobertura, águas, beirais, cumeeiras e interferências. Confirme o modelo, a composição da base, acessórios e condições de transporte."
       },
       {
-        title: 'Estrutura Leve em Steel Frame + Telhado Shingle',
-        content: 'A integração de tesouras em perfis de aço leve com compensado OSB e telha shingle cria um sistema de cobertura ultra leve. Isso gera economia direta na fundação da casa e elimina o risco de infiltrações e goteiras.'
-      },
-      {
-        title: 'Linha Completa Shingle na KY Drywall Curitiba',
-        content: 'Fornecemos telhas shingle de marcas consagradas, mantas de subcobertura autoaderentes, pregos galvanizados específicos, cumeeiras ventiladas e calhas para acabamento impecável do seu telhado.'
+        "title": "Manutenção e garantia",
+        "content": "Solicite as instruções de inspeção e manutenção, o documento de garantia do modelo e as condições do serviço. Não presuma uma vida útil ou resistência ao vento igual para todos os sistemas."
       }
     ]
   },
-  'b4': {
-    highlights: [
-      'Custo por m² competitivo com previsibilidade orçamentária e sem surpresas no canteiro.',
-      'Economia de até 50% na etapa de fundações devido ao baixo peso estrutural.',
-      'Retorno financeiro acelerado: entrega da obra em 3 a 5 meses contra 12 a 18 meses da alvenaria.',
-      'Desperdício de material próximo a 1% versus 20% a 30% na construção convencional.'
+  "b4": {
+    "highlights": [
+      "Organize materiais, serviços e acabamento para solicitar um orçamento comparável.",
+      "Confirme especificações no projeto e nos documentos do fabricante.",
+      "Disponibilidade, preços e prazos são informados em orçamento."
     ],
-    sections: [
+    "sections": [
       {
-        title: 'Quanto custa construir em Steel Frame em Curitiba e RMC em 2025/2026?',
-        content: 'O custo do metro quadrado construído em Steel Frame em Curitiba varia em média entre R$ 2.100 e R$ 3.800 por m², dependendo do padrão de acabamento escolhido (médio a alto padrão). Embora o custo inicial dos insumos industrializados seja equivalente ou ligeiramente superior aos tijolos avulsos, o custo global da obra é substancialmente menor quando consideramos mão de obra, tempo e fundações.'
+        "title": "O valor depende do escopo",
+        "content": "Área, terreno, fundação, estrutura, fechamentos, instalações e acabamento influenciam o orçamento. Um preço por metro quadrado sem memorial pode excluir etapas importantes."
       },
       {
-        title: 'Tabela Comparativa: Steel Frame vs. Alvenaria Convencional',
-        content: 'Confira as diferenças práticas entre os dois métodos construtivos para uma residência unifamiliar de 150 m²:',
-        table: {
-          headers: ['Item Analisado', 'Construção em Steel Frame', 'Alvenaria Tradicional'],
-          rows: [
-            ['Prazo de Entrega', '3 a 5 meses', '10 a 16 meses'],
-            ['Carga na Fundação', 'Leve (Radier econômico de 12-15cm)', 'Pesada (Sapatas profundas e brocas)'],
-            ['Desperdício de Material', '< 2% (Perfis calculados)', '20% a 30% (Entulho e quebras)'],
-            ['Precisão Orçamentária', 'Memorial de cálculo exato', 'Variações de 15% a 35% no custo final'],
-            ['Desempenho Térmico', 'Isolamento contínuo em lã', 'Paredes frias e condutivas'],
-            ['Manutenção e Reparos', 'Abertura limpa sem marreta', 'Quebra de alvenaria e retrabalho']
-          ]
-        }
+        "title": "Compare propostas equivalentes",
+        "content": "Separe projeto, materiais, mão de obra, transporte, equipamentos e acabamentos. Confira o que está incluído, prazo de validade, condições de pagamento e responsabilidades de cada contratado."
       },
       {
-        title: 'A Economia Oculta que poucos conhecem',
-        content: 'Em uma obra de alvenaria, os maiores vilões do orçamento são o tempo estendido de contratação de mão de obra (diárias e encargos por mais de um ano), aluguel prolongado de caçambas de entulho e consumo contínuo de água e energia. No Steel Frame, a equipe monta a estrutura completa em poucas semanas, permitindo habitar ou alugar o imóvel muito antes.'
-      },
-      {
-        title: 'Cotação transparente com a KY Drywall',
-        content: 'Na KY Drywall você tem acesso a preços direto de distribuição para perfis Barbieri Z180, placas OSB LP, placas cimentícias Eternit/Brasilit, massas Base Coat e fitas de tratamento. Enviamos orçamentos discriminados por etapa para facilitar seu planejamento financeiro.'
-      }
-    ],
-    faq: [
-      {
-        question: 'O Steel Frame é mais caro que alvenaria?',
-        answer: 'No custo direto dos materiais isolados o valor é similar, mas no custo total da obra (fundação, tempo de mão de obra, caçambas e acabamento) o Steel Frame costuma gerar uma economia global de 15% a 25%.'
-      },
-      {
-        question: 'Qual é o valor do frete para bairros de Curitiba e RMC?',
-        answer: 'A KY Drywall conta com frota própria para entrega rápida em todos os 75 bairros de Curitiba e cidades vizinhas com valores de frete logístico acessíveis e agendamento pontual.'
+        "title": "Solicite uma proposta",
+        "content": "Envie plantas, medidas e endereço da obra. A KY pode confirmar itens e condições comerciais para sua lista. Valores e prazos devem constar na proposta, sem pressupor economia em relação a outro sistema."
       }
     ]
   },
-  'b5': {
-    highlights: [
-      'Aço galvanizado Z180 projetado para durabilidade superior a 100 anos sem oxidação.',
-      'Construções em LSF são projetadas para resistir a terremotos e ventos de furacão nos EUA e Japão.',
-      'Gera 90% menos entulho no canteiro de obras e economiza milhares de litros de água.',
-      'Paredes perfeitamente aprumadas que eliminam o reboco torto e facilitam a marcenaria planejada.'
+  "b5": {
+    "highlights": [
+      "Confira pontos sobre cargas, corrosão, conforto e manutenção antes de construir.",
+      "Confirme especificações no projeto e nos documentos do fabricante.",
+      "Disponibilidade, preços e prazos são informados em orçamento."
     ],
-    sections: [
+    "sections": [
       {
-        title: '1. O aço não enferruja com o tempo?',
-        content: 'Mito! Os perfis estruturais de Steel Frame recebem galvanização pesada por imersão a quente (camada Z180 ou Z275 de zinco). Essa camada atua como ânodo de sacrifício, impedindo que o aço entre em contato com oxigênio e umidade. Testes laboratoriais e edificações históricas comprovam vida útil superior a 100 anos.'
+        "title": "Estrutura e proteção",
+        "content": "Cargas, vãos, ligações e proteção contra corrosão dependem do dimensionamento e da exposição. Revestimento e espessura do aço são características distintas e precisam estar definidos no projeto."
       },
       {
-        title: '2. Resistência extrema comprovada mundialmente',
-        content: 'O Steel Frame é o sistema construtivo padrão em países com alta incidência de furacões e terremotos, como Estados Unidos, Japão, Chile e Nova Zelândia. A elasticidade e a ancoragem rígida dos perfis dissipam a energia dos ventos sem risco de colapso estrutural repentino.'
+        "title": "Desempenho e documentação",
+        "content": "Peça os documentos dos componentes e do sistema adotado. Vida útil, resistência ao fogo e desempenho térmico ou acústico não podem ser deduzidos apenas do nome Steel Frame."
       },
       {
-        title: '3. Conforto térmico incomparável no inverno curitibano',
-        content: 'Uma parede de Steel Frame de 15 cm com lã mineral no interior tem um coeficiente de isolamento térmico até 3 vezes superior a uma parede de tijolo maciço de 20 cm. O ar frio do inverno de Curitiba não passa para o interior da residência, garantindo eficiência energética.'
-      },
-      {
-        title: '4. Marcenaria planejada sem surpresas',
-        content: 'Quem já tentou instalar móveis sob medida em paredes de alvenaria tortas sabe a dor de cabeça com calços e acabamentos irregulares. No Steel Frame, a precisão milimétrica dos perfis garante esquadro, prumo e nivelamento perfeitos em 100% dos cômodos.'
-      },
-      {
-        title: '5. Fixação de quadros e armários pesados é simples',
-        content: 'É perfeitamente seguro pendurar televisores, armários de cozinha e espelhos pesados. Basta utilizar buchas especiais para drywall (como a bucha basculante/fly) ou fixar diretamente nos montantes de aço com o auxílio de um detector magnético.'
+        "title": "Manutenção prevista",
+        "content": "Solicite um plano de inspeção e manutenção que contemple cobertura, arremates, juntas, revestimentos e pontos de entrada de água. Alterações posteriores devem ser avaliadas por profissional habilitado."
       }
     ]
   },
-  'b6': {
-    highlights: [
-      'Cronograma técnico estruturado em 6 etapas claras e controladas.',
-      'Fundação tipo Radier: execução em apenas 3 a 5 dias.',
-      'Montagem dos painéis estruturais pré-cortados com ferramentas de fixação rápida.',
-      'Fechamento multicamadas garantindo estanqueidade total à água e ao vento.'
+  "b6": {
+    "highlights": [
+      "Do projeto aos acabamentos, entenda a sequência a combinar com a equipe.",
+      "Confirme especificações no projeto e nos documentos do fabricante.",
+      "Disponibilidade, preços e prazos são informados em orçamento."
     ],
-    sections: [
+    "sections": [
       {
-        title: 'Fase 1: Projeto Executivo e Engenharia de Cargas',
-        content: 'Antes do primeiro parafuso, todo o projeto estrutural é modelado em software especializado (BIM / cálculo LSF). São definidas as espessuras dos perfis (0.80mm a 1.25mm), a modulação dos montantes a cada 40cm ou 60cm, os pontos de ancoragem química e as passagens de tubulação.'
+        "title": "Projeto e preparação",
+        "content": "Defina o projeto executivo, compatibilize instalações e estrutura e avalie o terreno e a fundação. A solução de fundação deve resultar da análise técnica, não de um modelo único."
       },
       {
-        title: 'Fase 2: Fundação Radier Nivelada',
-        content: 'Como a edificação em Steel Frame é muito mais leve que a alvenaria, a fundação mais comum é o Radier (uma laje de concreto armado de 12 a 15 cm). As tubulações de esgoto e água fria são posicionadas antes da concretagem, garantindo uma base plana e estanque.'
+        "title": "Montagem e proteção",
+        "content": "A montagem segue a sequência de perfis, ligações e contraventamentos do projeto. Fechamentos, barreiras e cobertura devem proteger o conjunto conforme os detalhes especificados."
       },
       {
-        title: 'Fase 3: Montagem e Ancoragem dos Painéis de Aço',
-        content: 'Os perfis de aço estrutural são parafusados com parafusos sextavados e ponta broca, formando os painéis de parede, vigas de entrepiso e tesouras de cobertura. Os painéis são fixados na fundação com chumbadores mecânicos ou químicos de alta ancoragem.'
-      },
-      {
-        title: 'Fase 4: Fechamentos Externos e Membrana Hidrófuga',
-        content: 'Pelo lado de fora, a estrutura recebe placas estruturais OSB (para enrijecimento contra ventos) e placas cimentícias ou Glasroc. É fundamental aplicar a membrana hidrófuga (barreira de água e vento que permite a saída de vapor interno) antes do acabamento Base Coat.'
-      },
-      {
-        title: 'Fase 5: Isolamento Termoacústico e Fechamento Interno',
-        content: 'No interior dos painéis, após a passagem dos conduítes e tubos de água/gás, é inserida a manta de lã de rocha, lã de vidro ou lã de PET. Em seguida, as paredes são fechadas com chapas de drywall (ST ou RU) e finalizadas com fita de papel e massa de junta.'
-      },
-      {
-        title: 'Fase 6: Cobertura Shingle e Acabamento Final',
-        content: 'A cobertura recebe o contraplacado de OSB, a subcobertura asfáltica e as telhas shingle. O resultado é uma casa moderna, energeticamente eficiente, entregue em um terço do tempo convencional.'
+        "title": "Instalações e entrega",
+        "content": "Antes de fechar as paredes, confira instalações, reforços e isolamento. Registre inspeções e organize documentos, orientações de uso e manutenção. O cronograma depende do porte da obra e dos contratos."
       }
     ]
   },
-  'b7': {
-    highlights: [
-      'Showroom e Centro de Distribuição localizado estrategicamente na Rod. BR-277 (Cajuru).',
-      'Estoque permanente de chapas, perfis Barbieri, massas, fitas e fixações a pronta entrega.',
-      'Assessoria técnica de quantitativos para instaladores, engenheiros e construtores.',
-      'Frota própria com rotas diárias de entrega para Curitiba e todos os municípios da RMC.'
+  "b7": {
+    "highlights": [
+      "Prepare sua lista e confirme disponibilidade, retirada e entrega com a equipe.",
+      "Confirme especificações no projeto e nos documentos do fabricante.",
+      "Disponibilidade, preços e prazos são informados em orçamento."
     ],
-    sections: [
+    "sections": [
       {
-        title: 'O Papel Estratégico de um Distribuidor Especializado em Curitiba',
-        content: 'Em uma obra a seco, o maior risco para o cronograma é a falta de insumos específicos no canteiro. Comprar em lojas convencionais de material de construção muitas vezes resulta em perfis fora de norma, parafusos inadequados ou massas ressecadas. A KY Drywall & Steel Frame nasceu para suprir essa demanda com estoque real e produtos certificados.'
+        "title": "Uma lista que facilita a cotação",
+        "content": "Informe código ou nome do item, medidas, quantidade e aplicação. Inclua placas, perfis, fixadores, fitas, massas e acessórios previstos no projeto para reduzir compras incompletas."
       },
       {
-        title: 'Suporte Técnico e Memoriais de Quantitativos',
-        content: 'Nossa equipe técnica analisa a planta baixa ou a relação de ambientes da sua obra e calcula exatamente a quantidade de montantes, guias, placas ST/RU/RF, parafusos GN/LA/LB, fitas e sacos de massa necessários. Isso reduz sobras desnecessárias e evita compras fracionadas emergenciais.'
+        "title": "Confirmação comercial",
+        "content": "Disponibilidade, preço, frete, retirada e prazo são confirmados no orçamento. A exibição no catálogo não representa reserva de estoque ou promessa de entrega imediata."
       },
       {
-        title: 'Marcas Homologadas e Laudos de Conformidade',
-        content: 'Trabalhamos exclusivamente com fabricantes líderes que atendem rigorosamente às normas ABNT NBR 15758 (Drywall) e NBR 15253/16970 (Steel Frame), como Barbieri, Placo, Knauf, Gypsum, Holdflex e Ancora. Sua obra tem garantia comprovada de fábrica e aprovação técnica nos laudos de vistoria.'
-      },
-      {
-        title: 'Logística Ágil: Da BR-277 Direto para o Seu Canteiro',
-        content: 'Nosso centro de distribuição na Rodovia BR-277, 3641 (Cajuru) possui fácil acesso às principais vias expressas de Curitiba (Linha Verde, Contorno Leste, Av. das Torres). Realizamos entregas diárias com cuidado rigoroso no manuseio de placas e perfis.'
-      }
-    ],
-    faq: [
-      {
-        question: 'A KY Drywall atende apenas empresas ou também pessoas físicas?',
-        answer: 'Atendemos construtoras, engenheiros, gesseiros, instaladores autônomos e clientes finais que estão construindo ou reformando sua própria residência.'
-      },
-      {
-        question: 'Como faço para receber um orçamento rápido?',
-        answer: 'Você pode enviar sua lista de materiais ou projeto pelo WhatsApp oficial (41) 99645-7421 / (41) 99906-7259 ou ligar para (41) 3528-4232. Retornamos com proposta técnica imediata.'
+        "title": "Recebimento e armazenamento",
+        "content": "Planeje acesso e descarga e reserve um local adequado de armazenamento. Confira itens e embalagens no recebimento e siga as orientações do fabricante para movimentar e proteger os materiais."
       }
     ]
   },
-  'b8': {
-    highlights: [
-      'Valores atualizados por m² para paredes, forros de drywall e estruturas de Steel Frame em Curitiba.',
-      'Comparativo claro entre custos de materiais e economia em fundações.',
-      'Redução de encargos trabalhistas com prazos de execução até 70% menores.',
-      'Orçamento direto com preço de distribuidor na Rod. BR-277 (Cajuru).'
+  "b8": {
+    "highlights": [
+      "Saiba quais informações reunir para cotar paredes, forros e estruturas.",
+      "Confirme especificações no projeto e nos documentos do fabricante.",
+      "Disponibilidade, preços e prazos são informados em orçamento."
     ],
-    sections: [
+    "sections": [
       {
-        title: 'Quanto custa o m² de Drywall e Steel Frame em Curitiba em 2026?',
-        content: 'O investimento em construção a seco varia de acordo com a tipologia da obra. Para paredes divisorias de drywall com isolamento acústico, o custo médio instalado fica entre R$ 90 e R$ 160 por m². Já para forros de gesso acartonado, os valores oscilam de R$ 65 a R$ 110 por m². No caso de residências completas em Light Steel Frame (chassi estrutural, vedações, cobertura e isolamento), o custo por metro quadrado construído fica entre R$ 2.100 e R$ 3.800, dependendo do padrão de acabamento.'
+        "title": "Meça cada serviço",
+        "content": "Registre área, altura, vãos, recortes e interferências. Paredes, forros e estruturas têm composições diferentes e não devem ser comparados por um único valor genérico por metro quadrado."
       },
       {
-        title: 'Tabela Prática de Referência de Custos e Materiais',
-        content: 'Veja os valores médios de referência para insumos essenciais fornecidos pela KY Drywall:',
-        table: {
-          headers: ['Sistema / Insumo', 'Faixa de Preço Média', 'Rendimento / Unidade'],
-          rows: [
-            ['Parede Drywall ST (Simples)', 'R$ 90 - R$ 120 / m²', 'Chapa 1.20 x 2.40m + Perfis 48mm'],
-            ['Parede Drywall RU (Áreas Úmidas)', 'R$ 110 - R$ 145 / m²', 'Chapa Verde + Tratamento Antimofo'],
-            ['Forro Drywall F530', 'R$ 65 - R$ 95 / m²', 'Perfis F530 + Placa ST 12.5mm'],
-            ['Estrutura Steel Frame (Chassi)', 'R$ 800 - R$ 1.250 / m²', 'Perfis Z180 Barbieri + Cargas'],
-            ['Manta Lã de Rocha / Vidro', 'R$ 22 - R$ 48 / m²', 'Espessura 50mm a 100mm']
-          ]
-        }
+        "title": "Descreva a composição",
+        "content": "Informe tipos de placas, quantidade de camadas, perfis, isolamento e acabamento. Acrescente transporte, instalação e descarte quando fizerem parte da contratação."
       },
       {
-        title: 'Onde está a verdadeira economia?',
-        content: 'Muitos clientes olham apenas para o preço unitário da chapa ou do perfil, mas a economia real do Steel Frame e do Drywall reside na fundação (laje radier mais leve), na ausência de caçambas de entulho (desperdício menor que 2%) e no fato de que a obra é concluída em meses, economizando meses de aluguel ou juros de financiamento.'
-      },
-      {
-        title: 'Faça seu orçamento personalizado na KY Drywall',
-        content: 'Envie sua planta ou lista de materiais para nossa equipe na Rodovia BR-277 (Cajuru). Elaboramos o quantitativo completo com preços competitivos para Curitiba e região.'
-      }
-    ],
-    faq: [
-      {
-        question: 'O orçamento inclui a mão de obra de instalação?',
-        answer: 'A KY Drywall atua como fornecedora especializada de materiais e sistemas completos, fornecendo indicação de instaladores e parceiros homologados na região de Curitiba.'
-      },
-      {
-        question: 'Posso retirar os materiais na loja física?',
-        answer: 'Sim! Nosso centro de distribuição no Cajuru possui amplo estoque e estacionamento para fácil carregamento.'
+        "title": "Valide a proposta",
+        "content": "Confirme as quantidades com o responsável pelo projeto e solicite preço, disponibilidade e condições por escrito. Este guia não publica uma tabela de preços ou substitui orçamento da obra."
       }
     ]
   },
-  'b9': {
-    highlights: [
-      'Isolamento térmico contínuo impede a troca de calor com o exterior gelado de Curitiba.',
-      'Ausência de pontes térmicas e condensação reduz drásticamente o risco de mofo e umidade.',
-      'Aço galvanizado Z180 com alta inércia estrutural e estabilidade milimétrica.',
-      'Aquecimento dos ambientes mais rápido e eficiente com menor consumo de energia.'
+  "b9": {
+    "highlights": [
+      "Isolamento, umidade e ventilação precisam ser avaliados em conjunto.",
+      "Confirme especificações no projeto e nos documentos do fabricante.",
+      "Disponibilidade, preços e prazos são informados em orçamento."
     ],
-    sections: [
+    "sections": [
       {
-        title: 'O desafio climático de Curitiba para a construção civil',
-        content: 'Curitiba é conhecida por seu clima subtropical úmido, com invernos rigorosos, geadas frequentes e períodos prolongados de chuvas e neblina. Nas construções tradicionais de alvenaria com blocos cerâmicos maciços ou vazados, a parede absorve a umidade e o frio externo, criando a clássica sensação de "parede gelada" e propiciando o surgimento de bolor.'
+        "title": "Conforto não depende só da estrutura",
+        "content": "Isolamento, fechamentos, cobertura, janelas, orientação solar e ventilação influenciam as condições internas. O sistema deve ser escolhido conforme o projeto e os requisitos de desempenho."
       },
       {
-        title: 'Como o Steel Frame resolve o problema do frio',
-        content: 'O sistema Light Steel Framing utiliza uma abordagem multicamadas de alta tecnologia. O espaço oco entre os montantes metálicos recebe espessa camada de lã de vidro ou lã de rocha. Pelo lado externo, a placa OSB e a membrana hidrófuga barram a infiltração de vento e água, enquanto mantêm a temperatura interna estável. O resultado é um ambiente aconchegante sem precisar de aquecedores ligados 24 horas por dia.'
+        "title": "Controle de umidade",
+        "content": "O detalhamento precisa considerar chuva, condensação, interfaces e áreas molhadas. Barreiras e impermeabilização devem seguir o sistema especificado, sem presumir que uma placa evita mofo sozinha."
       },
       {
-        title: 'Fim do mofo e da umidade nas paredes',
-        content: 'Como as paredes a seco não utilizam água na montagem estrutural e contam com barreiras de vapor e ventilação adequada nos painéis, a umidade relativa do ar interna não condensa nas superfícies, protegendo a saúde da família e preservando a pintura e a mobília.'
-      }
-    ],
-    faq: [
-      {
-        question: 'Casas em Steel Frame são quentes no verão?',
-        answer: 'Sim, o isolamento térmico bidirecional funciona mantendo a casa fresca no verão e aquecida no inverno, garantindo conforto térmico o ano todo.'
+        "title": "Compare soluções",
+        "content": "Peça ao projetista a avaliação das alternativas para a mesma edificação. Não é possível prometer economia de aquecimento ou superioridade universal de um método sem analisar a composição e as condições de uso."
       }
     ]
   },
-  'b10': {
-    highlights: [
-      'Diferença prática entre chapas ST (branca), RU (verde) e RF (rosa).',
-      'Normas ABNT NBR 15758 para instalação correta em ambientes secos e úmidos.',
-      'Dicas para evitar patologias e garantir acabamento perfeito em pinturas.',
-      'Disponibilidade imediata de todas as linhas de chapas e perfis na KY Drywall.'
+  "b10": {
+    "highlights": [
+      "Entenda a finalidade de cada chapa e o que conferir na especificação.",
+      "Confirme especificações no projeto e nos documentos do fabricante.",
+      "Disponibilidade, preços e prazos são informados em orçamento."
     ],
-    sections: [
+    "sections": [
       {
-        title: 'Conhecendo os tipos de chapas de gesso acartonado (Drywall)',
-        content: 'O drywall não é apenas uma "placa de gesso comum". Existem formulações específicas desenvolvidas para atender a exigências rigorosas de umidade, resistência mecânica e proteção contra incêndio.'
+        "title": "ST: ambientes internos secos",
+        "content": "A chapa standard é utilizada em vedações e forros internos secos conforme o sistema. Espessura, camadas e espaçamento dos apoios devem seguir a especificação."
       },
       {
-        title: '1. Chapa ST (Standard / Branca)',
-        content: 'Indicada para áreas secas, como salas, quartos, corredores e escritórios. É a mais utilizada em forros e divisórias internas de uso geral.'
+        "title": "RU: resistência à umidade",
+        "content": "Chapas RU não são impermeáveis e não substituem a impermeabilização de áreas molhadas. Confirme revestimento, selagem de passagens e limites de exposição com o fabricante."
       },
       {
-        title: '2. Chapa RU (Resistente à Umidade / Verde)',
-        content: 'Aditivada com silicone e agentes fungicidas em seu núcleo de gesso, a chapa verde é obrigatória em banheiros, lavabos, cozinhas e áreas de serviço sujeitas a vapor e respingos.'
-      },
-      {
-        title: '3. Chapa RF (Resistente ao Fogo / Rosa)',
-        content: 'Contém fibras de vidro em sua composição, o que retarda a propagação de chamas em caso de incêndio. Ideal para shafts de elevadores, saídas de emergência e cozinhas industriais.'
-      },
-      {
-        title: 'Onde comprar com garantia em Curitiba?',
-        content: 'A KY Drywall (Cajuru, BR-277) oferece todas as linhas de chapas Placo e Knauf com selo de conformidade e entrega ágil.'
-      }
-    ],
-    faq: [
-      {
-        question: 'Posso usar chapa ST no banheiro se impermeabilizar bem?',
-        answer: 'Não é recomendado pelas normas técnicas ABNT. A umidade do vapor do chuveiro danificará a placa ST com o tempo. Utilize sempre a Chapa RU (verde) em áreas molhadas.'
+        "title": "RF: desempenho do conjunto",
+        "content": "Chapas RF integram sistemas com requisitos de resistência ao fogo. O tempo de resistência é determinado pela composição ensaiada, incluindo fixações, juntas e instalações, não apenas pela chapa isolada."
       }
     ]
   }

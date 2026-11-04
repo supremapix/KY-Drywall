@@ -34,83 +34,83 @@ const FAQ_DATA: FAQSection[] = [
       {"question": "Quanto custa drywall?", "answer": "O custo depende da área, tipo de placa, estrutura, isolamento, acabamento e mão de obra. Envie as medidas e o local da obra para a KY Drywall solicitar um orçamento específico, com materiais e instalação discriminados."},
       {
         question: 'O que é drywall?',
-        answer: 'Drywall é um sistema construtivo composto por placas de gesso acartonado fixadas em estruturas de perfis metálicos - geralmente aço galvanizado. É conhecido como construção a seco pois não usa água nem argamassa. Amplamente usado para paredes, divisórias, forros e revestimentos em residências, comércios e indústrias em Curitiba e em todo o Brasil.'
+        answer: "Drywall é um sistema construtivo composto por placas de gesso acartonado fixadas em estruturas de perfis metálicos - geralmente aço galvanizado. É conhecido como construção a seco pois reduz etapas úmidas na montagem. Amplamente usado para paredes, divisórias, forros e revestimentos em residências, comércios e indústrias em Curitiba e em todo o Brasil."
       },
       {
         question: 'Quais são os tipos de placa de drywall?',
-        answer: 'Os principais tipos são: Standard (ST) - para ambientes secos e internos; Resistente à Umidade (RU) - verde, para banheiros e áreas úmidas; Resistente ao Fogo (RF) - rosa, com aditivos que retardam a propagação de chamas. A KY Drywall fornece todos os tipos com assessoria técnica gratuita para escolher o correto.'
+        answer: "Os principais tipos são: Standard (ST) - para ambientes secos e internos; Resistente à Umidade (RU) - verde, para banheiros e áreas úmidas; Resistente ao Fogo (RF) - rosa, com aditivos que retardam a propagação de chamas. A KY Drywall fornece todos os tipos com orientação sobre os itens disponíveis para escolher o correto."
       },
       {
         question: 'Drywall é o mesmo que gesso acartonado?',
-        answer: 'Sim! Drywall, gesso acartonado, placa de gesso e divisória seca são nomes diferentes para o mesmo sistema. O nome "drywall" é o mais utilizado tecnicamente e vem do inglês (dry = seco / wall = parede).'
+        answer: "Sim! Drywall, gesso acartonado, placa de gesso e divisória seca são nomes diferentes para o mesmo sistema. O nome \"drywall\" é o mais utilizado tecnicamente e vem do inglês (dry = seco / wall = parede)."
       },
       {
         question: 'Quais são as vantagens do drywall?',
-        answer: 'As principais vantagens são: instalação rápida (até 3x mais rápido que alvenaria), peso muito menor, não gera entulho, permite passagem de instalações elétricas e hidráulicas, excelente acabamento, adaptável a qualquer projeto e pode ser desmontado e reaproveitado.'
+        answer: "A montagem a seco permite organizar etapas, passagem de instalações e mudanças de layout. Prazo, resíduos e custo dependem do projeto e da execução; compare propostas com o mesmo escopo."
       },
       {
         question: 'Drywall é resistente?',
-        answer: 'Sim! Drywall instalado corretamente tem excelente resistência para uso normal. Para locais com maior impacto existem placas de alta dureza. Suporta quadros, TVs e objetos com ancoragem adequada.'
+        answer: "Sim! Drywall instalado corretamente tem excelente resistência para uso normal. Para locais com maior impacto existem placas de alta dureza. Suporta quadros, TVs e objetos com ancoragem adequada."
       },
       {
         question: 'Drywall pode ser usado em área úmida?',
-        answer: 'Sim! Para banheiros, cozinhas e áreas úmidas usa-se a placa RU (resistente à umidade) identificada pela cor verde. Com impermeabilização adequada suporta azulejos e revestimentos cerâmicos normalmente.'
+        answer: "Sim! Para banheiros, cozinhas e áreas úmidas usa-se a placa RU (resistente à umidade) identificada pela cor verde. Com impermeabilização adequada suporta azulejos e revestimentos cerâmicos normalmente."
       },
       {
         question: 'Drywall pega fogo?',
-        answer: 'O drywall padrão não é inflamável mas pode propagar chamas em situação extrema. Para maior segurança existe a placa RF (resistente ao fogo) que retarda a propagação de incêndio por até 30 ou 60 minutos conforme a espessura e o sistema instalado.'
+        answer: "O comportamento ao fogo deve ser verificado para o produto e para o sistema completo, com documentação aplicável. Não deduza um tempo de resistência ou uma classificação apenas do nome ou da cor da placa. Consulte um profissional habilitado."
       },
       {
         question: 'Posso parafusar coisas na parede de drywall?',
-        answer: 'Sim! Use buchas específicas para drywall como a bucha borboleta ou âncora metálica. Para objetos mais pesados como TVs e armários pesados é necessário fixar diretamente na estrutura metálica interna.'
+        answer: "Cargas e fixações precisam ser previstas conforme o suporte, o sistema e o peso do objeto. Confirme buchas, reforços e pontos de apoio com o fabricante e o responsável técnico; não use um limite genérico para qualquer parede."
       },
       {
         question: 'Qual a espessura das placas de drywall?',
-        answer: 'As espessuras mais comuns são 12,5mm para uso geral, 15mm para maior resistência e 10mm para forros e aplicações curvas. A KY Drywall orienta sobre a espessura correta para cada aplicação.'
+        answer: "A medida correta depende do produto e da função no sistema. Confira a referência, espessura, espaçamento dos apoios e demais dimensões no projeto e na ficha técnica, antes de definir a quantidade de compra."
       },
       {
         question: 'Drywall tem isolamento térmico?',
-        answer: 'A placa de gesso em si tem isolamento térmico moderado. Para melhor desempenho térmico é comum instalar lã de vidro, lã de rocha ou EPS dentro da parede de drywall. A KY Drywall fornece sistemas completos com isolamento.'
+        answer: "O desempenho depende do conjunto: placas, estrutura, isolamento, juntas, aberturas e execução. Solicite a composição especificada e dados do sistema para o ambiente. Não há superioridade universal ou desempenho único apenas pelo nome do material."
       },
       {
         question: 'Drywall tem isolamento acústico?',
-        answer: 'Sim! Com o sistema correto o drywall oferece excelente isolamento acústico. O desempenho depende do número de placas, do material de preenchimento e do tipo de perfil. A KY Drywall projeta sistemas acústicos para home theater, escritórios e ambientes que exigem silêncio.'
+        answer: "O desempenho depende do conjunto: placas, estrutura, isolamento, juntas, aberturas e execução. Solicite a composição especificada e dados do sistema para o ambiente. Não há superioridade universal ou desempenho único apenas pelo nome do material."
       },
       {
         question: 'Quanto tempo dura uma parede de drywall?',
-        answer: 'Com instalação correta e manutenção adequada uma parede de drywall dura mais de 30 anos. A estrutura metálica galvanizada não enferruja e as placas mantêm a integridade por décadas em ambientes internos secos.'
+        answer: "O prazo ou a vida útil depende do produto, projeto, condições de uso, execução e manutenção. Consulte a documentação do fabricante e solicite um cronograma específico para o serviço, sem assumir um período único para todos os casos."
       },
       {
         question: 'Drywall é mais barato que alvenaria?',
-        answer: 'Depende do projeto. Em muitos casos o drywall tem custo similar ou superior ao tijolo mas compensa pela velocidade de execução (redução de mão de obra), menor peso na estrutura, ausência de entulho e facilidade de reformas futuras.'
+        answer: "O custo depende de medidas, composição dos materiais, acabamento, acesso ao local e mão de obra. Compare propostas para o mesmo escopo e solicite valores, validade, frete e condições de pagamento à equipe KY."
       },
       {
         question: 'Qual a diferença entre drywall e divisória de vidro?',
-        answer: 'Drywall é opaco e oferece melhor isolamento acústico e térmico. Divisória de vidro permite iluminação natural e visibilidade. Em projetos comerciais muitas vezes os dois sistemas são combinados.'
+        answer: "Drywall forma uma vedação opaca; divisórias de vidro podem permitir iluminação e visibilidade. O desempenho depende da composição de cada sistema. A escolha deve considerar privacidade, luz, acústica e requisitos do projeto."
       },
       {
         question: 'Posso fazer curvas com drywall?',
-        answer: 'Sim! O drywall pode ser curvado para criar paredes curvas, arcos, nichos e formas orgânicas. Existem técnicas com cortes na placa e com molhagem para curvas mais acentuadas. A KY Drywall executa projetos curvos.'
+        answer: "Sim! O drywall pode ser curvado para criar paredes curvas, arcos, nichos e formas orgânicas. Existem técnicas com cortes na placa e com molhagem para curvas mais acentuadas. A KY Drywall executa projetos curvos."
       },
       {
         question: 'O que é forro de drywall?',
-        answer: 'Forro de drywall é a aplicação do sistema no teto em vez de paredes. Cria teto falso com excelente acabamento, permite instalação de luminárias, sancas, spots e sistemas de iluminação embutida. Muito usado em reformas residenciais e comerciais.'
+        answer: "Forro de drywall é a aplicação do sistema no teto em vez de paredes. Cria teto falso com excelente acabamento, permite instalação de luminárias, sancas, spots e sistemas de iluminação embutida. Muito usado em reformas residenciais e comerciais."
       },
       {
         question: 'O que é sanca em drywall?',
-        answer: 'Sanca é um rebaixo ou moldura no encontro entre a parede e o forro. Em drywall pode ter diversas formas e abrigar fitas de LED, perfis de iluminação indireta e efeitos decorativos. É um dos itens mais solicitados em reformas em Curitiba.'
+        answer: "Sanca é um rebaixo ou moldura no encontro entre a parede e o forro. Em drywall pode ter diversas formas e abrigar fitas de LED, perfis de iluminação indireta e efeitos decorativos. É um dos itens mais solicitados em reformas em Curitiba."
       },
       {
         question: 'Drywall pode mofar?',
-        answer: 'Drywall padrão não deve ser instalado em áreas úmidas. Umidade excessiva sem ventilação pode causar mofo. Para áreas úmidas usa-se a placa RU com impermeabilização adequada. A KY Drywall orienta sobre a solução correta para cada caso.'
+        answer: "A exposição à água deve ser avaliada conforme o material e o sistema. Resistência à umidade não equivale a impermeabilidade. Confira impermeabilização, selagem, revestimentos, ventilação e limites de uso na documentação do fabricante."
       },
       {
         question: 'É possível revestir drywall com cerâmica?',
-        answer: 'Sim! Com placa RU e impermeabilização correta o drywall recebe cerâmica, porcelanato e azulejo normalmente. É necessário usar argamassa específica para drywall. Muito usado em banheiros e cozinhas em Curitiba.'
+        answer: "Sim! Com placa RU e impermeabilização correta o drywall recebe cerâmica, porcelanato e azulejo normalmente. É necessário usar argamassa específica para drywall. Muito usado em banheiros e cozinhas em Curitiba."
       },
       {
         question: 'O que é drywall decorativo?',
-        answer: 'Drywall decorativo vai além das paredes simples - cria nichos, painéis texturizados, molduras, cortineiros embutidos, painéis de TV, sancas complexas e elementos arquitetônicos. A KY Drywall executa projetos decorativos personalizados.'
+        answer: "Drywall decorativo vai além das paredes simples - cria nichos, painéis texturizados, molduras, cortineiros embutidos, painéis de TV, sancas complexas e elementos arquitetônicos. A KY Drywall executa projetos decorativos personalizados."
       }
     ]
   },
@@ -126,79 +126,79 @@ const FAQ_DATA: FAQSection[] = [
       },
       {
         question: 'Steel Frame é resistente a terremotos e ventos fortes?',
-        answer: 'Sim! A estrutura metálica leve do Steel Frame tem alta flexibilidade e resistência a cargas laterais. É muito usado em regiões de alto risco sísmico exatamente por essa característica. Em Curitiba com ventos sulinos o Steel Frame apresenta excelente desempenho estrutural.'
+        answer: "A capacidade da estrutura depende de dimensionamento por profissional habilitado, considerando cargas, vãos, ligações, terreno e condições locais. Não é possível confirmar um limite ou resistência apenas pelo tipo de sistema."
       },
       {
         question: 'Steel Frame é mais caro que construção convencional?',
-        answer: 'O custo do Steel Frame é comparável ao da construção convencional quando se considera o prazo de obra muito menor (30 a 50% mais rápido), menor geração de resíduos, menor necessidade de mão de obra especializada em grande número e menor custo de fundação pelo peso reduzido.'
+        answer: "O custo depende de medidas, composição dos materiais, acabamento, acesso ao local e mão de obra. Compare propostas para o mesmo escopo e solicite valores, validade, frete e condições de pagamento à equipe KY."
       },
       {
         question: 'Quanto tempo leva para construir uma casa em Steel Frame?',
-        answer: 'Uma residência de 100m² em Steel Frame pode ser construída em 60 a 120 dias dependendo da complexidade do projeto. Isso é significativamente mais rápido que a construção convencional que pode levar 12 a 18 meses.'
+        answer: "O prazo ou a vida útil depende do produto, projeto, condições de uso, execução e manutenção. Consulte a documentação do fabricante e solicite um cronograma específico para o serviço, sem assumir um período único para todos os casos."
       },
       {
         question: 'Steel Frame pode ser usado em Curitiba com clima frio?',
-        answer: 'Sim! Steel Frame é excelente para o clima de Curitiba. O sistema permite instalação de isolamento térmico de alta performance entre os perfis garantindo conforto térmico no inverno frio e no verão. O desempenho térmico é superior à alvenaria convencional.'
+        answer: "O desempenho depende do conjunto: placas, estrutura, isolamento, juntas, aberturas e execução. Solicite a composição especificada e dados do sistema para o ambiente. Não há superioridade universal ou desempenho único apenas pelo nome do material."
       },
       {
         question: 'Casa em Steel Frame é durável?',
-        answer: 'Sim! Edificações em Steel Frame projetadas e executadas corretamente tem vida útil de 50 a 100 anos. O aço galvanizado é altamente resistente à corrosão e a estrutura mantém a integridade por décadas.'
+        answer: "A solução depende do produto, do ambiente e da composição do sistema. Confira a ficha técnica, as instruções de execução e os requisitos do projeto com o profissional responsável. A equipe KY pode ajudar a localizar os materiais do catálogo para sua cotação."
       },
       {
         question: 'Steel Frame suporta segundo pavimento?',
-        answer: 'Sim! O Steel Frame é amplamente usado em edificações de 2 e 3 pavimentos. O dimensionamento correto dos perfis pelo engenheiro estrutural garante a segurança para múltiplos andares em Curitiba e região.'
+        answer: "Cargas e fixações precisam ser previstas conforme o suporte, o sistema e o peso do objeto. Confirme buchas, reforços e pontos de apoio com o fabricante e o responsável técnico; não use um limite genérico para qualquer parede."
       },
       {
         question: 'Que tipo de fundação usa o Steel Frame?',
-        answer: 'Pelo peso muito menor da estrutura o Steel Frame geralmente usa fundações mais simples e econômicas como radier de concreto ou baldrame, reduzindo significativamente o custo da fundação comparado à construção convencional.'
+        answer: "Pelo peso muito menor da estrutura o Steel Frame geralmente usa fundações mais simples e econômicas como radier de concreto ou baldrame, reduzindo significativamente o custo da fundação comparado à construção convencional."
       },
       {
         question: 'Steel Frame tem bom isolamento acústico?',
-        answer: 'Com o sistema correto de preenchimento das paredes o Steel Frame oferece excelente isolamento acústico. A lã de vidro ou lã de rocha entre os perfis combinada com múltiplas camadas de drywall proporciona alto desempenho acústico.'
+        answer: "O desempenho depende do conjunto: placas, estrutura, isolamento, juntas, aberturas e execução. Solicite a composição especificada e dados do sistema para o ambiente. Não há superioridade universal ou desempenho único apenas pelo nome do material."
       },
       {
         question: 'É possível reformar uma casa em Steel Frame?',
-        answer: 'Sim! É muito mais fácil reformar uma casa em Steel Frame que uma convencional. As paredes podem ser removidas, deslocadas e reconfiguradas com muito menos tempo, custo e entulho.'
+        answer: "Sim! É muito mais fácil reformar uma casa em Steel Frame que uma convencional. As paredes podem ser removidas, deslocadas e reconfiguradas com muito menos tempo, custo e entulho."
       },
       {
         question: 'Steel Frame é sustentável?',
-        answer: 'Sim! O aço é o material mais reciclado do mundo. Steel Frame gera muito menos resíduo de obra, usa materiais recicláveis, consome menos água e pode ser desmontado e reaproveitado. É uma das construções mais sustentáveis disponíveis.'
+        answer: "Sim! O aço é o material mais reciclado do mundo. Steel Frame gera muito menos resíduo de obra, usa materiais recicláveis, consome menos água e pode ser desmontado e reaproveitado. É uma das construções mais sustentáveis disponíveis."
       },
       {
         question: 'Steel Frame serve para construção comercial?',
-        answer: 'Sim! O Steel Frame é amplamente usado em escritórios, lojas, clínicas, hospitais e edifícios comerciais. A velocidade de construção e a flexibilidade de layout são vantagens especialmente valorizadas no setor comercial.'
+        answer: "Sim! O Steel Frame é amplamente usado em escritórios, lojas, clínicas, hospitais e edifícios comerciais. A velocidade de construção e a flexibilidade de layout são vantagens especialmente valorizadas no setor comercial."
       },
       {
         question: 'O que é Light Steel Frame?',
-        answer: 'Light Steel Frame é o sistema que usa perfis de aço leve - diferente do Steel Frame industrial que usa perfis pesados. É o sistema residencial e comercial de pequeno e médio porte mais comum. A KY Drywall é especialista em Light Steel Frame em Curitiba.'
+        answer: "Light Steel Frame é o sistema que usa perfis de aço leve - diferente do Steel Frame industrial que usa perfis pesados. É o sistema residencial e comercial de pequeno e médio porte mais comum. A KY Drywall é especialista em Light Steel Frame em Curitiba."
       },
       {
         question: 'Steel Frame precisa de projeto de engenharia?',
-        answer: 'Sim! O Steel Frame requer projeto estrutural assinado por engenheiro responsável. A KY Drywall assessora na elaboração do projeto e indicação de engenheiros parceiros para legalizar a construção corretamente.'
+        answer: "Sim! O Steel Frame requer projeto estrutural assinado por engenheiro responsável. A KY Drywall assessora na elaboração do projeto e indicação de engenheiros parceiros para legalizar a construção corretamente."
       },
       {
         question: 'O que vai dentro das paredes de Steel Frame?',
-        answer: 'As paredes de Steel Frame são preenchidas com isolante térmico (lã de vidro ou lã de rocha), membranas impermeabilizantes, OSB ou placa cimentícia externamente e drywall internamente. O resultado é uma parede de alta performance.'
+        answer: "As paredes de Steel Frame são preenchidas com isolante térmico (lã de vidro ou lã de rocha), membranas impermeabilizantes, OSB ou placa cimentícia externamente e drywall internamente. O resultado é uma parede de alta performance."
       },
       {
         question: 'Steel Frame enferruja?',
-        answer: 'Os perfis de aço galvanizado usados no Steel Frame tem excelente resistência à corrosão. Com instalação correta, sem contato direto com água e umidade excessiva, os perfis mantêm a integridade estrutural por dezenas de anos.'
+        answer: "A galvanização contribui para a proteção do aço. O revestimento, a exposição, os detalhes de montagem e a manutenção devem ser especificados para controlar corrosão. Confira o projeto e a documentação do fabricante."
       },
       {
         question: 'Posso instalar revestimento cerâmico em parede de Steel Frame?',
-        answer: 'Sim! Com placa cimentícia ou drywall RU e impermeabilização adequada o Steel Frame recebe cerâmica, porcelanato e qualquer revestimento normalmente.'
+        answer: "A KY apresenta materiais e serviços de construção a seco. Consulte o escopo disponível para o local e tipo de obra, incluindo quem executa, quais materiais estão incluídos e as responsabilidades contratuais."
       },
       {
         question: 'O que é OSB e para que serve no Steel Frame?',
-        answer: 'OSB (Oriented Strand Board) é uma placa de madeira prensada usada no fechamento externo do Steel Frame. Fornece travamento da estrutura, suporte para revestimento externo e barreira de vento. É um componente essencial no sistema.'
+        answer: "OSB (Oriented Strand Board) é uma placa de madeira prensada usada no fechamento externo do Steel Frame. Fornece travamento da estrutura, suporte para revestimento externo e barreira de vento. É um componente essencial no sistema."
       },
       {
         question: 'Steel Frame aceita telha shingle?',
-        answer: 'Sim! Telha shingle é um dos revestimentos de cobertura mais usados com Steel Frame. A estrutura leve do shingle é perfeitamente compatível com a estrutura do Steel Frame. A KY Drywall fornece e instala o sistema completo.'
+        answer: "Sim! Telha shingle é um dos revestimentos de cobertura mais usados com Steel Frame. A estrutura leve do shingle é perfeitamente compatível com a estrutura do Steel Frame. A KY Drywall fornece e instala o sistema completo."
       },
       {
         question: 'KY Drywall faz construção completa em Steel Frame em Curitiba?',
-        answer: 'Sim! A KY Drywall oferece o projeto, fornecimento dos materiais, execução e acompanhamento de construções completas em Steel Frame em Curitiba e toda a região metropolitana. Orçamento gratuito e visita técnica sem custo.'
+        answer: "A solução depende do produto, do ambiente e da composição do sistema. Confira a ficha técnica, as instruções de execução e os requisitos do projeto com o profissional responsável. A equipe KY pode ajudar a localizar os materiais do catálogo para sua cotação."
       }
     ]
   },
@@ -210,63 +210,63 @@ const FAQ_DATA: FAQSection[] = [
     questions: [
       {
         question: 'O que é construção a seco?',
-        answer: 'Construção a seco é qualquer método construtivo que não utiliza água, argamassa ou processos molhados. Inclui sistemas como drywall, steel frame, wood frame e painéis pré-fabricados. É mais rápida, limpa e sustentável que construção convencional.'
+        answer: "Construção a seco é qualquer método construtivo que não utiliza água, argamassa ou processos molhados. Inclui sistemas como drywall, steel frame, wood frame e painéis pré-fabricados. É mais rápida, limpa e sustentável que construção convencional."
       },
       {
         question: 'Construção a seco é mais rápida que convencional?',
-        answer: 'Sim! Construção a seco pode ser até 70% mais rápida que métodos convencionais. Não há tempo de cura de concreto ou argamassa, permitindo montagem contínua e simultânea de diferentes etapas da obra.'
+        answer: "Sim! Construção a seco pode ser até planejada por etapas que métodos convencionais. Não há tempo de cura de concreto ou argamassa, permitindo montagem contínua e simultânea de diferentes etapas da obra."
       },
       {
         question: 'Construção a seco é mais cara?',
-        answer: 'O custo direto pode ser similar ou ligeiramente superior, mas quando consideramos velocidade de execução, menor desperdício, redução de mão de obra e economia em fundações, a construção a seco geralmente tem melhor custo-benefício total.'
+        answer: "A solução depende do produto, do ambiente e da composição do sistema. Confira a ficha técnica, as instruções de execução e os requisitos do projeto com o profissional responsável. A equipe KY pode ajudar a localizar os materiais do catálogo para sua cotação."
       },
       {
         question: 'Construção a seco é aprovada pela prefeitura de Curitiba?',
-        answer: 'Sim! Construção a seco com projeto estrutural assinado por engenheiro responsável é totalmente legalizada e aprovada pela prefeitura de Curitiba. Segue normas ABNT NBR 15253 para steel frame e NBR 14715 para drywall.'
+        answer: "Sim! Construção a seco com projeto estrutural assinado por engenheiro responsável é totalmente legalizada e aprovada pela prefeitura de Curitiba. Segue normas ABNT NBR 15253 para steel frame e NBR 14715 para drywall."
       },
       {
         question: 'O que é melhor - alvenaria ou drywall?',
-        answer: 'Depende da aplicação. Drywall é superior em velocidade, isolamento acústico planejado, flexibilidade de reforma e acabamento. Alvenaria tem maior resistência a impactos e menor custo em algumas situações. Para divisórias internas, drywall é tecnicamente superior.'
+        answer: "A solução depende do produto, do ambiente e da composição do sistema. Confira a ficha técnica, as instruções de execução e os requisitos do projeto com o profissional responsável. A equipe KY pode ajudar a localizar os materiais do catálogo para sua cotação."
       },
       {
         question: 'Posso mesclar construção a seco e alvenaria?',
-        answer: 'Sim! É muito comum usar estrutura de concreto ou alvenaria estrutural com fechamentos internos em drywall. Esta combinação aproveita as vantagens de cada sistema - resistência estrutural da alvenaria e flexibilidade do drywall.'
+        answer: "Sim! É muito comum usar estrutura de concreto ou alvenaria estrutural com fechamentos internos em drywall. Esta combinação aproveita as vantagens de cada sistema - resistência estrutural da alvenaria e flexibilidade do drywall."
       },
       {
         question: 'Construção a seco suporta móveis pesados?',
-        answer: 'Sim! Com fixação adequada usando âncoras específicas ou reforços estruturais planejados, construção a seco suporta armários, prateleiras, TVs e qualquer mobiliário pesado. É essencial informar no projeto os pontos de carga.'
+        answer: "Cargas e fixações precisam ser previstas conforme o suporte, o sistema e o peso do objeto. Confirme buchas, reforços e pontos de apoio com o fabricante e o responsável técnico; não use um limite genérico para qualquer parede."
       },
       {
         question: 'Construção a seco é indicada para Curitiba?',
-        answer: 'Absolutamente! O clima de Curitiba é ideal para construção a seco. Sistema permite excelente isolamento térmico para o frio intenso do inverno e não sofre com umidade quando usa materiais adequados como placas RU em áreas molhadas.'
+        answer: "Absolutamente! O clima de Curitiba é ideal para construção a seco. Sistema permite excelente isolamento térmico para o frio intenso do inverno e não sofre com umidade quando usa materiais adequados como placas RU em áreas molhadas."
       },
       {
         question: 'Qual a diferença entre Steel Frame e Wood Frame?',
-        answer: 'Steel Frame usa perfis de aço galvanizado e Wood Frame usa madeira tratada. Steel Frame tem maior durabilidade, não apodrece, não sofre com cupins e é incombustível. Wood Frame pode ter custo menor em regiões com madeira abundante.'
+        answer: "Steel Frame utiliza perfis de aço; Wood Frame utiliza componentes de madeira. Ambos dependem de projeto, proteção adequada e manutenção. Compare composição, desempenho e custo para o mesmo escopo, sem presumir superioridade universal."
       },
       {
         question: 'Construção a seco tem garantia?',
-        answer: 'Sim! A KY Drywall oferece garantia nos serviços executados conforme contrato. Fabricantes de materiais também oferecem garantias específicas - placas de drywall tem garantia de fábrica e perfis metálicos tem durabilidade comprovada.'
+        answer: "Solicite as condições de garantia do produto e do serviço na proposta e no contrato. Cobertura, prazos, exclusões e manutenção exigida dependem do fabricante, da referência e do escopo contratado."
       },
       {
         question: 'Posso financiar imóvel em Steel Frame?',
-        answer: 'Sim! Bancos brasileiros financiam imóveis em steel frame normalmente através de programas como Minha Casa Minha Vida e financiamentos tradicionais. É necessário ter projeto aprovado e ART (Anotação de Responsabilidade Técnica) do engenheiro.'
+        answer: "Consulte diretamente a instituição financeira sobre critérios, documentos e sistemas aceitos para o seu projeto. A análise e a aprovação dependem do imóvel, da documentação e das condições vigentes."
       },
       {
         question: 'Construção a seco tem valor de revenda?',
-        answer: 'Sim! Imóveis construídos com steel frame e drywall tem o mesmo valor de mercado que construções convencionais. Em alguns casos, características como melhor acabamento e isolamento podem até valorizar o imóvel.'
+        answer: "O valor do imóvel depende da localização, área, conservação, documentação, qualidade da execução e condições do mercado. O sistema construtivo, isoladamente, não garante valorização."
       },
       {
         question: 'Qual o tempo de execução de construção a seco?',
-        answer: 'Uma casa de 100m² pode ficar pronta em 3 a 6 meses com steel frame, contra 12 a 18 meses da construção convencional. Divisórias em drywall podem ser instaladas em dias. A velocidade é uma das maiores vantagens do sistema.'
+        answer: "A solução depende do produto, do ambiente e da composição do sistema. Confira a ficha técnica, as instruções de execução e os requisitos do projeto com o profissional responsável. A equipe KY pode ajudar a localizar os materiais do catálogo para sua cotação."
       },
       {
         question: 'Construção a seco tem certificação ABNT?',
-        answer: 'Sim! Sistemas de construção a seco seguem normas ABNT rigorosas: NBR 15253 (Steel Frame), NBR 14715 e 15758 (Drywall), NBR 15575 (Desempenho de Edificações). A KY Drywall trabalha conforme todas as normas técnicas.'
+        answer: "A documentação deve ser conferida para cada produto e sistema. Peça fichas técnicas e documentos aplicáveis e valide os requisitos normativos com o responsável técnico. Citar uma norma não equivale a certificação de toda a obra."
       },
       {
         question: 'KY Drywall faz construção a seco residencial completa?',
-        answer: 'Sim! A KY Drywall executa projetos completos residenciais e comerciais em Curitiba e região metropolitana. Oferecemos projeto técnico, fornecimento de materiais, execução e pós-obra. Agende visita técnica gratuita pelo WhatsApp.'
+        answer: "A solução depende do produto, do ambiente e da composição do sistema. Confira a ficha técnica, as instruções de execução e os requisitos do projeto com o profissional responsável. A equipe KY pode ajudar a localizar os materiais do catálogo para sua cotação."
       }
     ]
   },
@@ -278,63 +278,63 @@ const FAQ_DATA: FAQSection[] = [
     questions: [
       {
         question: 'O que é telha shingle?',
-        answer: 'Telha shingle é uma cobertura composta por lâminas de asfalto modificado com grânulos minerais na superfície. Leve, flexível e com excelente acabamento estético. Muito popular em projetos modernos e construções em Steel Frame em Curitiba e região.'
+        answer: "Telha shingle é uma cobertura composta por lâminas de asfalto modificado com grânulos minerais na superfície. Leve, flexível e com excelente acabamento estético. Muito popular em projetos modernos e construções em Steel Frame em Curitiba e região."
       },
       {
         question: 'Telha shingle é resistente ao granizo?',
-        answer: 'Sim! A telha shingle tem boa resistência ao granizo pelo material flexível que absorve impactos sem quebrar como telhas cerâmicas ou de concreto. Para regiões com granizo muito intenso existem opções de shingle com classificação de impacto mais alta.'
+        answer: "Sim! A telha shingle tem boa resistência ao granizo pelo material flexível que absorve impactos sem quebrar como telhas cerâmicas ou de concreto. Para regiões com granizo muito intenso existem opções de shingle com classificação de impacto mais alta."
       },
       {
         question: 'Qual a vida útil da telha shingle?',
-        answer: 'Telha shingle de qualidade tem vida útil de 20 a 30 anos conforme a marca e modelo. Marcas premium podem chegar a 50 anos de garantia. A KY Drywall trabalha apenas com marcas certificadas e de alta durabilidade.'
+        answer: "A solução depende do produto, do ambiente e da composição do sistema. Confira a ficha técnica, as instruções de execução e os requisitos do projeto com o profissional responsável. A equipe KY pode ajudar a localizar os materiais do catálogo para sua cotação."
       },
       {
         question: 'Telha shingle é impermeável?',
-        answer: 'Sim! Telha shingle é 100% impermeável quando instalada corretamente. O asfalto modificado cria barreira total contra água. Sistema inclui também manta asfáltica sob as telhas para dupla proteção.'
+        answer: "A exposição à água deve ser avaliada conforme o material e o sistema. Resistência à umidade não equivale a impermeabilidade. Confira impermeabilização, selagem, revestimentos, ventilação e limites de uso na documentação do fabricante."
       },
       {
         question: 'Qual a inclinação mínima para telha shingle?',
-        answer: 'A inclinação mínima recomendada é de 18% (aproximadamente 10 graus). Para inclinações menores são necessários sistemas especiais de impermeabilização. A KY Drywall avalia cada projeto para garantir instalação correta.'
+        answer: "A inclinação admissível varia conforme o modelo e o sistema de cobertura. Consulte o manual do fabricante e o projeto, incluindo base, subcobertura, fixações, arremates e drenagem."
       },
       {
         question: 'Telha shingle precisa de manutenção?',
-        answer: 'A manutenção é mínima. Recomenda-se limpeza anual para remoção de folhas e detritos, e inspeção visual a cada 2 anos. Calhas devem ser limpas regularmente. Com manutenção básica a durabilidade é maximizada.'
+        answer: "Siga o manual de uso e manutenção do fabricante e do sistema instalado. Inspecione juntas, fixações, revestimentos e sinais de umidade conforme o plano da edificação. Evite produtos ou técnicas de limpeza não recomendados."
       },
       {
         question: 'Qual o peso da telha shingle por m²?',
-        answer: 'Telha shingle pesa aproximadamente 10 a 13 kg/m², muito mais leve que telha cerâmica (45kg/m²) ou concreto (50kg/m²). Este peso reduzido permite estruturas mais econômicas e é ideal para steel frame.'
+        answer: "Cargas e fixações precisam ser previstas conforme o suporte, o sistema e o peso do objeto. Confirme buchas, reforços e pontos de apoio com o fabricante e o responsável técnico; não use um limite genérico para qualquer parede."
       },
       {
         question: 'Telha shingle pode ser instalada sobre telha existente?',
-        answer: 'Em alguns casos sim, mas não é o ideal. O melhor resultado é sempre com instalação sobre base de OSB ou compensado estrutural. A KY Drywall avalia tecnicamente cada situação para recomendar a melhor solução.'
+        answer: "A KY apresenta materiais e serviços de construção a seco. Consulte o escopo disponível para o local e tipo de obra, incluindo quem executa, quais materiais estão incluídos e as responsabilidades contratuais."
       },
       {
         question: 'Qual a diferença entre shingle e telha cerâmica?',
-        answer: 'Shingle é muito mais leve, tem instalação mais rápida, melhor impermeabilização e estética moderna. Telha cerâmica tem estética tradicional e maior resistência a altíssimas temperaturas. Shingle é tecnicamente superior em desempenho.'
+        answer: "A solução depende do produto, do ambiente e da composição do sistema. Confira a ficha técnica, as instruções de execução e os requisitos do projeto com o profissional responsável. A equipe KY pode ajudar a localizar os materiais do catálogo para sua cotação."
       },
       {
         question: 'Telha shingle tem isolamento térmico?',
-        answer: 'A telha shingle em si tem isolamento térmico moderado. Para melhor desempenho recomenda-se manta térmica sob as telhas e forro com isolamento. O sistema completo oferece excelente conforto térmico.'
+        answer: "O desempenho depende do conjunto: placas, estrutura, isolamento, juntas, aberturas e execução. Solicite a composição especificada e dados do sistema para o ambiente. Não há superioridade universal ou desempenho único apenas pelo nome do material."
       },
       {
         question: 'Qual o custo do m² de shingle?',
-        answer: 'O custo varia conforme marca, modelo e complexidade do telhado. Incluindo material e instalação profissional, o investimento é competitivo com telhas premium. A KY Drywall oferece orçamento gratuito detalhado.'
+        answer: "O custo depende de medidas, composição dos materiais, acabamento, acesso ao local e mão de obra. Compare propostas para o mesmo escopo e solicite valores, validade, frete e condições de pagamento à equipe KY."
       },
       {
         question: 'KY Drywall instala telha shingle em Curitiba?',
-        answer: 'Sim! A KY Drywall é especialista em instalação de telha shingle em Curitiba e região metropolitana. Executamos desde pequenas coberturas até grandes projetos residenciais e comerciais. Equipe técnica certificada.'
+        answer: "A KY apresenta materiais e serviços de construção a seco. Consulte o escopo disponível para o local e tipo de obra, incluindo quem executa, quais materiais estão incluídos e as responsabilidades contratuais."
       },
       {
         question: 'Quais marcas de shingle a KY Drywall trabalha?',
-        answer: 'Trabalhamos com as melhores marcas do mercado brasileiro certificadas pelo INMETRO. Oferecemos várias opções de cores e modelos para cada tipo de projeto. Consulte nossos especialistas para recomendação específica.'
+        answer: "Consulte o catálogo e confirme a marca, referência e documentação do item disponível com a equipe. Opções e modelos podem variar; a escolha deve atender à especificação do projeto."
       },
       {
         question: 'Como limpar telha shingle?',
-        answer: 'Limpeza com água e sabão neutro uma vez por ano é suficiente. Evite jato de alta pressão muito próximo que pode danificar os grânulos. Remova folhas e galhos regularmente. Não use produtos químicos agressivos.'
+        answer: "Limpeza com água e sabão neutro uma vez por ano é suficiente. Evite jato de alta pressão muito próximo que pode danificar os grânulos. Remova folhas e galhos regularmente. Não use produtos químicos agressivos."
       },
       {
         question: 'Telha shingle pode ser usada em garagem?',
-        answer: 'Sim! Telha shingle é excelente para garagens, pergolados e áreas de lazer. Oferece proteção total contra chuva, ótimo acabamento estético e instalação rápida. Muito usado em projetos modernos em Curitiba.'
+        answer: "Sim! Telha shingle é excelente para garagens, pergolados e áreas de lazer. Oferece proteção total contra chuva, ótimo acabamento estético e instalação rápida. Muito usado em projetos modernos em Curitiba."
       }
     ]
   },
@@ -346,63 +346,63 @@ const FAQ_DATA: FAQSection[] = [
     questions: [
       {
         question: 'O que é forro de PVC?',
-        answer: 'Forro de PVC é um sistema de revestimento de teto formado por lâminas ou placas modulares de policloreto de vinila. É resistente à umidade, fácil de limpar, não propaga chamas e tem instalação rápida. Muito indicado para banheiros, cozinhas, lavanderias e áreas externas cobertas em Curitiba.'
+        answer: "Forro de PVC é um sistema de revestimento de teto formado por lâminas ou placas modulares de policloreto de vinila. É resistente à umidade, fácil de limpar, não propaga chamas e tem instalação rápida. Muito indicado para banheiros, cozinhas, lavanderias e áreas externas cobertas em Curitiba."
       },
       {
         question: 'Forro PVC é resistente à umidade?',
-        answer: 'Sim! PVC é 100% resistente à umidade e água. Não apodrece, não mofa e não se deforma com umidade. É a melhor opção para banheiros, cozinhas, lavanderias e áreas externas cobertas.'
+        answer: "A exposição à água deve ser avaliada conforme o material e o sistema. Resistência à umidade não equivale a impermeabilidade. Confira impermeabilização, selagem, revestimentos, ventilação e limites de uso na documentação do fabricante."
       },
       {
         question: 'Forro PVC pode ser instalado em área externa?',
-        answer: 'Sim, mas apenas em áreas cobertas sem exposição direta ao sol intenso. PVC pode amarelar e deformar com exposição solar prolongada. Para varandas e áreas cobertas é perfeito e muito durável.'
+        answer: "A KY apresenta materiais e serviços de construção a seco. Consulte o escopo disponível para o local e tipo de obra, incluindo quem executa, quais materiais estão incluídos e as responsabilidades contratuais."
       },
       {
         question: 'Qual a diferença entre forro PVC e forro de drywall?',
-        answer: 'PVC é mais resistente à umidade e mais fácil de limpar, ideal para áreas molhadas. Drywall oferece melhor isolamento acústico, permite sancas mais elaboradas e tem acabamento mais sofisticado. Ambos têm suas aplicações ideais.'
+        answer: "Compare acabamento, manutenção, exposição à umidade e desempenho do sistema completo. PVC e drywall têm aplicações diferentes; a escolha deve atender às condições do ambiente e à especificação do projeto."
       },
       {
         question: 'Forro PVC aceita pintura?',
-        answer: 'Tecnicamente sim, mas não é recomendado. O PVC já vem com acabamento de fábrica em diversas cores e a pintura pode descascar com o tempo. Se deseja mudança de cor, melhor optar por drywall ou substituir as réguas.'
+        answer: "Tecnicamente sim, mas não é recomendado. O PVC já vem com acabamento de fábrica em diversas cores e a pintura pode descascar com o tempo. Se deseja mudança de cor, melhor optar por drywall ou substituir as réguas."
       },
       {
         question: 'Como é feita a instalação de forro PVC?',
-        answer: 'Instalação é feita com estrutura de madeira ou perfis metálicos fixados ao teto. As réguas de PVC encaixam-se uma na outra por sistema de macho e fêmea. Instalação é rápida e limpa, sem entulho significativo.'
+        answer: "A KY apresenta materiais e serviços de construção a seco. Consulte o escopo disponível para o local e tipo de obra, incluindo quem executa, quais materiais estão incluídos e as responsabilidades contratuais."
       },
       {
         question: 'Forro PVC esquenta o ambiente?',
-        answer: 'PVC tem baixo isolamento térmico. Para melhor conforto térmico recomenda-se manta térmica sobre o forro ou uso de telhas termoacústicas na cobertura. O conforto final depende do projeto completo do telhado.'
+        answer: "PVC tem baixo isolamento térmico. Para melhor conforto térmico recomenda-se manta térmica sobre o forro ou uso de telhas termoacústicas na cobertura. O conforto final depende do projeto completo do telhado."
       },
       {
         question: 'Qual a vida útil do forro PVC?',
-        answer: 'Com instalação correta e sem exposição solar direta, forro PVC dura 15 a 25 anos. Em áreas internas protegidas a durabilidade é ainda maior. Manutenção é mínima, apenas limpeza periódica.'
+        answer: "A solução depende do produto, do ambiente e da composição do sistema. Confira a ficha técnica, as instruções de execução e os requisitos do projeto com o profissional responsável. A equipe KY pode ajudar a localizar os materiais do catálogo para sua cotação."
       },
       {
         question: 'Forro PVC modular é o mesmo que forro régua?',
-        answer: 'Sim! São nomes diferentes para o mesmo produto. Réguas são as lâminas individuais que formam o forro. Sistema modular permite fácil acesso para manutenção de instalações acima do forro.'
+        answer: "Sim! São nomes diferentes para o mesmo produto. Réguas são as lâminas individuais que formam o forro. Sistema modular permite fácil acesso para manutenção de instalações acima do forro."
       },
       {
         question: 'Quais cores de forro PVC estão disponíveis?',
-        answer: 'As cores mais comuns são branco, marfim, amadeirado (diversas tonalidades de madeira) e cinza. Branco é o mais usado por ser atemporal e refletir melhor a luz. A KY Drywall tem diversas opções em estoque.'
+        answer: "As cores mais comuns são branco, marfim, amadeirado (diversas tonalidades de madeira) e cinza. Branco é o mais usado por ser atemporal e refletir melhor a luz. Consulte as cores e versões disponíveis com a equipe KY."
       },
       {
         question: 'Forro PVC tem isolamento acústico?',
-        answer: 'O isolamento acústico do PVC é limitado. Para projetos que exigem alto desempenho acústico, drywall com lã mineral é mais indicado. PVC é escolhido principalmente por resistência à umidade e facilidade de manutenção.'
+        answer: "O desempenho depende do conjunto: placas, estrutura, isolamento, juntas, aberturas e execução. Solicite a composição especificada e dados do sistema para o ambiente. Não há superioridade universal ou desempenho único apenas pelo nome do material."
       },
       {
         question: 'Como limpar forro de PVC?',
-        answer: 'Limpeza simples com pano úmido e detergente neutro. Evite produtos abrasivos que podem arranhar. Para manchas difíceis pode-se usar esponja macia. A facilidade de limpeza é uma grande vantagem do PVC.'
+        answer: "Limpeza simples com pano úmido e detergente neutro. Evite produtos abrasivos que podem arranhar. Para manchas difíceis pode-se usar esponja macia. A facilidade de limpeza é uma grande vantagem do PVC."
       },
       {
         question: 'Forro PVC pode ser instalado em garagem?',
-        answer: 'Sim! É muito usado em garagens pelo custo-benefício e facilidade de limpeza. Protege contra poeira, resiste a umidade e tem ótima durabilidade. Instalação rápida permite uso imediato do espaço.'
+        answer: "A KY apresenta materiais e serviços de construção a seco. Consulte o escopo disponível para o local e tipo de obra, incluindo quem executa, quais materiais estão incluídos e as responsabilidades contratuais."
       },
       {
         question: 'KY Drywall instala forro PVC em Curitiba?',
-        answer: 'Sim! A KY Drywall fornece material e instala forro PVC em Curitiba e região metropolitana. Equipe técnica especializada garante instalação rápida e acabamento perfeito. Solicite orçamento gratuito.'
+        answer: "A KY apresenta materiais e serviços de construção a seco. Consulte o escopo disponível para o local e tipo de obra, incluindo quem executa, quais materiais estão incluídos e as responsabilidades contratuais."
       },
       {
         question: 'Qual o preço do m² de forro PVC?',
-        answer: 'O preço varia conforme qualidade do PVC, cor escolhida e complexidade da instalação. É geralmente mais econômico que drywall. A KY Drywall oferece orçamento detalhado gratuito com todas as especificações.'
+        answer: "A solução depende do produto, do ambiente e da composição do sistema. Confira a ficha técnica, as instruções de execução e os requisitos do projeto com o profissional responsável. A equipe KY pode ajudar a localizar os materiais do catálogo para sua cotação."
       }
     ]
   },
@@ -414,79 +414,79 @@ const FAQ_DATA: FAQSection[] = [
     questions: [
       {
         question: 'Como é feita a instalação de drywall?',
-        answer: 'A instalação de drywall segue estas etapas: marcação e fixação das guias no piso e teto, instalação dos montantes verticais nos espaçamentos técnicos, passagem das instalações elétricas e hidráulicas, fixação das placas com parafusos específicos, acabamento das juntas com fita e massa, lixamento e preparação para pintura.'
+        answer: "A KY apresenta materiais e serviços de construção a seco. Consulte o escopo disponível para o local e tipo de obra, incluindo quem executa, quais materiais estão incluídos e as responsabilidades contratuais."
       },
       {
         question: 'Quanto tempo leva a instalação de drywall?',
-        answer: 'Uma parede divisória simples de 10m² pode ser instalada em 1 dia. Forro de 30m² leva aproximadamente 2 a 3 dias incluindo acabamento. Projetos completos dependem da complexidade, mas são sempre muito mais rápidos que alvenaria.'
+        answer: "O prazo ou a vida útil depende do produto, projeto, condições de uso, execução e manutenção. Consulte a documentação do fabricante e solicite um cronograma específico para o serviço, sem assumir um período único para todos os casos."
       },
       {
         question: 'Drywall pode ser instalado em qualquer ambiente?',
-        answer: 'Sim! Com a placa adequada para cada situação: ST para áreas secas, RU para áreas úmidas, RF para proteção contra fogo. Até áreas externas cobertas podem receber drywall com placas cimentícias. Consulte a KY Drywall para especificação correta.'
+        answer: "A KY apresenta materiais e serviços de construção a seco. Consulte o escopo disponível para o local e tipo de obra, incluindo quem executa, quais materiais estão incluídos e as responsabilidades contratuais."
       },
       {
         question: 'Como é feita a manutenção de parede de drywall?',
-        answer: 'Manutenção é mínima. Pequenos furos podem ser reparados com massa corrida. Trincas nas juntas são corrigidas com fita e massa específica. Limpeza com pano úmido é suficiente. Repintura segue os mesmos procedimentos de parede comum.'
+        answer: "Siga o manual de uso e manutenção do fabricante e do sistema instalado. Inspecione juntas, fixações, revestimentos e sinais de umidade conforme o plano da edificação. Evite produtos ou técnicas de limpeza não recomendados."
       },
       {
         question: 'Como consertar furo em drywall?',
-        answer: 'Furos pequenos (até 2cm): aplicar massa corrida, lixar e pintar. Furos médios (até 10cm): usar tela de reparo ou pedaço de placa com massa. Furos grandes: cortar em formato quadrado e inserir pedaço novo de placa fixado na estrutura.'
+        answer: "A solução depende do produto, do ambiente e da composição do sistema. Confira a ficha técnica, as instruções de execução e os requisitos do projeto com o profissional responsável. A equipe KY pode ajudar a localizar os materiais do catálogo para sua cotação."
       },
       {
         question: 'Como consertar trinca em drywall?',
-        answer: 'Abrir levemente a trinca com espátula, aplicar fita de papel ou fibra sobre a trinca, cobrir com massa para drywall em camadas finas, lixar após secagem completa e repintar. Trincas persistentes podem indicar movimentação estrutural a ser investigada.'
+        answer: "Abrir levemente a trinca com espátula, aplicar fita de papel ou fibra sobre a trinca, cobrir com massa para drywall em camadas finas, lixar após secagem completa e repintar. Trincas persistentes podem indicar movimentação estrutural a ser investigada."
       },
       {
         question: 'Posso instalar drywall sobre parede existente?',
-        answer: 'Sim! É possível fixar perfis sobre parede existente para melhorar isolamento acústico, térmico ou corrigir imperfeições. Técnica muito usada em reformas para evitar demolição e entulho. Reduz área útil em aproximadamente 5 a 10cm.'
+        answer: "A KY apresenta materiais e serviços de construção a seco. Consulte o escopo disponível para o local e tipo de obra, incluindo quem executa, quais materiais estão incluídos e as responsabilidades contratuais."
       },
       {
         question: 'Como instalar TV na parede de drywall?',
-        answer: 'Para TVs até 32": buchas metálicas específicas para drywall. Para TVs maiores: reforço estrutural com madeira ou perfil metálico adicional entre os montantes, ou fixação direta nos montantes metálicos identificados com detector eletrônico.'
+        answer: "A KY apresenta materiais e serviços de construção a seco. Consulte o escopo disponível para o local e tipo de obra, incluindo quem executa, quais materiais estão incluídos e as responsabilidades contratuais."
       },
       {
         question: 'Como instalar prateleiras em drywall?',
-        answer: 'Prateleiras leves (até 5kg): buchas metálicas para drywall. Prateleiras médias (até 20kg): âncoras metálicas ou fixação nos montantes. Prateleiras pesadas ou bibliotecas: reforço estrutural planejado com perfis ou madeira adicional.'
+        answer: "A KY apresenta materiais e serviços de construção a seco. Consulte o escopo disponível para o local e tipo de obra, incluindo quem executa, quais materiais estão incluídos e as responsabilidades contratuais."
       },
       {
         question: 'Como instalar ar-condicionado em parede de drywall?',
-        answer: 'É necessário reforço estrutural planejado na área onde será fixada a unidade interna. Perfis adicionais ou chapa de madeira entre os montantes distribuem o peso. Instalação deve ser feita por profissional que conheça sistemas de drywall.'
+        answer: "A KY apresenta materiais e serviços de construção a seco. Consulte o escopo disponível para o local e tipo de obra, incluindo quem executa, quais materiais estão incluídos e as responsabilidades contratuais."
       },
       {
         question: 'Drywall pode ter piso vinílico ou cerâmico?',
-        answer: 'Drywall não é usado em pisos. É sistema para paredes e forros. Para pisos existe o sistema de piso elevado que é diferente. Se pergunta é sobre parede de drywall receber cerâmica: sim, com placa RU e impermeabilização.'
+        answer: "Drywall não é usado em pisos. É sistema para paredes e forros. Para pisos existe o sistema de piso elevado que é diferente. Se pergunta é sobre parede de drywall receber cerâmica: sim, com placa RU e impermeabilização."
       },
       {
         question: 'Drywall precisa de acabamento especial?',
-        answer: 'O acabamento das juntas com fita e massa específica para drywall é obrigatório. Após lixamento, aplicar primer PVA antes da pintura. Massa corrida em toda a superfície é opcional mas recomendada para acabamento premium tipo "nível 5".'
+        answer: "O acabamento das juntas com fita e massa específica para drywall é obrigatório. Após lixamento, aplicar primer PVA antes da pintura. Massa corrida em toda a superfície é opcional mas recomendada para acabamento premium tipo \"nível 5\"."
       },
       {
         question: 'Qual a tinta ideal para drywall?',
-        answer: 'Tintas acrílicas ou látex PVA são ideais. Para áreas úmidas usar tinta acrílica com fungicida. Evitar tintas muito líquidas que podem encharcar a placa. Aplicação com rolo de lã ou pistola. A KY Drywall recomenda marcas adequadas.'
+        answer: "Tintas acrílicas ou látex PVA são ideais. Para áreas úmidas usar tinta acrílica com fungicida. Evitar tintas muito líquidas que podem encharcar a placa. Aplicação com rolo de lã ou pistola. A KY Drywall recomenda marcas adequadas."
       },
       {
         question: 'Como preparar drywall para pintura?',
-        answer: 'Após instalação e tratamento de juntas: lixar toda superfície, limpar o pó completamente, aplicar primer PVA ou selador acrílico, aguardar secagem, aplicar massa corrida se desejado (opcional), lixar novamente, limpar e aplicar tinta.'
+        answer: "Após instalação e tratamento de juntas: lixar toda superfície, limpar o pó completamente, aplicar primer PVA ou selador acrílico, aguardar secagem, aplicar massa corrida se desejado (opcional), lixar novamente, limpar e aplicar tinta."
       },
       {
         question: 'O que é fita de tratamento para drywall?',
-        answer: 'Fita especial aplicada sobre juntas entre placas antes da massa. Pode ser de papel microperfurado (mais comum) ou fibra de vidro. Reforça juntas evitando trincas futuras. É item obrigatório para acabamento técnico correto.'
+        answer: "Fita especial aplicada sobre juntas entre placas antes da massa. Pode ser de papel microperfurado (mais comum) ou fibra de vidro. Reforça juntas evitando trincas futuras. É item obrigatório para acabamento técnico correto."
       },
       {
         question: 'O que é massa para drywall?',
-        answer: 'Massa específica para tratamento de juntas e fixações em drywall. Tem secagem mais rápida e menos retração que massa comum. Principais tipos: massa pronta em pasta ou massa em pó para misturar com água. Ambas têm excelente desempenho.'
+        answer: "Massa específica para tratamento de juntas e fixações em drywall. Tem secagem mais rápida e menos retração que massa comum. Principais tipos: massa pronta em pasta ou massa em pó para misturar com água. Ambas têm excelente desempenho."
       },
       {
         question: 'É possível desmontar e remontar drywall?',
-        answer: 'Sim! Uma das grandes vantagens do drywall. Placas podem ser removidas com cuidado e reaproveitadas. Perfis metálicos são totalmente reaproveitáveis. Sistema permite reforma completa de layout sem demolição e com mínimo de resíduos.'
+        answer: "Sim! Uma das grandes vantagens do drywall. Placas podem ser removidas com cuidado e reaproveitadas. Perfis metálicos são podem ser avaliados para reaproveitamento. Sistema permite reforma completa de layout sem demolição e com mínimo de resíduos."
       },
       {
         question: 'Qual o espaçamento correto entre montantes?',
-        answer: 'Espaçamento padrão é de 40cm ou 60cm entre eixos dos montantes, conforme a altura da parede e carga prevista. Para paredes até 2,80m altura usa-se geralmente 60cm. Projeto estrutural define espaçamento adequado para cada caso.'
+        answer: "A medida correta depende do produto e da função no sistema. Confira a referência, espessura, espaçamento dos apoios e demais dimensões no projeto e na ficha técnica, antes de definir a quantidade de compra."
       },
       {
         question: 'KY Drywall faz instalação ou só vende material?',
-        answer: 'A KY Drywall oferece as duas opções! Você pode comprar apenas os materiais se tiver equipe própria, ou contratar nosso serviço completo de instalação com equipe técnica especializada. Consulte-nos para orçamento de ambas as modalidades.'
+        answer: "A KY apresenta materiais e serviços de construção a seco. Consulte o escopo disponível para o local e tipo de obra, incluindo quem executa, quais materiais estão incluídos e as responsabilidades contratuais."
       }
     ]
   },
@@ -498,63 +498,63 @@ const FAQ_DATA: FAQSection[] = [
     questions: [
       {
         question: 'O orçamento é gratuito?',
-        answer: 'Sim! A KY Drywall oferece orçamento 100% gratuito e sem compromisso. Realizamos visita técnica ao seu projeto, fazemos o levantamento de materiais e entregamos proposta detalhada com valores, prazos e especificações técnicas.'
+        answer: "Consulte a equipe sobre disponibilidade e condições de orçamento ou visita técnica. Envie medidas, fotos e localização para definir o escopo; confirme eventuais custos e prazos antes de agendar."
       },
       {
         question: 'Quanto custa o m² de drywall em Curitiba?',
-        answer: 'O preço do m² de drywall varia conforme o tipo de sistema, número de camadas, tipo de placa e complexidade do projeto. A KY Drywall garante o melhor custo-benefício do mercado em Curitiba com orçamento detalhado e transparente.'
+        answer: "O custo depende de medidas, composição dos materiais, acabamento, acesso ao local e mão de obra. Compare propostas para o mesmo escopo e solicite valores, validade, frete e condições de pagamento à equipe KY."
       },
       {
         question: 'KY Drywall é distribuidora ou instaladora?',
-        answer: 'Somos ambos! A KY Drywall é distribuidora oficial de grandes marcas E também executa instalações com equipe técnica própria. Oferecemos desde venda de materiais avulsos até projetos completos chave na mão.'
+        answer: "A KY apresenta materiais e serviços de construção a seco. Consulte o escopo disponível para o local e tipo de obra, incluindo quem executa, quais materiais estão incluídos e as responsabilidades contratuais."
       },
       {
         question: 'KY Drywall vende material e instala?',
-        answer: 'Sim! Você pode optar apenas pela compra de materiais, apenas pela instalação (se já tiver o material), ou pelo serviço completo que geralmente oferece melhor custo-benefício e garantia integrada do sistema.'
+        answer: "A KY apresenta materiais e serviços de construção a seco. Consulte o escopo disponível para o local e tipo de obra, incluindo quem executa, quais materiais estão incluídos e as responsabilidades contratuais."
       },
       {
         question: 'Como solicitar orçamento na KY Drywall?',
-        answer: 'Formas de solicitar orçamento: WhatsApp (41) 99645-7421 com Carlos ou (41) 99906-7259 com Lucilene, telefone (41) 3528-4232, e-mail carlos@kydrywall.com.br ou lucilene@kydrywall.com.br, ou visita presencial na BR-277, 3641 - Cajuru.'
+        answer: "Formas de solicitar orçamento: WhatsApp (41) 99645-7421 com Carlos ou (41) 99906-7259 com Lucilene, telefone (41) 3528-4232, e-mail carlos@kydrywall.com.br ou lucilene@kydrywall.com.br, ou visita presencial na BR-277, 3641 - Cajuru."
       },
       {
         question: 'Qual o horário de atendimento?',
-        answer: 'Segunda a Sexta: 7h30 às 17h30 / Sábado: 7h30 às 12h00. Atendimento por WhatsApp pode ser feito fora deste horário com resposta no próximo dia útil. Loja física na BR-277 aberta nos horários informados.'
+        answer: "Segunda a Sexta: 7h30 às 17h30 / Sábado: 7h30 às 12h00. Atendimento por WhatsApp pode ser feito fora deste horário com resposta no próximo dia útil. Loja física na BR-277 aberta nos horários informados."
       },
       {
         question: 'Aceitam PIX e cartão?',
-        answer: 'Sim! Aceitamos PIX, cartão de débito, cartão de crédito (consultar condições de parcelamento), transferência bancária, boleto bancário e dinheiro. Condições especiais para pagamento à vista. Consulte nossa equipe comercial.'
+        answer: "Consulte as formas de pagamento e eventuais condições de parcelamento na proposta comercial. Não presuma disponibilidade de uma modalidade, desconto ou prazo antes da confirmação da equipe."
       },
       {
         question: 'Parcelam os serviços?',
-        answer: 'Sim! Oferecemos condições especiais de parcelamento conforme o valor do projeto. Para obras maiores trabalhamos com cronograma de pagamento por etapas. Consulte Carlos ou Lucilene para condições personalizadas.'
+        answer: "Consulte as formas de pagamento e eventuais condições de parcelamento na proposta comercial. Não presuma disponibilidade de uma modalidade, desconto ou prazo antes da confirmação da equipe."
       },
       {
         question: 'KY Drywall emite nota fiscal?',
-        answer: 'Sim! Emitimos nota fiscal para todos os produtos e serviços. Somos empresa regularizada com CNPJ, totalmente legalizada e em conformidade com legislação tributária. Nota fiscal garante procedência e garantia dos produtos.'
+        answer: "Solicite à equipe os dados de faturamento e os documentos previstos para sua compra ou contratação. Confira a descrição dos itens e serviços na proposta."
       },
       {
         question: 'Tem garantia nos serviços?',
-        answer: 'Sim! Serviços executados pela KY Drywall tem garantia contratual conforme acordo comercial. Materiais tem garantia de fábrica. Placas de drywall, perfis e componentes de marcas renomadas tem garantia comprovada de durabilidade.'
+        answer: "Solicite as condições de garantia do produto e do serviço na proposta e no contrato. Cobertura, prazos, exclusões e manutenção exigida dependem do fabricante, da referência e do escopo contratado."
       },
       {
         question: 'Quais regiões de Curitiba atendem?',
-        answer: 'Atendemos TODA Curitiba! Desde o Batel até o CIC, de Santa Felicidade ao Boqueirão. Fazemos entrega e instalação em todos os bairros de Curitiba com frota própria. Consulte frete para seu endereço específico.'
+        answer: "Informe os itens, quantidades e endereço da obra para confirmar disponibilidade, prazo, frete e condições de descarga. Produtos no catálogo e localidades citadas no site não representam estoque reservado, entrega imediata ou existência de filiais."
       },
       {
         question: 'KY Drywall atende fora de Curitiba?',
-        answer: 'Sim! Atendemos toda Região Metropolitana de Curitiba: São José dos Pinhais, Pinhais, Colombo, Araucária, Campo Largo, Fazenda Rio Grande, Almirante Tamandaré, Piraquara e demais cidades. Consulte disponibilidade.'
+        answer: "Informe os itens, quantidades e endereço da obra para confirmar disponibilidade, prazo, frete e condições de descarga. Produtos no catálogo e localidades citadas no site não representam estoque reservado, entrega imediata ou existência de filiais."
       },
       {
         question: 'Como agendar visita técnica?',
-        answer: 'Entre em contato por WhatsApp (41) 99645-7421 ou (41) 99906-7259, informe endereço e tipo de projeto. Agendamos visita técnica gratuita conforme agenda. Técnico avalia o local e retorna com orçamento detalhado em até 48h.'
+        answer: "Consulte a equipe sobre disponibilidade e condições de orçamento ou visita técnica. Envie medidas, fotos e localização para definir o escopo; confirme eventuais custos e prazos antes de agendar."
       },
       {
         question: 'Quanto tempo leva para receberem o material após o pedido?',
-        answer: 'Materiais em estoque: entrega em 24 a 48h em Curitiba e região. Materiais sob encomenda: 3 a 7 dias úteis conforme produto. Mantemos grande estoque de itens mais comuns para atendimento imediato. Retirada na loja é instantânea.'
+        answer: "O prazo ou a vida útil depende do produto, projeto, condições de uso, execução e manutenção. Consulte a documentação do fabricante e solicite um cronograma específico para o serviço, sem assumir um período único para todos os casos."
       },
       {
         question: 'KY Drywall tem estoque para pronta entrega?',
-        answer: 'Sim! Mantemos um dos maiores estoques de materiais para construção a seco de Curitiba. Placas de drywall, perfis Barbieri, parafusos, massas, fitas e acessórios disponíveis para retirada imediata ou entrega rápida. Visite nosso showroom!'
+        answer: "Informe os itens, quantidades e endereço da obra para confirmar disponibilidade, prazo, frete e condições de descarga. Produtos no catálogo e localidades citadas no site não representam estoque reservado, entrega imediata ou existência de filiais."
       }
     ]
   }
@@ -650,7 +650,7 @@ const FAQPage: React.FC = () => {
       {/* Hero Section - Industrial Showroom */}
       <section className="bg-white py-24 md:py-32 text-slate-900 relative overflow-hidden border-b-2 border-slate-100">
         <div className="absolute inset-0 z-0 bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] [background-size:24px_24px] opacity-100"></div>
-        
+
         <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-4xl">
             <div className="inline-flex items-center gap-2 text-[#D31219] text-[10px] font-black uppercase tracking-[0.2em] bg-red-50 border border-red-100 px-4 py-2 rounded-full mb-10 shadow-sm">
@@ -718,8 +718,8 @@ const FAQPage: React.FC = () => {
                 {section.questions.map((q: any, idx: number) => {
                   const isOpen = openQuestions.has(`${section.id}-${idx}`);
                   return (
-                    <div 
-                      key={idx} 
+                    <div
+                      key={idx}
                       className={`group rounded-3xl border-2 transition-all duration-300 ${isOpen ? 'bg-white border-slate-900 shadow-xl' : 'bg-white border-slate-100 hover:border-slate-300 shadow-sm'}`}
                     >
                       <button
@@ -734,7 +734,7 @@ const FAQPage: React.FC = () => {
                           <ChevronDown size={20} />
                         </div>
                       </button>
-                      
+
                       <div className={`overflow-hidden transition-all duration-300 ${isOpen ? 'max-h-[1000px] opacity-100' : 'max-h-0 opacity-0'}`}>
                         <div className="px-8 pb-8 text-lg text-slate-600 leading-relaxed border-t border-slate-50 pt-6">
                           {q.answer}
@@ -746,7 +746,7 @@ const FAQPage: React.FC = () => {
               </div>
             </div>
           ))}
-          
+
           {filteredSections.length === 0 && (
             <div className="py-24 text-center bg-white rounded-[40px] border-2 border-dashed border-slate-200">
                <div className="w-20 h-20 bg-slate-50 rounded-full flex items-center justify-center mx-auto mb-6">
@@ -754,8 +754,8 @@ const FAQPage: React.FC = () => {
                </div>
                <h3 className="text-2xl font-black text-slate-900 mb-2">Nenhum resultado encontrado</h3>
                <p className="text-slate-500 mb-8 max-w-sm mx-auto">Tente buscar por termos mais genéricos ou selecione uma categoria específica acima.</p>
-               <button 
-                 onClick={() => {setSearchTerm(''); setActiveCategory('all');}} 
+               <button
+                 onClick={() => {setSearchTerm(''); setActiveCategory('all');}}
                  className="bg-slate-900 text-white font-black px-10 py-5 rounded-2xl text-xs uppercase tracking-widest hover:bg-black transition-all shadow-lg active:scale-95"
                >
                  Ver Todas as Dúvidas
@@ -768,7 +768,7 @@ const FAQPage: React.FC = () => {
         <div className="max-w-4xl mx-auto mt-24">
           <div className="bg-slate-900 rounded-[40px] p-10 md:p-16 text-white relative overflow-hidden shadow-2xl group">
              <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#334155_1px,transparent_1px)] [background-size:24px_24px]"></div>
-             
+
              <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-12">
                 <div className="text-center md:text-left">
                    <div className="inline-flex items-center gap-2 text-[#D31219] text-[10px] font-black uppercase tracking-[0.2em] mb-6">
@@ -780,15 +780,15 @@ const FAQPage: React.FC = () => {
                       Nossa engenharia oferece consultoria gratuita para especificação de materiais e cálculo de quantitativos em Curitiba.
                    </p>
                 </div>
-                
+
                 <div className="flex flex-col gap-4 w-full md:w-auto shrink-0">
-                   <a 
+                   <a
                      href={`https://wa.me/${COMPANY_INFO.whatsapp}?text=Olá! Gostaria de tirar uma dúvida técnica sobre meu projeto.`}
                      className="bg-[#D31219] hover:bg-red-700 text-white font-black px-10 py-6 rounded-2xl flex items-center justify-center gap-3 transition-all shadow-xl shadow-red-900/10 active:scale-95 text-xs uppercase tracking-widest"
                    >
                      <MessageCircle size={24} /> Falar com Especialista
                    </a>
-                   <a 
+                   <a
                      href={`tel:${COMPANY_INFO.phone.replace(/\D/g, '')}`}
                      className="bg-slate-800 hover:bg-slate-700 text-white font-black px-10 py-6 rounded-2xl flex items-center justify-center gap-3 transition-all border-2 border-slate-700 active:scale-95 text-xs uppercase tracking-widest"
                    >

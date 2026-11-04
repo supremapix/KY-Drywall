@@ -67,3 +67,13 @@
   background: #fff;
   border: 1px solid var(--ky-border);
 }
+
+/* Keyboard, narrow screens and user motion preferences. */
+.ky-light :is(a,button,input,select,textarea):focus-visible { outline: 3px solid #D31219; outline-offset: 4px; }
+.ky-skip-link { position: fixed; top: -100px; left: 1rem; z-index: 200; padding: 1rem; background: white; color: #9f1016; }
+.ky-skip-link:focus { top: 1rem; }
+.ky-light [class*="text-[8px]"], .ky-light [class*="text-[9px]"], .ky-light [class*="text-[10px]"], .ky-light [class*="text-[11px]"] { font-size: .75rem; }
+.ky-light .text-slate-400 { color: #64748b; }
+.ky-light .bg-slate-900 :is(h2,h3,h4), .ky-light .bg-slate-950 :is(h2,h3,h4) { color: white; }
+.ky-light footer { padding-bottom: 7rem; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }

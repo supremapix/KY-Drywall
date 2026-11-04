@@ -1,3 +1,5 @@
+import { readQuote } from './quoteStorage';
+import { useDialogFocus } from './useDialogFocus';
 
 import React, { useState, useEffect } from 'react';
 import { X, ShoppingCart, Trash2, Plus, Minus, MessageCircle, ArrowRight, PackageOpen } from 'lucide-react';
@@ -10,15 +12,11 @@ interface QuoteDrawerProps {
 }
 
 const QuoteDrawer: React.FC<QuoteDrawerProps> = ({ isOpen, onClose }) => {
+  const dialogRef = useDialogFocus(isOpen, onClose);
   const [items, setItems] = useState<QuoteItem[]>([]);
 
   const loadItems = () => {
-    const stored = localStorage.getItem('ky_quote_list');
-    if (stored) {
-      setItems(JSON.parse(stored));
-    } else {
-      setItems([]);
-    }
+    setItems(readQuote());
   };
 
   useEffect(() => {
@@ -79,7 +77,7 @@ const QuoteDrawer: React.FC<QuoteDrawerProps> = ({ isOpen, onClose }) => {
       />
       
       {/* Sidebar */}
-      <div className="relative w-full max-w-md bg-white h-full shadow-xl flex flex-col z-10">
+      <div ref={dialogRef} role="dialog" aria-modal="true" aria-label="Lista de cotação" className="relative w-full max-w-md bg-white h-full shadow-xl flex flex-col z-10">
         {/* Header */}
         <div className="px-5 py-4 bg-slate-900 text-white flex justify-between items-center border-b border-slate-800">
           <div className="flex items-center gap-2.5">

@@ -29,49 +29,49 @@ const BENEFITS = [
   {
     icon: Clock,
     title: 'Rapidez na Execucao',
-    value: '70%',
-    label: 'Mais rapido',
-    description: 'Obra finalizada em semanas, nao em meses. Processo industrializado com montagem agil no canteiro.',
+    value: 'Etapas',
+    label: 'Planejadas',
+    description: 'O prazo depende da area, do escopo e da equipe. Planeje a sequencia de montagem com os responsaveis.',
   },
   {
     icon: Ruler,
     title: 'Precisao Milimetrica',
-    value: '0.5mm',
-    label: 'Tolerancia',
-    description: 'Perfis cortados com precisao industrial. Encaixes perfeitos, sem retrabalho e sem desperdicio.',
+    value: 'Projeto',
+    label: 'Compatibilizado',
+    description: 'Cortes e ligacoes seguem o projeto. Confira medidas, tolerancias e compatibilidade entre componentes.',
   },
   {
     icon: Leaf,
     title: 'Sustentabilidade',
-    value: '90%',
-    label: 'Menos residuos',
-    description: 'Construcao limpa e seca. Aco 100% reciclavel e reducao drastica de entulho na obra.',
+    value: 'Controle',
+    label: 'De residuos',
+    description: 'Planejamento de cortes, compras e destinacao de sobras ajuda a controlar o desperdicio.',
   },
   {
     icon: Weight,
     title: 'Estrutura Leve',
-    value: '40%',
-    label: 'Mais leve',
-    description: 'Estrutura significativamente mais leve que alvenaria. Menos carga na fundacao e economia no projeto.',
+    value: 'Cargas',
+    label: 'Calculadas',
+    description: 'A fundacao deve considerar terreno, cargas e dimensionamento estrutural. Economia nao e automatica.',
   },
 ];
 
 const SPECS = [
-  { label: 'Perfis Estruturais', value: 'Aco Galvanizado Z180 Barbieri' },
-  { label: 'Espessura', value: '0.80mm a 1.25mm' },
+  { label: 'Perfis Estruturais', value: 'Conforme projeto estrutural' },
+  { label: 'Espessura', value: 'Conforme dimensionamento' },
   { label: 'Fechamento Externo', value: 'Placa Cimenticia + OSB' },
   { label: 'Fechamento Interno', value: 'Drywall ST / RU / RF' },
   { label: 'Isolamento', value: 'La de Pet / La de Rocha' },
   { label: 'Cobertura', value: 'Steel Frame + Shingle / Ceramica' },
-  { label: 'Garantia Estrutural', value: 'Projeto calculado por engenheiro' },
-  { label: 'Norma Tecnica', value: 'ABNT NBR 15253 e NBR 15575' },
+  { label: 'Dimensionamento', value: 'Projeto calculado por engenheiro' },
+  { label: 'Norma Tecnica', value: 'Conferir normas aplicaveis ao projeto' },
 ];
 
 const TIMELINE = [
-  { step: 1, title: 'Projeto Executivo', duration: '2-3 semanas', description: 'Desenvolvimento completo do projeto estrutural com calculo de cargas.' },
-  { step: 2, title: 'Fabricacao dos Perfis', duration: '1-2 semanas', description: 'Corte e preparacao dos perfis em fabrica com precisao milimetrica.' },
-  { step: 3, title: 'Montagem Estrutural', duration: '2-4 semanas', description: 'Montagem da estrutura completa: paredes, lajes e cobertura.' },
-  { step: 4, title: 'Fechamento e Acabamento', duration: '3-5 semanas', description: 'Instalacao de placas, isolamento, instalacoes e acabamento final.' },
+  { step: 1, title: 'Projeto Executivo', duration: 'Conforme projeto', description: 'Desenvolvimento completo do projeto estrutural com calculo de cargas.' },
+  { step: 2, title: 'Fabricacao dos Perfis', duration: 'Conforme projeto', description: 'Corte e preparacao dos perfis em fabrica com precisao milimetrica.' },
+  { step: 3, title: 'Montagem Estrutural', duration: 'Conforme projeto', description: 'Montagem da estrutura completa: paredes, lajes e cobertura.' },
+  { step: 4, title: 'Fechamento e Acabamento', duration: 'Conforme projeto', description: 'Instalacao de placas, isolamento, instalacoes e acabamento final.' },
 ];
 
 function useCountUp(end: number, duration: number = 2000, shouldStart: boolean = false) {
@@ -115,7 +115,7 @@ const SteelFramePage: React.FC = () => {
     '@context': 'https://schema.org',
     '@type': 'Service',
     name: 'Construção com Steel Frame - KY Drywall',
-    description: 'Sistema construtivo industrializado com estrutura metálica galvanizada. Obra até 70% mais rápida, sustentável e com projeto executivo detalhado.',
+    description: 'Sistema construtivo industrializado com estrutura metálica galvanizada. Montagem orientada por projeto executivo e especificação dos materiais.',
     provider: {
       '@type': 'LocalBusiness',
       name: 'KY Drywall & Steel Frame',
@@ -137,7 +137,7 @@ const SteelFramePage: React.FC = () => {
     <div className="bg-white min-h-screen font-sans selection:bg-red-100 selection:text-[#D31219]">
       <EnhancedSEO
         title="Steel Frame - Construção Inteligente | KY Drywall Curitiba"
-        description="Sistema construtivo Steel Frame: obra 70% mais rápida, sustentável e com projeto executivo detalhado. Assessoria técnica especializada da KY Drywall em Curitiba e região."
+        description="Sistema construtivo Steel Frame: planejamento, materiais e etapas de montagem conforme projeto. Assessoria técnica especializada da KY Drywall em Curitiba e região."
         keywords="steel frame curitiba, construcao steel frame, construcao a seco, estrutura metalica, steel frame parana, casa steel frame, KY Drywall"
         canonical={`${BASE_URL}/steel-frame`}
         ogType="website"
@@ -148,9 +148,9 @@ const SteelFramePage: React.FC = () => {
       {/* Hero Section - Light & Engineering Focused */}
       <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-[#F8F9FA] border-b border-slate-200">
         {/* Engineering Grid Background */}
-        <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none" 
+        <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none"
              style={{ backgroundImage: 'radial-gradient(#000 1px, transparent 1px)', backgroundSize: '32px 32px' }}></div>
-        
+
         <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-7 text-center lg:text-left">
@@ -164,8 +164,8 @@ const SteelFramePage: React.FC = () => {
               </h1>
 
               <p className="text-lg sm:text-xl text-slate-600 leading-relaxed max-w-2xl mb-10 mx-auto lg:mx-0">
-                Sistemas industrializados com perfis de aço galvanizado Barbieri Z180. 
-                Obra limpa, <span className="text-slate-900 font-bold">70% mais rápida</span> e com desperdício zero.
+                Sistemas industrializados com perfis de aço galvanizado Barbieri.
+                Obra limpa, <span className="text-slate-900 font-bold">planejada por etapas</span> e com controle de materiais.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 mb-12 justify-center lg:justify-start">
@@ -226,7 +226,7 @@ const SteelFramePage: React.FC = () => {
                 <div className="absolute bottom-6 left-6 right-6">
                   <div className="bg-white/90 backdrop-blur p-4 rounded-lg border border-white/20">
                     <p className="text-[10px] font-bold text-[#D31219] uppercase tracking-widest mb-1">Destaque Técnico</p>
-                    <p className="text-sm font-bold text-slate-900">Perfis Barbieri Z180 Galvanizados</p>
+                    <p className="text-sm font-bold text-slate-900">Perfis Barbieri Galvanizados</p>
                   </div>
                 </div>
               </div>
@@ -252,11 +252,11 @@ const SteelFramePage: React.FC = () => {
               </h2>
               <div className="space-y-6 text-slate-600 text-lg leading-relaxed">
                 <p>
-                  O <strong className="text-slate-900 font-bold">Light Steel Frame</strong> é um sistema construtivo industrializado estruturado com perfis de aço galvanizado. 
-                  Ao contrário da alvenaria convencional, cada componente é projetado para máxima eficiência estrutural e termoacústica.
+                  O <strong className="text-slate-900 font-bold">Light Steel Frame</strong> é um sistema construtivo industrializado estruturado com perfis de aço galvanizado.
+                  Cada componente deve atender ao projeto. O desempenho estrutural, térmico e acústico depende da composição e da execução do sistema.
                 </p>
                 <p>
-                  Na <strong className="text-slate-900 font-bold">KY Drywall</strong>, não entregamos apenas materiais. Oferecemos assessoria técnica completa para modulação, 
+                  Na <strong className="text-slate-900 font-bold">KY Drywall</strong>, não entregamos apenas materiais. Oferecemos assessoria técnica completa para modulação,
                   quantitativo preciso e logística inteligente para Curitiba e Região Metropolitana.
                 </p>
               </div>
@@ -265,7 +265,7 @@ const SteelFramePage: React.FC = () => {
                 {[
                   'Cálculo Estrutural Dedicado',
                   'Logística Própria (BR-277)',
-                  'Estoque Pronta Entrega',
+                  'Estoque Consultar disponibilidade',
                   'Assessoria na Obra'
                 ].map((item) => (
                   <div key={item} className="flex items-center gap-3 py-3 border-b border-slate-100">
@@ -295,8 +295,8 @@ const SteelFramePage: React.FC = () => {
                 </div>
                 <h3 className="text-xl font-bold text-slate-900 mb-4">Por que escolher o sistema seco?</h3>
                 <p className="text-slate-600 mb-6">
-                  A construção a seco elimina 95% do consumo de água e reduz o peso da estrutura em até 40%. 
-                  Isso resulta em fundações mais baratas e canteiros de obra impecáveis.
+                  A montagem a seco permite organizar etapas e o uso de materiais.
+                  Fundações, prazos e consumo de recursos dependem do projeto e da execução.
                 </p>
                 <div className="h-[1px] w-full bg-slate-200 my-6"></div>
                 <div className="flex items-center gap-4">
@@ -379,7 +379,7 @@ const SteelFramePage: React.FC = () => {
             </div>
             <div className="lg:w-1/2">
               <p className="text-slate-600 leading-relaxed">
-                A comparação técnica revela que, embora o custo direto de materiais possa ser similar, a economia global em tempo, 
+                A comparação técnica revela que, embora o custo direto de materiais possa ser similar, a economia global em tempo,
                 mão de obra e desperdício torna o Steel Frame a opção mais rentável para obras planejadas.
               </p>
             </div>
@@ -394,12 +394,12 @@ const SteelFramePage: React.FC = () => {
               </div>
 
               {[
-                { criteria: 'Tempo de Obra', steel: '3 a 5 meses', alvenaria: '12 a 18 meses' },
-                { criteria: 'Geração de Entulho', steel: 'Mínima (< 1%)', alvenaria: 'Alta (20% a 25%)' },
-                { criteria: 'Peso Estrutural', steel: 'Até 40% mais leve', alvenaria: 'Elevado' },
-                { criteria: 'Precisão', steel: 'Milimétrica (0.5mm)', alvenaria: 'Centimétrica' },
-                { criteria: 'Conforto Térmico', steel: 'Excelente (Isolantes)', alvenaria: 'Depende de espessura' },
-                { criteria: 'Sustentabilidade', steel: 'Aço 100% reciclável', alvenaria: 'Alto impacto' },
+                { criteria: 'Tempo de Obra', steel: 'Conforme cronograma', alvenaria: 'Conforme cronograma' },
+                { criteria: 'Geração de Entulho', steel: 'Depende do planejamento', alvenaria: 'Depende do planejamento' },
+                { criteria: 'Peso Estrutural', steel: 'Conforme dimensionamento', alvenaria: 'Conforme dimensionamento' },
+                { criteria: 'Precisão', steel: 'Conforme projeto e execução', alvenaria: 'Conforme projeto e execução' },
+                { criteria: 'Conforto Térmico', steel: 'Depende do sistema', alvenaria: 'Depende do sistema' },
+                { criteria: 'Sustentabilidade', steel: 'Avaliar materiais e ciclo de vida', alvenaria: 'Avaliar materiais e ciclo de vida' },
               ].map((row, idx) => (
                 <div
                   key={row.criteria}
@@ -435,8 +435,8 @@ const SteelFramePage: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             {TIMELINE.map((phase) => (
-              <div 
-                key={phase.step} 
+              <div
+                key={phase.step}
                 className="bg-white p-8 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden"
               >
                 <div className="text-6xl font-black text-slate-50 absolute -top-2 -left-2 z-0">
@@ -481,13 +481,13 @@ const SteelFramePage: React.FC = () => {
             <div className="lg:col-span-5 sticky top-32">
               <div className="bg-slate-900 rounded-2xl p-10 text-white relative overflow-hidden shadow-2xl">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-[#D31219] opacity-10 rounded-full -translate-y-1/2 translate-x-1/2"></div>
-                
+
                 <h3 className="text-2xl font-black text-white mb-8">KY Drywall Diferenciais</h3>
-                
+
                 <div className="space-y-6">
                   {[
                     { icon: Building2, text: '25 Anos de Mercado em Curitiba' },
-                    { icon: Zap, text: 'Distribuidor Barbieri Z180' },
+                    { icon: Zap, text: 'Distribuidor Barbieri' },
                     { icon: ShieldCheck, text: 'Assessoria Técnica Dedicada' },
                     { icon: Hammer, text: 'Estoque Completo em Curitiba' },
                   ].map((item) => (
@@ -527,7 +527,7 @@ const SteelFramePage: React.FC = () => {
             Sua obra merece a precisão do <span className="text-[#D31219]">Aço.</span>
           </h2>
           <p className="text-lg text-slate-500 mb-12 max-w-2xl mx-auto">
-            Traga seu projeto para a KY Drywall. Garantimos os melhores materiais e suporte técnico do Paraná.
+            Traga seu projeto para a KY Drywall. Consulte os materiais e as condições de atendimento para sua obra.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a

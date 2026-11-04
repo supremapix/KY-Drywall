@@ -1,3 +1,4 @@
+import { useDialogFocus } from './useDialogFocus';
 import React, { useState, useEffect } from 'react';
 import { 
   Share2, 
@@ -21,6 +22,8 @@ export const FloatingActions: React.FC = () => {
   const [isWhatsAppOpen, setIsWhatsAppOpen] = useState(false);
   const [copied, setCopied] = useState(false);
   const [showScrollTop, setShowScrollTop] = useState(false);
+  const shareRef = useDialogFocus(isShareOpen, () => setIsShareOpen(false));
+  const contactRef = useDialogFocus(isWhatsAppOpen, () => setIsWhatsAppOpen(false));
   const [currentUrl, setCurrentUrl] = useState('');
   const [pageTitle, setPageTitle] = useState('');
 
@@ -47,13 +50,13 @@ export const FloatingActions: React.FC = () => {
   }, [isShareOpen]);
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
   };
 
   const handleCopyLink = () => {
     const url = currentUrl || BASE_URL;
     const title = pageTitle || 'KY Drywall & Steel Frame';
-    const message = `Estou indicando o melhor KY Drywall & Steel Frame: ${title} (${url})`;
+    const message = url;
 
     if (navigator.clipboard) {
       navigator.clipboard.writeText(message).then(() => {
@@ -142,16 +145,16 @@ export const FloatingActions: React.FC = () => {
 
   const handleAgentClick = (phone: string, name: string) => {
     const msg = `Olá, ${name}! Acessei o site da KY Drywall (${currentUrl || BASE_URL}) e gostaria de cotação de materiais.`;
-    window.open(`https://wa.me/${phone}?text=${encodeURIComponent(msg)}`, '_blank');
+    window.open(`https://wa.me/${phone}?text=${encodeURIComponent(msg)}`, '_blank', 'noopener,noreferrer');
   };
 
   return (
     <>
       {/* LEFT: SHARE ACTION */}
-      <div className="fixed bottom-6 left-6 z-50 flex flex-col items-start gap-4">
+      <div className="fixed bottom-4 left-4 z-50 flex flex-col items-start gap-4">
         {/* Share Popup - Blueprint Style */}
         {isShareOpen && (
-          <div className="w-72 sm:w-80 bg-white rounded-3xl border-2 border-slate-900 p-6 shadow-2xl animate-in fade-in slide-in-from-bottom-4 duration-300">
+          <div ref={shareRef} role="dialog" aria-label="Compartilhar esta página" className="w-72 max-w-[calc(100vw-2rem)] max-h-[70vh] overflow-y-auto sm:w-80 bg-white rounded-3xl border-2 border-slate-900 p-6 shadow-2xl animate-in fade-in slide-in-from-bottom-4 duration-300">
             <div className="flex items-center justify-between mb-6 pb-4 border-b border-slate-100">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded bg-[#D31219]/10 flex items-center justify-center text-[#D31219]">
@@ -163,6 +166,7 @@ export const FloatingActions: React.FC = () => {
                 </div>
               </div>
               <button
+                aria-label="Fechar compartilhamento"
                 onClick={() => setIsShareOpen(false)}
                 className="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 hover:text-slate-900 transition-colors"
               >
@@ -211,9 +215,9 @@ export const FloatingActions: React.FC = () => {
 
         {/* Share Trigger */}
         <button
-          onClick={() => setIsShareOpen(!isShareOpen)}
+          onClick={() => { setIsShareOpen(!isShareOpen); setIsWhatsAppOpen(false); }}
           className="group relative flex items-center gap-3 bg-white border-2 border-slate-900 p-2 sm:p-3 rounded-full shadow-xl hover:bg-slate-50 transition-all active:scale-95"
-          aria-label="Opções de compartilhamento"
+          aria-label="Opções de compartilhamento" aria-expanded={isShareOpen}
         >
           <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-slate-900 flex items-center justify-center text-white">
             <Share2 size={20} className="group-hover:rotate-12 transition-transform" />
@@ -225,7 +229,7 @@ export const FloatingActions: React.FC = () => {
       </div>
 
       {/* RIGHT: CONTACT ACTIONS */}
-      <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-4">
+      <div className="fixed bottom-4 right-4 z-50 flex flex-col items-end gap-4">
         {/* Back to Top */}
         {showScrollTop && (
           <button
@@ -239,16 +243,17 @@ export const FloatingActions: React.FC = () => {
 
         {/* WhatsApp Agents Menu */}
         {isWhatsAppOpen && (
-          <div className="w-72 sm:w-80 bg-white rounded-3xl border-2 border-slate-900 shadow-2xl overflow-hidden animate-in fade-in slide-in-from-bottom-4">
+          <div ref={contactRef} role="dialog" aria-label="Contatos da KY" className="w-72 max-w-[calc(100vw-2rem)] max-h-[70vh] overflow-y-auto sm:w-80 bg-white rounded-3xl border-2 border-slate-900 shadow-2xl overflow-hidden animate-in fade-in slide-in-from-bottom-4">
             <div className="bg-slate-900 p-6 text-white flex justify-between items-center">
               <div className="flex items-center gap-3">
                 <div className="w-2 h-2 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.8)]"></div>
                 <div>
-                  <h4 className="text-[11px] font-black uppercase tracking-widest leading-none">Consultores Online</h4>
-                  <p className="text-[10px] text-slate-400 mt-1">Resposta em poucos minutos</p>
+                  <h4 className="text-[11px] font-black uppercase tracking-widest leading-none">Fale com a equipe</h4>
+                  <p className="text-[10px] text-slate-400 mt-1">Consulte os horários de atendimento</p>
                 </div>
               </div>
               <button 
+                aria-label="Fechar contatos"
                 onClick={() => setIsWhatsAppOpen(false)}
                 className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white/20 transition-colors"
               >
@@ -297,13 +302,13 @@ export const FloatingActions: React.FC = () => {
 
           {/* WhatsApp Primary */}
           <button
-            onClick={() => setIsWhatsAppOpen(!isWhatsAppOpen)}
+            onClick={() => { setIsWhatsAppOpen(!isWhatsAppOpen); setIsShareOpen(false); }}
             className="h-12 sm:h-14 px-6 bg-[#25D366] border-2 border-slate-900 rounded-full flex items-center gap-3 shadow-xl hover:brightness-110 transition-all active:scale-95 group"
-            title="Abrir WhatsApp"
+            title="Abrir WhatsApp" aria-label="Abrir contatos no WhatsApp" aria-expanded={isWhatsAppOpen}
           >
             <MessageCircle size={22} className="text-white group-hover:rotate-12 transition-transform" />
             <div className="hidden sm:flex flex-col items-start leading-tight">
-              <span className="text-[10px] font-black uppercase tracking-widest text-white">WhatsApp 24h</span>
+              <span className="text-[10px] font-black uppercase tracking-widest text-white">WhatsApp</span>
               <span className="text-[8px] font-bold text-white/80 uppercase">Atendimento Local</span>
             </div>
           </button>

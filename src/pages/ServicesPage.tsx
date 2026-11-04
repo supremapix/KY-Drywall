@@ -68,7 +68,7 @@ const ServicesPage: React.FC = () => {
       <EnhancedSEO
         title={serviceId ? `${currentService?.title} em Curitiba` : "Serviços de construção a seco em Curitiba"}
         description={`${currentService?.description} Assessoria técnica especializada da KY Drywall. Soluções em construção a seco. Atendimento em Curitiba e Região Metropolitana.`}
-        keywords={`${serviceId}, serviços ${serviceId} curitiba, ${currentService?.title}, construção a seco, steel frame curitiba, drywall curitiba, telhado shingle, materiais certificados`}
+        keywords={`${serviceId}, serviços ${serviceId} curitiba, ${currentService?.title}, construção a seco, steel frame curitiba, drywall curitiba, telhado shingle, materiais para construção a seco`}
         canonical={serviceId ? `${BASE_URL}/servicos/${serviceId}` : `${BASE_URL}/servicos`}
         ogType="website"
         ogImage={currentService?.image}
@@ -78,10 +78,10 @@ const ServicesPage: React.FC = () => {
       <section className="relative py-24 md:py-32 ky-section-white overflow-hidden border-b border-slate-200">
         <div className="absolute inset-0 z-0 bg-[radial-gradient(var(--ky-border)_1px,transparent_1px)] [background-size:24px_24px] opacity-100"></div>
         <div className="absolute inset-0 z-0 opacity-10">
-            <img 
-              src={currentService?.image} 
-              alt={`${currentService?.title} (Imagem Ilustrativa)`} 
-              className="w-full h-full object-cover" 
+            <img
+              src={currentService?.image}
+              alt={`${currentService?.title} (Imagem Ilustrativa)`}
+              className="w-full h-full object-cover"
             />
         </div>
         <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 relative z-10 w-full">
@@ -95,7 +95,7 @@ const ServicesPage: React.FC = () => {
               {serviceId ? currentService?.title : "Sistemas de Construção"}
             </h1>
             <p className="text-slate-600 text-lg sm:text-2xl leading-relaxed max-w-2xl font-medium">
-              Especificação rigorosa e fornecimento de materiais certificados ABNT para obras de alto padrão em Curitiba.
+              Especificação rigorosa e fornecimento de materiais para construção a seco ABNT para obras de alto padrão em Curitiba.
             </p>
           </div>
         </div>
@@ -115,21 +115,21 @@ const ServicesPage: React.FC = () => {
                 </h2>
               </div>
 
-              <div 
+              <div
                 className="text-slate-600 text-base sm:text-lg leading-relaxed font-medium space-y-6"
                 dangerouslySetInnerHTML={{ __html: currentService?.description || '' }}
               />
 
               <p className="text-slate-500 text-sm leading-relaxed font-medium italic border-l-4 border-slate-100 pl-6">
-                Para assegurar máxima conformidade técnica, utilizamos perfis estruturais de espessura nominal certificada. Nosso time oferece suporte para cálculo de modulação e compatibilização de projetos.
+                Espessura, revestimento e modulação dos perfis devem constar no projeto. Consulte a documentação do fabricante e o responsável técnico antes da execução.
               </p>
-              
+
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
                 {[
-                  { title: "AGILIDADE", desc: "Obra até 70% mais rápida que alvenaria" },
-                  { title: "SUSTENTÁVEL", desc: "Redução de mais de 80% do entulho" },
-                  { title: "CONFORTO", desc: "Isolamento térmico e acústico superior" },
-                  { title: "PRECISÃO", desc: "Encaixes perfeitos e prumo milimétrico" }
+                  { title: "AGILIDADE", desc: "Montagem conforme o cronograma do projeto" },
+                  { title: "SUSTENTÁVEL", desc: "Planejamento de cortes e descarte de resíduos" },
+                  { title: "CONFORTO", desc: "Desempenho conforme o sistema" },
+                  { title: "PRECISÃO", desc: "Montagem conforme o projeto" }
                 ].map(b => (
                   <div key={b.title} className="ky-card p-6 rounded-2xl group transition-all">
                     <div className="flex items-center gap-3 mb-2">
@@ -163,7 +163,7 @@ const ServicesPage: React.FC = () => {
               </div>
 
               <div className="pt-8 flex flex-col sm:flex-row gap-4">
-                <a 
+                <a
                   href={`https://wa.me/5541996457421?text=Olá! Gostaria de um orçamento para ${encodeURIComponent(currentService?.title || 'serviços')}.`}
                   target="_blank"
                   rel="noreferrer"
@@ -171,8 +171,8 @@ const ServicesPage: React.FC = () => {
                 >
                   <MessageCircle size={20} /> Solicitar Cotação
                 </a>
-                <Link 
-                  to="/produtos" 
+                <Link
+                  to="/produtos"
                   className="bg-white text-slate-950 border border-slate-200 font-black px-10 py-5 rounded-2xl inline-flex items-center justify-center gap-3 text-xs uppercase tracking-[0.2em] hover:border-[#D31219] transition-all active:scale-[0.98]"
                 >
                   Ver Materiais
@@ -191,7 +191,7 @@ const ServicesPage: React.FC = () => {
                 </div>
                 <div className="space-y-6">
                   <div className="p-5 bg-slate-50 rounded-2xl border border-slate-100 group hover:border-[#D31219]/20 transition-colors">
-                    <p className="font-black text-slate-900 mb-2 uppercase tracking-widest text-xs">Perfis Barbieri Z180</p>
+                    <p className="font-black text-slate-900 mb-2 uppercase tracking-widest text-xs">Perfis Barbieri</p>
                     <p className="text-sm text-slate-600 leading-relaxed font-medium">Aço galvanizado de alta durabilidade e resistência contra corrosão marinha e urbana.</p>
                   </div>
                   <div className="p-5 bg-slate-50 rounded-2xl border border-slate-100 group hover:border-[#D31219]/20 transition-colors">
@@ -232,16 +232,16 @@ const ServicesPage: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {SERVICES.filter(s => s.id !== serviceId).slice(0, 3).map(s => (
-              <Link 
-                key={s.id} 
-                to={`/servicos/${s.id}`} 
+              <Link
+                key={s.id}
+                to={`/servicos/${s.id}`}
                 className="ky-card rounded-lg overflow-hidden group flex flex-col"
               >
                 <div className="h-44 overflow-hidden bg-slate-100">
-                  <img 
-                    src={s.image} 
-                    alt={s.title} 
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                  <img
+                    src={s.image}
+                    alt={s.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
                 <div className="p-6 flex flex-col flex-grow justify-between">
@@ -249,7 +249,7 @@ const ServicesPage: React.FC = () => {
                     <h4 className="text-base font-bold text-slate-900 mb-2 group-hover:text-[#D31219] transition-colors">
                       {s.title}
                     </h4>
-                    <p 
+                    <p
                       className="text-slate-600 text-xs line-clamp-2 leading-relaxed mb-4"
                       dangerouslySetInnerHTML={{ __html: s.description }}
                     />

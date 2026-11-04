@@ -6,7 +6,7 @@ import { SITE_ASSETS, COMPANY_INFO, NEIGHBORHOODS, CITIES_RMC, normalizeLocation
 export function SupremaCredit() {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 pt-10 border-t border-slate-200 flex justify-center items-center">
-      <div className="bg-white border border-slate-200 rounded-full px-10 py-4 shadow-lg flex items-center justify-center transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+      <div className="bg-white border border-slate-200 rounded-2xl px-4 sm:px-10 py-4 shadow-lg flex items-center justify-center transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
         <p className="text-slate-700 text-sm sm:text-base font-bold flex flex-wrap items-center justify-center gap-3">
           <span className="opacity-90">Orgulhosamente desenvolvido por</span>
           <a 
@@ -14,7 +14,7 @@ export function SupremaCredit() {
             href="https://supremasite.com.br" 
             target="_blank" 
             rel="noopener noreferrer" 
-            className="text-slate-900 hover:text-[#D31219] transition-all font-black inline-flex items-center gap-3 cursor-pointer group"
+            className="text-slate-900 hover:text-[#D31219] transition-all font-black inline-flex flex-wrap justify-center items-center gap-3 cursor-pointer group"
           >
             <span className="border-b-2 border-yellow-400 group-hover:border-[#D31219]">Suprema Sites Express</span>
             <img 
@@ -30,23 +30,10 @@ export function SupremaCredit() {
   );
 }
 
-const testimonials = [
-  { name: "Arq. Ricardo Silveira", role: "Arquiteto • Projetos Residenciais", text: "Material rigorosamente dentro das normas técnicas ABNT e logística pontual. A KY é nossa fornecedora padrão para projetos em Steel Frame em Curitiba." },
-  { name: "Eng. Marina Fontana", role: "Engenheira Civil • Gestão de Obras", text: "A assessoria técnica para cálculo de modulação e especificação das chapas e perfis Barbieri otimizou nosso custo de fundação e reduziu o cronograma." },
-  { name: "Marcos Guimarães", role: "Empreiteiro Especialista em Drywall", text: "Estoque garantido de placas, montantes e massas. A loja da BR-277 nunca deixa a obra parada e o atendimento de balcão é rápido e direto." }
-];
-
 const Footer: React.FC = () => {
-  const [activeTestimonial, setActiveTestimonial] = useState(0);
   const [isNeighborhoodsOpen, setIsNeighborhoodsOpen] = useState(false);
   const [isCitiesOpen, setIsCitiesOpen] = useState(false);
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setActiveTestimonial((prev) => (prev + 1) % testimonials.length);
-    }, 7000);
-    return () => clearInterval(timer);
-  }, []);
 
   return (
     <footer className="ky-section-tech text-slate-800 pt-20 pb-16 border-t-8 border-[#D31219] relative overflow-hidden">
@@ -56,80 +43,19 @@ const Footer: React.FC = () => {
         <div className="mb-14 text-center md:text-left border-b border-slate-200 pb-8 flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div className="inline-flex items-center justify-center md:justify-start gap-3 text-[10px] font-black tracking-[0.2em] text-[#D31219] uppercase bg-white border border-red-100 px-5 py-2.5 rounded-full shadow-sm">
             <Award size={14} />
-            <span>05 — DISTRIBUIDORA AUTORIZADA & SHOWROOM BR-277</span>
+            <span>05 — MATERIAIS PARA CONSTRUÇÃO A SECO · BR-277</span>
           </div>
           <div className="inline-flex items-center justify-center gap-2 border border-slate-200 bg-white px-5 py-2.5 rounded-full text-slate-600 text-xs font-black shadow-sm uppercase tracking-widest">
             <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
-            <span>Estoque Pronta Entrega — Curitiba</span>
+            <span>Consulte disponibilidade — Curitiba</span>
           </div>
         </div>
 
-        {/* Social Proof & Testimonials */}
-        <div className="mb-16 pb-16 border-b border-slate-200">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch">
-            {/* Metrics */}
-            <div className="lg:col-span-4 flex flex-col justify-between gap-6">
-              <div className="ky-card p-8 rounded-3xl flex items-center justify-between text-center sm:text-left transition-shadow">
-                <div>
-                  <p className="text-4xl font-black text-slate-950 tracking-tighter">Engenharia</p>
-                  <p className="text-xs font-black text-[#D31219] mt-2 uppercase tracking-widest">Suporte Técnico Especializado</p>
-                </div>
-                <div className="w-14 h-14 rounded-2xl bg-red-50 text-[#D31219] flex items-center justify-center border border-red-100 shrink-0 hidden sm:flex">
-                  <Users size={28} />
-                </div>
-              </div>
-
-              <div className="ky-card p-8 rounded-3xl flex items-center justify-between text-center sm:text-left transition-shadow">
-                <div>
-                  <div className="flex justify-center sm:justify-start gap-1 mb-2">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} size={18} className="fill-[#D31219] text-[#D31219]" />
-                    ))}
-                  </div>
-                  <p className="text-2xl font-black text-slate-900 tracking-tight leading-none">Qualidade Técnica</p>
-                  <p className="text-xs text-slate-500 font-bold uppercase tracking-widest mt-2">Normas ABNT NBR</p>
-                </div>
-                <div className="w-14 h-14 rounded-2xl bg-slate-50 text-slate-400 flex items-center justify-center border border-slate-200 shrink-0 hidden sm:flex">
-                  <ShieldCheck size={28} />
-                </div>
-              </div>
-            </div>
-
-            {/* Testimonial Quote */}
-            <div className="lg:col-span-8 ky-card p-10 sm:p-12 rounded-[40px] flex flex-col justify-between relative text-center md:text-left shadow-xl">
-              <Quote size={56} className="text-slate-100 absolute top-10 right-10 hidden sm:block" />
-              <div className="relative z-10">
-                <span className="inline-block text-[10px] uppercase tracking-[0.3em] text-[#D31219] font-black mb-6">Voz da Engenharia</span>
-                <blockquote className="text-slate-800 text-xl md:text-3xl leading-relaxed italic font-medium mb-10">
-                  "{testimonials[activeTestimonial].text}"
-                </blockquote>
-              </div>
-              <div className="flex flex-col sm:flex-row items-center justify-between pt-8 border-t border-slate-100 gap-8">
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-slate-200 flex items-center justify-center text-slate-500 font-black text-xl">
-                    {testimonials[activeTestimonial].name.charAt(0)}
-                  </div>
-                  <div>
-                    <p className="font-black text-slate-950 text-lg leading-none">{testimonials[activeTestimonial].name}</p>
-                    <p className="text-xs text-slate-500 font-bold uppercase tracking-wider mt-2">{testimonials[activeTestimonial].role}</p>
-                  </div>
-                </div>
-                <div className="flex gap-3">
-                  {testimonials.map((_, i) => (
-                    <button
-                      key={i}
-                      onClick={() => setActiveTestimonial(i)}
-                      className={`h-2.5 rounded-full transition-all duration-300 ${
-                        i === activeTestimonial ? 'w-12 bg-[#D31219]' : 'w-2.5 bg-slate-200 hover:bg-slate-300'
-                      }`}
-                      aria-label={`Ver depoimento ${i + 1}`}
-                    />
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <section className="mb-12 p-6 ky-card rounded-2xl" aria-label="Prepare sua cotação">
+          <h2 className="text-xl font-bold mb-3">Da lista de materiais à consulta com a equipe</h2>
+          <p className="text-slate-700 leading-relaxed">Envie as medidas, o sistema previsto e o endereço da obra. Confirme modelos, quantidades, disponibilidade, frete e prazo antes de fechar a compra. O dimensionamento e a instalação devem seguir o projeto e as orientações do fabricante.</p>
+          <Link to="/produtos" className="inline-block mt-4 text-[#D31219] font-bold underline">Consultar o catálogo de materiais</Link>
+        </section>
 
         {/* Main Columns */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16 text-center md:text-left">
@@ -144,7 +70,7 @@ const Footer: React.FC = () => {
               />
             </Link>
             <p className="text-slate-600 text-sm leading-relaxed font-medium">
-              Distribuidora líder em construção a seco de Curitiba. Showroom técnico na BR-277 com assessoria especializada para sua obra.
+              Materiais para construção a seco em Curitiba. Visite a loja na BR-277 ou consulte a equipe sobre sua lista de materiais.
             </p>
             
             <div className="w-full pt-4 space-y-3">
@@ -184,7 +110,7 @@ const Footer: React.FC = () => {
                   <div className="w-10 h-10 rounded-full bg-slate-50 text-slate-400 flex items-center justify-center shrink-0">
                     <Mail size={18} />
                   </div>
-                  <span className="font-bold text-xs truncate">{COMPANY_INFO.email}</span>
+                  <span className="font-bold text-sm break-all">{COMPANY_INFO.email}</span>
                 </div>
               </div>
               
@@ -252,7 +178,7 @@ const Footer: React.FC = () => {
               </a>
               <div className="flex items-center justify-center md:justify-start gap-2 pt-2 border-t border-slate-50">
                 <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                <p className="text-[10px] font-black text-emerald-600 uppercase tracking-widest">Estacionamento para Carga</p>
+                <p className="text-[10px] font-black text-emerald-600 uppercase tracking-widest">Consulte as condições de retirada</p>
               </div>
             </div>
           </div>
@@ -268,7 +194,7 @@ const Footer: React.FC = () => {
             >
               <div className="flex items-center gap-4">
                 <Building size={24} className="text-[#D31219]" />
-                <span className="uppercase tracking-[0.1em]">Bairros de Curitiba Atendidos ({NEIGHBORHOODS.length})</span>
+                <span className="uppercase tracking-[0.1em]">Bairros e regiões de Curitiba ({NEIGHBORHOODS.length})</span>
               </div>
               <ChevronDown size={24} className={`text-slate-400 transition-transform duration-300 ${isNeighborhoodsOpen ? 'rotate-180 text-[#D31219]' : ''}`} />
             </button>
