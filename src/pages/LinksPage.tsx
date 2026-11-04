@@ -24,7 +24,7 @@ export default function LinksPage() {
   const exploreLinks = [
     { 
       label: 'Catálogo de Produtos', 
-      desc: 'Confira nosso estoque completa',
+      desc: 'Confira nosso estoque completo',
       href: `${BASE_URL}/produtos`, 
       icon: Package 
     },
