@@ -71,7 +71,7 @@ const Sitemap: React.FC = () => {
   };
 
   return (
-    <div className="bg-[#FDFDFD] min-h-screen pt-24 pb-20">
+    <div className="ky-interior-page bg-[#FDFDFD] min-h-screen pt-24 pb-20">
       <EnhancedSEO
         title="Mapa do Site Completo | KY Drywall Curitiba"
         description="Índice estruturado com todas as páginas, produtos e cobertura regional por bairro em Curitiba e Região Metropolitana."
@@ -81,17 +81,15 @@ const Sitemap: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
         {/* Header - Showroom Style */}
-        <div className="relative bg-white rounded-[40px] border border-slate-200 p-8 sm:p-16 mb-12 overflow-hidden shadow-sm text-center">
-          <div className="absolute inset-0 opacity-[0.03] pointer-events-none" 
-               style={{ backgroundImage: 'radial-gradient(#000 1px, transparent 1px)', backgroundSize: '32px 32px' }}></div>
+        <div className="ky-interior-hero relative bg-white rounded-sm border border-slate-200 p-6 sm:p-12 mb-12 overflow-hidden shadow-sm text-center">
           
           <div className="relative z-10 max-w-4xl mx-auto">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-red-50 border border-red-100 rounded-full text-[10px] font-mono font-bold text-[#D31219] uppercase tracking-widest mb-8 shadow-sm">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-red-50 border border-red-100 rounded-full text-xs font-sans font-bold text-[#D31219] uppercase tracking-wide mb-8 shadow-sm">
               <span className="w-2 h-2 rounded-full bg-[#D31219]"></span>
               01 — ESTRUTURA DIGITAL
             </div>
             
-            <h1 className="text-4xl sm:text-7xl font-black text-slate-900 tracking-tight leading-[1.05] mb-8">
+            <h1 className="text-4xl sm:text-7xl font-bold text-slate-900 tracking-tight leading-[1.05] mb-8">
               Índice <span className="text-[#D31219]">Completo</span> do Site.
             </h1>
             
@@ -101,17 +99,17 @@ const Sitemap: React.FC = () => {
 
             {/* Metrics Grid */}
             <div className="flex flex-wrap justify-center gap-4">
-               <div className="bg-slate-50 px-8 py-4 rounded-2xl border border-slate-100 shadow-sm text-center min-w-[140px]">
-                  <div className="text-2xl font-black text-slate-900">{totalPages}+</div>
-                  <div className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Páginas</div>
+               <div className="bg-slate-50 px-8 py-4 rounded-sm border border-slate-100 shadow-sm text-center min-w-[140px]">
+                  <div className="text-2xl font-bold text-slate-900">{totalPages}+</div>
+                  <div className="text-xs font-bold text-slate-400 uppercase tracking-wide">Páginas</div>
                </div>
-               <div className="bg-slate-50 px-8 py-4 rounded-2xl border border-slate-100 shadow-sm text-center min-w-[140px]">
-                  <div className="text-2xl font-black text-[#D31219]">{totalProducts}</div>
-                  <div className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Insumos</div>
+               <div className="bg-slate-50 px-8 py-4 rounded-sm border border-slate-100 shadow-sm text-center min-w-[140px]">
+                  <div className="text-2xl font-bold text-[#D31219]">{totalProducts}</div>
+                  <div className="text-xs font-bold text-slate-400 uppercase tracking-wide">Insumos</div>
                </div>
-               <div className="bg-slate-50 px-8 py-4 rounded-2xl border border-slate-100 shadow-sm text-center min-w-[140px]">
-                  <div className="text-2xl font-black text-slate-900">{totalNeighborhoods + totalCities}</div>
-                  <div className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Regiões</div>
+               <div className="bg-slate-50 px-8 py-4 rounded-sm border border-slate-100 shadow-sm text-center min-w-[140px]">
+                  <div className="text-2xl font-bold text-slate-900">{totalNeighborhoods + totalCities}</div>
+                  <div className="text-xs font-bold text-slate-400 uppercase tracking-wide">Regiões</div>
                </div>
             </div>
           </div>
@@ -121,15 +119,15 @@ const Sitemap: React.FC = () => {
           {/* Section 02: Core Navigation */}
           <section>
             <div className="flex items-center gap-4 mb-10 pb-4 border-b-2 border-slate-900/5">
-              <div className="w-12 h-12 rounded-xl bg-slate-900 text-white flex items-center justify-center">
+              <div className="w-12 h-12 rounded-sm bg-slate-900 text-white flex items-center justify-center">
                 <Map size={20} />
               </div>
-              <h2 className="text-2xl font-black text-slate-900 uppercase tracking-tight">02 — Navegação Principal</h2>
+              <h2 className="text-2xl font-bold text-slate-900 uppercase tracking-tight">02 — Navegação Principal</h2>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm hover:border-[#D31219]/20 transition-all">
-                <h3 className="text-sm font-black text-slate-900 uppercase tracking-widest mb-6 flex items-center gap-2">
+              <div className="bg-white p-8 rounded-sm border border-slate-200 shadow-sm hover:border-[#D31219]/20 transition-all">
+                <h3 className="text-sm font-bold text-slate-900 uppercase tracking-wide mb-6 flex items-center gap-2">
                   <Info size={16} className="text-[#D31219]" /> Institucional
                 </h3>
                 <ul className="space-y-3 text-sm">
@@ -141,8 +139,8 @@ const Sitemap: React.FC = () => {
                 </ul>
               </div>
 
-              <div className="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm hover:border-[#D31219]/20 transition-all">
-                <h3 className="text-sm font-black text-slate-900 uppercase tracking-widest mb-6 flex items-center gap-2">
+              <div className="bg-white p-8 rounded-sm border border-slate-200 shadow-sm hover:border-[#D31219]/20 transition-all">
+                <h3 className="text-sm font-bold text-slate-900 uppercase tracking-wide mb-6 flex items-center gap-2">
                   <BookOpen size={16} className="text-[#D31219]" /> Conhecimento
                 </h3>
                 <ul className="space-y-3 text-sm">
@@ -153,8 +151,8 @@ const Sitemap: React.FC = () => {
                 </ul>
               </div>
 
-              <div className="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm hover:border-[#D31219]/20 transition-all">
-                <h3 className="text-sm font-black text-slate-900 uppercase tracking-widest mb-6 flex items-center gap-2">
+              <div className="bg-white p-8 rounded-sm border border-slate-200 shadow-sm hover:border-[#D31219]/20 transition-all">
+                <h3 className="text-sm font-bold text-slate-900 uppercase tracking-wide mb-6 flex items-center gap-2">
                   <Sparkles size={16} className="text-[#D31219]" /> Especialidades
                 </h3>
                 <ul className="space-y-3 text-sm">
@@ -173,21 +171,21 @@ const Sitemap: React.FC = () => {
           {/* Section 03: Products Catalog */}
           <section>
             <div className="flex items-center gap-4 mb-10 pb-4 border-b-2 border-slate-900/5">
-              <div className="w-12 h-12 rounded-xl bg-slate-900 text-white flex items-center justify-center">
+              <div className="w-12 h-12 rounded-sm bg-slate-900 text-white flex items-center justify-center">
                 <Package size={20} />
               </div>
-              <h2 className="text-2xl font-black text-slate-900 uppercase tracking-tight">03 — Insumos e Materiais Técnicos</h2>
+              <h2 className="text-2xl font-bold text-slate-900 uppercase tracking-tight">03 — Insumos e Materiais Técnicos</h2>
             </div>
             
-            <div className="bg-white rounded-[40px] border border-slate-200 p-8 md:p-12 shadow-sm">
+            <div className="bg-white rounded-sm border border-slate-200 p-8 md:p-12 shadow-sm">
               <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
                 {CATEGORIES.map(cat => (
                   <div key={cat} className="space-y-4">
-                    <h4 className="text-[10px] font-black text-[#D31219] uppercase tracking-widest border-b border-red-50 pb-2">{cat}</h4>
+                    <h4 className="text-xs font-bold text-[#D31219] uppercase tracking-wide border-b border-red-50 pb-2">{cat}</h4>
                     <ul className="space-y-2">
                       {PRODUCTS.filter(p => p.category === cat).slice(0, 8).map(p => (
                         <li key={p.id}>
-                          <Link to={`/produto/${p.id}`} className="text-[11px] text-slate-500 hover:text-slate-900 font-bold block truncate transition-colors">
+                          <Link to={`/produto/${p.id}`} className="text-xs text-slate-500 hover:text-slate-900 font-bold block truncate transition-colors">
                             {p.name}
                           </Link>
                         </li>
@@ -197,7 +195,7 @@ const Sitemap: React.FC = () => {
                 ))}
               </div>
               <div className="mt-12 pt-8 border-t border-slate-50 text-center">
-                <Link to="/produtos" className="bg-slate-900 text-white font-black px-10 py-5 rounded-2xl text-xs uppercase tracking-widest hover:bg-black transition-all shadow-lg active:scale-95">
+                <Link to="/produtos" className="bg-slate-900 text-white font-bold px-10 py-5 rounded-sm text-xs uppercase tracking-wide hover:bg-black transition-all shadow-lg active:scale-95">
                   Acessar Catálogo Completo
                 </Link>
               </div>
@@ -207,19 +205,19 @@ const Sitemap: React.FC = () => {
           {/* Section 04: Regional Pages */}
           <section>
             <div className="flex items-center gap-4 mb-10 pb-4 border-b-2 border-slate-900/5">
-              <div className="w-12 h-12 rounded-xl bg-slate-900 text-white flex items-center justify-center">
+              <div className="w-12 h-12 rounded-sm bg-slate-900 text-white flex items-center justify-center">
                 <MapPin size={20} />
               </div>
-              <h2 className="text-2xl font-black text-slate-900 uppercase tracking-tight">04 — Cobertura em Curitiba e RMC</h2>
+              <h2 className="text-2xl font-bold text-slate-900 uppercase tracking-tight">04 — Cobertura em Curitiba e RMC</h2>
             </div>
             
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               {/* Bairros */}
-              <div className="bg-white p-10 rounded-[40px] border border-slate-200 shadow-sm">
-                <h3 className="text-lg font-black text-slate-900 uppercase tracking-widest mb-8 flex items-center gap-3">
+              <div className="bg-white p-10 rounded-sm border border-slate-200 shadow-sm">
+                <h3 className="text-lg font-bold text-slate-900 uppercase tracking-wide mb-8 flex items-center gap-3">
                   <Building2 size={24} className="text-[#D31219]" /> Bairros de Curitiba
                 </h3>
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-3 text-[11px] max-h-[400px] overflow-y-auto pr-4 custom-scrollbar font-bold text-slate-500">
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-3 text-xs max-h-[400px] overflow-y-auto pr-4 custom-scrollbar font-bold text-slate-500">
                   {NEIGHBORHOODS.map(n => (
                     <Link key={n} to={`/drywall-em/${normalizeLocationName(n)}`} className="hover:text-[#D31219] transition-colors py-1 border-b border-slate-50">
                       • {n}
@@ -229,11 +227,11 @@ const Sitemap: React.FC = () => {
               </div>
 
               {/* RMC */}
-              <div className="bg-white p-10 rounded-[40px] border border-slate-200 shadow-sm">
-                <h3 className="text-lg font-black text-slate-900 uppercase tracking-widest mb-8 flex items-center gap-3">
+              <div className="bg-white p-10 rounded-sm border border-slate-200 shadow-sm">
+                <h3 className="text-lg font-bold text-slate-900 uppercase tracking-wide mb-8 flex items-center gap-3">
                   <Landmark size={24} className="text-[#D31219]" /> Cidades da Região
                 </h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 text-[11px] max-h-[400px] overflow-y-auto pr-4 custom-scrollbar font-bold text-slate-500">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 text-xs max-h-[400px] overflow-y-auto pr-4 custom-scrollbar font-bold text-slate-500">
                   {CITIES_RMC.map(c => (
                     <Link key={c} to={`/drywall-em/${normalizeLocationName(c)}`} className="hover:text-[#D31219] transition-colors py-1 border-b border-slate-50">
                       • {c}
@@ -245,22 +243,21 @@ const Sitemap: React.FC = () => {
           </section>
 
           {/* Technical Files Footer */}
-          <section className="bg-slate-950 text-white rounded-[40px] p-10 md:p-16 relative overflow-hidden shadow-2xl">
-             <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#334155_1px,transparent_1px)] [background-size:24px_24px]"></div>
+          <section className="bg-slate-950 text-white rounded-sm p-10 md:p-16 relative overflow-hidden shadow-none">
              <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-12">
                 <div className="text-center md:text-left">
-                  <div className="inline-flex items-center gap-2 text-[#D31219] text-[10px] font-black uppercase tracking-[0.2em] mb-4">
+                  <div className="inline-flex items-center gap-2 text-[#D31219] text-xs font-bold uppercase tracking-wide mb-4">
                     <FileCode size={14} />
                     <span>Indexing & Bots</span>
                   </div>
-                  <h3 className="text-3xl font-black mb-4">Recursos de Indexação</h3>
+                  <h3 className="text-3xl font-bold mb-4">Recursos de Indexação</h3>
                   <p className="text-slate-400 max-w-md leading-relaxed font-medium">Arquivos estruturados para motores de busca e diretrizes de conformidade técnica digital.</p>
                 </div>
                 
                 <div className="flex flex-wrap justify-center gap-3">
-                   <a href="/sitemap.xml" target="_blank" className="bg-white/10 hover:bg-[#D31219] text-white px-8 py-4 rounded-xl border border-white/10 transition-all font-black text-[10px] uppercase tracking-widest">sitemap.xml</a>
-                   <a href="/robots.txt" target="_blank" className="bg-white/10 hover:bg-[#D31219] text-white px-8 py-4 rounded-xl border border-white/10 transition-all font-black text-[10px] uppercase tracking-widest">robots.txt</a>
-                   <a href="/llms.txt" target="_blank" className="bg-white/10 hover:bg-[#D31219] text-white px-8 py-4 rounded-xl border border-white/10 transition-all font-black text-[10px] uppercase tracking-widest">llms.txt</a>
+                   <a href="/sitemap.xml" target="_blank" className="bg-white/10 hover:bg-[#D31219] text-white px-8 py-4 rounded-sm border border-white/10 transition-all font-bold text-xs uppercase tracking-wide">sitemap.xml</a>
+                   <a href="/robots.txt" target="_blank" className="bg-white/10 hover:bg-[#D31219] text-white px-8 py-4 rounded-sm border border-white/10 transition-all font-bold text-xs uppercase tracking-wide">robots.txt</a>
+                   <a href="/llms.txt" target="_blank" className="bg-white/10 hover:bg-[#D31219] text-white px-8 py-4 rounded-sm border border-white/10 transition-all font-bold text-xs uppercase tracking-wide">llms.txt</a>
                 </div>
              </div>
           </section>

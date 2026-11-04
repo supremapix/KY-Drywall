@@ -86,7 +86,7 @@ const ProductList: React.FC = () => {
   }, [searchTerm]);
 
   return (
-    <div className="bg-[#f8fafc] min-h-screen pt-24 pb-20">
+    <div className="ky-interior-page bg-[#f8fafc] min-h-screen pb-20">
       <EnhancedSEO
         title="Catálogo de Materiais Drywall e Steel Frame | KY Drywall"
         description="Confira nosso catálogo completo: placas, perfis Barbieri, massas Holdflex e isolamentos Isover. Pronta entrega direto da BR-277 em Curitiba."
@@ -97,7 +97,7 @@ const ProductList: React.FC = () => {
       />
 
       {/* Hero Section - Industrial Showroom */}
-      <section className="ky-section-white py-20 md:py-32 text-slate-900 relative overflow-hidden border-b border-slate-200 mb-12">
+      <section className="ky-interior-hero ky-section-white py-20 md:py-32 text-slate-900 relative overflow-hidden border-b border-slate-200 mb-12">
         <div className="absolute inset-0 z-0 bg-[radial-gradient(var(--ky-border)_1px,transparent_1px)] [background-size:24px_24px] opacity-100"></div>
 
         <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 relative z-10">
@@ -236,7 +236,7 @@ const ProductList: React.FC = () => {
 
             {/* Results Grid */}
             {filteredProducts.length > 0 ? (
-              <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8">
+              <div className="ky-catalog-grid grid grid-cols-2 xl:grid-cols-3 gap-3 sm:gap-6">
                 {filteredProducts.map((product) => (
                   <ProductCard key={product.id} product={product} />
                 ))}

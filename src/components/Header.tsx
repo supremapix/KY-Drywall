@@ -66,12 +66,13 @@ const Header: React.FC = () => {
     { label: 'Blog', path: '/blog' },
     { label: 'Perguntas Frequentes', path: '/faq' },
     { label: 'Mapa do Site', path: '/sitemap' },
+    { label: 'Contatos e links', path: '/links' },
   ];
 
   return (
     <>
       {/* Top bar */}
-      <div className="bg-[#D31219] text-white py-2 px-4 sticky top-0 z-[60] border-b border-white/10">
+      <div className="ky-site-topbar bg-[#D31219] text-white py-2 px-4 sticky top-0 z-[60] border-b border-white/10">
         <div className="max-w-7xl mx-auto flex justify-between items-center text-xs font-bold uppercase tracking-wider">
           <div className="flex items-center gap-4 md:gap-8">
             <a href={`tel:${COMPANY_INFO.phone.replace(/\D/g, '')}`} className="flex items-center gap-2 hover:text-slate-200 transition-colors">
@@ -88,7 +89,7 @@ const Header: React.FC = () => {
       </div>
 
       {/* Main header */}
-      <header className="sticky top-[36px] z-50 bg-white shadow-md border-b border-slate-200">
+      <header className="ky-site-header sticky top-[36px] z-50 bg-white shadow-md border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
           <Link to="/" className="flex items-center focus:outline-none focus:ring-2 focus:ring-[#D31219] rounded-md" onClick={() => setIsMenuOpen(false)}>
             <img
@@ -102,7 +103,7 @@ const Header: React.FC = () => {
           </Link>
 
           {/* Desktop nav */}
-          <nav className="hidden lg:flex items-center gap-7">
+          <nav className="hidden xl:flex items-center gap-4">
             {NAV_ITEMS.map((item) =>
               item.label !== 'Nossos Produtos' ? (
                 <div key={item.label} className="relative group py-2">
@@ -141,6 +142,7 @@ const Header: React.FC = () => {
             >
               FAQ
             </Link>
+            <Link to="/links" className="font-bold text-slate-800 hover:text-[#D31219] text-sm">Links</Link>
           </nav>
 
           {/* Actions */}
@@ -165,7 +167,7 @@ const Header: React.FC = () => {
             
             {/* Mobile Menu Button - Minimum 56x56px with "MENU" text */}
             <button
-              className="lg:hidden min-w-[56px] min-h-[56px] bg-[#D31219] text-white font-bold px-3 py-2 rounded-lg hover:bg-slate-900 transition-colors flex items-center justify-center gap-2 shadow-md focus:outline-none focus:ring-2 focus:ring-slate-900"
+              className="xl:hidden min-w-[56px] min-h-[56px] bg-[#D31219] text-white font-bold px-3 py-2 rounded-lg hover:bg-slate-900 transition-colors flex items-center justify-center gap-2 shadow-md focus:outline-none focus:ring-2 focus:ring-slate-900"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label={isMenuOpen ? 'Fechar menu de navegação' : 'Abrir menu de navegação'}
               aria-expanded={isMenuOpen}

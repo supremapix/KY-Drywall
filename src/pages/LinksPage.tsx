@@ -1,213 +1,25 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import EnhancedSEO from '../components/EnhancedSEO';
 import { BASE_URL, COMPANY_INFO, SITE_ASSETS } from '../constants';
-import { Globe, Instagram, MessageCircle, MapPin, Download, Phone, ChevronRight, Navigation, Package, BookOpen } from 'lucide-react';
+import { ArrowUpRight, ArrowLeft, Instagram, MessageCircle, MapPin, Download, Phone, Package, BookOpen } from 'lucide-react';
 import { SupremaCredit } from '../components/Footer';
+import './LinksRedesign.css';
 
 export default function LinksPage() {
-  const serviceLinks = [
-    { 
-      label: 'Pedir orçamento pelo WhatsApp', 
-      desc: 'Fale agora com nossa equipe comercial',
-      href: `https://wa.me/${COMPANY_INFO.whatsapp}`, 
-      icon: MessageCircle, 
-      primary: true 
-    },
-    { 
-      label: 'Suporte Técnico Especializado', 
-      desc: 'Dúvidas sobre Steel Frame e Drywall',
-      href: `https://wa.me/${COMPANY_INFO.whatsappLucilene}`, 
-      icon: Phone 
-    },
+  const contacts = [
+    { name: 'Carlos', detail: 'Converse sobre sua lista de materiais', number: COMPANY_INFO.whatsapp },
+    { name: 'Lucilene', detail: 'Consulte produtos e condições de atendimento', number: COMPANY_INFO.whatsappLucilene },
   ];
-
-  const exploreLinks = [
-    { 
-      label: 'Catálogo de Produtos', 
-      desc: 'Confira nosso estoque completo',
-      href: `${BASE_URL}/produtos`, 
-      icon: Package 
-    },
-    { 
-      label: 'Acesse o Site Oficial', 
-      desc: 'Conheça nossas soluções completas',
-      href: `${BASE_URL}/`, 
-      icon: Globe 
-    },
-    { 
-      label: 'Blog e Manuais Técnicos', 
-      desc: 'Conhecimento especializado',
-      href: `${BASE_URL}/blog`, 
-      icon: BookOpen 
-    },
-    { 
-      label: 'Siga no Instagram', 
-      desc: '@kydrywall',
-      href: COMPANY_INFO.instagram, 
-      icon: Instagram 
-    },
-  ];
-
-  const [showScrollTop, setShowScrollTop] = React.useState(false);
-
-  React.useEffect(() => {
-    const handleScroll = () => setShowScrollTop(window.scrollY > 400);
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
-
-  return (
-    <section className="bg-slate-50 min-h-screen flex flex-col items-center justify-start relative overflow-hidden font-sans">
-      <EnhancedSEO
-        title="Central de Atendimento | KY Drywall & Steel Frame"
-        description="Acesse todos os canais oficiais da KY Drywall em um só lugar. Orçamentos, suporte técnico, catálogo e localização."
-        canonical={`${BASE_URL}/links`}
-        ogImage={`${BASE_URL}${SITE_ASSETS.logo}`}
-      />
-      
-      {/* Background Texture */}
-      <div className="absolute inset-0 z-0 bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] [background-size:32px_32px] opacity-100"></div>
-
-      <div className="w-full max-w-2xl px-4 py-8 md:py-12 relative z-10">
-        {/* Compact Header */}
-        <div className="bg-white rounded-2xl border border-slate-200 p-6 md:p-8 mb-6 shadow-sm flex flex-col md:flex-row items-center gap-6 text-center md:text-left">
-          <img
-            src={SITE_ASSETS.logo}
-            alt="KY Drywall & Steel Frame"
-            className="w-40 md:w-48 h-auto object-contain"
-          />
-          <div className="flex-1">
-            <h1 className="text-xl md:text-2xl font-black text-slate-900 leading-tight mb-2">
-              Central de Atendimento
-            </h1>
-            <p className="text-sm text-slate-500 font-medium leading-relaxed">
-              Distribuidora especializada em sistemas de construção a seco para Curitiba e Região Metropolitana.
-            </p>
-          </div>
-        </div>
-
-        <div className="space-y-8">
-          {/* Atendimento Group */}
-          <div className="space-y-4">
-            <div className="flex items-center gap-3 px-2">
-              <div className="h-4 w-1 bg-[#D31219] rounded-full"></div>
-              <h2 className="text-xs font-black text-slate-400 uppercase tracking-widest">Atendimento Direto</h2>
-            </div>
-            <div className="grid grid-cols-1 gap-3">
-              {serviceLinks.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`flex items-center gap-4 p-4 min-h-[72px] rounded-xl border transition-all active:scale-[0.98] group ${
-                    link.primary
-                      ? 'bg-[#D31219] border-[#D31219] text-white shadow-lg shadow-red-900/10'
-                      : 'bg-white border-slate-200 hover:border-[#D31219] text-slate-900 shadow-sm'
-                  }`}
-                >
-                  <div className={`p-2.5 rounded-lg shrink-0 ${link.primary ? 'bg-white/10' : 'bg-slate-50 group-hover:bg-red-50 group-hover:text-[#D31219] transition-colors'}`}>
-                    <link.icon size={22} strokeWidth={link.primary ? 2.5 : 2} />
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <div className="font-bold text-sm md:text-base leading-tight">{link.label}</div>
-                    <div className={`text-[11px] md:text-xs font-medium mt-1 ${link.primary ? 'text-white/80' : 'text-slate-400'}`}>
-                      {link.desc}
-                    </div>
-                  </div>
-                  <ChevronRight size={18} className={`shrink-0 ${link.primary ? 'text-white/40' : 'text-slate-300'}`} />
-                </a>
-              ))}
-            </div>
-          </div>
-
-          {/* Explorar Group */}
-          <div className="space-y-4">
-            <div className="flex items-center gap-3 px-2">
-              <div className="h-4 w-1 bg-[#D31219] rounded-full"></div>
-              <h2 className="text-xs font-black text-slate-400 uppercase tracking-widest">Explore a KY Drywall</h2>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              {exploreLinks.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  className="flex items-center gap-4 p-4 min-h-[72px] bg-white border border-slate-200 rounded-xl hover:border-[#D31219] transition-all shadow-sm group active:scale-[0.98]"
-                >
-                  <div className="p-2.5 bg-slate-50 rounded-lg group-hover:bg-red-50 group-hover:text-[#D31219] transition-colors shrink-0">
-                    <link.icon size={20} />
-                  </div>
-                  <div className="flex-1 min-w-0 text-left">
-                    <div className="font-bold text-sm text-slate-900 leading-tight mb-0.5">{link.label}</div>
-                    <div className="text-[11px] font-medium text-slate-400 leading-normal">{link.desc}</div>
-                  </div>
-                </a>
-              ))}
-            </div>
-          </div>
-
-          {/* Endereço Block */}
-          <div className="bg-white rounded-2xl border border-slate-200 p-6 md:p-8 shadow-sm">
-            <div className="flex flex-col md:flex-row md:items-start justify-between gap-6">
-              <div className="space-y-4 flex-1">
-                <div className="flex items-center gap-3">
-                  <MapPin size={20} className="text-[#D31219] shrink-0" />
-                  <h3 className="font-bold text-slate-900">Showroom BR-277</h3>
-                </div>
-                <p className="text-sm text-slate-600 font-medium leading-relaxed max-w-xs">
-                  {COMPANY_INFO.address}
-                </p>
-                <div className="flex flex-col gap-2 pt-2">
-                  <div className="flex items-center gap-3 text-sm text-slate-900 font-black">
-                    <Phone size={16} className="text-slate-400" />
-                    <span>{COMPANY_INFO.phone}</span>
-                  </div>
-                </div>
-              </div>
-              <div className="shrink-0">
-                <a
-                  href={COMPANY_INFO.mapsUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full md:w-auto inline-flex items-center justify-center gap-2 bg-slate-900 text-white font-black text-xs uppercase tracking-widest px-6 py-4 rounded-xl hover:bg-black transition-all shadow-md"
-                >
-                  <Navigation size={16} /> Como Chegar
-                </a>
-              </div>
-            </div>
-          </div>
-
-          {/* QR Code and Footer */}
-          <div className="text-center space-y-8 pb-12">
-            <div className="inline-block bg-white p-6 rounded-2xl border border-slate-200 shadow-sm text-center max-w-[240px]">
-              <div className="mb-4 flex justify-center">
-                <img
-                  src="/qr-ky-links.svg"
-                  alt="QR Code"
-                  width="120"
-                  height="120"
-                  className="w-24 h-24 object-contain"
-                />
-              </div>
-              <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-4">
-                Escaneie para acessar esta central no celular
-              </p>
-              <a
-                href="/qr-ky-links.svg"
-                download="KY-Drywall-Central.svg"
-                className="inline-flex items-center gap-2 text-[10px] font-black text-slate-500 hover:text-[#D31219] py-2 px-4 rounded-lg bg-slate-50 border border-slate-100 hover:border-[#D31219] transition-all uppercase tracking-widest"
-              >
-                <Download size={12} /> Salvar QR Code
-              </a>
-            </div>
-
-            <SupremaCredit />
-          </div>
-        </div>
-      </div>
-
-    </section>
-  );
+  return <div className="ky-links-new">
+    <EnhancedSEO title="Contatos e links | KY Drywall & Steel Frame" description="Os canais oficiais da KY Drywall em um só lugar: WhatsApp, catálogo, Instagram, localização e QR Code." canonical={`${BASE_URL}/links`} ogImage={SITE_ASSETS.storefront}/>
+    <div className="ky-links-shell">
+      <header className="ky-links-top"><Link to="/" aria-label="KY Drywall, página inicial"><img src={SITE_ASSETS.logo} alt="KY Drywall & Steel Frame"/></Link><Link to="/"><ArrowLeft size={18}/> Voltar ao site</Link></header>
+      <div className="ky-links-layout"><div className="ky-links-intro"><span className="ky-links-label">LOJA FÍSICA NO CAJURU · CURITIBA</span><h1>A KY,<br/>mais perto<br/><em>de você.</em></h1><p>Escolha como quer conversar com a gente. Todos os nossos canais estão aqui.</p><figure><img src={SITE_ASSETS.storefront} alt="Fachada real da loja KY Drywall no Cajuru" width="1824" height="1361" fetchPriority="high"/><figcaption>Rod. BR-277, 3641 · Cajuru, Curitiba</figcaption></figure><div className="ky-links-hours"><strong>Horários da loja</strong><p>Segunda a sexta: 7h30–17h30<br/>Sábado: 7h30–12h</p></div></div>
+      <div className="ky-links-options"><h2>Fale com a equipe</h2>{contacts.map((person,index)=><a className={`ky-links-contact ${index===0?'ky-links-primary':''}`} href={`https://wa.me/${person.number}`} target="_blank" rel="noopener noreferrer" key={person.name}><MessageCircle size={27}/><span><strong>{person.name} no WhatsApp</strong><small>{person.detail}</small></span><ArrowUpRight size={23}/></a>)}<a className="ky-links-call" href="tel:+554135284232"><Phone size={20}/><span>Ligar para a loja <strong>{COMPANY_INFO.phone}</strong></span><ArrowUpRight size={22}/></a>
+      <h2>Explore a KY</h2><div className="ky-links-explore"><Link to="/produtos"><Package size={24}/><strong>Catálogo de produtos</strong><span>Materiais para cada etapa</span><ArrowUpRight size={20}/></Link><Link to="/blog"><BookOpen size={24}/><strong>Guias e artigos</strong><span>Informação para planejar</span><ArrowUpRight size={20}/></Link><a href={COMPANY_INFO.instagram} target="_blank" rel="noreferrer"><Instagram size={24}/><strong>Instagram</strong><span>@kydrywall</span><ArrowUpRight size={20}/></a><a href={COMPANY_INFO.mapsUrl} target="_blank" rel="noreferrer"><MapPin size={24}/><strong>Como chegar</strong><span>Veja a localização da loja</span><ArrowUpRight size={20}/></a></div>
+      <div className="ky-links-qr"><img src="/qr-ky-links.svg" alt="QR Code para os canais oficiais da KY" width="120" height="120"/><div><h2>Leve os contatos com você.</h2><p>Salve o QR Code para acessar esta página quando precisar.</p><a href="/qr-ky-links.svg" download="KY-Drywall-Central.svg"><Download size={18}/> Baixar QR Code</a></div></div></div></div>
+      <SupremaCredit/>
+    </div>
+  </div>;
 }

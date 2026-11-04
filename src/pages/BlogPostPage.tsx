@@ -293,7 +293,7 @@ const BlogPostPage: React.FC = () => {
   const otherPosts = BLOG_POSTS.filter(p => p.id !== postId).slice(0, 3);
 
   return (
-    <div className="bg-white min-h-screen">
+    <div className="ky-interior-page bg-white min-h-screen">
       <EnhancedSEO
         title={`${post.title} | KY Drywall & Steel Frame`}
         description={post.excerpt}
@@ -304,26 +304,25 @@ const BlogPostPage: React.FC = () => {
       />
 
       {/* Hero Header - Industrial Showroom */}
-      <header className="bg-white py-24 md:py-32 text-slate-900 relative overflow-hidden border-b-2 border-slate-100">
-        <div className="absolute inset-0 z-0 bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] [background-size:24px_24px] opacity-100"></div>
+      <header className="ky-interior-hero bg-white py-14 md:py-20 text-slate-900 relative overflow-hidden border-b-2 border-slate-100">
         <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-4xl">
             {/* Breadcrumbs */}
-            <div className="flex items-center gap-2 text-[10px] text-slate-400 mb-10 font-black uppercase tracking-[0.2em]">
+            <div className="flex items-center gap-2 text-xs text-slate-400 mb-10 font-bold uppercase tracking-wide">
               <Link to="/" className="hover:text-[#D31219] transition-colors">INÍCIO</Link>
               <ChevronRight size={10} className="text-slate-300" />
               <Link to="/blog" className="hover:text-[#D31219] transition-colors">BLOG</Link>
             </div>
 
             <div className="mb-8">
-              <span className="text-[#D31219] text-[10px] font-black uppercase tracking-[0.2em] bg-red-50 border border-red-100 px-4 py-1.5 rounded-full shadow-sm">{post.tag}</span>
+              <span className="text-[#D31219] text-xs font-bold uppercase tracking-wide bg-red-50 border border-red-100 px-4 py-1.5 rounded-full shadow-sm">{post.tag}</span>
             </div>
 
-            <h1 className="text-5xl sm:text-7xl font-black tracking-tight leading-[1.05] text-slate-950 mb-10">
+            <h1 className="text-4xl sm:text-6xl font-bold tracking-tight leading-[1.05] text-slate-950 mb-10">
               {post.title}
             </h1>
 
-            <div className="flex flex-wrap items-center gap-8 text-slate-400 text-[10px] font-black uppercase tracking-[0.2em] pt-10 border-t border-slate-50">
+            <div className="flex flex-wrap items-center gap-8 text-slate-400 text-xs font-bold uppercase tracking-wide pt-10 border-t border-slate-50">
               <div className="flex items-center gap-2.5">
                 <Clock size={16} className="text-[#D31219]" />
                 <span>{post.date}</span>
@@ -346,7 +345,7 @@ const BlogPostPage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             {/* Featured Image */}
-            <div className="rounded-2xl overflow-hidden mb-12 border border-slate-200 shadow-xl bg-slate-900 aspect-video">
+            <div className="rounded-sm overflow-hidden mb-12 border border-slate-200 shadow-none bg-slate-900 aspect-video">
               <img
                 src={post.img}
                 alt={post.title}
@@ -363,9 +362,9 @@ const BlogPostPage: React.FC = () => {
 
               {/* Quick Highlights Box */}
               {content?.highlights && content.highlights.length > 0 && (
-                <div className="bg-slate-50 border border-slate-200 rounded-2xl p-8 md:p-10 my-10 relative overflow-hidden">
+                <div className="bg-slate-50 border border-slate-200 rounded-sm p-8 md:p-10 my-10 relative overflow-hidden">
                   <div className="absolute top-0 left-0 w-1 h-full bg-[#D31219]"></div>
-                  <div className="flex items-center gap-3 mb-6 text-[#D31219] font-black text-sm uppercase tracking-[0.2em]">
+                  <div className="flex items-center gap-3 mb-6 text-[#D31219] font-bold text-sm uppercase tracking-wide">
                     <Sparkles size={18} />
                     <span>Destaques Técnicos</span>
                   </div>
@@ -383,7 +382,7 @@ const BlogPostPage: React.FC = () => {
               {/* Content Sections */}
               {content?.sections.map((section, i) => (
                 <div key={i} className="space-y-6">
-                  <h2 className="text-2xl sm:text-3xl font-black tracking-tight text-slate-900">
+                  <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900">
                     {section.title}
                   </h2>
                   <p className="text-slate-600 text-lg sm:text-xl leading-relaxed whitespace-pre-line">
@@ -392,12 +391,12 @@ const BlogPostPage: React.FC = () => {
 
                   {/* Optional Table */}
                   {section.table && (
-                    <div className="overflow-x-auto my-10 rounded-2xl border border-slate-200 shadow-lg">
+                    <div className="overflow-x-auto my-10 rounded-sm border border-slate-200 shadow-lg">
                       <table className="w-full text-sm sm:text-base text-left border-collapse">
                         <thead className="bg-slate-950 text-white">
                           <tr>
                             {section.table.headers.map((head, hIdx) => (
-                              <th key={hIdx} className="py-5 px-6 font-black uppercase tracking-widest text-[11px] border-b border-slate-800">
+                              <th key={hIdx} className="py-5 px-6 font-bold uppercase tracking-wide text-xs border-b border-slate-800">
                                 {head}
                               </th>
                             ))}
@@ -423,13 +422,13 @@ const BlogPostPage: React.FC = () => {
               {/* FAQ Section if available */}
               {content?.faq && content.faq.length > 0 && (
                 <div className="pt-16 border-t border-slate-100 space-y-8">
-                  <div className="inline-flex items-center gap-3 text-[#D31219] font-black text-sm uppercase tracking-[0.2em]">
+                  <div className="inline-flex items-center gap-3 text-[#D31219] font-bold text-sm uppercase tracking-wide">
                     <ShieldCheck size={20} />
                     <span>Dúvidas Frequentes</span>
                   </div>
                   <div className="grid grid-cols-1 gap-6">
                     {content.faq.map((item, qIdx) => (
-                      <div key={qIdx} className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm">
+                      <div key={qIdx} className="p-6 rounded-sm bg-white border border-slate-200 shadow-sm">
                         <h4 className="text-lg font-bold text-slate-900 mb-3">{item.question}</h4>
                         <p className="text-slate-600 text-base leading-relaxed">{item.answer}</p>
                       </div>
@@ -439,12 +438,11 @@ const BlogPostPage: React.FC = () => {
               )}
 
               {/* Action Card CTA */}
-              <div className="bg-slate-900 rounded-3xl p-8 md:p-12 text-white mt-16 border border-slate-800 relative overflow-hidden group shadow-2xl">
-                <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#334155_1px,transparent_1px)] [background-size:20px_20px]"></div>
+              <div className="bg-slate-900 rounded-sm p-8 md:p-12 text-white mt-16 border border-slate-800 relative overflow-hidden group shadow-none">
                 <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-10">
                   <div className="text-center md:text-left">
-                    <span className="text-[#D31219] text-[10px] font-black uppercase tracking-[0.2em] block mb-4">Suporte de Engenharia</span>
-                    <h3 className="text-2xl sm:text-3xl font-black mb-4 leading-tight">
+                    <span className="text-[#D31219] text-xs font-bold uppercase tracking-wide block mb-4">Suporte de Engenharia</span>
+                    <h3 className="text-2xl sm:text-3xl font-bold mb-4 leading-tight">
                       Orçamento Técnico de Materiais
                     </h3>
                     <p className="text-slate-400 text-lg max-w-lg leading-relaxed">
@@ -456,14 +454,14 @@ const BlogPostPage: React.FC = () => {
                       href={whatsappUrl}
                       target="_blank"
                       rel="noreferrer"
-                      className="bg-[#D31219] hover:bg-red-700 text-white text-sm font-black uppercase tracking-widest px-10 py-5 rounded-xl transition-all flex items-center justify-center gap-3 shadow-lg active:scale-[0.98]"
+                      className="bg-[#D31219] hover:bg-red-700 text-white text-sm font-bold uppercase tracking-wide px-10 py-5 rounded-sm transition-all flex items-center justify-center gap-3 shadow-lg active:scale-[0.98]"
                     >
                       <MessageCircle size={20} />
                       Falar no WhatsApp
                     </a>
                     <a
                       href={`tel:${COMPANY_INFO.phone.replace(/\D/g, '')}`}
-                      className="bg-slate-800 hover:bg-slate-700 text-white text-sm font-black uppercase tracking-widest px-10 py-5 rounded-xl border-2 border-slate-800 transition-all flex items-center justify-center gap-3 active:scale-[0.98]"
+                      className="bg-slate-800 hover:bg-slate-700 text-white text-sm font-bold uppercase tracking-wide px-10 py-5 rounded-sm border-2 border-slate-800 transition-all flex items-center justify-center gap-3 active:scale-[0.98]"
                     >
                       <Phone size={18} />
                       {COMPANY_INFO.phone}
@@ -482,8 +480,8 @@ const BlogPostPage: React.FC = () => {
           <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto">
               <div className="flex items-center justify-between mb-12 border-b border-slate-200 pb-6">
-                <h3 className="text-2xl font-black text-slate-900 tracking-tight">Leia Também</h3>
-                <Link to="/blog" className="text-sm font-bold text-[#D31219] hover:underline uppercase tracking-widest">
+                <h3 className="text-2xl font-bold text-slate-900 tracking-tight">Leia Também</h3>
+                <Link to="/blog" className="text-sm font-bold text-[#D31219] hover:underline uppercase tracking-wide">
                   Ver Todo o Blog →
                 </Link>
               </div>
@@ -492,13 +490,13 @@ const BlogPostPage: React.FC = () => {
                   <Link
                     key={p.id}
                     to={`/blog/${p.id}`}
-                    className="group bg-white rounded-2xl border border-slate-200 overflow-hidden hover:border-[#D31219]/30 hover:shadow-lg transition-all flex flex-col"
+                    className="group bg-white rounded-sm border border-slate-200 overflow-hidden hover:border-[#D31219]/30 hover:shadow-lg transition-all flex flex-col"
                   >
                     <div className="aspect-video overflow-hidden border-b border-slate-100 bg-slate-900">
                       <img src={p.img} alt={p.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                     </div>
                     <div className="p-6 flex-1 flex flex-col">
-                      <span className="text-[10px] font-black uppercase tracking-widest text-[#D31219] mb-3 block">{p.tag}</span>
+                      <span className="text-xs font-bold uppercase tracking-wide text-[#D31219] mb-3 block">{p.tag}</span>
                       <h4 className="text-base font-bold text-slate-900 leading-tight group-hover:text-[#D31219] transition-colors line-clamp-2">{p.title}</h4>
                     </div>
                   </Link>
@@ -513,7 +511,7 @@ const BlogPostPage: React.FC = () => {
       <div className="py-12 text-center bg-white border-t border-slate-100">
         <Link
           to="/blog"
-          className="inline-flex items-center gap-3 text-sm font-black text-slate-500 hover:text-[#D31219] transition-all uppercase tracking-widest"
+          className="inline-flex items-center gap-3 text-sm font-bold text-slate-500 hover:text-[#D31219] transition-all uppercase tracking-wide"
         >
           <ArrowLeft size={18} /> Voltar ao Índice
         </Link>

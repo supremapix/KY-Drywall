@@ -11,6 +11,7 @@ interface ProductCardProps {
 
 const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   const [added, setAdded] = useState(false);
+  const [imageUnavailable, setImageUnavailable] = useState(false);
   const whatsappMsg = `Olá, gostaria de consultar o preço do produto: ${product.name}`;
   const whatsappUrl = `https://wa.me/5541996457421?text=${encodeURIComponent(whatsappMsg)}`;
 
@@ -37,14 +38,14 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   return (
     <div className="ky-card rounded-2xl overflow-hidden group flex flex-col h-full">
       {/* Image Wrapper */}
-      <Link to={`/produto/${product.id}`} className="block relative overflow-hidden aspect-square bg-slate-50 border-b border-slate-100">
-        <img
+      <Link to={`/produto/${product.id}`} className="ky-product-media block relative overflow-hidden aspect-square bg-slate-50 border-b border-slate-100">
+        {!imageUnavailable ? <img
           src={product.image}
           alt={product.name}
-          className="w-full h-full object-contain p-6 group-hover:scale-110 transition-transform duration-700"
+          className="w-full h-full object-contain p-6"
           loading="lazy"
-          onError={(e) => (e.target as HTMLImageElement).src = 'https://images.pexels.com/photos/159306/construction-site-build-construction-structure-159306.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&dpr=1'}
-        />
+          onError={() => setImageUnavailable(true)}
+        /> : <span className="ky-product-no-image">Imagem indisponível<br/><small>Consulte a equipe sobre este produto</small></span>}
         <div className="absolute top-4 left-4">
           <span className="bg-slate-950/90 backdrop-blur-sm text-white text-[9px] font-black px-2.5 py-1 rounded-full uppercase tracking-widest border border-white/10">
             {product.category}

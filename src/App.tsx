@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import StoreVisit from './components/StoreVisit';
 import Home from './pages/Home';
 import ProductList from './pages/ProductList';
 import ProductDetails from './pages/ProductDetails';
@@ -29,8 +30,10 @@ const ScrollToTop = () => {
 };
 
 import './components/LightTheme.css';
+import './components/RedesignSystem.css';
 
 export const AppContent: React.FC = () => {
+  const isHomePage = useLocation().pathname === "/";
   const isLinksPage = useLocation().pathname.replace(/\/+$/, '') === '/links';
   const [isCookieAccepted, setIsCookieAccepted] = useState(false);
 
@@ -78,6 +81,7 @@ export const AppContent: React.FC = () => {
           </Routes>
         </main>
 
+        {!isHomePage && !isLinksPage && <StoreVisit />}
         <FloatingActions />
         {!isLinksPage && <Footer />}
         {!isLinksPage && !isCookieAccepted && <CookieConsent onAccept={handleAcceptCookies} />}

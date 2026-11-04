@@ -7,9 +7,8 @@ import { COMPANY_INFO } from '../constants';
 
 const NotFound: React.FC = () => {
   return (
-    <div className="min-h-[80vh] flex items-center justify-center bg-white px-5 py-20 relative overflow-hidden">
+    <div className="ky-interior-page ky-interior-hero min-h-[80vh] flex items-center justify-center bg-white px-5 py-20 relative overflow-hidden">
       {/* Subtle background pattern */}
-      <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[radial-gradient(#334155_1px,transparent_1px)] [background-size:20px_20px]"></div>
       
       <SEO
         noindex
@@ -19,10 +18,10 @@ const NotFound: React.FC = () => {
       
       <div className="max-w-xl w-full text-center relative z-10">
         <div className="mb-10">
-          <div className="inline-flex items-center gap-2 bg-[#D31219]/10 border border-[#D31219]/20 px-3 py-1 rounded text-[10px] font-black uppercase tracking-widest text-[#D31219] mb-6">
+          <div className="inline-flex items-center gap-2 bg-[#D31219]/10 border border-[#D31219]/20 px-3 py-1 rounded text-xs font-bold uppercase tracking-wide text-[#D31219] mb-6">
             Erro 404
           </div>
-          <h1 className="text-4xl sm:text-6xl font-black text-slate-900 tracking-tight mt-1 mb-6 leading-tight">
+          <h1 className="text-4xl sm:text-6xl font-bold text-slate-900 tracking-tight mt-1 mb-6 leading-tight">
             Página Não Encontrada
           </h1>
           <p className="text-lg text-slate-500 leading-relaxed max-w-md mx-auto font-medium">
@@ -33,7 +32,7 @@ const NotFound: React.FC = () => {
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
           <Link 
             to="/" 
-            className="bg-[#D31219] hover:bg-red-700 text-white font-black px-8 py-4 rounded-xl flex items-center justify-center gap-3 text-sm uppercase tracking-widest transition-all shadow-lg active:scale-[0.98]"
+            className="bg-[#D31219] hover:bg-red-700 text-white font-bold px-8 py-4 rounded-sm flex items-center justify-center gap-3 text-sm uppercase tracking-wide transition-all shadow-lg active:scale-[0.98]"
           >
             <Home size={18} /> Início
           </Link>
@@ -42,17 +41,17 @@ const NotFound: React.FC = () => {
             href={`https://wa.me/${COMPANY_INFO.whatsapp}?text=Olá! Estava navegando no site e encontrei um link quebrado.`}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-slate-900 hover:bg-slate-800 text-white font-black px-8 py-4 rounded-xl flex items-center justify-center gap-3 text-sm uppercase tracking-widest transition-all active:scale-[0.98]"
+            className="bg-slate-900 hover:bg-slate-800 text-white font-bold px-8 py-4 rounded-sm flex items-center justify-center gap-3 text-sm uppercase tracking-wide transition-all active:scale-[0.98]"
           >
             <MessageCircle size={18} /> Suporte
           </a>
         </div>
 
         <div className="pt-10 border-t border-slate-100">
-          <p className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] mb-6">
+          <p className="text-xs font-bold text-slate-400 uppercase tracking-wide mb-6">
             Navegação Rápida
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 text-xs text-slate-900 font-black uppercase tracking-widest">
+          <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 text-xs text-slate-900 font-bold uppercase tracking-wide">
             <Link to="/produtos" className="hover:text-[#D31219] transition-colors">Produtos</Link>
             <Link to="/steel-frame" className="hover:text-[#D31219] transition-colors">Steel Frame</Link>
             <Link to="/servicos" className="hover:text-[#D31219] transition-colors">Serviços</Link>

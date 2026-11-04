@@ -100,7 +100,7 @@ const LocationPage: React.FC<LocationPageProps> = ({ type, overrideSlug }) => {
   }
 
   return (
-    <div className="bg-white min-h-screen">
+    <div className="ky-interior-page bg-white min-h-screen">
       <EnhancedSEO
         title={pageTitle}
         description={pageDescription}
@@ -111,45 +111,44 @@ const LocationPage: React.FC<LocationPageProps> = ({ type, overrideSlug }) => {
       />
 
       {/* Hero Section - Industrial Showroom */}
-      <section className="bg-white py-20 md:py-32 text-slate-900 relative overflow-hidden border-b-2 border-slate-100">
-        <div className="absolute inset-0 z-0 bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] [background-size:24px_24px] opacity-100"></div>
+      <section className="ky-interior-hero bg-white py-14 md:py-20 text-slate-900 relative overflow-hidden border-b-2 border-slate-100">
 
         <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 relative z-10">
-          <div className="flex items-center gap-2 text-[10px] text-slate-400 mb-10 font-black uppercase tracking-[0.2em]">
+          <div className="flex items-center gap-2 text-xs text-slate-400 mb-10 font-bold uppercase tracking-wide">
             <Link to="/" className="hover:text-[#D31219] flex items-center gap-1.5 transition-colors">
               <Home size={12} />
               INÍCIO
             </Link>
             <ChevronRight size={12} className="text-slate-300" />
-            <span className="text-slate-950 font-black">{formattedName.toUpperCase()}</span>
+            <span className="text-slate-950 font-bold">{formattedName.toUpperCase()}</span>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
             {/* Left Content Column */}
             <div className="lg:col-span-7">
-              <div className="inline-flex items-center gap-2 bg-slate-900 text-white px-4 py-2 rounded-full text-[10px] font-black uppercase tracking-[0.2em] mb-10 shadow-xl">
+              <div className="inline-flex items-center gap-2 bg-slate-900 text-white px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wide mb-10 shadow-none">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#D31219]"></span>
                 <span>01 — ATENDIMENTO EM {formattedName.toUpperCase()}</span>
               </div>
 
-              <h1 className="text-5xl sm:text-7xl font-black tracking-tight leading-[1.05] mb-10 text-slate-950">
+              <h1 className="text-4xl sm:text-6xl font-bold tracking-tight leading-[1.05] mb-10 text-slate-950">
                 {serviceName} em <br/> <span className="text-[#D31219]">{formattedName}</span>
               </h1>
 
               <p className="text-slate-600 text-lg sm:text-2xl leading-relaxed mb-12 max-w-2xl font-medium">
-                Consulte chapas, perfis e isolamentos, além das condições de entrega e atendimento para obras em <strong className="text-slate-950 font-black">{formattedName}</strong>.
+                Consulte chapas, perfis e isolamentos, além das condições de entrega e atendimento para obras em <strong className="text-slate-950 font-bold">{formattedName}</strong>.
               </p>
 
               <div className="flex flex-col sm:flex-row flex-wrap gap-4">
                 <a
                   href={`https://wa.me/${COMPANY_INFO.whatsapp}`}
-                  className="bg-[#D31219] hover:bg-red-700 text-white font-black px-10 py-5 rounded-2xl text-xs uppercase tracking-[0.2em] transition-all flex items-center justify-center gap-3 shadow-xl active:scale-[0.98]"
+                  className="bg-[#D31219] hover:bg-red-700 text-white font-bold px-10 py-5 rounded-sm text-xs uppercase tracking-wide transition-all flex items-center justify-center gap-3 shadow-none active:scale-[0.98]"
                 >
                   <MessageCircle size={20} /> Orçamento WhatsApp
                 </a>
                 <a
                   href={`tel:${COMPANY_INFO.phone.replace(/\D/g, '')}`}
-                  className="bg-white hover:bg-slate-50 text-slate-950 font-black px-10 py-5 rounded-2xl text-xs uppercase tracking-[0.2em] transition-all border-2 border-slate-100 flex items-center justify-center gap-3 active:scale-[0.98]"
+                  className="bg-white hover:bg-slate-50 text-slate-950 font-bold px-10 py-5 rounded-sm text-xs uppercase tracking-wide transition-all border-2 border-slate-100 flex items-center justify-center gap-3 active:scale-[0.98]"
                 >
                   <Phone size={20} /> {COMPANY_INFO.phone}
                 </a>
@@ -158,7 +157,7 @@ const LocationPage: React.FC<LocationPageProps> = ({ type, overrideSlug }) => {
 
             {/* Right Storefront Image */}
             <div className="lg:col-span-5">
-              <div className="relative rounded-3xl overflow-hidden border border-slate-200 bg-slate-50 shadow-2xl group">
+              <div className="relative rounded-sm overflow-hidden border border-slate-200 bg-slate-50 shadow-none group">
                 <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-100">
                   <img
                     src={SITE_ASSETS.storefront}
@@ -169,15 +168,15 @@ const LocationPage: React.FC<LocationPageProps> = ({ type, overrideSlug }) => {
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 to-transparent"></div>
                   <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between">
                     <div>
-                      <p className="text-[10px] font-black uppercase tracking-widest text-white/80 mb-1">Unidade Curitiba</p>
-                      <h3 className="text-lg font-black text-white">Showroom BR-277</h3>
+                      <p className="text-xs font-bold uppercase tracking-wide text-white/80 mb-1">Unidade Curitiba</p>
+                      <h3 className="text-lg font-bold text-white">Showroom BR-277</h3>
                     </div>
                     <a
                       href={COMPANY_INFO.mapsUrl}
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label="Ver localização do Showroom KY no Google Maps"
-                      className="bg-[#D31219] text-white p-3 rounded-xl transition-all shadow-lg hover:scale-110 active:scale-95"
+                      className="bg-[#D31219] text-white p-3 rounded-sm transition-all shadow-lg hover:scale-110 active:scale-95"
                     >
                       <ExternalLink size={20} />
                     </a>
@@ -195,10 +194,10 @@ const LocationPage: React.FC<LocationPageProps> = ({ type, overrideSlug }) => {
         <div className="flex flex-col lg:flex-row gap-16">
           <div className="lg:w-2/3 space-y-20">
             <div>
-              <div className="inline-flex items-center gap-2 text-[#D31219] text-xs font-mono font-bold uppercase tracking-wider mb-6">
+              <div className="inline-flex items-center gap-2 text-[#D31219] text-xs font-sans font-bold uppercase tracking-wider mb-6">
                 <span>02 — VANTAGENS LOGÍSTICAS</span>
               </div>
-              <h2 className="text-2xl sm:text-4xl font-black tracking-tight text-slate-900 mb-10 text-center md:text-left">
+              <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-slate-900 mb-10 text-center md:text-left">
                 Eficiência para Obras em {formattedName}
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -234,7 +233,7 @@ const LocationPage: React.FC<LocationPageProps> = ({ type, overrideSlug }) => {
                     text: `O planejamento de cortes e compras ajuda a controlar os resíduos no canteiro.`
                   }
                 ].map((item, i) => (
-                  <div key={i} className="p-6 rounded-xl border border-slate-200 bg-white hover:border-[#D31219]/20 transition-all shadow-sm">
+                  <div key={i} className="p-6 rounded-sm border border-slate-200 bg-white hover:border-[#D31219]/20 transition-all shadow-sm">
                     <div className="flex items-center gap-4 mb-4">
                       <div className="w-10 h-10 rounded-lg bg-slate-50 text-[#D31219] flex items-center justify-center shrink-0 border border-slate-100">
                         <item.icon size={20} />
@@ -250,7 +249,7 @@ const LocationPage: React.FC<LocationPageProps> = ({ type, overrideSlug }) => {
             {/* Nova Seção: Planejamento & Critérios */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 py-10 border-y border-slate-100">
               <div className="space-y-6">
-                <h3 className="text-xl font-black text-slate-900 flex items-center gap-2">
+                <h3 className="text-xl font-bold text-slate-900 flex items-center gap-2">
                   <Clock className="text-[#D31219]" size={20} />
                   Planejamento da Obra
                 </h3>
@@ -270,15 +269,15 @@ const LocationPage: React.FC<LocationPageProps> = ({ type, overrideSlug }) => {
               </div>
 
               <div className="space-y-6">
-                <h3 className="text-xl font-black text-slate-900 flex items-center gap-2">
+                <h3 className="text-xl font-bold text-slate-900 flex items-center gap-2">
                   <ShieldCheck className="text-[#D31219]" size={20} />
                   Critérios de Compra
                 </h3>
                 <p className="text-sm text-slate-600 leading-relaxed">
                   Ao escolher materiais para {serviceName}, não considere apenas o preço unitário. A espessura e o revestimento do aço, a composição das placas e o isolamento são fundamentais para a estabilidade estrutural e conforto acústico em <strong>{formattedName}</strong>. Confira as especificações e a documentação dos materiais com o responsável pelo projeto.
                 </p>
-                <div className="p-4 bg-slate-50 rounded-xl border border-slate-100">
-                   <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2">Dica Especial KY</p>
+                <div className="p-4 bg-slate-50 rounded-sm border border-slate-100">
+                   <p className="text-xs font-bold text-slate-400 uppercase tracking-wide mb-2">Dica Especial KY</p>
                    <p className="text-xs text-slate-700 font-medium italic">"Sempre utilize banda acústica na base dos perfis para evitar a transmissão de vibrações entre pavimentos."</p>
                 </div>
               </div>
@@ -287,14 +286,14 @@ const LocationPage: React.FC<LocationPageProps> = ({ type, overrideSlug }) => {
             <div>
               <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10 border-b border-slate-100 pb-6">
                 <div className="text-center sm:text-left">
-                  <div className="inline-flex items-center gap-2 text-[#D31219] text-xs font-mono font-bold uppercase tracking-wider mb-3">
+                  <div className="inline-flex items-center gap-2 text-[#D31219] text-xs font-sans font-bold uppercase tracking-wider mb-3">
                     <span>03 — MATERIAIS</span>
                   </div>
-                  <h2 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
+                  <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
                     Destaques para {formattedName}
                   </h2>
                 </div>
-                <Link to="/produtos" className="text-sm font-bold text-[#D31219] hover:underline uppercase tracking-widest text-center">
+                <Link to="/produtos" className="text-sm font-bold text-[#D31219] hover:underline uppercase tracking-wide text-center">
                   Ver Catálogo Completo →
                 </Link>
               </div>
@@ -306,12 +305,11 @@ const LocationPage: React.FC<LocationPageProps> = ({ type, overrideSlug }) => {
             </div>
 
             {/* In-page CTA */}
-            <div className="bg-slate-900 p-8 md:p-12 rounded-2xl text-white relative overflow-hidden group">
-              <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#334155_1px,transparent_1px)] [background-size:20px_20px]"></div>
+            <div className="bg-slate-900 p-8 md:p-12 rounded-sm text-white relative overflow-hidden group">
               <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-10">
                 <div className="text-center md:text-left">
-                  <span className="text-[#D31219] text-[10px] font-black uppercase tracking-[0.2em] block mb-3">Cotação Imediata</span>
-                  <h3 className="text-2xl sm:text-3xl font-black mb-4 leading-tight">
+                  <span className="text-[#D31219] text-xs font-bold uppercase tracking-wide block mb-3">Cotação Imediata</span>
+                  <h3 className="text-2xl sm:text-3xl font-bold mb-4 leading-tight">
                     Orçamento de {serviceName} para {formattedName}
                   </h3>
                   <p className="text-slate-400 text-base max-w-md leading-relaxed">
@@ -321,13 +319,13 @@ const LocationPage: React.FC<LocationPageProps> = ({ type, overrideSlug }) => {
                 <div className="flex flex-col gap-3 shrink-0">
                   <a
                     href={`https://wa.me/${COMPANY_INFO.whatsapp}?text=Olá! Gostaria de um orçamento para ${serviceName} em ${formattedName}.`}
-                    className="bg-[#D31219] hover:bg-red-700 text-white text-sm font-black uppercase tracking-widest px-8 py-4 rounded-xl transition-all flex items-center justify-center gap-3 shadow-lg active:scale-[0.98]"
+                    className="bg-[#D31219] hover:bg-red-700 text-white text-sm font-bold uppercase tracking-wide px-8 py-4 rounded-sm transition-all flex items-center justify-center gap-3 shadow-lg active:scale-[0.98]"
                   >
                     <MessageCircle size={18} /> WhatsApp
                   </a>
                   <a
                     href={`tel:${COMPANY_INFO.phone.replace(/\D/g, '')}`}
-                    className="bg-slate-800 hover:bg-slate-700 text-white text-sm font-black uppercase tracking-widest px-8 py-4 rounded-xl border border-slate-700 transition-all flex items-center justify-center gap-3 active:scale-[0.98]"
+                    className="bg-slate-800 hover:bg-slate-700 text-white text-sm font-bold uppercase tracking-wide px-8 py-4 rounded-sm border border-slate-700 transition-all flex items-center justify-center gap-3 active:scale-[0.98]"
                   >
                     <Phone size={18} /> Ligar Agora
                   </a>
@@ -339,34 +337,34 @@ const LocationPage: React.FC<LocationPageProps> = ({ type, overrideSlug }) => {
           <aside className="lg:w-1/3">
             <div className="sticky top-24 space-y-8">
               {/* Contact Card */}
-              <div className="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
-                <h4 className="text-sm font-black text-slate-900 uppercase tracking-widest mb-6 flex items-center gap-3">
+              <div className="bg-white p-8 rounded-sm border border-slate-200 shadow-sm">
+                <h4 className="text-sm font-bold text-slate-900 uppercase tracking-wide mb-6 flex items-center gap-3">
                   <Phone size={18} className="text-[#D31219]" />
                   Central Curitiba
                 </h4>
                 <div className="space-y-6 mb-8">
                   <div>
-                    <span className="text-[10px] uppercase font-black text-slate-400 tracking-[0.15em] block mb-1">Telefone Principal</span>
-                    <a href={`tel:${COMPANY_INFO.phone.replace(/\D/g, '')}`} className="text-xl font-black text-slate-900 hover:text-[#D31219] transition-colors">
+                    <span className="text-xs uppercase font-bold text-slate-400 tracking-[0.15em] block mb-1">Telefone Principal</span>
+                    <a href={`tel:${COMPANY_INFO.phone.replace(/\D/g, '')}`} className="text-xl font-bold text-slate-900 hover:text-[#D31219] transition-colors">
                       {COMPANY_INFO.phone}
                     </a>
                   </div>
                   <div>
-                    <span className="text-[10px] uppercase font-black text-slate-400 tracking-[0.15em] block mb-1">Centro de Distribuição</span>
+                    <span className="text-xs uppercase font-bold text-slate-400 tracking-[0.15em] block mb-1">Centro de Distribuição</span>
                     <p className="text-sm text-slate-600 font-bold leading-relaxed">{COMPANY_INFO.address}</p>
                   </div>
                 </div>
                 <a
                   href={`https://wa.me/${COMPANY_INFO.whatsapp}?text=Olá! Gostaria de informações sobre ${serviceName} em ${formattedName}`}
-                  className="w-full bg-slate-950 hover:bg-slate-900 text-white text-xs font-black uppercase tracking-widest py-4 rounded-xl transition-all flex items-center justify-center gap-3 shadow-md"
+                  className="w-full bg-slate-950 hover:bg-slate-900 text-white text-xs font-bold uppercase tracking-wide py-4 rounded-sm transition-all flex items-center justify-center gap-3 shadow-md"
                 >
                   <MessageCircle size={18} /> Falar com Especialista
                 </a>
               </div>
 
               {/* Bairros */}
-              <div className="bg-slate-50 p-8 rounded-2xl border border-slate-100">
-                <h4 className="text-xs font-black text-slate-900 uppercase tracking-widest mb-6 flex items-center gap-2">
+              <div className="bg-slate-50 p-8 rounded-sm border border-slate-100">
+                <h4 className="text-xs font-bold text-slate-900 uppercase tracking-wide mb-6 flex items-center gap-2">
                   <MapPin size={16} className="text-[#D31219]" />
                   Curitiba: Outras Regiões
                 </h4>

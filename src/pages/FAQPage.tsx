@@ -639,7 +639,7 @@ const FAQPage: React.FC = () => {
   const totalQuestions = FAQ_DATA.reduce((sum, section) => sum + section.count, 0);
 
   return (
-    <div className="bg-white min-h-screen">
+    <div className="ky-interior-page bg-white min-h-screen">
       <EnhancedSEO
         title="Dúvidas Frequentes - FAQ KY Drywall Curitiba"
         description="Encontre respostas técnicas sobre Drywall, Steel Frame e Telhado Shingle. Guia completo para obras em Curitiba e Região Metropolitana."
@@ -648,16 +648,15 @@ const FAQPage: React.FC = () => {
       />
 
       {/* Hero Section - Industrial Showroom */}
-      <section className="bg-white py-24 md:py-32 text-slate-900 relative overflow-hidden border-b-2 border-slate-100">
-        <div className="absolute inset-0 z-0 bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] [background-size:24px_24px] opacity-100"></div>
+      <section className="ky-interior-hero bg-white py-14 md:py-20 text-slate-900 relative overflow-hidden border-b-2 border-slate-100">
 
         <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-4xl">
-            <div className="inline-flex items-center gap-2 text-[#D31219] text-[10px] font-black uppercase tracking-[0.2em] bg-red-50 border border-red-100 px-4 py-2 rounded-full mb-10 shadow-sm">
+            <div className="inline-flex items-center gap-2 text-[#D31219] text-xs font-bold uppercase tracking-wide bg-red-50 border border-red-100 px-4 py-2 rounded-full mb-10 shadow-sm">
               <span className="w-1.5 h-1.5 rounded-full bg-[#D31219]"></span>
               <span>01 — BASE DE CONHECIMENTO (FAQ)</span>
             </div>
-            <h1 className="text-5xl sm:text-7xl font-black tracking-tight leading-[1.05] mb-10 text-slate-950">
+            <h1 className="text-4xl sm:text-6xl font-bold tracking-tight leading-[1.05] mb-10 text-slate-950">
               Dúvidas <span className="text-[#D31219]">Técnicas</span> Frequentes
             </h1>
             <p className="text-slate-600 text-lg sm:text-2xl leading-relaxed max-w-2xl font-medium mb-12">
@@ -672,7 +671,7 @@ const FAQPage: React.FC = () => {
               <input
                 type="text"
                 placeholder="Busque por placa RU, perfis Barbieri, isolamento..."
-                className="block w-full pl-16 pr-6 py-6 border-2 border-slate-100 rounded-2xl bg-white text-lg text-slate-900 placeholder:text-slate-300 focus:outline-none focus:border-[#D31219] focus:ring-4 focus:ring-red-50 transition-all shadow-xl"
+                className="block w-full pl-16 pr-6 py-6 border-2 border-slate-100 rounded-sm bg-white text-lg text-slate-900 placeholder:text-slate-300 focus:outline-none focus:border-[#D31219] focus:ring-4 focus:ring-red-50 transition-all shadow-none"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
@@ -685,7 +684,7 @@ const FAQPage: React.FC = () => {
         <div className="flex flex-wrap justify-center gap-3 mb-16 px-4">
           <button
             onClick={() => setActiveCategory('all')}
-            className={`px-8 py-4 rounded-2xl text-xs font-black uppercase tracking-widest transition-all border-2 ${activeCategory === 'all' ? 'bg-slate-900 border-slate-900 text-white shadow-xl' : 'bg-white border-slate-100 text-slate-500 hover:border-slate-300'}`}
+            className={`px-8 py-4 rounded-sm text-xs font-bold uppercase tracking-wide transition-all border-2 ${activeCategory === 'all' ? 'bg-slate-900 border-slate-900 text-white shadow-none' : 'bg-white border-slate-100 text-slate-500 hover:border-slate-300'}`}
           >
             Todas as Áreas
           </button>
@@ -693,7 +692,7 @@ const FAQPage: React.FC = () => {
             <button
               key={cat.id}
               onClick={() => setActiveCategory(cat.id)}
-              className={`px-8 py-4 rounded-2xl text-xs font-black uppercase tracking-widest transition-all border-2 ${activeCategory === cat.id ? 'bg-slate-900 border-slate-900 text-white shadow-xl' : 'bg-white border-slate-100 text-slate-500 hover:border-slate-300'}`}
+              className={`px-8 py-4 rounded-sm text-xs font-bold uppercase tracking-wide transition-all border-2 ${activeCategory === cat.id ? 'bg-slate-900 border-slate-900 text-white shadow-none' : 'bg-white border-slate-100 text-slate-500 hover:border-slate-300'}`}
             >
               {cat.title.split(' - ')[0]}
             </button>
@@ -705,12 +704,12 @@ const FAQPage: React.FC = () => {
           {filteredSections.map((section: any) => (
             <div key={section.id} className="animate-in fade-in slide-in-from-bottom-4">
               <div className="flex items-center gap-4 mb-8 pb-4 border-b-2 border-slate-900/5">
-                <div className="w-14 h-14 rounded-2xl bg-[#D31219] text-white flex items-center justify-center shadow-lg shadow-red-900/20">
+                <div className="w-14 h-14 rounded-sm bg-[#D31219] text-white flex items-center justify-center shadow-lg shadow-red-900/20">
                   {section.icon}
                 </div>
                 <div>
-                  <h2 className="text-2xl font-black text-slate-900 tracking-tight uppercase">{section.title}</h2>
-                  <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mt-1">{section.questions.length} perguntas frequentes</p>
+                  <h2 className="text-2xl font-bold text-slate-900 tracking-tight uppercase">{section.title}</h2>
+                  <p className="text-xs font-bold text-slate-400 uppercase tracking-wide mt-1">{section.questions.length} perguntas frequentes</p>
                 </div>
               </div>
 
@@ -720,14 +719,14 @@ const FAQPage: React.FC = () => {
                   return (
                     <div
                       key={idx}
-                      className={`group rounded-3xl border-2 transition-all duration-300 ${isOpen ? 'bg-white border-slate-900 shadow-xl' : 'bg-white border-slate-100 hover:border-slate-300 shadow-sm'}`}
+                      className={`group rounded-sm border-2 transition-all duration-300 ${isOpen ? 'bg-white border-slate-900 shadow-none' : 'bg-white border-slate-100 hover:border-slate-300 shadow-sm'}`}
                     >
                       <button
                         onClick={() => toggleQuestion(section.id, idx)}
                         className="w-full text-left px-8 py-6 flex items-center justify-between gap-4"
                         aria-expanded={isOpen}
                       >
-                        <span className={`text-lg font-black transition-colors ${isOpen ? 'text-[#D31219]' : 'text-slate-800'}`}>
+                        <span className={`text-lg font-bold transition-colors ${isOpen ? 'text-[#D31219]' : 'text-slate-800'}`}>
                           {q.question}
                         </span>
                         <div className={`w-10 h-10 rounded-full flex items-center justify-center transition-all ${isOpen ? 'bg-[#D31219] text-white rotate-180' : 'bg-slate-50 text-slate-400 group-hover:bg-slate-100'}`}>
@@ -748,15 +747,15 @@ const FAQPage: React.FC = () => {
           ))}
 
           {filteredSections.length === 0 && (
-            <div className="py-24 text-center bg-white rounded-[40px] border-2 border-dashed border-slate-200">
+            <div className="py-24 text-center bg-white rounded-sm border-2 border-dashed border-slate-200">
                <div className="w-20 h-20 bg-slate-50 rounded-full flex items-center justify-center mx-auto mb-6">
                   <Search size={32} className="text-slate-300" />
                </div>
-               <h3 className="text-2xl font-black text-slate-900 mb-2">Nenhum resultado encontrado</h3>
+               <h3 className="text-2xl font-bold text-slate-900 mb-2">Nenhum resultado encontrado</h3>
                <p className="text-slate-500 mb-8 max-w-sm mx-auto">Tente buscar por termos mais genéricos ou selecione uma categoria específica acima.</p>
                <button
                  onClick={() => {setSearchTerm(''); setActiveCategory('all');}}
-                 className="bg-slate-900 text-white font-black px-10 py-5 rounded-2xl text-xs uppercase tracking-widest hover:bg-black transition-all shadow-lg active:scale-95"
+                 className="bg-slate-900 text-white font-bold px-10 py-5 rounded-sm text-xs uppercase tracking-wide hover:bg-black transition-all shadow-lg active:scale-95"
                >
                  Ver Todas as Dúvidas
                </button>
@@ -766,16 +765,15 @@ const FAQPage: React.FC = () => {
 
         {/* CTA Section - Engineering Support */}
         <div className="max-w-4xl mx-auto mt-24">
-          <div className="bg-slate-900 rounded-[40px] p-10 md:p-16 text-white relative overflow-hidden shadow-2xl group">
-             <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#334155_1px,transparent_1px)] [background-size:24px_24px]"></div>
+          <div className="bg-slate-900 rounded-sm p-10 md:p-16 text-white relative overflow-hidden shadow-none group">
 
              <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-12">
                 <div className="text-center md:text-left">
-                   <div className="inline-flex items-center gap-2 text-[#D31219] text-[10px] font-black uppercase tracking-[0.2em] mb-6">
+                   <div className="inline-flex items-center gap-2 text-[#D31219] text-xs font-bold uppercase tracking-wide mb-6">
                       <Zap size={14} />
                       <span>Suporte Personalizado</span>
                    </div>
-                   <h3 className="text-3xl sm:text-4xl font-black mb-6 leading-tight">Ainda tem dúvidas <br className="hidden sm:block" /> sobre o seu projeto?</h3>
+                   <h3 className="text-3xl sm:text-4xl font-bold mb-6 leading-tight">Ainda tem dúvidas <br className="hidden sm:block" /> sobre o seu projeto?</h3>
                    <p className="text-slate-400 text-lg max-w-lg leading-relaxed">
                       Nossa engenharia oferece consultoria gratuita para especificação de materiais e cálculo de quantitativos em Curitiba.
                    </p>
@@ -784,13 +782,13 @@ const FAQPage: React.FC = () => {
                 <div className="flex flex-col gap-4 w-full md:w-auto shrink-0">
                    <a
                      href={`https://wa.me/${COMPANY_INFO.whatsapp}?text=Olá! Gostaria de tirar uma dúvida técnica sobre meu projeto.`}
-                     className="bg-[#D31219] hover:bg-red-700 text-white font-black px-10 py-6 rounded-2xl flex items-center justify-center gap-3 transition-all shadow-xl shadow-red-900/10 active:scale-95 text-xs uppercase tracking-widest"
+                     className="bg-[#D31219] hover:bg-red-700 text-white font-bold px-10 py-6 rounded-sm flex items-center justify-center gap-3 transition-all shadow-none shadow-red-900/10 active:scale-95 text-xs uppercase tracking-wide"
                    >
                      <MessageCircle size={24} /> Falar com Especialista
                    </a>
                    <a
                      href={`tel:${COMPANY_INFO.phone.replace(/\D/g, '')}`}
-                     className="bg-slate-800 hover:bg-slate-700 text-white font-black px-10 py-6 rounded-2xl flex items-center justify-center gap-3 transition-all border-2 border-slate-700 active:scale-95 text-xs uppercase tracking-widest"
+                     className="bg-slate-800 hover:bg-slate-700 text-white font-bold px-10 py-6 rounded-sm flex items-center justify-center gap-3 transition-all border-2 border-slate-700 active:scale-95 text-xs uppercase tracking-wide"
                    >
                      <Phone size={20} /> (41) 3528-4232
                    </a>
@@ -803,7 +801,7 @@ const FAQPage: React.FC = () => {
       {showBackToTop && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-24 right-6 p-4 bg-white border-2 border-slate-900 text-slate-900 rounded-full shadow-2xl hover:bg-slate-50 transition-all z-50 animate-in fade-in slide-in-from-bottom-4"
+          className="fixed bottom-24 right-6 p-4 bg-white border-2 border-slate-900 text-slate-900 rounded-full shadow-none hover:bg-slate-50 transition-all z-50 animate-in fade-in slide-in-from-bottom-4"
           aria-label="Voltar ao topo"
         >
           <ArrowUp size={24} />

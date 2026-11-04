@@ -64,7 +64,7 @@ const ServicesPage: React.FC = () => {
   if (serviceId && !currentService) return <NotFound />;
 
   return (
-    <div className="bg-white">
+    <div className="ky-interior-page bg-white">
       <EnhancedSEO
         title={serviceId ? `${currentService?.title} em Curitiba` : "Serviços de construção a seco em Curitiba"}
         description={`${currentService?.description} Assessoria técnica especializada da KY Drywall. Soluções em construção a seco. Atendimento em Curitiba e Região Metropolitana.`}
@@ -75,23 +75,15 @@ const ServicesPage: React.FC = () => {
         schema={serviceSchema}
       />
       {/* Hero Section - Industrial Showroom */}
-      <section className="relative py-24 md:py-32 ky-section-white overflow-hidden border-b border-slate-200">
-        <div className="absolute inset-0 z-0 bg-[radial-gradient(var(--ky-border)_1px,transparent_1px)] [background-size:24px_24px] opacity-100"></div>
-        <div className="absolute inset-0 z-0 opacity-10">
-            <img
-              src={currentService?.image}
-              alt={`${currentService?.title} (Imagem Ilustrativa)`}
-              className="w-full h-full object-cover"
-            />
-        </div>
+      <section className="ky-interior-hero relative py-14 md:py-20 ky-section-white overflow-hidden border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 relative z-10 w-full">
           <div className="max-w-4xl">
-            <div className="flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.2em] text-slate-500 mb-10">
+            <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wide text-slate-500 mb-10">
               <Link to="/" className="hover:text-[#D31219] transition-colors">INÍCIO</Link>
               <ChevronRight size={10} className="text-slate-300" />
-              <span className="text-slate-950 font-black">01 — SISTEMAS TÉCNICOS</span>
+              <span className="text-slate-950 font-bold">01 — SISTEMAS TÉCNICOS</span>
             </div>
-            <h1 className="ky-title-mark text-5xl sm:text-7xl font-black tracking-tight leading-[1.05] text-slate-950 mb-10">
+            <h1 className="ky-title-mark text-4xl sm:text-6xl font-bold tracking-tight leading-[1.05] text-slate-950 mb-10">
               {serviceId ? currentService?.title : "Sistemas de Construção"}
             </h1>
             <p className="text-slate-600 text-lg sm:text-2xl leading-relaxed max-w-2xl font-medium">
@@ -102,15 +94,15 @@ const ServicesPage: React.FC = () => {
       </section>
 
       {/* Conteúdo SEO */}
-      <section className="py-20 md:py-32 ky-section-white border-b border-slate-200">
+      <section className="py-14 md:py-20 ky-section-white border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
             <div className="lg:col-span-7 space-y-10">
               <div>
-                <span className="text-[#D31219] text-[10px] font-black uppercase tracking-[0.2em] bg-red-50 border border-red-100 px-3 py-1 rounded">
+                <span className="text-[#D31219] text-xs font-bold uppercase tracking-wide bg-red-50 border border-red-100 px-3 py-1 rounded">
                   02 — DESEMPENHO & ENGENHARIA
                 </span>
-                <h2 className="ky-title-mark text-3xl sm:text-4xl font-black text-slate-950 tracking-tight mt-6">
+                <h2 className="ky-title-mark text-3xl sm:text-4xl font-bold text-slate-950 tracking-tight mt-6">
                   Soluções em Construção a Seco
                 </h2>
               </div>
@@ -131,10 +123,10 @@ const ServicesPage: React.FC = () => {
                   { title: "CONFORTO", desc: "Desempenho conforme o sistema" },
                   { title: "PRECISÃO", desc: "Montagem conforme o projeto" }
                 ].map(b => (
-                  <div key={b.title} className="ky-card p-6 rounded-2xl group transition-all">
+                  <div key={b.title} className="ky-card p-6 rounded-sm group transition-all">
                     <div className="flex items-center gap-3 mb-2">
                       <CheckCircle2 size={18} className="text-[#D31219] shrink-0" />
-                      <span className="text-xs font-black text-slate-950 uppercase tracking-widest">{b.title}</span>
+                      <span className="text-xs font-bold text-slate-950 uppercase tracking-wide">{b.title}</span>
                     </div>
                     <p className="text-sm text-slate-500 pl-7 font-medium">{b.desc}</p>
                   </div>
@@ -143,7 +135,7 @@ const ServicesPage: React.FC = () => {
 
               <div className="pt-8 grid grid-cols-1 md:grid-cols-2 gap-8 border-t border-slate-100 mt-10">
                 <div>
-                  <h4 className="text-sm font-black text-slate-900 uppercase tracking-widest mb-4 flex items-center gap-2">
+                  <h4 className="text-sm font-bold text-slate-900 uppercase tracking-wide mb-4 flex items-center gap-2">
                     <Sparkles size={16} className="text-[#D31219]" />
                     Suporte na Obra
                   </h4>
@@ -152,7 +144,7 @@ const ServicesPage: React.FC = () => {
                   </p>
                 </div>
                 <div>
-                  <h4 className="text-sm font-black text-slate-900 uppercase tracking-widest mb-4 flex items-center gap-2">
+                  <h4 className="text-sm font-bold text-slate-900 uppercase tracking-wide mb-4 flex items-center gap-2">
                     <HardHat size={16} className="text-[#D31219]" />
                     Logística KY
                   </h4>
@@ -167,44 +159,44 @@ const ServicesPage: React.FC = () => {
                   href={`https://wa.me/5541996457421?text=Olá! Gostaria de um orçamento para ${encodeURIComponent(currentService?.title || 'serviços')}.`}
                   target="_blank"
                   rel="noreferrer"
-                  className="bg-[#D31219] text-white font-black px-10 py-5 rounded-2xl inline-flex items-center justify-center gap-3 text-xs uppercase tracking-[0.2em] hover:bg-slate-900 transition-all shadow-xl active:scale-[0.98]"
+                  className="bg-[#D31219] text-white font-bold px-10 py-5 rounded-sm inline-flex items-center justify-center gap-3 text-xs uppercase tracking-wide hover:bg-slate-900 transition-all shadow-none active:scale-[0.98]"
                 >
                   <MessageCircle size={20} /> Solicitar Cotação
                 </a>
                 <Link
                   to="/produtos"
-                  className="bg-white text-slate-950 border border-slate-200 font-black px-10 py-5 rounded-2xl inline-flex items-center justify-center gap-3 text-xs uppercase tracking-[0.2em] hover:border-[#D31219] transition-all active:scale-[0.98]"
+                  className="bg-white text-slate-950 border border-slate-200 font-bold px-10 py-5 rounded-sm inline-flex items-center justify-center gap-3 text-xs uppercase tracking-wide hover:border-[#D31219] transition-all active:scale-[0.98]"
                 >
                   Ver Materiais
                 </Link>
               </div>
             </div>
 
-            <div className="lg:col-span-5 ky-card p-10 rounded-[40px] relative overflow-hidden border-t-8 border-t-[#D31219]">
+            <div className="lg:col-span-5 ky-card p-10 rounded-sm relative overflow-hidden border-t-8 border-t-[#D31219]">
               <div className="absolute top-0 right-0 w-32 h-32 bg-red-50 rounded-full -mr-16 -mt-16 opacity-50"></div>
               <div className="relative z-10">
                 <div className="flex items-center gap-4 mb-8">
-                  <div className="w-14 h-14 bg-red-50 text-[#D31219] rounded-2xl flex items-center justify-center shadow-sm border border-red-100">
+                  <div className="w-14 h-14 bg-red-50 text-[#D31219] rounded-sm flex items-center justify-center shadow-sm border border-red-100">
                     <ShieldAlert size={28} />
                   </div>
-                  <h3 className="text-2xl font-black text-slate-950 tracking-tight">Especificação Técnica</h3>
+                  <h3 className="text-2xl font-bold text-slate-950 tracking-tight">Especificação Técnica</h3>
                 </div>
                 <div className="space-y-6">
-                  <div className="p-5 bg-slate-50 rounded-2xl border border-slate-100 group hover:border-[#D31219]/20 transition-colors">
-                    <p className="font-black text-slate-900 mb-2 uppercase tracking-widest text-xs">Perfis Barbieri</p>
+                  <div className="p-5 bg-slate-50 rounded-sm border border-slate-100 group hover:border-[#D31219]/20 transition-colors">
+                    <p className="font-bold text-slate-900 mb-2 uppercase tracking-wide text-xs">Perfis Barbieri</p>
                     <p className="text-sm text-slate-600 leading-relaxed font-medium">Aço galvanizado de alta durabilidade e resistência contra corrosão marinha e urbana.</p>
                   </div>
-                  <div className="p-5 bg-slate-50 rounded-2xl border border-slate-100 group hover:border-[#D31219]/20 transition-colors">
-                    <p className="font-black text-slate-900 mb-2 uppercase tracking-widest text-xs">Placas Certificadas</p>
+                  <div className="p-5 bg-slate-50 rounded-sm border border-slate-100 group hover:border-[#D31219]/20 transition-colors">
+                    <p className="font-bold text-slate-900 mb-2 uppercase tracking-wide text-xs">Placas Certificadas</p>
                     <p className="text-sm text-slate-600 leading-relaxed font-medium">Opções Standard (ST), Resistente à Umidade (RU) e Resistente ao Fogo (RF).</p>
                   </div>
-                  <div className="p-5 bg-slate-50 rounded-2xl border border-slate-100 group hover:border-[#D31219]/20 transition-colors">
-                    <p className="font-black text-slate-900 mb-2 uppercase tracking-widest text-xs">Tratamento de Juntas</p>
+                  <div className="p-5 bg-slate-50 rounded-sm border border-slate-100 group hover:border-[#D31219]/20 transition-colors">
+                    <p className="font-bold text-slate-900 mb-2 uppercase tracking-wide text-xs">Tratamento de Juntas</p>
                     <p className="text-sm text-slate-600 leading-relaxed font-medium">Fitas microperfuradas e massas com tecnologia de elasticidade permanente.</p>
                   </div>
                 </div>
 
-                <div className="mt-10 bg-red-50 p-6 rounded-2xl border border-red-100 flex items-start gap-4">
+                <div className="mt-10 bg-red-50 p-6 rounded-sm border border-red-100 flex items-start gap-4">
                   <Sparkles size={24} className="text-[#D31219] shrink-0 mt-1" />
                   <p className="text-xs text-slate-700 leading-relaxed font-bold">
                     <strong className="text-[#D31219] block mb-1">Garantia KY Drywall:</strong> Mais de duas décadas de experiência com entrega ágil e estoque pronto em Curitiba.
