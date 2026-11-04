@@ -268,8 +268,6 @@ const BlogPostPage: React.FC = () => {
     headline: post.title,
     description: post.excerpt,
     image: post.img,
-    datePublished: '2025-01-01',
-    dateModified: '2025-02-15',
     author: {
       '@type': 'Organization',
       name: 'KY Drywall & Steel Frame',
@@ -348,10 +346,10 @@ const BlogPostPage: React.FC = () => {
             <div className="rounded-sm overflow-hidden mb-12 border border-slate-200 shadow-none bg-slate-900 aspect-video">
               <img
                 src={post.img}
-                alt={post.title}
+                alt={post.imageAlt || post.title}
                 className="w-full h-full object-cover"
                 loading="eager"
-              />
+              /><small className="ky-image-caption">{post.imageCaption}</small>
             </div>
 
             <div className="space-y-12">
@@ -443,10 +441,10 @@ const BlogPostPage: React.FC = () => {
                   <div className="text-center md:text-left">
                     <span className="text-[#D31219] text-xs font-bold uppercase tracking-wide block mb-4">Suporte de Engenharia</span>
                     <h3 className="text-2xl sm:text-3xl font-bold mb-4 leading-tight">
-                      Orçamento Técnico de Materiais
+                      Cotação de materiais
                     </h3>
                     <p className="text-slate-400 text-lg max-w-lg leading-relaxed">
-                      Envie sua planta ou lista de medidas. Nossa engenharia analisa sem custo para Curitiba e Região.
+                      Envie sua planta ou lista de medidas. Consulte disponibilidade, especificações e condições comerciais com a equipe.
                     </p>
                   </div>
                   <div className="flex flex-col gap-4 shrink-0">
@@ -493,7 +491,7 @@ const BlogPostPage: React.FC = () => {
                     className="group bg-white rounded-sm border border-slate-200 overflow-hidden hover:border-[#D31219]/30 hover:shadow-lg transition-all flex flex-col"
                   >
                     <div className="aspect-video overflow-hidden border-b border-slate-100 bg-slate-900">
-                      <img src={p.img} alt={p.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                      <img src={p.img} alt={p.imageAlt || p.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" /><small className="ky-image-caption">{p.imageCaption}</small>
                     </div>
                     <div className="p-6 flex-1 flex flex-col">
                       <span className="text-xs font-bold uppercase tracking-wide text-[#D31219] mb-3 block">{p.tag}</span>

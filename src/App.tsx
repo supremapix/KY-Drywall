@@ -83,7 +83,7 @@ export const AppContent: React.FC = () => {
 
         {!isHomePage && !isLinksPage && <StoreVisit />}
         <FloatingActions />
-        {!isLinksPage && <Footer />}
+        <Footer />
         {!isLinksPage && !isCookieAccepted && <CookieConsent onAccept={handleAcceptCookies} />}
       </div>
     </>

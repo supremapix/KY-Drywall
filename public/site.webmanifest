@@ -1,0 +1,22 @@
+{
+  "name": "KY Drywall & Steel Frame",
+  "short_name": "KY Drywall",
+  "start_url": "/",
+  "display": "browser",
+  "theme_color": "#202321",
+  "background_color": "#f4f3ee",
+  "icons": [
+    {
+      "src": "/web-app-manifest-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/web-app-manifest-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

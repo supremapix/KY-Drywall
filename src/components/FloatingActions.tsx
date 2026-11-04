@@ -15,12 +15,15 @@ import {
 } from 'lucide-react';
 import { COMPANY_INFO, BASE_URL } from '../constants';
 
-const DEFAULT_SHARE_IMAGE = 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ky-loja-cajuru-drywall-stell-fame.png-CAi9KHi0wcqQLptb0qLFGSWQZaXr98.jpeg';
+const DEFAULT_SHARE_IMAGE = `${BASE_URL}/og-ky-drywall.png`;
+const SHARE_MESSAGES = ['Conheça a KY Drywall & Steel Frame', 'Compartilho este conteúdo da KY', 'Uma leitura para planejar sua obra', 'Veja este guia de construção a seco', 'Informações para consultar antes de comprar', 'Conteúdo para conversar com seu projetista', 'Uma referência para organizar sua cotação', 'Confira este material da KY Drywall', 'Para quem pesquisa drywall e Steel Frame', 'Mais informações para sua lista de materiais', 'Veja esta página da KY', 'Compartilhando uma dica de planejamento', 'Leitura sobre materiais e construção a seco', 'Para consultar com a equipe da obra', 'Conheça este conteúdo sobre construção'];
 
 export const FloatingActions: React.FC = () => {
   const [isShareOpen, setIsShareOpen] = useState(false);
   const [isWhatsAppOpen, setIsWhatsAppOpen] = useState(false);
   const [copied, setCopied] = useState(false);
+  const [messageIndex, setMessageIndex] = useState(0);
+  useEffect(() => { const timer = window.setInterval(() => setMessageIndex(i => (i + 1) % SHARE_MESSAGES.length), 15000); return () => window.clearInterval(timer); }, []);
   const [showScrollTop, setShowScrollTop] = useState(false);
   const shareRef = useDialogFocus(isShareOpen, () => setIsShareOpen(false));
   const contactRef = useDialogFocus(isWhatsAppOpen, () => setIsWhatsAppOpen(false));
@@ -37,6 +40,7 @@ export const FloatingActions: React.FC = () => {
       setShowScrollTop(window.scrollY > 300);
     };
 
+    handleScroll();
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -45,9 +49,10 @@ export const FloatingActions: React.FC = () => {
   useEffect(() => {
     const revealFocusedControl = (event: FocusEvent) => {
       const target = event.target;
-      if (!(target instanceof HTMLElement) || target.closest('.ky-whatsapp-panel,.ky-whatsapp-float')) return;
+      if (!(target instanceof HTMLElement) || target.closest('.ky-action-bar')) return;
       requestAnimationFrame(() => {
-        const floating = document.querySelector('.ky-whatsapp-float')?.getBoundingClientRect();
+        const rects = Array.from(document.querySelectorAll('.ky-contact-cluster,.ky-share-cluster')).map(el => el.getBoundingClientRect());
+        const floating = rects.find(box => { const r = target.getBoundingClientRect(); return r.right > box.left && r.left < box.right && r.bottom > box.top && r.top < box.bottom; });
         const rect = target.getBoundingClientRect();
         if (floating && rect.right > floating.left && rect.left < floating.right && rect.bottom > floating.top && rect.top < floating.bottom) {
           window.scrollBy({ top: rect.bottom - floating.top + 16, behavior: 'instant' });
@@ -73,7 +78,7 @@ export const FloatingActions: React.FC = () => {
   const handleCopyLink = () => {
     const url = currentUrl || BASE_URL;
     const title = pageTitle || 'KY Drywall & Steel Frame';
-    const message = url;
+    const message = `${SHARE_MESSAGES[messageIndex]}: ${title} (${url})`;
 
     if (navigator.clipboard) {
       navigator.clipboard.writeText(message).then(() => {
@@ -89,7 +94,7 @@ export const FloatingActions: React.FC = () => {
 
   const urlEncoded = encodeURIComponent(currentUrl || BASE_URL);
   const titleEncoded = encodeURIComponent(pageTitle || 'KY Drywall & Steel Frame');
-  const shareTextEncoded = encodeURIComponent(`Estou indicando a KY Drywall & Steel Frame: ${pageTitle || 'Construção a Seco em Curitiba'}`);
+  const shareTextEncoded = encodeURIComponent(`${SHARE_MESSAGES[messageIndex]}: ${pageTitle || "KY Drywall & Steel Frame"}`);
   const imageEncoded = encodeURIComponent(DEFAULT_SHARE_IMAGE);
 
   const shareLinks = [
@@ -115,7 +120,7 @@ export const FloatingActions: React.FC = () => {
     },
     {
       name: 'X (Twitter)',
-      href: `https://twitter.com/intent/tweet?text=${titleEncoded}&url=${urlEncoded}`,
+      href: `https://twitter.com/intent/tweet?text=${shareTextEncoded}&url=${urlEncoded}`,
       color: 'bg-slate-900 hover:brightness-110 text-white',
       icon: (
         <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
@@ -125,7 +130,7 @@ export const FloatingActions: React.FC = () => {
     },
     {
       name: 'Pinterest',
-      href: `https://pinterest.com/pin/create/button/?url=${urlEncoded}&media=${imageEncoded}&description=${titleEncoded}`,
+      href: `https://pinterest.com/pin/create/button/?url=${urlEncoded}&media=${imageEncoded}&description=${shareTextEncoded}`,
       color: 'bg-[#E60023] hover:brightness-110 text-white',
       icon: (
         <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
@@ -168,10 +173,10 @@ export const FloatingActions: React.FC = () => {
   return (
     <section aria-label="Compartilhamento e contato rápido" className="ky-action-bar">
       {/* LEFT: SHARE ACTION */}
-      <div className="relative flex flex-col items-start gap-4">
+      <div className="ky-share-cluster relative flex flex-col items-start gap-4">
         {/* Share Popup - Blueprint Style */}
         {isShareOpen && (
-          <div ref={shareRef} role="dialog" aria-label="Compartilhar esta página" className="w-72 max-w-[calc(100vw-2rem)] max-h-[70vh] overflow-y-auto sm:w-80 bg-white rounded-3xl border-2 border-slate-900 p-6 shadow-2xl animate-in fade-in slide-in-from-bottom-4 duration-300">
+          <div ref={shareRef} id="ky-share-dialog" role="dialog" aria-label="Compartilhar esta página" className="ky-share-panel w-72 max-w-[calc(100vw-2rem)] max-h-[70vh] overflow-y-auto sm:w-80 bg-white rounded-3xl border-2 border-slate-900 p-6 shadow-2xl animate-in fade-in slide-in-from-bottom-4 duration-300">
             <div className="flex items-center justify-between mb-6 pb-4 border-b border-slate-100">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded bg-[#D31219]/10 flex items-center justify-center text-[#D31219]">
@@ -191,7 +196,7 @@ export const FloatingActions: React.FC = () => {
               </button>
             </div>
 
-            <div className="grid grid-cols-3 gap-3 mb-6">
+            <p className="text-xs mb-4 text-slate-600">Ao abrir uma rede, o título e o endereço desta página serão enviados à plataforma escolhida. A prévia da imagem depende do suporte e do cache da rede.</p><div className="grid grid-cols-3 gap-3 mb-6">
               {shareLinks.map((item) => (
                 <a
                   key={item.name}
@@ -218,7 +223,7 @@ export const FloatingActions: React.FC = () => {
               {copied ? (
                 <>
                   <Check size={16} />
-                  <span>Copiado com Sucesso!</span>
+                  <span role="status">Link Copiado com Sucesso!</span>
                 </>
               ) : (
                 <>
@@ -234,7 +239,7 @@ export const FloatingActions: React.FC = () => {
         <button
           onClick={() => { setIsShareOpen(!isShareOpen); setIsWhatsAppOpen(false); }}
           className="group relative flex items-center gap-3 bg-white border-2 border-slate-900 p-2 sm:p-3 rounded-full shadow-xl hover:bg-slate-50 transition-all active:scale-95"
-          aria-label="Opções de compartilhamento" aria-expanded={isShareOpen}
+          aria-label="Opções de compartilhamento" aria-expanded={isShareOpen} aria-controls="ky-share-dialog" aria-haspopup="dialog"
         >
           <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-slate-900 flex items-center justify-center text-white">
             <Share2 size={20} className="group-hover:rotate-12 transition-transform" />
@@ -246,13 +251,13 @@ export const FloatingActions: React.FC = () => {
       </div>
 
       {/* RIGHT: CONTACT ACTIONS */}
-      <div className="relative flex flex-col items-end gap-4">
+      <div className="ky-contact-cluster relative flex flex-col items-end gap-4">
         {/* Back to Top */}
         {showScrollTop && (
           <button
             onClick={scrollToTop}
             className="w-12 h-12 rounded-full bg-white border-2 border-slate-200 text-slate-900 flex items-center justify-center shadow-lg hover:border-slate-900 transition-all animate-in fade-in slide-in-from-bottom-2"
-            title="Voltar ao topo"
+            title="Voltar ao topo" aria-label="Voltar ao topo"
           >
             <ChevronUp size={24} />
           </button>
@@ -309,9 +314,9 @@ export const FloatingActions: React.FC = () => {
         <div className="flex items-center gap-2">
           {/* Call Button */}
           <a
-            href={`tel:${COMPANY_INFO.phone.replace(/\D/g, '')}`}
+            href="tel:+554135284232"
             className="h-12 sm:h-14 px-6 bg-white border-2 border-slate-900 rounded-full flex items-center gap-3 shadow-xl hover:bg-slate-50 transition-all active:scale-95 group"
-            title="Ligar para a loja"
+            title="Ligar para a loja" aria-label="Ligar agora para a KY"
           >
             <PhoneCall size={20} className="text-[#D31219] group-hover:animate-bounce" />
             <span className="hidden sm:inline-block text-[10px] font-black uppercase tracking-[0.2em] text-slate-900">Ligar Agora</span>

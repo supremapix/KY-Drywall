@@ -30,7 +30,6 @@ const Blog: React.FC = () => {
           headline: currentPost.title,
           description: currentPost.excerpt,
           image: currentPost.img,
-          datePublished: '2025-01-01',
           author: { '@type': 'Organization', name: 'KY Drywall & Steel Frame' },
           publisher: { '@type': 'Organization', name: 'KY Drywall & Steel Frame' }
         }}
@@ -57,7 +56,7 @@ const Blog: React.FC = () => {
         <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <div className="relative aspect-video rounded-sm overflow-hidden mb-12 border border-slate-200 shadow-none bg-slate-100">
-              <img src={currentPost.img} alt={currentPost.title} className="w-full h-full object-cover" />
+              <img src={currentPost.img} alt={currentPost.imageAlt || currentPost.title} className="w-full h-full object-cover" /><small className="ky-image-caption">{currentPost.imageCaption}</small>
               {currentPost.img.includes('projeto-stell-frame') && (
                 <div className="absolute bottom-6 left-6">
                   <span className="bg-slate-900/80 backdrop-blur-sm text-white text-xs font-bold px-3 py-1.5 rounded uppercase tracking-wide border border-white/10">
@@ -113,7 +112,7 @@ const Blog: React.FC = () => {
               {BLOG_POSTS.filter(p => p.id !== currentPost.id).slice(0, 3).map(post => (
                 <Link key={post.id} to={`/blog/${post.id}`} className="group bg-white rounded-sm border border-slate-200 overflow-hidden hover:border-[#D31219]/30 hover:shadow-md transition-all flex flex-col">
                   <div className="aspect-video overflow-hidden border-b border-slate-100 bg-slate-100">
-                    <img src={post.img} alt={post.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                    <img src={post.img} alt={post.imageAlt || post.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" /><small className="ky-image-caption">{post.imageCaption}</small>
                   </div>
                   <div className="p-5">
                     <span className="text-[#D31219] text-xs font-bold uppercase tracking-wide block mb-2">{post.tag}</span>
@@ -149,7 +148,6 @@ const Blog: React.FC = () => {
       headline: post.title,
       description: post.excerpt,
       image: post.img,
-      datePublished: '2025-01-01',
       author: {
         '@type': 'Organization',
         name: 'KY Drywall & Steel Frame'
@@ -227,7 +225,7 @@ const Blog: React.FC = () => {
               <div key={i} className="bg-white rounded-sm border border-slate-200 overflow-hidden flex flex-col justify-between hover:border-[#D31219]/30 hover:shadow-sm transition-all group">
                 <div>
                   <div className="aspect-video relative overflow-hidden bg-slate-900">
-                    <img src={post.img} alt={post.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                    <img src={post.img} alt={post.imageAlt || post.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" /><small className="ky-image-caption">{post.imageCaption}</small>
                     <span className="absolute top-4 right-4 bg-slate-950/90 backdrop-blur-sm text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-[0.1em] border border-white/10">
                       {post.tag}
                     </span>

@@ -55,6 +55,8 @@ export interface QuoteItem {
 
 // Added BlogPost interface for consistency across Home and Blog pages
 export interface BlogPost {
+  imageAlt?: string;
+  imageCaption?: string;
   id: string;
   title: string;
   excerpt: string;

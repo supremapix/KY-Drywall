@@ -1670,7 +1670,9 @@ export const BLOG_POSTS: BlogPost[] = [
     id: 'b1',
     title: "Steel Frame: como planejar uma obra em Curitiba",
     excerpt: "Entenda os componentes do sistema, a importância do projeto e os cuidados para comparar propostas.",
-    img: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/projeto-stell-frame.png-bAiwJLHNjOpiURXX8I0tGfLyNCau5x.jpeg',
+    img: '/blog/planejamento-steel.webp',
+    imageAlt: 'Ilustração por IA: projeto e modelo de estrutura em Steel Frame',
+    imageCaption: 'Ilustração por IA • Não representa obra da KY',
     tag: 'Steel Frame',
     date: 'Jan 2025'
   },
@@ -1678,7 +1680,9 @@ export const BLOG_POSTS: BlogPost[] = [
     id: 'b2',
     title: "Drywall: como avaliar isolamento térmico e acústico",
     excerpt: "Veja quais partes do sistema influenciam o desempenho de paredes e forros.",
-    img: '/forro-e-parede-em-drywall.jpeg',
+    img: '/blog/isolamento.webp',
+    imageAlt: 'Ilustração por IA: camadas de uma parede drywall com isolamento',
+    imageCaption: 'Ilustração por IA • Não representa obra da KY',
     tag: 'Drywall',
     date: 'Dez 2024'
   },
@@ -1686,7 +1690,9 @@ export const BLOG_POSTS: BlogPost[] = [
     id: 'b3',
     title: "Telhado Shingle: o que conferir no projeto",
     excerpt: "Conheça os itens que precisam ser definidos além da telha.",
-    img: '/telhado-shingle.jpg',
+    img: '/blog/shingle.webp',
+    imageAlt: 'Ilustração por IA: telhas Shingle, base e subcobertura',
+    imageCaption: 'Ilustração por IA • Não representa obra da KY',
     tag: 'Telhado',
     date: 'Nov 2024'
   },
@@ -1694,7 +1700,9 @@ export const BLOG_POSTS: BlogPost[] = [
     id: 'b4',
     title: "Quanto custa construir em Steel Frame? Itens para comparar",
     excerpt: "Organize materiais, serviços e acabamento para solicitar um orçamento comparável.",
-    img: 'https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=800',
+    img: '/blog/custos.webp',
+    imageAlt: 'Ilustração por IA: materiais e planilha para comparar custos',
+    imageCaption: 'Ilustração por IA • Não representa obra da KY',
     tag: 'Custos & Economia',
     date: 'Fev 2025'
   },
@@ -1702,7 +1710,9 @@ export const BLOG_POSTS: BlogPost[] = [
     id: 'b5',
     title: "Steel Frame: perguntas para levar ao responsável técnico",
     excerpt: "Confira pontos sobre cargas, corrosão, conforto e manutenção antes de construir.",
-    img: 'https://images.pexels.com/photos/5691593/pexels-photo-5691593.jpeg?auto=compress&cs=tinysrgb&w=800',
+    img: '/blog/tecnico.webp',
+    imageAlt: 'Ilustração por IA: consulta de projeto com perfis de aço',
+    imageCaption: 'Ilustração por IA • Não representa obra da KY',
     tag: 'Curiosidades & Engenharia',
     date: 'Mar 2025'
   },
@@ -1710,7 +1720,9 @@ export const BLOG_POSTS: BlogPost[] = [
     id: 'b6',
     title: "Etapas de uma obra em Steel Frame",
     excerpt: "Do projeto aos acabamentos, entenda a sequência a combinar com a equipe.",
-    img: 'https://images.pexels.com/photos/8092357/pexels-photo-8092357.jpeg?auto=compress&cs=tinysrgb&w=800',
+    img: '/blog/etapas.webp',
+    imageAlt: 'Ilustração por IA: sequência de estrutura e fechamento',
+    imageCaption: 'Ilustração por IA • Não representa obra da KY',
     tag: 'Guia Executivo',
     date: 'Abr 2025'
   },
@@ -1719,6 +1731,8 @@ export const BLOG_POSTS: BlogPost[] = [
     title: "Como organizar a compra de materiais na KY Drywall",
     excerpt: "Prepare sua lista e confirme disponibilidade, retirada e entrega com a equipe.",
     img: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ky-loja-cajuru-drywall-stell-fame.png-CAi9KHi0wcqQLptb0qLFGSWQZaXr98.jpeg',
+    imageAlt: 'Fachada real da loja KY Drywall no Cajuru, Curitiba',
+    imageCaption: 'Fachada real da KY • Cajuru, Curitiba',
     tag: 'Distribuição & Logística',
     date: 'Mai 2025'
   },
@@ -1726,7 +1740,9 @@ export const BLOG_POSTS: BlogPost[] = [
     id: 'b8',
     title: "Orçamento de drywall e Steel Frame: como calcular o escopo",
     excerpt: "Saiba quais informações reunir para cotar paredes, forros e estruturas.",
-    img: 'https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=800',
+    img: '/blog/escopo.webp',
+    imageAlt: 'Ilustração por IA: instrumentos e planta para levantar quantitativos',
+    imageCaption: 'Ilustração por IA • Não representa obra da KY',
     tag: 'Custos & Orçamento',
     date: 'Jun 2025'
   },
@@ -1734,7 +1750,9 @@ export const BLOG_POSTS: BlogPost[] = [
     id: 'b9',
     title: "Steel Frame no clima de Curitiba: cuidados com o conforto",
     excerpt: "Isolamento, umidade e ventilação precisam ser avaliados em conjunto.",
-    img: 'https://images.pexels.com/photos/1292294/pexels-photo-1292294.jpeg?auto=compress&cs=tinysrgb&w=800',
+    img: '/blog/conforto.webp',
+    imageAlt: 'Ilustração por IA: fechamento com isolamento e janela',
+    imageCaption: 'Ilustração por IA • Não representa obra da KY',
     tag: 'Conforto & Engenharia',
     date: 'Jul 2025'
   },
@@ -1742,7 +1760,9 @@ export const BLOG_POSTS: BlogPost[] = [
     id: 'b10',
     title: "Placas ST, RU e RF: guia de escolha para drywall",
     excerpt: "Entenda a finalidade de cada chapa e o que conferir na especificação.",
-    img: 'https://images.pexels.com/photos/5691551/pexels-photo-5691551.jpeg?auto=compress&cs=tinysrgb&w=800',
+    img: '/blog/chapas.webp',
+    imageAlt: 'Ilustração por IA: amostras de chapas ST, RU e RF',
+    imageCaption: 'Ilustração por IA • Não representa obra da KY',
     tag: 'Materiais & Aplicação',
     date: 'Ago 2025'
   }

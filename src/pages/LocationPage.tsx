@@ -7,6 +7,7 @@ import EnhancedSEO from '../components/EnhancedSEO';
 import NotFound from './NotFound';
 import ProductCard from '../components/ProductCard';
 
+import { LocalPlanning } from '../components/LocalPlanning';
 import RegionalNotice from '../components/RegionalNotice';
 
 interface LocationPageProps {
@@ -51,8 +52,8 @@ const LocationPage: React.FC<LocationPageProps> = ({ type, overrideSlug }) => {
   }, [location, navigate, type]);
 
   const featuredProducts = type === 'drywall'
-    ? PRODUCTS.filter(p => ['Placas', 'Massas', 'Fitas', 'Parafusos'].includes(p.category)).slice(0, 6)
-    : PRODUCTS.filter(p => ['Perfis', 'Parafusos', 'Ferragens', 'Placas'].includes(p.category)).slice(0, 6);
+    ? PRODUCTS.filter(p => ['pl1', 'pl2', 'pl3', 'pe1', 'm1', 'pa1'].includes(p.id))
+    : PRODUCTS.filter(p => ['pe7', 'pe8', 'pl7', 'pa2'].includes(p.id));
 
   const schema = {
     "@context": "https://schema.org",
@@ -62,7 +63,7 @@ const LocationPage: React.FC<LocationPageProps> = ({ type, overrideSlug }) => {
         "@id": `${BASE_URL}/${type === 'drywall' ? 'drywall' : 'steel-frame'}-em/${location}/#service`,
         "name": `${serviceName} em ${formattedName}`,
         "serviceType": "Construção a Seco",
-        "description": `Serviços completos de ${serviceName} em ${formattedName}. Instalação, materiais e assessoria técnica especializada.`,
+        "description": `Consulta de materiais de ${serviceName} para ${formattedName}. Disponibilidade, retirada e entrega sujeitas à confirmação com a loja de Curitiba.`,
         "provider": { "@id": `${BASE_URL}/#organization` },
         "areaServed": { "@type": "Place", "name": formattedName },
         "availableChannel": {
@@ -163,7 +164,6 @@ const LocationPage: React.FC<LocationPageProps> = ({ type, overrideSlug }) => {
                     src={SITE_ASSETS.storefront}
                     alt="Centro de Distribuição KY Drywall"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                    onError={(e) => (e.target as HTMLImageElement).src = 'https://images.pexels.com/photos/159306/construction-site-build-construction-structure-159306.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 to-transparent"></div>
                   <div className="ky-location-photo-caption absolute bottom-6 left-6 right-6 flex items-end justify-between">
@@ -200,22 +200,22 @@ const LocationPage: React.FC<LocationPageProps> = ({ type, overrideSlug }) => {
               <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-slate-900 mb-10 text-center md:text-left">
                 Eficiência para Obras em {formattedName}
               </h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div className="ky-catalog-grid grid grid-cols-2 gap-3 sm:gap-6">
                 {[
                   {
                     title: `Entrega em ${formattedName}`,
                     icon: Truck,
-                    text: `Logística ágil para transporte de placas e perfis com integridade total.`
+                    text: `Consulte disponibilidade de transporte, frete, acesso e responsabilidade pela descarga para o endereço da obra.`
                   },
                   {
-                    title: `Cálculo Técnico`,
+                    title: `Lista de materiais`,
                     icon: HardHat,
-                    text: `Apoio no levantamento preciso de montantes e fixadores para evitar desperdício.`
+                    text: `Envie o quantitativo e as referências definidos pelo responsável pelo projeto para consultar disponibilidade.`
                   },
                   {
-                    title: `Marcas Homologadas`,
+                    title: `Documentação dos materiais`,
                     icon: Package,
-                    text: `Trabalhamos com marcas de referência com laudos técnicos de conformidade.`
+                    text: `Solicite fichas técnicas e documentação aplicável à referência especificada.`
                   },
                   {
                     title: `Rapidez de Montagem`,
@@ -254,7 +254,7 @@ const LocationPage: React.FC<LocationPageProps> = ({ type, overrideSlug }) => {
                   Planejamento da Obra
                 </h3>
                 <p className="text-sm text-slate-600 leading-relaxed">
-                  Para obras em <strong>{formattedName}</strong>, recomendamos iniciar o planejamento pelo levantamento de vãos e alturas de pé-direito. No {serviceName}, a modulação dos perfis (a cada 40cm ou 60cm) define o consumo de placas e isolamentos. Nossa equipe técnica na BR-277 pode ajudar a validar seu memorial de cálculo para evitar compras excessivas ou faltas de última hora.
+                  Para obras em <strong>{formattedName}</strong>, recomendamos iniciar o planejamento pelo levantamento de vãos e alturas de pé-direito. No {serviceName}, espaçamentos, espessuras e fixações dependem do projeto e do sistema escolhido. Confirme os quantitativos com o responsável técnico; a consulta comercial não substitui a validação do cálculo.
                 </p>
                 <ul className="space-y-3 text-xs font-bold text-slate-700">
                   <li className="flex items-center gap-2">
@@ -278,7 +278,7 @@ const LocationPage: React.FC<LocationPageProps> = ({ type, overrideSlug }) => {
                 </p>
                 <div className="p-4 bg-slate-50 rounded-sm border border-slate-100">
                    <p className="text-xs font-bold text-slate-400 uppercase tracking-wide mb-2">Dica Especial KY</p>
-                   <p className="text-xs text-slate-700 font-medium italic">"Sempre utilize banda acústica na base dos perfis para evitar a transmissão de vibrações entre pavimentos."</p>
+                   <p className="text-xs text-slate-700 font-medium italic">"Verifique com o projetista e o fabricante onde o sistema exige banda acústica e como tratar seus encontros."</p>
                 </div>
               </div>
             </div>
@@ -304,16 +304,17 @@ const LocationPage: React.FC<LocationPageProps> = ({ type, overrideSlug }) => {
               </div>
             </div>
 
+            <LocalPlanning name={formattedName} type={type} />
             {/* In-page CTA */}
             <div className="bg-slate-900 p-8 md:p-12 rounded-sm text-white relative overflow-hidden group">
               <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-10">
                 <div className="text-center md:text-left">
-                  <span className="text-[#D31219] text-xs font-bold uppercase tracking-wide block mb-3">Cotação Imediata</span>
+                  <span className="text-[#D31219] text-xs font-bold uppercase tracking-wide block mb-3">Solicite uma cotação</span>
                   <h3 className="text-2xl sm:text-3xl font-bold mb-4 leading-tight">
                     Orçamento de {serviceName} para {formattedName}
                   </h3>
                   <p className="text-slate-400 text-base max-w-md leading-relaxed">
-                    Envie seu projeto ou lista de medidas. Retornamos com um levantamento técnico preliminar e estimativa de materiais para sua obra.
+                    Envie seu projeto ou lista de medidas. Consulte referências, quantidades, disponibilidade e condições comerciais com a equipe.
                   </p>
                 </div>
                 <div className="flex flex-col gap-3 shrink-0">
@@ -372,7 +373,7 @@ const LocationPage: React.FC<LocationPageProps> = ({ type, overrideSlug }) => {
                   {NEIGHBORHOODS.map(n => (
                     <Link
                       key={n}
-                      to={`/drywall-em/${normalizeLocationName(n)}`}
+                      to={`/${type === 'drywall' ? 'drywall' : 'steel-frame'}-em/${normalizeLocationName(n)}`}
                       className={`flex items-center justify-between py-2 px-3 rounded-lg transition-all text-xs font-bold ${normalizeLocationName(n) === location ? 'bg-white text-[#D31219] shadow-sm border border-[#D31219]/10' : 'text-slate-500 hover:bg-white hover:text-slate-900'}`}
                     >
                       <span className="truncate">{n}</span>

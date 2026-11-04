@@ -20,7 +20,7 @@ const EnhancedSEO: React.FC<SEOProps> = ({
   keywords = 'drywall, steel frame, curitiba, construção a seco, gesso acartonado, divisórias, forros, isolamento acústico, isolamento térmico',
   canonical,
   ogType = 'website',
-  ogImage = `${BASE_URL}/gemini_generated_image_jk8nftjk8nftjk8n.png`,
+  ogImage = `${BASE_URL}/og-ky-drywall.png`,
   schema,
   noindex = false
 }) => {
