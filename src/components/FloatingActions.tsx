@@ -41,6 +41,23 @@ export const FloatingActions: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Keep focused form fields and links above the compact floating control.
+  useEffect(() => {
+    const revealFocusedControl = (event: FocusEvent) => {
+      const target = event.target;
+      if (!(target instanceof HTMLElement) || target.closest('.ky-whatsapp-panel,.ky-whatsapp-float')) return;
+      requestAnimationFrame(() => {
+        const floating = document.querySelector('.ky-whatsapp-float')?.getBoundingClientRect();
+        const rect = target.getBoundingClientRect();
+        if (floating && rect.right > floating.left && rect.left < floating.right && rect.bottom > floating.top && rect.top < floating.bottom) {
+          window.scrollBy({ top: rect.bottom - floating.top + 16, behavior: 'instant' });
+        }
+      });
+    };
+    document.addEventListener('focusin', revealFocusedControl);
+    return () => document.removeEventListener('focusin', revealFocusedControl);
+  }, []);
+
   // Update current URL on location changes
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -144,7 +161,7 @@ export const FloatingActions: React.FC = () => {
   ];
 
   const handleAgentClick = (phone: string, name: string) => {
-    const msg = `Olá, ${name}! Acessei o site da KY Drywall (${currentUrl || BASE_URL}) e gostaria de cotação de materiais.`;
+    const msg = `Olá, ${name}! Acessei o site da KY Drywall (${window.location.href || BASE_URL}) e gostaria de cotação de materiais.`;
     window.open(`https://wa.me/${phone}?text=${encodeURIComponent(msg)}`, '_blank', 'noopener,noreferrer');
   };
 
@@ -243,7 +260,7 @@ export const FloatingActions: React.FC = () => {
 
         {/* WhatsApp Agents Menu */}
         {isWhatsAppOpen && (
-          <div ref={contactRef} role="dialog" aria-label="Contatos da KY" className="w-72 max-w-[calc(100vw-2rem)] max-h-[70vh] overflow-y-auto sm:w-80 bg-white rounded-3xl border-2 border-slate-900 shadow-2xl overflow-hidden animate-in fade-in slide-in-from-bottom-4">
+          <div ref={contactRef} role="dialog" aria-label="Contatos da KY" id="ky-whatsapp-contacts" className="ky-whatsapp-panel w-72 max-w-[calc(100vw-2rem)] overflow-y-auto sm:w-80 bg-white rounded-3xl border-2 border-slate-900 shadow-2xl">
             <div className="bg-slate-900 p-6 text-white flex justify-between items-center">
               <div className="flex items-center gap-3">
                 <div className="w-2 h-2 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.8)]"></div>
@@ -255,7 +272,7 @@ export const FloatingActions: React.FC = () => {
               <button 
                 aria-label="Fechar contatos"
                 onClick={() => setIsWhatsAppOpen(false)}
-                className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white/20 transition-colors"
+                className="w-11 h-11 shrink-0 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white/20 transition-colors"
               >
                 <X size={18} />
               </button>
@@ -303,14 +320,11 @@ export const FloatingActions: React.FC = () => {
           {/* WhatsApp Primary */}
           <button
             onClick={() => { setIsWhatsAppOpen(!isWhatsAppOpen); setIsShareOpen(false); }}
-            className="h-12 sm:h-14 px-6 bg-[#25D366] border-2 border-slate-900 rounded-full flex items-center gap-3 shadow-xl hover:brightness-110 transition-all active:scale-95 group"
-            title="Abrir WhatsApp" aria-label="Abrir contatos no WhatsApp" aria-expanded={isWhatsAppOpen}
+            className="ky-whatsapp-float"
+            title="Abrir WhatsApp" aria-label="Abrir contatos no WhatsApp" aria-expanded={isWhatsAppOpen} aria-controls="ky-whatsapp-contacts" aria-haspopup="dialog"
           >
-            <MessageCircle size={22} className="text-white group-hover:rotate-12 transition-transform" />
-            <div className="hidden sm:flex flex-col items-start leading-tight">
-              <span className="text-[10px] font-black uppercase tracking-widest text-white">WhatsApp</span>
-              <span className="text-[8px] font-bold text-white/80 uppercase">Atendimento Local</span>
-            </div>
+            <MessageCircle size={28} aria-hidden="true" />
+            <span className="ky-whatsapp-label">WhatsApp</span>
           </button>
         </div>
       </div>
