@@ -77,3 +77,8 @@
 .ky-light .bg-slate-900 :is(h2,h3,h4), .ky-light .bg-slate-950 :is(h2,h3,h4) { color: white; }
 .ky-light footer { padding-bottom: 7rem; }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }
+
+/* Action controls occupy document space instead of covering reading or form fields. */
+.ky-action-bar { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: center; gap: 1rem; padding: 1.5rem 1rem; background: #f8fafc; border-block: 1px solid #cbd5e1; }
+.ky-light .bg-slate-900 .text-slate-200 { color: #e2e8f0; }
+@media (max-width: 480px) { .ky-action-bar { flex-direction: column; align-items: center; } .ky-action-bar > div { align-items: center; max-width: 100%; } }

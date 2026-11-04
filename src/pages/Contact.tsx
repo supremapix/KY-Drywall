@@ -127,7 +127,7 @@ const Contact: React.FC = () => {
               Cotação e <span className="text-[#D31219]">Suporte</span> Técnico
             </h1>
             <p className="text-slate-600 text-lg sm:text-2xl leading-relaxed max-w-2xl font-medium">
-              Fale com nossos consultores técnicos em Curitiba para calcular o quantitativo exato da sua obra. Atendimento humano e especializado.
+              Converse com a equipe em Curitiba sobre sua lista de materiais. Quantidades e especificações devem ser conferidas com o projeto e o responsável técnico.
             </p>
           </div>
         </div>
@@ -207,14 +207,14 @@ const Contact: React.FC = () => {
 
                   <div className="relative z-10">
                     <h2 className="text-3xl font-black tracking-tight mb-6">
-                      Envie Seu <span className="text-[#D31219]">Projeto</span>
+                      Envie Seu <span className="text-white">Projeto</span>
                     </h2>
-                    <p className="text-slate-400 text-lg leading-relaxed mb-12">
-                      Informe os detalhes da sua obra ou anexe sua lista de materiais. Retornamos com o quantitativo técnico exato.
+                    <p className="text-slate-200 text-lg leading-relaxed mb-12">
+                      Informe os detalhes da sua obra e sua lista de materiais. A equipe poderá orientar a cotação; medidas, quantidades e especificações precisam ser validadas conforme o projeto.
                     </p>
                     <div className="space-y-6">
                       {[
-                        'Cotação enviada no mesmo dia',
+                        'Consulte o prazo de retorno da cotação',
                         'Apoio no cálculo de modulação',
                         'Preços direto de distribuidora'
                       ].map((text, i) => (
@@ -227,9 +227,9 @@ const Contact: React.FC = () => {
                   </div>
 
                   <div className="mt-16 pt-8 border-t border-slate-800 relative z-10">
-                    <p className="text-[10px] uppercase font-black text-slate-500 mb-2 tracking-[0.2em]">Canais Oficiais Curitiba:</p>
+                    <p className="text-[10px] uppercase font-black text-slate-200 mb-2 tracking-[0.2em]">Canais Oficiais Curitiba:</p>
                     <p className="text-2xl font-black text-white leading-none">{COMPANY_INFO.phone}</p>
-                    <p className="text-xs text-slate-400 mt-2 font-medium">Rod. BR-277, 3641 - Cajuru</p>
+                    <p className="text-xs text-slate-200 mt-2 font-medium">Rod. BR-277, 3641 - Cajuru</p>
                   </div>
                 </div>
 

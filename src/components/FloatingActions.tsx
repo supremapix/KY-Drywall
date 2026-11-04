@@ -149,9 +149,9 @@ export const FloatingActions: React.FC = () => {
   };
 
   return (
-    <>
+    <section aria-label="Compartilhamento e contato rápido" className="ky-action-bar">
       {/* LEFT: SHARE ACTION */}
-      <div className="fixed bottom-4 left-4 z-50 flex flex-col items-start gap-4">
+      <div className="relative flex flex-col items-start gap-4">
         {/* Share Popup - Blueprint Style */}
         {isShareOpen && (
           <div ref={shareRef} role="dialog" aria-label="Compartilhar esta página" className="w-72 max-w-[calc(100vw-2rem)] max-h-[70vh] overflow-y-auto sm:w-80 bg-white rounded-3xl border-2 border-slate-900 p-6 shadow-2xl animate-in fade-in slide-in-from-bottom-4 duration-300">
@@ -229,7 +229,7 @@ export const FloatingActions: React.FC = () => {
       </div>
 
       {/* RIGHT: CONTACT ACTIONS */}
-      <div className="fixed bottom-4 right-4 z-50 flex flex-col items-end gap-4">
+      <div className="relative flex flex-col items-end gap-4">
         {/* Back to Top */}
         {showScrollTop && (
           <button
@@ -249,7 +249,7 @@ export const FloatingActions: React.FC = () => {
                 <div className="w-2 h-2 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.8)]"></div>
                 <div>
                   <h4 className="text-[11px] font-black uppercase tracking-widest leading-none">Fale com a equipe</h4>
-                  <p className="text-[10px] text-slate-400 mt-1">Consulte os horários de atendimento</p>
+                  <p className="text-[10px] text-slate-200 mt-1">Consulte os horários de atendimento</p>
                 </div>
               </div>
               <button 
@@ -314,7 +314,7 @@ export const FloatingActions: React.FC = () => {
           </button>
         </div>
       </div>
-    </>
+    </section>
   );
 };
 

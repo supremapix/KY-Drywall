@@ -226,7 +226,7 @@ const LocationPage: React.FC<LocationPageProps> = ({ type, overrideSlug }) => {
                   {
                     title: `Normas ABNT`,
                     icon: ShieldCheck,
-                    text: `Atendimento integral às normas NBR 15758 (Drywall) e NBR 16970 (Steel Frame).`
+                    text: `O projeto e a execução devem seguir as normas aplicáveis e as orientações dos fabricantes. Consulte o responsável técnico sobre os requisitos de cada sistema.`
                   },
                   {
                     title: `Obra Limpa`,
