@@ -25,3 +25,11 @@
 - [Artigos](https://www.kydrywall.com.br/blog)
 - [Contato e orçamento](https://www.kydrywall.com.br/contato)
 - [Canais oficiais e QR Code](https://www.kydrywall.com.br/links)
+
+## Navegação regional
+- [Guia dos municípios e localidades](https://www.kydrywall.com.br/regiao-metropolitana): denominações documentadas e fontes territoriais; consulte condições de atendimento para o endereço.
+- [Índice de páginas por sistema e região](https://www.kydrywall.com.br/sitemap): links para Drywall, Steel Frame, produtos e artigos.
+- [Sitemap XML](https://www.kydrywall.com.br/sitemap.xml): inventário de URLs canônicas.
+
+## Limites das informações
+A loja física é única, no Cajuru. Páginas locais não representam filiais ou garantia de entrega. Projeto, dimensionamento, instalação, disponibilidade e frete exigem confirmação com os responsáveis. Este arquivo é um índice auxiliar; consulte o conteúdo e os contatos das páginas oficiais.

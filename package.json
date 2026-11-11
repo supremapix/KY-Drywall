@@ -12,7 +12,8 @@
     "verify:seo": "node src/scripts/verify-seo.mjs",
     "css": "tailwindcss -i ./src/tailwind.css -o ./public/styles.css --minify",
     "predev": "npm run css",
-    "verify:regional": "node src/scripts/verify-regional.mjs"
+    "verify:regional": "node src/scripts/verify-regional.mjs",
+    "verify:readability": "node src/scripts/verify-readability.mjs"
   },
   "dependencies": {
     "lucide-react": "^0.475.0",

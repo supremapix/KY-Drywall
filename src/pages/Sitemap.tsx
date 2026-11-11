@@ -221,9 +221,11 @@ const Sitemap: React.FC = () => {
                 </h3>
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-3 text-xs max-h-[400px] overflow-y-auto pr-4 custom-scrollbar font-bold text-slate-500">
                   {NEIGHBORHOODS.map(n => (
-                    <Link key={n} to={`/drywall-em/${normalizeLocationName(n)}`} className="hover:text-[#D31219] transition-colors py-1 border-b border-slate-50">
-                      • {n}
-                    </Link>
+                    <div key={n} className="py-2 border-b border-slate-100">
+                      <span className="block text-slate-900">{n}</span>
+                      <Link to={`/drywall-em/${normalizeLocationName(n)}`} className="inline-block underline py-2 mr-3 hover:text-[#D31219]">Drywall</Link>
+                      <Link to={`/steel-frame-em/${normalizeLocationName(n)}`} className="inline-block underline py-2 hover:text-[#D31219]">Steel Frame</Link>
+                    </div>
                   ))}
                 </div>
               </div>
@@ -235,9 +237,11 @@ const Sitemap: React.FC = () => {
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 text-xs max-h-[400px] overflow-y-auto pr-4 custom-scrollbar font-bold text-slate-500">
                   {CITIES_RMC.map(c => (
-                    <Link key={c} to={`/drywall-em/${normalizeLocationName(c)}`} className="hover:text-[#D31219] transition-colors py-1 border-b border-slate-50">
-                      • {c}
-                    </Link>
+                    <div key={c} className="py-2 border-b border-slate-100">
+                      <span className="block text-slate-900">{c}</span>
+                      <Link to={`/drywall-em/${normalizeLocationName(c)}`} className="inline-block underline py-2 mr-3 hover:text-[#D31219]">Drywall</Link>
+                      <Link to={`/steel-frame-em/${normalizeLocationName(c)}`} className="inline-block underline py-2 hover:text-[#D31219]">Steel Frame</Link>
+                    </div>
                   ))}
                 </div>
               </div>

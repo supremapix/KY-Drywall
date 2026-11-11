@@ -304,6 +304,13 @@ const LocationPage: React.FC<LocationPageProps> = ({ type, overrideSlug }) => {
               </div>
             </div>
 
+            <section aria-label="Compare os sistemas para sua obra" className="border border-slate-200 rounded-sm p-6">
+              <h2 className="text-xl font-bold mb-3">Compare materiais para {formattedName}</h2>
+              <p className="mb-3">Drywall atende vedações e forros internos; Steel Frame envolve estrutura e fechamentos definidos em projeto. Consulte o guia do outro sistema antes de preparar sua lista.</p>
+              <Link className="underline font-bold text-red-700 inline-block py-2" to={`/${type === 'drywall' ? 'steel-frame' : 'drywall'}-em/${location}`}>
+                {type === 'drywall' ? 'Steel Frame' : 'Drywall'} para {formattedName}
+              </Link>
+            </section>
             <LocalPlanning name={formattedName} type={type} />
             {/* In-page CTA */}
             <div className="bg-slate-900 p-8 md:p-12 rounded-sm text-white relative overflow-hidden group">

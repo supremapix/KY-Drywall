@@ -71,10 +71,7 @@ const EnhancedSEO: React.FC<SEOProps> = ({
     if (noindex) {
       updateOrCreateMeta('meta[name="robots"]', 'content', 'noindex, follow');
     } else {
-      const robotsMeta = document.querySelector('meta[name="robots"]');
-      if (robotsMeta) {
-        robotsMeta.remove();
-      }
+      updateOrCreateMeta('meta[name="robots"]', 'content', 'index, follow, max-image-preview:large');
     }
 
     updateOrCreateLink('canonical', url);

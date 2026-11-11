@@ -267,7 +267,7 @@ const BlogPostPage: React.FC = () => {
     '@type': 'BlogPosting',
     headline: post.title,
     description: post.excerpt,
-    image: post.img,
+    image: new URL(post.img, BASE_URL).href,
     author: {
       '@type': 'Organization',
       name: 'KY Drywall & Steel Frame',
@@ -298,6 +298,7 @@ const BlogPostPage: React.FC = () => {
         keywords={`${post.tag}, drywall curitiba, steel frame curitiba, construcao a seco, custos m2 steel frame, fornecedor drywall`}
         canonical={`${BASE_URL}/blog/${post.id}`}
         ogType="article"
+        ogImage={post.img}
         schema={blogPostSchema}
       />
 

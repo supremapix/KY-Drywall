@@ -90,7 +90,7 @@ const FAQ_DATA: FAQSection[] = [
       },
       {
         question: 'Posso fazer curvas com drywall?',
-        answer: "Sim! O drywall pode ser curvado para criar paredes curvas, arcos, nichos e formas orgânicas. Existem técnicas com cortes na placa e com molhagem para curvas mais acentuadas. A KY Drywall executa projetos curvos."
+        answer: "Sistemas de drywall podem formar superfícies curvas quando a placa, a estrutura e o raio de curvatura seguem o projeto e as instruções do fabricante. Não corte nem umedeça chapas sem verificar o procedimento indicado para o produto. Envie o desenho à equipe para consultar os materiais e confirmar se há atendimento para a execução desejada."
       },
       {
         question: 'O que é forro de drywall?',
