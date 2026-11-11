@@ -54,6 +54,14 @@ const BLOG_CONTENT: Record<string, BlogPostContent> = {
       {
         "title": "Umidade e conforto",
         "content": "O desempenho depende da composição das paredes e da cobertura, do isolamento, das aberturas e da execução. Barreiras, impermeabilização, ventilação e manutenção precisam ser previstas para as condições do local."
+      },
+      {
+        "title": "Como transformar a ideia em um pedido de materiais",
+        "content": "Comece separando arquitetura, estrutura e instalações. Uma planta com medidas ajuda a conversar sobre a obra, mas não define sozinha espessuras de aço, ancoragens ou contraventamentos. Peça ao responsável técnico uma lista com códigos, comprimentos, quantidades e especificações. Com esse levantamento, a loja pode cotar os componentes sem assumir decisões de engenharia que dependem do projeto."
+      },
+      {
+        "title": "Planejamento de entrega em Curitiba e região",
+        "content": "Dividir a entrega por etapas pode ajudar a organizar o canteiro, mas deve ser combinado antes da compra. Informe o CEP, restrições de acesso, espaço de descarga e um local seco para guardar os materiais. Em reforma de imóvel ocupado, combine também como as áreas de trabalho serão isoladas. Não considere frete ou içamento incluídos sem confirmação na proposta."
       }
     ]
   },
@@ -75,6 +83,14 @@ const BLOG_CONTENT: Record<string, BlogPostContent> = {
       {
         "title": "Detalhes de execução",
         "content": "Planeje reforços para cargas suspensas, pontos elétricos e hidráulicos e encontros com outros elementos. Siga os manuais do sistema e confirme o desempenho exigido com o profissional responsável."
+      },
+      {
+        "title": "Ruído da conversa, impacto e vibração são problemas diferentes",
+        "content": "Antes de escolher a parede, descreva o incômodo: conversa do cômodo ao lado, equipamentos, passos ou vibração. O som pode passar pela divisória, por portas e por encontros com piso, teto e outras paredes. Por isso, adicionar lã não resolve necessariamente todos os caminhos de transmissão. O projeto deve avaliar o conjunto e a execução precisa preservar as vedações previstas."
+      },
+      {
+        "title": "O que pedir ao comparar duas propostas de drywall",
+        "content": "Compare tipo e quantidade de chapas por face, largura e modulação dos perfis, preenchimento e tratamento das interfaces. Verifique se portas, caixas elétricas e passagens estão contempladas. Resultados de ensaios se aplicam à composição ensaiada, não a qualquer parede com o mesmo nome. Para objetivos específicos de conforto, peça ao profissional a justificativa técnica da solução."
       }
     ]
   },
@@ -96,6 +112,14 @@ const BLOG_CONTENT: Record<string, BlogPostContent> = {
       {
         "title": "Manutenção e garantia",
         "content": "Solicite as instruções de inspeção e manutenção, o documento de garantia do modelo e as condições do serviço. Não presuma uma vida útil ou resistência ao vento igual para todos os sistemas."
+      },
+      {
+        "title": "Encontros que merecem atenção no orçamento",
+        "content": "Chaminés, platibandas, rufos, calhas e transições entre águas alteram o detalhamento da cobertura. Uma proposta baseada apenas na área pode deixar esses itens de fora. Entregue desenhos e fotos ao responsável pela especificação e peça uma lista de base, subcobertura, telhas, fixadores e arremates. Confirme quais componentes pertencem ao sistema escolhido."
+      },
+      {
+        "title": "Como organizar a inspeção sem improvisos",
+        "content": "Observe do solo sinais como deslocamentos, manchas no interior e problemas aparentes nas calhas. Subir em telhados exige avaliação de acesso e medidas de proteção; não transforme uma inspeção em uma tarefa de risco. Acione profissional preparado para examinar a cobertura e documente o problema antes de comprar peças de reposição."
       }
     ]
   },
@@ -117,6 +141,14 @@ const BLOG_CONTENT: Record<string, BlogPostContent> = {
       {
         "title": "Solicite uma proposta",
         "content": "Envie plantas, medidas e endereço da obra. A KY pode confirmar itens e condições comerciais para sua lista. Valores e prazos devem constar na proposta, sem pressupor economia em relação a outro sistema."
+      },
+      {
+        "title": "Preço por metro quadrado: por que a comparação pode enganar",
+        "content": "Duas propostas com a mesma área podem contemplar coisas diferentes. Uma pode incluir apenas a estrutura; outra, fundação, fechamento, instalações e pintura. Monte uma tabela com essas etapas e marque o que está incluído, excluído ou ainda depende de projeto. Compare também especificações, responsabilidade técnica, transporte e condições de pagamento, não apenas o total anunciado."
+      },
+      {
+        "title": "Como lidar com alterações durante a obra",
+        "content": "Uma mudança de janela, revestimento ou carga pode alterar componentes e mão de obra. Registre o pedido, solicite avaliação técnica quando necessária e aprove um orçamento revisado antes de executar. Separar o escopo inicial dos adicionais facilita acompanhar os custos e evita confundir aumento de quantidade com variação do preço unitário."
       }
     ]
   },
@@ -138,6 +170,14 @@ const BLOG_CONTENT: Record<string, BlogPostContent> = {
       {
         "title": "Manutenção prevista",
         "content": "Solicite um plano de inspeção e manutenção que contemple cobertura, arremates, juntas, revestimentos e pontos de entrada de água. Alterações posteriores devem ser avaliadas por profissional habilitado."
+      },
+      {
+        "title": "Perguntas úteis antes de aprovar o sistema",
+        "content": "Quem dimensiona a estrutura e quem responde pela execução? Como ficam ancoragens, encontros com a fundação e proteção contra água? Quais documentos comprovam as características dos componentes? Como serão tratados vãos, cargas suspensas e instalações? Leve essas perguntas à equipe e solicite respostas ligadas ao seu projeto, em vez de aceitar garantias genéricas sobre o método construtivo."
+      },
+      {
+        "title": "Reforma futura também entra no planejamento",
+        "content": "Defina onde poderão ficar armários, bancadas e equipamentos antes de fechar as paredes. Guarde registros de reforços e instalações para futuras intervenções. Cortar ou remover um perfil sem identificar sua função pode comprometer a solução. Alterações de vãos e cargas devem voltar ao responsável técnico para avaliação."
       }
     ]
   },
@@ -159,6 +199,14 @@ const BLOG_CONTENT: Record<string, BlogPostContent> = {
       {
         "title": "Instalações e entrega",
         "content": "Antes de fechar as paredes, confira instalações, reforços e isolamento. Registre inspeções e organize documentos, orientações de uso e manutenção. O cronograma depende do porte da obra e dos contratos."
+      },
+      {
+        "title": "Pontos de conferência antes de esconder componentes",
+        "content": "Planeje verificações antes do fechamento: posição dos perfis, ligações, reforços, passagens e isolamento. Instalações devem ser conferidas por seus responsáveis antes de ficarem inacessíveis. Fotos identificadas por ambiente ajudam a documentar o executado, mas não substituem inspeção técnica. Evite antecipar o fechamento apenas para ganhar aparência de avanço."
+      },
+      {
+        "title": "Compras por etapa sem interromper o cronograma",
+        "content": "Relacione a sequência de montagem com a entrega dos materiais. Componentes complementares, como fitas e fixadores, podem ser necessários antes do que parece. Confirme disponibilidade e prazo com antecedência e mantenha a lista revisada com a equipe da obra. Toda troca de especificação deve ser validada antes da compra."
       }
     ]
   },
@@ -180,6 +228,14 @@ const BLOG_CONTENT: Record<string, BlogPostContent> = {
       {
         "title": "Recebimento e armazenamento",
         "content": "Planeje acesso e descarga e reserve um local adequado de armazenamento. Confira itens e embalagens no recebimento e siga as orientações do fabricante para movimentar e proteger os materiais."
+      },
+      {
+        "title": "Exemplo de pedido que reduz dúvidas",
+        "content": "Em vez de pedir apenas material para uma parede, descreva comprimento, altura, ambiente, portas e objetivo do sistema. Anexe a lista do projetista com tipo de chapa, dimensões, perfis, fixadores e acabamento. Para reposição, envie foto legível da embalagem ou código do item. Não confie apenas na aparência para identificar um componente equivalente."
+      },
+      {
+        "title": "Retirada, transporte e conferência",
+        "content": "Antes de sair para a loja do Cajuru, confirme o pedido, as medidas e a forma de carregamento. No recebimento, compare os itens com o documento de entrega e registre divergências ou avarias identificadas. Combine previamente quem movimenta o material até o ambiente de uso; entrega no endereço e transporte interno não são necessariamente o mesmo serviço."
       }
     ]
   },
@@ -201,6 +257,14 @@ const BLOG_CONTENT: Record<string, BlogPostContent> = {
       {
         "title": "Valide a proposta",
         "content": "Confirme as quantidades com o responsável pelo projeto e solicite preço, disponibilidade e condições por escrito. Este guia não publica uma tabela de preços ou substitui orçamento da obra."
+      },
+      {
+        "title": "Área de parede não é quantidade final de chapas",
+        "content": "Uma parede de 4 m por 2,70 m tem 10,8 m² de uma face geométrica. Isso não é uma lista de compra: o sistema pode ter duas faces, mais de uma camada, portas, recortes e perdas de paginação. Use o exemplo apenas para entender a medida. Quantidades e aproveitamento precisam ser levantados conforme o projeto e as dimensões comerciais dos componentes."
+      },
+      {
+        "title": "Transforme o orçamento em uma lista conferível",
+        "content": "Peça descrição, unidade, quantidade e preço de cada item, além do escopo dos serviços. Indique se pintura, preparação da base, remoção de material anterior e descarte estão incluídos. Para comparar lojas ou equipes, envie a mesma lista revisada a todas. Diferenças de composição explicam parte das diferenças de preço e precisam ficar visíveis."
       }
     ]
   },
@@ -222,6 +286,14 @@ const BLOG_CONTENT: Record<string, BlogPostContent> = {
       {
         "title": "Compare soluções",
         "content": "Peça ao projetista a avaliação das alternativas para a mesma edificação. Não é possível prometer economia de aquecimento ou superioridade universal de um método sem analisar a composição e as condições de uso."
+      },
+      {
+        "title": "Umidade precisa de diagnóstico, não de promessa",
+        "content": "Manchas podem estar relacionadas a infiltração, vazamento ou condensação, que exigem abordagens diferentes. Antes de acrescentar revestimento ou trocar uma placa, investigue a origem com profissional. Fechar uma superfície ainda úmida pode esconder o problema. A solução deve considerar interfaces, ventilação, uso do ambiente e características da construção."
+      },
+      {
+        "title": "O que levar à conversa sobre conforto",
+        "content": "Informe orientação da fachada, tamanho de janelas, uso dos cômodos e os períodos em que o desconforto aparece. Cobertura, esquadrias e vedação influenciam o resultado tanto quanto o fechamento da parede. Para o mesmo imóvel em Curitiba, compare soluções completas com o responsável técnico e solicite as especificações antes de cotar os materiais."
       }
     ]
   },
@@ -243,6 +315,14 @@ const BLOG_CONTENT: Record<string, BlogPostContent> = {
       {
         "title": "RF: desempenho do conjunto",
         "content": "Chapas RF integram sistemas com requisitos de resistência ao fogo. O tempo de resistência é determinado pela composição ensaiada, incluindo fixações, juntas e instalações, não apenas pela chapa isolada."
+      },
+      {
+        "title": "A escolha não termina na cor da placa",
+        "content": "ST, RU e RF identificam características distintas, mas espessura, quantidade de camadas, perfis e juntas continuam importantes. Um banheiro pode exigir cuidados com água e acabamento além da placa RU; uma composição com exigência ao fogo precisa ser documentada. Não substitua uma especificação por outra com base apenas na cor ou no preço."
+      },
+      {
+        "title": "Como pedir a placa correta",
+        "content": "Informe o nome do modelo, dimensões, espessura, quantidade e aplicação. Se houver exigência de desempenho, encaminhe a composição definida no projeto. Confira acessórios compatíveis, transporte e armazenamento para que a chapa chegue protegida à obra. A KY pode confirmar os itens comercializados; requisitos de projeto devem ser avaliados pelo profissional responsável."
       }
     ]
   }

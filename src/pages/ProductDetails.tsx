@@ -6,6 +6,7 @@ import { ChevronRight, MessageCircle, Star, Shield, Truck, PhoneCall, Info, Plus
 import { PRODUCTS, getRandomCTA, BASE_URL } from '../constants';
 import EnhancedSEO from '../components/EnhancedSEO';
 import NotFound from './NotFound';
+import { productBuyingNotes } from '../productBuyingNotes';
 import { Review, QuoteItem } from '../types';
 
 const ProductDetails: React.FC = () => {
@@ -251,6 +252,13 @@ const ProductDetails: React.FC = () => {
                     )}
                   </div>
                 )}
+
+                {productBuyingNotes[product.id] && <section className="ky-card p-6 rounded-sm border border-slate-200">
+                  <h2 className="text-xl font-bold text-slate-900 mb-3">Antes de comprar {product.name}</h2>
+                  <p className="text-base text-slate-600 leading-relaxed">{productBuyingNotes[product.id]}</p>
+                  <p className="text-base text-slate-600 leading-relaxed mt-3">Para consultar este item na KY, envie a aplicação, a quantidade e o endereço da obra. Estoque, medidas comerciais e entrega em Curitiba ou região são confirmados na proposta.</p>
+                  <Link to="/blog/b7" className="inline-block mt-4 font-bold text-[#D31219] underline">Como organizar a lista de materiais</Link>
+                </section>}
 
                 {product.faq && product.faq.length > 0 && (
                   <div className="space-y-6">
