@@ -17,6 +17,7 @@ import {
 } from 'lucide-react';
 import { BLOG_POSTS, BASE_URL, COMPANY_INFO } from '../constants';
 import NotFound from './NotFound';
+import { EDITORIAL_UPDATES } from '../editorialUpdates';
 import EnhancedSEO from '../components/EnhancedSEO';
 
 interface BlogSection {
@@ -336,7 +337,9 @@ const BlogPostPage: React.FC = () => {
     [postId]
   );
 
-  const content = postId ? BLOG_CONTENT[postId] : null;
+  const editorial = EDITORIAL_UPDATES[postId as keyof typeof EDITORIAL_UPDATES];
+  const baseContent = postId ? BLOG_CONTENT[postId] : null;
+  const content = editorial && baseContent ? { ...baseContent, sections: editorial.sections, faq: editorial.faq } : baseContent;
 
   if (!post) return <NotFound />;
 
@@ -346,6 +349,7 @@ const BlogPostPage: React.FC = () => {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
     headline: post.title,
+    ...(editorial ? { dateModified: '2026-11-14' } : {}),
     description: post.excerpt,
     image: new URL(post.img, BASE_URL).href,
     author: {
@@ -404,7 +408,7 @@ const BlogPostPage: React.FC = () => {
             <div className="flex flex-wrap items-center gap-8 text-slate-400 text-xs font-bold uppercase tracking-wide pt-10 border-t border-slate-50">
               <div className="flex items-center gap-2.5">
                 <Clock size={16} className="text-[#D31219]" />
-                <span>{post.date}</span>
+                <span>{editorial ? 'Atualizado em 14/11/2026' : post.date}</span>
               </div>
               <div className="flex items-center gap-2.5">
                 <Building2 size={16} className="text-slate-400" />
@@ -412,7 +416,7 @@ const BlogPostPage: React.FC = () => {
               </div>
               <div className="flex items-center gap-2.5">
                 <ShieldCheck size={16} className="text-emerald-600" />
-                <span>NORMAS ABNT</span>
+                <span>{editorial ? 'GUIA INFORMATIVO' : 'NORMAS ABNT'}</span>
               </div>
             </div>
           </div>
@@ -423,20 +427,16 @@ const BlogPostPage: React.FC = () => {
       <article className="py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
-            {/* Featured Image */}
-            <div className="rounded-sm overflow-hidden mb-12 border border-slate-200 shadow-none bg-slate-900 aspect-video">
-              <img
-                src={post.img}
-                alt={post.imageAlt || post.title}
-                className="w-full h-full object-cover"
-                loading="eager"
-              /><small className="ky-image-caption">{post.imageCaption}</small>
-            </div>
+            <figure className="rounded-sm overflow-hidden mb-12 border border-slate-200 bg-white">
+              <img src={post.img} alt={post.imageAlt || post.title} className="w-full aspect-video object-cover" loading="eager" />
+              {editorial && <div className="flex items-center justify-between gap-3 px-4 py-3 border-t-4 border-red-600"><img src="/logotipo-ky-drywall.png" alt="KY Drywall" className="w-28 sm:w-40 h-auto" /><a href="tel:+554135284232" className="font-bold text-slate-950 text-base sm:text-xl">(41) 3528-4232</a></div>}
+              <figcaption className="text-xs text-slate-600 px-4 py-2">{post.imageCaption}</figcaption>
+            </figure>
 
             <div className="space-y-12">
               {/* Excerpt Lead */}
               <p className="text-xl sm:text-2xl text-slate-900 font-bold leading-relaxed pb-8 border-b border-slate-100">
-                {post.excerpt}
+                {editorial?.lead || post.excerpt}
               </p>
 
               {/* Quick Highlights Box */}
@@ -516,11 +516,12 @@ const BlogPostPage: React.FC = () => {
                 </div>
               )}
 
+              {editorial && <aside className="border-t border-slate-200 pt-8 space-y-3"><h2 className="text-xl font-bold">Fontes e atualização editorial</h2><p>Atualizado em 14 de novembro de 2026. Conteúdo informativo, sem substituir a especificação do responsável técnico.</p><ul>{editorial.sources.map(source => <li key={source.url}><a className="underline text-red-700" href={source.url} target="_blank" rel="noreferrer">{source.title}</a></li>)}</ul><p>Continue: <Link className="underline" to={postId === 'b10' ? '/blog/b8' : '/blog/b10'}>{postId === 'b10' ? 'Como organizar o orçamento' : 'Como escolher as chapas'}</Link> · <Link className="underline" to="/produtos">Catálogo de materiais</Link></p></aside>}
               {/* Action Card CTA */}
               <div className="bg-slate-900 rounded-sm p-8 md:p-12 text-white mt-16 border border-slate-800 relative overflow-hidden group shadow-none">
                 <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-10">
                   <div className="text-center md:text-left">
-                    <span className="text-[#D31219] text-xs font-bold uppercase tracking-wide block mb-4">Suporte de Engenharia</span>
+                    <span className="text-[#D31219] text-xs font-bold uppercase tracking-wide block mb-4">Atendimento de materiais</span>
                     <h3 className="text-2xl sm:text-3xl font-bold mb-4 leading-tight">
                       Cotação de materiais
                     </h3>
