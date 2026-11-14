@@ -7,6 +7,13 @@ import ProductCard from '../components/ProductCard';
 import SearchSuggestions from '../components/SearchSuggestions';
 import EnhancedSEO from '../components/EnhancedSEO';
 
+const normalizeSearch = (value: string) => value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
+const matchesProductSearch = (product: typeof PRODUCTS[number], query: string) => {
+  const terms = normalizeSearch(query).split(/\s+/).filter(Boolean);
+  const searchable = normalizeSearch([product.name, product.category, product.description, ...product.specs].join(' '));
+  return terms.every(term => searchable.includes(term));
+};
+
 const ProductList: React.FC = () => {
   const [searchParams] = useSearchParams();
   const [searchTerm, setSearchTerm] = useState('');
@@ -36,23 +43,14 @@ const ProductList: React.FC = () => {
           '@type': 'Brand',
           name: product.specs.find(s => s.includes('Marca:'))?.replace('Marca: ', '') || 'KY Drywall'
         },
-        category: product.category,
-        offers: {
-          '@type': 'Offer',
-          availability: 'https://schema.org/InStock',
-          priceCurrency: 'BRL',
-          seller: {
-            '@type': 'Organization',
-            name: 'KY Drywall & Steel Frame'
-          }
-        }
+        category: product.category
       }
     }))
   };
 
   useEffect(() => {
     const cat = searchParams.get('cat');
-    if (cat) setSelectedCategory(cat);
+    setSelectedCategory(cat && CATEGORIES.some(category => category === cat) ? cat : 'Todos');
     setCta(getRandomCTA());
   }, [searchParams]);
 
@@ -68,7 +66,7 @@ const ProductList: React.FC = () => {
 
   const filteredProducts = useMemo(() => {
     return PRODUCTS.filter((product) => {
-      const matchesSearch = product.name.toLowerCase().includes(searchTerm.toLowerCase());
+      const matchesSearch = matchesProductSearch(product, searchTerm);
       const matchesCategory = selectedCategory === 'Todos' || product.category === selectedCategory;
       return matchesSearch && matchesCategory;
     }).sort((a, b) => {
@@ -81,7 +79,7 @@ const ProductList: React.FC = () => {
   const searchSuggestions = useMemo(() => {
     if (searchTerm.length < 2) return [];
     return PRODUCTS.filter(p =>
-      p.name.toLowerCase().includes(searchTerm.toLowerCase())
+      matchesProductSearch(p, searchTerm)
     ).slice(0, 6);
   }, [searchTerm]);
 
@@ -89,7 +87,7 @@ const ProductList: React.FC = () => {
     <div className="ky-interior-page bg-[#f8fafc] min-h-screen pb-20">
       <EnhancedSEO
         title="Catálogo de Materiais Drywall e Steel Frame | KY Drywall"
-        description="Confira nosso catálogo completo: placas, perfis Barbieri, massas Holdflex e isolamentos Isover. Pronta entrega direto da BR-277 em Curitiba."
+        description="Confira nosso catálogo completo: placas, perfis Barbieri, massas Holdflex e isolamentos Isover. Consulte disponibilidade, preços e entrega com a equipe em Curitiba."
         keywords="produtos drywall curitiba, catálogo steel frame, placas drywall, perfis metálicos, massa holdflex, perfis barbieri, lã de pet, parafusos drywall, materiais construção seco"
         canonical={`${BASE_URL}/produtos`}
         ogType="website"
@@ -203,6 +201,7 @@ const ProductList: React.FC = () => {
                 <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" size={18} />
                 <input
                   type="text"
+                  aria-label="Buscar materiais no catálogo"
                   placeholder="O que você está procurando hoje?"
                   className="w-full pl-12 pr-4 py-3.5 bg-slate-50 border border-slate-200 rounded-xl text-sm font-bold placeholder:text-slate-400 focus:outline-none focus:border-[#D31219] focus:bg-white transition-all shadow-inner"
                   value={searchTerm}
@@ -225,6 +224,7 @@ const ProductList: React.FC = () => {
 
                 <select
                   className="w-full md:w-auto bg-slate-50 border border-slate-200 rounded-xl px-4 py-3.5 text-xs font-bold uppercase tracking-widest focus:outline-none focus:border-[#D31219] text-slate-700 cursor-pointer hover:bg-white transition-colors"
+                  aria-label="Ordenar materiais"
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value as any)}
                 >
