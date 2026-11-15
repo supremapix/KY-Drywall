@@ -17,6 +17,7 @@ import {
 } from 'lucide-react';
 import { BLOG_POSTS, BASE_URL, COMPANY_INFO } from '../constants';
 import NotFound from './NotFound';
+import { COST_UPDATE } from '../editorialCost';
 import { ROOF_UPDATE } from '../editorialRoof';
 import { BUYING_UPDATE } from '../editorialBuying';
 import { ACOUSTIC_UPDATE } from '../editorialAcoustics';
@@ -340,7 +341,7 @@ const BlogPostPage: React.FC = () => {
     [postId]
   );
 
-  const editorial = postId === 'b3' ? ROOF_UPDATE : postId === 'b7' ? BUYING_UPDATE : postId === 'b2' ? ACOUSTIC_UPDATE : EDITORIAL_UPDATES[postId as keyof typeof EDITORIAL_UPDATES];
+  const editorial = postId === 'b4' ? COST_UPDATE : postId === 'b3' ? ROOF_UPDATE : postId === 'b7' ? BUYING_UPDATE : postId === 'b2' ? ACOUSTIC_UPDATE : EDITORIAL_UPDATES[postId as keyof typeof EDITORIAL_UPDATES];
   const baseContent = postId ? BLOG_CONTENT[postId] : null;
   const content = editorial && baseContent ? { ...baseContent, sections: editorial.sections, faq: editorial.faq } : baseContent;
 
@@ -352,7 +353,7 @@ const BlogPostPage: React.FC = () => {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
     headline: post.title,
-    ...(editorial ? { dateModified: (postId === 'b2' || postId === 'b7' || postId === 'b3') ? '2026-11-15' : '2026-11-14' } : {}),
+    ...(editorial ? { dateModified: (postId === 'b2' || postId === 'b7' || postId === 'b3' || postId === 'b4') ? '2026-11-15' : '2026-11-14' } : {}),
     description: post.excerpt,
     image: new URL(post.img, BASE_URL).href,
     author: {
@@ -411,7 +412,7 @@ const BlogPostPage: React.FC = () => {
             <div className="flex flex-wrap items-center gap-8 text-slate-400 text-xs font-bold uppercase tracking-wide pt-10 border-t border-slate-50">
               <div className="flex items-center gap-2.5">
                 <Clock size={16} className="text-[#D31219]" />
-                <span>{editorial ? ((postId === 'b2' || postId === 'b7' || postId === 'b3') ? 'Atualizado em 15/11/2026' : 'Atualizado em 14/11/2026') : post.date}</span>
+                <span>{editorial ? ((postId === 'b2' || postId === 'b7' || postId === 'b3' || postId === 'b4') ? 'Atualizado em 15/11/2026' : 'Atualizado em 14/11/2026') : post.date}</span>
               </div>
               <div className="flex items-center gap-2.5">
                 <Building2 size={16} className="text-slate-400" />
@@ -519,7 +520,7 @@ const BlogPostPage: React.FC = () => {
                 </div>
               )}
 
-              {editorial && <aside className="border-t border-slate-200 pt-8 space-y-3"><h2 className="text-xl font-bold">Fontes e atualização editorial</h2><p>Atualizado em {(postId === 'b2' || postId === 'b7' || postId === 'b3') ? '15' : '14'} de novembro de 2026. Conteúdo informativo, sem substituir a especificação do responsável técnico.</p><ul>{editorial.sources.map(source => <li key={source.url}><a className="underline text-red-700" href={source.url} target="_blank" rel="noreferrer">{source.title}</a></li>)}</ul><p>Continue: <Link className="underline" to={postId === 'b10' ? '/blog/b8' : '/blog/b10'}>{postId === 'b10' ? 'Como organizar o orçamento' : 'Como escolher as chapas'}</Link> · <Link className="underline" to="/produtos">Catálogo de materiais</Link></p></aside>}
+              {editorial && <aside className="border-t border-slate-200 pt-8 space-y-3"><h2 className="text-xl font-bold">Fontes e atualização editorial</h2><p>Atualizado em {(postId === 'b2' || postId === 'b7' || postId === 'b3' || postId === 'b4') ? '15' : '14'} de novembro de 2026. Conteúdo informativo, sem substituir a especificação do responsável técnico.</p><ul>{editorial.sources.map(source => <li key={source.url}><a className="underline text-red-700" href={source.url} target="_blank" rel="noreferrer">{source.title}</a></li>)}</ul><p>Continue: <Link className="underline" to={postId === 'b10' ? '/blog/b8' : '/blog/b10'}>{postId === 'b10' ? 'Como organizar o orçamento' : 'Como escolher as chapas'}</Link> · <Link className="underline" to="/produtos">Catálogo de materiais</Link></p></aside>}
               {/* Action Card CTA */}
               <div className="bg-slate-900 rounded-sm p-8 md:p-12 text-white mt-16 border border-slate-800 relative overflow-hidden group shadow-none">
                 <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-10">

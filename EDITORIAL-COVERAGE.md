@@ -29,3 +29,8 @@ Manter URLs, contatos confirmados e distinção entre fornecimento de materiais 
 ## Lote 4 — 15/11/2026
 - /blog/b3: guia Shingle com seis seções, tabela de escopo e quatro FAQs. Fonte técnica Brasilit consultada; sem medidas de instalação, diagnóstico, garantia ou desempenho universal.
 - Preservados imagem IA identificada, URL e contatos. b8/b10 e assets não alterados; demais guias e QA mobile seguem pendentes.
+
+
+## Lote 5 — 15/11/2026
+- /blog/b4: custos em escopos comparáveis, matriz de etapas, exemplo hipotético e quatro FAQs. Fonte CBCA citada; sem valores, economia ou cronograma universal.
+- Imagem IA identificada e contatos preservados; b8/b10 não alterados. Demais guias e QA mobile pendentes.
