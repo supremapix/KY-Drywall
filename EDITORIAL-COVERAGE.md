@@ -14,3 +14,8 @@ Inventário técnico: 974 URLs. Este lote não equivale a revisão editorial de 
 
 ## Critérios
 Manter URLs, contatos confirmados e distinção entre fornecimento de materiais e especificação técnica. Não inventar entrevistas, avaliações, preços, garantias, disponibilidade ou posição em buscadores. Verificar textos e imagens antes de cada publicação.
+
+## Lote 2 — 15/11/2026
+- /blog/b2: distinção entre isolamento e absorção sonora, relato do incômodo, situações hipotéticas, lista para consulta e conferência de compra, quatro dúvidas e fontes primárias ABDrywall/Knauf.
+- Preservada ilustração existente identificada como IA; exibidos logo e telefone comerciais no rodapé da imagem pelo componente editorial.
+- Sem índices acústicos, garantias de silêncio, estoque, diagnóstico ou projeto técnico inventados. Demais guias e páginas seguem pendentes de revisão individual.
