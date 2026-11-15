@@ -39,3 +39,8 @@ Manter URLs, contatos confirmados e distinção entre fornecimento de materiais 
 ## Lote 6 — 15/11/2026
 - /blog/b1: planejamento por uso, distinção estrutural/drywall, interfaces de reforma, documentos e lista de compra; seis seções, tabela e quatro FAQs. Fonte Associação Drywall lida; sem dimensionamento ou prazos universais.
 - Imagem IA e contatos preservados; b8/b10 intactos. Demais guias e QA mobile pendentes.
+
+
+## Lote 7 — 15/11/2026
+- /drywall-em/fazenda-rio-grande: conteúdo exclusivo de intenção de reforma, consulta por endereço, retirada Curitiba/entrega sob confirmação e duas FAQs. AMEP confirma município metropolitano; sem filial, prazo ou frete presumido.
+- Guias de compra/acústica e diretório local ligados. Sinal histórico de busca informado pelo pai motivou prioridade, não comprova causalidade nem resultado atual. Testes e QA parcial; demais páginas continuam pendentes.
