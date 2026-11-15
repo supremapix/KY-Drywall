@@ -19,3 +19,8 @@ Manter URLs, contatos confirmados e distinção entre fornecimento de materiais 
 - /blog/b2: distinção entre isolamento e absorção sonora, relato do incômodo, situações hipotéticas, lista para consulta e conferência de compra, quatro dúvidas e fontes primárias ABDrywall/Knauf.
 - Preservada ilustração existente identificada como IA; exibidos logo e telefone comerciais no rodapé da imagem pelo componente editorial.
 - Sem índices acústicos, garantias de silêncio, estoque, diagnóstico ou projeto técnico inventados. Demais guias e páginas seguem pendentes de revisão individual.
+
+
+## Lote 3 — 15/11/2026
+- /blog/b7: compra/recebimento ampliados em seis seções, tabela para preparar lista e quatro FAQs. Fonte Associação Drywall consultada. Sem cálculo estrutural, promessa de estoque ou política comercial inventada.
+- Foto real existente, URL e contatos preservados. b8/b10 não alterados. Demais guias e QA mobile continuam pendentes.
