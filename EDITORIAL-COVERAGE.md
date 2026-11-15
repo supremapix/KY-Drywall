@@ -24,3 +24,8 @@ Manter URLs, contatos confirmados e distinção entre fornecimento de materiais 
 ## Lote 3 — 15/11/2026
 - /blog/b7: compra/recebimento ampliados em seis seções, tabela para preparar lista e quatro FAQs. Fonte Associação Drywall consultada. Sem cálculo estrutural, promessa de estoque ou política comercial inventada.
 - Foto real existente, URL e contatos preservados. b8/b10 não alterados. Demais guias e QA mobile continuam pendentes.
+
+
+## Lote 4 — 15/11/2026
+- /blog/b3: guia Shingle com seis seções, tabela de escopo e quatro FAQs. Fonte técnica Brasilit consultada; sem medidas de instalação, diagnóstico, garantia ou desempenho universal.
+- Preservados imagem IA identificada, URL e contatos. b8/b10 e assets não alterados; demais guias e QA mobile seguem pendentes.
