@@ -34,3 +34,8 @@ Manter URLs, contatos confirmados e distinção entre fornecimento de materiais 
 ## Lote 5 — 15/11/2026
 - /blog/b4: custos em escopos comparáveis, matriz de etapas, exemplo hipotético e quatro FAQs. Fonte CBCA citada; sem valores, economia ou cronograma universal.
 - Imagem IA identificada e contatos preservados; b8/b10 não alterados. Demais guias e QA mobile pendentes.
+
+
+## Lote 6 — 15/11/2026
+- /blog/b1: planejamento por uso, distinção estrutural/drywall, interfaces de reforma, documentos e lista de compra; seis seções, tabela e quatro FAQs. Fonte Associação Drywall lida; sem dimensionamento ou prazos universais.
+- Imagem IA e contatos preservados; b8/b10 intactos. Demais guias e QA mobile pendentes.
