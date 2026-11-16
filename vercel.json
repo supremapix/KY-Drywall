@@ -314,6 +314,3232 @@
       "source": "/localizacao/:location",
       "destination": "/drywall-em/:location",
       "permanent": true
+    },
+    {
+      "source": "/author/admin",
+      "destination": "/blog",
+      "statusCode": 301
+    },
+    {
+      "source": "/author/admin/",
+      "destination": "/blog",
+      "statusCode": 301
+    },
+    {
+      "source": "/author/admin/feed",
+      "destination": "/blog",
+      "statusCode": 301
+    },
+    {
+      "source": "/author/admin/feed/",
+      "destination": "/blog",
+      "statusCode": 301
+    },
+    {
+      "source": "/author/admin/page/2",
+      "destination": "/blog",
+      "statusCode": 301
+    },
+    {
+      "source": "/author/admin/page/2/",
+      "destination": "/blog",
+      "statusCode": 301
+    },
+    {
+      "source": "/author/admin/page/3",
+      "destination": "/blog",
+      "statusCode": 301
+    },
+    {
+      "source": "/author/admin/page/3/",
+      "destination": "/blog",
+      "statusCode": 301
+    },
+    {
+      "source": "/casa-do-gesseiro-em-curitiba",
+      "destination": "/empresa",
+      "statusCode": 301
+    },
+    {
+      "source": "/casa-do-gesseiro-em-curitiba/",
+      "destination": "/empresa",
+      "statusCode": 301
+    },
+    {
+      "source": "/casa-do-gesseiro-em-curitiba/embed",
+      "destination": "/empresa",
+      "statusCode": 301
+    },
+    {
+      "source": "/casa-do-gesseiro-em-curitiba/embed/",
+      "destination": "/empresa",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-abranches",
+      "destination": "/drywall-em/abranches",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-abranches/",
+      "destination": "/drywall-em/abranches",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-abranches/feed",
+      "destination": "/drywall-em/abranches",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-abranches/feed/",
+      "destination": "/drywall-em/abranches",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-agua-verde",
+      "destination": "/drywall-em/agua-verde",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-agua-verde/",
+      "destination": "/drywall-em/agua-verde",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-agua-verde/feed",
+      "destination": "/drywall-em/agua-verde",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-agua-verde/feed/",
+      "destination": "/drywall-em/agua-verde",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-ahu",
+      "destination": "/drywall-em/ahu",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-ahu/",
+      "destination": "/drywall-em/ahu",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-ahu/feed",
+      "destination": "/drywall-em/ahu",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-ahu/feed/",
+      "destination": "/drywall-em/ahu",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-alto",
+      "destination": "/drywall-em/bairro-alto",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-alto/",
+      "destination": "/drywall-em/bairro-alto",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-alto-boqueirao",
+      "destination": "/drywall-em/alto-boqueirao",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-alto-boqueirao/",
+      "destination": "/drywall-em/alto-boqueirao",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-alto-boqueirao/feed",
+      "destination": "/drywall-em/alto-boqueirao",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-alto-boqueirao/feed/",
+      "destination": "/drywall-em/alto-boqueirao",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-alto-da-gloria",
+      "destination": "/drywall-em/alto-da-gloria",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-alto-da-gloria/",
+      "destination": "/drywall-em/alto-da-gloria",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-alto-da-gloria/feed",
+      "destination": "/drywall-em/alto-da-gloria",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-alto-da-gloria/feed/",
+      "destination": "/drywall-em/alto-da-gloria",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-alto-da-rua-quinze",
+      "destination": "/drywall-em/alto-da-xv",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-alto-da-rua-quinze/",
+      "destination": "/drywall-em/alto-da-xv",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-alto-da-rua-quinze/feed",
+      "destination": "/drywall-em/alto-da-xv",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-alto-da-rua-quinze/feed/",
+      "destination": "/drywall-em/alto-da-xv",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-alto/feed",
+      "destination": "/drywall-em/bairro-alto",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-alto/feed/",
+      "destination": "/drywall-em/bairro-alto",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-atuba",
+      "destination": "/drywall-em/atuba",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-atuba/",
+      "destination": "/drywall-em/atuba",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-atuba/feed",
+      "destination": "/drywall-em/atuba",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-atuba/feed/",
+      "destination": "/drywall-em/atuba",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-augusta",
+      "destination": "/drywall-em/augusta",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-augusta/",
+      "destination": "/drywall-em/augusta",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-augusta/feed",
+      "destination": "/drywall-em/augusta",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-augusta/feed/",
+      "destination": "/drywall-em/augusta",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-bacacheri",
+      "destination": "/drywall-em/bacacheri",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-bacacheri/",
+      "destination": "/drywall-em/bacacheri",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-bacacheri/feed",
+      "destination": "/drywall-em/bacacheri",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-bacacheri/feed/",
+      "destination": "/drywall-em/bacacheri",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-barreirinha",
+      "destination": "/drywall-em/barreirinha",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-barreirinha/",
+      "destination": "/drywall-em/barreirinha",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-barreirinha/feed",
+      "destination": "/drywall-em/barreirinha",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-barreirinha/feed/",
+      "destination": "/drywall-em/barreirinha",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-batel",
+      "destination": "/drywall-em/batel",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-batel/",
+      "destination": "/drywall-em/batel",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-batel/feed",
+      "destination": "/drywall-em/batel",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-batel/feed/",
+      "destination": "/drywall-em/batel",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-bigorrilho",
+      "destination": "/drywall-em/bigorrilho",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-bigorrilho/",
+      "destination": "/drywall-em/bigorrilho",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-bigorrilho/feed",
+      "destination": "/drywall-em/bigorrilho",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-bigorrilho/feed/",
+      "destination": "/drywall-em/bigorrilho",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-boa-vista",
+      "destination": "/drywall-em/boa-vista",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-boa-vista/",
+      "destination": "/drywall-em/boa-vista",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-boa-vista/feed",
+      "destination": "/drywall-em/boa-vista",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-boa-vista/feed/",
+      "destination": "/drywall-em/boa-vista",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-bom-retiro",
+      "destination": "/drywall-em/bom-retiro",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-bom-retiro/",
+      "destination": "/drywall-em/bom-retiro",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-bom-retiro/feed",
+      "destination": "/drywall-em/bom-retiro",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-bom-retiro/feed/",
+      "destination": "/drywall-em/bom-retiro",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-boqueirao",
+      "destination": "/drywall-em/boqueirao",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-boqueirao/",
+      "destination": "/drywall-em/boqueirao",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-boqueirao/feed",
+      "destination": "/drywall-em/boqueirao",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-boqueirao/feed/",
+      "destination": "/drywall-em/boqueirao",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-butiatuvinha",
+      "destination": "/drywall-em/butiatuvinha",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-butiatuvinha/",
+      "destination": "/drywall-em/butiatuvinha",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-cabral",
+      "destination": "/drywall-em/cabral",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-cabral/",
+      "destination": "/drywall-em/cabral",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-cabral/feed",
+      "destination": "/drywall-em/cabral",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-cabral/feed/",
+      "destination": "/drywall-em/cabral",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-cachoeira",
+      "destination": "/drywall-em/cachoeira",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-cachoeira/",
+      "destination": "/drywall-em/cachoeira",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-cachoeira/feed",
+      "destination": "/drywall-em/cachoeira",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-cachoeira/feed/",
+      "destination": "/drywall-em/cachoeira",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-cajuru",
+      "destination": "/drywall-em/cajuru",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-cajuru/",
+      "destination": "/drywall-em/cajuru",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-cajuru/feed",
+      "destination": "/drywall-em/cajuru",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-cajuru/feed/",
+      "destination": "/drywall-em/cajuru",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-campina-do-siqueira",
+      "destination": "/drywall-em/campina-do-siqueira",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-campina-do-siqueira/",
+      "destination": "/drywall-em/campina-do-siqueira",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-campina-do-siqueira/feed",
+      "destination": "/drywall-em/campina-do-siqueira",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-campina-do-siqueira/feed/",
+      "destination": "/drywall-em/campina-do-siqueira",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-campo-comprido",
+      "destination": "/drywall-em/campo-comprido",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-campo-comprido/",
+      "destination": "/drywall-em/campo-comprido",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-campo-comprido/feed",
+      "destination": "/drywall-em/campo-comprido",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-campo-comprido/feed/",
+      "destination": "/drywall-em/campo-comprido",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-campo-de-santana",
+      "destination": "/drywall-em/campo-de-santana",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-campo-de-santana/",
+      "destination": "/drywall-em/campo-de-santana",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-campo-de-santana/feed",
+      "destination": "/drywall-em/campo-de-santana",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-campo-de-santana/feed/",
+      "destination": "/drywall-em/campo-de-santana",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-capao-da-imbuia",
+      "destination": "/drywall-em/capao-da-imbuia",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-capao-da-imbuia/",
+      "destination": "/drywall-em/capao-da-imbuia",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-capao-da-imbuia/feed",
+      "destination": "/drywall-em/capao-da-imbuia",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-capao-da-imbuia/feed/",
+      "destination": "/drywall-em/capao-da-imbuia",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-capao-raso",
+      "destination": "/drywall-em/capao-raso",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-capao-raso/",
+      "destination": "/drywall-em/capao-raso",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-capao-raso/feed",
+      "destination": "/drywall-em/capao-raso",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-capao-raso/feed/",
+      "destination": "/drywall-em/capao-raso",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-cascatinha",
+      "destination": "/drywall-em/cascatinha",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-cascatinha/",
+      "destination": "/drywall-em/cascatinha",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-cascatinha/feed",
+      "destination": "/drywall-em/cascatinha",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-cascatinha/feed/",
+      "destination": "/drywall-em/cascatinha",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-caximba",
+      "destination": "/regiao-metropolitana/curitiba/caximba",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-caximba/",
+      "destination": "/regiao-metropolitana/curitiba/caximba",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-caximba/feed",
+      "destination": "/regiao-metropolitana/curitiba/caximba",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-caximba/feed/",
+      "destination": "/regiao-metropolitana/curitiba/caximba",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-centro",
+      "destination": "/drywall-em/centro",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-centro/",
+      "destination": "/drywall-em/centro",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-centro-civico",
+      "destination": "/drywall-em/centro-civico",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-centro-civico/",
+      "destination": "/drywall-em/centro-civico",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-centro-civico/feed",
+      "destination": "/drywall-em/centro-civico",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-centro-civico/feed/",
+      "destination": "/drywall-em/centro-civico",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-centro/feed",
+      "destination": "/drywall-em/centro",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-centro/feed/",
+      "destination": "/drywall-em/centro",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-cristo-rei",
+      "destination": "/drywall-em/cristo-rei",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-cristo-rei/",
+      "destination": "/drywall-em/cristo-rei",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-cristo-rei/feed",
+      "destination": "/drywall-em/cristo-rei",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-cristo-rei/feed/",
+      "destination": "/drywall-em/cristo-rei",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-fanny",
+      "destination": "/drywall-em/fanny",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-fanny/",
+      "destination": "/drywall-em/fanny",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-fanny/feed",
+      "destination": "/drywall-em/fanny",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-fanny/feed/",
+      "destination": "/drywall-em/fanny",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-fazendinha",
+      "destination": "/drywall-em/fazendinha",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-fazendinha/",
+      "destination": "/drywall-em/fazendinha",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-fazendinha/feed",
+      "destination": "/drywall-em/fazendinha",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-fazendinha/feed/",
+      "destination": "/drywall-em/fazendinha",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-ganchinho",
+      "destination": "/drywall-em/ganchinho",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-ganchinho/",
+      "destination": "/drywall-em/ganchinho",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-ganchinho/feed",
+      "destination": "/drywall-em/ganchinho",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-ganchinho/feed/",
+      "destination": "/drywall-em/ganchinho",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-guabirotuba",
+      "destination": "/drywall-em/guabirotuba",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-guabirotuba/",
+      "destination": "/drywall-em/guabirotuba",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-guabirotuba/feed",
+      "destination": "/drywall-em/guabirotuba",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-guabirotuba/feed/",
+      "destination": "/drywall-em/guabirotuba",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-guaira",
+      "destination": "/drywall-em/guaira",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-guaira/",
+      "destination": "/drywall-em/guaira",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-guaira/feed",
+      "destination": "/drywall-em/guaira",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-guaira/feed/",
+      "destination": "/drywall-em/guaira",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-hauer",
+      "destination": "/drywall-em/hauer",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-hauer/",
+      "destination": "/drywall-em/hauer",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-hauer/feed",
+      "destination": "/drywall-em/hauer",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-hauer/feed/",
+      "destination": "/drywall-em/hauer",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-hugo-lange",
+      "destination": "/drywall-em/hugo-lange",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-hugo-lange/",
+      "destination": "/drywall-em/hugo-lange",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-hugo-lange/feed",
+      "destination": "/drywall-em/hugo-lange",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-hugo-lange/feed/",
+      "destination": "/drywall-em/hugo-lange",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-jardim-botanico",
+      "destination": "/drywall-em/jardim-botanico",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-jardim-botanico/",
+      "destination": "/drywall-em/jardim-botanico",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-jardim-botanico/feed",
+      "destination": "/drywall-em/jardim-botanico",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-jardim-botanico/feed/",
+      "destination": "/drywall-em/jardim-botanico",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-jardim-das-americas",
+      "destination": "/drywall-em/jardim-das-americas",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-jardim-das-americas/",
+      "destination": "/drywall-em/jardim-das-americas",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-jardim-das-americas/feed",
+      "destination": "/drywall-em/jardim-das-americas",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-jardim-das-americas/feed/",
+      "destination": "/drywall-em/jardim-das-americas",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-jardim-social",
+      "destination": "/drywall-em/jardim-social",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-jardim-social/",
+      "destination": "/drywall-em/jardim-social",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-jardim-social/feed",
+      "destination": "/drywall-em/jardim-social",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-jardim-social/feed/",
+      "destination": "/drywall-em/jardim-social",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-juveve",
+      "destination": "/drywall-em/juveve",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-juveve/",
+      "destination": "/drywall-em/juveve",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-juveve/feed",
+      "destination": "/drywall-em/juveve",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-juveve/feed/",
+      "destination": "/drywall-em/juveve",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-lindoia",
+      "destination": "/drywall-em/lindoia",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-lindoia/",
+      "destination": "/drywall-em/lindoia",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-lindoia/feed",
+      "destination": "/drywall-em/lindoia",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-lindoia/feed/",
+      "destination": "/drywall-em/lindoia",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-merces",
+      "destination": "/drywall-em/merces",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-merces/",
+      "destination": "/drywall-em/merces",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-merces/feed",
+      "destination": "/drywall-em/merces",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-merces/feed/",
+      "destination": "/drywall-em/merces",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-mossungue",
+      "destination": "/drywall-em/mossungue",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-mossungue/",
+      "destination": "/drywall-em/mossungue",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-mossungue/feed",
+      "destination": "/drywall-em/mossungue",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-mossungue/feed/",
+      "destination": "/drywall-em/mossungue",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-novo-mundo",
+      "destination": "/drywall-em/novo-mundo",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-novo-mundo/",
+      "destination": "/drywall-em/novo-mundo",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-novo-mundo/feed",
+      "destination": "/drywall-em/novo-mundo",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-novo-mundo/feed/",
+      "destination": "/drywall-em/novo-mundo",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-orleans",
+      "destination": "/drywall-em/orleans",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-orleans/",
+      "destination": "/drywall-em/orleans",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-orleans/feed",
+      "destination": "/drywall-em/orleans",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-orleans/feed/",
+      "destination": "/drywall-em/orleans",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-parolin",
+      "destination": "/drywall-em/parolin",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-parolin/",
+      "destination": "/drywall-em/parolin",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-parolin/feed",
+      "destination": "/drywall-em/parolin",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-parolin/feed/",
+      "destination": "/drywall-em/parolin",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-pilarzinho",
+      "destination": "/drywall-em/pilarzinho",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-pilarzinho/",
+      "destination": "/drywall-em/pilarzinho",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-pilarzinho/feed",
+      "destination": "/drywall-em/pilarzinho",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-pilarzinho/feed/",
+      "destination": "/drywall-em/pilarzinho",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-pinheirinho",
+      "destination": "/drywall-em/pinheirinho",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-pinheirinho/",
+      "destination": "/drywall-em/pinheirinho",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-pinheirinho/feed",
+      "destination": "/drywall-em/pinheirinho",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-pinheirinho/feed/",
+      "destination": "/drywall-em/pinheirinho",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-portao",
+      "destination": "/drywall-em/portao",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-portao/",
+      "destination": "/drywall-em/portao",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-portao/feed",
+      "destination": "/drywall-em/portao",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-portao/feed/",
+      "destination": "/drywall-em/portao",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-prado-velho",
+      "destination": "/drywall-em/prado-velho",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-prado-velho/",
+      "destination": "/drywall-em/prado-velho",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-prado-velho/feed",
+      "destination": "/drywall-em/prado-velho",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-prado-velho/feed/",
+      "destination": "/drywall-em/prado-velho",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-reboucas",
+      "destination": "/drywall-em/reboucas",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-reboucas/",
+      "destination": "/drywall-em/reboucas",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-reboucas/feed",
+      "destination": "/drywall-em/reboucas",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-reboucas/feed/",
+      "destination": "/drywall-em/reboucas",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-riviera",
+      "destination": "/drywall-em/riviera",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-riviera/",
+      "destination": "/drywall-em/riviera",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-riviera/feed",
+      "destination": "/drywall-em/riviera",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-riviera/feed/",
+      "destination": "/drywall-em/riviera",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-santa-candida",
+      "destination": "/drywall-em/santa-candida",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-santa-candida/",
+      "destination": "/drywall-em/santa-candida",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-santa-candida/feed",
+      "destination": "/drywall-em/santa-candida",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-santa-candida/feed/",
+      "destination": "/drywall-em/santa-candida",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-santa-felicidade",
+      "destination": "/drywall-em/santa-felicidade",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-santa-felicidade/",
+      "destination": "/drywall-em/santa-felicidade",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-santa-felicidade/feed",
+      "destination": "/drywall-em/santa-felicidade",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-santa-felicidade/feed/",
+      "destination": "/drywall-em/santa-felicidade",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-santo-inacio",
+      "destination": "/drywall-em/santo-inacio",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-santo-inacio/",
+      "destination": "/drywall-em/santo-inacio",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-santo-inacio/feed",
+      "destination": "/drywall-em/santo-inacio",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-santo-inacio/feed/",
+      "destination": "/drywall-em/santo-inacio",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-sao-braz",
+      "destination": "/drywall-em/sao-braz",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-sao-braz/",
+      "destination": "/drywall-em/sao-braz",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-sao-braz/feed",
+      "destination": "/drywall-em/sao-braz",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-sao-braz/feed/",
+      "destination": "/drywall-em/sao-braz",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-sao-francisco",
+      "destination": "/drywall-em/sao-francisco",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-sao-francisco/",
+      "destination": "/drywall-em/sao-francisco",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-sao-francisco/feed",
+      "destination": "/drywall-em/sao-francisco",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-sao-francisco/feed/",
+      "destination": "/drywall-em/sao-francisco",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-sao-joao",
+      "destination": "/drywall-em/sao-joao",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-sao-joao/",
+      "destination": "/drywall-em/sao-joao",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-sao-joao/feed",
+      "destination": "/drywall-em/sao-joao",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-sao-joao/feed/",
+      "destination": "/drywall-em/sao-joao",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-sao-lourenco",
+      "destination": "/drywall-em/sao-lourenco",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-sao-lourenco/",
+      "destination": "/drywall-em/sao-lourenco",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-sao-lourenco/feed",
+      "destination": "/drywall-em/sao-lourenco",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-sao-lourenco/feed/",
+      "destination": "/drywall-em/sao-lourenco",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-sao-miguel",
+      "destination": "/regiao-metropolitana/curitiba/sao-miguel",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-sao-miguel/",
+      "destination": "/regiao-metropolitana/curitiba/sao-miguel",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-sao-miguel/feed",
+      "destination": "/regiao-metropolitana/curitiba/sao-miguel",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-sao-miguel/feed/",
+      "destination": "/regiao-metropolitana/curitiba/sao-miguel",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-seminario",
+      "destination": "/drywall-em/seminario",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-seminario/",
+      "destination": "/drywall-em/seminario",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-seminario/feed",
+      "destination": "/drywall-em/seminario",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-seminario/feed/",
+      "destination": "/drywall-em/seminario",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-sitio-cercado",
+      "destination": "/drywall-em/sitio-cercado",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-sitio-cercado/",
+      "destination": "/drywall-em/sitio-cercado",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-sitio-cercado/feed",
+      "destination": "/drywall-em/sitio-cercado",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-sitio-cercado/feed/",
+      "destination": "/drywall-em/sitio-cercado",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-taboao",
+      "destination": "/drywall-em/taboao",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-taboao/",
+      "destination": "/drywall-em/taboao",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-taboao/feed",
+      "destination": "/drywall-em/taboao",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-taboao/feed/",
+      "destination": "/drywall-em/taboao",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-tatuquara",
+      "destination": "/drywall-em/tatuquara",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-tatuquara/",
+      "destination": "/drywall-em/tatuquara",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-tatuquara/feed",
+      "destination": "/drywall-em/tatuquara",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-tatuquara/feed/",
+      "destination": "/drywall-em/tatuquara",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-tingui",
+      "destination": "/drywall-em/tingui",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-tingui/",
+      "destination": "/drywall-em/tingui",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-tingui/feed",
+      "destination": "/drywall-em/tingui",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-tingui/feed/",
+      "destination": "/drywall-em/tingui",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-uberaba",
+      "destination": "/drywall-em/uberaba",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-uberaba/",
+      "destination": "/drywall-em/uberaba",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-uberaba/feed",
+      "destination": "/drywall-em/uberaba",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-uberaba/feed/",
+      "destination": "/drywall-em/uberaba",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-umbara",
+      "destination": "/drywall-em/umbara",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-umbara/",
+      "destination": "/drywall-em/umbara",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-umbara/feed",
+      "destination": "/drywall-em/umbara",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-umbara/feed/",
+      "destination": "/drywall-em/umbara",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-vila-izabel",
+      "destination": "/drywall-em/vila-izabel",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-vila-izabel/",
+      "destination": "/drywall-em/vila-izabel",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-vila-izabel/feed",
+      "destination": "/drywall-em/vila-izabel",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-vila-izabel/feed/",
+      "destination": "/drywall-em/vila-izabel",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-vista-alegre",
+      "destination": "/drywall-em/vista-alegre",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-vista-alegre/",
+      "destination": "/drywall-em/vista-alegre",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-vista-alegre/feed",
+      "destination": "/drywall-em/vista-alegre",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-vista-alegre/feed/",
+      "destination": "/drywall-em/vista-alegre",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-xaxim",
+      "destination": "/drywall-em/xaxim",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-xaxim/",
+      "destination": "/drywall-em/xaxim",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-xaxim/feed",
+      "destination": "/drywall-em/xaxim",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/bairro-xaxim/feed/",
+      "destination": "/drywall-em/xaxim",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadeadrianopolis",
+      "destination": "/regiao-metropolitana/adrianopolis",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadeadrianopolis/",
+      "destination": "/regiao-metropolitana/adrianopolis",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadeadrianopolis/feed",
+      "destination": "/regiao-metropolitana/adrianopolis",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadeadrianopolis/feed/",
+      "destination": "/regiao-metropolitana/adrianopolis",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadeagudos-do-sul",
+      "destination": "/regiao-metropolitana/agudos-do-sul",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadeagudos-do-sul/",
+      "destination": "/regiao-metropolitana/agudos-do-sul",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadeagudos-do-sul/feed",
+      "destination": "/regiao-metropolitana/agudos-do-sul",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadeagudos-do-sul/feed/",
+      "destination": "/regiao-metropolitana/agudos-do-sul",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadealmirante-tamandare",
+      "destination": "/drywall-em/almirante-tamandare",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadealmirante-tamandare/",
+      "destination": "/drywall-em/almirante-tamandare",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadealmirante-tamandare/feed",
+      "destination": "/drywall-em/almirante-tamandare",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadealmirante-tamandare/feed/",
+      "destination": "/drywall-em/almirante-tamandare",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadearaucaria",
+      "destination": "/drywall-em/araucaria",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadearaucaria/",
+      "destination": "/drywall-em/araucaria",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadearaucaria/feed",
+      "destination": "/drywall-em/araucaria",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadearaucaria/feed/",
+      "destination": "/drywall-em/araucaria",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadebalsa-nova",
+      "destination": "/regiao-metropolitana/balsa-nova",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadebalsa-nova/",
+      "destination": "/regiao-metropolitana/balsa-nova",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadebalsa-nova/feed",
+      "destination": "/regiao-metropolitana/balsa-nova",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadebalsa-nova/feed/",
+      "destination": "/regiao-metropolitana/balsa-nova",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadebocaiuva-do-sul",
+      "destination": "/regiao-metropolitana/bocaiuva-do-sul",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadebocaiuva-do-sul/",
+      "destination": "/regiao-metropolitana/bocaiuva-do-sul",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadebocaiuva-do-sul/feed",
+      "destination": "/regiao-metropolitana/bocaiuva-do-sul",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadebocaiuva-do-sul/feed/",
+      "destination": "/regiao-metropolitana/bocaiuva-do-sul",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadecampina-grande-do-sul",
+      "destination": "/drywall-em/campina-grande-do-sul",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadecampina-grande-do-sul/",
+      "destination": "/drywall-em/campina-grande-do-sul",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadecampina-grande-do-sul/feed",
+      "destination": "/drywall-em/campina-grande-do-sul",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadecampina-grande-do-sul/feed/",
+      "destination": "/drywall-em/campina-grande-do-sul",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadecampo-do-tenente",
+      "destination": "/regiao-metropolitana/campo-do-tenente",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadecampo-do-tenente/",
+      "destination": "/regiao-metropolitana/campo-do-tenente",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadecampo-do-tenente/feed",
+      "destination": "/regiao-metropolitana/campo-do-tenente",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadecampo-do-tenente/feed/",
+      "destination": "/regiao-metropolitana/campo-do-tenente",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadecampo-largo",
+      "destination": "/drywall-em/campo-largo",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadecampo-largo/",
+      "destination": "/drywall-em/campo-largo",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadecampo-largo/feed",
+      "destination": "/drywall-em/campo-largo",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadecampo-largo/feed/",
+      "destination": "/drywall-em/campo-largo",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadecampo-magro",
+      "destination": "/drywall-em/campo-magro",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadecampo-magro/",
+      "destination": "/drywall-em/campo-magro",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadecampo-magro/feed",
+      "destination": "/drywall-em/campo-magro",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadecampo-magro/feed/",
+      "destination": "/drywall-em/campo-magro",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadecerro-azul",
+      "destination": "/regiao-metropolitana/cerro-azul",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadecerro-azul/",
+      "destination": "/regiao-metropolitana/cerro-azul",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadecerro-azul/feed",
+      "destination": "/regiao-metropolitana/cerro-azul",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadecerro-azul/feed/",
+      "destination": "/regiao-metropolitana/cerro-azul",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadecolombo",
+      "destination": "/drywall-em/colombo",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadecolombo/",
+      "destination": "/drywall-em/colombo",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadecolombo/feed",
+      "destination": "/drywall-em/colombo",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadecolombo/feed/",
+      "destination": "/drywall-em/colombo",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadecontenda",
+      "destination": "/regiao-metropolitana/contenda",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadecontenda/",
+      "destination": "/regiao-metropolitana/contenda",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadecontenda/feed",
+      "destination": "/regiao-metropolitana/contenda",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadecontenda/feed/",
+      "destination": "/regiao-metropolitana/contenda",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadecuritiba",
+      "destination": "/drywall-em/curitiba",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadecuritiba/",
+      "destination": "/drywall-em/curitiba",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadecuritiba/feed",
+      "destination": "/drywall-em/curitiba",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadecuritiba/feed/",
+      "destination": "/drywall-em/curitiba",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadedoutor-ulysses",
+      "destination": "/regiao-metropolitana/doutor-ulysses",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadedoutor-ulysses/",
+      "destination": "/regiao-metropolitana/doutor-ulysses",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadedoutor-ulysses/feed",
+      "destination": "/regiao-metropolitana/doutor-ulysses",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadedoutor-ulysses/feed/",
+      "destination": "/regiao-metropolitana/doutor-ulysses",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadefazenda-rio-grande",
+      "destination": "/drywall-em/fazenda-rio-grande",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadefazenda-rio-grande/",
+      "destination": "/drywall-em/fazenda-rio-grande",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadefazenda-rio-grande/feed",
+      "destination": "/drywall-em/fazenda-rio-grande",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadefazenda-rio-grande/feed/",
+      "destination": "/drywall-em/fazenda-rio-grande",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadeitaperucu",
+      "destination": "/drywall-em/itaperucu",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadeitaperucu/",
+      "destination": "/drywall-em/itaperucu",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadeitaperucu/feed",
+      "destination": "/drywall-em/itaperucu",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadeitaperucu/feed/",
+      "destination": "/drywall-em/itaperucu",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadelapa",
+      "destination": "/regiao-metropolitana/lapa",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadelapa/",
+      "destination": "/regiao-metropolitana/lapa",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadelapa/feed",
+      "destination": "/regiao-metropolitana/lapa",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadelapa/feed/",
+      "destination": "/regiao-metropolitana/lapa",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidademandirituba",
+      "destination": "/regiao-metropolitana/mandirituba",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidademandirituba/",
+      "destination": "/regiao-metropolitana/mandirituba",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadepien",
+      "destination": "/regiao-metropolitana/pien",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadepien/",
+      "destination": "/regiao-metropolitana/pien",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadepien/feed",
+      "destination": "/regiao-metropolitana/pien",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadepien/feed/",
+      "destination": "/regiao-metropolitana/pien",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadepinhais",
+      "destination": "/drywall-em/pinhais",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadepinhais/",
+      "destination": "/drywall-em/pinhais",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadepinhais/feed",
+      "destination": "/drywall-em/pinhais",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadepinhais/feed/",
+      "destination": "/drywall-em/pinhais",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadepiraquara",
+      "destination": "/drywall-em/piraquara",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadepiraquara/",
+      "destination": "/drywall-em/piraquara",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadepiraquara/feed",
+      "destination": "/drywall-em/piraquara",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadepiraquara/feed/",
+      "destination": "/drywall-em/piraquara",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadequatro-barras",
+      "destination": "/drywall-em/quatro-barras",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadequatro-barras/",
+      "destination": "/drywall-em/quatro-barras",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadequatro-barras/feed",
+      "destination": "/drywall-em/quatro-barras",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadequatro-barras/feed/",
+      "destination": "/drywall-em/quatro-barras",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadequitandinha",
+      "destination": "/regiao-metropolitana/quitandinha",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadequitandinha/",
+      "destination": "/regiao-metropolitana/quitandinha",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadequitandinha/feed",
+      "destination": "/regiao-metropolitana/quitandinha",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadequitandinha/feed/",
+      "destination": "/regiao-metropolitana/quitandinha",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidaderio-branco-do-sul",
+      "destination": "/drywall-em/rio-branco-do-sul",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidaderio-branco-do-sul/",
+      "destination": "/drywall-em/rio-branco-do-sul",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidaderio-branco-do-sul/feed",
+      "destination": "/drywall-em/rio-branco-do-sul",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidaderio-branco-do-sul/feed/",
+      "destination": "/drywall-em/rio-branco-do-sul",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidaderio-negro",
+      "destination": "/regiao-metropolitana/rio-negro",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidaderio-negro/",
+      "destination": "/regiao-metropolitana/rio-negro",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidaderio-negro/feed",
+      "destination": "/regiao-metropolitana/rio-negro",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidaderio-negro/feed/",
+      "destination": "/regiao-metropolitana/rio-negro",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadesao-jose-dos-pinhais",
+      "destination": "/drywall-em/sao-jose-dos-pinhais",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadesao-jose-dos-pinhais/",
+      "destination": "/drywall-em/sao-jose-dos-pinhais",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadesao-jose-dos-pinhais/feed",
+      "destination": "/drywall-em/sao-jose-dos-pinhais",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadesao-jose-dos-pinhais/feed/",
+      "destination": "/drywall-em/sao-jose-dos-pinhais",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadetijucas-do-sul",
+      "destination": "/regiao-metropolitana/tijucas-do-sul",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadetijucas-do-sul/",
+      "destination": "/regiao-metropolitana/tijucas-do-sul",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadetijucas-do-sul/feed",
+      "destination": "/regiao-metropolitana/tijucas-do-sul",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadetijucas-do-sul/feed/",
+      "destination": "/regiao-metropolitana/tijucas-do-sul",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadetunas-do-parana",
+      "destination": "/regiao-metropolitana/tunas-do-parana",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadetunas-do-parana/",
+      "destination": "/regiao-metropolitana/tunas-do-parana",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadetunas-do-parana/feed",
+      "destination": "/regiao-metropolitana/tunas-do-parana",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/cidadetunas-do-parana/feed/",
+      "destination": "/regiao-metropolitana/tunas-do-parana",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/construcao-a-seco",
+      "destination": "/servicos",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/construcao-a-seco/",
+      "destination": "/servicos",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/construcao-a-seco/feed",
+      "destination": "/servicos",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/construcao-a-seco/feed/",
+      "destination": "/servicos",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/dry-wall",
+      "destination": "/servicos/drywall",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/dry-wall/",
+      "destination": "/servicos/drywall",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/dry-wall/feed",
+      "destination": "/servicos/drywall",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/dry-wall/feed/",
+      "destination": "/servicos/drywall",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/forro-em-curitiba",
+      "destination": "/servicos/drywall",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/forro-em-curitiba/",
+      "destination": "/servicos/drywall",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/forro-em-curitiba/feed",
+      "destination": "/servicos/drywall",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/forro-em-curitiba/feed/",
+      "destination": "/servicos/drywall",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/gesso",
+      "destination": "/servicos/drywall",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/gesso/",
+      "destination": "/servicos/drywall",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/gesso/feed",
+      "destination": "/servicos/drywall",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/gesso/feed/",
+      "destination": "/servicos/drywall",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/paredes-em-cimenticia",
+      "destination": "/servicos/drywall",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/paredes-em-cimenticia/",
+      "destination": "/servicos/drywall",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/paredes-em-cimenticia/feed",
+      "destination": "/servicos/drywall",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/paredes-em-cimenticia/feed/",
+      "destination": "/servicos/drywall",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/paredes-paineis-perfis",
+      "destination": "/servicos/drywall",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/paredes-paineis-perfis/",
+      "destination": "/servicos/drywall",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/paredes-paineis-perfis/feed",
+      "destination": "/servicos/drywall",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/paredes-paineis-perfis/feed/",
+      "destination": "/servicos/drywall",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/reformas",
+      "destination": "/servicos",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/reformas/",
+      "destination": "/servicos",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/reformas/feed",
+      "destination": "/servicos",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/reformas/feed/",
+      "destination": "/servicos",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/simulador",
+      "destination": "/contato",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/simulador/",
+      "destination": "/contato",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/simulador/feed",
+      "destination": "/contato",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/simulador/feed/",
+      "destination": "/contato",
+      "statusCode": 301
+    },
+    {
+      "source": "/coberturas-com-telhas-shingle",
+      "destination": "/servicos/shingle",
+      "statusCode": 301
+    },
+    {
+      "source": "/coberturas-com-telhas-shingle/",
+      "destination": "/servicos/shingle",
+      "statusCode": 301
+    },
+    {
+      "source": "/coberturas-com-telhas-shingle.html",
+      "destination": "/servicos/shingle",
+      "statusCode": 301
+    },
+    {
+      "source": "/comments/feed",
+      "destination": "/blog",
+      "statusCode": 301
+    },
+    {
+      "source": "/comments/feed/",
+      "destination": "/blog",
+      "statusCode": 301
+    },
+    {
+      "source": "/construcao-a-seco",
+      "destination": "/servicos",
+      "statusCode": 301
+    },
+    {
+      "source": "/construcao-a-seco/",
+      "destination": "/servicos",
+      "statusCode": 301
+    },
+    {
+      "source": "/construcao-a-seco/embed",
+      "destination": "/servicos",
+      "statusCode": 301
+    },
+    {
+      "source": "/construcao-a-seco/embed/",
+      "destination": "/servicos",
+      "statusCode": 301
+    },
+    {
+      "source": "/construcao-steel-frame",
+      "destination": "/servicos/steel-frame",
+      "statusCode": 301
+    },
+    {
+      "source": "/construcao-steel-frame/",
+      "destination": "/servicos/steel-frame",
+      "statusCode": 301
+    },
+    {
+      "source": "/construcao-steel-frame.html",
+      "destination": "/servicos/steel-frame",
+      "statusCode": 301
+    },
+    {
+      "source": "/contato-orcamento",
+      "destination": "/contato",
+      "statusCode": 301
+    },
+    {
+      "source": "/contato-orcamento/",
+      "destination": "/contato",
+      "statusCode": 301
+    },
+    {
+      "source": "/contato-orcamento/embed",
+      "destination": "/contato",
+      "statusCode": 301
+    },
+    {
+      "source": "/contato-orcamento/embed/",
+      "destination": "/contato",
+      "statusCode": 301
+    },
+    {
+      "source": "/contato-orcamento/feed",
+      "destination": "/contato",
+      "statusCode": 301
+    },
+    {
+      "source": "/contato-orcamento/feed/",
+      "destination": "/contato",
+      "statusCode": 301
+    },
+    {
+      "source": "/custo-da-colocacao-de-gesso-em-teto-curitiba",
+      "destination": "/blog/b8",
+      "statusCode": 301
+    },
+    {
+      "source": "/custo-da-colocacao-de-gesso-em-teto-curitiba/",
+      "destination": "/blog/b8",
+      "statusCode": 301
+    },
+    {
+      "source": "/deixe-sua-casa-linda-com-decorados-em-gesso-sancas-e-drywall",
+      "destination": "/servicos/drywall",
+      "statusCode": 301
+    },
+    {
+      "source": "/deixe-sua-casa-linda-com-decorados-em-gesso-sancas-e-drywall/",
+      "destination": "/servicos/drywall",
+      "statusCode": 301
+    },
+    {
+      "source": "/deixe-sua-casa-linda-com-decorados-em-gesso-sancas-e-drywall/embed",
+      "destination": "/servicos/drywall",
+      "statusCode": 301
+    },
+    {
+      "source": "/deixe-sua-casa-linda-com-decorados-em-gesso-sancas-e-drywall/embed/",
+      "destination": "/servicos/drywall",
+      "statusCode": 301
+    },
+    {
+      "source": "/dry-wall-curitiba-confianca",
+      "destination": "/servicos/drywall",
+      "statusCode": 301
+    },
+    {
+      "source": "/dry-wall-curitiba-confianca/",
+      "destination": "/servicos/drywall",
+      "statusCode": 301
+    },
+    {
+      "source": "/dry-wall-curitiba-confianca/embed",
+      "destination": "/servicos/drywall",
+      "statusCode": 301
+    },
+    {
+      "source": "/dry-wall-curitiba-confianca/embed/",
+      "destination": "/servicos/drywall",
+      "statusCode": 301
+    },
+    {
+      "source": "/drywall",
+      "destination": "/servicos/drywall",
+      "statusCode": 301
+    },
+    {
+      "source": "/drywall/",
+      "destination": "/servicos/drywall",
+      "statusCode": 301
+    },
+    {
+      "source": "/drywall-gesso-acartonado",
+      "destination": "/servicos/drywall",
+      "statusCode": 301
+    },
+    {
+      "source": "/drywall-gesso-acartonado/",
+      "destination": "/servicos/drywall",
+      "statusCode": 301
+    },
+    {
+      "source": "/drywall-gesso-acartonado/embed",
+      "destination": "/servicos/drywall",
+      "statusCode": 301
+    },
+    {
+      "source": "/drywall-gesso-acartonado/embed/",
+      "destination": "/servicos/drywall",
+      "statusCode": 301
+    },
+    {
+      "source": "/drywall.html",
+      "destination": "/servicos/drywall",
+      "statusCode": 301
+    },
+    {
+      "source": "/empresa-de-gesso-com-garantia",
+      "destination": "/empresa",
+      "statusCode": 301
+    },
+    {
+      "source": "/empresa-de-gesso-com-garantia/",
+      "destination": "/empresa",
+      "statusCode": 301
+    },
+    {
+      "source": "/empresa-de-gesso-com-garantia/embed",
+      "destination": "/empresa",
+      "statusCode": 301
+    },
+    {
+      "source": "/empresa-de-gesso-com-garantia/embed/",
+      "destination": "/empresa",
+      "statusCode": 301
+    },
+    {
+      "source": "/estruturas-para-telhados-steel-frame",
+      "destination": "/servicos/telhado-steel",
+      "statusCode": 301
+    },
+    {
+      "source": "/estruturas-para-telhados-steel-frame/",
+      "destination": "/servicos/telhado-steel",
+      "statusCode": 301
+    },
+    {
+      "source": "/estruturas-para-telhados-steel-frame.html",
+      "destination": "/servicos/telhado-steel",
+      "statusCode": 301
+    },
+    {
+      "source": "/feed",
+      "destination": "/blog",
+      "statusCode": 301
+    },
+    {
+      "source": "/feed/",
+      "destination": "/blog",
+      "statusCode": 301
+    },
+    {
+      "source": "/forro",
+      "destination": "/servicos/drywall",
+      "statusCode": 301
+    },
+    {
+      "source": "/forro/",
+      "destination": "/servicos/drywall",
+      "statusCode": 301
+    },
+    {
+      "source": "/forro-e-parede-em-drywall",
+      "destination": "/servicos/drywall",
+      "statusCode": 301
+    },
+    {
+      "source": "/forro-e-parede-em-drywall/",
+      "destination": "/servicos/drywall",
+      "statusCode": 301
+    },
+    {
+      "source": "/forro-e-parede-em-drywall.html",
+      "destination": "/servicos/drywall",
+      "statusCode": 301
+    },
+    {
+      "source": "/forro-em-pvc-modulado",
+      "destination": "/servicos/pvc-modular",
+      "statusCode": 301
+    },
+    {
+      "source": "/forro-em-pvc-modulado/",
+      "destination": "/servicos/pvc-modular",
+      "statusCode": 301
+    },
+    {
+      "source": "/forro-em-pvc-modulado.html",
+      "destination": "/servicos/pvc-modular",
+      "statusCode": 301
+    },
+    {
+      "source": "/forros_parede_drywall_sancas_gesso-liso",
+      "destination": "/servicos/drywall",
+      "statusCode": 301
+    },
+    {
+      "source": "/forros_parede_drywall_sancas_gesso-liso/",
+      "destination": "/servicos/drywall",
+      "statusCode": 301
+    },
+    {
+      "source": "/forros_parede_drywall_sancas_gesso-liso/embed",
+      "destination": "/servicos/drywall",
+      "statusCode": 301
+    },
+    {
+      "source": "/forros_parede_drywall_sancas_gesso-liso/embed/",
+      "destination": "/servicos/drywall",
+      "statusCode": 301
+    },
+    {
+      "source": "/gesso",
+      "destination": "/servicos/drywall",
+      "statusCode": 301
+    },
+    {
+      "source": "/gesso/",
+      "destination": "/servicos/drywall",
+      "statusCode": 301
+    },
+    {
+      "source": "/gesso-drywall-para-projetos-residenciais",
+      "destination": "/servicos/drywall",
+      "statusCode": 301
+    },
+    {
+      "source": "/gesso-drywall-para-projetos-residenciais/",
+      "destination": "/servicos/drywall",
+      "statusCode": 301
+    },
+    {
+      "source": "/gesso-drywall-para-projetos-residenciais/embed",
+      "destination": "/servicos/drywall",
+      "statusCode": 301
+    },
+    {
+      "source": "/gesso-drywall-para-projetos-residenciais/embed/",
+      "destination": "/servicos/drywall",
+      "statusCode": 301
+    },
+    {
+      "source": "/gesso-em-curitiba",
+      "destination": "/servicos/drywall",
+      "statusCode": 301
+    },
+    {
+      "source": "/gesso-em-curitiba/",
+      "destination": "/servicos/drywall",
+      "statusCode": 301
+    },
+    {
+      "source": "/o-gesso-na-construcao-civil",
+      "destination": "/servicos/drywall",
+      "statusCode": 301
+    },
+    {
+      "source": "/o-gesso-na-construcao-civil/",
+      "destination": "/servicos/drywall",
+      "statusCode": 301
+    },
+    {
+      "source": "/orcamento-gesso-online-gesseiro-camargo-curitiba-pr",
+      "destination": "/contato",
+      "statusCode": 301
+    },
+    {
+      "source": "/orcamento-gesso-online-gesseiro-camargo-curitiba-pr/",
+      "destination": "/contato",
+      "statusCode": 301
+    },
+    {
+      "source": "/orcamento-gesso-online-gesseiro-camargo-curitiba-pr/embed",
+      "destination": "/contato",
+      "statusCode": 301
+    },
+    {
+      "source": "/orcamento-gesso-online-gesseiro-camargo-curitiba-pr/embed/",
+      "destination": "/contato",
+      "statusCode": 301
+    },
+    {
+      "source": "/orcamento-gesso-online-gesseiro-camargo-curitiba-pr/feed",
+      "destination": "/contato",
+      "statusCode": 301
+    },
+    {
+      "source": "/orcamento-gesso-online-gesseiro-camargo-curitiba-pr/feed/",
+      "destination": "/contato",
+      "statusCode": 301
+    },
+    {
+      "source": "/orcamentos",
+      "destination": "/contato",
+      "statusCode": 301
+    },
+    {
+      "source": "/orcamentos/",
+      "destination": "/contato",
+      "statusCode": 301
+    },
+    {
+      "source": "/orcamentos/embed",
+      "destination": "/contato",
+      "statusCode": 301
+    },
+    {
+      "source": "/orcamentos/embed/",
+      "destination": "/contato",
+      "statusCode": 301
+    },
+    {
+      "source": "/page/2",
+      "destination": "/blog",
+      "statusCode": 301
+    },
+    {
+      "source": "/page/2/",
+      "destination": "/blog",
+      "statusCode": 301
+    },
+    {
+      "source": "/page/3",
+      "destination": "/blog",
+      "statusCode": 301
+    },
+    {
+      "source": "/page/3/",
+      "destination": "/blog",
+      "statusCode": 301
+    },
+    {
+      "source": "/page/4",
+      "destination": "/blog",
+      "statusCode": 301
+    },
+    {
+      "source": "/page/4/",
+      "destination": "/blog",
+      "statusCode": 301
+    },
+    {
+      "source": "/paredes-em-dry-wall",
+      "destination": "/servicos/drywall",
+      "statusCode": 301
+    },
+    {
+      "source": "/paredes-em-dry-wall/",
+      "destination": "/servicos/drywall",
+      "statusCode": 301
+    },
+    {
+      "source": "/paredes-em-gesso",
+      "destination": "/servicos/drywall",
+      "statusCode": 301
+    },
+    {
+      "source": "/paredes-em-gesso/",
+      "destination": "/servicos/drywall",
+      "statusCode": 301
+    },
+    {
+      "source": "/paredes-paineis-perfis",
+      "destination": "/servicos/drywall",
+      "statusCode": 301
+    },
+    {
+      "source": "/paredes-paineis-perfis/",
+      "destination": "/servicos/drywall",
+      "statusCode": 301
+    },
+    {
+      "source": "/placa-cimenticia",
+      "destination": "/produto/pl6",
+      "statusCode": 301
+    },
+    {
+      "source": "/placa-cimenticia/",
+      "destination": "/produto/pl6",
+      "statusCode": 301
+    },
+    {
+      "source": "/placa-cimenticia/embed",
+      "destination": "/produto/pl6",
+      "statusCode": 301
+    },
+    {
+      "source": "/placa-cimenticia/embed/",
+      "destination": "/produto/pl6",
+      "statusCode": 301
+    },
+    {
+      "source": "/placas",
+      "destination": "/produtos",
+      "statusCode": 301
+    },
+    {
+      "source": "/placas/",
+      "destination": "/produtos",
+      "statusCode": 301
+    },
+    {
+      "source": "/produtos/categoria-produto/drywall",
+      "destination": "/produtos",
+      "statusCode": 301
+    },
+    {
+      "source": "/produtos/categoria-produto/drywall/",
+      "destination": "/produtos",
+      "statusCode": 301
+    },
+    {
+      "source": "/profissionais-gesseiros-gesso-em-decoracao",
+      "destination": "/empresa",
+      "statusCode": 301
+    },
+    {
+      "source": "/profissionais-gesseiros-gesso-em-decoracao/",
+      "destination": "/empresa",
+      "statusCode": 301
+    },
+    {
+      "source": "/profissionais-gesseiros-gesso-em-decoracao/embed",
+      "destination": "/empresa",
+      "statusCode": 301
+    },
+    {
+      "source": "/profissionais-gesseiros-gesso-em-decoracao/embed/",
+      "destination": "/empresa",
+      "statusCode": 301
+    },
+    {
+      "source": "/reformas",
+      "destination": "/servicos",
+      "statusCode": 301
+    },
+    {
+      "source": "/reformas/",
+      "destination": "/servicos",
+      "statusCode": 301
+    },
+    {
+      "source": "/saiba-mais-sobre-gesso",
+      "destination": "/servicos/drywall",
+      "statusCode": 301
+    },
+    {
+      "source": "/saiba-mais-sobre-gesso/",
+      "destination": "/servicos/drywall",
+      "statusCode": 301
+    },
+    {
+      "source": "/saiba-mais-sobre-gesso/embed",
+      "destination": "/servicos/drywall",
+      "statusCode": 301
+    },
+    {
+      "source": "/saiba-mais-sobre-gesso/embed/",
+      "destination": "/servicos/drywall",
+      "statusCode": 301
+    },
+    {
+      "source": "/servicos-como-divisorias-de-gesso-ou-drywall",
+      "destination": "/servicos/drywall",
+      "statusCode": 301
+    },
+    {
+      "source": "/servicos-como-divisorias-de-gesso-ou-drywall/",
+      "destination": "/servicos/drywall",
+      "statusCode": 301
+    },
+    {
+      "source": "/servicos-como-divisorias-de-gesso-ou-drywall/embed",
+      "destination": "/servicos/drywall",
+      "statusCode": 301
+    },
+    {
+      "source": "/servicos-como-divisorias-de-gesso-ou-drywall/embed/",
+      "destination": "/servicos/drywall",
+      "statusCode": 301
+    },
+    {
+      "source": "/simulador",
+      "destination": "/contato",
+      "statusCode": 301
+    },
+    {
+      "source": "/simulador/",
+      "destination": "/contato",
+      "statusCode": 301
+    },
+    {
+      "source": "/sitemap.xml/drywall.html",
+      "destination": "/servicos/drywall",
+      "statusCode": 301
+    },
+    {
+      "source": "/sitemap.xml/forro-em-pvc-modulado.html",
+      "destination": "/servicos/pvc-modular",
+      "statusCode": 301
+    },
+    {
+      "source": "/sitemap.xml/index.html",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/solucoes-drywall-residencias-comercio-e-escritorios",
+      "destination": "/servicos/drywall",
+      "statusCode": 301
+    },
+    {
+      "source": "/solucoes-drywall-residencias-comercio-e-escritorios/",
+      "destination": "/servicos/drywall",
+      "statusCode": 301
+    },
+    {
+      "source": "/solucoes-drywall-residencias-comercio-e-escritorios/embed",
+      "destination": "/servicos/drywall",
+      "statusCode": 301
+    },
+    {
+      "source": "/solucoes-drywall-residencias-comercio-e-escritorios/embed/",
+      "destination": "/servicos/drywall",
+      "statusCode": 301
+    },
+    {
+      "source": "/veja-as-diferencas-gesso-comum-e-drywall-gesso-acartonado",
+      "destination": "/servicos/drywall",
+      "statusCode": 301
+    },
+    {
+      "source": "/veja-as-diferencas-gesso-comum-e-drywall-gesso-acartonado/",
+      "destination": "/servicos/drywall",
+      "statusCode": 301
+    },
+    {
+      "source": "/veja-as-diferencas-gesso-comum-e-drywall-gesso-acartonado/embed",
+      "destination": "/servicos/drywall",
+      "statusCode": 301
+    },
+    {
+      "source": "/veja-as-diferencas-gesso-comum-e-drywall-gesso-acartonado/embed/",
+      "destination": "/servicos/drywall",
+      "statusCode": 301
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": {
+            "eq": "7"
+          }
+        }
+      ],
+      "destination": "/contato",
+      "statusCode": 301
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": {
+            "eq": "10"
+          }
+        }
+      ],
+      "destination": "/servicos/drywall",
+      "statusCode": 301
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": {
+            "eq": "16"
+          }
+        }
+      ],
+      "destination": "/servicos/drywall",
+      "statusCode": 301
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": {
+            "eq": "18"
+          }
+        }
+      ],
+      "destination": "/servicos/drywall",
+      "statusCode": 301
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": {
+            "eq": "34"
+          }
+        }
+      ],
+      "destination": "/servicos",
+      "statusCode": 301
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": {
+            "eq": "36"
+          }
+        }
+      ],
+      "destination": "/servicos",
+      "statusCode": 301
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": {
+            "eq": "281"
+          }
+        }
+      ],
+      "destination": "/servicos/drywall",
+      "statusCode": 301
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": {
+            "eq": "282"
+          }
+        }
+      ],
+      "destination": "/servicos/drywall",
+      "statusCode": 301
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": {
+            "eq": "285"
+          }
+        }
+      ],
+      "destination": "/servicos/drywall",
+      "statusCode": 301
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": {
+            "eq": "301"
+          }
+        }
+      ],
+      "destination": "/servicos/drywall",
+      "statusCode": 301
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": {
+            "eq": "307"
+          }
+        }
+      ],
+      "destination": "/produto/pl6",
+      "statusCode": 301
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": {
+            "eq": "325"
+          }
+        }
+      ],
+      "destination": "/contato",
+      "statusCode": 301
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": {
+            "eq": "333"
+          }
+        }
+      ],
+      "destination": "/contato",
+      "statusCode": 301
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": {
+            "eq": "390"
+          }
+        }
+      ],
+      "destination": "/servicos/drywall",
+      "statusCode": 301
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": {
+            "eq": "393"
+          }
+        }
+      ],
+      "destination": "/servicos/drywall",
+      "statusCode": 301
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": {
+            "eq": "396"
+          }
+        }
+      ],
+      "destination": "/servicos/drywall",
+      "statusCode": 301
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": {
+            "eq": "399"
+          }
+        }
+      ],
+      "destination": "/servicos/drywall",
+      "statusCode": 301
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": {
+            "eq": "403"
+          }
+        }
+      ],
+      "destination": "/servicos/drywall",
+      "statusCode": 301
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": {
+            "eq": "415"
+          }
+        }
+      ],
+      "destination": "/servicos/drywall",
+      "statusCode": 301
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": {
+            "eq": "422"
+          }
+        }
+      ],
+      "destination": "/empresa",
+      "statusCode": 301
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": {
+            "eq": "429"
+          }
+        }
+      ],
+      "destination": "/blog/b8",
+      "statusCode": 301
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": {
+            "eq": "430"
+          }
+        }
+      ],
+      "destination": "/servicos/drywall",
+      "statusCode": 301
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": {
+            "eq": "431"
+          }
+        }
+      ],
+      "destination": "/contato",
+      "statusCode": 301
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": {
+            "eq": "432"
+          }
+        }
+      ],
+      "destination": "/produtos",
+      "statusCode": 301
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": {
+            "eq": "441"
+          }
+        }
+      ],
+      "destination": "/empresa",
+      "statusCode": 301
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": {
+            "eq": "444"
+          }
+        }
+      ],
+      "destination": "/servicos/drywall",
+      "statusCode": 301
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": {
+            "eq": "479"
+          }
+        }
+      ],
+      "destination": "/servicos/drywall",
+      "statusCode": 301
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": {
+            "eq": "483"
+          }
+        }
+      ],
+      "destination": "/servicos/drywall",
+      "statusCode": 301
+    }
+  ],
+  "headers": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": {
+            "re": "^(.*\\.)?vercel\\.app$"
+          }
+        }
+      ],
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex"
+        }
+      ]
     }
   ]
 }
