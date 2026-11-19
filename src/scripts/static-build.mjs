@@ -2,6 +2,7 @@ import { createServer } from 'vite';
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import path from 'node:path';
 import { getRoutes } from '../seo/routes.mjs';
+import { lastmodForRoute, readLastmodFallback } from '../seo/lastmod.mjs';
 const server = await createServer({ server: { middlewareMode: true }, appType: 'custom', optimizeDeps: { noDiscovery: true, include: [] }, ssr: { noExternal: ['react-router-dom', 'react-router'], resolve: { conditions: ['module-sync', 'module', 'import'] } } });
 try {
   const app = await server.ssrLoadModule('/src/seo/render.tsx');
@@ -33,10 +34,19 @@ try {
     await mkdir(path.dirname(destination), { recursive: true });
     await writeFile(destination, output);
   }
-  const indexable = routes;
+  const indexable = [...new Set(routes)];
   await writeFile('src/seo/indexable-routes.json', JSON.stringify(indexable, null, 2) + '\n');
-  const sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + [...new Set(indexable)].map(route => `  <url><loc>${BASE_URL}${route}</loc></url>`).join('\n') + '\n</urlset>\n';
+  const fallback = readLastmodFallback();
+  const lastmods = {};
+  for (const route of indexable) {
+    const lastmod = lastmodForRoute(route, fallback);
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(lastmod)) throw new Error(`Invalid lastmod for ${route}: ${lastmod}`);
+    lastmods[route] = lastmod;
+  }
+  await writeFile('src/seo/lastmod.json', JSON.stringify(lastmods, null, 2) + '\n');
+  const sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + indexable.map(route => `  <url><loc>${BASE_URL}${route}</loc><lastmod>${lastmods[route]}</lastmod></url>`).join('\n') + '\n</urlset>\n';
   await writeFile('dist/sitemap.xml', sitemap);
+  await writeFile('public/sitemap.xml', sitemap);
   
   const redirects = Object.entries(aliases).map(([from, to]) => `${from} ${to} 301`).join('\n');
   await writeFile('dist/_redirects', `https://kydrywall.com.br/* https://www.kydrywall.com.br/:splat 301!\n${redirects}\n/* /404.html 404\n`);
