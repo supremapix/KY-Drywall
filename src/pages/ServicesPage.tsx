@@ -6,6 +6,7 @@ import { CheckCircle2, MessageCircle, ChevronRight, Sparkles, ShieldAlert, Arrow
 import NotFound from './NotFound';
 import EnhancedSEO from '../components/EnhancedSEO';
 
+import { KyHubCards } from './KyServiceGuide';
 import ProjectChecklist from '../components/ProjectChecklist';
 
 const ServicesPage: React.FC = () => {
@@ -93,6 +94,7 @@ const ServicesPage: React.FC = () => {
         </div>
       </section>
 
+      {!serviceId && <KyHubCards/>}
       {/* Conteúdo SEO */}
       <section className="py-14 md:py-20 ky-section-white border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">

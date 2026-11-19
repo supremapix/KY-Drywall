@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowUpRight, ArrowRight, MapPin, MessageCircle, Clock, Plus, Minus, Phone } from 'lucide-react';
+import { KyHubCards } from './KyServiceGuide';
 import { SERVICES, BLOG_POSTS, PRODUCTS, CATEGORIES, BASE_URL, COMPANY_INFO, SITE_ASSETS, NEIGHBORHOODS, CITIES_RMC, normalizeLocationName } from '../constants';
 import EnhancedSEO from '../components/EnhancedSEO';
 import ProductCard from '../components/ProductCard';
@@ -47,6 +48,7 @@ export default function Home() {
 
     <section className="ky-r-faq"><div><span className="ky-r-kicker">05 / PODE PERGUNTAR</span><h2>Antes de<br/>começar.</h2><Link className="ky-r-text-link" to="/faq">Todas as dúvidas <ArrowUpRight size={20}/></Link></div><div>{questions.map(([q,a],index)=><div className="ky-r-question" key={q}><button type="button" aria-expanded={openQuestion===index} aria-controls={`ky-answer-${index}`} onClick={()=>setOpenQuestion(openQuestion===index?null:index)}><span>{q}</span>{openQuestion===index?<Minus size={22}/>:<Plus size={22}/>}</button><p id={`ky-answer-${index}`} hidden={openQuestion!==index}>{a}</p></div>)}</div></section>
 
+    <KyHubCards/>
     <section className="ky-r-regions"><span className="ky-r-kicker">PERTO DA SUA OBRA</span><h2>Curitiba e Região Metropolitana.</h2><p>Um endereço físico, no Cajuru. Consulte atendimento e entrega para seu bairro ou cidade.</p><div>{['Cajuru','Água Verde','Boqueirão','Centro',...CITIES_RMC.filter(c=>c!=='Curitiba').slice(0,5)].map(name=><Link key={name} to={`/drywall-em/${normalizeLocationName(name)}`}>{name} <ArrowUpRight size={15}/></Link>)}</div><Link to="/sitemap" className="ky-r-text-link">Ver todas as localidades <ArrowRight size={18}/></Link></section>
   </div>;
 }

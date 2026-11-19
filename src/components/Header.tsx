@@ -5,6 +5,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ChevronRight, ShoppingCart, Phone, Mail, Home, Building2, Wrench, Package, MessageCircle, BookOpen, MapPin, HelpCircle } from 'lucide-react';
 import { NAV_ITEMS, SITE_ASSETS, COMPANY_INFO } from '../constants';
+import { KY_SPECIALTY_WA } from '../kyServices';
 import { QuoteItem } from '../types';
 import QuoteDrawer from './QuoteDrawer';
 
@@ -19,7 +20,7 @@ const MENU_ICONS: Record<string, React.ReactNode> = {
   'Mapa do Site': <MapPin size={18} />,
 };
 
-const Header: React.FC = () => {
+const Header: React.FC<{specialty?:boolean}> = ({specialty=false}) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [expandedItem, setExpandedItem] = useState<string | null>(null);
   const [isQuoteOpen, setIsQuoteOpen] = useState(false);
@@ -219,7 +220,7 @@ const Header: React.FC = () => {
                 <span>Ligar (41) 3528-4232</span>
               </a>
               <a
-                href={`https://wa.me/${COMPANY_INFO.whatsapp}`}
+                href={specialty?KY_SPECIALTY_WA:`https://wa.me/${COMPANY_INFO.whatsapp}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-4 bg-[#D31219] hover:bg-red-700 text-white font-black py-5 px-6 rounded-2xl text-lg transition-all min-h-[64px] shadow-lg active:scale-[0.98]"

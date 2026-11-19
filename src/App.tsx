@@ -8,6 +8,8 @@ import Home from './pages/Home';
 import ProductList from './pages/ProductList';
 import ProductDetails from './pages/ProductDetails';
 import About from './pages/About';
+import KyServiceGuide from './pages/KyServiceGuide';
+import { isKySpecialty } from './kyServices';
 import ServicesPage from './pages/ServicesPage';
 import Contact from './pages/Contact';
 import Blog from './pages/Blog';
@@ -34,7 +36,9 @@ import './components/LightTheme.css';
 import './components/RedesignSystem.css';
 
 export const AppContent: React.FC = () => {
-  const isHomePage = useLocation().pathname === "/";
+  const pathname = useLocation().pathname;
+  const isHomePage = pathname === "/";
+  const specialty = isKySpecialty(pathname);
   const isLinksPage = useLocation().pathname.replace(/\/+$/, '') === '/links';
   const [isCookieAccepted, setIsCookieAccepted] = useState(false);
 
@@ -56,7 +60,7 @@ export const AppContent: React.FC = () => {
       <ScrollToTop />
       <div className="ky-viewport flex flex-col bg-white text-slate-900 font-sans antialiased ky-light">
         <div id="ky-page-scroll" className="ky-page-scroll">
-        {!isLinksPage && <Header />}
+        {!isLinksPage && <Header specialty={specialty}/>}
         
         <a href="#conteudo" className="ky-skip-link">Pular para o conteúdo</a>
         <main id="conteudo" tabIndex={-1} className="flex-grow pb-28 md:pb-12">
@@ -66,7 +70,7 @@ export const AppContent: React.FC = () => {
             <Route path="/empresa" element={<About />} />
             <Route path="/steel-frame" element={<SteelFramePage />} />
             <Route path="/servicos" element={<ServicesPage />} />
-            <Route path="/servicos/:serviceId" element={<ServicesPage />} />
+            <Route path="/servicos/:serviceId" element={specialty?<KyServiceGuide/>:<ServicesPage/>} />
             <Route path="/produtos" element={<ProductList />} />
             <Route path="/produto/:productId" element={<ProductDetails />} />
             <Route path="/contato" element={<Contact />} />
@@ -87,9 +91,9 @@ export const AppContent: React.FC = () => {
         </main>
 
         {!isHomePage && !isLinksPage && <StoreVisit />}
-        <Footer />
+        <Footer specialty={specialty}/>
         </div>
-        <FloatingActions />
+        <FloatingActions specialty={specialty}/>
         {!isLinksPage && !isCookieAccepted && <CookieConsent onAccept={handleAcceptCookies} />}
       </div>
     </>

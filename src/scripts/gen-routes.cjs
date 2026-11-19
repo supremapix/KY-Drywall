@@ -6,7 +6,7 @@
   const server = await createServer({ server: { middlewareMode: true }, appType: 'custom', optimizeDeps: { noDiscovery: true, include: [] } });
   try {
     const constants = await server.ssrLoadModule('/src/constants.tsx');
-    const { routes } = getRoutes(constants);
+    const { routes } = getRoutes({ ...constants, ...(await server.ssrLoadModule('/src/kyServices.ts')) });
     await writeFile('src/seo/indexable-routes.json', JSON.stringify(routes, null, 2) + '\n');
     console.log(`Generated ${routes.length} canonical, indexable routes.`);
   } finally { await server.close(); }

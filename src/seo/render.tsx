@@ -11,3 +11,5 @@ export function render(path: string) {
   if (!metadata) throw new Error(`Missing SEO: ${path}`);
   return { html, metadata };
 }
+
+export { kyExtraRoutes } from '../kyServices';
