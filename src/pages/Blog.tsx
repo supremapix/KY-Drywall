@@ -193,6 +193,13 @@ const Blog: React.FC = () => {
         </div>
       </section>
 
+      <section aria-label="História do drywall" className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 pt-10">
+        <Link to="/blog/historia-do-drywall" className="block rounded-xl border border-slate-200 bg-white px-6 py-5 hover:border-red-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-red-700">
+          <span className="block text-sm font-bold text-red-700">LINHA DO TEMPO</span>
+          <strong className="block text-xl text-slate-950">História do drywall e do Light Steel Frame</strong>
+          <span className="block text-slate-700">Duas linhas do tempo: da patente de 1894 aos perfis estruturais de aço. Compare onde a construção a seco pode poupar tempo, materiais e trabalho no canteiro.</span>
+        </Link>
+      </section>
       {/* Featured Posts */}
       <section className="py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
@@ -346,3 +353,4 @@ const Blog: React.FC = () => {
 };
 
 export default Blog;
+

@@ -23,6 +23,7 @@
 - [Construção a seco: serviços](https://www.kydrywall.com.br/servicos)
 - [Central de Conhecimento](https://www.kydrywall.com.br/faq): definições, diferenças entre sistemas e dúvidas sobre orçamento.
 - [Artigos](https://www.kydrywall.com.br/blog)
+- [História do drywall e da construção a seco](https://www.kydrywall.com.br/blog/historia-do-drywall): patente de Sackett, fabricação no Brasil e diferenças entre drywall e Light Steel Frame.
 - [Contato e orçamento](https://www.kydrywall.com.br/contato)
 - [Canais oficiais e QR Code](https://www.kydrywall.com.br/links)
 
@@ -33,3 +34,4 @@
 
 ## Limites das informações
 A loja física é única, no Cajuru. Páginas locais não representam filiais ou garantia de entrega. Projeto, dimensionamento, instalação, disponibilidade e frete exigem confirmação com os responsáveis. Este arquivo é um índice auxiliar; consulte o conteúdo e os contatos das páginas oficiais.
+

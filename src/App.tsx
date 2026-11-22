@@ -13,6 +13,7 @@ import { isKySpecialty } from './kyServices';
 import ServicesPage from './pages/ServicesPage';
 import Contact from './pages/Contact';
 import Blog from './pages/Blog';
+import DrywallHistory from './pages/DrywallHistory';
 import LocationPage from './pages/LocationPage';
 import Sitemap from './pages/Sitemap';
 import BlogPostPage from './pages/BlogPostPage';
@@ -75,6 +76,7 @@ export const AppContent: React.FC = () => {
             <Route path="/produto/:productId" element={<ProductDetails />} />
             <Route path="/contato" element={<Contact />} />
             <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/historia-do-drywall" element={<DrywallHistory />} />
             <Route path="/blog/:postId" element={<BlogPostPage />} />
             <Route path="/regiao-metropolitana" element={<RegionalDirectory />} />
             <Route path="/regiao-metropolitana/:city" element={<RegionalDirectory />} />
@@ -128,3 +130,4 @@ const CatchAllRoute = () => {
 
 const App = () => <Router><AppContent /></Router>;
 export default App;
+

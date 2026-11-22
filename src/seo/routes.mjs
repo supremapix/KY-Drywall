@@ -2,7 +2,7 @@
 export function getRoutes({ regionalRoutes = [], kyExtraRoutes = [], PRODUCTS, SERVICES, BLOG_POSTS, NEIGHBORHOODS, CITIES_RMC, ALL_CIC_LOCATIONS, REDIRECTIONS, normalizeLocationName }) {
   const locations = [...new Set([...NEIGHBORHOODS, ...CITIES_RMC, ...ALL_CIC_LOCATIONS]
     .map(normalizeLocationName).map(slug => REDIRECTIONS[slug] || slug))];
-  const routes = [...new Set(['/', '/empresa', '/steel-frame', '/servicos', '/produtos', '/contato', '/blog', '/faq', '/sitemap', '/links',
+  const routes = [...new Set(['/', '/empresa', '/steel-frame', '/servicos', '/produtos', '/contato', '/blog', '/blog/historia-do-drywall', '/faq', '/sitemap', '/links',
     ...regionalRoutes,
     ...kyExtraRoutes,
     ...SERVICES.map(service => `/servicos/${service.id}`),
@@ -21,3 +21,4 @@ export function getRoutes({ regionalRoutes = [], kyExtraRoutes = [], PRODUCTS, S
   }
   return { routes, locations, aliases };
 }
+
