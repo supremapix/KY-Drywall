@@ -46,6 +46,10 @@ export const ROOF_UPDATE = {
       }
     },
     {
+      "title": "Como comparar propostas com embalagens diferentes",
+      "content": "Peça o modelo da telha, a cobertura útil por pacote informada pelo fabricante e o total de pacotes. Compare a área da superfície inclinada, conforme o levantamento técnico, e verifique separadamente se recortes e peças de arremate foram considerados. Não use uma margem fixa para todo telhado. Para uma obra em Curitiba ou região, informe o CEP e confirme se retirada, frete e instalação fazem parte da proposta."
+    },
+    {
       "title": "Mancha ou peça deslocada: observe sem subir",
       "content": "Se o problema já existe, registre de um local seguro o que está visível e quando foi percebido. Evite subir no telhado para tirar fotos ou tentar uma vedação improvisada. Uma mancha no teto, por si só, não identifica a origem da água. Solicite avaliação profissional e não compre uma peça de reposição antes de confirmar o diagnóstico e a compatibilidade do material."
     },
