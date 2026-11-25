@@ -124,15 +124,6 @@ const BLOG_CONTENT: Record<string, BlogPostContent> = {
         "content": "Chaminés, platibandas, rufos, calhas e transições entre águas alteram o detalhamento da cobertura. Uma proposta baseada apenas na área pode deixar esses itens de fora. Entregue desenhos e fotos ao responsável pela especificação e peça uma lista de base, subcobertura, telhas, fixadores e arremates. Confirme quais componentes pertencem ao sistema escolhido."
       },
       {
-        "title": "Como comparar propostas com embalagens diferentes",
-        "content": "Peça que cada proposta informe o modelo da telha, quantos metros quadrados úteis cada pacote cobre segundo o fabricante, quantos pacotes serão fornecidos e quais peças de arremate estão incluídas. Compare a quantidade total prevista no projeto, não só o preço por pacote.",
-        "bullets": [
-          "Separe a área medida no plano inclinado da projeção horizontal. Use a área que consta no levantamento do responsável pela cobertura.",
-          "Confirme se a quantidade já considera recortes, cumeeiras e demais arremates; não aplique uma margem fixa para todo tipo de telhado.",
-          "Se a cotação for para Curitiba ou região, informe o CEP e confirme separadamente retirada, frete e instalação."
-        ]
-      },
-      {
         "title": "Como organizar a inspeção sem improvisos",
         "content": "Observe do solo sinais como deslocamentos, manchas no interior e problemas aparentes nas calhas. Subir em telhados exige avaliação de acesso e medidas de proteção; não transforme uma inspeção em uma tarefa de risco. Acione profissional preparado para examinar a cobertura e documente o problema antes de comprar peças de reposição."
       }
