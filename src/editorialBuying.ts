@@ -30,6 +30,18 @@ export const BUYING_UPDATE = {
       }
     },
     {
+      "title": "Guias e montantes de drywall: como pedir uma reposição sem comprar a peça errada",
+      "content": "A guia delimita a parede e recebe os montantes, que ficam na vertical. O catálogo da KY inclui famílias nominais de 48, 70 e 90 mm, mas esse número não informa o comprimento da barra, a espessura da chapa de aço nem a composição da parede. Para reposição em Curitiba, mande à loja do Cajuru uma foto da etiqueta ou a referência do pedido anterior e escreva a função da peça, a largura nominal, o comprimento e a quantidade em unidades. Se tiver só uma foto da peça, peça ajuda para identificar a linha antes de comprar.",
+      "table": {
+        "headers": ["Se aparecer na lista", "O que confirmar antes da cotação"],
+        "rows": [
+          ["Guia 70", "Largura nominal em milímetros, comprimento por barra, espessura do aço e linha indicada no projeto."],
+          ["Montante 70", "Se é da linha compatível com as guias e se atende à especificação da parede. Não usar só o número 70 para decidir."],
+          ["Perfil estrutural", "Se o pedido é de Steel Frame e qual perfil o projeto indica. Perfis para divisória e perfis estruturais não são substitutos automáticos."]
+        ]
+      }
+    },
+    {
       "title": "Compare propostas para o mesmo pedido",
       "content": "Confira se os orçamentos respondem à mesma lista. Separe materiais, transporte e outros serviços que tenham sido efetivamente oferecidos. Pergunte sobre validade da proposta, condições de pagamento e itens que ficaram de fora. Um total menor não permite comparar propostas com quantidades ou escopos diferentes. Guarde a resposta por escrito e reconfirme as condições antes de decidir."
     },
@@ -52,6 +64,10 @@ export const BUYING_UPDATE = {
   ],
   "faq": [
     {
+      "question": "Um montante de 70 mm cabe em qualquer guia de 70 mm?",
+      "answer": "Não use a largura nominal como único critério. Confira a ficha dos componentes e a linha especificada no projeto. Em uma reposição, a etiqueta ou o código do pedido anterior ajuda a identificar o conjunto."
+    },
+    {
       "question": "Aparecer no catálogo significa que o produto está reservado?",
       "answer": "Não. Confirme disponibilidade e condições com a KY antes de programar compra, retirada ou entrega."
     },
@@ -69,6 +85,10 @@ export const BUYING_UPDATE = {
     }
   ],
   "sources": [
+    {
+      "title": "Knauf: manual de instalação dos sistemas drywall, tipos e dimensões de perfis",
+      "url": "https://parceria-knauf.com.br/uploads/pdf/downloads/knauf/0manual-de-instalacao-drywall-knauf-202120240557.pdf"
+    },
     {
       "title": "Associação Brasileira do Drywall: recebimento, transporte e manuseio de chapas",
       "url": "https://drywall.org.br/chapas/"
