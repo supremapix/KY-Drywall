@@ -61,7 +61,7 @@ export const AppContent: React.FC = () => {
       <ScrollToTop />
       <div className="ky-viewport flex flex-col bg-white text-slate-900 font-sans antialiased ky-light">
         <div id="ky-page-scroll" className="ky-page-scroll">
-        {!isLinksPage && <Header specialty={specialty}/>}
+        {!isLinksPage && <Header/>}
         
         <a href="#conteudo" className="ky-skip-link">Pular para o conteúdo</a>
         <main id="conteudo" tabIndex={-1} className="flex-grow pb-28 md:pb-12">
@@ -93,9 +93,9 @@ export const AppContent: React.FC = () => {
         </main>
 
         {!isHomePage && !isLinksPage && <StoreVisit />}
-        <Footer specialty={specialty}/>
+        <Footer/>
         </div>
-        <FloatingActions specialty={specialty}/>
+        <FloatingActions/>
         {!isLinksPage && !isCookieAccepted && <CookieConsent onAccept={handleAcceptCookies} />}
       </div>
     </>

@@ -1,17 +1,18 @@
+import { COMPANY_INFO } from '../constants';
 import React from 'react';
 import { Link,useParams } from 'react-router-dom';
 import { ArrowUpRight,MessageCircle } from 'lucide-react';
 import EnhancedSEO from '../components/EnhancedSEO';
 import NotFound from './NotFound';
 import { BASE_URL } from '../constants';
-import { kyGroups,kyRows,kyServicePath,kyClusterLabel,kyImageAlt,KY_SPECIALTY_WA,type KyGroup } from '../kyServices';
+import { kyGroups,kyRows,kyServicePath,kyClusterLabel,kyImageAlt,type KyGroup } from '../kyServices';
 import './KyServiceGuide.css';
 
 const groupKeys=Object.keys(kyGroups) as KyGroup[];
 const img=(key:string)=>'/guias-ky/'+(key==='cobertura-comercial'?'estrutura':key)+'.webp';
 const groupShort:Record<KyGroup,string>={coberturas:'Coberturas em Curitiba',drywall:'Drywall e gesso em Curitiba'};
 const GroupsIntro:React.FC<{group:KyGroup}>=({group})=><aside className="kyg-panel"><h2>{group==='coberturas'?'Por onde começar a cotação':'Planeje a compra antes do fechamento'}</h2><p>{group==='coberturas'?'Separe estrutura, telhas, proteção, fixações e drenagem. Para imóveis existentes, descreva primeiro o que já está instalado; para obra nova, reúna cortes e desenhos da cobertura.':'Separe chapas, perfis, componentes de fixação, isolamento e materiais de acabamento. Informe a função de cada ambiente e o que precisa ficar acessível para instalação ou manutenção.'}</p><p>A loja KY fica no Cajuru, em Curitiba. Informe o bairro ou a cidade da Região Metropolitana para conferir disponibilidade, retirada e opções de entrega. O fornecimento de materiais e a execução devem ser tratados como escopos separados.</p></aside>;
-const Quote=()=> <a className="kyg-quote" href={KY_SPECIALTY_WA} target="_blank" rel="noopener noreferrer"><MessageCircle size={20} aria-hidden="true"/> Solicitar orçamento</a>;
+const Quote=()=> <a className="kyg-quote" href={'https://wa.me/' + COMPANY_INFO.whatsapp} target="_blank" rel="noopener noreferrer"><MessageCircle size={20} aria-hidden="true"/> Cotar materiais com a KY</a>;
 const Art=({id}:{id:string})=><figure className="kyg-art"><img src={img(id)} width="1200" height="675" alt={kyImageAlt[id]}/><figcaption>Imagem ilustrativa gerada por IA. Não representa obra da KY.</figcaption></figure>;
 
 export function KyHubCards(){return <section className="kyg-entry" aria-label="Guias de sistemas"><div className="kyg-wrap kyg-groups">{groupKeys.map(g=><Link key={g} to={kyServicePath(kyGroups[g].slug)} className="kyg-card"><span>{kyRows[g].length} guias</span><strong>{kyGroups[g].title}</strong><p>{kyGroups[g].intro}</p><span>Ver todos os {kyRows[g].length} serviços <ArrowUpRight size={16}/></span></Link>)}</div></section>}

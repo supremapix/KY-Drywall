@@ -1,4 +1,3 @@
-export const KY_SPECIALTY_WA = 'https://wa.me/5541996646761?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Engeum%20e%20quero%20um%20or%C3%A7amento%20para%20drywall%20e%20gesso';
 export const kyGroups = {
   coberturas: { slug:'coberturas-e-telhados', title:'Coberturas e telhados', intro:'Planeje estruturas em Steel Frame, telhados embutidos, telhas sanduíche e reformas. Compare o escopo e organize sua lista antes de comprar na região de Curitiba.', clusters:['estrutura','embutido','isolamento-telhado','drenagem','cobertura-comercial'] },
   drywall: { slug:'drywall-gesso-e-fechamentos', title:'Drywall, gesso e sistemas de fechamento', intro:'Compare paredes, forros, sancas, isolamento e fechamentos externos. Saiba o que especificar e quais medidas reunir para uma cotação.', clusters:['paredes','forro','isolamento-parede','fachada'] }
