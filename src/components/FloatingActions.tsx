@@ -13,16 +13,14 @@ import {
   User,
   ExternalLink
 } from 'lucide-react';
-import { KY_SPECIALTY_WA } from '../kyServices';
 import { COMPANY_INFO, BASE_URL } from '../constants';
 
 const DEFAULT_SHARE_IMAGE = `${BASE_URL}/og-ky-drywall.png`;
 const SHARE_MESSAGES = ['Conheça a KY Drywall & Steel Frame', 'Compartilho este conteúdo da KY', 'Uma leitura para planejar sua obra', 'Veja este guia de construção a seco', 'Informações para consultar antes de comprar', 'Conteúdo para conversar com seu projetista', 'Uma referência para organizar sua cotação', 'Confira este material da KY Drywall', 'Para quem pesquisa drywall e Steel Frame', 'Mais informações para sua lista de materiais', 'Veja esta página da KY', 'Compartilhando uma dica de planejamento', 'Leitura sobre materiais e construção a seco', 'Para consultar com a equipe da obra', 'Conheça este conteúdo sobre construção'];
 
-export const FloatingActions: React.FC<{specialty?:boolean}> = ({specialty=false}) => {
+export const FloatingActions: React.FC = () => {
   const [isShareOpen, setIsShareOpen] = useState(false);
   const [isWhatsAppOpen, setIsWhatsAppOpen] = useState(false);
-  useEffect(() => { setIsWhatsAppOpen(false); }, [specialty]);
   const [copied, setCopied] = useState(false);
   const [messageIndex, setMessageIndex] = useState(0);
   useEffect(() => { const timer = window.setInterval(() => setMessageIndex(i => (i + 1) % SHARE_MESSAGES.length), 15000); return () => window.clearInterval(timer); }, []);
@@ -266,7 +264,7 @@ export const FloatingActions: React.FC<{specialty?:boolean}> = ({specialty=false
         )}
 
         {/* WhatsApp Agents Menu */}
-        {!specialty && isWhatsAppOpen && (
+        {isWhatsAppOpen && (
           <div ref={contactRef} role="dialog" aria-label="Contatos da KY" id="ky-whatsapp-contacts" className="ky-whatsapp-panel w-72 max-w-[calc(100vw-2rem)] overflow-y-auto sm:w-80 bg-white rounded-3xl border-2 border-slate-900 shadow-2xl">
             <div className="bg-slate-900 p-6 text-white flex justify-between items-center">
               <div className="flex items-center gap-3">
@@ -314,9 +312,8 @@ export const FloatingActions: React.FC<{specialty?:boolean}> = ({specialty=false
 
         {/* Quick Contact Buttons */}
         <div className="flex items-center gap-2">
-          <a href={KY_SPECIALTY_WA} className={'ky-contact-secondary '+(specialty?'ky-contact-secondary-only':'')} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp 2: orçamento para os serviços de cobertura, drywall e gesso">2</a>
           {/* Call Button */}
-          {!specialty && <><a
+          <a
             href="tel:+554135284232"
             className="h-12 sm:h-14 px-6 bg-white border-2 border-slate-900 rounded-full flex items-center gap-3 shadow-xl hover:bg-slate-50 transition-all active:scale-95 group"
             title="Ligar para a loja" aria-label="Ligar agora para a KY"
@@ -333,7 +330,7 @@ export const FloatingActions: React.FC<{specialty?:boolean}> = ({specialty=false
           >
             <MessageCircle size={28} aria-hidden="true" />
             <span className="ky-whatsapp-label">WhatsApp</span>
-          </button></>}
+          </button>
         </div>
       </div>
     </section>
